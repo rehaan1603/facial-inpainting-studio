@@ -1,0 +1,7 @@
+{
+  "url": "http://images.cocodataset.org/annotations/annotations_trainval2017.zip",
+  "sha256": "113a836d90195ee1f884e704da6304dfaaecff1f023f49b6ca93c4aaae470268",
+  "extracted_member": "annotations/instances_val2017.json",
+  "terms": "https://cocodataset.org/#termsofuse",
+  "transport": "Official HTTP download link; local hashes record received bytes, not independently authenticated publisher checksums."
+}

@@ -1,0 +1,12 @@
+{
+  "seed": 20260911,
+  "images": 96,
+  "tuning_images": 48,
+  "resolution": 256,
+  "families": ["brush", "eyes", "mouth"],
+  "conditions": ["accurate", "under", "over", "shift", "mixed_boundary"],
+  "dilation_radii": [0, 2, 4, 8],
+  "selection_metric": "full_face_lpips",
+  "selection_rule": "One global dilation radius minimizing mean LPIPS across tuning cases; ties prefer smaller radius. Assessment is never used for selection.",
+  "scope": "Synthetic validation-only development benchmark; exclude identities used in pilot_clean_v1. Semantic labels define corruption only, never model inputs. Not a final test or area-matched experiment."
+}

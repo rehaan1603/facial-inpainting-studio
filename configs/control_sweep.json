@@ -1,0 +1,6 @@
+{
+  "radii": [0, 2, 4, 8, 12, 16, 24],
+  "feather_widths": [0, 2, 4, 8],
+  "selection": "Minimum mean tuning full-face LPIPS; ties prefer smaller radius then smaller feather width. Run only the selected combination on assessment.",
+  "scope": "Development control sweep on existing v2 cases; not area-matched or final test."
+}

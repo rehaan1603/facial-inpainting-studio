@@ -1,0 +1,13 @@
+# Reference-assisted implementation checkpoint
+
+Updated 12 September 2026. The local website supports three or four distinct reference photos, one visible face in each, through the existing SDXL inpainting and IP-Adapter FaceID Portrait models. InsightFace detects and encodes each supplied reference locally. This does not search an identity database. No reference model or adapter was trained here.
+
+The website works at 512 × 512 in reference mode and 256 × 256 with LaMa or ResShift. Mark the entire damaged region. The matching research sample supplies a damaged target, its complete mask and four associated reference images. Reference photos are kept locally under outputs/webapp_runs, together with input, masks, raw prediction, hard-composed prediction, final output and settings. No images or model weights are included in the GitHub checkpoint.
+
+Optional “Match colour at edges” applies established OpenCV Poisson harmonization. It changes generated colour/contrast within the effective mask. It falls back to hard composition for unsupported tiny or border-adjacent masks and records the reason. Both compositors preserve processed input pixels outside that mask exactly. This property comes from final composition; it does not prove correct reconstruction of hidden features.
+
+Browser evidence: four references were uploaded, an actual reconstruction appeared, and result/mask download events succeeded. research/reference_webapp_check.json records the controlled example and pixel checks. A second matching-sample run, 3359d3e95bbf4950afb87835684a15fa, also completed through the updated nonblocking WebMCP action. The action returns immediately and get_inpainting_state supplies progress, errors and the completed result URL. Earlier three- and four-reference CLI runs are preserved. These are functional checks, not an identity-fidelity benchmark.
+
+The separate reference environment and verified models remain in the external cache configured by configs/local.json. The environment lock and weight provenance receipts are in research. FaceID and InsightFace pretrained weights are restricted to noncommercial research; see DATA_AND_LICENSES.md. The GitHub code checkpoint is not a self-contained model distribution.
+
+A deterministic twelve-identity development diagnostic dataset has been prepared locally. REFERENCE_DIAGNOSTIC_PROTOCOL.md and evaluate_reference_diagnostics.py define a signed 48-candidate comparison of reference strength and compositing. Its GPU evaluation has not run at this checkpoint. OSOR comparison remains paused at six of 432 cases. All pending work remains explicitly pending in PROJECT_STATUS.md.

@@ -1,0 +1,16 @@
+{
+  "repository": "https://github.com/zsyOAOA/ResShift",
+  "commit": "bb03b7d21614cace01787e097c8a6ab6b945227d",
+  "weights_sha256": {
+    "resshift_inpainting_face_s4.pth": "bf3a1691d4ad46958f7abe847f9afce632400112d9e9cd8fb5253c33da4cec02",
+    "celeba256_vq_f4_dim3_face.pth": "770a2d8888ad51d84ceeda5f9b64ee19b2688bc1e88d1139e3a1eea0a3b9501a"
+  },
+  "strict_state_dict_load": true,
+  "diffusion_steps": 4,
+  "input_range": "RGB [-1,1]; supplied mask 1 -> unknown, -1 -> known",
+  "preprocessing": "Erase supplied-mask pixels to black before normalization; retain original observed RGB for final compositing.",
+  "source_configuration": "configs/inpaint_lama256_face.yaml",
+  "precision": "float32 modules with CUDA float16 autocast",
+  "license": "S-Lab License 1.0 (non-commercial); original license retained in cached checkout.",
+  "limits": "Official code and weights with a local inference wrapper, not full paper reproduction. Source config references FFHQ training; VAE checkpoint is named celeba256. Pretraining exposure to evaluation images remains unresolved."
+}

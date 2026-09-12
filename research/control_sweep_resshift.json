@@ -1,0 +1,20 @@
+{
+  "backbone": "resshift",
+  "selected_radius": 12,
+  "selected_feather": 4,
+  "tuning_rows": 20160,
+  "assessment_rows": 720,
+  "assessment": {
+    "full_face_lpips": 0.03329585001855675,
+    "hole_mae": 0.08013342081362175,
+    "visible_mae": 0.004219127555350295
+  },
+  "signature": {
+    "configs/control_sweep.json": "5e09f3d2e86921cdb8a4503cf05adeb4b7adeb5b3549974e152cf72febbe0d3e",
+    "scripts/control_sweep.py": "c111c03c850a8b7258a8331f6613fac73e8b7cdb4f5bd56465bb71d70fc542bf",
+    "data/manifests/celebahq_clean.csv": "c9ab26ef0311f3c26d028e248b46b59a7dc158921e6c317e8e4a745e3574a248",
+    "outputs/benchmark_v2/cases.json": "ae7833a4bbec69414b1dd5ee207ce1c52f35598f63419cb87298899c39762eb4",
+    "backbone": "resshift"
+  },
+  "limits": "Development control sweep on existing v2 cases; not area-matched or final test."
+}

@@ -1,0 +1,7 @@
+{
+  "path": "facial_inpainting_local_delivery.zip",
+  "files": 134,
+  "bytes": 7195466,
+  "sha256": "e06b052123920c7e5d2bb07ee215e2f5a6bb284eb26a8ab422411df8e34c630c",
+  "scope": "Local code, results and small refiner-checkpoint backup; no public redistribution performed."
+}

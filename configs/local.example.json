@@ -1,0 +1,8 @@
+{
+  "hq": "C:/path/to/CelebAMask-HQ",
+  "annotations": "C:/path/to/Anno",
+  "partitions": "C:/path/to/Eval/list_eval_partition.txt",
+  "lapa": "C:/path/to/LaPa",
+  "cache": "C:/path/to/local-model-cache",
+  "seed": 20260910
+}

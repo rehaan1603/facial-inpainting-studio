@@ -1,0 +1,36 @@
+{
+  "matched_input_files": 2016,
+  "cases": 288,
+  "assessment_identities": 48,
+  "selected_radii": {
+    "lama": "8",
+    "resshift": "8"
+  },
+  "resshift_minus_lama": {
+    "full_face_lpips": {
+      "mean": -0.02674344200317541,
+      "identity_bootstrap_95_interval": [
+        -0.029235134505417794,
+        -0.02438446640413733
+      ]
+    },
+    "hole_mae": {
+      "mean": -0.0391210406837571,
+      "identity_bootstrap_95_interval": [
+        -0.04282744811789599,
+        -0.03535979922737978
+      ]
+    },
+    "visible_mae": {
+      "mean": -0.0005409669228558616,
+      "identity_bootstrap_95_interval": [
+        -0.000597647757846668,
+        -0.0004811654853758936
+      ]
+    }
+  },
+  "metrics_sha256": {
+    "lama": "5c6f73c731c8c46c440d343e790b570a1db60444a217f6e7c2b11e6ff8a4d030",
+    "resshift": "9650f695933bfbf3e6cd7a485e8f5dc52a0399c30b01f1cdc1ed7890d319e373"
+  }
+}

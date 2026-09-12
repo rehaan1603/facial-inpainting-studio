@@ -1,0 +1,356 @@
+{
+  "candidate_pairs_sha256": "d65d50968c4a47cb50bed1bf515865a50a17331271300fe1cbfe5cbca695bc02",
+  "candidates_total": 496,
+  "pairs_reviewed": 42,
+  "near_duplicate_pairs": 11,
+  "different_photograph_pairs": 31,
+  "pending_review": 454,
+  "decisions": [
+    {
+      "candidate_id": 0,
+      "decision": "near_duplicate_photograph",
+      "a_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\20134.jpg",
+      "b_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\20135.jpg",
+      "basis": "Assistant visual inspection of paired contact-sheet images; photographic similarity judgment, not identity recognition."
+    },
+    {
+      "candidate_id": 1,
+      "decision": "near_duplicate_photograph",
+      "a_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\29424.jpg",
+      "b_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\29431.jpg",
+      "basis": "Assistant visual inspection of paired contact-sheet images; photographic similarity judgment, not identity recognition."
+    },
+    {
+      "candidate_id": 2,
+      "decision": "near_duplicate_photograph",
+      "a_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\2845.jpg",
+      "b_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\4178.jpg",
+      "basis": "Assistant visual inspection of paired contact-sheet images; photographic similarity judgment, not identity recognition."
+    },
+    {
+      "candidate_id": 4,
+      "decision": "near_duplicate_photograph",
+      "a_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\11585.jpg",
+      "b_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\21230.jpg",
+      "basis": "Assistant visual inspection of paired contact-sheet images; photographic similarity judgment, not identity recognition."
+    },
+    {
+      "candidate_id": 6,
+      "decision": "near_duplicate_photograph",
+      "a_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\18513.jpg",
+      "b_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\19282.jpg",
+      "basis": "Assistant visual inspection of paired contact-sheet images; photographic similarity judgment, not identity recognition."
+    },
+    {
+      "candidate_id": 7,
+      "decision": "different_photographs",
+      "a_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\21046.jpg",
+      "b_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\26908.jpg",
+      "basis": "Assistant visual inspection of paired contact-sheet images; photographic similarity judgment, not identity recognition."
+    },
+    {
+      "candidate_id": 8,
+      "decision": "near_duplicate_photograph",
+      "a_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\21847.jpg",
+      "b_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\22321.jpg",
+      "basis": "Assistant visual inspection of paired contact-sheet images; photographic similarity judgment, not identity recognition."
+    },
+    {
+      "candidate_id": 9,
+      "decision": "near_duplicate_photograph",
+      "a_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\22204.jpg",
+      "b_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\22468.jpg",
+      "basis": "Assistant visual inspection of paired contact-sheet images; photographic similarity judgment, not identity recognition."
+    },
+    {
+      "candidate_id": 10,
+      "decision": "near_duplicate_photograph",
+      "a_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\24570.jpg",
+      "b_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\25020.jpg",
+      "basis": "Assistant visual inspection of paired contact-sheet images; photographic similarity judgment, not identity recognition."
+    },
+    {
+      "candidate_id": 11,
+      "decision": "near_duplicate_photograph",
+      "a_path": "C:\\Users\\rehaa\\Downloads\\LaPa\\LaPa\\train\\images\\8653982624_16.jpg",
+      "b_path": "C:\\Users\\rehaa\\Downloads\\LaPa\\LaPa\\test\\images\\8653982464_15.jpg",
+      "basis": "Assistant visual inspection of paired contact-sheet images; photographic similarity judgment, not identity recognition."
+    },
+    {
+      "candidate_id": 16,
+      "decision": "different_photographs",
+      "a_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\4103.jpg",
+      "b_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\6898.jpg",
+      "basis": "Assistant visual inspection of paired contact-sheet images; photographic similarity judgment, not identity recognition."
+    },
+    {
+      "candidate_id": 42,
+      "decision": "near_duplicate_photograph",
+      "a_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\18561.jpg",
+      "b_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\19404.jpg",
+      "basis": "Assistant visual inspection of paired contact-sheet images; photographic similarity judgment, not identity recognition."
+    },
+    {
+      "candidate_id": 76,
+      "decision": "different_photographs",
+      "a_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\1023.jpg",
+      "b_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\25041.jpg",
+      "basis": "Assistant visual inspection of paired contact-sheet images; photographic similarity judgment, not identity recognition."
+    },
+    {
+      "candidate_id": 79,
+      "decision": "different_photographs",
+      "a_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\1057.jpg",
+      "b_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\1654.jpg",
+      "basis": "Assistant visual inspection of paired contact-sheet images; photographic similarity judgment, not identity recognition."
+    },
+    {
+      "candidate_id": 90,
+      "decision": "different_photographs",
+      "a_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\1562.jpg",
+      "b_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\18122.jpg",
+      "basis": "Assistant visual inspection of paired contact-sheet images; photographic similarity judgment, not identity recognition."
+    },
+    {
+      "candidate_id": 92,
+      "decision": "different_photographs",
+      "a_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\1654.jpg",
+      "b_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\21058.jpg",
+      "basis": "Assistant visual inspection of paired contact-sheet images; photographic similarity judgment, not identity recognition."
+    },
+    {
+      "candidate_id": 158,
+      "decision": "different_photographs",
+      "a_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\4080.jpg",
+      "b_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\12285.jpg",
+      "basis": "Assistant visual inspection of paired contact-sheet images; photographic similarity judgment, not identity recognition."
+    },
+    {
+      "candidate_id": 179,
+      "decision": "different_photographs",
+      "a_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\5041.jpg",
+      "b_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\19441.jpg",
+      "basis": "Assistant visual inspection of paired contact-sheet images; photographic similarity judgment, not identity recognition."
+    },
+    {
+      "candidate_id": 188,
+      "decision": "different_photographs",
+      "a_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\5334.jpg",
+      "b_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\7174.jpg",
+      "basis": "Assistant visual inspection of paired contact-sheet images; photographic similarity judgment, not identity recognition."
+    },
+    {
+      "candidate_id": 189,
+      "decision": "different_photographs",
+      "a_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\5334.jpg",
+      "b_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\10988.jpg",
+      "basis": "Assistant visual inspection of paired contact-sheet images; photographic similarity judgment, not identity recognition."
+    },
+    {
+      "candidate_id": 190,
+      "decision": "different_photographs",
+      "a_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\5334.jpg",
+      "b_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\20086.jpg",
+      "basis": "Assistant visual inspection of paired contact-sheet images; photographic similarity judgment, not identity recognition."
+    },
+    {
+      "candidate_id": 207,
+      "decision": "different_photographs",
+      "a_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\5766.jpg",
+      "b_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\18636.jpg",
+      "basis": "Assistant visual inspection of paired contact-sheet images; photographic similarity judgment, not identity recognition."
+    },
+    {
+      "candidate_id": 229,
+      "decision": "different_photographs",
+      "a_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\6898.jpg",
+      "b_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\15576.jpg",
+      "basis": "Assistant visual inspection of paired contact-sheet images; photographic similarity judgment, not identity recognition."
+    },
+    {
+      "candidate_id": 230,
+      "decision": "different_photographs",
+      "a_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\6898.jpg",
+      "b_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\19641.jpg",
+      "basis": "Assistant visual inspection of paired contact-sheet images; photographic similarity judgment, not identity recognition."
+    },
+    {
+      "candidate_id": 231,
+      "decision": "different_photographs",
+      "a_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\6898.jpg",
+      "b_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\20086.jpg",
+      "basis": "Assistant visual inspection of paired contact-sheet images; photographic similarity judgment, not identity recognition."
+    },
+    {
+      "candidate_id": 248,
+      "decision": "different_photographs",
+      "a_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\7776.jpg",
+      "b_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\26951.jpg",
+      "basis": "Assistant visual inspection of paired contact-sheet images; photographic similarity judgment, not identity recognition."
+    },
+    {
+      "candidate_id": 303,
+      "decision": "different_photographs",
+      "a_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\10053.jpg",
+      "b_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\12285.jpg",
+      "basis": "Assistant visual inspection of paired contact-sheet images; photographic similarity judgment, not identity recognition."
+    },
+    {
+      "candidate_id": 312,
+      "decision": "different_photographs",
+      "a_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\10371.jpg",
+      "b_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\10841.jpg",
+      "basis": "Assistant visual inspection of paired contact-sheet images; photographic similarity judgment, not identity recognition."
+    },
+    {
+      "candidate_id": 313,
+      "decision": "different_photographs",
+      "a_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\10371.jpg",
+      "b_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\21164.jpg",
+      "basis": "Assistant visual inspection of paired contact-sheet images; photographic similarity judgment, not identity recognition."
+    },
+    {
+      "candidate_id": 316,
+      "decision": "different_photographs",
+      "a_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\10436.jpg",
+      "b_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\19224.jpg",
+      "basis": "Assistant visual inspection of paired contact-sheet images; photographic similarity judgment, not identity recognition."
+    },
+    {
+      "candidate_id": 343,
+      "decision": "different_photographs",
+      "a_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\12032.jpg",
+      "b_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\22649.jpg",
+      "basis": "Assistant visual inspection of paired contact-sheet images; photographic similarity judgment, not identity recognition."
+    },
+    {
+      "candidate_id": 344,
+      "decision": "different_photographs",
+      "a_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\12032.jpg",
+      "b_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\23705.jpg",
+      "basis": "Assistant visual inspection of paired contact-sheet images; photographic similarity judgment, not identity recognition."
+    },
+    {
+      "candidate_id": 345,
+      "decision": "different_photographs",
+      "a_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\12032.jpg",
+      "b_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\26951.jpg",
+      "basis": "Assistant visual inspection of paired contact-sheet images; photographic similarity judgment, not identity recognition."
+    },
+    {
+      "candidate_id": 348,
+      "decision": "near_duplicate_photograph",
+      "a_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\12293.jpg",
+      "b_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\20019.jpg",
+      "basis": "Assistant visual inspection of paired contact-sheet images; photographic similarity judgment, not identity recognition."
+    },
+    {
+      "candidate_id": 351,
+      "decision": "different_photographs",
+      "a_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\12494.jpg",
+      "b_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\26706.jpg",
+      "basis": "Assistant visual inspection of paired contact-sheet images; photographic similarity judgment, not identity recognition."
+    },
+    {
+      "candidate_id": 374,
+      "decision": "different_photographs",
+      "a_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\14589.jpg",
+      "b_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\22511.jpg",
+      "basis": "Assistant visual inspection of paired contact-sheet images; photographic similarity judgment, not identity recognition."
+    },
+    {
+      "candidate_id": 422,
+      "decision": "different_photographs",
+      "a_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\18302.jpg",
+      "b_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\21225.jpg",
+      "basis": "Assistant visual inspection of paired contact-sheet images; photographic similarity judgment, not identity recognition."
+    },
+    {
+      "candidate_id": 423,
+      "decision": "different_photographs",
+      "a_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\18302.jpg",
+      "b_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\25528.jpg",
+      "basis": "Assistant visual inspection of paired contact-sheet images; photographic similarity judgment, not identity recognition."
+    },
+    {
+      "candidate_id": 434,
+      "decision": "different_photographs",
+      "a_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\19532.jpg",
+      "b_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\26401.jpg",
+      "basis": "Assistant visual inspection of paired contact-sheet images; photographic similarity judgment, not identity recognition."
+    },
+    {
+      "candidate_id": 485,
+      "decision": "different_photographs",
+      "a_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\26093.jpg",
+      "b_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\27082.jpg",
+      "basis": "Assistant visual inspection of paired contact-sheet images; photographic similarity judgment, not identity recognition."
+    },
+    {
+      "candidate_id": 487,
+      "decision": "different_photographs",
+      "a_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\26747.jpg",
+      "b_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\28816.jpg",
+      "basis": "Assistant visual inspection of paired contact-sheet images; photographic similarity judgment, not identity recognition."
+    },
+    {
+      "candidate_id": 492,
+      "decision": "different_photographs",
+      "a_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\28512.jpg",
+      "b_path": "C:\\Users\\rehaa\\Downloads\\LaPa\\LaPa\\test\\images\\468074542_0.jpg",
+      "basis": "Assistant visual inspection of paired contact-sheet images; photographic similarity judgment, not identity recognition."
+    }
+  ],
+  "excluded_paths": [
+    "C:\\Users\\rehaa\\Downloads\\LaPa\\LaPa\\test\\images\\8653982464_15.jpg",
+    "C:\\Users\\rehaa\\Downloads\\LaPa\\LaPa\\train\\images\\8653982624_16.jpg",
+    "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\11585.jpg",
+    "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\12293.jpg",
+    "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\18513.jpg",
+    "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\18561.jpg",
+    "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\19282.jpg",
+    "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\19404.jpg",
+    "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\20019.jpg",
+    "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\20134.jpg",
+    "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\20135.jpg",
+    "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\21230.jpg",
+    "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\21847.jpg",
+    "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\22204.jpg",
+    "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\22321.jpg",
+    "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\22468.jpg",
+    "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\24570.jpg",
+    "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\25020.jpg",
+    "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\2845.jpg",
+    "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\29424.jpg",
+    "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\29431.jpg",
+    "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\4178.jpg"
+  ],
+  "manifests": {
+    "celebahq": {
+      "before": 29946,
+      "after": 29926,
+      "excluded": 20,
+      "sha256": "8706a1193fba1f425bae7158442024799e51ad67e32185b779a171ed2fe43e7b",
+      "path": "data\\manifests\\celebahq_reviewed_v1.csv"
+    },
+    "lapa": {
+      "before": 21998,
+      "after": 21996,
+      "excluded": 2,
+      "sha256": "00c814163c51d80c1d97a288587dd73b4a2df4e8ab51f86f0c066673ecf35ecf",
+      "path": "data\\manifests\\lapa_reviewed_v1.csv"
+    }
+  },
+  "experiment_case_exclusion_overlap": {
+    "pilot_clean_v1": [],
+    "benchmark_v2": [],
+    "area_matched_v3_margin12": []
+  },
+  "limits": [
+    "Visual triage is provisional; independent review is recommended before publication.",
+    "Unreviewed candidates are retained, not assumed safe or duplicate.",
+    "Hash screening cannot establish exhaustive absence of transformed duplicates.",
+    "Original manifests and source images are unchanged.",
+    "Future runs must explicitly select reviewed manifests; historical scripts still reference their original clean manifests."
+  ]
+}

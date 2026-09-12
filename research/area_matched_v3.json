@@ -1,0 +1,79 @@
+{
+  "config": {
+    "seed": 20260912,
+    "resolution": 256,
+    "missing_pixels": [
+      1966,
+      3932,
+      6554
+    ],
+    "error_fraction_of_missing": 0.2,
+    "locations": [
+      "eye_center",
+      "mouth_center",
+      "upper_image"
+    ],
+    "conditions": [
+      "accurate",
+      "under",
+      "over",
+      "mixed"
+    ],
+    "canonical_center": [
+      128,
+      128
+    ],
+    "ellipse_aspect_ratio": 1.5,
+    "upper_image_center_xy": [
+      128,
+      64
+    ],
+    "required_margin_pixels": 12,
+    "placement_policy": "Translate one canonical true mask and its erroneous masks to each location without clipping. Reject the entire identity/area group if any translated mask leaves the image. Never silently clamp a semantic center.",
+    "scope": "Synthetic development geometry diagnostic using existing validation identities. Eye and mouth labels locate centers only; upper_image is an image-coordinate control and need not be background. No real-occluder or identity-fidelity claim."
+  },
+  "config_sha256": "19eadd35be384363f65fc9618e50c11d68a7c4bedc19191757054bd68d6ce4e8",
+  "source_cases_sha256": "ae7833a4bbec69414b1dd5ee207ce1c52f35598f63419cb87298899c39762eb4",
+  "generated_cases": 855,
+  "identity_area_groups": 285,
+  "retained_identities": {
+    "tuning": 47,
+    "assessment": 48
+  },
+  "rejected_groups": [
+    {
+      "hq_id": 980,
+      "identity": "887",
+      "partition": "tuning",
+      "missing_pixels": 1966,
+      "reason": "missing center: eye_center"
+    },
+    {
+      "hq_id": 980,
+      "identity": "887",
+      "partition": "tuning",
+      "missing_pixels": 3932,
+      "reason": "missing center: eye_center"
+    },
+    {
+      "hq_id": 980,
+      "identity": "887",
+      "partition": "tuning",
+      "missing_pixels": 6554,
+      "reason": "missing center: eye_center"
+    }
+  ],
+  "by_area": {
+    "1966": 285,
+    "3932": 285,
+    "6554": 285
+  },
+  "texture_policy": "Translate the canonical texture with the mask; occluder RGB values match across locations within each identity/area group.",
+  "limits": [
+    "Dataset construction report; model evaluation is recorded separately.",
+    "Synthetic textures only.",
+    "Center placement is not proof of complete semantic coverage.",
+    "Group rejection can bias retained cases; preserve rejection ledger.",
+    "Same development identities; not a fresh held-out evaluation."
+  ]
+}

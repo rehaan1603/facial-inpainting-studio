@@ -1,0 +1,19 @@
+{
+  "all_checks_passed": true,
+  "matched_groups": 285,
+  "cases": 855,
+  "mask_files_verified": 4275,
+  "identities": {
+    "tuning": 47,
+    "assessment": 48
+  },
+  "checks": [
+    "Exact true/FP/FN counts",
+    "Masks equal under inverse translation",
+    "Occluder RGB equal across locations",
+    "File hashes, shapes and binary values",
+    "Disjoint development partitions",
+    "At least 12 pixels of margin for all supplied masks; correction dilation cannot clip"
+  ],
+  "cases_sha256": "1f7ee5beb631e010530d03840a6667a32a9183b88f929e68d4bb6b36b6481171"
+}

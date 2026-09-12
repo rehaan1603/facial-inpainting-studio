@@ -1,0 +1,199 @@
+{
+  "annotation_sha256": "1e39a8726eef0998072039227d0bf5c061e87f36eb11a2df00f030be5094eb6c",
+  "selection": "Hash order objects-v1; two non-crowd polygon assets per predeclared category; CC BY 2.0 per COCO metadata; no training use.",
+  "limits": "Synthetic composites of photographed objects, not real occluded face captures. Source photographer attribution must be completed before redistributing example images. Backbone exposure unknown.",
+  "assets": [
+    {
+      "asset_id": 281432,
+      "category": "umbrella",
+      "image_id": 84477,
+      "path": "C:\\Users\\rehaa\\.cache\\facial-inpainting\\object_assets\\object_281432.png",
+      "image_url": "http://images.cocodataset.org/val2017/000000084477.jpg",
+      "flickr_source": "http://farm9.staticflickr.com/8454/7897786544_4e902801e3_z.jpg",
+      "license": {
+        "url": "http://creativecommons.org/licenses/by/2.0/",
+        "id": 4,
+        "name": "Attribution License"
+      },
+      "original_sha256": "182bab08d6173f7d044f291b2493833dcd7ce61f54bd83e0ecfc2e58b22e33b2",
+      "asset_sha256": "2e5de8032ae2330a4f48b261ae77e93610df428abe5a3b5b90e85d37d894c71b",
+      "modification": "COCO polygon rasterized with Pillow; cropped RGBA, no generated pixels."
+    },
+    {
+      "asset_id": 285531,
+      "category": "umbrella",
+      "image_id": 319369,
+      "path": "C:\\Users\\rehaa\\.cache\\facial-inpainting\\object_assets\\object_285531.png",
+      "image_url": "http://images.cocodataset.org/val2017/000000319369.jpg",
+      "flickr_source": "http://farm6.staticflickr.com/5193/5802453698_0cc91183ef_z.jpg",
+      "license": {
+        "url": "http://creativecommons.org/licenses/by/2.0/",
+        "id": 4,
+        "name": "Attribution License"
+      },
+      "original_sha256": "bf8b4c6c9d2028f4209779a1acef68125854fbdfac1d3d609ac0a752d23d030e",
+      "asset_sha256": "6b56d02fd31f2a54d0c9d61ee11ec477388e8a0c0eeed2f37edf0ac62871b3f1",
+      "modification": "COCO polygon rasterized with Pillow; cropped RGBA, no generated pixels."
+    },
+    {
+      "asset_id": 86290,
+      "category": "bottle",
+      "image_id": 213255,
+      "path": "C:\\Users\\rehaa\\.cache\\facial-inpainting\\object_assets\\object_86290.png",
+      "image_url": "http://images.cocodataset.org/val2017/000000213255.jpg",
+      "flickr_source": "http://farm3.staticflickr.com/2021/2521020235_f252d7108f_z.jpg",
+      "license": {
+        "url": "http://creativecommons.org/licenses/by/2.0/",
+        "id": 4,
+        "name": "Attribution License"
+      },
+      "original_sha256": "536b78fa08534eb0778e58838065ba773fe8751dd87c13bf070f726affaab6e0",
+      "asset_sha256": "0eef949d3e732f103bea33fee14958f0842102e692b036888e9706d93d83a58f",
+      "modification": "COCO polygon rasterized with Pillow; cropped RGBA, no generated pixels."
+    },
+    {
+      "asset_id": 83672,
+      "category": "bottle",
+      "image_id": 79651,
+      "path": "C:\\Users\\rehaa\\.cache\\facial-inpainting\\object_assets\\object_83672.png",
+      "image_url": "http://images.cocodataset.org/val2017/000000079651.jpg",
+      "flickr_source": "http://farm4.staticflickr.com/3720/9659844494_a70f5d61c0_z.jpg",
+      "license": {
+        "url": "http://creativecommons.org/licenses/by/2.0/",
+        "id": 4,
+        "name": "Attribution License"
+      },
+      "original_sha256": "05107da6f72e8e495bbfaa0e8d638433cb5fd9c35d43bf193ff2b12db0c684bb",
+      "asset_sha256": "ae9a389d63d8058136dea59517a8e55741cc6d82c1bf86785b9d43122c33156b",
+      "modification": "COCO polygon rasterized with Pillow; cropped RGBA, no generated pixels."
+    },
+    {
+      "asset_id": 1880722,
+      "category": "cup",
+      "image_id": 541634,
+      "path": "C:\\Users\\rehaa\\.cache\\facial-inpainting\\object_assets\\object_1880722.png",
+      "image_url": "http://images.cocodataset.org/val2017/000000541634.jpg",
+      "flickr_source": "http://farm6.staticflickr.com/5529/9471702865_6cf3a45fde_z.jpg",
+      "license": {
+        "url": "http://creativecommons.org/licenses/by/2.0/",
+        "id": 4,
+        "name": "Attribution License"
+      },
+      "original_sha256": "238f614674164a4c3d3d2e57980a2aa32788f03fc269daf80123ca9e2a1ed6d4",
+      "asset_sha256": "d718c3638d3b4f3a14be5357baef60612f6b5bddae06ba39479c109573f6f85b",
+      "modification": "COCO polygon rasterized with Pillow; cropped RGBA, no generated pixels."
+    },
+    {
+      "asset_id": 1502854,
+      "category": "cup",
+      "image_id": 74733,
+      "path": "C:\\Users\\rehaa\\.cache\\facial-inpainting\\object_assets\\object_1502854.png",
+      "image_url": "http://images.cocodataset.org/val2017/000000074733.jpg",
+      "flickr_source": "http://farm6.staticflickr.com/5461/9330037796_1700b955f3_z.jpg",
+      "license": {
+        "url": "http://creativecommons.org/licenses/by/2.0/",
+        "id": 4,
+        "name": "Attribution License"
+      },
+      "original_sha256": "d99c93fb6d22a5d51bbb6e09ca5f10c11bdcf90a711abf6cc83188df52cc456a",
+      "asset_sha256": "1295a7a3f13128aae5d1dfbc6d382ba6c266545e8b6fbbe8ed5f347b4162acf9",
+      "modification": "COCO polygon rasterized with Pillow; cropped RGBA, no generated pixels."
+    },
+    {
+      "asset_id": 322768,
+      "category": "cell phone",
+      "image_id": 343706,
+      "path": "C:\\Users\\rehaa\\.cache\\facial-inpainting\\object_assets\\object_322768.png",
+      "image_url": "http://images.cocodataset.org/val2017/000000343706.jpg",
+      "flickr_source": "http://farm9.staticflickr.com/8178/8000388977_c06c12e5e6_z.jpg",
+      "license": {
+        "url": "http://creativecommons.org/licenses/by/2.0/",
+        "id": 4,
+        "name": "Attribution License"
+      },
+      "original_sha256": "4207680ffcb21507f686d815a1119b4f7d1d70b1a766addbd0d0f15cc31cc493",
+      "asset_sha256": "f3098ab00179b1b7eba18e8987a42a2c1eba59e87f6813f89c1344f290be7e31",
+      "modification": "COCO polygon rasterized with Pillow; cropped RGBA, no generated pixels."
+    },
+    {
+      "asset_id": 321838,
+      "category": "cell phone",
+      "image_id": 446207,
+      "path": "C:\\Users\\rehaa\\.cache\\facial-inpainting\\object_assets\\object_321838.png",
+      "image_url": "http://images.cocodataset.org/val2017/000000446207.jpg",
+      "flickr_source": "http://farm4.staticflickr.com/3121/3160251864_87bc5a4273_z.jpg",
+      "license": {
+        "url": "http://creativecommons.org/licenses/by/2.0/",
+        "id": 4,
+        "name": "Attribution License"
+      },
+      "original_sha256": "ddef57e0ea54ff2eca3729558f951451037e183eadaed9c1913264a389e925b1",
+      "asset_sha256": "0974e61b3385387f82f7e62271f3a6b429d2dce03af46ab6bddc05d840162cc0",
+      "modification": "COCO polygon rasterized with Pillow; cropped RGBA, no generated pixels."
+    },
+    {
+      "asset_id": 1137084,
+      "category": "book",
+      "image_id": 194724,
+      "path": "C:\\Users\\rehaa\\.cache\\facial-inpainting\\object_assets\\object_1137084.png",
+      "image_url": "http://images.cocodataset.org/val2017/000000194724.jpg",
+      "flickr_source": "http://farm7.staticflickr.com/6155/6165978029_81ac06fbe3_z.jpg",
+      "license": {
+        "url": "http://creativecommons.org/licenses/by/2.0/",
+        "id": 4,
+        "name": "Attribution License"
+      },
+      "original_sha256": "ef3c018f96fdab2b7bfb28ffd8b952535c8c1084d2a39eb5133c14e585c137c4",
+      "asset_sha256": "4f2a3752456d995c35644e12e86945edd2234eaacf1ab50de84521369c0838ef",
+      "modification": "COCO polygon rasterized with Pillow; cropped RGBA, no generated pixels."
+    },
+    {
+      "asset_id": 1141632,
+      "category": "book",
+      "image_id": 403353,
+      "path": "C:\\Users\\rehaa\\.cache\\facial-inpainting\\object_assets\\object_1141632.png",
+      "image_url": "http://images.cocodataset.org/val2017/000000403353.jpg",
+      "flickr_source": "http://farm9.staticflickr.com/8486/8245255095_5669dbf878_z.jpg",
+      "license": {
+        "url": "http://creativecommons.org/licenses/by/2.0/",
+        "id": 4,
+        "name": "Attribution License"
+      },
+      "original_sha256": "6c775b14fadf4e5ca3fc236117ce0aece4dc1503c8264e54b32578ab36592b18",
+      "asset_sha256": "19da1260151f235a50aec7dc63d7d87119238849657f03931d92f57634df71c4",
+      "modification": "COCO polygon rasterized with Pillow; cropped RGBA, no generated pixels."
+    },
+    {
+      "asset_id": 1162398,
+      "category": "teddy bear",
+      "image_id": 249129,
+      "path": "C:\\Users\\rehaa\\.cache\\facial-inpainting\\object_assets\\object_1162398.png",
+      "image_url": "http://images.cocodataset.org/val2017/000000249129.jpg",
+      "flickr_source": "http://farm3.staticflickr.com/2400/2113224886_a95ec64e34_z.jpg",
+      "license": {
+        "url": "http://creativecommons.org/licenses/by/2.0/",
+        "id": 4,
+        "name": "Attribution License"
+      },
+      "original_sha256": "ee3e96944723de59d8741e68c65e0395fec5841a03286563bf005f43a131a786",
+      "asset_sha256": "4f082f243354b9ab2675bd439b4bfd1acb0330a0c0a92e26737e18fa180be768",
+      "modification": "COCO polygon rasterized with Pillow; cropped RGBA, no generated pixels."
+    },
+    {
+      "asset_id": 1163341,
+      "category": "teddy bear",
+      "image_id": 42889,
+      "path": "C:\\Users\\rehaa\\.cache\\facial-inpainting\\object_assets\\object_1163341.png",
+      "image_url": "http://images.cocodataset.org/val2017/000000042889.jpg",
+      "flickr_source": "http://farm1.staticflickr.com/32/67531548_78ffc9828d_z.jpg",
+      "license": {
+        "url": "http://creativecommons.org/licenses/by/2.0/",
+        "id": 4,
+        "name": "Attribution License"
+      },
+      "original_sha256": "8a5181cdf9425417913d378a6f64833e606586202e9297ad308c4c95fc38e025",
+      "asset_sha256": "429bcea8d6ad55858c02bac67dc069dcbd2537c3c38046578f60c28cee0b1591",
+      "modification": "COCO polygon rasterized with Pillow; cropped RGBA, no generated pixels."
+    }
+  ]
+}

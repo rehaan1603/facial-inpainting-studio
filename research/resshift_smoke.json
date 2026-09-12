@@ -1,0 +1,54 @@
+{
+  "records": [
+    {
+      "hq_id": "16194",
+      "seconds": 1.0422797000064747,
+      "hole_mae": 0.03350001201033592,
+      "hole_psnr": 25.60181887070524,
+      "visible_mae": 0.0,
+      "missed_mae": null,
+      "overcovered_mae": null,
+      "true_fraction": 0.08660888671875,
+      "mask_fp_fraction": 0.0,
+      "mask_fn_fraction": 0.0
+    },
+    {
+      "hq_id": "13068",
+      "seconds": 0.22026509999705013,
+      "hole_mae": 0.05335628241300583,
+      "hole_psnr": 21.514109224421915,
+      "visible_mae": 0.0,
+      "missed_mae": null,
+      "overcovered_mae": null,
+      "true_fraction": 0.10638427734375,
+      "mask_fp_fraction": 0.0,
+      "mask_fn_fraction": 0.0
+    },
+    {
+      "hq_id": "4322",
+      "seconds": 0.22555399998964276,
+      "hole_mae": 0.05149049311876297,
+      "hole_psnr": 21.238472996287694,
+      "visible_mae": 0.0,
+      "missed_mae": null,
+      "overcovered_mae": null,
+      "true_fraction": 0.1676788330078125,
+      "mask_fp_fraction": 0.0,
+      "mask_fn_fraction": 0.0
+    },
+    {
+      "hq_id": "7200",
+      "seconds": 0.22211970000353176,
+      "hole_mae": 0.05147285759449005,
+      "hole_psnr": 20.705075388563003,
+      "visible_mae": 0.0,
+      "missed_mae": null,
+      "overcovered_mae": null,
+      "true_fraction": 0.148895263671875,
+      "mask_fp_fraction": 0.0,
+      "mask_fn_fraction": 0.0
+    }
+  ],
+  "peak_allocated_MiB": 1006.35986328125,
+  "scope": "Four-image compatibility smoke test on previously used validation cases; not a model ranking or official reproduction."
+}

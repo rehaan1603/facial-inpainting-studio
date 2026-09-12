@@ -1,0 +1,12 @@
+{
+  "manifest": "data/manifests/celebahq_reviewed_v2.csv",
+  "resolution": 128,
+  "width": 16,
+  "batch_size": 16,
+  "steps": 1500,
+  "learning_rate": 0.0003,
+  "seeds": [17, 29, 43],
+  "variants": {"generic": 1.0, "preservation_weighted": 4.0},
+  "validation_interval": 250,
+  "scope": "Matched-budget synthetic mask-refinement study. Weighted BCE is a standard baseline variant, not an established novel contribution."
+}

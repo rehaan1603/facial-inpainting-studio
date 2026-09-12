@@ -1,0 +1,59 @@
+test_counts_and_translation (test_area_matched_v3.AreaMatchedTests.test_counts_and_translation) ... ok
+test_hidden_pixel_independence (test_area_matched_v3.AreaMatchedTests.test_hidden_pixel_independence) ... ok
+test_matched_texture (test_area_matched_v3.AreaMatchedTests.test_matched_texture) ... ok
+test_conditions_and_translation (test_benchmark_v2.BenchmarkTests.test_conditions_and_translation) ... ok
+test_independent_corruption (test_benchmark_v2.BenchmarkTests.test_independent_corruption) ... ok
+test_feather_preserves_outside_and_limits (test_control_sweep.Controls.test_feather_preserves_outside_and_limits) ... ok
+test_selection_ignores_assessment (test_control_sweep.Controls.test_selection_ignores_assessment) ... ok
+test_endpoints_and_outside_preservation (test_extension.SoftCompositing.test_endpoints_and_outside_preservation) ... ok
+test_exact_against_bruteforce (test_near_duplicates.HashSearch.test_exact_against_bruteforce) ... ok
+test_binary_rgb_annotation (test_protocol.ProtocolTests.test_binary_rgb_annotation) ... ok
+test_metrics_separate_regions (test_protocol.ProtocolTests.test_metrics_separate_regions) ... ok
+test_morphology_polarity (test_protocol.ProtocolTests.test_morphology_polarity) ... ok
+test_no_hidden_pixel_leakage (test_protocol.ProtocolTests.test_no_hidden_pixel_leakage) ... ok
+test_each_image_border_has_explicit_fallback (test_reference_blending.ContractAndFallbacks.test_each_image_border_has_explicit_fallback) ... ok
+test_empty_mask_returns_exact_observed_and_explicit_reason (test_reference_blending.ContractAndFallbacks.test_empty_mask_returns_exact_observed_and_explicit_reason) ... ok
+test_hard_composition_and_inputs_unchanged (test_reference_blending.ContractAndFallbacks.test_hard_composition_and_inputs_unchanged) ... ok
+test_invalid_contract_is_rejected (test_reference_blending.ContractAndFallbacks.test_invalid_contract_is_rejected) ... ok
+test_near_border_reports_missing_computational_collar (test_reference_blending.ContractAndFallbacks.test_near_border_reports_missing_computational_collar) ... ok
+test_tiny_or_thin_masks_report_hard_fallback (test_reference_blending.ContractAndFallbacks.test_tiny_or_thin_masks_report_hard_fallback) ... ok
+test_disconnected_mask_and_known_internal_hole_are_exact_outside (test_reference_blending.PoissonBehaviour.test_disconnected_mask_and_known_internal_hole_are_exact_outside) ... skipped 'OpenCV is absent; run in reference_env to verify actual Poisson blending.'
+test_opencv_failure_is_not_silently_replaced (test_reference_blending.PoissonBehaviour.test_opencv_failure_is_not_silently_replaced) ... skipped 'OpenCV is absent; run in reference_env to verify actual Poisson blending.'
+test_synthetic_colour_seam_reduces_without_target_or_outside_changes (test_reference_blending.PoissonBehaviour.test_synthetic_colour_seam_reduces_without_target_or_outside_changes) ... skipped 'OpenCV is absent; run in reference_env to verify actual Poisson blending.'
+test_cpu_forward_backward (test_refiner.RefinerTests.test_cpu_forward_backward) ... ok
+test_empty_regions_finite_gradients (test_refiner.RefinerTests.test_empty_regions_finite_gradients) ... ok
+test_loss_penalizes_false_positive_more (test_refiner.RefinerTests.test_loss_penalizes_false_positive_more) ... ok
+test_training_hidden_target_independence (test_refiner.RefinerTests.test_training_hidden_target_independence) ... ok
+test_cross_origin_and_host_rejected (test_webapp.WebBoundaryTests.test_cross_origin_and_host_rejected) ... 127.0.0.1 - - [12/Sep/2026 10:18:24] "POST /api/inpaint HTTP/1.1" 403 -
+127.0.0.1 - - [12/Sep/2026 10:18:24] "POST /api/inpaint HTTP/1.1" 403 -
+ok
+test_invalid_blending_rejected (test_webapp.WebBoundaryTests.test_invalid_blending_rejected) ... 127.0.0.1 - - [12/Sep/2026 10:18:24] "POST /api/inpaint HTTP/1.1" 400 -
+ok
+test_invalid_image_and_model_rejected (test_webapp.WebBoundaryTests.test_invalid_image_and_model_rejected) ... 127.0.0.1 - - [12/Sep/2026 10:18:24] "POST /api/inpaint HTTP/1.1" 400 -
+127.0.0.1 - - [12/Sep/2026 10:18:24] "POST /api/inpaint HTTP/1.1" 400 -
+ok
+test_job_admission_and_busy_response (test_webapp.WebBoundaryTests.test_job_admission_and_busy_response) ... 127.0.0.1 - - [12/Sep/2026 10:18:24] "POST /api/inpaint HTTP/1.1" 202 -
+127.0.0.1 - - [12/Sep/2026 10:18:24] "POST /api/inpaint HTTP/1.1" 409 -
+ok
+test_mismatched_and_empty_masks_rejected (test_webapp.WebBoundaryTests.test_mismatched_and_empty_masks_rejected) ... 127.0.0.1 - - [12/Sep/2026 10:18:24] "POST /api/inpaint HTTP/1.1" 400 -
+127.0.0.1 - - [12/Sep/2026 10:18:24] "POST /api/inpaint HTTP/1.1" 400 -
+ok
+test_non_object_json_is_client_error (test_webapp.WebBoundaryTests.test_non_object_json_is_client_error) ... 127.0.0.1 - - [12/Sep/2026 10:18:24] "POST /api/inpaint HTTP/1.1" 400 -
+ok
+test_oversized_body_rejected_before_read (test_webapp.WebBoundaryTests.test_oversized_body_rejected_before_read) ... 127.0.0.1 - - [12/Sep/2026 10:18:24] "POST /api/inpaint HTTP/1.1" 413 -
+ok
+test_path_cannot_read_project_files (test_webapp.WebBoundaryTests.test_path_cannot_read_project_files) ... 127.0.0.1 - - [12/Sep/2026 10:18:24] "GET /../configs/local.json HTTP/1.1" 404 -
+127.0.0.1 - - [12/Sep/2026 10:18:24] "GET /runs/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/../../configs/local.json HTTP/1.1" 404 -
+ok
+test_reference_count_and_mask_mode (test_webapp.WebBoundaryTests.test_reference_count_and_mask_mode) ... 127.0.0.1 - - [12/Sep/2026 10:18:24] "POST /api/inpaint HTTP/1.1" 400 -
+127.0.0.1 - - [12/Sep/2026 10:18:24] "POST /api/inpaint HTTP/1.1" 400 -
+127.0.0.1 - - [12/Sep/2026 10:18:24] "POST /api/inpaint HTTP/1.1" 400 -
+127.0.0.1 - - [12/Sep/2026 10:18:24] "POST /api/inpaint HTTP/1.1" 202 -
+ok
+test_token_required (test_webapp.WebBoundaryTests.test_token_required) ... 127.0.0.1 - - [12/Sep/2026 10:18:24] "POST /api/inpaint HTTP/1.1" 403 -
+ok
+
+----------------------------------------------------------------------
+Ran 36 tests in 3.427s
+
+OK (skipped=3)

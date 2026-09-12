@@ -1,0 +1,13 @@
+{
+  "source_commit": "d5b68e822996d61aae6ba612e5e9b5a14f576879",
+  "fp16_aliases": [
+    "C:\\Users\\rehaa\\.cache\\facial-inpainting\\osor_models\\sdxl\\text_encoder\\model.safetensors",
+    "C:\\Users\\rehaa\\.cache\\facial-inpainting\\osor_models\\sdxl\\text_encoder_2\\model.safetensors",
+    "C:\\Users\\rehaa\\.cache\\facial-inpainting\\osor_models\\sdxl\\unet\\diffusion_pytorch_model.safetensors",
+    "C:\\Users\\rehaa\\.cache\\facial-inpainting\\osor_models\\sdxl\\vae\\diffusion_pytorch_model.safetensors"
+  ],
+  "prompt": "Remove the instance of object",
+  "prompt_sha256": "07d4bfa37667e71d0db417cf471e8b717b69678d97900aeff9061412ed70c30b",
+  "prompt_code_sha256": "e47ff82160164b4d1e63d3d9e8162d05593f226e0b63b0d5f5fa4a9705383856",
+  "note": "Official prompt encoder code; verified fp16 base weight variants exposed under standard filenames via hard links. Generator inference uses bfloat16, matching author inference dtype, after fp16 base loading."
+}

@@ -1,0 +1,10 @@
+{
+  "repository": "h94/IP-Adapter-FaceID",
+  "revision": "43907e6f44d079bf1a9102d9a6e56aef7a219bae",
+  "file": "ip-adapter-faceid-portrait_sdxl.bin",
+  "bytes": 749822515,
+  "sha256": "5631ce7824cdafd2db37c5e85b985730a95ff59c5b4fc80c2b79b0bee5711512",
+  "local_path": "C:\\Users\\rehaa\\.cache\\facial-inpainting\\reference_models\\ip-adapter-faceid-portrait_sdxl.bin",
+  "terms": "Author restricts FaceID models to noncommercial research; do not redistribute weights in the source archive.",
+  "method": "Existing multi-reference FaceID Portrait adapter, not a novel project contribution."
+}

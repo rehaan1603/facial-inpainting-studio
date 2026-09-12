@@ -1,0 +1,7 @@
+{
+  "decoded_hq_masks": 372767,
+  "decoded_lapa_labels": 22168,
+  "mask_errors": [],
+  "landmark_syntax_errors": [],
+  "limits": "File decoding, mask values and landmark syntax checked; annotation accuracy and landmark bounds not evaluated."
+}

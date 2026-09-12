@@ -1,0 +1,29 @@
+{
+  "images_screened": 51944,
+  "hamming_radius": 6,
+  "candidate_pairs": 496,
+  "decoded_rgb_equal_pairs": 0,
+  "candidate_categories": {
+    "celebahq:test | celebahq:train": 234,
+    "celebahq:train | celebahq:val": 210,
+    "lapa:test | lapa:train": 1,
+    "celebahq:test | celebahq:val": 37,
+    "celebahq:train | lapa:test": 3,
+    "celebahq:train | lapa:train": 7,
+    "celebahq:train | lapa:val": 1,
+    "celebahq:val | lapa:test": 1,
+    "lapa:train | lapa:val": 2
+  },
+  "manifest_hashes": {
+    "celebahq": "c9ab26ef0311f3c26d028e248b46b59a7dc158921e6c317e8e4a745e3574a248",
+    "lapa": "f7b769a01995c9d47bd377a8e58fffbba47df761798980d3095d9f444a4a09b1"
+  },
+  "limits": [
+    "Perceptual hash candidates require verification; similar faces can collide.",
+    "No identity recognition or same-person matching performed.",
+    "Screening may miss crops, flips, color changes and other transformed duplicates.",
+    "Within-dataset within-split near duplicates are not included in candidate output.",
+    "No source files or working manifests were changed.",
+    "Reading test images for integrity screening is not model evaluation."
+  ]
+}

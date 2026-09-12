@@ -1,0 +1,14 @@
+{
+  "seed": 20260912,
+  "resolution": 256,
+  "missing_pixels": [1966, 3932, 6554],
+  "error_fraction_of_missing": 0.2,
+  "locations": ["eye_center", "mouth_center", "upper_image"],
+  "conditions": ["accurate", "under", "over", "mixed"],
+  "canonical_center": [128, 128],
+  "ellipse_aspect_ratio": 1.5,
+  "upper_image_center_xy": [128, 64],
+  "required_margin_pixels": 12,
+  "placement_policy": "Translate one canonical true mask and its erroneous masks to each location without clipping. Reject the entire identity/area group if any translated mask leaves the image. Never silently clamp a semantic center.",
+  "scope": "Synthetic development geometry diagnostic using existing validation identities. Eye and mouth labels locate centers only; upper_image is an image-coordinate control and need not be background. No real-occluder or identity-fidelity claim."
+}

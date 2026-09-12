@@ -1,0 +1,96 @@
+{
+  "_id": "6a3c9fcb66f32f2d5c6fb1aa",
+  "id": "QinmingZhou/OSOR",
+  "private": false,
+  "library_name": "diffusers",
+  "tags": [
+    "diffusers",
+    "lora",
+    "peft",
+    "object-removal",
+    "image-inpainting",
+    "diffusion",
+    "osor",
+    "arxiv:2606.28094",
+    "license:other",
+    "region:us"
+  ],
+  "downloads": 0,
+  "likes": 3,
+  "modelId": "QinmingZhou/OSOR",
+  "author": "QinmingZhou",
+  "sha": "9288156766b1df44e5f50fb697876a6f2fd8c062",
+  "lastModified": "2026-07-28T11:32:16.000Z",
+  "gated": false,
+  "disabled": false,
+  "model-index": null,
+  "config": {},
+  "cardData": {
+    "license": "other",
+    "license_name": "mixed-model-licenses",
+    "library_name": "diffusers",
+    "tags": [
+      "lora",
+      "peft",
+      "object-removal",
+      "image-inpainting",
+      "diffusion",
+      "osor"
+    ]
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes",
+      "blobId": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+      "size": 1519
+    },
+    {
+      "rfilename": "README.md",
+      "blobId": "c80edd62978fb0ae14117f714e14436c11021256",
+      "size": 4298
+    },
+    {
+      "rfilename": "osor-fluxfill/weights/fluxfill_phase1.pth",
+      "blobId": "b72e6443f1c31b61ec765021d620a9d2edb13aea",
+      "size": 598679636,
+      "lfs": {
+        "sha256": "3574454495a7230f34be0242aaa199879bb2ed33ae686868054584cd9c4b8878",
+        "size": 598679636,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "osor-fluxfill/weights/fluxfill_phase2.pth",
+      "blobId": "ee87cb600052e6c113995b7dcfb798cfebec2762",
+      "size": 598728788,
+      "lfs": {
+        "sha256": "de3d70b35b48ca1529954474e315a3c3b3b6fb22318bfbc1853b3a61d223b307",
+        "size": 598728788,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "osor-sdxlinpainting/weights/sdxlinpainting_phase1.pth",
+      "blobId": "2fb0e9e97570f9c98f388e50724b6f90b8367821",
+      "size": 3112285286,
+      "lfs": {
+        "sha256": "b02905174a98a4fa770eaeb6aa2ec0b30df3230ba1569f511b09c96a3cc3ec21",
+        "size": 3112285286,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "osor-sdxlinpainting/weights/sdxlinpainting_phase2.pth",
+      "blobId": "d025ce9069c0853a1611d0c3ea90030ed95b8d80",
+      "size": 3112296806,
+      "lfs": {
+        "sha256": "4f6abee0f152919fa8faca1895820ee531adb2b42b5de25db2e9a311aa47face",
+        "size": 3112296806,
+        "pointerSize": 135
+      }
+    }
+  ],
+  "spaces": [],
+  "createdAt": "2026-06-25T03:26:03.000Z",
+  "usedStorage": 7421990516
+}

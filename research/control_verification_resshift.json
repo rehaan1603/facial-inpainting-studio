@@ -1,0 +1,15 @@
+{
+  "backbone": "resshift",
+  "tuning_identities": 48,
+  "assessment_identities": 48,
+  "tuning_rows": 20160,
+  "assessment_rows": 720,
+  "unchanged_controls_checked": 2880,
+  "max_absolute_reproduction_errors": {
+    "full_face_lpips": 2.1457672119140625e-06,
+    "hole_mae": 0.0,
+    "visible_mae": 0.0
+  },
+  "all_checks_passed": true,
+  "metrics_sha256": "56a23c9aef80cf849f91d08e32a77a6eb3da40f5500e6ca08715ad3df03c2bc4"
+}

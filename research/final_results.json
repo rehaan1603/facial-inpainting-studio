@@ -1,0 +1,864 @@
+{
+  "development": [
+    {
+      "backbone": "lama",
+      "method": "generic",
+      "seeds": 3,
+      "full_face_lpips": 0.05844767662913202,
+      "hole_mae": 0.17000865922859199,
+      "visible_mae": 0.00014277817631870975
+    },
+    {
+      "backbone": "lama",
+      "method": "preservation_weighted",
+      "seeds": 3,
+      "full_face_lpips": 0.0612380977069318,
+      "hole_mae": 0.18047126108366582,
+      "visible_mae": 0.00010579927799730731
+    },
+    {
+      "backbone": "resshift",
+      "method": "generic",
+      "seeds": 1,
+      "full_face_lpips": 0.03495485240505837,
+      "hole_mae": 0.08961519972136658,
+      "visible_mae": 0.00016729788159529512
+    },
+    {
+      "backbone": "resshift",
+      "method": "preservation_weighted",
+      "seeds": 1,
+      "full_face_lpips": 0.03762103517608382,
+      "hole_mae": 0.09631744327446169,
+      "visible_mae": 0.00011733107625915366
+    },
+    {
+      "backbone": "lama",
+      "method": "dilation 8, feather 0",
+      "seeds": 1,
+      "full_face_lpips": 0.04105035745750582,
+      "hole_mae": 0.1144829802247437,
+      "visible_mae": 0.0026007499754154262
+    },
+    {
+      "backbone": "resshift",
+      "method": "dilation 8, feather 0",
+      "seeds": 1,
+      "full_face_lpips": 0.022025189293681587,
+      "hole_mae": 0.0772079054338435,
+      "visible_mae": 0.00215532835990315
+    },
+    {
+      "backbone": "resshift",
+      "method": "dilation 12, feather 4",
+      "seeds": 1,
+      "full_face_lpips": 0.026863098551176436,
+      "hole_mae": 0.08300316819050177,
+      "visible_mae": 0.0034806517733159126
+    }
+  ],
+  "development_by_seed": [
+    {
+      "backbone": "lama",
+      "method": "generic",
+      "seed": "17",
+      "full_face_lpips": 0.05354098733928199,
+      "hole_mae": 0.15434688067816077,
+      "visible_mae": 0.00016743777193697597
+    },
+    {
+      "backbone": "lama",
+      "method": "generic",
+      "seed": "29",
+      "full_face_lpips": 0.06126667786971935,
+      "hole_mae": 0.17767795841791667,
+      "visible_mae": 0.00011211857388710095
+    },
+    {
+      "backbone": "lama",
+      "method": "generic",
+      "seed": "43",
+      "full_face_lpips": 0.060535364678394724,
+      "hole_mae": 0.1780011385896985,
+      "visible_mae": 0.00014877818313205235
+    },
+    {
+      "backbone": "lama",
+      "method": "preservation_weighted",
+      "seed": "17",
+      "full_face_lpips": 0.05781191031955704,
+      "hole_mae": 0.16972242770889015,
+      "visible_mae": 0.00011599412872671851
+    },
+    {
+      "backbone": "lama",
+      "method": "preservation_weighted",
+      "seed": "29",
+      "full_face_lpips": 0.05871612793446359,
+      "hole_mae": 0.17101932023393196,
+      "visible_mae": 9.705778035324826e-05
+    },
+    {
+      "backbone": "lama",
+      "method": "preservation_weighted",
+      "seed": "43",
+      "full_face_lpips": 0.06718625486677478,
+      "hole_mae": 0.20067203530817534,
+      "visible_mae": 0.00010434592491195518
+    },
+    {
+      "backbone": "resshift",
+      "method": "generic",
+      "seed": "17",
+      "full_face_lpips": 0.03495485240505837,
+      "hole_mae": 0.08961519972136658,
+      "visible_mae": 0.00016729788159529512
+    },
+    {
+      "backbone": "resshift",
+      "method": "preservation_weighted",
+      "seed": "17",
+      "full_face_lpips": 0.03762103517608382,
+      "hole_mae": 0.09631744327446169,
+      "visible_mae": 0.00011733107625915366
+    }
+  ],
+  "development_weighted_minus_generic": {
+    "lama": {
+      "full_face_lpips": {
+        "mean": 0.0027904210777997818,
+        "bootstrap_95_interval": [
+          0.002025567859417617,
+          0.003610511959104657
+        ]
+      },
+      "hole_mae": {
+        "mean": 0.010462601855073849,
+        "bootstrap_95_interval": [
+          0.007508657608896439,
+          0.01369780813618962
+        ]
+      },
+      "visible_mae": {
+        "mean": -3.6978898321402444e-05,
+        "bootstrap_95_interval": [
+          -5.368871662836203e-05,
+          -2.5355243824134843e-05
+        ]
+      }
+    },
+    "resshift": {
+      "full_face_lpips": {
+        "mean": 0.0026661827710254492,
+        "bootstrap_95_interval": [
+          0.0012903909247176705,
+          0.004147497650786102
+        ]
+      },
+      "hole_mae": {
+        "mean": 0.0067022435530951175,
+        "bootstrap_95_interval": [
+          0.004327574376872724,
+          0.009189627603660079
+        ]
+      },
+      "visible_mae": {
+        "mean": -4.9966805336141445e-05,
+        "bootstrap_95_interval": [
+          -7.596857877272513e-05,
+          -3.1033670969588605e-05
+        ]
+      }
+    }
+  },
+  "object_test": [
+    {
+      "dataset": "celebahq",
+      "backbone": "lama",
+      "method": "dilate8",
+      "full_face_lpips": 0.05602291179457097,
+      "hole_mae": 0.11493779598094989,
+      "visible_mae": 0.004027220734542425
+    },
+    {
+      "dataset": "celebahq",
+      "backbone": "lama",
+      "method": "generic",
+      "full_face_lpips": 0.10132260550744832,
+      "hole_mae": 0.1906065707153175,
+      "visible_mae": 0.0006728351720468595
+    },
+    {
+      "dataset": "celebahq",
+      "backbone": "lama",
+      "method": "preservation_weighted",
+      "full_face_lpips": 0.10424722677271347,
+      "hole_mae": 0.19793855644820724,
+      "visible_mae": 0.0004143657757111896
+    },
+    {
+      "dataset": "celebahq",
+      "backbone": "lama",
+      "method": "supplied",
+      "full_face_lpips": 0.07773218583452035,
+      "hole_mae": 0.1815295640626573,
+      "visible_mae": 0.0005617033905878088
+    },
+    {
+      "dataset": "celebahq",
+      "backbone": "lama",
+      "method": "unchanged",
+      "full_face_lpips": 0.13473672338295728,
+      "hole_mae": 0.3127165390178561,
+      "visible_mae": 0.0
+    },
+    {
+      "dataset": "celebahq",
+      "backbone": "resshift",
+      "method": "dilate8",
+      "full_face_lpips": 0.030016443897693534,
+      "hole_mae": 0.0720528713936801,
+      "visible_mae": 0.00317642854395217
+    },
+    {
+      "dataset": "celebahq",
+      "backbone": "resshift",
+      "method": "generic",
+      "full_face_lpips": 0.07402592955077125,
+      "hole_mae": 0.12608672837814083,
+      "visible_mae": 0.0005889105796512695
+    },
+    {
+      "dataset": "celebahq",
+      "backbone": "resshift",
+      "method": "preservation_weighted",
+      "full_face_lpips": 0.07940983544904157,
+      "hole_mae": 0.1348378385155229,
+      "visible_mae": 0.0003844289408760915
+    },
+    {
+      "dataset": "celebahq",
+      "backbone": "resshift",
+      "method": "supplied",
+      "full_face_lpips": 0.0641280038005334,
+      "hole_mae": 0.14865982698393054,
+      "visible_mae": 0.0004999604218483
+    },
+    {
+      "dataset": "celebahq",
+      "backbone": "resshift",
+      "method": "tuned",
+      "full_face_lpips": 0.035920117998102796,
+      "hole_mae": 0.07866283698967891,
+      "visible_mae": 0.005083965406356583
+    },
+    {
+      "dataset": "celebahq",
+      "backbone": "resshift",
+      "method": "unchanged",
+      "full_face_lpips": 0.13473672338295728,
+      "hole_mae": 0.3127165390178561,
+      "visible_mae": 0.0
+    },
+    {
+      "dataset": "lapa",
+      "backbone": "lama",
+      "method": "dilate8",
+      "full_face_lpips": 0.05634200451822835,
+      "hole_mae": 0.08874970885517541,
+      "visible_mae": 0.0028069376592156914
+    },
+    {
+      "dataset": "lapa",
+      "backbone": "lama",
+      "method": "generic",
+      "full_face_lpips": 0.1414275304559851,
+      "hole_mae": 0.20082558767171577,
+      "visible_mae": 0.00030181745853630204
+    },
+    {
+      "dataset": "lapa",
+      "backbone": "lama",
+      "method": "preservation_weighted",
+      "full_face_lpips": 0.14348559903737623,
+      "hole_mae": 0.20768963123555295,
+      "visible_mae": 0.00017639417187487183
+    },
+    {
+      "dataset": "lapa",
+      "backbone": "lama",
+      "method": "supplied",
+      "full_face_lpips": 0.09568870335624524,
+      "hole_mae": 0.17302991880569607,
+      "visible_mae": 0.0003826192889846425
+    },
+    {
+      "dataset": "lapa",
+      "backbone": "lama",
+      "method": "unchanged",
+      "full_face_lpips": 0.1732681371504441,
+      "hole_mae": 0.3217092144768685,
+      "visible_mae": 0.0
+    },
+    {
+      "dataset": "lapa",
+      "backbone": "resshift",
+      "method": "dilate8",
+      "full_face_lpips": 0.06520669948440627,
+      "hole_mae": 0.10628092175466008,
+      "visible_mae": 0.0033502744670386164
+    },
+    {
+      "dataset": "lapa",
+      "backbone": "resshift",
+      "method": "generic",
+      "full_face_lpips": 0.12909625386964763,
+      "hole_mae": 0.17321815321338363,
+      "visible_mae": 0.00035562472152861346
+    },
+    {
+      "dataset": "lapa",
+      "backbone": "resshift",
+      "method": "preservation_weighted",
+      "full_face_lpips": 0.13455259218608262,
+      "hole_mae": 0.1854847931099357,
+      "visible_mae": 0.0002128166122474795
+    },
+    {
+      "dataset": "lapa",
+      "backbone": "resshift",
+      "method": "supplied",
+      "full_face_lpips": 0.09728770208948845,
+      "hole_mae": 0.17221617468021577,
+      "visible_mae": 0.0004325870531260989
+    },
+    {
+      "dataset": "lapa",
+      "backbone": "resshift",
+      "method": "tuned",
+      "full_face_lpips": 0.07872449961359962,
+      "hole_mae": 0.11909715965157375,
+      "visible_mae": 0.005816328136688753
+    },
+    {
+      "dataset": "lapa",
+      "backbone": "resshift",
+      "method": "unchanged",
+      "full_face_lpips": 0.1732681371504441,
+      "hole_mae": 0.3217092144768685,
+      "visible_mae": 0.0
+    }
+  ],
+  "object_test_accurate_masks": [
+    {
+      "dataset": "celebahq",
+      "backbone": "lama",
+      "method": "dilate8",
+      "full_face_lpips": 0.05446553532965481,
+      "hole_mae": 0.1183800368453376,
+      "visible_mae": 0.0037439876978169195
+    },
+    {
+      "dataset": "celebahq",
+      "backbone": "lama",
+      "method": "generic",
+      "full_face_lpips": 0.10745193078764714,
+      "hole_mae": 0.20567110111005604,
+      "visible_mae": 0.0006078636802442361
+    },
+    {
+      "dataset": "celebahq",
+      "backbone": "lama",
+      "method": "preservation_weighted",
+      "full_face_lpips": 0.1115768114104867,
+      "hole_mae": 0.22442981565836817,
+      "visible_mae": 0.0003479281185718719
+    },
+    {
+      "dataset": "celebahq",
+      "backbone": "lama",
+      "method": "supplied",
+      "full_face_lpips": 0.028875450034320238,
+      "hole_mae": 0.07915676027187146,
+      "visible_mae": 0.0
+    },
+    {
+      "dataset": "celebahq",
+      "backbone": "lama",
+      "method": "unchanged",
+      "full_face_lpips": 0.13473672338295728,
+      "hole_mae": 0.3127165390178561,
+      "visible_mae": 0.0
+    },
+    {
+      "dataset": "celebahq",
+      "backbone": "resshift",
+      "method": "dilate8",
+      "full_face_lpips": 0.0287257910167682,
+      "hole_mae": 0.07239123116596602,
+      "visible_mae": 0.0029900864847149933
+    },
+    {
+      "dataset": "celebahq",
+      "backbone": "resshift",
+      "method": "generic",
+      "full_face_lpips": 0.07802741785417311,
+      "hole_mae": 0.13343563076341525,
+      "visible_mae": 0.0005451588271654373
+    },
+    {
+      "dataset": "celebahq",
+      "backbone": "resshift",
+      "method": "preservation_weighted",
+      "full_face_lpips": 0.08585780713474378,
+      "hole_mae": 0.14853764115832746,
+      "visible_mae": 0.00033648344084724613
+    },
+    {
+      "dataset": "celebahq",
+      "backbone": "resshift",
+      "method": "supplied",
+      "full_face_lpips": 0.01597028645028331,
+      "hole_mae": 0.055401133955456316,
+      "visible_mae": 0.0
+    },
+    {
+      "dataset": "celebahq",
+      "backbone": "resshift",
+      "method": "tuned",
+      "full_face_lpips": 0.03545329601911362,
+      "hole_mae": 0.07904460307327099,
+      "visible_mae": 0.005054962628491921
+    },
+    {
+      "dataset": "celebahq",
+      "backbone": "resshift",
+      "method": "unchanged",
+      "full_face_lpips": 0.13473672338295728,
+      "hole_mae": 0.3127165390178561,
+      "visible_mae": 0.0
+    },
+    {
+      "dataset": "lapa",
+      "backbone": "lama",
+      "method": "dilate8",
+      "full_face_lpips": 0.05419264470401686,
+      "hole_mae": 0.09074792015599087,
+      "visible_mae": 0.0026878363541982253
+    },
+    {
+      "dataset": "lapa",
+      "backbone": "lama",
+      "method": "generic",
+      "full_face_lpips": 0.15027221606578678,
+      "hole_mae": 0.2315576784312725,
+      "visible_mae": 0.0002778435423067549
+    },
+    {
+      "dataset": "lapa",
+      "backbone": "lama",
+      "method": "preservation_weighted",
+      "full_face_lpips": 0.15277430962305516,
+      "hole_mae": 0.23677736148238182,
+      "visible_mae": 0.00014656038466398513
+    },
+    {
+      "dataset": "lapa",
+      "backbone": "lama",
+      "method": "supplied",
+      "full_face_lpips": 0.030724179316166556,
+      "hole_mae": 0.06097662169486284,
+      "visible_mae": 0.0
+    },
+    {
+      "dataset": "lapa",
+      "backbone": "lama",
+      "method": "unchanged",
+      "full_face_lpips": 0.1732681371504441,
+      "hole_mae": 0.3217092144768685,
+      "visible_mae": 0.0
+    },
+    {
+      "dataset": "lapa",
+      "backbone": "resshift",
+      "method": "dilate8",
+      "full_face_lpips": 0.06276909660664387,
+      "hole_mae": 0.10749560419935733,
+      "visible_mae": 0.002981281708343886
+    },
+    {
+      "dataset": "lapa",
+      "backbone": "resshift",
+      "method": "generic",
+      "full_face_lpips": 0.13686968089314178,
+      "hole_mae": 0.18942467600572854,
+      "visible_mae": 0.00033787183241429375
+    },
+    {
+      "dataset": "lapa",
+      "backbone": "resshift",
+      "method": "preservation_weighted",
+      "full_face_lpips": 0.1416565534309484,
+      "hole_mae": 0.2046740042278543,
+      "visible_mae": 0.0001825881312171873
+    },
+    {
+      "dataset": "lapa",
+      "backbone": "resshift",
+      "method": "supplied",
+      "full_face_lpips": 0.035165409364708466,
+      "hole_mae": 0.06937464638031088,
+      "visible_mae": 0.0
+    },
+    {
+      "dataset": "lapa",
+      "backbone": "resshift",
+      "method": "tuned",
+      "full_face_lpips": 0.07894499303074554,
+      "hole_mae": 0.12225726316682994,
+      "visible_mae": 0.00581436773063615
+    },
+    {
+      "dataset": "lapa",
+      "backbone": "resshift",
+      "method": "unchanged",
+      "full_face_lpips": 0.1732681371504441,
+      "hole_mae": 0.3217092144768685,
+      "visible_mae": 0.0
+    }
+  ],
+  "object_test_deltas": {
+    "celebahq/lama/weighted-minus-generic": {
+      "full_face_lpips": {
+        "mean": 0.0029246212652651593,
+        "bootstrap_95_interval": [
+          -0.00012713099167740438,
+          0.005951569905118955
+        ]
+      },
+      "hole_mae": {
+        "mean": 0.007331985732889734,
+        "bootstrap_95_interval": [
+          -0.0025026208524650427,
+          0.016483677460564644
+        ]
+      },
+      "visible_mae": {
+        "mean": -0.0002584693963356699,
+        "bootstrap_95_interval": [
+          -0.00035202196665604644,
+          -0.00017703365779029313
+        ]
+      }
+    },
+    "celebahq/lama/weighted-minus-supplied": {
+      "full_face_lpips": {
+        "mean": 0.026515040938193124,
+        "bootstrap_95_interval": [
+          0.020970158495583747,
+          0.03232260854975948
+        ]
+      },
+      "hole_mae": {
+        "mean": 0.016408992385549936,
+        "bootstrap_95_interval": [
+          0.002678462978656171,
+          0.02938531682775646
+        ]
+      },
+      "visible_mae": {
+        "mean": -0.00014733761487661923,
+        "bootstrap_95_interval": [
+          -0.00027869022837405665,
+          1.357635166243602e-06
+        ]
+      }
+    },
+    "celebahq/lama/weighted-minus-dilate8": {
+      "full_face_lpips": {
+        "mean": 0.0482243149781425,
+        "bootstrap_95_interval": [
+          0.04112507421696136,
+          0.055281392370761746
+        ]
+      },
+      "hole_mae": {
+        "mean": 0.08300076046725735,
+        "bootstrap_95_interval": [
+          0.07048087307339301,
+          0.09607060695561812
+        ]
+      },
+      "visible_mae": {
+        "mean": -0.0036128549588312353,
+        "bootstrap_95_interval": [
+          -0.004029664933024701,
+          -0.0032344660196168998
+        ]
+      }
+    },
+    "celebahq/resshift/weighted-minus-generic": {
+      "full_face_lpips": {
+        "mean": 0.005383905898270314,
+        "bootstrap_95_interval": [
+          0.0020394210549966375,
+          0.008714857311770172
+        ]
+      },
+      "hole_mae": {
+        "mean": 0.008751110137382057,
+        "bootstrap_95_interval": [
+          0.00287248464737786,
+          0.014981451223684415
+        ]
+      },
+      "visible_mae": {
+        "mean": -0.000204481638775178,
+        "bootstrap_95_interval": [
+          -0.0002749024472746164,
+          -0.00014186730380529868
+        ]
+      }
+    },
+    "celebahq/resshift/weighted-minus-supplied": {
+      "full_face_lpips": {
+        "mean": 0.01528183164850816,
+        "bootstrap_95_interval": [
+          0.009259966211783422,
+          0.022032710556078423
+        ]
+      },
+      "hole_mae": {
+        "mean": -0.013821988468407653,
+        "bootstrap_95_interval": [
+          -0.026650852757484245,
+          -6.410486348614443e-05
+        ]
+      },
+      "visible_mae": {
+        "mean": -0.00011553148097220856,
+        "bootstrap_95_interval": [
+          -0.00023143372158305198,
+          1.4681511465041908e-05
+        ]
+      }
+    },
+    "celebahq/resshift/weighted-minus-dilate8": {
+      "full_face_lpips": {
+        "mean": 0.04939339155134803,
+        "bootstrap_95_interval": [
+          0.041060273691437034,
+          0.05810601168855101
+        ]
+      },
+      "hole_mae": {
+        "mean": 0.06278496712184278,
+        "bootstrap_95_interval": [
+          0.05123158241094643,
+          0.07631486381360446
+        ]
+      },
+      "visible_mae": {
+        "mean": -0.0027919996030760785,
+        "bootstrap_95_interval": [
+          -0.0031608551184278966,
+          -0.002459230008904889
+        ]
+      }
+    },
+    "lapa/lama/weighted-minus-generic": {
+      "full_face_lpips": {
+        "mean": 0.002058068581391126,
+        "bootstrap_95_interval": [
+          -0.0012740706064505503,
+          0.005396396617288699
+        ]
+      },
+      "hole_mae": {
+        "mean": 0.0068640435638371855,
+        "bootstrap_95_interval": [
+          -0.002617124688913464,
+          0.016077344691075263
+        ]
+      },
+      "visible_mae": {
+        "mean": -0.0001254232866614302,
+        "bootstrap_95_interval": [
+          -0.00018210528919595514,
+          -7.728074776521825e-05
+        ]
+      }
+    },
+    "lapa/lama/weighted-minus-supplied": {
+      "full_face_lpips": {
+        "mean": 0.04779689568113099,
+        "bootstrap_95_interval": [
+          0.03971233666604803,
+          0.05594017209352842
+        ]
+      },
+      "hole_mae": {
+        "mean": 0.03465971242985688,
+        "bootstrap_95_interval": [
+          0.01815853860716743,
+          0.051897938335969215
+        ]
+      },
+      "visible_mae": {
+        "mean": -0.00020622511710977065,
+        "bootstrap_95_interval": [
+          -0.00026317978936951647,
+          -0.00014528881835038652
+        ]
+      }
+    },
+    "lapa/lama/weighted-minus-dilate8": {
+      "full_face_lpips": {
+        "mean": 0.08714359451914788,
+        "bootstrap_95_interval": [
+          0.07655601939941334,
+          0.09793382311127061
+        ]
+      },
+      "hole_mae": {
+        "mean": 0.11893992238037754,
+        "bootstrap_95_interval": [
+          0.10165577641400887,
+          0.13880577239324338
+        ]
+      },
+      "visible_mae": {
+        "mean": -0.0026305434873408196,
+        "bootstrap_95_interval": [
+          -0.002896774426203752,
+          -0.0023868916897122117
+        ]
+      }
+    },
+    "lapa/resshift/weighted-minus-generic": {
+      "full_face_lpips": {
+        "mean": 0.005456338316434994,
+        "bootstrap_95_interval": [
+          0.0019237276539570303,
+          0.009148237301997143
+        ]
+      },
+      "hole_mae": {
+        "mean": 0.012266639896552078,
+        "bootstrap_95_interval": [
+          0.004706312261259882,
+          0.020180341027298706
+        ]
+      },
+      "visible_mae": {
+        "mean": -0.00014280810928113397,
+        "bootstrap_95_interval": [
+          -0.00020255817811567489,
+          -8.840064725488263e-05
+        ]
+      }
+    },
+    "lapa/resshift/weighted-minus-supplied": {
+      "full_face_lpips": {
+        "mean": 0.03726489009659417,
+        "bootstrap_95_interval": [
+          0.03031553985251776,
+          0.044294083303952896
+        ]
+      },
+      "hole_mae": {
+        "mean": 0.013268618429719936,
+        "bootstrap_95_interval": [
+          0.0005485561836394484,
+          0.025482981315326458
+        ]
+      },
+      "visible_mae": {
+        "mean": -0.0002197704408786194,
+        "bootstrap_95_interval": [
+          -0.00028751685811694293,
+          -0.00014404083773267295
+        ]
+      }
+    },
+    "lapa/resshift/weighted-minus-dilate8": {
+      "full_face_lpips": {
+        "mean": 0.06934589270167635,
+        "bootstrap_95_interval": [
+          0.060324973583828975,
+          0.07869041789972471
+        ]
+      },
+      "hole_mae": {
+        "mean": 0.07920387135527562,
+        "bootstrap_95_interval": [
+          0.06609203976877324,
+          0.09301107195315125
+        ]
+      },
+      "visible_mae": {
+        "mean": -0.003137457854791137,
+        "bootstrap_95_interval": [
+          -0.00346856231442203,
+          -0.002824976597658946
+        ]
+      }
+    }
+  },
+  "training_compute": [
+    {
+      "variant": "generic",
+      "seed": 17,
+      "parameters": 119057,
+      "steps": 1500,
+      "seconds_this_session": 68.19816040000296,
+      "peak_allocated_MiB": 398.640625
+    },
+    {
+      "variant": "generic",
+      "seed": 29,
+      "parameters": 119057,
+      "steps": 1500,
+      "seconds_this_session": 71.7909168000042,
+      "peak_allocated_MiB": 400.03955078125
+    },
+    {
+      "variant": "generic",
+      "seed": 43,
+      "parameters": 119057,
+      "steps": 1500,
+      "seconds_this_session": 74.10205190000124,
+      "peak_allocated_MiB": 400.03955078125
+    },
+    {
+      "variant": "preservation_weighted",
+      "seed": 17,
+      "parameters": 119057,
+      "steps": 1500,
+      "seconds_this_session": 70.05202299999655,
+      "peak_allocated_MiB": 400.03955078125
+    },
+    {
+      "variant": "preservation_weighted",
+      "seed": 29,
+      "parameters": 119057,
+      "steps": 1500,
+      "seconds_this_session": 75.65197030000854,
+      "peak_allocated_MiB": 400.03955078125
+    },
+    {
+      "variant": "preservation_weighted",
+      "seed": 43,
+      "parameters": 119057,
+      "steps": 1500,
+      "seconds_this_session": 71.82775309999124,
+      "peak_allocated_MiB": 400.03955078125
+    }
+  ],
+  "raw_sha256": {
+    "outputs\\refiner_evaluation\\metrics.csv": "cb02a4d3b2ba28783f24eca2cc630480eb63a27e019981f9622af71bf497f3a7",
+    "outputs\\object_test\\metrics.csv": "4e0ddc8b3030c1633beac117e0a10b2a28dd961235639c41772cfc364e7b967d",
+    "outputs\\area_matched_v3_margin12_evaluation\\metrics.csv": "7f1e2672b4c92d0072df43d6d42a90ba43cd45fd9edc5d9cd6989452e303fadc"
+  },
+  "limits": "Bootstrap conditions on fitted seeds and fixed 12 object assets. LaPa has no verified identity grouping. Exploratory comparisons, no multiple-comparison correction, practical-effect margin, or superiority declaration."
+}

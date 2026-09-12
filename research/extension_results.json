@@ -1,0 +1,426 @@
+{
+  "summaries": [
+    {
+      "backbone": "lama",
+      "variant": "generic",
+      "budget": 1500,
+      "compositor": "hard",
+      "full_face_lpips": 0.05844767662913202,
+      "hole_mae": 0.17000865922859199,
+      "visible_mae": 0.00014277817631870975
+    },
+    {
+      "backbone": "lama",
+      "variant": "generic",
+      "budget": 6000,
+      "compositor": "hard",
+      "full_face_lpips": 0.07570797404745755,
+      "hole_mae": 0.2467768262208721,
+      "visible_mae": 5.8353778442166706e-05
+    },
+    {
+      "backbone": "lama",
+      "variant": "generic",
+      "budget": 6000,
+      "compositor": "probability_alpha",
+      "full_face_lpips": 0.07554339973024599,
+      "hole_mae": 0.24787892778490292,
+      "visible_mae": 4.4427729801568116e-05
+    },
+    {
+      "backbone": "lama",
+      "variant": "preservation_weighted",
+      "budget": 1500,
+      "compositor": "hard",
+      "full_face_lpips": 0.0612380977069318,
+      "hole_mae": 0.18047126108366582,
+      "visible_mae": 0.00010579927799730731
+    },
+    {
+      "backbone": "lama",
+      "variant": "preservation_weighted",
+      "budget": 6000,
+      "compositor": "hard",
+      "full_face_lpips": 0.06519445439020566,
+      "hole_mae": 0.1946232995114657,
+      "visible_mae": 7.405460456871643e-05
+    },
+    {
+      "backbone": "lama",
+      "variant": "preservation_weighted",
+      "budget": 6000,
+      "compositor": "probability_alpha",
+      "full_face_lpips": 0.06505353119221435,
+      "hole_mae": 0.19643617586489986,
+      "visible_mae": 5.035824602021107e-05
+    },
+    {
+      "backbone": "resshift",
+      "variant": "generic",
+      "budget": 1500,
+      "compositor": "hard",
+      "full_face_lpips": 0.03495485240505837,
+      "hole_mae": 0.08961519972136658,
+      "visible_mae": 0.00016729788159529512
+    },
+    {
+      "backbone": "resshift",
+      "variant": "generic",
+      "budget": 6000,
+      "compositor": "hard",
+      "full_face_lpips": 0.06505051100167394,
+      "hole_mae": 0.15891455672896915,
+      "visible_mae": 6.267018874142296e-05
+    },
+    {
+      "backbone": "resshift",
+      "variant": "generic",
+      "budget": 6000,
+      "compositor": "probability_alpha",
+      "full_face_lpips": 0.06529215457474627,
+      "hole_mae": 0.1599779844141772,
+      "visible_mae": 5.222373874608016e-05
+    },
+    {
+      "backbone": "resshift",
+      "variant": "preservation_weighted",
+      "budget": 1500,
+      "compositor": "hard",
+      "full_face_lpips": 0.03762103517608382,
+      "hole_mae": 0.09631744327446169,
+      "visible_mae": 0.00011733107625915366
+    },
+    {
+      "backbone": "resshift",
+      "variant": "preservation_weighted",
+      "budget": 6000,
+      "compositor": "hard",
+      "full_face_lpips": 0.035558674763133576,
+      "hole_mae": 0.08584041737938403,
+      "visible_mae": 7.748501013372367e-05
+    },
+    {
+      "backbone": "resshift",
+      "variant": "preservation_weighted",
+      "budget": 6000,
+      "compositor": "probability_alpha",
+      "full_face_lpips": 0.03731826585889966,
+      "hole_mae": 0.08847286411306683,
+      "visible_mae": 5.0233192067613196e-05
+    }
+  ],
+  "contrasts": {
+    "lama/generic/6000-minus-1500-hard": {
+      "full_face_lpips": {
+        "mean": 0.017260297418325524,
+        "bootstrap_95_interval": [
+          0.015925736714343993,
+          0.018556478232127388
+        ]
+      },
+      "hole_mae": {
+        "mean": 0.07676816699228013,
+        "bootstrap_95_interval": [
+          0.07015408570385957,
+          0.08310809079743599
+        ]
+      },
+      "visible_mae": {
+        "mean": -8.442439787654306e-05,
+        "bootstrap_95_interval": [
+          -0.00010285160046097117,
+          -6.678357195401066e-05
+        ]
+      }
+    },
+    "lama/generic/soft-minus-hard-6000": {
+      "full_face_lpips": {
+        "mean": -0.00016457431721156115,
+        "bootstrap_95_interval": [
+          -0.00022313197378586922,
+          -0.00010464111635905915
+        ]
+      },
+      "hole_mae": {
+        "mean": 0.0011021015640307955,
+        "bootstrap_95_interval": [
+          0.0010451049920919575,
+          0.0011551489231441123
+        ]
+      },
+      "visible_mae": {
+        "mean": -1.392604864059859e-05,
+        "bootstrap_95_interval": [
+          -1.683266853668468e-05,
+          -1.1743187420266548e-05
+        ]
+      }
+    },
+    "lama/preservation_weighted/6000-minus-1500-hard": {
+      "full_face_lpips": {
+        "mean": 0.003956356683273851,
+        "bootstrap_95_interval": [
+          0.0026402868837931805,
+          0.005222364631322024
+        ]
+      },
+      "hole_mae": {
+        "mean": 0.014152038427799893,
+        "bootstrap_95_interval": [
+          0.009723085954707738,
+          0.01819494286784543
+        ]
+      },
+      "visible_mae": {
+        "mean": -3.1744673428590886e-05,
+        "bootstrap_95_interval": [
+          -4.7204986830178206e-05,
+          -1.6628115155600724e-05
+        ]
+      }
+    },
+    "lama/preservation_weighted/soft-minus-hard-6000": {
+      "full_face_lpips": {
+        "mean": -0.00014092319799130092,
+        "bootstrap_95_interval": [
+          -0.00021808279758979662,
+          -5.9279632983412396e-05
+        ]
+      },
+      "hole_mae": {
+        "mean": 0.0018128763534341376,
+        "bootstrap_95_interval": [
+          0.0017141308043425888,
+          0.0019048063267010874
+        ]
+      },
+      "visible_mae": {
+        "mean": -2.3696358548505364e-05,
+        "bootstrap_95_interval": [
+          -2.9413380657553985e-05,
+          -1.9468343330627157e-05
+        ]
+      }
+    },
+    "lama/weighted-minus-generic-6000": {
+      "full_face_lpips": {
+        "mean": -0.01051351965725189,
+        "bootstrap_95_interval": [
+          -0.011240058347761483,
+          -0.009833847281167695
+        ]
+      },
+      "hole_mae": {
+        "mean": -0.05215352670940639,
+        "bootstrap_95_interval": [
+          -0.05696398929050904,
+          -0.04740258826273077
+        ]
+      },
+      "visible_mae": {
+        "mean": 1.570082612654972e-05,
+        "bootstrap_95_interval": [
+          6.323053171128528e-06,
+          2.8559633847241917e-05
+        ]
+      }
+    },
+    "resshift/generic/6000-minus-1500-hard": {
+      "full_face_lpips": {
+        "mean": 0.03009565859661557,
+        "bootstrap_95_interval": [
+          0.027742512412416744,
+          0.032512314133415474
+        ]
+      },
+      "hole_mae": {
+        "mean": 0.06929935700760258,
+        "bootstrap_95_interval": [
+          0.062037772387891356,
+          0.07670642056484075
+        ]
+      },
+      "visible_mae": {
+        "mean": -0.00010462769285387215,
+        "bootstrap_95_interval": [
+          -0.00012833306343009636,
+          -8.358409315475751e-05
+        ]
+      }
+    },
+    "resshift/generic/soft-minus-hard-6000": {
+      "full_face_lpips": {
+        "mean": 0.00024164357307233364,
+        "bootstrap_95_interval": [
+          0.0001863348443866589,
+          0.00029858659543741074
+        ]
+      },
+      "hole_mae": {
+        "mean": 0.0010634276852080668,
+        "bootstrap_95_interval": [
+          0.0010080286351256764,
+          0.001120510603262422
+        ]
+      },
+      "visible_mae": {
+        "mean": -1.0446449995342803e-05,
+        "bootstrap_95_interval": [
+          -1.3201917196397977e-05,
+          -8.394907154642808e-06
+        ]
+      }
+    },
+    "resshift/preservation_weighted/6000-minus-1500-hard": {
+      "full_face_lpips": {
+        "mean": -0.0020623604129502413,
+        "bootstrap_95_interval": [
+          -0.004034559322485621,
+          -9.454149243521632e-05
+        ]
+      },
+      "hole_mae": {
+        "mean": -0.010477025895077666,
+        "bootstrap_95_interval": [
+          -0.01473482242840368,
+          -0.006505570175148831
+        ]
+      },
+      "visible_mae": {
+        "mean": -3.984606612542999e-05,
+        "bootstrap_95_interval": [
+          -7.024475625652774e-05,
+          -1.337866990600076e-05
+        ]
+      }
+    },
+    "resshift/preservation_weighted/soft-minus-hard-6000": {
+      "full_face_lpips": {
+        "mean": 0.0017595910957660867,
+        "bootstrap_95_interval": [
+          0.0015348951640421383,
+          0.0019830917855533357
+        ]
+      },
+      "hole_mae": {
+        "mean": 0.0026324467336827965,
+        "bootstrap_95_interval": [
+          0.002481672427880026,
+          0.002778763712396742
+        ]
+      },
+      "visible_mae": {
+        "mean": -2.7251818066110476e-05,
+        "bootstrap_95_interval": [
+          -3.391414116837278e-05,
+          -2.213519877873964e-05
+        ]
+      }
+    },
+    "resshift/weighted-minus-generic-6000": {
+      "full_face_lpips": {
+        "mean": -0.029491836238540365,
+        "bootstrap_95_interval": [
+          -0.03129697638492804,
+          -0.027597585600381502
+        ]
+      },
+      "hole_mae": {
+        "mean": -0.07307413934958512,
+        "bootstrap_95_interval": [
+          -0.08004332631783284,
+          -0.06617126922509568
+        ]
+      },
+      "visible_mae": {
+        "mean": 1.4814821392300709e-05,
+        "bootstrap_95_interval": [
+          5.606509555541358e-07,
+          3.1787295611644584e-05
+        ]
+      }
+    }
+  },
+  "training": [
+    {
+      "variant": "generic",
+      "seed": 17,
+      "best_step": 6000,
+      "initial_tuning_loss": 0.02954235610862573,
+      "best_tuning_loss": 0.0021516443618262806,
+      "last_three_losses": [
+        0.003849586471915245,
+        0.0030094428608814874,
+        0.0021516443618262806
+      ],
+      "extension_seconds": 216.19546289999994
+    },
+    {
+      "variant": "generic",
+      "seed": 29,
+      "best_step": 5500,
+      "initial_tuning_loss": 0.0279910775522391,
+      "best_tuning_loss": 0.002250411237279574,
+      "last_three_losses": [
+        0.002250411237279574,
+        0.0033056525668750205,
+        0.003604741611828407
+      ],
+      "extension_seconds": 250.12438679999968
+    },
+    {
+      "variant": "generic",
+      "seed": 43,
+      "best_step": 6000,
+      "initial_tuning_loss": 0.0223260751614968,
+      "best_tuning_loss": 0.0027656309927503266,
+      "last_three_losses": [
+        0.0036994024800757566,
+        0.0029199665101865926,
+        0.0027656309927503266
+      ],
+      "extension_seconds": 226.17160869999998
+    },
+    {
+      "variant": "preservation_weighted",
+      "seed": 17,
+      "best_step": 6000,
+      "initial_tuning_loss": 0.03298291005194187,
+      "best_tuning_loss": 0.0020978235018750033,
+      "last_three_losses": [
+        0.0021676705218851566,
+        0.0020988568430766463,
+        0.0020978235018750033
+      ],
+      "extension_seconds": 231.2917752999997
+    },
+    {
+      "variant": "preservation_weighted",
+      "seed": 29,
+      "best_step": 6000,
+      "initial_tuning_loss": 0.02145274728536606,
+      "best_tuning_loss": 0.0018328620741764705,
+      "last_three_losses": [
+        0.002155179623514414,
+        0.003154684246207277,
+        0.0018328620741764705
+      ],
+      "extension_seconds": 225.21133680000003
+    },
+    {
+      "variant": "preservation_weighted",
+      "seed": 43,
+      "best_step": 5500,
+      "initial_tuning_loss": 0.02279938943684101,
+      "best_tuning_loss": 0.0023443722166121006,
+      "last_three_losses": [
+        0.0023443722166121006,
+        0.0029984916327521205,
+        0.004131772943461935
+      ],
+      "extension_seconds": 221.97536249999985
+    }
+  ],
+  "raw_sha256": "9b78c42f039e602b04f1a33ed7500d704b0bee31e23767bb20abff1912bd4a28",
+  "scope": "Reused development identities only. Three seeds on LaMa, seed17 on ResShift. Bootstrap over 48 identity labels, conditional on fitted seeds. Soft probabilities are segmentation scores, not a separately RGB-trained alpha head. No novel-method claim."
+}

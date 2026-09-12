@@ -1,0 +1,155 @@
+{
+  "rows": 5184,
+  "assessment_identities": 48,
+  "summaries": [
+    {
+      "backbone": "lama",
+      "radius": 8,
+      "feather": 0,
+      "full_face_lpips": 0.04105035745750582,
+      "hole_mae": 0.1144829802247437,
+      "visible_mae": 0.0026007499754154262
+    },
+    {
+      "backbone": "resshift",
+      "radius": 8,
+      "feather": 0,
+      "full_face_lpips": 0.022025189293681587,
+      "hole_mae": 0.0772079054338435,
+      "visible_mae": 0.00215532835990315
+    },
+    {
+      "backbone": "resshift",
+      "radius": 12,
+      "feather": 4,
+      "full_face_lpips": 0.026863098551176436,
+      "hole_mae": 0.08300316819050177,
+      "visible_mae": 0.0034806517733159126
+    }
+  ],
+  "resshift_control_delta": {
+    "full_face_lpips": {
+      "mean": 0.004837909257494849,
+      "bootstrap_95_interval": [
+        0.004475077480947221,
+        0.005222578534509617
+      ]
+    },
+    "hole_mae": {
+      "mean": 0.005795262756658269,
+      "bootstrap_95_interval": [
+        0.00498710889769427,
+        0.006696241568769672
+      ]
+    },
+    "visible_mae": {
+      "mean": 0.0013253234134127624,
+      "bootstrap_95_interval": [
+        0.001238814559610125,
+        0.0014265547809116101
+      ]
+    }
+  },
+  "by_location": [
+    {
+      "location": "eye_center",
+      "control": [
+        "lama",
+        "8",
+        "0"
+      ],
+      "full_face_lpips": 0.05117870601275677,
+      "hole_mae": 0.13083597217660603,
+      "visible_mae": 0.002663785926819805
+    },
+    {
+      "location": "eye_center",
+      "control": [
+        "resshift",
+        "8",
+        "0"
+      ],
+      "full_face_lpips": 0.02058590922792468,
+      "hole_mae": 0.0747182388828757,
+      "visible_mae": 0.0020716519428687105
+    },
+    {
+      "location": "eye_center",
+      "control": [
+        "resshift",
+        "12",
+        "4"
+      ],
+      "full_face_lpips": 0.024548101508925255,
+      "hole_mae": 0.07879597052750695,
+      "visible_mae": 0.0032473104546524053
+    },
+    {
+      "location": "mouth_center",
+      "control": [
+        "lama",
+        "8",
+        "0"
+      ],
+      "full_face_lpips": 0.03958042332831408,
+      "hole_mae": 0.12008258942255957,
+      "visible_mae": 0.002528594516661542
+    },
+    {
+      "location": "mouth_center",
+      "control": [
+        "resshift",
+        "8",
+        "0"
+      ],
+      "full_face_lpips": 0.019932300925979182,
+      "hole_mae": 0.08209166519292113,
+      "visible_mae": 0.002065552629624613
+    },
+    {
+      "location": "mouth_center",
+      "control": [
+        "resshift",
+        "12",
+        "4"
+      ],
+      "full_face_lpips": 0.02372411877149716,
+      "hole_mae": 0.0873787170340721,
+      "visible_mae": 0.003409173353045642
+    },
+    {
+      "location": "upper_image",
+      "control": [
+        "lama",
+        "8",
+        "0"
+      ],
+      "full_face_lpips": 0.03239194303144662,
+      "hole_mae": 0.09253037907506546,
+      "visible_mae": 0.002609869482764932
+    },
+    {
+      "location": "upper_image",
+      "control": [
+        "resshift",
+        "8",
+        "0"
+      ],
+      "full_face_lpips": 0.0255573577271409,
+      "hole_mae": 0.07481381222573368,
+      "visible_mae": 0.0023287805072161267
+    },
+    {
+      "location": "upper_image",
+      "control": [
+        "resshift",
+        "12",
+        "4"
+      ],
+      "full_face_lpips": 0.03231707537310689,
+      "hole_mae": 0.08283481700992626,
+      "visible_mae": 0.0037854715122496905
+    }
+  ],
+  "metrics_sha256": "7f1e2672b4c92d0072df43d6d42a90ba43cd45fd9edc5d9cd6989452e303fadc"
+}

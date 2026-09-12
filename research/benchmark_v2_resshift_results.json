@@ -1,0 +1,129 @@
+{
+  "backbone": "resshift",
+  "diffusion_seed_policy": "One fixed seed per identity/family, shared across mask controls; no multi-seed robustness claim.",
+  "config": {
+    "seed": 20260911,
+    "images": 96,
+    "tuning_images": 48,
+    "resolution": 256,
+    "families": [
+      "brush",
+      "eyes",
+      "mouth"
+    ],
+    "conditions": [
+      "accurate",
+      "under",
+      "over",
+      "shift",
+      "mixed_boundary"
+    ],
+    "dilation_radii": [
+      0,
+      2,
+      4,
+      8
+    ],
+    "selection_metric": "full_face_lpips",
+    "selection_rule": "One global dilation radius minimizing mean LPIPS across tuning cases; ties prefer smaller radius. Assessment is never used for selection.",
+    "scope": "Synthetic validation-only development benchmark; exclude identities used in pilot_clean_v1. Semantic labels define corruption only, never model inputs. Not a final test or area-matched experiment."
+  },
+  "config_sha256": "9ba7fc94da8736972a86c51819fb861f80ff9732edea702f52fcce2f287a2e3c",
+  "manifest_sha256": "c9ab26ef0311f3c26d028e248b46b59a7dc158921e6c317e8e4a745e3574a248",
+  "selected_radius": 8,
+  "selection_tuning_means": {
+    "0": 0.07862976027018805,
+    "2": 0.07254124030005187,
+    "4": 0.0586910117430509,
+    "8": 0.0356227340357792
+  },
+  "summary": [
+    {
+      "partition": "tuning",
+      "radius": 0,
+      "full_face_lpips": 0.07862976027018805,
+      "hole_mae": 0.15411274917941126,
+      "visible_mae": 0.0005771919067228737
+    },
+    {
+      "partition": "tuning",
+      "radius": 2,
+      "full_face_lpips": 0.07254124030005187,
+      "hole_mae": 0.14593070501772065,
+      "visible_mae": 0.0009715204660703118
+    },
+    {
+      "partition": "tuning",
+      "radius": 4,
+      "full_face_lpips": 0.0586910117430509,
+      "hole_mae": 0.12339269630093541,
+      "visible_mae": 0.001450445404291006
+    },
+    {
+      "partition": "tuning",
+      "radius": 8,
+      "full_face_lpips": 0.0356227340357792,
+      "hole_mae": 0.08731573853227827,
+      "visible_mae": 0.0027638363836912402
+    },
+    {
+      "partition": "tuning",
+      "radius": "oracle",
+      "full_face_lpips": 0.016761591017711908,
+      "hole_mae": 0.06307173747983244,
+      "visible_mae": 0.0
+    },
+    {
+      "partition": "assessment",
+      "radius": 0,
+      "full_face_lpips": 0.07461847477146269,
+      "hole_mae": 0.14878945483101738,
+      "visible_mae": 0.000584449323122903
+    },
+    {
+      "partition": "assessment",
+      "radius": 2,
+      "full_face_lpips": 0.06913921066896161,
+      "hole_mae": 0.14043934487789456,
+      "visible_mae": 0.0009734414654303692
+    },
+    {
+      "partition": "assessment",
+      "radius": 4,
+      "full_face_lpips": 0.05524111163621354,
+      "hole_mae": 0.11782838379860752,
+      "visible_mae": 0.001451421808956689
+    },
+    {
+      "partition": "assessment",
+      "radius": 8,
+      "full_face_lpips": 0.036375839069821975,
+      "hole_mae": 0.0871740233592896,
+      "visible_mae": 0.0027572384082203724
+    },
+    {
+      "partition": "assessment",
+      "radius": "oracle",
+      "full_face_lpips": 0.016425251939734962,
+      "hole_mae": 0.061549085968484483,
+      "visible_mae": 0.0
+    }
+  ],
+  "assessment_lpips_selected_minus_radius0": {
+    "mean": -0.038242635701640715,
+    "bootstrap_95_interval": [
+      -0.04086103691464005,
+      -0.035569193041770225
+    ],
+    "unit": "identity",
+    "bootstrap_replicates": 2000
+  },
+  "skipped_missing_or_extreme_semantic_masks": [],
+  "limits": [
+    "Validation development study, not final test.",
+    "Synthetic textures and masks only.",
+    "Semantic masks depend on ground truth only for corruption construction, not inference.",
+    "Mask families are not area-matched.",
+    "Pretraining exposure unresolved; no novel method tested."
+  ]
+}

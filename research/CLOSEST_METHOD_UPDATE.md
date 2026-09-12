@@ -1,0 +1,5 @@
+# Closest-method check after implementation
+
+The full [VCNet paper](https://arxiv.org/html/2003.06816) is now accessible; its method and training sections were inspected beyond the earlier abstract-only review. It predicts a mask from the damaged image, uses natural-image patches as corruption, and addresses propagation of mask errors through probabilistic context normalization and joint training. This strengthens the conclusion that the local generic refiner and natural-image corruption strategy are not novel. VCNet has a different input setting: no supplied mask at inference. A numerical comparison must report that distinction and its different trained reconstruction model. Its reported implementation uses TensorFlow 1.10.1. The current package has not reproduced it; published numbers are not imported into the local tables.
+
+The current code measures a simpler, supplied-mask, frozen-backbone control. Results justify studying its reconstruction–preservation trade-off, but do not justify claiming to solve robust blind inpainting. Prior-work coverage and omitted reproduction remain explicit manuscript limitations.

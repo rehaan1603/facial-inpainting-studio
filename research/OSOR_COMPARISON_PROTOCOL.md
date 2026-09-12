@@ -1,0 +1,13 @@
+# OSOR local development comparison
+
+Protocol recorded before the comparative run. The single existing smoke sample is functional setup evidence only, and was already observed in earlier development. No settings are selected from its appearance.
+
+Use all 432 area-matched v3 assessment cases: 48 validation identity labels, three locations and three missing areas. Evaluate all four supplied-mask conditions, yielding 1,728 OSOR rows. Reuse exact source hashes, float corruption construction and masks from the signed v3 protocol. Never input target RGB or true masks to OSOR. True masks and clean RGB are scoring references only. No original object-test images are used.
+
+Use author source commit `d5b68e822996d61aae6ba612e5e9b5a14f576879`, Phase-II checkpoint and SDXL base revisions/hashes in `osor_downloads.json`. Inherit the author's inference implementation unchanged. Use rank 256, timestep 400, fixed prompt `Remove the instance of object`, bfloat16 generator/VAE and sequential CPU offload. The local base artifacts are verified fp16 variants cast to bfloat16; this precision/storage choice and dependency versions are recorded, not assumed equivalent to every original paper setting. All 1,544 trained keys must load, with no unexpected keys.
+
+Input and output resolution is 256 × 256, consistent with the author's default preprocessing for an already-small 256-pixel image. Report the direct decoded result with learned latent alpha. Do not add RGB paste-back or an externally selected threshold. One fixed case seed is reused across that case's four conditions; this does not estimate sampling variance. No OSOR training is performed.
+
+Score full-face AlexNet LPIPS, true-hole MAE and truly-visible-region MAE using the existing evaluator. Report all conditions, locations and missing areas. Compare with the already-frozen LaMa dilation-8 and ResShift dilation-8 / dilation-12-feather-4 rows on exactly matched cases. The paired 95% intervals resample 48 identity labels 2,000 times and retain all within-identity cases. They condition on these checkpoints, seeds, corruption generator and dataset.
+
+This is a local external-method comparison on synthetic facial occlusions, not reproduction of the authors' reported benchmark. A general object-removal model can behave differently on small face crops. Sequential offload changes latency and must not be presented as architecture-only speed. Unknown training overlap, small identity sample, observed validation status and dataset restrictions remain. Retain failures and fix implementation faults transparently; never omit failed or unattractive cases to improve the result.

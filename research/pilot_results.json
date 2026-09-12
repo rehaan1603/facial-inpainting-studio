@@ -1,0 +1,182 @@
+{
+  "images": 32,
+  "split": "validation only",
+  "resolution": 256,
+  "results": [
+    {
+      "condition": "accurate",
+      "method": "input_unchanged",
+      "n": 32,
+      "hole_mae": 0.25627872813493013,
+      "hole_psnr": 10.2560190572272,
+      "visible_mae": 0.0,
+      "missed_mae": null,
+      "overcovered_mae": null
+    },
+    {
+      "condition": "accurate",
+      "method": "exact_mask_diagnostic",
+      "n": 32,
+      "hole_mae": 0.0928113030968234,
+      "hole_psnr": 17.558975489174625,
+      "visible_mae": 0.0,
+      "missed_mae": null,
+      "overcovered_mae": null
+    },
+    {
+      "condition": "accurate",
+      "method": "supplied_mask",
+      "n": 32,
+      "hole_mae": 0.0928113030968234,
+      "hole_psnr": 17.558975489174625,
+      "visible_mae": 0.0,
+      "missed_mae": null,
+      "overcovered_mae": null
+    },
+    {
+      "condition": "accurate",
+      "method": "dilate_4px",
+      "n": 32,
+      "hole_mae": 0.10615741810761392,
+      "hole_psnr": 16.612196153781895,
+      "visible_mae": 0.0011162497576151509,
+      "missed_mae": null,
+      "overcovered_mae": null
+    },
+    {
+      "condition": "under_4px",
+      "method": "input_unchanged",
+      "n": 32,
+      "hole_mae": 0.25627872813493013,
+      "hole_psnr": 10.2560190572272,
+      "visible_mae": 0.0,
+      "missed_mae": 0.25928850239142776,
+      "overcovered_mae": null
+    },
+    {
+      "condition": "under_4px",
+      "method": "exact_mask_diagnostic",
+      "n": 32,
+      "hole_mae": 0.0928113030968234,
+      "hole_psnr": 17.558975489174625,
+      "visible_mae": 0.0,
+      "missed_mae": 0.04083006957080215,
+      "overcovered_mae": null
+    },
+    {
+      "condition": "under_4px",
+      "method": "supplied_mask",
+      "n": 32,
+      "hole_mae": 0.24489260790869594,
+      "hole_psnr": 10.74607527533999,
+      "visible_mae": 0.0,
+      "missed_mae": 0.25928850239142776,
+      "overcovered_mae": null
+    },
+    {
+      "condition": "under_4px",
+      "method": "dilate_4px",
+      "n": 32,
+      "hole_mae": 0.0928113030968234,
+      "hole_psnr": 17.558975489174625,
+      "visible_mae": 0.0,
+      "missed_mae": 0.04083006957080215,
+      "overcovered_mae": null
+    },
+    {
+      "condition": "over_4px",
+      "method": "input_unchanged",
+      "n": 32,
+      "hole_mae": 0.25627872813493013,
+      "hole_psnr": 10.2560190572272,
+      "visible_mae": 0.0,
+      "missed_mae": null,
+      "overcovered_mae": 0.0
+    },
+    {
+      "condition": "over_4px",
+      "method": "exact_mask_diagnostic",
+      "n": 32,
+      "hole_mae": 0.0928113030968234,
+      "hole_psnr": 17.558975489174625,
+      "visible_mae": 0.0,
+      "missed_mae": null,
+      "overcovered_mae": 0.0
+    },
+    {
+      "condition": "over_4px",
+      "method": "supplied_mask",
+      "n": 32,
+      "hole_mae": 0.10615741810761392,
+      "hole_psnr": 16.612196153781895,
+      "visible_mae": 0.0011162497576151509,
+      "missed_mae": null,
+      "overcovered_mae": 0.039888625498861074
+    },
+    {
+      "condition": "over_4px",
+      "method": "dilate_4px",
+      "n": 32,
+      "hole_mae": 0.1201860741712153,
+      "hole_psnr": 15.912468680772124,
+      "visible_mae": 0.0031069205833773594,
+      "missed_mae": null,
+      "overcovered_mae": 0.06663117406424135
+    },
+    {
+      "condition": "shift_8px",
+      "method": "input_unchanged",
+      "n": 32,
+      "hole_mae": 0.25627872813493013,
+      "hole_psnr": 10.2560190572272,
+      "visible_mae": 0.0,
+      "missed_mae": 0.2774502639658749,
+      "overcovered_mae": 0.0
+    },
+    {
+      "condition": "shift_8px",
+      "method": "exact_mask_diagnostic",
+      "n": 32,
+      "hole_mae": 0.0928113030968234,
+      "hole_psnr": 17.558975489174625,
+      "visible_mae": 0.0,
+      "missed_mae": 0.05371477935113944,
+      "overcovered_mae": 0.0
+    },
+    {
+      "condition": "shift_8px",
+      "method": "supplied_mask",
+      "n": 32,
+      "hole_mae": 0.1445488492026925,
+      "hole_psnr": 14.063666953007164,
+      "visible_mae": 0.0007813681993411592,
+      "missed_mae": 0.2774502639658749,
+      "overcovered_mae": 0.05865093509783037
+    },
+    {
+      "condition": "shift_8px",
+      "method": "dilate_4px",
+      "n": 32,
+      "hole_mae": 0.14432775997556746,
+      "hole_psnr": 14.405049589332899,
+      "visible_mae": 0.002001471801122534,
+      "missed_mae": 0.27065180242061615,
+      "overcovered_mae": 0.08339794151834212
+    }
+  ],
+  "manifest_sha256": "c9ab26ef0311f3c26d028e248b46b59a7dc158921e6c317e8e4a745e3574a248",
+  "seed": 20260910,
+  "checkpoint_sha256": "344c77bbcb158f17dd143070d1e789f38a66c04202311ae3a258ef66667a9ea9",
+  "gpu_forward_median_seconds": 0.030728400000953116,
+  "gpu_forward_p95_seconds": 0.05749557500166702,
+  "peak_allocated_MiB": 245.912109375,
+  "peak_reserved_MiB": 290.0,
+  "limits": [
+    "Small diagnostic, no statistical or novelty claims.",
+    "Rectangular synthetic textured occlusions only.",
+    "Third-party LaMa export, no official reproduction.",
+    "Dilation radius not tuned.",
+    "No LPIPS or identity metrics yet.",
+    "Forward timings exclude file loading, CPU preprocessing, and compositing."
+  ]
+}

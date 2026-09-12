@@ -1,0 +1,8 @@
+{
+  "initial_steps": 1500,
+  "total_steps": 6000,
+  "seeds": [17, 29, 43],
+  "variants": {"generic": 1.0, "preservation_weighted": 4.0},
+  "selection": "Same fixed tuning loss and checkpoint interval as initial runs; retain initial best if extension worsens it.",
+  "claim_limit": "Matched fourfold budget extension, not proof of convergence. No evaluation on previously observed test images in this extension."
+}

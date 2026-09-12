@@ -1,0 +1,43 @@
+{
+  "gpu": "NVIDIA GeForce RTX 5070 Laptop GPU",
+  "torch": "2.11.0+cu128",
+  "resolution": 256,
+  "batch_size": 1,
+  "warmups": 3,
+  "repeats": 20,
+  "scope": "Warm single-image inference including preprocessing tensors and CPU/GPU transfers, excluding image disk IO and model loading. One fixed development example, no background evaluation running. Refiner remains resident for all measurements. Not total project compute.",
+  "results": [
+    {
+      "backbone": "lama",
+      "refinement": false,
+      "median_ms": 21.564350000062404,
+      "p95_ms": 22.050134999972215,
+      "mean_ms": 21.420434999981808,
+      "peak_allocated_MiB": 246.37841796875
+    },
+    {
+      "backbone": "lama",
+      "refinement": true,
+      "median_ms": 23.22879999996985,
+      "p95_ms": 24.292929999967328,
+      "mean_ms": 23.220364999951926,
+      "peak_allocated_MiB": 246.37841796875
+    },
+    {
+      "backbone": "resshift",
+      "refinement": false,
+      "median_ms": 234.53699999993205,
+      "p95_ms": 262.0877899998618,
+      "mean_ms": 236.40975999996954,
+      "peak_allocated_MiB": 1006.826171875
+    },
+    {
+      "backbone": "resshift",
+      "refinement": true,
+      "median_ms": 272.9773500000192,
+      "p95_ms": 300.56028499999456,
+      "mean_ms": 278.3161249999921,
+      "peak_allocated_MiB": 1006.826171875
+    }
+  ]
+}

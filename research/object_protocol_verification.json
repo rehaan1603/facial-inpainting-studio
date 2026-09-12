@@ -1,0 +1,779 @@
+{
+  "protocol_sha256": "7b7cd9e440d23b8035fa2e74088b956123def47937ab64f1d4ce9bcb867e83a5",
+  "cases": 128,
+  "checks": "Finite geometry, nonempty true masks, visible pixels unchanged by corruption, accurate/under/over mask polarity, no true-mask boundary clipping. Not a model quality test.",
+  "minimum_missing_fraction": 0.0228271484375,
+  "maximum_missing_fraction": 0.2289276123046875,
+  "empty_under_masks": 0,
+  "padded_crops": 5,
+  "cases_detail": [
+    {
+      "case_id": "celebahq_000",
+      "true_fraction": 0.0753021240234375,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_001",
+      "true_fraction": 0.0243988037109375,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_002",
+      "true_fraction": 0.050994873046875,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_003",
+      "true_fraction": 0.0592041015625,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_004",
+      "true_fraction": 0.225433349609375,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_005",
+      "true_fraction": 0.0925445556640625,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_006",
+      "true_fraction": 0.0612335205078125,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_007",
+      "true_fraction": 0.12359619140625,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_008",
+      "true_fraction": 0.037506103515625,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_009",
+      "true_fraction": 0.0752410888671875,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_010",
+      "true_fraction": 0.1240386962890625,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_011",
+      "true_fraction": 0.1116485595703125,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_012",
+      "true_fraction": 0.082061767578125,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_013",
+      "true_fraction": 0.0424041748046875,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_014",
+      "true_fraction": 0.0712127685546875,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_015",
+      "true_fraction": 0.0451202392578125,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_016",
+      "true_fraction": 0.2289276123046875,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_017",
+      "true_fraction": 0.1326141357421875,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_018",
+      "true_fraction": 0.0947418212890625,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_019",
+      "true_fraction": 0.111236572265625,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_020",
+      "true_fraction": 0.03680419921875,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_021",
+      "true_fraction": 0.0683135986328125,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_022",
+      "true_fraction": 0.10430908203125,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_023",
+      "true_fraction": 0.165985107421875,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_024",
+      "true_fraction": 0.07708740234375,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_025",
+      "true_fraction": 0.0228271484375,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_026",
+      "true_fraction": 0.0458221435546875,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_027",
+      "true_fraction": 0.0711517333984375,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_028",
+      "true_fraction": 0.1731109619140625,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_029",
+      "true_fraction": 0.1021270751953125,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_030",
+      "true_fraction": 0.1106414794921875,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_031",
+      "true_fraction": 0.0945281982421875,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_032",
+      "true_fraction": 0.0607147216796875,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_033",
+      "true_fraction": 0.0789794921875,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_034",
+      "true_fraction": 0.12835693359375,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_035",
+      "true_fraction": 0.1201171875,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_036",
+      "true_fraction": 0.0532989501953125,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_037",
+      "true_fraction": 0.0289154052734375,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_038",
+      "true_fraction": 0.0712127685546875,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_039",
+      "true_fraction": 0.075439453125,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_040",
+      "true_fraction": 0.2037811279296875,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_041",
+      "true_fraction": 0.1403350830078125,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_042",
+      "true_fraction": 0.0927886962890625,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_043",
+      "true_fraction": 0.101776123046875,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_044",
+      "true_fraction": 0.063079833984375,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_045",
+      "true_fraction": 0.0951385498046875,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_046",
+      "true_fraction": 0.110107421875,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_047",
+      "true_fraction": 0.1634063720703125,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_048",
+      "true_fraction": 0.0532989501953125,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_049",
+      "true_fraction": 0.0362396240234375,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_050",
+      "true_fraction": 0.080902099609375,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_051",
+      "true_fraction": 0.06268310546875,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_052",
+      "true_fraction": 0.2157745361328125,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_053",
+      "true_fraction": 0.0854644775390625,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_054",
+      "true_fraction": 0.090850830078125,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_055",
+      "true_fraction": 0.1201629638671875,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_056",
+      "true_fraction": 0.0417938232421875,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_057",
+      "true_fraction": 0.1126708984375,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_058",
+      "true_fraction": 0.0887603759765625,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_059",
+      "true_fraction": 0.165985107421875,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_060",
+      "true_fraction": 0.07171630859375,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_061",
+      "true_fraction": 0.0302581787109375,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_062",
+      "true_fraction": 0.04193115234375,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "celebahq_063",
+      "true_fraction": 0.072174072265625,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_000",
+      "true_fraction": 0.0753021240234375,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_001",
+      "true_fraction": 0.0243988037109375,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_002",
+      "true_fraction": 0.050994873046875,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_003",
+      "true_fraction": 0.0592041015625,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_004",
+      "true_fraction": 0.225433349609375,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_005",
+      "true_fraction": 0.0925445556640625,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_006",
+      "true_fraction": 0.0612335205078125,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_007",
+      "true_fraction": 0.12359619140625,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_008",
+      "true_fraction": 0.037506103515625,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_009",
+      "true_fraction": 0.0752410888671875,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_010",
+      "true_fraction": 0.1240386962890625,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_011",
+      "true_fraction": 0.1116485595703125,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_012",
+      "true_fraction": 0.082061767578125,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_013",
+      "true_fraction": 0.0424041748046875,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_014",
+      "true_fraction": 0.0712127685546875,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_015",
+      "true_fraction": 0.0451202392578125,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_016",
+      "true_fraction": 0.2289276123046875,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_017",
+      "true_fraction": 0.1326141357421875,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_018",
+      "true_fraction": 0.0947418212890625,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_019",
+      "true_fraction": 0.111236572265625,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_020",
+      "true_fraction": 0.03680419921875,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_021",
+      "true_fraction": 0.0683135986328125,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_022",
+      "true_fraction": 0.10430908203125,
+      "empty_under_mask": false,
+      "crop_requires_padding": true
+    },
+    {
+      "case_id": "lapa_023",
+      "true_fraction": 0.165985107421875,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_024",
+      "true_fraction": 0.07708740234375,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_025",
+      "true_fraction": 0.0228271484375,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_026",
+      "true_fraction": 0.0458221435546875,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_027",
+      "true_fraction": 0.0711517333984375,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_028",
+      "true_fraction": 0.1731109619140625,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_029",
+      "true_fraction": 0.1021270751953125,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_030",
+      "true_fraction": 0.1106414794921875,
+      "empty_under_mask": false,
+      "crop_requires_padding": true
+    },
+    {
+      "case_id": "lapa_031",
+      "true_fraction": 0.0945281982421875,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_032",
+      "true_fraction": 0.0607147216796875,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_033",
+      "true_fraction": 0.0789794921875,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_034",
+      "true_fraction": 0.12835693359375,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_035",
+      "true_fraction": 0.1201171875,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_036",
+      "true_fraction": 0.0532989501953125,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_037",
+      "true_fraction": 0.0289154052734375,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_038",
+      "true_fraction": 0.0712127685546875,
+      "empty_under_mask": false,
+      "crop_requires_padding": true
+    },
+    {
+      "case_id": "lapa_039",
+      "true_fraction": 0.075439453125,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_040",
+      "true_fraction": 0.2037811279296875,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_041",
+      "true_fraction": 0.1403350830078125,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_042",
+      "true_fraction": 0.0927886962890625,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_043",
+      "true_fraction": 0.101776123046875,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_044",
+      "true_fraction": 0.063079833984375,
+      "empty_under_mask": false,
+      "crop_requires_padding": true
+    },
+    {
+      "case_id": "lapa_045",
+      "true_fraction": 0.0951385498046875,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_046",
+      "true_fraction": 0.110107421875,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_047",
+      "true_fraction": 0.1634063720703125,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_048",
+      "true_fraction": 0.0532989501953125,
+      "empty_under_mask": false,
+      "crop_requires_padding": true
+    },
+    {
+      "case_id": "lapa_049",
+      "true_fraction": 0.0362396240234375,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_050",
+      "true_fraction": 0.080902099609375,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_051",
+      "true_fraction": 0.06268310546875,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_052",
+      "true_fraction": 0.2157745361328125,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_053",
+      "true_fraction": 0.0854644775390625,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_054",
+      "true_fraction": 0.090850830078125,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_055",
+      "true_fraction": 0.1201629638671875,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_056",
+      "true_fraction": 0.0417938232421875,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_057",
+      "true_fraction": 0.1126708984375,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_058",
+      "true_fraction": 0.0887603759765625,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_059",
+      "true_fraction": 0.165985107421875,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_060",
+      "true_fraction": 0.07171630859375,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_061",
+      "true_fraction": 0.0302581787109375,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_062",
+      "true_fraction": 0.04193115234375,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    },
+    {
+      "case_id": "lapa_063",
+      "true_fraction": 0.072174072265625,
+      "empty_under_mask": false,
+      "crop_requires_padding": false
+    }
+  ]
+}

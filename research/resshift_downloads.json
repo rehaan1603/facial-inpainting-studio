@@ -1,0 +1,17 @@
+{
+  "commit": "bb03b7d21614cace01787e097c8a6ab6b945227d",
+  "files": [
+    {
+      "filename": "resshift_inpainting_face_s4.pth",
+      "url": "https://github.com/zsyOAOA/ResShift/releases/download/v2.0/resshift_inpainting_face_s4.pth",
+      "size": 478403130,
+      "sha256": "bf3a1691d4ad46958f7abe847f9afce632400112d9e9cd8fb5253c33da4cec02"
+    },
+    {
+      "filename": "celeba256_vq_f4_dim3_face.pth",
+      "url": "https://github.com/zsyOAOA/ResShift/releases/download/v2.0/celeba256_vq_f4_dim3_face.pth",
+      "size": 221364711,
+      "sha256": "770a2d8888ad51d84ceeda5f9b64ee19b2688bc1e88d1139e3a1eea0a3b9501a"
+    }
+  ]
+}
