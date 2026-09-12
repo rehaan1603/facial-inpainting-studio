@@ -1,0 +1,48 @@
+{
+  "seed": 43,
+  "variant": "generic",
+  "negative_weight": 1.0,
+  "steps": 1500,
+  "history": [
+    {
+      "step": 250,
+      "train_loss": 0.1544758379459381,
+      "tuning_loss": 0.15938790639241537
+    },
+    {
+      "step": 500,
+      "train_loss": 0.10019326210021973,
+      "tuning_loss": 0.11226194103558858
+    },
+    {
+      "step": 750,
+      "train_loss": 0.06782427430152893,
+      "tuning_loss": 0.06882481401165326
+    },
+    {
+      "step": 1000,
+      "train_loss": 0.043479662388563156,
+      "tuning_loss": 0.04721456269423167
+    },
+    {
+      "step": 1250,
+      "train_loss": 0.05347767099738121,
+      "tuning_loss": 0.03418319672346115
+    },
+    {
+      "step": 1500,
+      "train_loss": 0.025567149743437767,
+      "tuning_loss": 0.0223260751614968
+    }
+  ],
+  "parameters": 119057,
+  "seconds_this_session": 74.10205190000124,
+  "peak_allocated_MiB": 400.03955078125,
+  "signature": {
+    "configs/learned_refiner.json": "9754a1ed5d54aedde6b0e9f74edc6a1d4e0d2e67bfaf004ba5e76da510162de2",
+    "scripts/train_refiner.py": "c28309b987b382043b9a3363daf4f7d67f432ec4667cc8d8515dc52840ce9edc",
+    "scripts/refiner.py": "81cbf82f41e4ac43e9dc739b67f66853bc5bd445b44840811fb1fdbda889b6da",
+    "data/manifests/celebahq_reviewed_v2.csv": "8706a1193fba1f425bae7158442024799e51ad67e32185b779a171ed2fe43e7b"
+  },
+  "limits": "Standard generic and weighted segmentation controls; synthetic supervision, no novel-method claim."
+}

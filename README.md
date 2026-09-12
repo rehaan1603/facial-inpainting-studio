@@ -6,7 +6,7 @@ Read `research/FINAL_RESULTS.md` for generated measurements, `research/MANUSCRIP
 
 ## Run local inpainting
 
-The browser application is implemented. Double-click `Start Studio.cmd`, then open http://127.0.0.1:8765. Upload a face, paint or upload a mask, select LaMa, ResShift or Use 3–4 reference photos, reconstruct, compare and download the result. See `webapp/README.md` for controls, local storage and limitations. The website connects to the real local GPU engine and needs the Python server to remain running.
+The browser application is implemented. Double-click `Start Studio.cmd`, then open http://127.0.0.1:8765. Upload a face, paint or upload a mask, select LaMa, ResShift or Use 3–4 reference photos, reconstruct, compare and download the result. See `webapp/README.md` for controls, local storage and limitations. The website connects to the real local GPU engine. The launcher starts the server independently, so closing the launcher does not stop the app.
 
 Use PowerShell in this project folder. The project's `.venv` contains CUDA PyTorch; the global Python installation is unsuitable. Inputs must have matching dimensions. White mask pixels mean replace; black means retain. Inference resizes both inputs to 256 × 256 and writes a PNG, the effective mask and JSON metadata. Crop and align faces before inference for comparable results.
 
@@ -64,4 +64,4 @@ Neither the full generative backbones nor an identity-recognition model was trai
 
 ## GitHub checkpoint
 
-This repository contains code and research reports. Datasets, images, weights, raw outputs, environments and `configs/local.json` remain on the laptop and are excluded from Git. See `REPOSITORY_SCOPE.md` for restoration requirements and current limits.
+This private repository contains code, reports, detailed experiment tables and settings, data-integrity manifests, and the project-trained mask-refiner checkpoints (including training-resume states). `research/REPOSITORY_ARTIFACT_INVENTORY.json` lists every uploaded research artifact and its hash. Photographs, downloaded model weights, environments and `configs/local.json` remain local. See `REPOSITORY_SCOPE.md` for restoration requirements and current limits.

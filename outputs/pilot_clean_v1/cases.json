@@ -1,0 +1,226 @@
+[
+  {
+    "hq_id": "16194",
+    "identity": "1089",
+    "seed": 20277104,
+    "split": "val",
+    "source_sha256": "53b2e83bddff3f65521a6e0fc958878e61d793a5d5311c18bd7871ad4f0644b6"
+  },
+  {
+    "hq_id": "13068",
+    "identity": "3547",
+    "seed": 20273978,
+    "split": "val",
+    "source_sha256": "db1fe2834650042cf22822afaeb6f8413f31e2951f0361308dc04a16ae0c4b59"
+  },
+  {
+    "hq_id": "4322",
+    "identity": "480",
+    "seed": 20265232,
+    "split": "val",
+    "source_sha256": "61462497ca01fce265cf703b05194bd53c7651c9ab44017fc040b6dad3dd75f9"
+  },
+  {
+    "hq_id": "7200",
+    "identity": "780",
+    "seed": 20268110,
+    "split": "val",
+    "source_sha256": "29adc0a562d5aca6c10aaf58d62ad4ab793488ed5c2b8d64d3c8c163c94b536f"
+  },
+  {
+    "hq_id": "22826",
+    "identity": "2723",
+    "seed": 20283736,
+    "split": "val",
+    "source_sha256": "3c14c3b3d36e8c62feb3cfcd0faa6ddc67af5d952c0118f9e05c8954ada559e0"
+  },
+  {
+    "hq_id": "20364",
+    "identity": "1884",
+    "seed": 20281274,
+    "split": "val",
+    "source_sha256": "da3f65622abac7ff2d05f0c3d8824bf865f025930b5557f3ac048b0d8eaed569"
+  },
+  {
+    "hq_id": "4511",
+    "identity": "577",
+    "seed": 20265421,
+    "split": "val",
+    "source_sha256": "ecf3467c3c878cdc54afdc0cf682b29fe4f3294e21e79c1bfdfb8c6c68801689"
+  },
+  {
+    "hq_id": "24054",
+    "identity": "1291",
+    "seed": 20284964,
+    "split": "val",
+    "source_sha256": "fd5591523d2412199b313454ead59e2a4dda332a7bb1c8ad1f884285d13cb8dc"
+  },
+  {
+    "hq_id": "3824",
+    "identity": "3211",
+    "seed": 20264734,
+    "split": "val",
+    "source_sha256": "3a06b0fb455ed5283ef008244d39d41bab6308cee4c12c9fb57d182d339c7cf9"
+  },
+  {
+    "hq_id": "21585",
+    "identity": "986",
+    "seed": 20282495,
+    "split": "val",
+    "source_sha256": "1c560ad87d902231318cde52e43835a505bfeca9f23f8ac30b39f80efa7a0686"
+  },
+  {
+    "hq_id": "4615",
+    "identity": "2002",
+    "seed": 20265525,
+    "split": "val",
+    "source_sha256": "4c1999ecf3248197d0b445ed444b02a07c38a64e446b0de2ef1a51c4d7d5fb16"
+  },
+  {
+    "hq_id": "23745",
+    "identity": "2846",
+    "seed": 20284655,
+    "split": "val",
+    "source_sha256": "acea55986462421271abc29ce4fcd5052b1cd9acbb087fbabd61645d14285448"
+  },
+  {
+    "hq_id": "28738",
+    "identity": "3163",
+    "seed": 20289648,
+    "split": "val",
+    "source_sha256": "179e2e6d8603a542c0b6307e8851a139ea0c848d602260841ca969ccd7f75b4e"
+  },
+  {
+    "hq_id": "10526",
+    "identity": "192",
+    "seed": 20271436,
+    "split": "val",
+    "source_sha256": "838ae732d63ad11e7373839b0df5a506712c0e3c1d0121f259893150924a0ef4"
+  },
+  {
+    "hq_id": "755",
+    "identity": "4261",
+    "seed": 20261665,
+    "split": "val",
+    "source_sha256": "41a422173a7bac36085e87e602778d310ebe1d8f48d3a1079a7b08107db18590"
+  },
+  {
+    "hq_id": "4616",
+    "identity": "3685",
+    "seed": 20265526,
+    "split": "val",
+    "source_sha256": "ead7e2acefb2d7491fc117c915d55241ce5cc7186bd78a9c9d4f61ea8bea1766"
+  },
+  {
+    "hq_id": "26446",
+    "identity": "1877",
+    "seed": 20287356,
+    "split": "val",
+    "source_sha256": "506bb219e4b1b996ef2bf14586087fadcd39f8c7ffa5b827c7831c14248f80eb"
+  },
+  {
+    "hq_id": "14712",
+    "identity": "2122",
+    "seed": 20275622,
+    "split": "val",
+    "source_sha256": "73d4d58a79ffb95d361cd869813f9de04c98743da3f34af5c646500eec347dbd"
+  },
+  {
+    "hq_id": "11757",
+    "identity": "2981",
+    "seed": 20272667,
+    "split": "val",
+    "source_sha256": "eee71d3cbfbeabb0a52fb0bd4be563569e0a9f0b802815cf304fe44e22a9a575"
+  },
+  {
+    "hq_id": "10350",
+    "identity": "3521",
+    "seed": 20271260,
+    "split": "val",
+    "source_sha256": "e56101f13845efc272c13058124b0e775785ab177c2c18c0cedf49a19298dfe5"
+  },
+  {
+    "hq_id": "24280",
+    "identity": "373",
+    "seed": 20285190,
+    "split": "val",
+    "source_sha256": "6344b1df70b95fce060c4688e514f0cbd15b14e798c09f2419bcd13172880841"
+  },
+  {
+    "hq_id": "27570",
+    "identity": "971",
+    "seed": 20288480,
+    "split": "val",
+    "source_sha256": "20d2e1cfba838b8039977b9699a8df6406801f2f25ee2eb651352ae8fcddd007"
+  },
+  {
+    "hq_id": "20549",
+    "identity": "2888",
+    "seed": 20281459,
+    "split": "val",
+    "source_sha256": "7c33937c9c7202c9ccc2405fb215c714ae35b04f524eaeb96656d317e1394b93"
+  },
+  {
+    "hq_id": "9992",
+    "identity": "965",
+    "seed": 20270902,
+    "split": "val",
+    "source_sha256": "91ad1d941c404bc86b59dde3bc81aa89d2948462a43817bf072b5ed2a158b92a"
+  },
+  {
+    "hq_id": "29103",
+    "identity": "2489",
+    "seed": 20290013,
+    "split": "val",
+    "source_sha256": "8abab327c734b2737843fbae087dc6573f4f8987792fb4edf44a18a071d9e64e"
+  },
+  {
+    "hq_id": "19876",
+    "identity": "2283",
+    "seed": 20280786,
+    "split": "val",
+    "source_sha256": "ce9c508589899ff366d32665472fcac6694579cbbe01633e8949118206208363"
+  },
+  {
+    "hq_id": "17409",
+    "identity": "1921",
+    "seed": 20278319,
+    "split": "val",
+    "source_sha256": "9f228120e2ece6e8fd434e10cef4ba5d1e3ba5defe4d04d45ffb900a3aa696d9"
+  },
+  {
+    "hq_id": "11178",
+    "identity": "4696",
+    "seed": 20272088,
+    "split": "val",
+    "source_sha256": "e1f34de7e5d160636acd284f5a4be5b5e479b452f379e03ed2e7f48ea011bbec"
+  },
+  {
+    "hq_id": "6413",
+    "identity": "1201",
+    "seed": 20267323,
+    "split": "val",
+    "source_sha256": "c8383a3b171a6f29cd6f6da6dbcd7d53dba987b0ba551996932b9e3771403a8c"
+  },
+  {
+    "hq_id": "28310",
+    "identity": "3974",
+    "seed": 20289220,
+    "split": "val",
+    "source_sha256": "2be73d64c2796774bdd6d227ff2fa180e03d41ce2608f3d0084865289d153a0f"
+  },
+  {
+    "hq_id": "19574",
+    "identity": "796",
+    "seed": 20280484,
+    "split": "val",
+    "source_sha256": "681162acd3a36bc58c0db5643dba7d498b54e9328755c6f2f014f61d67b91c3d"
+  },
+  {
+    "hq_id": "26903",
+    "identity": "1164",
+    "seed": 20287813,
+    "split": "val",
+    "source_sha256": "077881e6a249be5371cc86a1e4b422fe3d4c6731d365ffc862b18f1d962a179c"
+  }
+]

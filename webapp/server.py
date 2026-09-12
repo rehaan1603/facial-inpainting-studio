@@ -29,7 +29,7 @@ def run_reference_job(job_id,source,mask,mode,references,blend):
     for index,reference in enumerate(references):
         path=folder/f'reference_{index+1}.png';reference.save(path);paths.append(path)
     cache=Path(json.loads((ROOT/'configs/local.json').read_text())['cache']);python=cache/'reference_env/Scripts/python.exe';progress=folder/'progress.json'
-    command=[str(python),str(ROOT/'scripts/reference_inpaint.py'),'--image',str(folder/'input.png'),'--mask',str(folder/'effective_mask.png'),'--references',*[str(p) for p in paths],'--output',str(folder/'result.png'),'--progress',str(progress),'--blend',blend]
+    command=[str(python),str(ROOT/'scripts/reference_inpaint.py'),'--image',str(folder/'input.png'),'--mask',str(folder/'effective_mask.png'),'--references',*[str(p) for p in paths],'--output',str(folder/'result.png'),'--progress',str(progress),'--blend',blend,'--strength','0.99']
     job.update(status='running',message='Preparing the reference photos…');start=time.monotonic()
     with (folder/'inference.log').open('w',encoding='utf-8') as log:
         process=subprocess.Popen(command,cwd=ROOT,stdout=log,stderr=log,creationflags=subprocess.CREATE_NO_WINDOW)
@@ -40,6 +40,9 @@ def run_reference_job(job_id,source,mask,mode,references,blend):
             if time.monotonic()-start>1800:process.terminate();process.wait();raise ValueError('Reference reconstruction timed out. See the saved inference log.')
             time.sleep(.5)
     if process.returncode:
+        log_text=(folder/'inference.log').read_text(encoding='utf-8',errors='replace')
+        if 'Application Control policy has blocked this file' in log_text:
+            raise ValueError('Windows blocked a required reference-model component. The reference environment needs repair. LaMa remains available as a separate single-image option.')
         detail=json.loads(progress.read_text()).get('error') if progress.exists() else None
         raise ValueError(detail or 'Reference reconstruction failed. The saved inference log has details.')
     metadata=json.loads((folder/'result.json').read_text());metadata['mask_mode']=mode;(folder/'metadata.json').write_text(json.dumps(metadata,indent=2))

@@ -1,0 +1,11 @@
+{
+  "checkpoint_keys": 1544,
+  "trainable_keys": 1544,
+  "missing_frozen_keys": 1678,
+  "missing_trainable_keys": 0,
+  "unexpected_keys": 0,
+  "memory_mode": "accelerate sequential CPU offload",
+  "inference_dtype": "bfloat16",
+  "base_variant": "fp16",
+  "source_infer_sha256": "5fe6a44a1268c174becff0b54293254f90ab15294187e995c0fde5260803ed7f"
+}

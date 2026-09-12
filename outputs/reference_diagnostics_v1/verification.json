@@ -1,0 +1,10 @@
+{
+  "verified_processed_photographs": 60,
+  "verified_observed_mask_cases": 12,
+  "mask_fraction_min": 0.0429229736328125,
+  "mask_fraction_max": 0.0926666259765625,
+  "outside_mask_exactly_preserved": true,
+  "border_touching_masks": 0,
+  "repeated_full_preparation_byte_identical_manifest_and_audit": true,
+  "manifest_sha256": "3680b1a0f49370fc9e78049664e4019c45dcf70d87b313c99a9d9e12f02f684f"
+}

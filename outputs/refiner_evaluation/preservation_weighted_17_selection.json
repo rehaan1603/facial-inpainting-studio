@@ -1,0 +1,14 @@
+{
+  "variant": "preservation_weighted",
+  "seed": 17,
+  "threshold": 0.35,
+  "tuning_costs": {
+    "0.2": 0.04316875416210878,
+    "0.35": 0.03468419810119815,
+    "0.5": 0.03910103575440524,
+    "0.65": 0.04802300101926919,
+    "0.8": 0.08364219159206439
+  },
+  "selection_rule": "Minimize FNR + 4*FPR on v2 tuning only; ties prefer higher threshold.",
+  "checkpoint_sha256": "4a099810c9f0fd2511ae54da8d8f84f31586391a656f1732cc16dda3a2ae5ef1"
+}

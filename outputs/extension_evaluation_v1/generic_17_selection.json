@@ -1,0 +1,12 @@
+{
+  "threshold": 0.65,
+  "scores": {
+    "0.2": 0.04493049132916297,
+    "0.35": 0.03195309351810503,
+    "0.5": 0.030395549409469078,
+    "0.65": 0.029866866896032778,
+    "0.8": 0.059421082876833765
+  },
+  "checkpoint_sha256": "883535ab2a6589959eac963998e181badc5277a0bf9fe099951a8573cd601d82",
+  "selection": "Same five-threshold FNR+4*FPR tuning rule as first stage. Soft output uses p directly; no extra parameter selection."
+}

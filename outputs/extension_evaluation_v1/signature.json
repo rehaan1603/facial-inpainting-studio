@@ -1,0 +1,23 @@
+{
+  "scripts\\evaluate_extension.py": "98897d424f096bb8fc704c1af0cc2314fce256f0ad7496baa87f9f1c9f5df98e",
+  "scripts\\inpaint.py": "62cf2a75d348d51854f2fc71b47250cf73d33f338d656413cbea87d25b1c24d4",
+  "scripts\\refiner.py": "81cbf82f41e4ac43e9dc739b67f66853bc5bd445b44840811fb1fdbda889b6da",
+  "scripts\\benchmark_v2.py": "6eb4f4f35db971e28c219bd1de4bac629ac38d44ad80729945763dec9e6395d5",
+  "scripts\\area_matched_v3.py": "bdf71b5ceced8e7ab26268e1bb9db8007b69e880afd3a23c234e32a390109ca8",
+  "scripts\\pilot.py": "4bb199c6982e681aa0c9a36cb9ae9c8331f8ed801caa731eb495bbf07f7384e6",
+  "data\\manifests\\celebahq_reviewed_v2.csv": "8706a1193fba1f425bae7158442024799e51ad67e32185b779a171ed2fe43e7b",
+  "outputs\\benchmark_v2\\cases.json": "ae7833a4bbec69414b1dd5ee207ce1c52f35598f63419cb87298899c39762eb4",
+  "outputs\\area_matched_v3_margin12\\cases.json": "1f7ee5beb631e010530d03840a6667a32a9183b88f929e68d4bb6b36b6481171",
+  "outputs\\refiner_extension_v1\\generic_17\\best.pt": "883535ab2a6589959eac963998e181badc5277a0bf9fe099951a8573cd601d82",
+  "outputs\\refiner_extension_v1\\generic_17\\training.json": "05d6e3aafd66be6b90067cda705154a4316f3640b83e1430563aada63098478e",
+  "outputs\\refiner_extension_v1\\preservation_weighted_17\\best.pt": "9ff45ca53e88814b63b90309b4dbab7d9e6c4518bb2ff3cc7a4893ff4c22ecc8",
+  "outputs\\refiner_extension_v1\\preservation_weighted_17\\training.json": "9ee58c9377d980580e051231b7f556617c4b5cb04d1a177a51146f7f699d119a",
+  "outputs\\refiner_extension_v1\\generic_29\\best.pt": "8a91e12c3f0b61e444f694ede49d9bb88c948a137e843920920336d11efce2ca",
+  "outputs\\refiner_extension_v1\\generic_29\\training.json": "8ba7ab4a7db7916e4eb72cc4b59e54a64cb76c892269e305730ad88ee810d8e8",
+  "outputs\\refiner_extension_v1\\preservation_weighted_29\\best.pt": "cc60011aefe39bc4fdfb7e5e87c9b939ad0ec58e41cd82c2bb0a997eafcd5ed2",
+  "outputs\\refiner_extension_v1\\preservation_weighted_29\\training.json": "65d19cf2b64ebf0eaea428c8c5b43db46913646e73b5e225b250dbc087998b90",
+  "outputs\\refiner_extension_v1\\generic_43\\best.pt": "94e908da42cbd148c55ca8c306009ab43ff88f795cea959567f59dc02315330b",
+  "outputs\\refiner_extension_v1\\generic_43\\training.json": "09d6c222ecb843ca3401339344f4b55fe1c0bfde2dcfc80154376fee7d7271bc",
+  "outputs\\refiner_extension_v1\\preservation_weighted_43\\best.pt": "9943750fabd66162411a27a18f4ca47a0b093704f41da5a39da45b51c9d848a8",
+  "outputs\\refiner_extension_v1\\preservation_weighted_43\\training.json": "9b8abb8f6b121337c636ed322d924e69dc6c209459106e00a32c0715fba7d951"
+}

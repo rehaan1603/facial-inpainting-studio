@@ -1,0 +1,40 @@
+{
+  "selection": "First SHA256-ranked validation identity label with at least five reviewed images; first five numeric HQ IDs. Functional example, not a random test estimate.",
+  "images": [
+    {
+      "role": "target",
+      "hq_id": "1734",
+      "identity_label": "3037",
+      "source_sha256": "e0e79db3317655f3a9489470692720503c3dd14cab774c638e63eff1b14fe89b",
+      "file": "target.png"
+    },
+    {
+      "role": "reference",
+      "hq_id": "3311",
+      "identity_label": "3037",
+      "source_sha256": "4efe7f3fe6798a51c15b639d8c9593dc5ccab2d55bcc311ec90b581e9bc54eeb",
+      "file": "reference_1.png"
+    },
+    {
+      "role": "reference",
+      "hq_id": "5262",
+      "identity_label": "3037",
+      "source_sha256": "9504fae385307ac680078a20ae17a65f529c53dea879dd7ec48046acc2a26659",
+      "file": "reference_2.png"
+    },
+    {
+      "role": "reference",
+      "hq_id": "9409",
+      "identity_label": "3037",
+      "source_sha256": "3659aa04ee7feca08693fae91ea303a060df025454fbae04c8c0dd3d8edb3e4d",
+      "file": "reference_3.png"
+    },
+    {
+      "role": "reference",
+      "hq_id": "9524",
+      "identity_label": "3037",
+      "source_sha256": "415cda133505d57d761de6deb80d8a8b375969b7d50f7beb16c4cdeb0be3eb32",
+      "file": "reference_4.png"
+    }
+  ]
+}

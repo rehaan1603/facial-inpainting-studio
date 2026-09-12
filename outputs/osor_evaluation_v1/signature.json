@@ -1,0 +1,12 @@
+{
+  "scripts/evaluate_osor.py": "4655f4405dfb34c40c926509741700745107b0565dec7b5f58ba212f27a80822",
+  "scripts/osor_adapter.py": "45b728f35d0383504c367d9b0e1d44e5fc779e99dd9825ed3a1a5dcfae9a4d0a",
+  "scripts/area_matched_v3.py": "bdf71b5ceced8e7ab26268e1bb9db8007b69e880afd3a23c234e32a390109ca8",
+  "scripts/pilot.py": "4bb199c6982e681aa0c9a36cb9ae9c8331f8ed801caa731eb495bbf07f7384e6",
+  "research/OSOR_COMPARISON_PROTOCOL.md": "a891fa643e8e068981f52b828f19081206b63c77dae41b899495f18ac7180ddc",
+  "research/osor_downloads.json": "d226ddcab433603fecce08467ef52ce304a4f8ddab313d6df475eea10df9ef1b",
+  "research/osor_runtime.json": "30c13d3a0be67fca08c6362674a598b3183199296a2103b2e87f7f9996333ec7",
+  "research/osor-environment-lock.txt": "2a0eb2cf640ac0fa7f69e96b4b914e4be62723aa0c275fe790f2dfd93f751f67",
+  "data/manifests/celebahq_reviewed_v2.csv": "8706a1193fba1f425bae7158442024799e51ad67e32185b779a171ed2fe43e7b",
+  "outputs/area_matched_v3_margin12/cases.json": "1f7ee5beb631e010530d03840a6667a32a9183b88f929e68d4bb6b36b6481171"
+}

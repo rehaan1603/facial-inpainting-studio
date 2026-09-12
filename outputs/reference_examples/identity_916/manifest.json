@@ -1,0 +1,276 @@
+{
+  "identity_label": "916",
+  "split": "val",
+  "selection_rule": "Validation identity labels with at least five reviewed images, ordered by SHA256('reference-smoke-17:' + identity). For each label, inspect the first five numeric HQ IDs. Select the first group with five different source hashes and exactly one detected face in every 512px image. Do not select a later image within a rejected group.",
+  "selection_audit": "../selection_audit.json",
+  "images": [
+    {
+      "role": "target",
+      "hq_id": "6747",
+      "identity_label": "916",
+      "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\6747.jpg",
+      "source_sha256": "9cdf8665330724100a2845cc255710704f9d85700d95dabf835b873541596e85",
+      "face_count": 1,
+      "detections": [
+        {
+          "score": 0.601219654083252,
+          "bbox": [
+            136.14443969726562,
+            88.03670501708984,
+            390.10748291015625,
+            448.8436584472656
+          ],
+          "landmarks": [
+            [
+              194.56394958496094,
+              242.494140625
+            ],
+            [
+              314.59320068359375,
+              241.97265625
+            ],
+            [
+              248.0319061279297,
+              306.486328125
+            ],
+            [
+              211.4027099609375,
+              372.84295654296875
+            ],
+            [
+              297.74029541015625,
+              373.15643310546875
+            ]
+          ]
+        }
+      ],
+      "file": "target.png",
+      "processed_sha256": "fc9b1578c207bdd98ebaf99156c8fa3619a57fe140eacf331eaa71bfcc1add16"
+    },
+    {
+      "role": "reference_1",
+      "hq_id": "8910",
+      "identity_label": "916",
+      "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\8910.jpg",
+      "source_sha256": "89c7261ab6d964f0cfcb5fe35afcebdd9ec448b395074fdb918ef033cedaa783",
+      "face_count": 1,
+      "detections": [
+        {
+          "score": 0.7134803533554077,
+          "bbox": [
+            124.79122161865234,
+            93.35105895996094,
+            387.41998291015625,
+            449.7349548339844
+          ],
+          "landmarks": [
+            [
+              191.85546875,
+              244.5774383544922
+            ],
+            [
+              316.0641174316406,
+              245.11154174804688
+            ],
+            [
+              253.115478515625,
+              317.4739685058594
+            ],
+            [
+              202.10836791992188,
+              365.4512634277344
+            ],
+            [
+              305.0746154785156,
+              366.41912841796875
+            ]
+          ]
+        }
+      ],
+      "file": "reference_1.png",
+      "processed_sha256": "cba06b1732ee6e0ff2f8f4b8319368b919588c8522a722aae728c19fb4ffeacf"
+    },
+    {
+      "role": "reference_2",
+      "hq_id": "12181",
+      "identity_label": "916",
+      "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\12181.jpg",
+      "source_sha256": "a35fd87a5ad6fe0c07335967ba9ba13820ca0ba507ee11d8e3e7166bf49d06ee",
+      "face_count": 1,
+      "detections": [
+        {
+          "score": 0.7303900122642517,
+          "bbox": [
+            130.0600128173828,
+            84.94503021240234,
+            374.0040588378906,
+            444.23187255859375
+          ],
+          "landmarks": [
+            [
+              192.2593231201172,
+              245.4217529296875
+            ],
+            [
+              316.3102111816406,
+              244.99252319335938
+            ],
+            [
+              255.37008666992188,
+              318.94921875
+            ],
+            [
+              209.0946807861328,
+              372.35382080078125
+            ],
+            [
+              299.6230773925781,
+              372.02655029296875
+            ]
+          ]
+        }
+      ],
+      "file": "reference_2.png",
+      "processed_sha256": "b148630688297c8592e0ea79ed5803f8dc28f3a7add9a448056b5db9da6ecbcb"
+    },
+    {
+      "role": "reference_3",
+      "hq_id": "14926",
+      "identity_label": "916",
+      "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\14926.jpg",
+      "source_sha256": "4d8f775526e6734fe32536be7dfc9c3e171a5642f2ec273df397a123b3483d0b",
+      "face_count": 1,
+      "detections": [
+        {
+          "score": 0.6131587028503418,
+          "bbox": [
+            132.16506958007812,
+            88.29378509521484,
+            401.46331787109375,
+            455.84674072265625
+          ],
+          "landmarks": [
+            [
+              190.15623474121094,
+              241.82894897460938
+            ],
+            [
+              318.84259033203125,
+              245.0747833251953
+            ],
+            [
+              244.47793579101562,
+              323.45001220703125
+            ],
+            [
+              199.40245056152344,
+              366.44390869140625
+            ],
+            [
+              310.03399658203125,
+              370.26861572265625
+            ]
+          ]
+        }
+      ],
+      "file": "reference_3.png",
+      "processed_sha256": "db0bff9cc77ce8490caee3f8f7be747acb21236f0e2a4079fe232d04df1414d8"
+    },
+    {
+      "role": "reference_4",
+      "hq_id": "16323",
+      "identity_label": "916",
+      "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\16323.jpg",
+      "source_sha256": "62cb115215cdb46b84f7ed86478c89d2d650f812326d360aec56a68d0e5b3a36",
+      "face_count": 1,
+      "detections": [
+        {
+          "score": 0.6990075707435608,
+          "bbox": [
+            129.25514221191406,
+            85.48188781738281,
+            389.97467041015625,
+            451.65350341796875
+          ],
+          "landmarks": [
+            [
+              193.8966827392578,
+              241.35012817382812
+            ],
+            [
+              316.73394775390625,
+              243.23446655273438
+            ],
+            [
+              251.2374267578125,
+              314.85125732421875
+            ],
+            [
+              205.635498046875,
+              370.4620361328125
+            ],
+            [
+              300.1949157714844,
+              372.89501953125
+            ]
+          ]
+        }
+      ],
+      "file": "reference_4.png",
+      "processed_sha256": "edfb36e8c15fa03a3bf609f28cec96f8317f4a828e816fc5865c434eb05d1ae0"
+    }
+  ],
+  "mask": {
+    "file": "mask.png",
+    "white_means": "region to reconstruct",
+    "source": "target face detector's two eye landmarks",
+    "eye_landmarks": [
+      [
+        194.56394958496094,
+        242.494140625
+      ],
+      [
+        314.59320068359375,
+        241.97265625
+      ]
+    ],
+    "polygon": [
+      [
+        140.3682670593262,
+        200.71857070922852
+      ],
+      [
+        368.42384414672847,
+        199.72775039672854
+      ],
+      [
+        368.7888832092285,
+        283.7482261657715
+      ],
+      [
+        140.7333061218262,
+        284.73904647827146
+      ]
+    ],
+    "geometry": "Eye-aligned rectangle; width 1.9 times inter-eye distance and height 0.7 times inter-eye distance, centred on the two eyes.",
+    "fraction": 0.07338714599609375,
+    "sha256": "c9d1513857804fa27a0a4e9b095609cfebe9df890090fe7e8770f3cc250ec191"
+  },
+  "observed": {
+    "file": "observed.png",
+    "fill_rgb": [
+      90,
+      100,
+      110
+    ],
+    "sha256": "08db185b13779c72f9bdf6e28b10058d063643e6944c49c19921b032ad118e6c",
+    "outside_mask_exactly_preserved": true
+  },
+  "limits": [
+    "Same-person grouping follows supplied CelebA identity labels; it is not independently verified identity ground truth.",
+    "Distinct source hashes establish distinct files, not independent capture events or absence of near duplicates.",
+    "This selected validation example is for functional debugging only. It is not a held-out test or evidence of reconstruction quality, novelty, or publication readiness.",
+    "Occlusion is synthetic and aligned using unobscured target landmarks. Target.png is withheld from inference and retained only as a debugging comparison.",
+    "Reference model pretraining overlap with these photographs is unresolved."
+  ]
+}

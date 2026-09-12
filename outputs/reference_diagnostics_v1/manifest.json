@@ -1,0 +1,3424 @@
+{
+  "version": "reference_diagnostics_v1",
+  "status": "development_only_not_fresh_final_test",
+  "protocol_signature_sha256": "2ffb0e89a874a7018cf2eab245244b325d11d722fd3a4c3c13980a8bafd36a2c",
+  "selection_audit_sha256": "a02389a728972fdb500b6e8b1dd52d53cab84f910f88c9b324f3f5c8a911dd62",
+  "selection_rule": "Only reviewed HQ validation rows. Exclude all prior pilot, tuning, assessment and original HQ test identity labels plus known engineering examples. Hash-rank identities and images with the frozen seed. Greedily retain five images per identity that pass exact hash, decoded-pixel hash, conservative pHash-distance (>6 from already retained diagnostic images), and exactly-one-face screening. First retained image is target; next four are references. Stop at twelve successful identities.",
+  "summary": {
+    "validation_identity_labels": 604,
+    "eligible_identity_labels_before_image_screening": 142,
+    "identity_groups_screened": 27,
+    "failed_identity_groups": 15,
+    "photos_screened": 209,
+    "photo_rejection_reason_counts": {
+      "face_count_is_not_one": 124
+    },
+    "selected_identities": 12,
+    "selected_photos": 60,
+    "selected_identity_labels": [
+      "56",
+      "376",
+      "620",
+      "1027",
+      "1293",
+      "1519",
+      "2547",
+      "3559",
+      "3731",
+      "4017",
+      "4423",
+      "4663"
+    ],
+    "overlap_with_excluded_identity_labels": [],
+    "source_hash_duplicates": 0,
+    "decoded_rgb_duplicates": 0,
+    "selected_phash_pairs_at_distance_le_6": 0,
+    "all_selected_face_counts_equal_one": true
+  },
+  "cases": [
+    {
+      "case_id": "identity_620",
+      "identity_label": "620",
+      "source_split": "val",
+      "images": [
+        {
+          "hq_id": "22235",
+          "identity_label": "620",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\22235.jpg",
+          "source_sha256": "d5bf5740eee52f0ffc008a7502ae0b3b6863d060973c313e16b373a6d2d1708d",
+          "decoded_rgb_sha256": "c2f6cd307a10bd32b696f478840197052dcc49adba72c1a5aee6540d0ee9ead1",
+          "phash": "5a3769e304c09ed9",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.591049313545227,
+              "bbox": [
+                122.8414535522461,
+                109.89608001708984,
+                398.85943603515625,
+                462.46502685546875
+              ],
+              "landmarks": [
+                [
+                  185.7427215576172,
+                  241.8785400390625
+                ],
+                [
+                  319.3233337402344,
+                  238.53335571289062
+                ],
+                [
+                  249.2071990966797,
+                  313.126953125
+                ],
+                [
+                  197.60592651367188,
+                  373.545654296875
+                ],
+                [
+                  312.7460021972656,
+                  371.1488952636719
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "target",
+          "file": "outputs/reference_diagnostics_v1/identity_620/target.png",
+          "processed_sha256": "f7216d3e1ebb95ee69ddaa8cc553879f7509d11ffd34067da5b436b247724bc6"
+        },
+        {
+          "hq_id": "7499",
+          "identity_label": "620",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\7499.jpg",
+          "source_sha256": "eba7ab11bc9d0b1d548a147f791a3ca5192fc563dcb14d0a7fd52ee3c64fad9f",
+          "decoded_rgb_sha256": "170746f92c6b7755f183e18c6b5cf63d03dc4954f71998774876c5e7ca4dface",
+          "phash": "40e73988c5de9dc8",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.5899519920349121,
+              "bbox": [
+                192.49977111816406,
+                106.57612609863281,
+                463.50567626953125,
+                487.27392578125
+              ],
+              "landmarks": [
+                [
+                  219.76943969726562,
+                  235.5131378173828
+                ],
+                [
+                  285.97711181640625,
+                  236.1893768310547
+                ],
+                [
+                  183.0965576171875,
+                  303.857177734375
+                ],
+                [
+                  220.18411254882812,
+                  388.5606994628906
+                ],
+                [
+                  268.1087341308594,
+                  387.267822265625
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "reference_1",
+          "file": "outputs/reference_diagnostics_v1/identity_620/reference_1.png",
+          "processed_sha256": "5b63b561b74095dcbe80d23b5dbc6dae014c4c2d085da0c904eeda2fa2c5ab21"
+        },
+        {
+          "hq_id": "117",
+          "identity_label": "620",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\117.jpg",
+          "source_sha256": "7c3811d8e19d1e36b134c311ef7dab7d1a36cd5be958bc3c89d703c3efc0c414",
+          "decoded_rgb_sha256": "312f73edb079a61c44e885e707b0b9d5f4e59663d62fe2c4ed06b0194e1eeb3b",
+          "phash": "0b7d2472601b879f",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.6816220879554749,
+              "bbox": [
+                104.94593811035156,
+                109.9544448852539,
+                386.0237731933594,
+                464.65692138671875
+              ],
+              "landmarks": [
+                [
+                  192.5406036376953,
+                  242.19534301757812
+                ],
+                [
+                  318.7260437011719,
+                  245.73623657226562
+                ],
+                [
+                  264.3346862792969,
+                  285.2555236816406
+                ],
+                [
+                  204.32962036132812,
+                  371.7276916503906
+                ],
+                [
+                  306.4482421875,
+                  374.39849853515625
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "reference_2",
+          "file": "outputs/reference_diagnostics_v1/identity_620/reference_2.png",
+          "processed_sha256": "c05c5f94bb5f965994e56fbe1ad5d87b0a119c462fe465f30311f329e389247f"
+        },
+        {
+          "hq_id": "23634",
+          "identity_label": "620",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\23634.jpg",
+          "source_sha256": "b4412bceab357d5710a0ad10c4af2bd234564da3617d21ea2ff5f809d4570c59",
+          "decoded_rgb_sha256": "d6e3fa483efa172cca4c65eaa8f3cc4342696733303566722a7a87aaebf03b6e",
+          "phash": "1a756186dcd9238b",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.5692321062088013,
+              "bbox": [
+                132.26052856445312,
+                98.4630355834961,
+                390.13409423828125,
+                472.72174072265625
+              ],
+              "landmarks": [
+                [
+                  194.23487854003906,
+                  243.13333129882812
+                ],
+                [
+                  320.1888732910156,
+                  244.28091430664062
+                ],
+                [
+                  252.9470672607422,
+                  311.0331726074219
+                ],
+                [
+                  197.0037384033203,
+                  371.37286376953125
+                ],
+                [
+                  311.21551513671875,
+                  373.5931396484375
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "reference_3",
+          "file": "outputs/reference_diagnostics_v1/identity_620/reference_3.png",
+          "processed_sha256": "0e5c66b9b8195a819b59fe738915e5af049cf90e6628c1a7c91fb5a192831535"
+        },
+        {
+          "hq_id": "12065",
+          "identity_label": "620",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\12065.jpg",
+          "source_sha256": "00356d9dd76a6baf13de2fa253aa2732ddb70c7fb941187c7332a13d2174045b",
+          "decoded_rgb_sha256": "3300d08acc759eeb4e4068e49f563b2ede1b414996e302a75cba16f2276f88f3",
+          "phash": "5f302cf2f8019cf8",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.5425050258636475,
+              "bbox": [
+                106.36763763427734,
+                117.26850891113281,
+                384.8946838378906,
+                465.4395446777344
+              ],
+              "landmarks": [
+                [
+                  189.85446166992188,
+                  243.33853149414062
+                ],
+                [
+                  322.37554931640625,
+                  242.9834442138672
+                ],
+                [
+                  265.5302429199219,
+                  304.03533935546875
+                ],
+                [
+                  201.8605499267578,
+                  376.90435791015625
+                ],
+                [
+                  309.8575744628906,
+                  376.03759765625
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "reference_4",
+          "file": "outputs/reference_diagnostics_v1/identity_620/reference_4.png",
+          "processed_sha256": "c6ae7c8fe653d2507456f5251ab1504a6f0caaf398bfe8b373ca506df692b70a"
+        }
+      ],
+      "observed": "outputs/reference_diagnostics_v1/identity_620/observed.png",
+      "observed_sha256": "bff4caad1ed2195835312c8792af0a76169971e260ba89bd475a39c29923a803",
+      "mask": "outputs/reference_diagnostics_v1/identity_620/mask.png",
+      "mask_sha256": "5e00fa2aaa472d4e93ca2797beff1228e11ea86a72d17712d650ec30429089f1",
+      "mask_fraction": 0.09103012084960938,
+      "mask_geometry": {
+        "kind": "synthetic eye-aligned rectangle",
+        "polygon": [
+          [
+            124.4606315612793,
+            196.63065872192385
+          ],
+          [
+            378.26379470825196,
+            190.2748085021973
+          ],
+          [
+            380.6054237365723,
+            283.7812370300293
+          ],
+          [
+            126.80226058959961,
+            290.13708724975584
+          ]
+        ],
+        "width_inter_eye_distances": 1.9,
+        "height_inter_eye_distances": 0.7,
+        "fill_rgb": [
+          90,
+          100,
+          110
+        ],
+        "uses_unobscured_target_landmarks_for_case_construction_only": true
+      }
+    },
+    {
+      "case_id": "identity_4423",
+      "identity_label": "4423",
+      "source_split": "val",
+      "images": [
+        {
+          "hq_id": "16484",
+          "identity_label": "4423",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\16484.jpg",
+          "source_sha256": "bd5156c10e3523f1b509bca69dd4539feee0ec4dc0bdefab93e3f7bdf90758cf",
+          "decoded_rgb_sha256": "4e89575beceb0a4ce0b39bf819282d813c0948e5d2b002fc8e20146903078c58",
+          "phash": "585aaf97248a9999",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.6564969420433044,
+              "bbox": [
+                186.19659423828125,
+                116.17424011230469,
+                430.24554443359375,
+                462.1630859375
+              ],
+              "landmarks": [
+                [
+                  210.8754425048828,
+                  255.97372436523438
+                ],
+                [
+                  302.13055419921875,
+                  250.1409454345703
+                ],
+                [
+                  217.7922821044922,
+                  315.0172424316406
+                ],
+                [
+                  229.09609985351562,
+                  384.724853515625
+                ],
+                [
+                  296.7471923828125,
+                  379.17230224609375
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "target",
+          "file": "outputs/reference_diagnostics_v1/identity_4423/target.png",
+          "processed_sha256": "2fa41a7440a462ff62c0f56bc851093d445b9e2d4b0f0510b347fcd8a9d73068"
+        },
+        {
+          "hq_id": "3784",
+          "identity_label": "4423",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\3784.jpg",
+          "source_sha256": "9609694d0de97f53629a6e95ebfde74fb851f036bc6cbd2223c135d23cae2bd5",
+          "decoded_rgb_sha256": "0f0b8bad3feaf27cfc827f364529b4e545cf10d169f7ff088342a65dc4c9ea3f",
+          "phash": "6646aca29d9c9d98",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.5721945762634277,
+              "bbox": [
+                189.42779541015625,
+                97.26844787597656,
+                456.7044982910156,
+                480.6839294433594
+              ],
+              "landmarks": [
+                [
+                  210.5155487060547,
+                  238.02377319335938
+                ],
+                [
+                  279.4307861328125,
+                  233.33975219726562
+                ],
+                [
+                  177.4723663330078,
+                  300.1626281738281
+                ],
+                [
+                  209.37655639648438,
+                  387.78961181640625
+                ],
+                [
+                  263.48968505859375,
+                  381.8182067871094
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "reference_1",
+          "file": "outputs/reference_diagnostics_v1/identity_4423/reference_1.png",
+          "processed_sha256": "2b8afa028e84c982c747b0008f8aff61e2e628781469e2b084c694887e09bc15"
+        },
+        {
+          "hq_id": "4662",
+          "identity_label": "4423",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\4662.jpg",
+          "source_sha256": "f760d80fe030603ee8acfae9e8269854939e83ed44467ca0cec67e3d0f3b9e83",
+          "decoded_rgb_sha256": "6efce888b5541fa554f90445f059b1d808ad148a1f9c8bd74155bdf9f36cc110",
+          "phash": "7a2e61a170c699d3",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.5913742780685425,
+              "bbox": [
+                132.57127380371094,
+                120.43180084228516,
+                398.9717712402344,
+                472.372802734375
+              ],
+              "landmarks": [
+                [
+                  188.8551025390625,
+                  241.34262084960938
+                ],
+                [
+                  318.1132507324219,
+                  245.23538208007812
+                ],
+                [
+                  244.5083770751953,
+                  345.50592041015625
+                ],
+                [
+                  204.4116668701172,
+                  384.5005798339844
+                ],
+                [
+                  309.1022033691406,
+                  388.74267578125
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "reference_2",
+          "file": "outputs/reference_diagnostics_v1/identity_4423/reference_2.png",
+          "processed_sha256": "d5444c7d7fb39bbbaed49900856028eabebdeaebb95941b9855d6c3ec10ab8c9"
+        },
+        {
+          "hq_id": "10719",
+          "identity_label": "4423",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\10719.jpg",
+          "source_sha256": "8450b00f6d70df33216b677da6f829a195b5d83792e2d31f62e6d02ef7c8a309",
+          "decoded_rgb_sha256": "34e3cb95da58d6d144eed61dd3fe21daedde9c2c886e4feb5fe4649d125c5aed",
+          "phash": "2f6936f4b0e08ed0",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.5567908883094788,
+              "bbox": [
+                96.0920639038086,
+                115.02433013916016,
+                366.0471496582031,
+                464.6815490722656
+              ],
+              "landmarks": [
+                [
+                  200.3135528564453,
+                  242.1331024169922
+                ],
+                [
+                  321.9891052246094,
+                  243.1339111328125
+                ],
+                [
+                  282.17279052734375,
+                  327.75164794921875
+                ],
+                [
+                  212.9713897705078,
+                  384.3616027832031
+                ],
+                [
+                  303.6153869628906,
+                  384.1708679199219
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "reference_3",
+          "file": "outputs/reference_diagnostics_v1/identity_4423/reference_3.png",
+          "processed_sha256": "15ebf397f6100c45f08040ad1e0a7298a5aae262a4d6861418587d1d1d40ec36"
+        },
+        {
+          "hq_id": "22972",
+          "identity_label": "4423",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\22972.jpg",
+          "source_sha256": "34c6783b8b5d7176e5ffd9fb12dfb3da8d5a752e112e1e2d21f0087418a283da",
+          "decoded_rgb_sha256": "d298062a6e0167ceb3442d5675046dc9a129e579274a55793117adb2ebb90397",
+          "phash": "52696727a4269e96",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.6535098552703857,
+              "bbox": [
+                150.56317138671875,
+                109.93701171875,
+                413.08294677734375,
+                463.2622985839844
+              ],
+              "landmarks": [
+                [
+                  200.70701599121094,
+                  240.32138061523438
+                ],
+                [
+                  322.3157043457031,
+                  242.80032348632812
+                ],
+                [
+                  245.99636840820312,
+                  321.6240234375
+                ],
+                [
+                  215.81356811523438,
+                  381.6592712402344
+                ],
+                [
+                  306.6160583496094,
+                  384.20361328125
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "reference_4",
+          "file": "outputs/reference_diagnostics_v1/identity_4423/reference_4.png",
+          "processed_sha256": "323c7b568e7607fd2f24896d13ccf96383024d09c31870dc5629690dbb9bdfb0"
+        }
+      ],
+      "observed": "outputs/reference_diagnostics_v1/identity_4423/observed.png",
+      "observed_sha256": "ea5807bb7b08e9067a7c040c047f1ee37263426a2fb3801a33d1659d186fbb79",
+      "mask": "outputs/reference_diagnostics_v1/identity_4423/mask.png",
+      "mask_sha256": "22a43f46ad64d1ca2ac633a2bb09944c3f29ab594626492f7f612d0c9a63e9b9",
+      "mask_fraction": 0.0429229736328125,
+      "mask_geometry": {
+        "kind": "synthetic eye-aligned rectangle",
+        "polygon": [
+          [
+            167.76916961669923,
+            226.6591857910156
+          ],
+          [
+            341.1538818359375,
+            215.5769058227539
+          ],
+          [
+            345.23682708740233,
+            279.4554840087891
+          ],
+          [
+            171.85211486816405,
+            290.53776397705076
+          ]
+        ],
+        "width_inter_eye_distances": 1.9,
+        "height_inter_eye_distances": 0.7,
+        "fill_rgb": [
+          90,
+          100,
+          110
+        ],
+        "uses_unobscured_target_landmarks_for_case_construction_only": true
+      }
+    },
+    {
+      "case_id": "identity_4017",
+      "identity_label": "4017",
+      "source_split": "val",
+      "images": [
+        {
+          "hq_id": "16011",
+          "identity_label": "4017",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\16011.jpg",
+          "source_sha256": "88f3344ac69389be7dfc9b033c1370130ddada4a2d77292d2178944bf368447f",
+          "decoded_rgb_sha256": "c65d74ffe7ea8c6511786c0ec1d78909a10d69ca77ca559aa164eae1bfbf859c",
+          "phash": "5e6820f301e9c7cd",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.5142560601234436,
+              "bbox": [
+                128.07814025878906,
+                94.827880859375,
+                408.4104309082031,
+                470.31793212890625
+              ],
+              "landmarks": [
+                [
+                  188.56875610351562,
+                  242.5946044921875
+                ],
+                [
+                  320.7747497558594,
+                  248.1707763671875
+                ],
+                [
+                  244.4376220703125,
+                  338.64422607421875
+                ],
+                [
+                  191.5192413330078,
+                  357.69305419921875
+                ],
+                [
+                  328.4377136230469,
+                  363.28350830078125
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "target",
+          "file": "outputs/reference_diagnostics_v1/identity_4017/target.png",
+          "processed_sha256": "8788399dc2fd3db53810b2399fd78620a822ea0fe66cf8b4660af690686cb372"
+        },
+        {
+          "hq_id": "25023",
+          "identity_label": "4017",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\25023.jpg",
+          "source_sha256": "5c48ed702311e85717e8c0e3c125247b579de012cd515aabc9d105909323aa29",
+          "decoded_rgb_sha256": "212ae33995f69767ae9fa63293b3c0a7e9a65af92b4e7a3907d579d3492665ee",
+          "phash": "0f2db0b0f10dd2ce",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.6073089241981506,
+              "bbox": [
+                106.42147064208984,
+                103.95170593261719,
+                371.0628662109375,
+                460.6314392089844
+              ],
+              "landmarks": [
+                [
+                  192.4549560546875,
+                  245.5354766845703
+                ],
+                [
+                  321.6634826660156,
+                  243.83349609375
+                ],
+                [
+                  269.60504150390625,
+                  328.0527648925781
+                ],
+                [
+                  201.33316040039062,
+                  376.90960693359375
+                ],
+                [
+                  309.85333251953125,
+                  374.1843566894531
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "reference_1",
+          "file": "outputs/reference_diagnostics_v1/identity_4017/reference_1.png",
+          "processed_sha256": "c6fcaf662720711f95aea3c8ab22f3c77332dee58e1417052ed9ecdbe024d5bd"
+        },
+        {
+          "hq_id": "7918",
+          "identity_label": "4017",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\7918.jpg",
+          "source_sha256": "5ea2c61b76598a0471a2d6123a1bd47e24f354a127029d71274b82d74c3eff61",
+          "decoded_rgb_sha256": "adba9a06f04185d31ecac6c7a3ed167c890b82e38500f3d1cf821ee9656a0eb9",
+          "phash": "4a2820b2f1f9cdcd",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.5258569717407227,
+              "bbox": [
+                127.47599792480469,
+                98.35335540771484,
+                401.2899475097656,
+                467.5579528808594
+              ],
+              "landmarks": [
+                [
+                  190.68409729003906,
+                  240.77005004882812
+                ],
+                [
+                  326.9734802246094,
+                  245.85739135742188
+                ],
+                [
+                  253.63198852539062,
+                  335.2863464355469
+                ],
+                [
+                  191.03237915039062,
+                  358.9228515625
+                ],
+                [
+                  327.8072204589844,
+                  363.2288818359375
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "reference_2",
+          "file": "outputs/reference_diagnostics_v1/identity_4017/reference_2.png",
+          "processed_sha256": "f755fac74defc9ea0aa4c3701590ad866bc7d17587a210b9d7c3100cdafe2d37"
+        },
+        {
+          "hq_id": "24312",
+          "identity_label": "4017",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\24312.jpg",
+          "source_sha256": "ce5b3e3c1321c3a104af75ca5ff0b51d41ff3edf0eb599ee9a85f5287ffb4c65",
+          "decoded_rgb_sha256": "9e46e933c0d8e8b7a72565b20630aa046fd3db756cc2a328584373e8f6620335",
+          "phash": "4a6b21b717034f8d",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.5554381012916565,
+              "bbox": [
+                135.90274047851562,
+                92.49076080322266,
+                412.95599365234375,
+                461.21905517578125
+              ],
+              "landmarks": [
+                [
+                  187.51510620117188,
+                  245.2118377685547
+                ],
+                [
+                  313.4330749511719,
+                  242.8197784423828
+                ],
+                [
+                  236.765380859375,
+                  317.81500244140625
+                ],
+                [
+                  206.13748168945312,
+                  381.2176818847656
+                ],
+                [
+                  303.01654052734375,
+                  379.89324951171875
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "reference_3",
+          "file": "outputs/reference_diagnostics_v1/identity_4017/reference_3.png",
+          "processed_sha256": "d5321cf9092921535edb809aa89f46a3a28ff52498e5b70c179fcb6d7cb21413"
+        },
+        {
+          "hq_id": "1054",
+          "identity_label": "4017",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\1054.jpg",
+          "source_sha256": "8fd641af9f605cedddd6da0a88bf701e117cc4e15d9014fd02616bded2338c1a",
+          "decoded_rgb_sha256": "c810f20c52672dca368d65446f17e80970b4181e31fc0b1fd1d4220e086b3535",
+          "phash": "5e727dbbbc00d081",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.6094130873680115,
+              "bbox": [
+                128.7434844970703,
+                97.17232513427734,
+                400.0414123535156,
+                462.713134765625
+              ],
+              "landmarks": [
+                [
+                  191.07272338867188,
+                  242.1056671142578
+                ],
+                [
+                  320.29644775390625,
+                  244.7615203857422
+                ],
+                [
+                  250.0135955810547,
+                  334.4058532714844
+                ],
+                [
+                  194.2475128173828,
+                  358.3831787109375
+                ],
+                [
+                  322.0971374511719,
+                  360.5950927734375
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "reference_4",
+          "file": "outputs/reference_diagnostics_v1/identity_4017/reference_4.png",
+          "processed_sha256": "25700118f1acf4fca6c8f1cc11898fe93068dad30c95143ffdb560928308e0e0"
+        }
+      ],
+      "observed": "outputs/reference_diagnostics_v1/identity_4017/observed.png",
+      "observed_sha256": "b012fc422c0426630598b65df956d9c93c8b22127da2e5031496544d4784c4b0",
+      "mask": "outputs/reference_diagnostics_v1/identity_4017/mask.png",
+      "mask_sha256": "dfd1f099d1da92a2bb341d6f857f5ce06d9b8975d53d9be5bfa3e6a332f47f0b",
+      "mask_fraction": 0.08912277221679688,
+      "mask_geometry": {
+        "kind": "synthetic eye-aligned rectangle",
+        "polygon": [
+          [
+            131.02771911621096,
+            193.8132293701172
+          ],
+          [
+            382.21910705566404,
+            204.4079559326172
+          ],
+          [
+            378.31578674316404,
+            296.9521514892578
+          ],
+          [
+            127.12439880371096,
+            286.3574249267578
+          ]
+        ],
+        "width_inter_eye_distances": 1.9,
+        "height_inter_eye_distances": 0.7,
+        "fill_rgb": [
+          90,
+          100,
+          110
+        ],
+        "uses_unobscured_target_landmarks_for_case_construction_only": true
+      }
+    },
+    {
+      "case_id": "identity_1293",
+      "identity_label": "1293",
+      "source_split": "val",
+      "images": [
+        {
+          "hq_id": "29680",
+          "identity_label": "1293",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\29680.jpg",
+          "source_sha256": "26bcf73ad806b99826dfd72d12e3273bd5588c6bad619efa558aade5f54fa28b",
+          "decoded_rgb_sha256": "0623975c40ddb9afa462f556080d6151ec97775db1e77400287adb98d73fb546",
+          "phash": "47253d14f12597c5",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.61739581823349,
+              "bbox": [
+                123.82735443115234,
+                87.89286804199219,
+                378.0871887207031,
+                472.95196533203125
+              ],
+              "landmarks": [
+                [
+                  195.46676635742188,
+                  245.0825958251953
+                ],
+                [
+                  316.475341796875,
+                  240.3391571044922
+                ],
+                [
+                  261.99298095703125,
+                  321.0179748535156
+                ],
+                [
+                  211.17507934570312,
+                  381.51568603515625
+                ],
+                [
+                  306.89569091796875,
+                  376.91461181640625
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "target",
+          "file": "outputs/reference_diagnostics_v1/identity_1293/target.png",
+          "processed_sha256": "4921065adedca93970f187bdb7b266257b6bce3c6ad7f7e82e469bb846e0461d"
+        },
+        {
+          "hq_id": "5738",
+          "identity_label": "1293",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\5738.jpg",
+          "source_sha256": "0bddf47982b968621509c972021d55319b541ba50bcc86dfc130cf891b7c8e63",
+          "decoded_rgb_sha256": "1f435f1072ffd562e6c7997159a60ce6a7e77d551a916d8121a499e241371a23",
+          "phash": "0fad24f51654d68a",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.6665422916412354,
+              "bbox": [
+                130.93731689453125,
+                96.7031021118164,
+                398.7469787597656,
+                468.64044189453125
+              ],
+              "landmarks": [
+                [
+                  195.2924346923828,
+                  242.65029907226562
+                ],
+                [
+                  318.4565734863281,
+                  241.49246215820312
+                ],
+                [
+                  250.6092987060547,
+                  294.9206237792969
+                ],
+                [
+                  204.7166748046875,
+                  373.03741455078125
+                ],
+                [
+                  306.7140808105469,
+                  373.10113525390625
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "reference_1",
+          "file": "outputs/reference_diagnostics_v1/identity_1293/reference_1.png",
+          "processed_sha256": "fb935a070f6b21e9b0ea500f63bb81d7969ca313b79e0ee99931ac57f462ca61"
+        },
+        {
+          "hq_id": "22273",
+          "identity_label": "1293",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\22273.jpg",
+          "source_sha256": "c7952f34d831e3f53444e4bd57ab086f951fb74f26c9fdc4410245922237f072",
+          "decoded_rgb_sha256": "607872148c4ea59f5d17ce56f17c707dfa9db16cb0d63dcdf8ad30e8d6d2e2d1",
+          "phash": "693965a562a5d295",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.5702465176582336,
+              "bbox": [
+                127.9197998046875,
+                86.45333099365234,
+                390.16998291015625,
+                471.6339416503906
+              ],
+              "landmarks": [
+                [
+                  194.15518188476562,
+                  243.1349639892578
+                ],
+                [
+                  317.44281005859375,
+                  241.4962158203125
+                ],
+                [
+                  254.9331512451172,
+                  300.1396484375
+                ],
+                [
+                  205.48019409179688,
+                  374.4814453125
+                ],
+                [
+                  307.7182312011719,
+                  373.8365478515625
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "reference_2",
+          "file": "outputs/reference_diagnostics_v1/identity_1293/reference_2.png",
+          "processed_sha256": "77109b21f23839b8898ecf6150d4f67f3a572e7f00b4ca9d58e3416292b4bf86"
+        },
+        {
+          "hq_id": "13695",
+          "identity_label": "1293",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\13695.jpg",
+          "source_sha256": "a988d3ca0d93d615627ce2b08b5458065dbee3dba177b5963ca3e0da8d0a5647",
+          "decoded_rgb_sha256": "2201a6b01f754c98adf18bcbf16f15070d4477f6599e99db14a1b112509c05f6",
+          "phash": "5e2d2a752478d28e",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.5783900022506714,
+              "bbox": [
+                134.3096160888672,
+                92.63323974609375,
+                397.62506103515625,
+                475.94268798828125
+              ],
+              "landmarks": [
+                [
+                  194.9396514892578,
+                  243.4520721435547
+                ],
+                [
+                  316.3489685058594,
+                  243.3419952392578
+                ],
+                [
+                  246.6800079345703,
+                  303.1330871582031
+                ],
+                [
+                  203.1543426513672,
+                  377.1635437011719
+                ],
+                [
+                  303.7529602050781,
+                  378.09808349609375
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "reference_3",
+          "file": "outputs/reference_diagnostics_v1/identity_1293/reference_3.png",
+          "processed_sha256": "d3b26cd878a4611c698aecfd9faeec57def9c1cc50f8b1b3787ce9f1bfd70ef8"
+        },
+        {
+          "hq_id": "14907",
+          "identity_label": "1293",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\14907.jpg",
+          "source_sha256": "d256c71c9f30c3f34cc17845efdbfe0a6e02785b9b6313a36a7ab79889194079",
+          "decoded_rgb_sha256": "208e87983b3d4becf1fc4931b4b9d08df2ec55feb30d21f7ed1f2bf5ddff89c1",
+          "phash": "3de063a643b4d28b",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.7132765650749207,
+              "bbox": [
+                128.4879608154297,
+                94.28340911865234,
+                382.0973815917969,
+                470.7618713378906
+              ],
+              "landmarks": [
+                [
+                  197.06240844726562,
+                  242.9097900390625
+                ],
+                [
+                  318.2255859375,
+                  243.70059204101562
+                ],
+                [
+                  258.8865051269531,
+                  314.7467041015625
+                ],
+                [
+                  202.4170379638672,
+                  370.46063232421875
+                ],
+                [
+                  309.5536804199219,
+                  371.331787109375
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "reference_4",
+          "file": "outputs/reference_diagnostics_v1/identity_1293/reference_4.png",
+          "processed_sha256": "2d77a28c4d7dc10a163d4248f31c57cd9f4c73687891fd361574ce09588992d0"
+        }
+      ],
+      "observed": "outputs/reference_diagnostics_v1/identity_1293/observed.png",
+      "observed_sha256": "d7d0bc13b31a7840823395f3128f9b420c0691c45d9ddaf94032651372040143",
+      "mask": "outputs/reference_diagnostics_v1/identity_1293/mask.png",
+      "mask_sha256": "5dfa19749b869bf852147a7625a211f6446fa3521385754950bfe84685a779d2",
+      "mask_fraction": 0.075042724609375,
+      "mask_geometry": {
+        "kind": "synthetic eye-aligned rectangle",
+        "polygon": [
+          [
+            139.35270385742186,
+            204.8641418457031
+          ],
+          [
+            369.2689971923828,
+            195.8516082763672
+          ],
+          [
+            372.58940429687505,
+            280.5576110839844
+          ],
+          [
+            142.67311096191403,
+            289.5701446533203
+          ]
+        ],
+        "width_inter_eye_distances": 1.9,
+        "height_inter_eye_distances": 0.7,
+        "fill_rgb": [
+          90,
+          100,
+          110
+        ],
+        "uses_unobscured_target_landmarks_for_case_construction_only": true
+      }
+    },
+    {
+      "case_id": "identity_376",
+      "identity_label": "376",
+      "source_split": "val",
+      "images": [
+        {
+          "hq_id": "22308",
+          "identity_label": "376",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\22308.jpg",
+          "source_sha256": "23079c92fb7ffa2bda8b714f56197915182373037f775aacde900e96264de218",
+          "decoded_rgb_sha256": "b182dd86721fad138cd0960b004ff85d2cda501eedb1d1158d517a0d9c63f125",
+          "phash": "7aa161a7f680d788",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.6830744743347168,
+              "bbox": [
+                128.61312866210938,
+                102.30540466308594,
+                396.616455078125,
+                466.89141845703125
+              ],
+              "landmarks": [
+                [
+                  192.23739624023438,
+                  248.1406707763672
+                ],
+                [
+                  321.10101318359375,
+                  247.58212280273438
+                ],
+                [
+                  253.0926055908203,
+                  327.7293701171875
+                ],
+                [
+                  190.25595092773438,
+                  356.24188232421875
+                ],
+                [
+                  326.0191650390625,
+                  356.30108642578125
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "target",
+          "file": "outputs/reference_diagnostics_v1/identity_376/target.png",
+          "processed_sha256": "07df0cc1a8db77b37133fdd6aec5c2315abb3625c0e511fe663adbbd7f8690c8"
+        },
+        {
+          "hq_id": "26194",
+          "identity_label": "376",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\26194.jpg",
+          "source_sha256": "ff94337ee28fad9074d10170f81e8b0766fb92552e7de8d119ab3313561ff2af",
+          "decoded_rgb_sha256": "205eb0d54e4817b9b83ab2e7323e84a3e07b3eb1f363b01b57cdcd8bea572345",
+          "phash": "4c7a74233515c3ce",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.5137985944747925,
+              "bbox": [
+                109.8929443359375,
+                89.2425765991211,
+                366.40447998046875,
+                463.3472595214844
+              ],
+              "landmarks": [
+                [
+                  196.11090087890625,
+                  237.84811401367188
+                ],
+                [
+                  320.9677734375,
+                  240.32485961914062
+                ],
+                [
+                  274.5831604003906,
+                  302.1383361816406
+                ],
+                [
+                  214.75997924804688,
+                  376.09722900390625
+                ],
+                [
+                  308.00897216796875,
+                  377.45294189453125
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "reference_1",
+          "file": "outputs/reference_diagnostics_v1/identity_376/reference_1.png",
+          "processed_sha256": "2554393e3f9db6238a00e54144e1e4848d23d2acb9ea92bf990dfbaee4c71a0e"
+        },
+        {
+          "hq_id": "1511",
+          "identity_label": "376",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\1511.jpg",
+          "source_sha256": "f3eaee96aa0b3b09d1dfe733f8a394182f2ac278bc1f996c625254e8481cf1a4",
+          "decoded_rgb_sha256": "8bc81464b4023fb2a3401eb56d10c85690aa034bb25a4d6f145fd73f28c05ed1",
+          "phash": "485570f672e8c38d",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.7223194241523743,
+              "bbox": [
+                131.557861328125,
+                105.89039611816406,
+                391.86065673828125,
+                462.33642578125
+              ],
+              "landmarks": [
+                [
+                  193.89950561523438,
+                  247.0912628173828
+                ],
+                [
+                  319.71759033203125,
+                  246.9491424560547
+                ],
+                [
+                  253.1721649169922,
+                  321.32415771484375
+                ],
+                [
+                  194.16741943359375,
+                  360.1380615234375
+                ],
+                [
+                  318.5367736816406,
+                  360.93475341796875
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "reference_2",
+          "file": "outputs/reference_diagnostics_v1/identity_376/reference_2.png",
+          "processed_sha256": "3278be77c7d6af512b86b04dd72c09beb754d1f3c6e555c831cec781e662d23a"
+        },
+        {
+          "hq_id": "9342",
+          "identity_label": "376",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\9342.jpg",
+          "source_sha256": "ebdd7173d0f8a80e349d535243a7871ddd61aa8a75a3303c0100db60efc43735",
+          "decoded_rgb_sha256": "30142dc0b5ea008a238c787b10dd6b073abb37397044c9bc3053eaf6cdd35a1e",
+          "phash": "5bed60e1a461928f",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.6636106371879578,
+              "bbox": [
+                121.46607971191406,
+                104.9951400756836,
+                396.7737731933594,
+                449.20941162109375
+              ],
+              "landmarks": [
+                [
+                  190.94717407226562,
+                  241.87319946289062
+                ],
+                [
+                  315.42462158203125,
+                  243.25204467773438
+                ],
+                [
+                  251.0805206298828,
+                  310.47125244140625
+                ],
+                [
+                  216.1427764892578,
+                  383.006103515625
+                ],
+                [
+                  297.20147705078125,
+                  383.5140686035156
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "reference_3",
+          "file": "outputs/reference_diagnostics_v1/identity_376/reference_3.png",
+          "processed_sha256": "de52c4c73df2c37b95188700d31a1b8f429c18e50094a37713f77be81bff33f5"
+        },
+        {
+          "hq_id": "6676",
+          "identity_label": "376",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\6676.jpg",
+          "source_sha256": "b6c5dd17903d0482ff52fcb817384c51c388abf3d46a656a405b5755d9cbf142",
+          "decoded_rgb_sha256": "d0e5c02fdc14023ebe109cd7da8643b5c325bdf7961587f1993d88ffe22e95fb",
+          "phash": "0ef030477228df9b",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.6708414554595947,
+              "bbox": [
+                122.09516906738281,
+                101.00418853759766,
+                381.1809997558594,
+                459.0257873535156
+              ],
+              "landmarks": [
+                [
+                  194.27615356445312,
+                  243.42153930664062
+                ],
+                [
+                  317.6141662597656,
+                  244.3913116455078
+                ],
+                [
+                  257.4071350097656,
+                  304.165283203125
+                ],
+                [
+                  205.56100463867188,
+                  373.6084899902344
+                ],
+                [
+                  301.3685302734375,
+                  374.6057434082031
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "reference_4",
+          "file": "outputs/reference_diagnostics_v1/identity_376/reference_4.png",
+          "processed_sha256": "2a00c7ece1b1209c5725ad34084a31aa9deed501cb02c1a131e1278bbd771b89"
+        }
+      ],
+      "observed": "outputs/reference_diagnostics_v1/identity_376/observed.png",
+      "observed_sha256": "576f384576f31dd6aeaa3e4ea2aa7020d0e8862557550600e4a6eb1a3b3123e7",
+      "mask": "outputs/reference_diagnostics_v1/identity_376/mask.png",
+      "mask_sha256": "096aaec508a12005ec9c2e27e18edc80f1311fcdcdb939526d4de474ae9a0063",
+      "mask_fraction": 0.08429336547851562,
+      "mask_geometry": {
+        "kind": "synthetic eye-aligned rectangle",
+        "polygon": [
+          [
+            134.05327682495118,
+            203.28975143432618
+          ],
+          [
+            378.894149017334,
+            202.22851028442383
+          ],
+          [
+            379.28513259887694,
+            292.4330421447754
+          ],
+          [
+            134.44426040649415,
+            293.49428329467776
+          ]
+        ],
+        "width_inter_eye_distances": 1.9,
+        "height_inter_eye_distances": 0.7,
+        "fill_rgb": [
+          90,
+          100,
+          110
+        ],
+        "uses_unobscured_target_landmarks_for_case_construction_only": true
+      }
+    },
+    {
+      "case_id": "identity_1027",
+      "identity_label": "1027",
+      "source_split": "val",
+      "images": [
+        {
+          "hq_id": "6115",
+          "identity_label": "1027",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\6115.jpg",
+          "source_sha256": "9817fa5fb3a5b25824e5a598ad2f8c8f349d76aa2467098be5f5fa2795b17154",
+          "decoded_rgb_sha256": "5c4560f885c8e778a132b390016328889756f5ca45af05726eee2d27f53263ae",
+          "phash": "4bb9e09bc50ccec4",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.6305966973304749,
+              "bbox": [
+                109.4833984375,
+                110.81494140625,
+                388.36700439453125,
+                448.27313232421875
+              ],
+              "landmarks": [
+                [
+                  187.83151245117188,
+                  242.4642791748047
+                ],
+                [
+                  322.50860595703125,
+                  241.22708129882812
+                ],
+                [
+                  261.65850830078125,
+                  318.8914489746094
+                ],
+                [
+                  202.6555633544922,
+                  368.72003173828125
+                ],
+                [
+                  313.8600769042969,
+                  367.34429931640625
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "target",
+          "file": "outputs/reference_diagnostics_v1/identity_1027/target.png",
+          "processed_sha256": "ab92c1d689a62b6d018cc2dcdc73576172d1a04baac16cfe0a23b4f33b404bf0"
+        },
+        {
+          "hq_id": "11313",
+          "identity_label": "1027",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\11313.jpg",
+          "source_sha256": "dd702e5ecd523253d2268baa4a2d5d953db164923bef79e851eb2ed415cab347",
+          "decoded_rgb_sha256": "7257960ef4b4d8a98381e9ae6b62f0c1f3147f19d8a15ac55c14e06b9141b53a",
+          "phash": "0b7475f7666c8288",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.594689667224884,
+              "bbox": [
+                119.5799331665039,
+                93.4007797241211,
+                387.0721435546875,
+                459.4610900878906
+              ],
+              "landmarks": [
+                [
+                  194.06826782226562,
+                  243.7995147705078
+                ],
+                [
+                  323.74200439453125,
+                  245.68716430664062
+                ],
+                [
+                  261.56011962890625,
+                  311.4435729980469
+                ],
+                [
+                  191.627197265625,
+                  357.38787841796875
+                ],
+                [
+                  316.34466552734375,
+                  359.75787353515625
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "reference_1",
+          "file": "outputs/reference_diagnostics_v1/identity_1027/reference_1.png",
+          "processed_sha256": "c29df8a50e28736ff59bbed8a65ba89d55d633df38d752b8572c8fd7c273416d"
+        },
+        {
+          "hq_id": "4957",
+          "identity_label": "1027",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\4957.jpg",
+          "source_sha256": "f6201adb15640e2b9d1dbcf10e070f52cf5197a2897092100f6508ac3f83ec64",
+          "decoded_rgb_sha256": "c472230cb4f61e75d41640231733c3bbce41d4d4d6918dfa47f59b875fcbe9b4",
+          "phash": "6d3178f0e08fd2c8",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.5331917405128479,
+              "bbox": [
+                100.45655822753906,
+                98.83052825927734,
+                383.19879150390625,
+                456.27618408203125
+              ],
+              "landmarks": [
+                [
+                  195.76979064941406,
+                  241.3661651611328
+                ],
+                [
+                  322.9580993652344,
+                  246.1112518310547
+                ],
+                [
+                  271.09124755859375,
+                  299.99395751953125
+                ],
+                [
+                  213.8262481689453,
+                  372.66766357421875
+                ],
+                [
+                  308.54046630859375,
+                  375.7215270996094
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "reference_2",
+          "file": "outputs/reference_diagnostics_v1/identity_1027/reference_2.png",
+          "processed_sha256": "ae4904177388ff0fe9a36ba4ef5e952dfe1e0dcb5a37270b3182547f1f9ed798"
+        },
+        {
+          "hq_id": "10400",
+          "identity_label": "1027",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\10400.jpg",
+          "source_sha256": "ca35704e66c5679e121b7c6f8810f664d6333aabd88d525e59b41948fd8f3199",
+          "decoded_rgb_sha256": "24d0fcf49bc53a3ecf04315d92ed143db863ce9ae8b0c6c813ed56f77d5ccbf8",
+          "phash": "4fe364b6bc9c9280",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.6743314266204834,
+              "bbox": [
+                121.6725082397461,
+                115.48970031738281,
+                392.18585205078125,
+                445.79229736328125
+              ],
+              "landmarks": [
+                [
+                  191.8095245361328,
+                  241.6498565673828
+                ],
+                [
+                  327.3070373535156,
+                  243.1927490234375
+                ],
+                [
+                  260.98614501953125,
+                  320.09185791015625
+                ],
+                [
+                  200.11361694335938,
+                  364.5462646484375
+                ],
+                [
+                  314.3078308105469,
+                  365.26776123046875
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "reference_3",
+          "file": "outputs/reference_diagnostics_v1/identity_1027/reference_3.png",
+          "processed_sha256": "ac107cfa6b141165698c3959ac73cc4c9a28c503557e93278d474b2f43ef79f0"
+        },
+        {
+          "hq_id": "26071",
+          "identity_label": "1027",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\26071.jpg",
+          "source_sha256": "4efe2ba0d1edf9dc27e63f34d8d87a80a5d0c6817dbdbf247fdc4799e13c5ad8",
+          "decoded_rgb_sha256": "9d6082b73cde5cf0bcb5bbbef61d5f2e00ab0d69127171c860b5d42867358c57",
+          "phash": "097434327269cfcd",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.6849712133407593,
+              "bbox": [
+                120.28585052490234,
+                100.53558349609375,
+                390.3365173339844,
+                452.8329162597656
+              ],
+              "landmarks": [
+                [
+                  190.56185913085938,
+                  243.9874267578125
+                ],
+                [
+                  320.9832763671875,
+                  243.65347290039062
+                ],
+                [
+                  256.45965576171875,
+                  313.279052734375
+                ],
+                [
+                  199.17855834960938,
+                  366.101806640625
+                ],
+                [
+                  311.1366882324219,
+                  365.91357421875
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "reference_4",
+          "file": "outputs/reference_diagnostics_v1/identity_1027/reference_4.png",
+          "processed_sha256": "a849f21f70781bd66ad15ad14799b51b809e0f9b11722efa6f160c42509d06cd"
+        }
+      ],
+      "observed": "outputs/reference_diagnostics_v1/identity_1027/observed.png",
+      "observed_sha256": "d77a66e6f4ce7af2efb5cc2fd0e07743ef8c12b53d58c9ca5d7baddaa8503ea9",
+      "mask": "outputs/reference_diagnostics_v1/identity_1027/mask.png",
+      "mask_sha256": "7dc0394c866da16edc5352b25224476cb37fef5725fc646e0a48c87096b91a8b",
+      "mask_fraction": 0.0926666259765625,
+      "mask_geometry": {
+        "kind": "synthetic eye-aligned rectangle",
+        "polygon": [
+          [
+            126.79380111694338,
+            195.88403549194334
+          ],
+          [
+            382.6802787780761,
+            193.5333595275879
+          ],
+          [
+            383.54631729125975,
+            287.8073249816895
+          ],
+          [
+            127.65983963012697,
+            290.1580009460449
+          ]
+        ],
+        "width_inter_eye_distances": 1.9,
+        "height_inter_eye_distances": 0.7,
+        "fill_rgb": [
+          90,
+          100,
+          110
+        ],
+        "uses_unobscured_target_landmarks_for_case_construction_only": true
+      }
+    },
+    {
+      "case_id": "identity_3731",
+      "identity_label": "3731",
+      "source_split": "val",
+      "images": [
+        {
+          "hq_id": "24397",
+          "identity_label": "3731",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\24397.jpg",
+          "source_sha256": "d6456015fcb8ed3528075815f8a00656d1aed952d27608dda65bf82b0ebab9ed",
+          "decoded_rgb_sha256": "9252c8403e9963ce8b8f16161ae9e3333c3f958a21ec5d4410f34bf87c76ef94",
+          "phash": "1a6934e196adc33c",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.655600368976593,
+              "bbox": [
+                131.5355682373047,
+                120.00126647949219,
+                394.71826171875,
+                464.15087890625
+              ],
+              "landmarks": [
+                [
+                  190.00001525878906,
+                  241.3090057373047
+                ],
+                [
+                  320.1513977050781,
+                  242.4302978515625
+                ],
+                [
+                  248.0541229248047,
+                  318.79754638671875
+                ],
+                [
+                  198.2037353515625,
+                  375.345703125
+                ],
+                [
+                  307.7106018066406,
+                  376.9671630859375
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "target",
+          "file": "outputs/reference_diagnostics_v1/identity_3731/target.png",
+          "processed_sha256": "f5e5b7a57bdb5af26705100d34529188676b722b676a0ee19ff99ecdf4aadd2c"
+        },
+        {
+          "hq_id": "22729",
+          "identity_label": "3731",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\22729.jpg",
+          "source_sha256": "a819cfc2ea274a4cf4c96dd3ef7c27048bf68a7a7c8d354b646837addb1b09f8",
+          "decoded_rgb_sha256": "7491442f0ca2f04a36015b89ef9ebfdf5efd7020431420500969eebefb620b1a",
+          "phash": "0b7ca15ee31cc899",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.7279777526855469,
+              "bbox": [
+                127.10546875,
+                125.27879333496094,
+                387.8592834472656,
+                472.369140625
+              ],
+              "landmarks": [
+                [
+                  191.43321228027344,
+                  241.3637237548828
+                ],
+                [
+                  314.7386474609375,
+                  238.95327758789062
+                ],
+                [
+                  251.2882843017578,
+                  312.26080322265625
+                ],
+                [
+                  206.5413818359375,
+                  382.01507568359375
+                ],
+                [
+                  303.10113525390625,
+                  380.0303649902344
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "reference_1",
+          "file": "outputs/reference_diagnostics_v1/identity_3731/reference_1.png",
+          "processed_sha256": "d660075adc1d85bf64b1cdbcfe28c290497cc720e4ed1a52a170cf603cf6a837"
+        },
+        {
+          "hq_id": "22018",
+          "identity_label": "3731",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\22018.jpg",
+          "source_sha256": "de4d119a64c44912d51f3de006551e8af89bb43d6a4ea0d6ebe776c36e720359",
+          "decoded_rgb_sha256": "c5175c3820c9e1a7d6cbe565c3912ed39e9f55a13d29495ddb1e95568e5acd61",
+          "phash": "4b3864cee6d83ac1",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.630620539188385,
+              "bbox": [
+                111.56636047363281,
+                100.02247619628906,
+                374.99310302734375,
+                464.68328857421875
+              ],
+              "landmarks": [
+                [
+                  194.23226928710938,
+                  241.78384399414062
+                ],
+                [
+                  321.967041015625,
+                  240.0767059326172
+                ],
+                [
+                  269.3541259765625,
+                  322.5075988769531
+                ],
+                [
+                  204.27743530273438,
+                  376.7847595214844
+                ],
+                [
+                  308.6790771484375,
+                  374.80120849609375
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "reference_2",
+          "file": "outputs/reference_diagnostics_v1/identity_3731/reference_2.png",
+          "processed_sha256": "e56ee3b5f9967b4e147828b3eae483491d59e22ab1d021a6a80053e93aeacbe6"
+        },
+        {
+          "hq_id": "27449",
+          "identity_label": "3731",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\27449.jpg",
+          "source_sha256": "a6d2076036cc7d4c3bbabeb55ba4a69cd11549218c82a47494807a5563c56fed",
+          "decoded_rgb_sha256": "15b9d416f70487a832dd35aac5bf13c0469c0f8515435cc28c5cf2d96aea6fc5",
+          "phash": "0a7ca5edc4b15827",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.6492793560028076,
+              "bbox": [
+                127.94422912597656,
+                105.56648254394531,
+                396.4205017089844,
+                465.6605529785156
+              ],
+              "landmarks": [
+                [
+                  194.06149291992188,
+                  240.90103149414062
+                ],
+                [
+                  322.52923583984375,
+                  243.8592987060547
+                ],
+                [
+                  254.1998748779297,
+                  325.3006896972656
+                ],
+                [
+                  191.47097778320312,
+                  356.20172119140625
+                ],
+                [
+                  321.8721008300781,
+                  358.96533203125
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "reference_3",
+          "file": "outputs/reference_diagnostics_v1/identity_3731/reference_3.png",
+          "processed_sha256": "d3eba94f2433c255400eb3fc519bbc0ce4c203ff71f8599376b2207df91e6dbc"
+        },
+        {
+          "hq_id": "24040",
+          "identity_label": "3731",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\24040.jpg",
+          "source_sha256": "f699494141aecb96594899f0418f7fe3dd0b340a4a367a5a0aa3b5afdb4fe416",
+          "decoded_rgb_sha256": "0a3b113862432f853c99c7a61bb244ba5a89e8d5a1b4f0d717b19c821f79f596",
+          "phash": "7a2da1e707809799",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.5728121399879456,
+              "bbox": [
+                136.45066833496094,
+                111.00411224365234,
+                397.0267028808594,
+                470.0586853027344
+              ],
+              "landmarks": [
+                [
+                  192.0922088623047,
+                  242.9715118408203
+                ],
+                [
+                  318.251220703125,
+                  242.80636596679688
+                ],
+                [
+                  246.244384765625,
+                  307.99261474609375
+                ],
+                [
+                  194.4866485595703,
+                  365.65826416015625
+                ],
+                [
+                  315.823486328125,
+                  366.37799072265625
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "reference_4",
+          "file": "outputs/reference_diagnostics_v1/identity_3731/reference_4.png",
+          "processed_sha256": "a2cb24f43543a7e438a766cf21c24d1ffa777b135f49f35140d92476fe8835cc"
+        }
+      ],
+      "observed": "outputs/reference_diagnostics_v1/identity_3731/observed.png",
+      "observed_sha256": "9ee4a0a0cc976567bd5bfed81df0754535f8c14e3a19f1a1cebe3c213b542c7f",
+      "mask": "outputs/reference_diagnostics_v1/identity_3731/mask.png",
+      "mask_sha256": "0e6895c672bbc308186f2307ba93e6c0ab50e80cb9647be2eadfe7fc2586677c",
+      "mask_fraction": 0.08627700805664062,
+      "mask_geometry": {
+        "kind": "synthetic eye-aligned rectangle",
+        "polygon": [
+          [
+            131.82434539794923,
+            195.2514404296875
+          ],
+          [
+            379.1119720458984,
+            197.38189544677735
+          ],
+          [
+            378.32706756591796,
+            288.4878631591797
+          ],
+          [
+            131.03944091796876,
+            286.35740814208987
+          ]
+        ],
+        "width_inter_eye_distances": 1.9,
+        "height_inter_eye_distances": 0.7,
+        "fill_rgb": [
+          90,
+          100,
+          110
+        ],
+        "uses_unobscured_target_landmarks_for_case_construction_only": true
+      }
+    },
+    {
+      "case_id": "identity_56",
+      "identity_label": "56",
+      "source_split": "val",
+      "images": [
+        {
+          "hq_id": "612",
+          "identity_label": "56",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\612.jpg",
+          "source_sha256": "5d4cdccdca440ec56efb475f851e1505797da868e0a7c55f7c42e1d0603634b2",
+          "decoded_rgb_sha256": "931acf7b6d1d542eba2973592cdaa453452c7c9b106b67716753417eae65f849",
+          "phash": "6d7174a05287d28f",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.6269633769989014,
+              "bbox": [
+                116.84993743896484,
+                114.5386962890625,
+                392.6766052246094,
+                459.9947814941406
+              ],
+              "landmarks": [
+                [
+                  190.24508666992188,
+                  242.3738250732422
+                ],
+                [
+                  324.5976867675781,
+                  243.37255859375
+                ],
+                [
+                  259.0521240234375,
+                  309.8973388671875
+                ],
+                [
+                  187.3623504638672,
+                  354.6267395019531
+                ],
+                [
+                  323.14801025390625,
+                  356.2604064941406
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "target",
+          "file": "outputs/reference_diagnostics_v1/identity_56/target.png",
+          "processed_sha256": "7380b1c94fdd8ae81665841499cba9d909464c9e434aaf3bbc6690d1d2a53984"
+        },
+        {
+          "hq_id": "6556",
+          "identity_label": "56",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\6556.jpg",
+          "source_sha256": "eb7716e28044a01cfd3bb72d950225e8f95c4fa202442493f7f71da315a5d3b7",
+          "decoded_rgb_sha256": "23b8a4ed706d5a90b5f8b4322f3c0f3eb8366c3bfdcb68138013406fbf510cd6",
+          "phash": "113e6163b548de95",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.5934596061706543,
+              "bbox": [
+                129.81021118164062,
+                101.96400451660156,
+                395.152587890625,
+                472.25360107421875
+              ],
+              "landmarks": [
+                [
+                  189.33103942871094,
+                  242.6521759033203
+                ],
+                [
+                  320.3091735839844,
+                  240.6147003173828
+                ],
+                [
+                  249.28146362304688,
+                  315.6386413574219
+                ],
+                [
+                  193.8427276611328,
+                  368.87548828125
+                ],
+                [
+                  317.0421142578125,
+                  368.60345458984375
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "reference_1",
+          "file": "outputs/reference_diagnostics_v1/identity_56/reference_1.png",
+          "processed_sha256": "4562e4f6846378b9372770c484546c7aeb40f5e0160e7536f52ecdefb8c9bac9"
+        },
+        {
+          "hq_id": "17256",
+          "identity_label": "56",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\17256.jpg",
+          "source_sha256": "7800aa6c281425f61a759edd16701caeb58948a76c3714935e5e4e3ae65dea06",
+          "decoded_rgb_sha256": "dc68853b0ffc30f965fea520ef141377096024ef77a82067dbc2c9aad8c07ec1",
+          "phash": "2d7425f025d483be",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.514413595199585,
+              "bbox": [
+                117.0345458984375,
+                109.88455963134766,
+                388.3271484375,
+                470.68841552734375
+              ],
+              "landmarks": [
+                [
+                  192.15011596679688,
+                  240.990234375
+                ],
+                [
+                  326.60308837890625,
+                  240.4991455078125
+                ],
+                [
+                  264.619873046875,
+                  317.23626708984375
+                ],
+                [
+                  190.41854858398438,
+                  361.43658447265625
+                ],
+                [
+                  325.70220947265625,
+                  361.10198974609375
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "reference_2",
+          "file": "outputs/reference_diagnostics_v1/identity_56/reference_2.png",
+          "processed_sha256": "80e137216884dadb468e8db229f748114dd22bc0915ed6b98334d808fb3e6ccf"
+        },
+        {
+          "hq_id": "29786",
+          "identity_label": "56",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\29786.jpg",
+          "source_sha256": "b91d4b54f19a6294bacce892931ac2cbd5cde2f19f8e2ff55ef608f620d282d0",
+          "decoded_rgb_sha256": "96e7481c67e975764120daf8ac8b1ea3184cc34fbab4a5232c9945984bbbbd75",
+          "phash": "0b382525b4fc969e",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.589118480682373,
+              "bbox": [
+                128.22531127929688,
+                102.70218658447266,
+                405.43914794921875,
+                460.1505432128906
+              ],
+              "landmarks": [
+                [
+                  186.68875122070312,
+                  240.1251678466797
+                ],
+                [
+                  320.6131286621094,
+                  241.0098114013672
+                ],
+                [
+                  245.6450958251953,
+                  317.80816650390625
+                ],
+                [
+                  193.06900024414062,
+                  361.75128173828125
+                ],
+                [
+                  317.7132873535156,
+                  364.2227478027344
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "reference_3",
+          "file": "outputs/reference_diagnostics_v1/identity_56/reference_3.png",
+          "processed_sha256": "1a7388320ae0a48bf0182551c188dc138f247fa1af172ee64fd8306398e05460"
+        },
+        {
+          "hq_id": "10756",
+          "identity_label": "56",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\10756.jpg",
+          "source_sha256": "28a7e3ae5ca05fe54b2d6efc36e1bc9618499a6e2f1b918c7bbb5a15c50613b0",
+          "decoded_rgb_sha256": "847eaf109115d1194769d3df70f2ac90460b5cd69d5438dd8d472aee4d760842",
+          "phash": "686065e176e1de83",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.5762311220169067,
+              "bbox": [
+                120.92778015136719,
+                110.28267669677734,
+                394.1716613769531,
+                468.494140625
+              ],
+              "landmarks": [
+                [
+                  190.19107055664062,
+                  242.9457550048828
+                ],
+                [
+                  324.03790283203125,
+                  242.98898315429688
+                ],
+                [
+                  256.8928527832031,
+                  311.84185791015625
+                ],
+                [
+                  189.7259063720703,
+                  362.4833984375
+                ],
+                [
+                  321.40704345703125,
+                  363.1754150390625
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "reference_4",
+          "file": "outputs/reference_diagnostics_v1/identity_56/reference_4.png",
+          "processed_sha256": "a5cb904592c410067af6ad36bddceae9050dce06dab9d2dd3514de0921101888"
+        }
+      ],
+      "observed": "outputs/reference_diagnostics_v1/identity_56/observed.png",
+      "observed_sha256": "f4e3c406c5c73162b1247146eff4c999e9af34adf209ca3de30dff434fd4f013",
+      "mask": "outputs/reference_diagnostics_v1/identity_56/mask.png",
+      "mask_sha256": "f2162a1d219eab42897ce9f10afc4332f7ef52c2f652a4b6f2e400471543344e",
+      "mask_fraction": 0.09180831909179688,
+      "mask_geometry": {
+        "kind": "synthetic eye-aligned rectangle",
+        "polygon": [
+          [
+            130.13597335815433,
+            194.900984954834
+          ],
+          [
+            385.40591354370116,
+            196.79857864379883
+          ],
+          [
+            384.70680007934567,
+            290.8453987121582
+          ],
+          [
+            129.43685989379884,
+            288.9478050231934
+          ]
+        ],
+        "width_inter_eye_distances": 1.9,
+        "height_inter_eye_distances": 0.7,
+        "fill_rgb": [
+          90,
+          100,
+          110
+        ],
+        "uses_unobscured_target_landmarks_for_case_construction_only": true
+      }
+    },
+    {
+      "case_id": "identity_4663",
+      "identity_label": "4663",
+      "source_split": "val",
+      "images": [
+        {
+          "hq_id": "15573",
+          "identity_label": "4663",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\15573.jpg",
+          "source_sha256": "bc127a3d6ab608b7888720ca2bf071a9459f35b55f597d0933906c979803f741",
+          "decoded_rgb_sha256": "ee8294facf525c8216f8349c7bb208e83c208bf5ad9de8e3cb28731a608e2402",
+          "phash": "4b3430c3b9ce99cc",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.7619848847389221,
+              "bbox": [
+                125.52899169921875,
+                112.02574157714844,
+                373.92791748046875,
+                444.79315185546875
+              ],
+              "landmarks": [
+                [
+                  199.7418670654297,
+                  245.7374267578125
+                ],
+                [
+                  317.5834655761719,
+                  250.11373901367188
+                ],
+                [
+                  263.2386169433594,
+                  321.5501708984375
+                ],
+                [
+                  209.2836151123047,
+                  367.38824462890625
+                ],
+                [
+                  302.8839416503906,
+                  370.4068298339844
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "target",
+          "file": "outputs/reference_diagnostics_v1/identity_4663/target.png",
+          "processed_sha256": "c4847e4ef68ceef9f12c20bb2b0fc556fadab1f63a2f1bcff3ffab683b75103b"
+        },
+        {
+          "hq_id": "18216",
+          "identity_label": "4663",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\18216.jpg",
+          "source_sha256": "ef78013111b28e2a3c8d67f509edbb1544e9157e5f53defa0bc153f046bb3c28",
+          "decoded_rgb_sha256": "483f232effac9721460af08ccef9fbecbb8b137aad1671afdbb745e3550b1a46",
+          "phash": "0fbd7432b290969a",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.6886613965034485,
+              "bbox": [
+                115.53240966796875,
+                94.27899169921875,
+                376.78326416015625,
+                470.9140625
+              ],
+              "landmarks": [
+                [
+                  192.13467407226562,
+                  246.01388549804688
+                ],
+                [
+                  318.7799987792969,
+                  244.0302276611328
+                ],
+                [
+                  262.5557861328125,
+                  319.2509460449219
+                ],
+                [
+                  185.4632110595703,
+                  358.2915344238281
+                ],
+                [
+                  317.1369323730469,
+                  357.5669860839844
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "reference_1",
+          "file": "outputs/reference_diagnostics_v1/identity_4663/reference_1.png",
+          "processed_sha256": "d583e6508d2418397acb75fdadab0b5549f77c6ff0a39a52c6cde235641b216c"
+        },
+        {
+          "hq_id": "12776",
+          "identity_label": "4663",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\12776.jpg",
+          "source_sha256": "c7fbe7927de587412987dc1dc01cf8e5f286e5f8f13499e35aa0be0413963669",
+          "decoded_rgb_sha256": "f126e5c5c2e23709c2c54bd68a6408b2f0f6d73f0d22327431ef81677636f8f7",
+          "phash": "5fa0f5a0f203c7c2",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.7268502712249756,
+              "bbox": [
+                123.9451675415039,
+                103.56593322753906,
+                382.9876708984375,
+                462.05767822265625
+              ],
+              "landmarks": [
+                [
+                  196.67947387695312,
+                  245.5499725341797
+                ],
+                [
+                  320.129150390625,
+                  242.69931030273438
+                ],
+                [
+                  263.09600830078125,
+                  319.92913818359375
+                ],
+                [
+                  204.1638641357422,
+                  368.01123046875
+                ],
+                [
+                  312.2713928222656,
+                  365.34869384765625
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "reference_2",
+          "file": "outputs/reference_diagnostics_v1/identity_4663/reference_2.png",
+          "processed_sha256": "62a2bac9337f1022a061d0724db65a5b89a217e95f9e1a1161f96be78cfdc6bf"
+        },
+        {
+          "hq_id": "3138",
+          "identity_label": "4663",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\3138.jpg",
+          "source_sha256": "4223362210b0d215c88d0c92a02b550322d83d8b65c1cefa9c9a252631de80be",
+          "decoded_rgb_sha256": "595e052932782ef576581beef8fc3451e0ebd373bd05cbec834409ec3263ee30",
+          "phash": "4fa0f53000ff86c7",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.7748507261276245,
+              "bbox": [
+                126.84590911865234,
+                97.8204345703125,
+                379.79345703125,
+                460.4168395996094
+              ],
+              "landmarks": [
+                [
+                  194.7857666015625,
+                  243.776123046875
+                ],
+                [
+                  317.20477294921875,
+                  243.57754516601562
+                ],
+                [
+                  256.5033874511719,
+                  319.12396240234375
+                ],
+                [
+                  201.9696807861328,
+                  369.55706787109375
+                ],
+                [
+                  305.4625549316406,
+                  369.52642822265625
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "reference_3",
+          "file": "outputs/reference_diagnostics_v1/identity_4663/reference_3.png",
+          "processed_sha256": "f5bf923d53977a5765c7af946687d750893463b4a5d2c4be8c6697bc0d60c504"
+        },
+        {
+          "hq_id": "27339",
+          "identity_label": "4663",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\27339.jpg",
+          "source_sha256": "828e66fd7e46dbf8eb6e1899ae59d4a1fa8a44d78c4f4e74351edd7ab0a5382d",
+          "decoded_rgb_sha256": "91e45e89e353d15b1130e39ba174c54a4799094ee11989fadded1acd9f1ff81b",
+          "phash": "0fa435b29255ceca",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.6957857012748718,
+              "bbox": [
+                118.3121337890625,
+                93.089599609375,
+                379.57977294921875,
+                462.6756286621094
+              ],
+              "landmarks": [
+                [
+                  193.9469451904297,
+                  243.65164184570312
+                ],
+                [
+                  321.3659362792969,
+                  241.9273223876953
+                ],
+                [
+                  263.22003173828125,
+                  320.72760009765625
+                ],
+                [
+                  194.77288818359375,
+                  363.01690673828125
+                ],
+                [
+                  313.3175964355469,
+                  362.09686279296875
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "reference_4",
+          "file": "outputs/reference_diagnostics_v1/identity_4663/reference_4.png",
+          "processed_sha256": "40c1e32c53ec3118cb592ed525b99770eeda730fbb55ccee7eb5472808db4d90"
+        }
+      ],
+      "observed": "outputs/reference_diagnostics_v1/identity_4663/observed.png",
+      "observed_sha256": "b15be6dc5b8ee5d3f7a9ae6f3241ca02a9dda5d54d85ac9e5dffe944d20f4ac7",
+      "mask": "outputs/reference_diagnostics_v1/identity_4663/mask.png",
+      "mask_sha256": "063e60712296d9b08afac0beff8466bf3d1d78329b52f8a286a7a0bc5e617664",
+      "mask_fraction": 0.0713653564453125,
+      "mask_geometry": {
+        "kind": "synthetic eye-aligned rectangle",
+        "polygon": [
+          [
+            148.2448570251465,
+            202.52352676391604
+          ],
+          [
+            372.14389419555664,
+            210.83852005004883
+          ],
+          [
+            369.08047561645503,
+            293.32763900756834
+          ],
+          [
+            145.18143844604495,
+            285.01264572143555
+          ]
+        ],
+        "width_inter_eye_distances": 1.9,
+        "height_inter_eye_distances": 0.7,
+        "fill_rgb": [
+          90,
+          100,
+          110
+        ],
+        "uses_unobscured_target_landmarks_for_case_construction_only": true
+      }
+    },
+    {
+      "case_id": "identity_2547",
+      "identity_label": "2547",
+      "source_split": "val",
+      "images": [
+        {
+          "hq_id": "13805",
+          "identity_label": "2547",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\13805.jpg",
+          "source_sha256": "15e754daad45924121dd1ebe644458088f9fb737fa4f5ba80823735572335d1c",
+          "decoded_rgb_sha256": "158ede67c7e387700e5b79c36f6d0a9bdf2c58993037a8d918bf26525ad3aa62",
+          "phash": "4f3424b2a51dd49d",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.6252464652061462,
+              "bbox": [
+                105.95149993896484,
+                115.21916198730469,
+                376.8366394042969,
+                460.5660705566406
+              ],
+              "landmarks": [
+                [
+                  199.2068328857422,
+                  243.94021606445312
+                ],
+                [
+                  325.7898254394531,
+                  249.2086639404297
+                ],
+                [
+                  275.48455810546875,
+                  307.3716735839844
+                ],
+                [
+                  209.65914916992188,
+                  371.9964599609375
+                ],
+                [
+                  311.01910400390625,
+                  375.307861328125
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "target",
+          "file": "outputs/reference_diagnostics_v1/identity_2547/target.png",
+          "processed_sha256": "05ec4e011243ab692b91ab713e250e8585481adfe65a1730a807fe0414881d81"
+        },
+        {
+          "hq_id": "18811",
+          "identity_label": "2547",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\18811.jpg",
+          "source_sha256": "fb7b304dea05616a5eaef94368fdc3af41180c4f5e0956882f7129b438df8bc3",
+          "decoded_rgb_sha256": "866fdb1e10e967ee55dfd40211aad219fbeca4bec9a7b04e1ff66ed31d340d04",
+          "phash": "0bbca5e2f690d2c8",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.5757566094398499,
+              "bbox": [
+                98.1513900756836,
+                103.1148681640625,
+                365.5934143066406,
+                462.52105712890625
+              ],
+              "landmarks": [
+                [
+                  198.8970489501953,
+                  245.2060546875
+                ],
+                [
+                  325.43231201171875,
+                  247.2929229736328
+                ],
+                [
+                  283.7317810058594,
+                  315.70745849609375
+                ],
+                [
+                  207.91213989257812,
+                  375.35101318359375
+                ],
+                [
+                  311.61883544921875,
+                  375.5421447753906
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "reference_1",
+          "file": "outputs/reference_diagnostics_v1/identity_2547/reference_1.png",
+          "processed_sha256": "b0e2bb340eb2447026dcc58ae673dc1f4391e48aa75a25702455b2fe808be01c"
+        },
+        {
+          "hq_id": "17901",
+          "identity_label": "2547",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\17901.jpg",
+          "source_sha256": "02430b38124303eab3a6234ca4438e1855a21c2d5ef8a7d2f31652e8eb3000ec",
+          "decoded_rgb_sha256": "ef326f70ef67c389fd3e75b16fa64cccf389d54c2361c1941079bf18923909db",
+          "phash": "1ae5a187e4b4a399",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.609826922416687,
+              "bbox": [
+                136.65658569335938,
+                126.6976089477539,
+                390.7593994140625,
+                462.2410583496094
+              ],
+              "landmarks": [
+                [
+                  182.97994995117188,
+                  247.443115234375
+                ],
+                [
+                  307.3577880859375,
+                  241.68386840820312
+                ],
+                [
+                  232.768798828125,
+                  293.05548095703125
+                ],
+                [
+                  190.9225311279297,
+                  366.30035400390625
+                ],
+                [
+                  306.3139953613281,
+                  361.29949951171875
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "reference_2",
+          "file": "outputs/reference_diagnostics_v1/identity_2547/reference_2.png",
+          "processed_sha256": "d606fbce842ecf83d058a4f794c602505bbf87ef6d197e93b501c802f81c452b"
+        },
+        {
+          "hq_id": "23983",
+          "identity_label": "2547",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\23983.jpg",
+          "source_sha256": "1b53baa34683890a0269b91c03719fc381dd9cbc713657ca1bfc8c926c69586d",
+          "decoded_rgb_sha256": "0e0ffc50cff12b44bb4c14c83567fb45407433c731b81113231157f1e0dd2e91",
+          "phash": "4f7324b376a88ac4",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.7739759087562561,
+              "bbox": [
+                130.30783081054688,
+                111.4442138671875,
+                368.78106689453125,
+                458.05194091796875
+              ],
+              "landmarks": [
+                [
+                  199.5391845703125,
+                  246.43551635742188
+                ],
+                [
+                  323.5569152832031,
+                  245.921630859375
+                ],
+                [
+                  267.75665283203125,
+                  333.68231201171875
+                ],
+                [
+                  205.03909301757812,
+                  374.5394592285156
+                ],
+                [
+                  307.73199462890625,
+                  373.68829345703125
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "reference_3",
+          "file": "outputs/reference_diagnostics_v1/identity_2547/reference_3.png",
+          "processed_sha256": "c9a696359bcbb87b9c3f6329f1431104fa9acddc78093c791808c1a66118fca3"
+        },
+        {
+          "hq_id": "18364",
+          "identity_label": "2547",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\18364.jpg",
+          "source_sha256": "e18fed972e1e817a4560174393e3d4bda84f54674d46c4f7b232455a39e20f07",
+          "decoded_rgb_sha256": "071dd106af7d612f5ea8ed2d37829728f7ed91f3e21f496363d441f61073ef79",
+          "phash": "7aa12187e785c786",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.7796533703804016,
+              "bbox": [
+                141.65859985351562,
+                112.0947265625,
+                397.53839111328125,
+                448.6978454589844
+              ],
+              "landmarks": [
+                [
+                  191.36181640625,
+                  244.2584991455078
+                ],
+                [
+                  314.96759033203125,
+                  244.57644653320312
+                ],
+                [
+                  241.7822265625,
+                  316.379150390625
+                ],
+                [
+                  202.92575073242188,
+                  366.71441650390625
+                ],
+                [
+                  306.0675354003906,
+                  368.0607604980469
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "reference_4",
+          "file": "outputs/reference_diagnostics_v1/identity_2547/reference_4.png",
+          "processed_sha256": "92a8cbfe3faa174336d4f583fcf17d39102ff62303bd1bf29f84193fdc8f60cc"
+        }
+      ],
+      "observed": "outputs/reference_diagnostics_v1/identity_2547/observed.png",
+      "observed_sha256": "02adcf2f228b46e34e2730dfe107a6b2106073a5b09578837b3f8cb186075dfc",
+      "mask": "outputs/reference_diagnostics_v1/identity_2547/mask.png",
+      "mask_sha256": "ac9b2819710bdfda258aef0ec2e5c1f1f85156aeb02561e1c2542d08a5ed661f",
+      "mask_fraction": 0.08108139038085938,
+      "mask_geometry": {
+        "kind": "synthetic eye-aligned rectangle",
+        "polygon": [
+          [
+            144.0884429931641,
+            197.26536712646487
+          ],
+          [
+            384.5961288452148,
+            207.27541809082032
+          ],
+          [
+            380.9082153320312,
+            295.88351287841795
+          ],
+          [
+            140.4005294799805,
+            285.8734619140625
+          ]
+        ],
+        "width_inter_eye_distances": 1.9,
+        "height_inter_eye_distances": 0.7,
+        "fill_rgb": [
+          90,
+          100,
+          110
+        ],
+        "uses_unobscured_target_landmarks_for_case_construction_only": true
+      }
+    },
+    {
+      "case_id": "identity_3559",
+      "identity_label": "3559",
+      "source_split": "val",
+      "images": [
+        {
+          "hq_id": "101",
+          "identity_label": "3559",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\101.jpg",
+          "source_sha256": "4b9aee192a924b3a015532397fba5826e17f7dfa1f6ad247343f1365684323c4",
+          "decoded_rgb_sha256": "80730adfb9b3c70d5b75712c70e06abcbd98e65be07a0dd2e15f8de1887f775e",
+          "phash": "4f787b16a31c80dc",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.6316498517990112,
+              "bbox": [
+                131.41921997070312,
+                102.8480453491211,
+                404.34442138671875,
+                455.88128662109375
+              ],
+              "landmarks": [
+                [
+                  188.72589111328125,
+                  243.1779327392578
+                ],
+                [
+                  320.6065673828125,
+                  247.2692108154297
+                ],
+                [
+                  244.5877227783203,
+                  321.7449951171875
+                ],
+                [
+                  195.1959991455078,
+                  363.21319580078125
+                ],
+                [
+                  314.3592224121094,
+                  367.84552001953125
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "target",
+          "file": "outputs/reference_diagnostics_v1/identity_3559/target.png",
+          "processed_sha256": "f60797dbcf3f62ee474ba0e804fd675f47f82522e850c18309ea45cfde7bd0d7"
+        },
+        {
+          "hq_id": "14699",
+          "identity_label": "3559",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\14699.jpg",
+          "source_sha256": "3339ee4ce972d72e9bcd9900718a23beba53862de0096a547f4387b7fc8bf3e4",
+          "decoded_rgb_sha256": "93a378a8506b74e46ea114b817d23a9b90f110c437023b954e48d986e47b7b28",
+          "phash": "0b787467e12f9898",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.6341109275817871,
+              "bbox": [
+                82.4532699584961,
+                107.29837799072266,
+                358.79022216796875,
+                449.6934509277344
+              ],
+              "landmarks": [
+                [
+                  197.40017700195312,
+                  249.04324340820312
+                ],
+                [
+                  321.92449951171875,
+                  246.02273559570312
+                ],
+                [
+                  284.7015075683594,
+                  334.07757568359375
+                ],
+                [
+                  203.5066375732422,
+                  378.1734313964844
+                ],
+                [
+                  299.02154541015625,
+                  374.73419189453125
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "reference_1",
+          "file": "outputs/reference_diagnostics_v1/identity_3559/reference_1.png",
+          "processed_sha256": "9d52dc6921524fe16f33a3150ed014e2a4f0b39c125449b2343bdc63bb393e01"
+        },
+        {
+          "hq_id": "21647",
+          "identity_label": "3559",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\21647.jpg",
+          "source_sha256": "47fc487d1e17ea8e77e9ff8c15efdef1d0acb5d502e18a140c21077cb4e3621b",
+          "decoded_rgb_sha256": "e1a680e5627c1fa26abc5cf27b41b92c63ff586400b1e7015486e6066830555c",
+          "phash": "4fb834b2f0abc688",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.650166392326355,
+              "bbox": [
+                99.6297836303711,
+                107.23735046386719,
+                372.15325927734375,
+                451.6094665527344
+              ],
+              "landmarks": [
+                [
+                  193.58181762695312,
+                  245.2390899658203
+                ],
+                [
+                  320.82666015625,
+                  247.3185272216797
+                ],
+                [
+                  273.1092834472656,
+                  303.38800048828125
+                ],
+                [
+                  203.68206787109375,
+                  364.50579833984375
+                ],
+                [
+                  312.2696838378906,
+                  364.82611083984375
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "reference_2",
+          "file": "outputs/reference_diagnostics_v1/identity_3559/reference_2.png",
+          "processed_sha256": "debc975eb91d6d589155fc07f4c453834479e4045ac847054582904917f06e58"
+        },
+        {
+          "hq_id": "1777",
+          "identity_label": "3559",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\1777.jpg",
+          "source_sha256": "22037da0bd163aeabaf3fc58618921d664acfe87917c3054bda2768b6c1a6556",
+          "decoded_rgb_sha256": "894af91286311c98d785387e21dd8d3f1acdfd834568fcf5abae93a709f2c1aa",
+          "phash": "1f026f38257c6167",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.7456204891204834,
+              "bbox": [
+                133.8293914794922,
+                130.7271728515625,
+                404.55279541015625,
+                442.9803771972656
+              ],
+              "landmarks": [
+                [
+                  190.84017944335938,
+                  240.1656036376953
+                ],
+                [
+                  321.0149841308594,
+                  242.9040985107422
+                ],
+                [
+                  245.53369140625,
+                  330.37713623046875
+                ],
+                [
+                  207.4783935546875,
+                  370.79150390625
+                ],
+                [
+                  306.5675964355469,
+                  373.52874755859375
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "reference_3",
+          "file": "outputs/reference_diagnostics_v1/identity_3559/reference_3.png",
+          "processed_sha256": "d7e6e10acbb1555b34a5caae518ab46fbdb20e4f55119bf3bd98c4f146395b7b"
+        },
+        {
+          "hq_id": "4953",
+          "identity_label": "3559",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\4953.jpg",
+          "source_sha256": "de4f31cc3fb3a0b3ac4c3dae37d198f3de99d7cd28e76f854b79f7210765fc0a",
+          "decoded_rgb_sha256": "79656dc4c4448b7cf95f6e6833fd15a0edfde98d673f770539e9558aa77b3e9c",
+          "phash": "0bbd65b2e4b492c2",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.6449980139732361,
+              "bbox": [
+                116.41984558105469,
+                98.61820983886719,
+                387.47796630859375,
+                455.44024658203125
+              ],
+              "landmarks": [
+                [
+                  193.2361297607422,
+                  242.49423217773438
+                ],
+                [
+                  321.24298095703125,
+                  243.1997528076172
+                ],
+                [
+                  260.13336181640625,
+                  326.5868225097656
+                ],
+                [
+                  201.80618286132812,
+                  368.7762145996094
+                ],
+                [
+                  307.5459899902344,
+                  369.2556457519531
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "reference_4",
+          "file": "outputs/reference_diagnostics_v1/identity_3559/reference_4.png",
+          "processed_sha256": "e00757d561aa51dacecd6fd4758de1ef659fcb3f82d6353ff1ba7253b0432031"
+        }
+      ],
+      "observed": "outputs/reference_diagnostics_v1/identity_3559/observed.png",
+      "observed_sha256": "866b4bbc61e4145e1541a4ae0362a6986dca3269c21be2116ff66673f4bed732",
+      "mask": "outputs/reference_diagnostics_v1/identity_3559/mask.png",
+      "mask_sha256": "af9a5fa577e7652d0c527544d60b3ff513f0dc2228743012913be85412acb13a",
+      "mask_fraction": 0.0890350341796875,
+      "mask_geometry": {
+        "kind": "synthetic eye-aligned rectangle",
+        "polygon": [
+          [
+            130.81153411865233,
+            195.17862091064455
+          ],
+          [
+            381.3848190307617,
+            202.9520492553711
+          ],
+          [
+            378.52092437744136,
+            295.26852264404295
+          ],
+          [
+            127.94763946533203,
+            287.4950942993164
+          ]
+        ],
+        "width_inter_eye_distances": 1.9,
+        "height_inter_eye_distances": 0.7,
+        "fill_rgb": [
+          90,
+          100,
+          110
+        ],
+        "uses_unobscured_target_landmarks_for_case_construction_only": true
+      }
+    },
+    {
+      "case_id": "identity_1519",
+      "identity_label": "1519",
+      "source_split": "val",
+      "images": [
+        {
+          "hq_id": "14353",
+          "identity_label": "1519",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\14353.jpg",
+          "source_sha256": "b6d526c66ee60f57cff0fe504a659720ca217a0308be052d4875117c04e824e1",
+          "decoded_rgb_sha256": "f52138e21ca3606f9060cf27192610ff2db600ebb0e036b42fddbf45756056e8",
+          "phash": "1b6aabee2428d398",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.6751641035079956,
+              "bbox": [
+                136.22157287597656,
+                98.38980865478516,
+                401.6598205566406,
+                452.25115966796875
+              ],
+              "landmarks": [
+                [
+                  193.5840301513672,
+                  243.2141876220703
+                ],
+                [
+                  317.5537109375,
+                  246.1500701904297
+                ],
+                [
+                  246.70620727539062,
+                  322.0480651855469
+                ],
+                [
+                  208.732666015625,
+                  377.093994140625
+                ],
+                [
+                  297.86260986328125,
+                  379.4020690917969
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "target",
+          "file": "outputs/reference_diagnostics_v1/identity_1519/target.png",
+          "processed_sha256": "7f56f005615b61679b70aea497f664438d27a1789a52ed0a8394ec5be90ab032"
+        },
+        {
+          "hq_id": "3153",
+          "identity_label": "1519",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\3153.jpg",
+          "source_sha256": "05288678de1abeaedefeb5cbc4cea6701a5db364433d2001d2ca0d1fc2c5289e",
+          "decoded_rgb_sha256": "03901a7c1269fc4d2b1284fcedeb0829211bb0e55dbc837674f9340bc49a1f9a",
+          "phash": "7a2b702025e09ffa",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.5260679721832275,
+              "bbox": [
+                130.11602783203125,
+                90.2155532836914,
+                402.78082275390625,
+                451.1746520996094
+              ],
+              "landmarks": [
+                [
+                  191.41836547851562,
+                  239.7893524169922
+                ],
+                [
+                  322.73956298828125,
+                  243.7310791015625
+                ],
+                [
+                  249.31655883789062,
+                  334.5750427246094
+                ],
+                [
+                  203.95265197753906,
+                  367.90869140625
+                ],
+                [
+                  309.7189025878906,
+                  372.3957824707031
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "reference_1",
+          "file": "outputs/reference_diagnostics_v1/identity_1519/reference_1.png",
+          "processed_sha256": "a5bdd82ec7416ce9f061d3ebcc8c6a6ea8184181d72fa21a76bdc5fe5789c028"
+        },
+        {
+          "hq_id": "24101",
+          "identity_label": "1519",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\24101.jpg",
+          "source_sha256": "b3a148257cb3dce4918a57f67c64fcb5b4e6a1f03c4e0f1606ed338b039441e1",
+          "decoded_rgb_sha256": "e65a176e6be21818afdc8398c3c981d8407126001cbf5ed7ad0194f41db3aa8e",
+          "phash": "145e616527e59ad2",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.5798317790031433,
+              "bbox": [
+                136.25393676757812,
+                94.89295959472656,
+                400.79595947265625,
+                456.707275390625
+              ],
+              "landmarks": [
+                [
+                  192.13331604003906,
+                  242.4846954345703
+                ],
+                [
+                  320.4839172363281,
+                  245.27529907226562
+                ],
+                [
+                  247.7826385498047,
+                  332.56964111328125
+                ],
+                [
+                  204.4746551513672,
+                  374.22259521484375
+                ],
+                [
+                  306.1150817871094,
+                  377.39892578125
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "reference_2",
+          "file": "outputs/reference_diagnostics_v1/identity_1519/reference_2.png",
+          "processed_sha256": "18b34c4522d1e2231958022087fc30b00014004e2a9d277aae5cf9f759e5e51a"
+        },
+        {
+          "hq_id": "1866",
+          "identity_label": "1519",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\1866.jpg",
+          "source_sha256": "1bfc172a6ec6849fd6519f3aea56395aefa644471cb0973edd8993675a06fc84",
+          "decoded_rgb_sha256": "4fb37afa6e1d78c196242c2d0097c7f6552754db30a6b7fe083ef5901d620f8f",
+          "phash": "1efe7868242c8bd1",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.514868974685669,
+              "bbox": [
+                128.46279907226562,
+                88.60929107666016,
+                403.7227478027344,
+                462.2176208496094
+              ],
+              "landmarks": [
+                [
+                  191.685546875,
+                  240.8421630859375
+                ],
+                [
+                  322.7171325683594,
+                  245.6113739013672
+                ],
+                [
+                  251.11685180664062,
+                  328.22515869140625
+                ],
+                [
+                  193.50875854492188,
+                  354.47821044921875
+                ],
+                [
+                  323.9422607421875,
+                  360.41864013671875
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "reference_3",
+          "file": "outputs/reference_diagnostics_v1/identity_1519/reference_3.png",
+          "processed_sha256": "79ff7e44f89fe64adaf1ba5b325a1f628818abafe398d631142b3edb1ac941ae"
+        },
+        {
+          "hq_id": "24103",
+          "identity_label": "1519",
+          "source_path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\24103.jpg",
+          "source_sha256": "4c265247a9c396ec2eea611c07be3c51922837442683479992ba02eceb787f4d",
+          "decoded_rgb_sha256": "b0a4155b5c59fc7cf9071cbb2b7ab42dad2618780b49ad7a1db6fd172e3fedf6",
+          "phash": "4b623863352dcb87",
+          "rejection_reasons": [],
+          "near_pair_candidates": [],
+          "face_count": 1,
+          "detections": [
+            {
+              "score": 0.6477248668670654,
+              "bbox": [
+                109.55928802490234,
+                95.56791687011719,
+                388.39031982421875,
+                451.2989807128906
+              ],
+              "landmarks": [
+                [
+                  193.5728759765625,
+                  249.87210083007812
+                ],
+                [
+                  322.59295654296875,
+                  241.8160400390625
+                ],
+                [
+                  265.2958984375,
+                  335.39208984375
+                ],
+                [
+                  194.0315399169922,
+                  355.940673828125
+                ],
+                [
+                  322.4518127441406,
+                  348.60467529296875
+                ]
+              ]
+            }
+          ],
+          "accepted": true,
+          "role": "reference_4",
+          "file": "outputs/reference_diagnostics_v1/identity_1519/reference_4.png",
+          "processed_sha256": "93dde2ea0d0ee67c85cb96322aa2d09d09b71afbceb1e298bea530c320f321d1"
+        }
+      ],
+      "observed": "outputs/reference_diagnostics_v1/identity_1519/observed.png",
+      "observed_sha256": "0fc9d83bc85f5ca82fc69843e1150b99deeab9c5a1c468b4bfad1b30b4bf284e",
+      "mask": "outputs/reference_diagnostics_v1/identity_1519/mask.png",
+      "mask_sha256": "d9887741a8bd51cb9f5335b7dac660859bca6b5863b2c613bdf2e2406b607df6",
+      "mask_fraction": 0.07826995849609375,
+      "mask_geometry": {
+        "kind": "synthetic eye-aligned rectangle",
+        "polygon": [
+          [
+            138.82523269653322,
+            198.50365219116213
+          ],
+          [
+            374.36762619018555,
+            204.08182907104492
+          ],
+          [
+            372.31250839233394,
+            290.86060562133787
+          ],
+          [
+            136.77011489868167,
+            285.2824287414551
+          ]
+        ],
+        "width_inter_eye_distances": 1.9,
+        "height_inter_eye_distances": 0.7,
+        "fill_rgb": [
+          90,
+          100,
+          110
+        ],
+        "uses_unobscured_target_landmarks_for_case_construction_only": true
+      }
+    }
+  ],
+  "usage": "For each case, pass observed plus mask and the reference_1..4 images to inference. Never supply target.png, unobscured target landmarks, or target pixels to the inpainting model. Target.png is retained only for later development comparisons. Reference-count or order studies must keep these chosen cases and all generated results, not select favourable outputs.",
+  "limits": [
+    "These are selected development cases, not a fresh final test and not a random population sample.",
+    "Same-person grouping and exclusion use provided CelebA labels only. True identity independence and cross-dataset identity separation are not independently established.",
+    "No generated output or measured inpainting performance influenced selection.",
+    "Face-detection eligibility biases this diagnostic toward photographs with one detectable face.",
+    "File and decoded-pixel hash checks plus conservative pHash screening do not prove absence of transformed duplicates or independent capture events.",
+    "Cross-protected-set near-duplicate screening relies on the previous reviewed audit; the new conservative within-diagnostic screen is not an exhaustive crop/flip search.",
+    "Synthetic masks use unobscured target eye landmarks during case construction. They do not represent naturally captured occlusions.",
+    "Model pretraining overlap with these images is unresolved; validation-label exclusions do not establish pretraining independence.",
+    "No model was trained or evaluated by this preparation script; no performance, novelty, or publication-readiness claim follows from these files."
+  ]
+}

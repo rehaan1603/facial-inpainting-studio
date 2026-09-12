@@ -1,0 +1,13 @@
+{
+  "backbone": "resshift",
+  "mask_mode": "painted",
+  "resolution": [
+    256,
+    256
+  ],
+  "seed": 17,
+  "inference_seconds": 0.5296702999985428,
+  "input_sha256": "73954b4f7bd52ec75b547851d332eacdeac2c10ed828204f6114dbbccd720d73",
+  "refiner_sha256": null,
+  "scope": "Local research inference. Generated hidden facial content is a prediction, not verified recovery."
+}

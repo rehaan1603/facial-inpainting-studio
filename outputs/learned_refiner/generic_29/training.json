@@ -1,0 +1,48 @@
+{
+  "seed": 29,
+  "variant": "generic",
+  "negative_weight": 1.0,
+  "steps": 1500,
+  "history": [
+    {
+      "step": 250,
+      "train_loss": 0.15382149815559387,
+      "tuning_loss": 0.15952087938785553
+    },
+    {
+      "step": 500,
+      "train_loss": 0.11454323679208755,
+      "tuning_loss": 0.10787765930096309
+    },
+    {
+      "step": 750,
+      "train_loss": 0.08378082513809204,
+      "tuning_loss": 0.06987823670109113
+    },
+    {
+      "step": 1000,
+      "train_loss": 0.048665884882211685,
+      "tuning_loss": 0.04855188603202502
+    },
+    {
+      "step": 1250,
+      "train_loss": 0.030672021210193634,
+      "tuning_loss": 0.03599482774734497
+    },
+    {
+      "step": 1500,
+      "train_loss": 0.025828614830970764,
+      "tuning_loss": 0.0279910775522391
+    }
+  ],
+  "parameters": 119057,
+  "seconds_this_session": 71.7909168000042,
+  "peak_allocated_MiB": 400.03955078125,
+  "signature": {
+    "configs/learned_refiner.json": "9754a1ed5d54aedde6b0e9f74edc6a1d4e0d2e67bfaf004ba5e76da510162de2",
+    "scripts/train_refiner.py": "c28309b987b382043b9a3363daf4f7d67f432ec4667cc8d8515dc52840ce9edc",
+    "scripts/refiner.py": "81cbf82f41e4ac43e9dc739b67f66853bc5bd445b44840811fb1fdbda889b6da",
+    "data/manifests/celebahq_reviewed_v2.csv": "8706a1193fba1f425bae7158442024799e51ad67e32185b779a171ed2fe43e7b"
+  },
+  "limits": "Standard generic and weighted segmentation controls; synthetic supervision, no novel-method claim."
+}

@@ -1,0 +1,17 @@
+{
+  "backbone": "resshift",
+  "refiner": null,
+  "refiner_sha256": null,
+  "threshold": 0.5,
+  "seed": 17,
+  "input_size": [
+    256,
+    256
+  ],
+  "output_size": [
+    256,
+    256
+  ],
+  "mask_white": "replace",
+  "scope": "Research inference; generated hidden content is not verified ground truth."
+}

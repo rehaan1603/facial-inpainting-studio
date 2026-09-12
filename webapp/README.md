@@ -2,7 +2,7 @@
 
 Local browser interface connected to the existing GPU inference implementation. The application is served by `server.py`; `dist` contains its authored static frontend. It requires the parent project's CUDA Python environment, model cache and `configs/local.json`. The static files alone cannot perform inpainting or be deployed as a functioning GPU application.
 
-Double-click `Start Studio.cmd` in the project root, or run `& ./webapp/start.ps1` from PowerShell. Open http://127.0.0.1:8765 and leave the server window open. If the app is already running, use that page instead of starting a second copy. Ctrl+C in the server window stops it. To use another port, run `.venv/Scripts/python.exe webapp/server.py --port 8766`.
+Double-click `Start Studio.cmd` in the project root, or run `& ./webapp/start.ps1` from PowerShell. Open http://127.0.0.1:8765. The launcher starts a detached local server that remains running when its window closes. If the app is already running, use that page instead of starting a second copy. For a foreground server that stops with Ctrl+C, run `.venv/Scripts/python.exe webapp/server.py` directly. To use another port, run `.venv/Scripts/python.exe webapp/server.py --port 8766`.
 
 1. Upload a PNG, JPEG or WebP face image, or load the available research sample.
 2. Select the square crop or whole-image fit. Framing resets the mask; the displayed frame is the exact input used for inference.

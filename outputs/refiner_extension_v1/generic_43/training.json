@@ -1,0 +1,144 @@
+{
+  "seed": 43,
+  "variant": "generic",
+  "total_steps": 6000,
+  "initial_steps": 1500,
+  "history": [
+    {
+      "step": 250,
+      "train_loss": 0.1544758379459381,
+      "tuning_loss": 0.15938790639241537
+    },
+    {
+      "step": 500,
+      "train_loss": 0.10019326210021973,
+      "tuning_loss": 0.11226194103558858
+    },
+    {
+      "step": 750,
+      "train_loss": 0.06782427430152893,
+      "tuning_loss": 0.06882481401165326
+    },
+    {
+      "step": 1000,
+      "train_loss": 0.043479662388563156,
+      "tuning_loss": 0.04721456269423167
+    },
+    {
+      "step": 1250,
+      "train_loss": 0.05347767099738121,
+      "tuning_loss": 0.03418319672346115
+    },
+    {
+      "step": 1500,
+      "train_loss": 0.025567149743437767,
+      "tuning_loss": 0.0223260751614968
+    },
+    {
+      "step": 1750,
+      "train_loss": 0.017324082553386688,
+      "tuning_loss": 0.024760829905668896
+    },
+    {
+      "step": 2000,
+      "train_loss": 0.017201952636241913,
+      "tuning_loss": 0.015761563554406166
+    },
+    {
+      "step": 2250,
+      "train_loss": 0.01512923650443554,
+      "tuning_loss": 0.014947166355947653
+    },
+    {
+      "step": 2500,
+      "train_loss": 0.012815644964575768,
+      "tuning_loss": 0.010917868154744307
+    },
+    {
+      "step": 2750,
+      "train_loss": 0.012573501095175743,
+      "tuning_loss": 0.008557159764071306
+    },
+    {
+      "step": 3000,
+      "train_loss": 0.007529438007622957,
+      "tuning_loss": 0.006429670689006646
+    },
+    {
+      "step": 3250,
+      "train_loss": 0.004516110755503178,
+      "tuning_loss": 0.006445263357212146
+    },
+    {
+      "step": 3500,
+      "train_loss": 0.005522238556295633,
+      "tuning_loss": 0.004753489512950182
+    },
+    {
+      "step": 3750,
+      "train_loss": 0.0034627094864845276,
+      "tuning_loss": 0.006544409319758415
+    },
+    {
+      "step": 4000,
+      "train_loss": 0.0031099654734134674,
+      "tuning_loss": 0.004870253925522168
+    },
+    {
+      "step": 4250,
+      "train_loss": 0.00846284069120884,
+      "tuning_loss": 0.004747322527691722
+    },
+    {
+      "step": 4500,
+      "train_loss": 0.006305511109530926,
+      "tuning_loss": 0.004211253331353267
+    },
+    {
+      "step": 4750,
+      "train_loss": 0.0029510813765227795,
+      "tuning_loss": 0.0028438548712680736
+    },
+    {
+      "step": 5000,
+      "train_loss": 0.0043947407975792885,
+      "tuning_loss": 0.0037259535553554692
+    },
+    {
+      "step": 5250,
+      "train_loss": 0.003440001280978322,
+      "tuning_loss": 0.004045560490339994
+    },
+    {
+      "step": 5500,
+      "train_loss": 0.003124055452644825,
+      "tuning_loss": 0.0036994024800757566
+    },
+    {
+      "step": 5750,
+      "train_loss": 0.0015626703388988972,
+      "tuning_loss": 0.0029199665101865926
+    },
+    {
+      "step": 6000,
+      "train_loss": 0.0012408766197040677,
+      "tuning_loss": 0.0027656309927503266
+    }
+  ],
+  "best_tuning_loss": 0.0027656309927503266,
+  "extension_seconds": 226.17160869999998,
+  "peak_allocated_MiB": 398.640625,
+  "signature": {
+    "scripts\\extend_refiner_training.py": "dedce3983509c70f1b8d00a8699bb71a13b8fe8cb9b91635eb2c1a351ef3b0ae",
+    "scripts\\train_refiner.py": "c28309b987b382043b9a3363daf4f7d67f432ec4667cc8d8515dc52840ce9edc",
+    "scripts\\refiner.py": "81cbf82f41e4ac43e9dc739b67f66853bc5bd445b44840811fb1fdbda889b6da",
+    "configs\\learned_refiner.json": "9754a1ed5d54aedde6b0e9f74edc6a1d4e0d2e67bfaf004ba5e76da510162de2",
+    "configs\\refiner_extension_v1.json": "0278fa10ec5d9d577b9c0fe1d5ace855367b4cf4f6813402f2aa88044d24e0d8",
+    "data\\manifests\\celebahq_reviewed_v2.csv": "8706a1193fba1f425bae7158442024799e51ad67e32185b779a171ed2fe43e7b",
+    "training_cache_sha256": "07e87008f7856ea287e39743f03fbffcbd90fa87ad29df170a67d0c4758457da",
+    "tuning_cache_sha256": "45d5953ea724c2d644348ab5376f0b271c28bf7baf439a26bdc090c3dab762da",
+    "initial_latest_sha256": "93390cd80f964b714fce21e53e1018a48c5855446e0070b6211d82b2cda58450",
+    "initial_best_sha256": "e9c000c10d1eb59bcc05388c7996918c03ceb4524d1ed79e1c604bf87505c34e"
+  },
+  "limits": "Matched fourfold budget extension, not proof of convergence. No evaluation on previously observed test images in this extension."
+}

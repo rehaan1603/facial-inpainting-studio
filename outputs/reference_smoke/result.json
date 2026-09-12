@@ -1,0 +1,32 @@
+{
+  "backbone": "sdxl_faceid_portrait",
+  "resolution": [
+    512,
+    512
+  ],
+  "seed": 17,
+  "steps": 30,
+  "adapter_scale": 0.8,
+  "references": [
+    {
+      "sha256": "b6422e65b9b1b6f44e8c6db7f116772e80c769f2888a4e1fade6fb7d52c7853e",
+      "detection_score": 0.6157553195953369
+    },
+    {
+      "sha256": "41d875688c3d40740ab6891bc3e3658aa4cd484b73a43a17aa13f5baece74eb9",
+      "detection_score": 0.6102985739707947
+    },
+    {
+      "sha256": "20720ef1d25a5ef18aeb6f35a523f42615416286f3a90db0b6dce26f541765bc",
+      "detection_score": 0.6037349700927734
+    }
+  ],
+  "reference_count": 3,
+  "reference_tokens_per_image": 16,
+  "memory_mode": "model",
+  "inference_seconds_including_offload": 19.715259799995692,
+  "peak_allocated_bytes": 6285350400,
+  "adapter_sha256": "5631ce7824cdafd2db37c5e85b985730a95ff59c5b4fc80c2b79b0bee5711512",
+  "outside_effective_mask": "Exact preservation at processed input resolution",
+  "scope": "Existing reference-guided baseline, not a novel method or verified recovery of the true hidden face."
+}

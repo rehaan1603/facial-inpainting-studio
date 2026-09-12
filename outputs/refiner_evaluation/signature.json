@@ -1,0 +1,14 @@
+{
+  "scripts\\evaluate_refiners.py": "e148a1537138d75d0729326553a2358a638028f5713de5de931ac67466ce5b18",
+  "scripts\\inpaint.py": "62cf2a75d348d51854f2fc71b47250cf73d33f338d656413cbea87d25b1c24d4",
+  "scripts\\refiner.py": "81cbf82f41e4ac43e9dc739b67f66853bc5bd445b44840811fb1fdbda889b6da",
+  "data\\manifests\\celebahq_reviewed_v2.csv": "8706a1193fba1f425bae7158442024799e51ad67e32185b779a171ed2fe43e7b",
+  "outputs\\benchmark_v2\\cases.json": "ae7833a4bbec69414b1dd5ee207ce1c52f35598f63419cb87298899c39762eb4",
+  "outputs\\area_matched_v3_margin12\\cases.json": "1f7ee5beb631e010530d03840a6667a32a9183b88f929e68d4bb6b36b6481171",
+  "outputs\\learned_refiner\\generic_17\\best.pt": "032558e4e046b4e5f79ef26d2d38e6bddff1df736f36b2b214cd37b645ad949c",
+  "outputs\\learned_refiner\\generic_29\\best.pt": "cb8be69474e84f8165bcdc9dfad81614dc04a49d72cb5d6b56656acc9742debe",
+  "outputs\\learned_refiner\\generic_43\\best.pt": "e9c000c10d1eb59bcc05388c7996918c03ceb4524d1ed79e1c604bf87505c34e",
+  "outputs\\learned_refiner\\preservation_weighted_17\\best.pt": "4a099810c9f0fd2511ae54da8d8f84f31586391a656f1732cc16dda3a2ae5ef1",
+  "outputs\\learned_refiner\\preservation_weighted_29\\best.pt": "24cd0db2ccaa91d87244739280492fbf12a6ba5e228f21a812edf38c941fa3aa",
+  "outputs\\learned_refiner\\preservation_weighted_43\\best.pt": "921c536697a98751cbd2fcad29fd2232c6505ff5a2fe0c719b7bf85642fe7c54"
+}
