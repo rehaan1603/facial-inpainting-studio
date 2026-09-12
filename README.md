@@ -28,9 +28,17 @@ A verified local example uses `outputs/benchmark_v2/cases/10371_brush/observed.p
 
 ## Reference-photo completion
 
-Select **Use 3–4 reference photos** in the website. Add three or four distinct photographs of the same person, with one visible face per photograph. Mark the entire damaged target region and reconstruct. The optional **Match colour at edges** control reduces colour seams. The result is a 512 × 512 PNG; pixels outside the effective mask remain unchanged. **Load research sample** supplies a matching target, mask and four references when this mode is selected.
+Select **Use 3–4 reference photos** in the website. Add three or four distinct photographs of the same person, with one visible face per photograph. Mark the entire damaged target region and reconstruct. Uploading a new input clears previous references, so photos of another person cannot be reused accidentally. **Processing detail** offers standard (512 processing) and detailed (1024 processing, more GPU memory) modes. The optional **Match colour at edges** control reduces colour seams. The result is a 512 × 512 PNG; pixels outside the effective mask remain unchanged. **Load research sample** supplies a matching target, mask and four references when this mode is selected.
 
-The reference mode uses existing SDXL inpainting, IP-Adapter FaceID Portrait and InsightFace weights in a separate local environment. See `research/REFERENCE_IMPLEMENTATION.md` and `research/reference-environment-lock.txt`. This is a functional baseline, with broader quality evaluation still pending. The twelve-person diagnostic protocol is prepared but has not yet been evaluated.
+The reference mode uses existing SDXL inpainting, IP-Adapter FaceID Portrait and InsightFace weights in a separate local environment. See `research/REFERENCE_IMPLEMENTATION.md` and `research/reference-environment-v2-lock.txt`. This is a functional baseline, with broader quality evaluation still pending. The twelve-person diagnostic is recorded separately from the engineering example; see the current status and `research/QUALITY_FIX_STATUS.md`.
+
+To install or repair the reference software after setting up the base CUDA environment and `configs/local.json`:
+
+```powershell
+.venv/Scripts/python.exe scripts/prepare_reference_runtime_v2.py
+```
+
+This uses the separate `reference_env_v2` cache directory and preserves the original experiment environments. Model weights still need to be restored from their pinned provenance sources. Restart the studio after an environment or server change.
 
 ## Environment and reproduction
 

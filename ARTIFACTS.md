@@ -19,6 +19,11 @@ Detailed artifacts now include:
 | outputs/near_duplicate_audit | Fingerprints, candidate pairs and review metadata |
 | outputs/osor_evaluation_v1 | Partial comparator records; not a completed comparison |
 | outputs/reference_examples and outputs/reference_diagnostics_v1 | Reference selection, source hashes, exclusions and prepared diagnostic metadata |
+| outputs/reference_diagnostic_evaluation_v3 | Completed 48-candidate / 96-row development comparison, frozen signature and per-output hashes |
+| outputs/reference_diagnostic_evaluation_v2 | Historical attempt stopped after five candidates on a progress-file lock; excluded from v3 results |
+| research/REFERENCE_DIAGNOSTIC_RESULTS.md | All eight conditions and exploratory paired intervals; reference benefits remain inconsistent |
+| research/reference_webapp_repair_checks.json | Three-reference standard and four-reference detailed HTTP/browser checks, download and known-pixel checks |
+| requirements-reference-v2.txt and research/reference-environment-v2-* | Repaired runtime pins, installation provenance and full environment lock |
 | outputs/webapp_runs | Saved reconstruction settings and progress/error metadata; photographs excluded |
 
 research/REPOSITORY_ARTIFACT_INVENTORY.json is the authoritative file list with SHA-256 hashes and byte sizes. It distinguishes locally trained checkpoints from text research records. Presence of a protocol or partial run is not evidence of completed evaluation. See research/PROJECT_STATUS.md and research/QUALITY_FIX_STATUS.md for current limitations.

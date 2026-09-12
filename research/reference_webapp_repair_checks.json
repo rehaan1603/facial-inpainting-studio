@@ -1,0 +1,64 @@
+{
+  "scope": "Real HTTP/GPU/PNG functional checks on the identity_916 engineering sample; no identity-fidelity claim.",
+  "runs": [
+    {
+      "job_id": "fc693e0ac357493c9a2abb37960d2881",
+      "detail": "standard",
+      "references": 3,
+      "changed_pixels": 19238,
+      "outside_mask_exact": true,
+      "wall_seconds": 149.06200000000536,
+      "inference_seconds": 19.93,
+      "model_resolution": [
+        512,
+        512
+      ],
+      "result_sha256": "fd0512ff18a49e77330e209dedb1a49fe02562c4dfda775ad4ad70a6e6ea1853",
+      "environment": {
+        "torch": "2.11.0+cu128",
+        "diffusers": "0.40.0",
+        "transformers": "5.17.0",
+        "tokenizers": "0.23.2",
+        "regex": "2025.11.3",
+        "onnx": "1.20.1",
+        "ml_dtypes": "0.5.4",
+        "insightface": "2.0"
+      }
+    },
+    {
+      "job_id": "fc262ad38d674bf19eddb936d309a094",
+      "detail": "detailed",
+      "references": 4,
+      "changed_pixels": 19238,
+      "outside_mask_exact": true,
+      "inference_seconds": 33.22872839999036,
+      "peak_allocated_bytes": 6534925824,
+      "model_resolution": [
+        1024,
+        1024
+      ],
+      "result_sha256": "db7fd54ac18649cc9708527fa90b601a7c7bde9b430d7cab1a9db4c226c2d4b0",
+      "environment": {
+        "torch": "2.11.0+cu128",
+        "diffusers": "0.40.0",
+        "transformers": "5.17.0",
+        "tokenizers": "0.23.2",
+        "regex": "2025.11.3",
+        "onnx": "1.20.1",
+        "ml_dtypes": "0.5.4",
+        "insightface": "2.0"
+      },
+      "entry": "Visible website options and WebMCP start action",
+      "browser_result_visible": true,
+      "browser_result_download": true,
+      "browser_mask_download": true
+    }
+  ],
+  "new_input_reference_reset": {
+    "verified_in_browser": true,
+    "before": 4,
+    "after_new_input_upload": 0,
+    "run_disabled_after_upload": true,
+    "reference_message_shown": true
+  }
+}

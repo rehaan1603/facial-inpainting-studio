@@ -1,6 +1,8 @@
 test_counts_and_translation (test_area_matched_v3.AreaMatchedTests.test_counts_and_translation) ... ok
 test_hidden_pixel_independence (test_area_matched_v3.AreaMatchedTests.test_hidden_pixel_independence) ... ok
 test_matched_texture (test_area_matched_v3.AreaMatchedTests.test_matched_texture) ... ok
+test_optional_progress_does_not_abort_but_required_record_fails (test_atomic_records.RecordTests.test_optional_progress_does_not_abort_but_required_record_fails) ... ok
+test_transient_lock_recovers_without_corrupting_record (test_atomic_records.RecordTests.test_transient_lock_recovers_without_corrupting_record) ... ok
 test_conditions_and_translation (test_benchmark_v2.BenchmarkTests.test_conditions_and_translation) ... ok
 test_independent_corruption (test_benchmark_v2.BenchmarkTests.test_independent_corruption) ... ok
 test_feather_preserves_outside_and_limits (test_control_sweep.Controls.test_feather_preserves_outside_and_limits) ... ok
@@ -24,36 +26,40 @@ test_cpu_forward_backward (test_refiner.RefinerTests.test_cpu_forward_backward) 
 test_empty_regions_finite_gradients (test_refiner.RefinerTests.test_empty_regions_finite_gradients) ... ok
 test_loss_penalizes_false_positive_more (test_refiner.RefinerTests.test_loss_penalizes_false_positive_more) ... ok
 test_training_hidden_target_independence (test_refiner.RefinerTests.test_training_hidden_target_independence) ... ok
-test_cross_origin_and_host_rejected (test_webapp.WebBoundaryTests.test_cross_origin_and_host_rejected) ... 127.0.0.1 - - [12/Sep/2026 10:18:24] "POST /api/inpaint HTTP/1.1" 403 -
-127.0.0.1 - - [12/Sep/2026 10:18:24] "POST /api/inpaint HTTP/1.1" 403 -
+test_cross_origin_and_host_rejected (test_webapp.WebBoundaryTests.test_cross_origin_and_host_rejected) ... 127.0.0.1 - - [13/Sep/2026 00:50:45] "POST /api/inpaint HTTP/1.1" 403 -
+127.0.0.1 - - [13/Sep/2026 00:50:45] "POST /api/inpaint HTTP/1.1" 403 -
 ok
-test_invalid_blending_rejected (test_webapp.WebBoundaryTests.test_invalid_blending_rejected) ... 127.0.0.1 - - [12/Sep/2026 10:18:24] "POST /api/inpaint HTTP/1.1" 400 -
+test_invalid_blending_rejected (test_webapp.WebBoundaryTests.test_invalid_blending_rejected) ... 127.0.0.1 - - [13/Sep/2026 00:50:45] "POST /api/inpaint HTTP/1.1" 400 -
 ok
-test_invalid_image_and_model_rejected (test_webapp.WebBoundaryTests.test_invalid_image_and_model_rejected) ... 127.0.0.1 - - [12/Sep/2026 10:18:24] "POST /api/inpaint HTTP/1.1" 400 -
-127.0.0.1 - - [12/Sep/2026 10:18:24] "POST /api/inpaint HTTP/1.1" 400 -
+test_invalid_image_and_model_rejected (test_webapp.WebBoundaryTests.test_invalid_image_and_model_rejected) ... 127.0.0.1 - - [13/Sep/2026 00:50:45] "POST /api/inpaint HTTP/1.1" 400 -
+127.0.0.1 - - [13/Sep/2026 00:50:45] "POST /api/inpaint HTTP/1.1" 400 -
 ok
-test_job_admission_and_busy_response (test_webapp.WebBoundaryTests.test_job_admission_and_busy_response) ... 127.0.0.1 - - [12/Sep/2026 10:18:24] "POST /api/inpaint HTTP/1.1" 202 -
-127.0.0.1 - - [12/Sep/2026 10:18:24] "POST /api/inpaint HTTP/1.1" 409 -
+test_job_admission_and_busy_response (test_webapp.WebBoundaryTests.test_job_admission_and_busy_response) ... 127.0.0.1 - - [13/Sep/2026 00:50:45] "POST /api/inpaint HTTP/1.1" 202 -
+127.0.0.1 - - [13/Sep/2026 00:50:45] "POST /api/inpaint HTTP/1.1" 409 -
 ok
-test_mismatched_and_empty_masks_rejected (test_webapp.WebBoundaryTests.test_mismatched_and_empty_masks_rejected) ... 127.0.0.1 - - [12/Sep/2026 10:18:24] "POST /api/inpaint HTTP/1.1" 400 -
-127.0.0.1 - - [12/Sep/2026 10:18:24] "POST /api/inpaint HTTP/1.1" 400 -
+test_mismatched_and_empty_masks_rejected (test_webapp.WebBoundaryTests.test_mismatched_and_empty_masks_rejected) ... 127.0.0.1 - - [13/Sep/2026 00:50:45] "POST /api/inpaint HTTP/1.1" 400 -
+127.0.0.1 - - [13/Sep/2026 00:50:45] "POST /api/inpaint HTTP/1.1" 400 -
 ok
-test_non_object_json_is_client_error (test_webapp.WebBoundaryTests.test_non_object_json_is_client_error) ... 127.0.0.1 - - [12/Sep/2026 10:18:24] "POST /api/inpaint HTTP/1.1" 400 -
+test_non_object_json_is_client_error (test_webapp.WebBoundaryTests.test_non_object_json_is_client_error) ... 127.0.0.1 - - [13/Sep/2026 00:50:45] "POST /api/inpaint HTTP/1.1" 400 -
 ok
-test_oversized_body_rejected_before_read (test_webapp.WebBoundaryTests.test_oversized_body_rejected_before_read) ... 127.0.0.1 - - [12/Sep/2026 10:18:24] "POST /api/inpaint HTTP/1.1" 413 -
+test_oversized_body_rejected_before_read (test_webapp.WebBoundaryTests.test_oversized_body_rejected_before_read) ... 127.0.0.1 - - [13/Sep/2026 00:50:46] "POST /api/inpaint HTTP/1.1" 413 -
 ok
-test_path_cannot_read_project_files (test_webapp.WebBoundaryTests.test_path_cannot_read_project_files) ... 127.0.0.1 - - [12/Sep/2026 10:18:24] "GET /../configs/local.json HTTP/1.1" 404 -
-127.0.0.1 - - [12/Sep/2026 10:18:24] "GET /runs/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/../../configs/local.json HTTP/1.1" 404 -
+test_path_cannot_read_project_files (test_webapp.WebBoundaryTests.test_path_cannot_read_project_files) ... 127.0.0.1 - - [13/Sep/2026 00:50:46] "GET /../configs/local.json HTTP/1.1" 404 -
+127.0.0.1 - - [13/Sep/2026 00:50:46] "GET /runs/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/../../configs/local.json HTTP/1.1" 404 -
 ok
-test_reference_count_and_mask_mode (test_webapp.WebBoundaryTests.test_reference_count_and_mask_mode) ... 127.0.0.1 - - [12/Sep/2026 10:18:24] "POST /api/inpaint HTTP/1.1" 400 -
-127.0.0.1 - - [12/Sep/2026 10:18:24] "POST /api/inpaint HTTP/1.1" 400 -
-127.0.0.1 - - [12/Sep/2026 10:18:24] "POST /api/inpaint HTTP/1.1" 400 -
-127.0.0.1 - - [12/Sep/2026 10:18:24] "POST /api/inpaint HTTP/1.1" 202 -
+test_reference_count_and_mask_mode (test_webapp.WebBoundaryTests.test_reference_count_and_mask_mode) ... 127.0.0.1 - - [13/Sep/2026 00:50:46] "POST /api/inpaint HTTP/1.1" 400 -
+127.0.0.1 - - [13/Sep/2026 00:50:46] "POST /api/inpaint HTTP/1.1" 400 -
+127.0.0.1 - - [13/Sep/2026 00:50:46] "POST /api/inpaint HTTP/1.1" 400 -
+127.0.0.1 - - [13/Sep/2026 00:50:46] "POST /api/inpaint HTTP/1.1" 202 -
 ok
-test_token_required (test_webapp.WebBoundaryTests.test_token_required) ... 127.0.0.1 - - [12/Sep/2026 10:18:24] "POST /api/inpaint HTTP/1.1" 403 -
+test_reference_detail_validation_and_dispatch (test_webapp.WebBoundaryTests.test_reference_detail_validation_and_dispatch) ... 127.0.0.1 - - [13/Sep/2026 00:50:46] "POST /api/inpaint HTTP/1.1" 400 -
+127.0.0.1 - - [13/Sep/2026 00:50:46] "POST /api/inpaint HTTP/1.1" 202 -
+127.0.0.1 - - [13/Sep/2026 00:50:46] "POST /api/inpaint HTTP/1.1" 202 -
+ok
+test_token_required (test_webapp.WebBoundaryTests.test_token_required) ... 127.0.0.1 - - [13/Sep/2026 00:50:46] "POST /api/inpaint HTTP/1.1" 403 -
 ok
 
 ----------------------------------------------------------------------
-Ran 36 tests in 3.427s
+Ran 39 tests in 3.615s
 
 OK (skipped=3)

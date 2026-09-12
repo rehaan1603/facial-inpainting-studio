@@ -1,0 +1,25 @@
+{
+  "outputs\\reference_diagnostics_v1\\manifest.json": "3680b1a0f49370fc9e78049664e4019c45dcf70d87b313c99a9d9e12f02f684f",
+  "scripts\\evaluate_reference_diagnostics.py": "fb681fd9d37b6613262fe245cbf5ec5c45f5973b83f87db28adf9caa44e68fa8",
+  "scripts\\reference_inpaint.py": "6fa4fe9c7742c8a1ec69d1586cc98a07573b1b85e5bebf0ad4c899b75a782daf",
+  "scripts\\reference_blending.py": "034d8b6475107a551c0140ce971898c42bb7d6ef2b3b0080ff65cdf750395f96",
+  "scripts\\atomic_records.py": "783b9f65ccc88d49e5695a0ef201bb04d2e1e0de4f30a2ea6e240e8ed8b5368f",
+  "research\\REFERENCE_DIAGNOSTIC_PROTOCOL_V3.md": "3fcf10a7514ec031d9aec8a115984f63a84a2b47093a40bdde29fabc2be68281",
+  "research\\reference-environment-v2-lock.txt": "18ac7134527fb713884b917cfe5ddd97e775aed3034f0de382ddada663247087",
+  "research\\reference_adapter_provenance.json": "066a4446733b1c336a3c9785fe0ae2c5f0cdd941434cd8c4d71cf1f00285a358",
+  "research\\reference_faces_provenance.json": "9cbc23137333833e675b9d7d3c142ee895418503bedf62cdf91aace7f34b69be",
+  "research\\osor_downloads.json": "d226ddcab433603fecce08467ef52ce304a4f8ddab313d6df475eea10df9ef1b",
+  "runtime_versions": {
+    "torch": "2.11.0+cu128",
+    "torchvision": "0.26.0+cu128",
+    "diffusers": "0.40.0",
+    "transformers": "5.17.0",
+    "tokenizers": "0.23.2",
+    "regex": "2025.11.3",
+    "onnx": "1.20.1",
+    "ml_dtypes": "0.5.4",
+    "insightface": "2.0",
+    "opencv-python": "5.0.0.93",
+    "lpips": "0.1.4"
+  }
+}

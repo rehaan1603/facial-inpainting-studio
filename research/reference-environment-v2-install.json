@@ -1,0 +1,750 @@
+{
+  "version": "1",
+  "pip_version": "25.0.1",
+  "install": [
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/1d/ac/3f0ef28534dce63f030b375a0f469741931754ebe46de055a38216c94024/insightface-2.0-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=7b44c9ef8cfa80d0446285f048d1816a9326c87e7615f04625a1f277adbc4f19",
+          "hashes": {
+            "sha256": "7b44c9ef8cfa80d0446285f048d1816a9326c87e7615f04625a1f277adbc4f19"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "insightface",
+        "version": "2.0",
+        "dynamic": [
+          "author",
+          "author-email",
+          "description",
+          "description-content-type",
+          "home-page",
+          "provides-extra",
+          "requires-dist",
+          "requires-python",
+          "summary"
+        ],
+        "summary": "InsightFace Python Library",
+        "description_content_type": "text/markdown",
+        "home_page": "https://github.com/deepinsight/insightface",
+        "author": "InsightFace Contributors",
+        "author_email": "contact@insightface.ai",
+        "requires_dist": [
+          "numpy",
+          "onnx>=1.13",
+          "onnxruntime",
+          "opencv-python",
+          "tqdm",
+          "requests",
+          "scipy",
+          "scikit-image",
+          "PySide6-Essentials>=6.5; extra == \"gui\"",
+          "Pillow>=9.1; extra == \"gui\"",
+          "reportlab; extra == \"gui\"",
+          "scikit-learn; extra == \"gui\"",
+          "cryptography>=42.0.0; extra == \"gui\"",
+          "rfc8785>=0.1.4; extra == \"gui\"",
+          "av>=12; extra == \"gui\"",
+          "PyYAML>=6.0; extra == \"gui\"",
+          "av>=12; extra == \"privateframe\"",
+          "PyYAML>=6.0; extra == \"privateframe\"",
+          "cython; extra == \"face3d\"",
+          "albumentations; extra == \"face3d\"",
+          "matplotlib; extra == \"face3d\""
+        ],
+        "requires_python": ">=3.10",
+        "provides_extra": [
+          "gui",
+          "privateframe",
+          "face3d"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/a6/13/0f1699f6de549c9324bc9112a2a85b14c517904cd11b562a654643b755a1/onnxruntime-1.30.0-cp312-cp312-win_amd64.whl",
+        "archive_info": {
+          "hash": "sha256=f3501472571f1b1eee50e017851e7929f5ea37312d2d8c2494a19e8fc58b4a38",
+          "hashes": {
+            "sha256": "f3501472571f1b1eee50e017851e7929f5ea37312d2d8c2494a19e8fc58b4a38"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "onnxruntime",
+        "version": "1.30.0",
+        "dynamic": [
+          "author",
+          "author-email",
+          "classifier",
+          "description",
+          "download-url",
+          "home-page",
+          "keywords",
+          "license",
+          "provides-extra",
+          "requires-dist",
+          "requires-python",
+          "summary"
+        ],
+        "summary": "ONNX Runtime is a runtime accelerator for Machine Learning models",
+        "keywords": [
+          "onnx",
+          "machine",
+          "learning"
+        ],
+        "home_page": "https://onnxruntime.ai",
+        "download_url": "https://github.com/microsoft/onnxruntime/tags",
+        "author": "Microsoft Corporation",
+        "author_email": "onnxruntime@microsoft.com",
+        "license": "MIT License",
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Intended Audience :: Developers",
+          "License :: OSI Approved :: MIT License",
+          "Operating System :: POSIX :: Linux",
+          "Operating System :: Microsoft :: Windows",
+          "Operating System :: MacOS",
+          "Topic :: Scientific/Engineering",
+          "Topic :: Scientific/Engineering :: Mathematics",
+          "Topic :: Scientific/Engineering :: Artificial Intelligence",
+          "Topic :: Software Development",
+          "Topic :: Software Development :: Libraries",
+          "Topic :: Software Development :: Libraries :: Python Modules",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 3 :: Only",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14"
+        ],
+        "requires_dist": [
+          "flatbuffers",
+          "numpy>=1.21.6",
+          "packaging",
+          "protobuf>=4.25.8",
+          "sympy; extra == \"symbolic\"",
+          "ml_dtypes; extra == \"quantization\""
+        ],
+        "requires_python": ">=3.11",
+        "provides_extra": [
+          "symbolic",
+          "quantization"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/21/f0/9fa6e85cb10c8eb36a0222d27e50fe381b86ce49a55446bf39f491727564/opencv_python-5.0.0.93-cp37-abi3-win_amd64.whl",
+        "archive_info": {
+          "hash": "sha256=f90ba04b8f73bc5c3814037699739f0156f597338a98f05956c684e7c3ca10d2",
+          "hashes": {
+            "sha256": "f90ba04b8f73bc5c3814037699739f0156f597338a98f05956c684e7c3ca10d2"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.1",
+        "name": "opencv-python",
+        "version": "5.0.0.93",
+        "platform": [
+          "UNKNOWN"
+        ],
+        "summary": "Wrapper package for OpenCV python bindings.",
+        "description_content_type": "text/markdown",
+        "home_page": "https://github.com/opencv/opencv-python",
+        "maintainer": "OpenCV Team",
+        "license": "Apache 2.0",
+        "license_file": [
+          "LICENSE-3RD-PARTY.txt",
+          "LICENSE.txt"
+        ],
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Environment :: Console",
+          "Intended Audience :: Developers",
+          "Intended Audience :: Education",
+          "Intended Audience :: Information Technology",
+          "Intended Audience :: Science/Research",
+          "License :: OSI Approved :: Apache Software License",
+          "Operating System :: MacOS",
+          "Operating System :: Microsoft :: Windows",
+          "Operating System :: POSIX",
+          "Operating System :: Unix",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3 :: Only",
+          "Programming Language :: Python :: 3.6",
+          "Programming Language :: Python :: 3.7",
+          "Programming Language :: Python :: 3.8",
+          "Programming Language :: Python :: 3.9",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14",
+          "Programming Language :: C++",
+          "Programming Language :: Python :: Implementation :: CPython",
+          "Topic :: Scientific/Engineering",
+          "Topic :: Scientific/Engineering :: Image Recognition",
+          "Topic :: Software Development"
+        ],
+        "requires_dist": [
+          "numpy<2.0; python_version < \"3.9\"",
+          "numpy>=2; python_version >= \"3.9\""
+        ],
+        "requires_python": ">=3.6"
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/23/4d/a3cc1e96f080e253dad2251bfae7587cf2b7912bcd76fd43fd366ff35a87/scikit_image-0.26.0-cp312-cp312-win_amd64.whl",
+        "archive_info": {
+          "hash": "sha256=abed017474593cd3056ae0fe948d07d0747b27a085e92df5474f4955dd65aec0",
+          "hashes": {
+            "sha256": "abed017474593cd3056ae0fe948d07d0747b27a085e92df5474f4955dd65aec0"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.1",
+        "name": "scikit-image",
+        "version": "0.26.0",
+        "summary": "Image processing in Python",
+        "description_content_type": "text/markdown",
+        "maintainer_email": "scikit-image developers <skimage-core@discuss.scientific-python.org>",
+        "license": "Files: *\n Copyright: 2009-2022 the scikit-image team\n License: BSD-3-Clause\n\n Files: doc/source/themes/scikit-image/layout.html\n Copyright: 2007-2010 the Sphinx team\n License: BSD-3-Clause\n\n Files: skimage/feature/_canny.py\n        skimage/filters/edges.py\n        skimage/filters/_rank_order.py\n        skimage/morphology/_skeletonize.py\n        skimage/morphology/tests/test_watershed.py\n        skimage/morphology/watershed.py\n        skimage/segmentation/heap_general.pxi\n        skimage/segmentation/heap_watershed.pxi\n        skimage/segmentation/_watershed.py\n        skimage/segmentation/_watershed_cy.pyx\n Copyright: 2003-2009 Massachusetts Institute of Technology\n            2009-2011 Broad Institute\n            2003 Lee Kamentsky\n            2003-2005 Peter J. Verveer\n License: BSD-3-Clause\n\n Files: skimage/filters/thresholding.py\n        skimage/graph/_mcp.pyx\n        skimage/graph/heap.pyx\n Copyright: 2009-2015 Board of Regents of the University of\n            Wisconsin-Madison, Broad Institute of MIT and Harvard,\n            and Max Planck Institute of Molecular Cell Biology and\n            Genetics\n            2009 Zachary Pincus\n            2009 Almar Klein\n License: BSD-2-Clause\n\n File: skimage/morphology/grayreconstruct.py\n       skimage/morphology/tests/test_reconstruction.py\n Copyright: 2003-2009 Massachusetts Institute of Technology\n            2009-2011 Broad Institute\n            2003 Lee Kamentsky\n License: BSD-3-Clause\n\n File: skimage/morphology/_grayreconstruct.pyx\n Copyright: 2003-2009 Massachusetts Institute of Technology\n            2009-2011 Broad Institute\n            2003 Lee Kamentsky\n            2022 Gregory Lee (added a 64-bit integer variant for large images)\n License: BSD-3-Clause\n\n File: skimage/segmentation/_expand_labels.py\n Copyright: 2020 Broad Institute\n            2020 CellProfiler team\n License: BSD-3-Clause\n\n File: skimage/exposure/_adapthist.py\n Copyright: 1994 Karel Zuiderveld\n License: BSD-3-Clause\n\n Function: skimage/morphology/_skeletonize_various_cy.pyx:_skeletonize_loop\n Copyright: 2003-2009 Massachusetts Institute of Technology\n            2009-2011 Broad Institute\n            2003 Lee Kamentsky\n License: BSD-3-Clause\n\n Function: skimage/_shared/version_requirements.py:_check_version\n Copyright: 2013 The IPython Development Team\n License: BSD-3-Clause\n\n Function: skimage/_shared/version_requirements.py:is_installed\n Copyright: 2009-2011 Pierre Raybaut\n License: MIT\n\n File: skimage/feature/_fisher_vector.py\n Copyright: 2014 2014 Dan Oneata\n License: MIT\n\n File: skimage/_vendored/numpy_lookfor.py\n Copyright: 2005-2023, NumPy Developers\n License: BSD-3-Clause\n\n File: skimage/transform/_thin_plate_splines.py\n Copyright: 2007 Zachary Pincus\n License: BSD-3-Clause\n\n License: BSD-2-Clause\n\n Redistribution and use in source and binary forms, with or without\n modification, are permitted provided that the following conditions\n are met:\n 1. Redistributions of source code must retain the above copyright\n    notice, this list of conditions and the following disclaimer.\n 2. Redistributions in binary form must reproduce the above copyright\n    notice, this list of conditions and the following disclaimer in the\n    documentation and/or other materials provided with the distribution.\n .\n THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\n LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE HOLDERS OR\n CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,\n EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,\n PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR\n PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF\n LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING\n NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\n SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n\n License: BSD-3-Clause\n\n Redistribution and use in source and binary forms, with or without\n modification, are permitted provided that the following conditions\n are met:\n 1. Redistributions of source code must retain the above copyright\n    notice, this list of conditions and the following disclaimer.\n 2. Redistributions in binary form must reproduce the above copyright\n    notice, this list of conditions and the following disclaimer in the\n    documentation and/or other materials provided with the distribution.\n 3. Neither the name of the University nor the names of its contributors\n    may be used to endorse or promote products derived from this software\n    without specific prior written permission.\n .\n THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\n LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE HOLDERS OR\n CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,\n EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,\n PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR\n PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF\n LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING\n NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\n SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n\n License: MIT\n\n Permission is hereby granted, free of charge, to any person obtaining a copy\n of this software and associated documentation files (the \"Software\"), to deal\n in the Software without restriction, including without limitation the rights\n to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n copies of the Software, and to permit persons to whom the Software is\n furnished to do so, subject to the following conditions:\n\n The above copyright notice and this permission notice shall be included in all\n copies or substantial portions of the Software.\n\n THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\n SOFTWARE.\n",
+        "classifier": [
+          "Development Status :: 4 - Beta",
+          "Environment :: Console",
+          "Intended Audience :: Developers",
+          "Intended Audience :: Science/Research",
+          "License :: OSI Approved :: BSD License",
+          "Programming Language :: C",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14",
+          "Programming Language :: Python :: 3 :: Only",
+          "Topic :: Software Development :: Libraries",
+          "Topic :: Scientific/Engineering",
+          "Operating System :: Microsoft :: Windows",
+          "Operating System :: POSIX",
+          "Operating System :: Unix",
+          "Operating System :: MacOS"
+        ],
+        "requires_dist": [
+          "numpy>=1.24",
+          "scipy>=1.11.4",
+          "networkx>=3.0",
+          "pillow>=10.1",
+          "imageio!=2.35.0,>=2.33",
+          "tifffile>=2022.8.12",
+          "packaging>=21",
+          "lazy-loader>=0.4",
+          "meson-python>=0.16; extra == \"build\"",
+          "ninja>=1.11.1.1; extra == \"build\"",
+          "Cython!=3.2.0b1,>=3.0.8; extra == \"build\"",
+          "pythran>=0.16; extra == \"build\"",
+          "numpy>=2.0; extra == \"build\"",
+          "spin==0.13; extra == \"build\"",
+          "build>=1.2.1; extra == \"build\"",
+          "pooch>=1.6.0; extra == \"data\"",
+          "pre-commit; extra == \"developer\"",
+          "ipython; extra == \"developer\"",
+          "docstub==0.3.0.post0; extra == \"developer\"",
+          "scikit-image[asv]; extra == \"developer\"",
+          "asv; sys_platform != \"emscripten\" and extra == \"asv\"",
+          "sphinx>=8.0; extra == \"docs\"",
+          "sphinx-gallery[parallel]>=0.18; extra == \"docs\"",
+          "numpydoc>=1.7; extra == \"docs\"",
+          "sphinx-copybutton; extra == \"docs\"",
+          "matplotlib>=3.7; extra == \"docs\"",
+          "dask[array]>=2023.2.0; extra == \"docs\"",
+          "pandas>=2.0; extra == \"docs\"",
+          "seaborn>=0.11; extra == \"docs\"",
+          "pooch>=1.6; extra == \"docs\"",
+          "tifffile>=2022.8.12; extra == \"docs\"",
+          "myst-parser; extra == \"docs\"",
+          "intersphinx-registry>=0.2411.14; extra == \"docs\"",
+          "ipywidgets; extra == \"docs\"",
+          "ipykernel; extra == \"docs\"",
+          "plotly>=5.20; extra == \"docs\"",
+          "kaleido==0.2.1; extra == \"docs\"",
+          "scikit-learn>=1.2; extra == \"docs\"",
+          "sphinx_design>=0.5; extra == \"docs\"",
+          "pydata-sphinx-theme>=0.16; extra == \"docs\"",
+          "PyWavelets>=1.6; extra == \"docs\"",
+          "pytest-doctestplus>=1.6.0; extra == \"docs\"",
+          "SimpleITK; sys_platform != \"emscripten\" and extra == \"optional\"",
+          "scikit-learn>=1.2; extra == \"optional\"",
+          "pyamg>=5.2; sys_platform != \"emscripten\" and python_version < \"3.14\" and extra == \"optional\"",
+          "scikit-image[optional_free_threaded]; extra == \"optional\"",
+          "astropy>=6.0; extra == \"optional-free-threaded\"",
+          "dask[array]>=2023.2.0; extra == \"optional-free-threaded\"",
+          "matplotlib>=3.7; extra == \"optional-free-threaded\"",
+          "pooch>=1.6.0; sys_platform != \"emscripten\" and extra == \"optional-free-threaded\"",
+          "PyWavelets>=1.6; extra == \"optional-free-threaded\"",
+          "numpydoc>=1.7; extra == \"test\"",
+          "pooch>=1.6.0; sys_platform != \"emscripten\" and extra == \"test\"",
+          "pytest>=8.3; extra == \"test\"",
+          "pytest-cov>=2.11.0; extra == \"test\"",
+          "pytest-pretty; extra == \"test\"",
+          "pytest-localserver; extra == \"test\"",
+          "pytest-faulthandler; extra == \"test\"",
+          "pytest-doctestplus>=1.6.0; extra == \"test\""
+        ],
+        "requires_python": ">=3.11",
+        "project_url": [
+          "homepage, https://scikit-image.org",
+          "documentation, https://scikit-image.org/docs/stable",
+          "source, https://github.com/scikit-image/scikit-image",
+          "download, https://pypi.org/project/scikit-image/#files",
+          "tracker, https://github.com/scikit-image/scikit-image/issues"
+        ],
+        "provides_extra": [
+          "build",
+          "data",
+          "developer",
+          "asv",
+          "docs",
+          "optional",
+          "optional-free-threaded",
+          "test"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/db/37/155788a0d8daded960375af604202805308169f9b859419ea0aa370946e2/protobuf-7.36.1-cp310-abi3-win_amd64.whl",
+        "archive_info": {
+          "hash": "sha256=51139351435d9b43d88a55eaa49fb6f737fbb478fb0cbf2cf694d1a04a9d3363",
+          "hashes": {
+            "sha256": "51139351435d9b43d88a55eaa49fb6f737fbb478fb0cbf2cf694d1a04a9d3363"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.1",
+        "name": "protobuf",
+        "version": "7.36.1",
+        "home_page": "https://developers.google.com/protocol-buffers/",
+        "author": "protobuf@googlegroups.com",
+        "author_email": "protobuf@googlegroups.com",
+        "license": "3-Clause BSD License",
+        "classifier": [
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14"
+        ],
+        "requires_python": ">=3.10"
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/e8/2d/d2a548598be01649e2d46231d151a6c56d10b964d94043a335ae56ea2d92/flatbuffers-25.12.19-py2.py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=7634f50c427838bb021c2d66a3d1168e9d199b0607e6329399f04846d42e20b4",
+          "hashes": {
+            "sha256": "7634f50c427838bb021c2d66a3d1168e9d199b0607e6329399f04846d42e20b4"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "flatbuffers",
+        "version": "25.12.19",
+        "dynamic": [
+          "author",
+          "author-email",
+          "classifier",
+          "description",
+          "home-page",
+          "license",
+          "project-url",
+          "summary"
+        ],
+        "summary": "The FlatBuffers serialization format for Python",
+        "home_page": "https://google.github.io/flatbuffers/",
+        "author": "Derek Bailey",
+        "author_email": "derekbailey@google.com",
+        "license": "Apache 2.0",
+        "classifier": [
+          "Intended Audience :: Developers",
+          "License :: OSI Approved :: Apache Software License",
+          "Operating System :: OS Independent",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 2",
+          "Programming Language :: Python :: 3",
+          "Topic :: Software Development :: Libraries :: Python Modules"
+        ],
+        "project_url": [
+          "Documentation, https://google.github.io/flatbuffers/",
+          "Source, https://github.com/google/flatbuffers"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/3e/2d/ca050652104bab2cf55e569db2a178b1b61cb041fef28307f2db383f6d9f/imageio-2.37.4-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=1ab2e22c8debf700f24c3ac43e8f95f3b3a8110c83b93411e97b4b0b2cd1c7e6",
+          "hashes": {
+            "sha256": "1ab2e22c8debf700f24c3ac43e8f95f3b3a8110c83b93411e97b4b0b2cd1c7e6"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "ImageIO",
+        "version": "2.37.4",
+        "dynamic": [
+          "license-file"
+        ],
+        "summary": "Read and write images and video across all major formats. Supports scientific and volumetric data.",
+        "description_content_type": "text/markdown",
+        "keywords": [
+          "image",
+          "video",
+          "imread",
+          "imwrite",
+          "io",
+          "animation",
+          "ffmpeg",
+          "image processing",
+          "numpy",
+          "format conversion",
+          "scientific imaging",
+          "medical imaging",
+          "volumetric",
+          "video encoding",
+          "multimedia",
+          "gif",
+          "tiff",
+          "png",
+          "jpeg"
+        ],
+        "author": "ImageIO contributors",
+        "maintainer_email": "Sebastian Wallkotter <sebastian@wallkoetter.net>, Almar Klein <almar.klein@gmail.com>",
+        "license_expression": "BSD-2-Clause",
+        "license_file": [
+          "LICENSE"
+        ],
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Intended Audience :: Science/Research",
+          "Intended Audience :: Education",
+          "Intended Audience :: Developers",
+          "Operating System :: MacOS :: MacOS X",
+          "Operating System :: Microsoft :: Windows",
+          "Operating System :: POSIX",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14"
+        ],
+        "requires_dist": [
+          "numpy",
+          "pillow>=8.3.2",
+          "imageio-ffmpeg; extra == \"ffmpeg\"",
+          "psutil; extra == \"ffmpeg\"",
+          "fsspec[http]; extra == \"freeimage\"",
+          "pillow-heif; extra == \"pillow-heif\"",
+          "tifffile; extra == \"tifffile\"",
+          "av; extra == \"pyav\"",
+          "astropy; extra == \"fits\"",
+          "rawpy; extra == \"rawpy\"",
+          "numpy>2; extra == \"rawpy\"",
+          "gdal; extra == \"gdal\"",
+          "itk; extra == \"itk\"",
+          "black; extra == \"linting\"",
+          "flake8; extra == \"linting\"",
+          "pytest; extra == \"test\"",
+          "pytest-cov; extra == \"test\"",
+          "fsspec[github]; extra == \"test\"",
+          "sphinx<6; extra == \"docs\"",
+          "numpydoc; extra == \"docs\"",
+          "pydata-sphinx-theme; extra == \"docs\"",
+          "pytest; extra == \"dev\"",
+          "pytest-cov; extra == \"dev\"",
+          "fsspec[github]; extra == \"dev\"",
+          "black; extra == \"dev\"",
+          "flake8; extra == \"dev\"",
+          "av; extra == \"all-plugins\"",
+          "astropy; extra == \"all-plugins\"",
+          "fsspec[http]; extra == \"all-plugins\"",
+          "imageio-ffmpeg; extra == \"all-plugins\"",
+          "numpy>2; extra == \"all-plugins\"",
+          "pillow-heif; extra == \"all-plugins\"",
+          "psutil; extra == \"all-plugins\"",
+          "rawpy; extra == \"all-plugins\"",
+          "tifffile; extra == \"all-plugins\"",
+          "fsspec[http]; extra == \"all-plugins-pypy\"",
+          "imageio-ffmpeg; extra == \"all-plugins-pypy\"",
+          "pillow-heif; extra == \"all-plugins-pypy\"",
+          "psutil; extra == \"all-plugins-pypy\"",
+          "astropy; extra == \"full\"",
+          "av; extra == \"full\"",
+          "black; extra == \"full\"",
+          "flake8; extra == \"full\"",
+          "fsspec[github,http]; extra == \"full\"",
+          "imageio-ffmpeg; extra == \"full\"",
+          "numpydoc; extra == \"full\"",
+          "numpy>2; extra == \"full\"",
+          "pillow-heif; extra == \"full\"",
+          "psutil; extra == \"full\"",
+          "pydata-sphinx-theme; extra == \"full\"",
+          "pytest; extra == \"full\"",
+          "pytest-cov; extra == \"full\"",
+          "rawpy; extra == \"full\"",
+          "sphinx<6; extra == \"full\"",
+          "tifffile; extra == \"full\""
+        ],
+        "requires_python": ">=3.10",
+        "project_url": [
+          "homepage, https://github.com/imageio/imageio",
+          "download, http://pypi.python.org/pypi/imageio",
+          "source, https://github.com/imageio/imageio",
+          "documentation, https://imageio.readthedocs.io"
+        ],
+        "provides_extra": [
+          "bsdf",
+          "dicom",
+          "feisem",
+          "ffmpeg",
+          "freeimage",
+          "lytro",
+          "numpy",
+          "pillow-heif",
+          "pillow",
+          "simpleitk",
+          "spe",
+          "swf",
+          "tifffile",
+          "pyav",
+          "fits",
+          "rawpy",
+          "gdal",
+          "itk",
+          "linting",
+          "test",
+          "docs",
+          "dev",
+          "all-plugins",
+          "all-plugins-pypy",
+          "full"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/8a/a1/8d812e53a5da1687abb10445275d41a8b13adb781bbf7196ddbcf8d88505/lazy_loader-0.5-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=ab0ea149e9c554d4ffeeb21105ac60bed7f3b4fd69b1d2360a4add51b170b005",
+          "hashes": {
+            "sha256": "ab0ea149e9c554d4ffeeb21105ac60bed7f3b4fd69b1d2360a4add51b170b005"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "lazy-loader",
+        "version": "0.5",
+        "dynamic": [
+          "license-file"
+        ],
+        "summary": "Makes it easy to load subpackages and functions on demand.",
+        "description_content_type": "text/markdown",
+        "author": "Scientific Python Developers",
+        "license_expression": "BSD-3-Clause",
+        "license_file": [
+          "LICENSE.md"
+        ],
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.9",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14"
+        ],
+        "requires_dist": [
+          "packaging",
+          "pytest>=8.0; extra == \"test\"",
+          "pytest-cov>=5.0; extra == \"test\"",
+          "coverage[toml]>=7.2; extra == \"test\"",
+          "pre-commit==4.3.0; extra == \"lint\"",
+          "changelist==0.5; extra == \"dev\"",
+          "spin==0.15; extra == \"dev\""
+        ],
+        "requires_python": ">=3.9",
+        "project_url": [
+          "Home, https://scientific-python.org/specs/spec-0001/",
+          "Source, https://github.com/scientific-python/lazy-loader"
+        ],
+        "provides_extra": [
+          "test",
+          "lint",
+          "dev"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/4f/bc/699eecd5f5829e28939e8dc22aeff0a65b8d37af80a4f6543d26e1184ad2/tifffile-2026.9.9-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=f7e48417d8e83a559349f8fe6c1e302afd57e564276124bab84111129f43925a",
+          "hashes": {
+            "sha256": "f7e48417d8e83a559349f8fe6c1e302afd57e564276124bab84111129f43925a"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "tifffile",
+        "version": "2026.9.9",
+        "dynamic": [
+          "author",
+          "author-email",
+          "classifier",
+          "description",
+          "description-content-type",
+          "home-page",
+          "license",
+          "license-file",
+          "platform",
+          "project-url",
+          "provides-extra",
+          "requires-dist",
+          "requires-python",
+          "summary"
+        ],
+        "platform": [
+          "any"
+        ],
+        "summary": "Read and write TIFF files",
+        "description_content_type": "text/x-rst",
+        "home_page": "https://www.cgohlke.com",
+        "author": "Christoph Gohlke",
+        "author_email": "cgohlke@cgohlke.com",
+        "license": "BSD-3-Clause",
+        "license_file": [
+          "LICENSE"
+        ],
+        "classifier": [
+          "Development Status :: 4 - Beta",
+          "Intended Audience :: Science/Research",
+          "Intended Audience :: Developers",
+          "Operating System :: OS Independent",
+          "Programming Language :: Python :: 3 :: Only",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14",
+          "Programming Language :: Python :: 3.15"
+        ],
+        "requires_dist": [
+          "numpy>=2.1",
+          "imagecodecs>=2026.8.16; extra == \"codecs\"",
+          "lxml; extra == \"xml\"",
+          "zarr>=3.3.0; extra == \"zarr\"",
+          "fsspec; extra == \"zarr\"",
+          "kerchunk; extra == \"zarr\"",
+          "matplotlib; extra == \"plot\"",
+          "imagecodecs>=2026.8.16; extra == \"all\"",
+          "matplotlib; extra == \"all\"",
+          "lxml; extra == \"all\"",
+          "zarr>=3.3.0; extra == \"all\"",
+          "xarray; extra == \"all\"",
+          "fsspec; extra == \"all\"",
+          "kerchunk; extra == \"all\"",
+          "cmapfile; extra == \"test\"",
+          "czifile; extra == \"test\"",
+          "dask; extra == \"test\"",
+          "fsspec; extra == \"test\"",
+          "imagecodecs; extra == \"test\"",
+          "kerchunk; extra == \"test\"",
+          "lfdfiles; extra == \"test\"",
+          "lxml; extra == \"test\"",
+          "ndtiff; extra == \"test\"",
+          "oiffile; extra == \"test\"",
+          "psdtags; extra == \"test\"",
+          "pytest; extra == \"test\"",
+          "requests; extra == \"test\"",
+          "roifile; extra == \"test\"",
+          "xarray; extra == \"test\"",
+          "zarr; extra == \"test\""
+        ],
+        "requires_python": ">=3.12",
+        "project_url": [
+          "Bug Tracker, https://github.com/cgohlke/tifffile/issues",
+          "Source Code, https://github.com/cgohlke/tifffile",
+          "Documentation, https://www.cgohlke.com/docs/tifffile/"
+        ],
+        "provides_extra": [
+          "codecs",
+          "xml",
+          "zarr",
+          "plot",
+          "all",
+          "test"
+        ]
+      }
+    }
+  ],
+  "environment": {
+    "implementation_name": "cpython",
+    "implementation_version": "3.12.10",
+    "os_name": "nt",
+    "platform_machine": "AMD64",
+    "platform_release": "11",
+    "platform_system": "Windows",
+    "platform_version": "10.0.26200",
+    "python_full_version": "3.12.10",
+    "platform_python_implementation": "CPython",
+    "python_version": "3.12",
+    "sys_platform": "win32"
+  },
+  "raw_report_sha256": "2f5ce403cf4354507ca25df9dd3dc0de1c59c2b6a49bd193f19152ab953a53f5",
+  "omitted": "Distribution descriptions; the complete pip report stays in the local environment."
+}

@@ -6,16 +6,17 @@ import numpy as np
 from PIL import Image
 import torch, lpips
 from reference_inpaint import reconstruct, CACHE
+from atomic_records import write_json
 
 ROOT=Path(__file__).resolve().parents[1]
-OUT=ROOT/'outputs/reference_diagnostic_evaluation_v1'
+OUT=ROOT/'outputs/reference_diagnostic_evaluation_v3'
 MEASURES=['full_face_lpips','hole_mae','visible_mae','inner_boundary_mae']
 
 def sha(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 def rgb(path):
     with Image.open(path) as im:return np.asarray(im.convert('RGB')).copy()
 def write(path,value):
-    temp=path.with_suffix('.tmp');temp.write_text(json.dumps(value,indent=2));temp.replace(path)
+    write_json(path,value)
 
 def report(rows):
     assert len(rows)==96 and len({r['identity'] for r in rows})==12
@@ -47,14 +48,17 @@ def report(rows):
     lines+=['','Lower is better for these error measures. Exact outside-mask preservation is imposed by composition, not learned by the model.','', '## Paired LPIPS differences','', '| Contrast (A minus B) | Mean | 95% identity bootstrap interval |','|---|---:|---|']
     for c in contrasts:
         v=c['a_minus_b']['full_face_lpips'];lines.append(f"| {c['comparison']} | {v['mean']:.6f} | [{v['ci95'][0]:.6f}, {v['ci95'][1]:.6f}] |")
-    lines+=['','Negative differences favour A. All other paired measures are recorded in reference_diagnostic_results.json. Intervals are exploratory and not adjusted for multiple contrasts. Strength 0.99 uses 29 denoising steps versus 30 at strength 1.0.','', 'Limitations: twelve detector-success identities, one synthetic eye mask per person, single seed, no poor-reference or inaccurate-mask strata, uncertain label/pretraining independence and no independent identity evaluator. Do not use this diagnostic to claim real-world identity recovery. See REFERENCE_DIAGNOSTIC_PROTOCOL.md and outputs/reference_diagnostics_v1/README.md.']
+    lines+=['','Negative differences favour A. All other paired measures are recorded in reference_diagnostic_results.json. Intervals are exploratory and not adjusted for multiple contrasts. Strength 0.99 uses 29 denoising steps versus 30 at strength 1.0.','', 'Limitations: twelve detector-success identities, one synthetic eye mask per person, single seed, no poor-reference or inaccurate-mask strata, uncertain label/pretraining independence and no independent identity evaluator. Do not use this diagnostic to claim real-world identity recovery. See REFERENCE_DIAGNOSTIC_PROTOCOL_V3.md and outputs/reference_diagnostics_v1/README.md.']
     (ROOT/'research/REFERENCE_DIAGNOSTIC_RESULTS.md').write_text('\n'.join(lines)+'\n')
 
 def main():
     OUT.mkdir(parents=True,exist_ok=True);torch.set_num_threads(4);torch.hub.set_dir(str(CACHE/'torch'))
     manifest_path=ROOT/'outputs/reference_diagnostics_v1/manifest.json';manifest=json.loads(manifest_path.read_text());cases=manifest['cases'];assert len(cases)==12
-    paths=[manifest_path,Path(__file__),ROOT/'scripts/reference_inpaint.py',ROOT/'scripts/reference_blending.py',ROOT/'research/REFERENCE_DIAGNOSTIC_PROTOCOL.md',ROOT/'research/reference_adapter_provenance.json',ROOT/'research/reference_faces_provenance.json',ROOT/'research/osor_downloads.json']
-    signature={str(p.relative_to(ROOT)):sha(p) for p in paths};guard=OUT/'signature.json'
+    paths=[manifest_path,Path(__file__),ROOT/'scripts/reference_inpaint.py',ROOT/'scripts/reference_blending.py',ROOT/'scripts/atomic_records.py',ROOT/'research/REFERENCE_DIAGNOSTIC_PROTOCOL_V3.md',ROOT/'research/reference-environment-v2-lock.txt',ROOT/'research/reference_adapter_provenance.json',ROOT/'research/reference_faces_provenance.json',ROOT/'research/osor_downloads.json']
+    signature={str(p.relative_to(ROOT)):sha(p) for p in paths}
+    from importlib.metadata import version
+    signature['runtime_versions']={name:version(name) for name in ['torch','torchvision','diffusers','transformers','tokenizers','regex','onnx','ml_dtypes','insightface','opencv-python','lpips']}
+    guard=OUT/'signature.json'
     if guard.exists():assert json.loads(guard.read_text())==signature,'Inputs changed; use a new versioned run.'
     else:write(guard,signature)
     perceptual=lpips.LPIPS(net='alex').cpu().eval();runtime={};rows=[];completed=0

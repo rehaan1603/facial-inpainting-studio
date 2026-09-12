@@ -4,6 +4,7 @@ References are supplied by the user as photos of one person. This does not searc
 for or identify a person in a database. No network access is needed for inference.
 """
 import argparse,hashlib,json,os,time
+from importlib.metadata import version
 from pathlib import Path
 os.environ['HF_HUB_OFFLINE']='1';os.environ['TRANSFORMERS_OFFLINE']='1'
 import cv2
@@ -13,6 +14,7 @@ import torch
 from diffusers import StableDiffusionXLInpaintPipeline,DDIMScheduler
 from insightface.app import FaceAnalysis
 from reference_blending import harmonize_reference
+from atomic_records import write_json
 ROOT=Path(__file__).resolve().parents[1]
 CACHE=Path(json.loads((ROOT/'configs/local.json').read_text())['cache'])
 
@@ -20,15 +22,17 @@ def sha(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 def load_rgb(path):
     with Image.open(path) as im:return ImageOps.exif_transpose(im).convert('RGB').copy()
 
-def reconstruct(image,mask,references,output,seed=17,steps=30,scale=.8,memory='model',progress_path=None,blend='poisson',strength=1.0,runtime=None):
+def reconstruct(image,mask,references,output,seed=17,steps=30,scale=.8,memory='model',progress_path=None,blend='poisson',strength=1.0,runtime=None,model_resolution=512):
     def progress(message,**extra):
         print(message,flush=True)
         if progress_path:
-            path=Path(progress_path);temp=path.with_suffix('.tmp');temp.write_text(json.dumps({'message':message,**extra}));temp.replace(path)
+            # A progress-file lock must not discard an otherwise valid GPU run.
+            write_json(progress_path,{'message':message,**extra},required=False)
     if not 1<=len(references)<=4:raise ValueError('Supply between one and four reference images.')
     if not 10<=steps<=50 or not 0<=scale<=1.5:raise ValueError('Unsupported sampling settings.')
     if not .5<=strength<=1:raise ValueError('Strength must be between 0.5 and 1.0.')
     if blend not in ['poisson','hard']:raise ValueError('Choose supported edge blending.')
+    if model_resolution not in [512,1024]:raise ValueError('Model resolution must be 512 or 1024.')
     source=load_rgb(image)
     with Image.open(mask) as im:supplied=im.convert('L')
     if source.size!=supplied.size:raise ValueError('Input and mask dimensions must match.')
@@ -72,6 +76,9 @@ def reconstruct(image,mask,references,output,seed=17,steps=30,scale=.8,memory='m
         else:pipeline.enable_model_cpu_offload()
         if runtime is not None:runtime.update(pipeline=pipeline,memory=memory)
     elif runtime['memory']!=memory:raise ValueError('A reused inference runtime must keep the same memory mode.')
+    # Tile only the high-resolution VAE to keep decoding within laptop VRAM.
+    if model_resolution==1024:pipeline.vae.enable_tiling()
+    else:pipeline.vae.disable_tiling()
     pipeline.set_ip_adapter_scale(scale)
     projection=pipeline.unet.encoder_hid_proj.image_projection_layers[0]
     for processor in pipeline.unet.attn_processors.values():
@@ -79,9 +86,12 @@ def reconstruct(image,mask,references,output,seed=17,steps=30,scale=.8,memory='m
     sampling_steps=int(steps*strength)
     def callback(pipe,step,timestep,kwargs):progress(f'Reconstructing with {len(references)} reference photos: step {step+1} of {sampling_steps}',step=step+1,total=sampling_steps);return kwargs
     generator=torch.Generator(device='cpu').manual_seed(seed);start=time.perf_counter();torch.cuda.reset_peak_memory_stats()
-    generated=pipeline(prompt='A realistic portrait photograph of a person, natural facial features, consistent lighting, detailed skin.',negative_prompt='painting, drawing, distorted face, deformed eyes, blurry, extra facial features, low quality',image=source,mask_image=mask_image,ip_adapter_image_embeds=[conditioning],height=512,width=512,num_inference_steps=steps,strength=strength,guidance_scale=5.0,generator=generator,callback_on_step_end=callback,output_type='np').images[0]
-    if generated.shape!=(512,512,3) or not np.isfinite(generated).all():raise RuntimeError('The model returned invalid pixels.')
-    generated=(generated.clip(0,1)*255).round().astype('uint8');observed=np.asarray(source)
+    model_source=source.resize((model_resolution,model_resolution),Image.Resampling.LANCZOS)
+    model_mask=mask_image.resize((model_resolution,model_resolution),Image.Resampling.NEAREST)
+    generated=pipeline(prompt='A realistic portrait photograph of a person, natural facial features, consistent lighting, detailed skin.',negative_prompt='painting, drawing, distorted face, deformed eyes, blurry, extra facial features, low quality',image=model_source,mask_image=model_mask,ip_adapter_image_embeds=[conditioning],height=model_resolution,width=model_resolution,num_inference_steps=steps,strength=strength,guidance_scale=5.0,generator=generator,callback_on_step_end=callback,output_type='np').images[0]
+    if generated.shape!=(model_resolution,model_resolution,3) or not np.isfinite(generated).all():raise RuntimeError('The model returned invalid pixels.')
+    generated=(generated.clip(0,1)*255).round().astype('uint8')
+    generated=np.asarray(Image.fromarray(generated).resize((512,512),Image.Resampling.LANCZOS));observed=np.asarray(source)
     hard,_=harmonize_reference(generated,observed,binary,mode='hard')
     result,blend_info=harmonize_reference(generated,observed,binary,mode=blend)
     assert np.array_equal(result[~binary],observed[~binary])
@@ -90,14 +100,15 @@ def reconstruct(image,mask,references,output,seed=17,steps=30,scale=.8,memory='m
     mask_image.save(output.with_name(output.stem+'_effective_mask.png'));source.save(output.with_name(output.stem+'_input.png'))
     metadata={'backbone':'sdxl_faceid_portrait','resolution':[512,512],'seed':seed,'steps':steps,'adapter_scale':scale,'references':reference_info,'reference_count':len(references),'reference_tokens_per_image':int(projection.num_tokens),'memory_mode':memory,'inference_seconds_including_offload':time.perf_counter()-start,'peak_allocated_bytes':torch.cuda.max_memory_allocated(),'adapter_sha256':sha(CACHE/'reference_models/ip-adapter-faceid-portrait_sdxl.bin'),'outside_effective_mask':'Exact preservation at processed input resolution','scope':'Existing reference-guided baseline, not a novel method or verified recovery of the true hidden face.'}
     metadata.update(strength=strength,sampling_steps=sampling_steps,blending=blend_info,input_sha256=sha(image),mask_sha256=sha(mask),raw_output_sha256=sha(output.with_name(output.stem+'_raw.png')),result_sha256=sha(output))
+    metadata.update(model_resolution=[model_resolution,model_resolution],vae_tiling=model_resolution==1024,environment={name:version(name) for name in ['torch','diffusers','transformers','tokenizers','regex','onnx','ml_dtypes','insightface']})
     output.with_suffix('.json').write_text(json.dumps(metadata,indent=2));progress('Reference-guided result ready',complete=True)
     return metadata
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--image',type=Path,required=True);p.add_argument('--mask',type=Path,required=True);p.add_argument('--references',type=Path,nargs='+',required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--seed',type=int,default=17);p.add_argument('--steps',type=int,default=30);p.add_argument('--scale',type=float,default=.8);p.add_argument('--memory',choices=['model','sequential'],default='model');p.add_argument('--progress',type=Path);p.add_argument('--blend',choices=['poisson','hard'],default='poisson');p.add_argument('--strength',type=float,default=1.0);args=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--image',type=Path,required=True);p.add_argument('--mask',type=Path,required=True);p.add_argument('--references',type=Path,nargs='+',required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--seed',type=int,default=17);p.add_argument('--steps',type=int,default=30);p.add_argument('--scale',type=float,default=.8);p.add_argument('--memory',choices=['model','sequential'],default='model');p.add_argument('--progress',type=Path);p.add_argument('--blend',choices=['poisson','hard'],default='poisson');p.add_argument('--strength',type=float,default=1.0);p.add_argument('--model-resolution',type=int,choices=[512,1024],default=512);args=p.parse_args()
     if args.output.resolve() in [p.resolve() for p in [args.image,args.mask,*args.references]]:p.error('Output must not overwrite an input.')
-    try:reconstruct(args.image,args.mask,args.references,args.output,args.seed,args.steps,args.scale,args.memory,args.progress,args.blend,args.strength)
+    try:reconstruct(args.image,args.mask,args.references,args.output,args.seed,args.steps,args.scale,args.memory,args.progress,args.blend,args.strength,model_resolution=args.model_resolution)
     except Exception as error:
-        if args.progress:args.progress.write_text(json.dumps({'error':str(error),'message':'Reference-guided inpainting failed.'}))
+        if args.progress:write_json(args.progress,{'error':str(error),'message':'Reference-guided inpainting failed.'},required=False)
         raise
 if __name__=='__main__':main()

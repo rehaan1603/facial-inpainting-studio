@@ -1,0 +1,28 @@
+[
+  {
+    "identity": "3559",
+    "case_id": "identity_3559",
+    "scale": 0.0,
+    "strength": 0.99,
+    "compositor": "hard",
+    "full_face_lpips": 0.08358822762966156,
+    "hole_mae": 0.1578150987625122,
+    "visible_mae": 0.0,
+    "inner_boundary_mae": 0.12990917265415192,
+    "inference_seconds": 23.161229100005585,
+    "output_sha256": "7fbb2ac14080628ebc50e6a28abf6c4535f3c8e4903b7d17bf86dc6db1223416"
+  },
+  {
+    "identity": "3559",
+    "case_id": "identity_3559",
+    "scale": 0.0,
+    "strength": 0.99,
+    "compositor": "poisson",
+    "full_face_lpips": 0.04298748821020126,
+    "hole_mae": 0.06849482655525208,
+    "visible_mae": 0.0,
+    "inner_boundary_mae": 0.021964559331536293,
+    "inference_seconds": 23.161229100005585,
+    "output_sha256": "2520f66e71217643032afdc779070795183b204a6a59776626baf931283e93ab"
+  }
+]

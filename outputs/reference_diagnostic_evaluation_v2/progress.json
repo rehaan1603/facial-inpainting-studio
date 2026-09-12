@@ -1,0 +1,7 @@
+{
+  "status": "failed",
+  "completed_candidates": 5,
+  "total_candidates": 48,
+  "current": "identity_4423_scale0.0_strength0.99",
+  "error": "[WinError 5] Access is denied: 'C:\\\\Users\\\\rehaa\\\\OneDrive\\\\Documents\\\\ChatGPT\\\\Facial inpainting Project\\\\outputs\\\\reference_diagnostic_evaluation_v2\\\\identity_4423_scale0.0_strength0.99\\\\progress.tmp' -> 'C:\\\\Users\\\\rehaa\\\\OneDrive\\\\Documents\\\\ChatGPT\\\\Facial inpainting Project\\\\outputs\\\\reference_diagnostic_evaluation_v2\\\\identity_4423_scale0.0_strength0.99\\\\progress.json'"
+}

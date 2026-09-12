@@ -24,7 +24,7 @@ class WebBoundaryTests(unittest.TestCase):
     def request(self,path='/api/inpaint',payload=None,headers=None,method='POST'):
         h={'Content-Type':'application/json','X-Local-Token':studio.TOKEN}
         h.update(headers or {});con=HTTPConnection('127.0.0.1',self.port,timeout=5)
-        con.request(method,path,json.dumps(payload) if payload is not None else '{}',h)
+        con.request(method,path,json.dumps(payload) if payload is not None else None,h)
         response=con.getresponse();data=response.read();status=response.status;con.close()
         return status,data
     def valid(self):return {'image':png(),'mask':png(),'backbone':'lama','mode':'painted'}
@@ -44,6 +44,16 @@ class WebBoundaryTests(unittest.TestCase):
     def test_non_object_json_is_client_error(self):self.assertEqual(self.request(payload=[])[0],400)
     def test_invalid_blending_rejected(self):
         data=self.valid();data['blend']='unknown';self.assertEqual(self.request(payload=data)[0],400)
+    def test_reference_detail_validation_and_dispatch(self):
+        data=self.valid();data.update(backbone='reference',references=[png()]*3,detail='unsupported')
+        self.assertEqual(self.request(payload=data)[0],400)
+        for detail in ['standard','detailed']:
+            data['detail']=detail;studio.ACTIVE=False
+            called=threading.Event()
+            with patch.object(studio,'run_job',side_effect=lambda *args:called.set()) as worker:
+                self.assertEqual(self.request(payload=data)[0],202)
+                self.assertTrue(called.wait(5),'The admitted background job was not dispatched')
+                self.assertEqual(worker.call_args.args[-1],detail)
     def test_mismatched_and_empty_masks_rejected(self):
         data=self.valid();data['mask']=png((16,16));self.assertEqual(self.request(payload=data)[0],400)
         data['mask']=png(value=0);self.assertEqual(self.request(payload=data)[0],400)

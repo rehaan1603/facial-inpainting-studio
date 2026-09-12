@@ -17,7 +17,7 @@ def decode_image(value,mask=False):
         im.load();im=ImageOps.exif_transpose(im)
         return im.convert('L' if mask else 'RGB').copy()
 
-def run_reference_job(job_id,source,mask,mode,references,blend):
+def run_reference_job(job_id,source,mask,mode,references,blend,detail='standard'):
     job=JOBS[job_id];folder=RUNS/job_id;folder.mkdir(parents=True,exist_ok=False)
     import numpy as np
     from pilot import morph
@@ -28,8 +28,9 @@ def run_reference_job(job_id,source,mask,mode,references,blend):
     paths=[]
     for index,reference in enumerate(references):
         path=folder/f'reference_{index+1}.png';reference.save(path);paths.append(path)
-    cache=Path(json.loads((ROOT/'configs/local.json').read_text())['cache']);python=cache/'reference_env/Scripts/python.exe';progress=folder/'progress.json'
-    command=[str(python),str(ROOT/'scripts/reference_inpaint.py'),'--image',str(folder/'input.png'),'--mask',str(folder/'effective_mask.png'),'--references',*[str(p) for p in paths],'--output',str(folder/'result.png'),'--progress',str(progress),'--blend',blend,'--strength','0.99']
+    cache=Path(json.loads((ROOT/'configs/local.json').read_text())['cache']);python=cache/'reference_env_v2/Scripts/python.exe';progress=folder/'progress.json'
+    if not python.is_file():raise ValueError('The reference environment is not installed. Run scripts/prepare_reference_runtime_v2.py with the project Python, then restart the studio.')
+    command=[str(python),str(ROOT/'scripts/reference_inpaint.py'),'--image',str(folder/'input.png'),'--mask',str(folder/'effective_mask.png'),'--references',*[str(p) for p in paths],'--output',str(folder/'result.png'),'--progress',str(progress),'--blend',blend,'--strength','0.99','--model-resolution','1024' if detail=='detailed' else '512']
     job.update(status='running',message='Preparing the reference photos…');start=time.monotonic()
     with (folder/'inference.log').open('w',encoding='utf-8') as log:
         process=subprocess.Popen(command,cwd=ROOT,stdout=log,stderr=log,creationflags=subprocess.CREATE_NO_WINDOW)
@@ -48,11 +49,11 @@ def run_reference_job(job_id,source,mask,mode,references,blend):
     metadata=json.loads((folder/'result.json').read_text());metadata['mask_mode']=mode;(folder/'metadata.json').write_text(json.dumps(metadata,indent=2))
     job.update(status='complete',message='Reference-guided reconstruction ready',result=f'/runs/{job_id}/result.png',input=f'/runs/{job_id}/input.png',mask=f'/runs/{job_id}/effective_mask.png',metadata=f'/runs/{job_id}/metadata.json',seconds=round(metadata['inference_seconds_including_offload'],2),resolution=512)
 
-def run_job(job_id,source,mask,backbone,mode,references=None,blend='poisson'):
+def run_job(job_id,source,mask,backbone,mode,references=None,blend='poisson',detail='standard'):
     global ACTIVE
     job=JOBS[job_id];folder=RUNS/job_id
     try:
-        if backbone=='reference':return run_reference_job(job_id,source,mask,mode,references,blend)
+        if backbone=='reference':return run_reference_job(job_id,source,mask,mode,references,blend,detail)
         import numpy as np
         import torch
         from inpaint import Inpainter,RefinerPredictor
@@ -130,8 +131,9 @@ class Handler(BaseHTTPRequestHandler):
             source=decode_image(data.get('image'));mask=decode_image(data.get('mask'),True)
             if source.size!=mask.size:raise ValueError('Image and mask dimensions must match.')
             if mask.getextrema()[1]<128:raise ValueError('Paint or upload a mask first.')
-            references=[];blend=data.get('blend','poisson')
+            references=[];blend=data.get('blend','poisson');detail=data.get('detail','standard')
             if blend not in ['poisson','hard']:raise ValueError('Choose supported edge blending.')
+            if detail not in ['standard','detailed']:raise ValueError('Choose standard or detailed processing.')
             if backbone=='reference':
                 values=data.get('references')
                 if not isinstance(values,list) or not 3<=len(values)<=4:raise ValueError('Upload three or four reference photos of the same person.')
@@ -142,7 +144,7 @@ class Handler(BaseHTTPRequestHandler):
             if ACTIVE:return self.send(409,{'error':'Another inpainting run is using the GPU. Try again when it finishes.'})
             ACTIVE=True
         job_id=uuid.uuid4().hex;JOBS[job_id]={'id':job_id,'status':'queued','message':'Preparing your image…'}
-        threading.Thread(target=run_job,args=(job_id,source,mask,backbone,mode,references,blend),daemon=True).start();self.send(202,{'id':job_id})
+        threading.Thread(target=run_job,args=(job_id,source,mask,backbone,mode,references,blend,detail),daemon=True).start();self.send(202,{'id':job_id})
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--port',type=int,default=8765);args=parser.parse_args();RUNS.mkdir(parents=True,exist_ok=True)

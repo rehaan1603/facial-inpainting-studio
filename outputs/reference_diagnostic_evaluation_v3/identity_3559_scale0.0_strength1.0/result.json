@@ -1,0 +1,70 @@
+{
+  "backbone": "sdxl_faceid_portrait",
+  "resolution": [
+    512,
+    512
+  ],
+  "seed": 17,
+  "steps": 30,
+  "adapter_scale": 0.0,
+  "references": [
+    {
+      "sha256": "9d52dc6921524fe16f33a3150ed014e2a4f0b39c125449b2343bdc63bb393e01",
+      "detection_score": 0.6341109275817871
+    },
+    {
+      "sha256": "debc975eb91d6d589155fc07f4c453834479e4045ac847054582904917f06e58",
+      "detection_score": 0.650166392326355
+    },
+    {
+      "sha256": "d7e6e10acbb1555b34a5caae518ab46fbdb20e4f55119bf3bd98c4f146395b7b",
+      "detection_score": 0.7456204891204834
+    },
+    {
+      "sha256": "e00757d561aa51dacecd6fd4758de1ef659fcb3f82d6353ff1ba7253b0432031",
+      "detection_score": 0.6449980139732361
+    }
+  ],
+  "reference_count": 4,
+  "reference_tokens_per_image": 16,
+  "memory_mode": "model",
+  "inference_seconds_including_offload": 19.559126899999683,
+  "peak_allocated_bytes": 6285209088,
+  "adapter_sha256": "5631ce7824cdafd2db37c5e85b985730a95ff59c5b4fc80c2b79b0bee5711512",
+  "outside_effective_mask": "Exact preservation at processed input resolution",
+  "scope": "Existing reference-guided baseline, not a novel method or verified recovery of the true hidden face.",
+  "strength": 1.0,
+  "sampling_steps": 30,
+  "blending": {
+    "requested_mode": "poisson",
+    "mode": "poisson",
+    "fallback": false,
+    "fallback_reason": null,
+    "mask_pixels": 23340,
+    "outside_mask": "Observed RGB pixels preserved exactly by final composition.",
+    "target_rgb_used": false,
+    "technique": "OpenCV seamlessClone NORMAL_CLONE (Poisson boundary harmonization)",
+    "computational_collar_pixels": 4,
+    "source_collar": "Nearest generated pixel inside the requested mask",
+    "opencv_version": "5.0.0"
+  },
+  "input_sha256": "866b4bbc61e4145e1541a4ae0362a6986dca3269c21be2116ff66673f4bed732",
+  "mask_sha256": "af9a5fa577e7652d0c527544d60b3ff513f0dc2228743012913be85412acb13a",
+  "raw_output_sha256": "0aa2b3c2bee7d9d96a5a8d997d636922e55aeb99f02c4ee3efb2f735ed441ae8",
+  "result_sha256": "94c2e4b755b102533b386806899201fcc2783697792838d41940a12304f4446e",
+  "model_resolution": [
+    512,
+    512
+  ],
+  "vae_tiling": false,
+  "environment": {
+    "torch": "2.11.0+cu128",
+    "diffusers": "0.40.0",
+    "transformers": "5.17.0",
+    "tokenizers": "0.23.2",
+    "regex": "2025.11.3",
+    "onnx": "1.20.1",
+    "ml_dtypes": "0.5.4",
+    "insightface": "2.0"
+  }
+}

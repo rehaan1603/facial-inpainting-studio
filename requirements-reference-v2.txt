@@ -1,0 +1,18 @@
+# Separate reference environment. CUDA PyTorch is shared from the project .venv.
+diffusers==0.40.0
+transformers==5.17.0
+accelerate==1.15.0
+peft==0.20.0
+tokenizers==0.23.2
+regex==2025.11.3
+onnx==1.20.1
+ml_dtypes==0.5.4
+insightface==2.0
+onnxruntime==1.30.0
+opencv-python==5.0.0.93
+scikit-image==0.26.0
+protobuf==7.36.1
+flatbuffers==25.12.19
+ImageIO==2.37.4
+lazy-loader==0.5
+tifffile==2026.9.9

@@ -1,5 +1,5 @@
 {
-  "verified_at_utc": "2026-09-12T04:48:15.266474+00:00",
+  "verified_at_utc": "2026-09-12T19:20:37.957432+00:00",
   "refiner_evaluation": {
     "rows": 13824,
     "sha256": "cb02a4d3b2ba28783f24eca2cc630480eb63a27e019981f9622af71bf497f3a7"
@@ -17,6 +17,6 @@
     "resshift_inpainting_face_s4.pth": "bf3a1691d4ad46958f7abe847f9afce632400112d9e9cd8fb5253c33da4cec02",
     "celeba256_vq_f4_dim3_face.pth": "770a2d8888ad51d84ceeda5f9b64ee19b2688bc1e88d1139e3a1eea0a3b9501a"
   },
-  "tests": "33 tests passed; 3 skipped; full output in research/test_results.txt",
+  "tests": "36 tests passed; 3 skipped; full output in research/test_results.txt",
   "scope": "Scoped local software and experiments verified. Scientific novelty, comprehensive comparisons, and publication readiness remain unresolved in PROJECT_STATUS.md."
 }
