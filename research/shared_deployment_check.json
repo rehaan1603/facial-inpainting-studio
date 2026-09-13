@@ -1,0 +1,22 @@
+{
+  "url": "https://formula-silk-herein-tape.trycloudflare.com",
+  "checks": [
+    "anonymous_denied",
+    "authenticated_page",
+    "shared_upload_notice",
+    "dataset_sample_denied",
+    "old_run_denied",
+    "https_upload",
+    "real_lama_gpu_inference",
+    "result_and_mask_download",
+    "known_pixels_exact"
+  ],
+  "job_id": "6194854727c14615a727cfe563d8f848",
+  "inference_seconds": 0.84,
+  "changed_mask_pixels": 2500,
+  "transient_poll_errors": 0,
+  "result_sha256": "856859fa854e485d43512f0bec9064fd4963bdacb598e2fe2a39fe9b59a35092",
+  "scope": "Deployment verification using a synthetic colour gradient, not a facial-quality evaluation.",
+  "resumed_existing_job": true,
+  "initial_attempt_note": "The initial HTTPS upload succeeded, but polling received a non-JSON response during model startup. The same job was subsequently resumed and its result and downloads verified; no replacement inference was substituted."
+}

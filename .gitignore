@@ -14,3 +14,4 @@ facial_inpainting_local_delivery*.zip
 *.log
 *.safetensors
 *.onnx
+.local-share/

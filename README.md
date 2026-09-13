@@ -1,5 +1,7 @@
 # Facial inpainting under inaccurate masks
 
+**Online private demo:** [Open Inpainting Studio](https://formula-silk-herein-tape.trycloudflare.com). This temporary link uses the owner's laptop GPU and works while the laptop is awake and connected. Login credentials are stored locally in `.local-share/LOGIN.txt` and are not published. See [deployment and restart instructions](DEPLOYMENT.md).
+
 For official dataset downloads and exact local restoration of the website/reference samples, see [Dataset downloads and samples](research/DATASET_DOWNLOADS_AND_SAMPLES.md). The photos remain local; the repository records their selections, roles and hashes.
 
 A local research implementation with LaMa and ResShift inference, two matched trainable mask-refinement controls, data audits, controlled corruption benchmarks and a frozen object-composite test. It investigates reconstruction error versus changes to genuinely visible pixels. The weighted loss is a standard control, not a demonstrated novel method.
