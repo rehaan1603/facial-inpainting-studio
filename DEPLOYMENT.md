@@ -6,7 +6,7 @@ This deployment shares the running Windows GPU app through an HTTPS Cloudflare Q
 
 1. Keep the laptop awake, connected and available for GPU inference.
 2. Double-click **Start Sharing.cmd**. The launcher starts or reuses the local studio, then starts the protected sharing gateway and tunnel.
-3. Open the issued HTTPS URL. Sign in with username **studio** and the generated password in **.local-share/LOGIN.txt**. The same file includes the current URL.
+3. Open the issued HTTPS URL. Enter the generated password from **.local-share/LOGIN.txt** into the sign-in page. No browser authentication popup is required. The same file includes the current URL. The secure browser session expires after eight hours or when the gateway restarts.
 4. Upload your own photo and mask, or add three or four reference photos for reference-assisted completion. Uploaded images, references and results travel through Cloudflare to the host laptop and are retained under outputs/webapp_runs. Only upload photos you have permission to use.
 
 The .local-share directory contains credentials, tunnel logs, the client executable and process state. It is excluded from GitHub. Do not copy LOGIN.txt, access.json or authorization headers into repository files or issue reports. Credentials are shared among the people the owner admits; this is not a multi-user account system. Admitted people can access runs created during that gateway session if they have the run URL.

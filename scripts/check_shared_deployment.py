@@ -32,7 +32,9 @@ def main():
         except HTTPError as error:
             return error.code, error.read()
 
-    assert request('/', authenticated=False)[0] == 401
+    login_status, login_page = request('/', authenticated=False)
+    assert login_status == 200 and b'Demo password' in login_page
+    assert request('/api/session', authenticated=False)[0] == 401
     status, page = request('/')
     assert status == 200 and b'Uploads travel through Cloudflare' in page and b'No cloud upload' not in page
     assert request('/api/demo?reference=1')[0] == 404

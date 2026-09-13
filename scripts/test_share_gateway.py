@@ -33,8 +33,24 @@ class GatewayTests(unittest.TestCase):
         return status, payload
 
     def test_all_paths_require_password(self):
-        for path in ['/', '/app.js', '/api/session', '/runs/' + 'a'*32 + '/result.png']:
+        status, page = self.request('/', authenticated=False)
+        self.assertEqual(status, 200)
+        self.assertIn(b'Demo password', page)
+        for path in ['/app.js', '/api/session', '/runs/' + 'a'*32 + '/result.png']:
             self.assertEqual(self.request(path, authenticated=False)[0], 401)
+
+    def test_form_login_sets_cookie_and_rejects_forgery(self):
+        connection = HTTPConnection('127.0.0.1', self.server.server_port, timeout=5)
+        connection.request('POST', '/login', 'password=' + self.server.password,
+                           {'Content-Type': 'application/x-www-form-urlencoded'})
+        response = connection.getresponse()
+        cookie = response.getheader('Set-Cookie')
+        self.assertEqual(response.status, 303)
+        response.read(); connection.close()
+        self.assertIn('Secure; HttpOnly; SameSite=Strict', cookie)
+        with patch.object(Handler, 'upstream', return_value=(200, b'{"busy":false}', 'application/json')):
+            self.assertEqual(self.request('/api/session', authenticated=False, headers={'Cookie': cookie.split(';')[0]})[0], 200)
+        self.assertEqual(self.request('/api/session', authenticated=False, headers={'Cookie': 'studio_session=9999999999.forged'})[0], 401)
 
     def test_no_dataset_or_old_run_or_filesystem_access(self):
         for path in ['/api/demo', '/api/demo?reference=1', '/configs/local.json',

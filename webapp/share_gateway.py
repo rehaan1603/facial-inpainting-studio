@@ -6,14 +6,17 @@ local runs are never forwarded. Put an HTTPS tunnel in front; do not bind public
 import argparse
 import base64
 import hmac
+import hashlib
 import json
 import re
 import secrets
 import threading
+import time
+from http.cookies import SimpleCookie
 from http.client import HTTPConnection
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
-from urllib.parse import urlsplit
+from urllib.parse import parse_qs
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -26,6 +29,8 @@ class Gateway(ThreadingHTTPServer):
         self.upstream_port = upstream_port
         self.authorization = 'Basic ' + base64.b64encode(('studio:' + password).encode()).decode()
         self.nonce = secrets.token_urlsafe(32)
+        self.password = password
+        self.cookie_key = secrets.token_bytes(32)
         self.jobs = set()
         self.lock = threading.Lock()
 
@@ -38,7 +43,7 @@ class Handler(BaseHTTPRequestHandler):
     def log_message(self, format, *args):
         pass  # Do not retain URLs, credentials or personal image data in access logs.
 
-    def send(self, status, body, content_type='application/json', challenge=False):
+    def send(self, status, body, content_type='application/json', challenge=False, extra=None):
         if not isinstance(body, bytes):
             body = json.dumps(body).encode()
         self.send_response(status)
@@ -51,15 +56,58 @@ class Handler(BaseHTTPRequestHandler):
             self.send_header(key, value)
         if challenge:
             self.send_header('WWW-Authenticate', 'Basic realm="Private Inpainting Studio", charset="UTF-8"')
+        for key, value in (extra or {}).items():
+            self.send_header(key, value)
         self.end_headers()
         self.wfile.write(body)
 
     def authenticated(self):
         supplied = self.headers.get('Authorization', '')
-        if not hmac.compare_digest(supplied.encode(), self.server.authorization.encode()):
-            self.send(401, {'error': 'Sign in with the demo credentials.'}, challenge=True)
-            return False
-        return True
+        if hmac.compare_digest(supplied.encode(), self.server.authorization.encode()):
+            return True
+        try:
+            cookies = SimpleCookie(self.headers.get('Cookie', ''))
+            expiry, signature = cookies['studio_session'].value.split('.')
+            expected = hmac.new(self.server.cookie_key, expiry.encode(), hashlib.sha256).hexdigest()
+            if int(expiry) > time.time() and hmac.compare_digest(signature, expected):
+                return True
+        except (KeyError, ValueError):
+            pass
+        if self.command == 'GET' and self.path in ['/', '/index.html', '/login']:
+            self.login_page()
+        else:
+            self.send(401, {'error': 'Open the site and sign in with the demo password.'})
+        return False
+
+    def login_page(self, failed=False):
+        message = 'Incorrect password. Please try again.' if failed else 'Enter the demo password shared by the owner.'
+        page = ('<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
+                '<title>Sign in · Inpainting Studio</title><link rel="stylesheet" href="/login.css"></head><body><main><h1>Inpainting Studio</h1><h2>Private research demo</h2><p>' + message + '</p>'
+                '<form method="post" action="/login"><label for="password">Demo password</label> '
+                '<input id="password" name="password" type="password" autocomplete="current-password" required autofocus maxlength="256"> '
+                '<button type="submit">Open studio</button></form><p>Images are processed and saved on the host laptop. '
+                'The laptop must remain awake and connected.</p></main></body></html>')
+        self.send(200 if not failed else 401, page.encode(), 'text/html; charset=utf-8')
+
+    def login(self):
+        origin = self.headers.get('Origin')
+        if origin and origin != f'https://{self.headers.get("Host")}':
+            return self.send(403, {'error': 'Cross-origin sign-in is disabled.'})
+        try:
+            size = int(self.headers.get('Content-Length', '0'))
+            if not 0 < size <= 1024 or self.headers.get('Transfer-Encoding'):
+                return self.send(400, {'error': 'Invalid sign-in request.'})
+            if self.headers.get('Content-Type', '').split(';')[0] != 'application/x-www-form-urlencoded':
+                return self.send(415, {'error': 'Use the sign-in form.'})
+            supplied = parse_qs(self.rfile.read(size).decode()) .get('password', [''])[0]
+            if not hmac.compare_digest(supplied.encode(), self.server.password.encode()):
+                return self.login_page(failed=True)
+            expiry = str(int(time.time()) + 8*60*60)
+            signature = hmac.new(self.server.cookie_key, expiry.encode(), hashlib.sha256).hexdigest()
+            return self.send(303, b'', extra={'Location': '/', 'Set-Cookie':
+                f'studio_session={expiry}.{signature}; Path=/; Secure; HttpOnly; SameSite=Strict; Max-Age=28800'})
+        except (ValueError, UnicodeError):
+            return self.send(400, {'error': 'Invalid sign-in request.'})
 
     def upstream(self, method, path, body=None):
         con = HTTPConnection('127.0.0.1', self.server.upstream_port, timeout=30)
@@ -80,6 +128,8 @@ class Handler(BaseHTTPRequestHandler):
             con.close()
 
     def do_GET(self):
+        if self.path == '/login.css':
+            return self.send(200, b'body{margin:0;min-height:100vh;display:grid;place-items:center;background:#f4f3ef;color:#222;font:16px system-ui}main{max-width:420px;margin:24px;padding:40px;background:white;border:1px solid #deddd7;border-radius:18px}h1{font-size:28px}h2{font-size:16px;font-weight:500;color:#666}p{line-height:1.6;color:#666}label,input,button{display:block;box-sizing:border-box;width:100%}input{margin:10px 0 18px;padding:14px;border:1px solid #aaa;border-radius:8px;font:inherit}button{background:#222;color:white;border:0;border-radius:8px;padding:14px;font:inherit;cursor:pointer}', 'text/css')
         if not self.authenticated():
             return
         path = self.path
@@ -107,6 +157,8 @@ class Handler(BaseHTTPRequestHandler):
             return self.send(502, {'error': 'The host GPU app is offline. Ask the owner to start the studio.'})
 
     def do_POST(self):
+        if self.path == '/login':
+            return self.login()
         if not self.authenticated():
             return
         origin = self.headers.get('Origin')

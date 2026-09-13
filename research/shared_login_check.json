@@ -1,0 +1,11 @@
+{
+  "url": "https://formula-silk-herein-tape.trycloudflare.com",
+  "checks": [
+    "public_login_page",
+    "form_login_redirect_to_studio",
+    "secure_session_cookie",
+    "authenticated_api_access",
+    "anonymous_api_denied"
+  ],
+  "browser_observation": "In-app browser visibly displays the normal sign-in form instead of ERR_INVALID_AUTH_CREDENTIALS."
+}
