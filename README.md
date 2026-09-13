@@ -1,5 +1,7 @@
 # Facial inpainting under inaccurate masks
 
+For official dataset downloads and exact local restoration of the website/reference samples, see [Dataset downloads and samples](research/DATASET_DOWNLOADS_AND_SAMPLES.md). The photos remain local; the repository records their selections, roles and hashes.
+
 A local research implementation with LaMa and ResShift inference, two matched trainable mask-refinement controls, data audits, controlled corruption benchmarks and a frozen object-composite test. It investigates reconstruction error versus changes to genuinely visible pixels. The weighted loss is a standard control, not a demonstrated novel method.
 
 Read `research/FINAL_RESULTS.md` for generated measurements, `research/MANUSCRIPT.md` for the technical paper draft, and `research/PROJECT_STATUS.md` for completed engineering and remaining publication requirements. Earlier experiment commands and historical status are preserved in `research/REPRODUCE_EARLIER_STAGES.md`.
