@@ -6,6 +6,24 @@
 **Repository:** https://github.com/rehaan1603/facial-inpainting-studio  
 **Status:** Working local research baseline; proposed multi-reference research method and final validation incomplete. Public hosting paused at the owner's request.
 
+## Latest status update
+
+- **Completed:** local website, reference-guided baseline, six locally trained mask-refinement controls, expanded 144-output evaluation, ArcFace/FaceNet/NIQE/BRISQUE/SSIM/PSNR/LPIPS measurements, and initial reference-count and configuration ablations.
+- **Quality remains unresolved:** the user still finds LaMa facial completion unsatisfactory. The 512-pixel website processing and mask-framing fixes address preprocessing, not its tendency to blur or invent missing facial features. A successful run is not evidence of a correct face.
+- **Current priority:** improve facial fidelity and test the proposed reference-selection/fusion mechanisms. Adding more metric names alone will not complete the research contribution.
+- **Dataset usability request:** organize distinct photographs of each same person from the local dataset into convenient person-specific folders. The previously created Downloads test folder contains only the existing identity_620 development example, separated by input/mask/reference role; it does not fulfill the broader requested dataset grouping. That broader grouping remains pending.
+- **Training clarification:** “local dataset” does not mean all supplied images trained the current generator. Actual local training covered the compact mask refiners. LaMa, ResShift, SDXL, FaceID and recognition encoders use pretrained weights; no new regional identity-fusion module has been trained.
+- **Release status:** the LaMa repair checkpoint was pushed as `8303b97`. This report update follows that checkpoint. Dataset photographs and downloaded pretrained weights remain local.
+
+### Next work in order
+
+1. Build same-person photo folders using the existing dataset identity annotations and preserve source/split records. Keep target/comparison photos separate from conditioning references when assembling an experiment; training/development examples must not be presented as fresh tests.
+2. Implement and compare reference selection and mask-aware fusion against the working pretrained baseline, using only damaged input, mask and permitted references at inference.
+3. Expand mask locations/severity and generation seeds, prepare disjoint evaluation galleries and identities, and run fair external-method comparisons.
+4. Freeze the final method, evaluate reserved data, document failures, and prepare the manuscript and corrected presentation for a specific venue.
+
+Publication readiness remains incomplete. No acceptance, novel-method superiority or reliable recovery of hidden facial features is claimed.
+
 ## 1. Project objective and scope
 
 The application reconstructs a masked facial region from the observed image and a supplied mask. It supports single-image completion and a reference-assisted mode accepting three or four photographs of the same person.
