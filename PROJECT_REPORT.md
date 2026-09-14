@@ -53,6 +53,7 @@ No new reference-conditioned generative backbone, regional identity-fusion adapt
 | Object-composite test | 128 images: 64 HQ identity labels and 64 LaPa images; 5,632 rows | Already observed synthetic test; not untouched future confirmation |
 | Training-budget extension | Six refiners at 6,000 updates; 27,648 development rows | Reuses 48 assessment identity labels |
 | Multi-reference development diagnostic | Twelve selected identity labels, 48 generated candidates, 96 scored rows | Reference scale × denoising strength, each with hard and Poisson composition |
+| Reference-count extension | 24 additional candidates; expanded total 72 candidates and 144 scored outputs across the same twelve identities | Fixed nested one/two/four-reference subsets; ten metrics and 18 paired contrasts |
 | Local application checks | Real HTTP/GPU inference and browser downloads | Functional evidence on recorded examples |
 
 Rows are correlated experimental measurements, not independent images or independent identities. The studies use different protocols and must not be pooled into one headline performance claim.
@@ -83,24 +84,28 @@ Temporary public sharing was implemented and an HTTPS GPU test completed. The in
 
 **Mask refinement has a tradeoff.** At the initial training budget, preservation weighting reduced changes to visible pixels but worsened aggregate reconstruction versus the generic refiner. At 6,000 updates, weighted refinement performed better than the generic 6,000-update control on aggregate reconstruction metrics, but the generic model itself deteriorated with longer training. This does not establish that more training universally improves completion or that the refiner is state of the art.
 
-**Reference guidance has not shown a consistent benefit in the completed diagnostic.** At strength 0.99 with Poisson composition, mean LPIPS was 0.032674 with references and 0.032460 with reference conditioning disabled. The paired difference was +0.000214, with an exploratory 95% interval spanning zero. Hole MAE was also worse with references in this setting. Other settings differ; the complete table must be retained rather than selecting the most favorable contrast.
+**Reference guidance has not shown a consistent reconstruction-quality benefit in the completed diagnostic.** At strength 0.99 with Poisson composition, mean LPIPS was 0.032674 with references and 0.032460 with reference conditioning disabled. The paired difference was +0.000214, with an exploratory 95% interval spanning zero. Hole MAE was also worse with references in this setting. Other settings differ; the complete table must be retained rather than selecting the most favorable contrast.
 
 **Independent identity diagnostic completed on 14 September:** FaceNet scored the frozen reference outputs, with 88/96 valid scores across 11/12 identities. At strength 0.99 with Poisson composition, reference conditioning increased mean cosine similarity from 0.4942 to 0.6588 (paired difference +0.1646, descriptive bootstrap 95% interval [0.0492, 0.2903]). One identity returned multiple detections in its target and all outputs and remains unscorable under the frozen protocol. This small development result does not establish final generalization, correct gaze/expression or a novel contribution. See `research/IDENTITY_DIAGNOSTIC_RESULTS_V1.md`.
 
-The research is therefore not yet ready to claim the proposed method improves identity preservation or is publication-ready.
+**Expanded evaluation completed:** ArcFace/InsightFace, FaceNet, NIQE, BRISQUE, RGB SSIM, whole-image/hole PSNR, LPIPS and hole/visible MAE now cover 144 outputs. NIQE/BRISQUE/structural scores are valid for all 144; FaceNet has 132 valid scores and ArcFace has 140. ArcFace uses the same w600k_r50 checkpoint as conditioning and is not an independent verifier. FaceNet reproduces the prior scores exactly. All image hashes and all 24 new candidates' matched settings were verified.
+
+**Reference-count ablation:** at strength 0.99 with Poisson composition, FaceNet means are 0.6125, 0.6482 and 0.6588 for one, two and four references. Four minus one is +0.0463, descriptive 95% interval [-0.0150, 0.1184], on eleven jointly scorable identities. This does not establish that more references reliably help. All 180 metric/contrast tests receive Holm correction; no FaceNet contrast meets corrected p < 0.05. See [expanded results](research/EXTENDED_ABLATION_RESULTS_V1.md).
+
+The measurement baseline is substantially stronger, but the research is not yet ready to claim the proposed method improves identity preservation or is publication-ready.
 
 ## 4. Remaining work
 
 | Area | Missing work | Priority |
 |---|---|---|
-| Identity evaluation | FaceNet development diagnostic completed; fresh final evaluation and independent gallery still required | Partly complete |
-| Quality evaluation | NIQE/BRISQUE as secondary measures; structural/landmark error; retain LPIPS and masked/visible errors | Immediate |
+| Identity evaluation | FaceNet and conditioning-encoder ArcFace diagnostics completed; fresh final evaluation and independent gallery still required | Development complete |
+| Quality evaluation | NIQE/BRISQUE, SSIM, PSNR and LPIPS completed; reconstructed-landmark error and broader validation remain | Partly complete |
 | Reference protocol | Disjoint conditioning and evaluation photos; stronger transformed-copy checks; adequate identity groups | Immediate |
 | Severe damage | Defined face-region/image-area severity, locations, reference variation and failure cases | Before final testing |
 | Reference scoring | Pose/quality/visibility measurements and mask-conditioned ranking | Core method development |
 | Regional fusion | Actual regional features and a compact learned mask-aware fusion module | Conditional on baseline findings |
 | Candidate selection | Multiple seeds, quality/identity selection and separate reporting evaluator | After scoring/fusion baseline |
-| Ablations | A1–A7 or a justified reduced protocol with matched training and sampling costs | Required for claimed mechanisms |
+| Ablations | Reference on/off, strength, composition and fixed 1/2/4-reference comparisons completed; selection/fusion A1–A7, masks and multiple seeds remain | Partly complete |
 | Close comparisons | Reproducible reference-based competitors; complete or explicitly delimit paused OSOR comparison | Required for comparative claims |
 | Verification statistics | Genuine/impostor trials, calibrated thresholds, ROC/TAR only if data supports low-FAR claims | Conditional on dataset feasibility |
 | Distributional quality | FID on an appropriately sized, controlled evaluation set | Later; not meaningful on the current small reference set |
@@ -108,13 +113,13 @@ The research is therefore not yet ready to claim the proposed method improves id
 | Final paper | Specific venue, corrected literature/architecture claims, figures, limitations, reproducibility and author review | After final evidence |
 | Public hosting | Browser-compatible access and a suitable long-term deployment | Paused |
 
-Independent FaceNet similarity is now part of the completed development metric set. NIQE, BRISQUE, FID, SSIM, ROC/TAR and reconstructed-landmark error remain incomplete. Earlier pilot code does include hole PSNR. Dataset annotation syntax checks are not reconstructed-landmark accuracy measurements.
+FaceNet, conditioning-encoder ArcFace, NIQE, BRISQUE, SSIM, PSNR and LPIPS are now implemented and executed on the expanded development set. FID, ROC/TAR and reconstructed-landmark error remain incomplete. Dataset annotation syntax checks are not reconstructed-landmark accuracy measurements.
 
 ## 5. Planned execution and acceptance criteria
 
 ### Phase 1 — establish the measurement baseline
 
-Add a separately specified identity evaluator without disrupting the working inference environment. Freeze checkpoint hashes, preprocessing, alignment and detector-failure treatment. Score existing development results with independent identity similarity and secondary no-reference/structural measures. Retain every condition and failed detection.
+Completed for the expanded development set: separately specified identity and quality evaluators, model/source hashes, preprocessing, detector-failure handling, all 144 output records and paired summaries. The app's inference environment remains unchanged. Broader masks, seeds and held-out evaluation belong to subsequent phases.
 
 **Deliverable:** reproducible per-case metrics and paired summaries.  
 **Acceptance criterion:** clean target information is used only for permitted scoring, and no selection encoder is mislabeled as an independent final evaluator.
@@ -181,6 +186,9 @@ Open http://127.0.0.1:8765/. Use matching references for the selected person, ma
 ## 8. Evidence index
 
 - [Current local verification](research/LOCAL_WORK_STATUS_20260914.md)
+- [Expanded metrics and ablations](research/EXTENDED_ABLATION_RESULTS_V1.md)
+- [Expanded evaluation protocol](research/EXTENDED_EVALUATION_PROTOCOL_V1.md)
+- [Integrity and numerical verification](research/extended_evaluation_verification_v1.json)
 - [Dated LaMa/ResShift checks](research/local_inference_checks_20260914.json)
 - [Reference HTTP/GPU checks](research/reference_webapp_repair_checks.json)
 - [Initial single-image results](research/FINAL_RESULTS.md)

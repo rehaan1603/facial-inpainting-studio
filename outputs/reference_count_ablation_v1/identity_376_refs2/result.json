@@ -1,0 +1,62 @@
+{
+  "backbone": "sdxl_faceid_portrait",
+  "resolution": [
+    512,
+    512
+  ],
+  "seed": 17,
+  "steps": 30,
+  "adapter_scale": 0.8,
+  "references": [
+    {
+      "sha256": "2554393e3f9db6238a00e54144e1e4848d23d2acb9ea92bf990dfbaee4c71a0e",
+      "detection_score": 0.5137985944747925
+    },
+    {
+      "sha256": "3278be77c7d6af512b86b04dd72c09beb754d1f3c6e555c831cec781e662d23a",
+      "detection_score": 0.7223194241523743
+    }
+  ],
+  "reference_count": 2,
+  "reference_tokens_per_image": 16,
+  "memory_mode": "model",
+  "inference_seconds_including_offload": 19.28077100001974,
+  "peak_allocated_bytes": 6284942848,
+  "adapter_sha256": "5631ce7824cdafd2db37c5e85b985730a95ff59c5b4fc80c2b79b0bee5711512",
+  "outside_effective_mask": "Exact preservation at processed input resolution",
+  "scope": "Existing reference-guided baseline, not a novel method or verified recovery of the true hidden face.",
+  "strength": 0.99,
+  "sampling_steps": 29,
+  "blending": {
+    "requested_mode": "poisson",
+    "mode": "poisson",
+    "fallback": false,
+    "fallback_reason": null,
+    "mask_pixels": 22097,
+    "outside_mask": "Observed RGB pixels preserved exactly by final composition.",
+    "target_rgb_used": false,
+    "technique": "OpenCV seamlessClone NORMAL_CLONE (Poisson boundary harmonization)",
+    "computational_collar_pixels": 4,
+    "source_collar": "Nearest generated pixel inside the requested mask",
+    "opencv_version": "5.0.0"
+  },
+  "input_sha256": "576f384576f31dd6aeaa3e4ea2aa7020d0e8862557550600e4a6eb1a3b3123e7",
+  "mask_sha256": "096aaec508a12005ec9c2e27e18edc80f1311fcdcdb939526d4de474ae9a0063",
+  "raw_output_sha256": "f2d878a6868b00b3fead5707a1b408ecfa92e5be426db84be4fd90d3a8334826",
+  "result_sha256": "7fe7ad8f383ba8332c551a037f33a1d95f16fab0597f9f62324817b2ca61bacb",
+  "model_resolution": [
+    512,
+    512
+  ],
+  "vae_tiling": false,
+  "environment": {
+    "torch": "2.11.0+cu128",
+    "diffusers": "0.40.0",
+    "transformers": "5.17.0",
+    "tokenizers": "0.23.2",
+    "regex": "2025.11.3",
+    "onnx": "1.20.1",
+    "ml_dtypes": "0.5.4",
+    "insightface": "2.0"
+  }
+}

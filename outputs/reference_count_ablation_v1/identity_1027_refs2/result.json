@@ -1,0 +1,62 @@
+{
+  "backbone": "sdxl_faceid_portrait",
+  "resolution": [
+    512,
+    512
+  ],
+  "seed": 17,
+  "steps": 30,
+  "adapter_scale": 0.8,
+  "references": [
+    {
+      "sha256": "c29df8a50e28736ff59bbed8a65ba89d55d633df38d752b8572c8fd7c273416d",
+      "detection_score": 0.594689667224884
+    },
+    {
+      "sha256": "ae4904177388ff0fe9a36ba4ef5e952dfe1e0dcb5a37270b3182547f1f9ed798",
+      "detection_score": 0.5331917405128479
+    }
+  ],
+  "reference_count": 2,
+  "reference_tokens_per_image": 16,
+  "memory_mode": "model",
+  "inference_seconds_including_offload": 19.42608800000744,
+  "peak_allocated_bytes": 6284942848,
+  "adapter_sha256": "5631ce7824cdafd2db37c5e85b985730a95ff59c5b4fc80c2b79b0bee5711512",
+  "outside_effective_mask": "Exact preservation at processed input resolution",
+  "scope": "Existing reference-guided baseline, not a novel method or verified recovery of the true hidden face.",
+  "strength": 0.99,
+  "sampling_steps": 29,
+  "blending": {
+    "requested_mode": "poisson",
+    "mode": "poisson",
+    "fallback": false,
+    "fallback_reason": null,
+    "mask_pixels": 24292,
+    "outside_mask": "Observed RGB pixels preserved exactly by final composition.",
+    "target_rgb_used": false,
+    "technique": "OpenCV seamlessClone NORMAL_CLONE (Poisson boundary harmonization)",
+    "computational_collar_pixels": 4,
+    "source_collar": "Nearest generated pixel inside the requested mask",
+    "opencv_version": "5.0.0"
+  },
+  "input_sha256": "d77a66e6f4ce7af2efb5cc2fd0e07743ef8c12b53d58c9ca5d7baddaa8503ea9",
+  "mask_sha256": "7dc0394c866da16edc5352b25224476cb37fef5725fc646e0a48c87096b91a8b",
+  "raw_output_sha256": "e85d2f0f5750e24307ebff7b67ff1856073bc916f71aa90cd0ad29a3a919d9aa",
+  "result_sha256": "7ea58a5bada6a1b7e9ec0551bccab91fc8304803a209c1a68fce6282baade511",
+  "model_resolution": [
+    512,
+    512
+  ],
+  "vae_tiling": false,
+  "environment": {
+    "torch": "2.11.0+cu128",
+    "diffusers": "0.40.0",
+    "transformers": "5.17.0",
+    "tokenizers": "0.23.2",
+    "regex": "2025.11.3",
+    "onnx": "1.20.1",
+    "ml_dtypes": "0.5.4",
+    "insightface": "2.0"
+  }
+}

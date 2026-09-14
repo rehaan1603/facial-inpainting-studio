@@ -1,0 +1,58 @@
+{
+  "backbone": "sdxl_faceid_portrait",
+  "resolution": [
+    512,
+    512
+  ],
+  "seed": 17,
+  "steps": 30,
+  "adapter_scale": 0.8,
+  "references": [
+    {
+      "sha256": "2554393e3f9db6238a00e54144e1e4848d23d2acb9ea92bf990dfbaee4c71a0e",
+      "detection_score": 0.5137985944747925
+    }
+  ],
+  "reference_count": 1,
+  "reference_tokens_per_image": 16,
+  "memory_mode": "model",
+  "inference_seconds_including_offload": 18.98662089998834,
+  "peak_allocated_bytes": 6284809728,
+  "adapter_sha256": "5631ce7824cdafd2db37c5e85b985730a95ff59c5b4fc80c2b79b0bee5711512",
+  "outside_effective_mask": "Exact preservation at processed input resolution",
+  "scope": "Existing reference-guided baseline, not a novel method or verified recovery of the true hidden face.",
+  "strength": 0.99,
+  "sampling_steps": 29,
+  "blending": {
+    "requested_mode": "poisson",
+    "mode": "poisson",
+    "fallback": false,
+    "fallback_reason": null,
+    "mask_pixels": 22097,
+    "outside_mask": "Observed RGB pixels preserved exactly by final composition.",
+    "target_rgb_used": false,
+    "technique": "OpenCV seamlessClone NORMAL_CLONE (Poisson boundary harmonization)",
+    "computational_collar_pixels": 4,
+    "source_collar": "Nearest generated pixel inside the requested mask",
+    "opencv_version": "5.0.0"
+  },
+  "input_sha256": "576f384576f31dd6aeaa3e4ea2aa7020d0e8862557550600e4a6eb1a3b3123e7",
+  "mask_sha256": "096aaec508a12005ec9c2e27e18edc80f1311fcdcdb939526d4de474ae9a0063",
+  "raw_output_sha256": "783228c1bbea89c4bcbc5973f5c6fdc7d3921706fc0bef9eeaa4561b944b484c",
+  "result_sha256": "824f1eb5c92dae3754cafbeb10fabaf05e03918b668b3363e4baad1d29569353",
+  "model_resolution": [
+    512,
+    512
+  ],
+  "vae_tiling": false,
+  "environment": {
+    "torch": "2.11.0+cu128",
+    "diffusers": "0.40.0",
+    "transformers": "5.17.0",
+    "tokenizers": "0.23.2",
+    "regex": "2025.11.3",
+    "onnx": "1.20.1",
+    "ml_dtypes": "0.5.4",
+    "insightface": "2.0"
+  }
+}

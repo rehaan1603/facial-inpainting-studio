@@ -2,6 +2,8 @@
 
 Read the [project progress and completion report](PROJECT_REPORT.md) for completed work, measured findings, remaining research and the planned execution sequence.
 
+**Expanded evaluation:** [144-output metrics and ablations](research/EXTENDED_ABLATION_RESULTS_V1.md) now include FaceNet, conditioning-encoder ArcFace, NIQE, BRISQUE, SSIM, PSNR and LPIPS. One/two/four-reference comparisons, detector failures, paired confidence intervals and Holm-corrected tests are recorded. These are development results; they do not establish a novel method or publication readiness.
+
 **Hosting status (14 September 2026):** Public sharing is paused. Run **Start Studio.cmd** and open [the local studio](http://127.0.0.1:8765/) on the host laptop. No sign-in is required locally. Deployment work is retained for later; the old temporary internet link is inactive.
 
 For official dataset downloads and exact local restoration of the website/reference samples, see [Dataset downloads and samples](research/DATASET_DOWNLOADS_AND_SAMPLES.md). The photos remain local; the repository records their selections, roles and hashes.
@@ -48,6 +50,14 @@ This uses the separate `reference_env_v2` cache directory and preserves the orig
 
 ## Environment and reproduction
 
+To resume/reproduce the expanded evaluation on the prepared laptop (existing datasets, reference runtime and FaceNet cache required):
+
+```powershell
+.venv/Scripts/python.exe -X utf8 scripts/run_evaluation_suite.py
+```
+
+This uses an isolated evaluation environment and resumes signed records. It generates missing reference-count outputs on the GPU, then evaluates all conditions. The [frozen protocol](research/EXTENDED_EVALUATION_PROTOCOL_V1.md) specifies the metrics and limitations. If the FaceNet cache is missing, first run `scripts/prepare_identity_evaluator.py` with the project Python. The reference-count figure is available as [PNG](research/figures/reference_count_ablation_v1.png) and [PDF](research/figures/reference_count_ablation_v1.pdf).
+
 Tested on Windows, Python 3.12, PyTorch 2.11.0 + CUDA 12.8, torchvision 0.26.0, RTX 5070 Laptop GPU (8 GB). Paths and the external cache are set in `configs/local.json`; use `configs/local.example.json` on another machine. Datasets stay in the original download locations. Do not include them in a code release.
 
 ```powershell
@@ -78,4 +88,4 @@ Neither the full generative backbones nor an identity-recognition model was trai
 
 ## GitHub checkpoint
 
-This private repository contains code, reports, detailed experiment tables and settings, data-integrity manifests, and the project-trained mask-refiner checkpoints (including training-resume states). `research/REPOSITORY_ARTIFACT_INVENTORY.json` lists every uploaded research artifact and its hash. Photographs, downloaded model weights, environments and `configs/local.json` remain local. See `REPOSITORY_SCOPE.md` for restoration requirements and current limits.
+This repository contains code, reports, detailed experiment tables and settings, data-integrity manifests, and the project-trained mask-refiner checkpoints (including training-resume states). `research/REPOSITORY_ARTIFACT_INVENTORY.json` records the earlier artifact snapshot; subsequent evaluation records carry their own source/model/output hashes. Photographs, downloaded model weights, environments and `configs/local.json` remain local. See `REPOSITORY_SCOPE.md` for restoration requirements and current limits.

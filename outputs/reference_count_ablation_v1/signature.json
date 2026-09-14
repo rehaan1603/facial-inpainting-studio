@@ -1,0 +1,9 @@
+{
+  "outputs/reference_diagnostics_v1/manifest.json": "3680b1a0f49370fc9e78049664e4019c45dcf70d87b313c99a9d9e12f02f684f",
+  "research/EXTENDED_EVALUATION_PROTOCOL_V1.md": "0740f59971cb233dc1faed1e210a243d3082e0e4f529394633a283e0c020fa43",
+  "research/reference-environment-v2-lock.txt": "18ac7134527fb713884b917cfe5ddd97e775aed3034f0de382ddada663247087",
+  "scripts/reference_inpaint.py": "6fa4fe9c7742c8a1ec69d1586cc98a07573b1b85e5bebf0ad4c899b75a782daf",
+  "scripts/reference_blending.py": "034d8b6475107a551c0140ce971898c42bb7d6ef2b3b0080ff65cdf750395f96",
+  "scripts/atomic_records.py": "783b9f65ccc88d49e5695a0ef201bb04d2e1e0de4f30a2ea6e240e8ed8b5368f",
+  "scripts/run_reference_count_ablation.py": "0462d79186d619bf493b2e7ee5d7b719784d220135812075b25f9c8ac8feb7f3"
+}

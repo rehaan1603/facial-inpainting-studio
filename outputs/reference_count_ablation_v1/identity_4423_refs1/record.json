@@ -1,0 +1,24 @@
+{
+  "case_id": "identity_4423",
+  "identity": "4423",
+  "reference_count": 1,
+  "reference_files": [
+    "outputs/reference_diagnostics_v1/identity_4423/reference_1.png"
+  ],
+  "scale": 0.8,
+  "strength": 0.99,
+  "seed": 17,
+  "inference_seconds": 15.012769000022672,
+  "outputs": [
+    {
+      "compositor": "hard",
+      "file": "outputs/reference_count_ablation_v1/identity_4423_refs1/result_hard.png",
+      "sha256": "126c18aaf111490faeaa0c0195cd872422a895dfc6f2fa451b74f640739fe4b5"
+    },
+    {
+      "compositor": "poisson",
+      "file": "outputs/reference_count_ablation_v1/identity_4423_refs1/result.png",
+      "sha256": "5c48ed95edc4d16e36f72223d7171a252edb4394619ebf7a494b09a4f2ebb29f"
+    }
+  ]
+}

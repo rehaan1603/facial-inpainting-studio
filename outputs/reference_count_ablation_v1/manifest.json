@@ -1,0 +1,601 @@
+{
+  "signature": {
+    "outputs/reference_diagnostics_v1/manifest.json": "3680b1a0f49370fc9e78049664e4019c45dcf70d87b313c99a9d9e12f02f684f",
+    "research/EXTENDED_EVALUATION_PROTOCOL_V1.md": "0740f59971cb233dc1faed1e210a243d3082e0e4f529394633a283e0c020fa43",
+    "research/reference-environment-v2-lock.txt": "18ac7134527fb713884b917cfe5ddd97e775aed3034f0de382ddada663247087",
+    "scripts/reference_inpaint.py": "6fa4fe9c7742c8a1ec69d1586cc98a07573b1b85e5bebf0ad4c899b75a782daf",
+    "scripts/reference_blending.py": "034d8b6475107a551c0140ce971898c42bb7d6ef2b3b0080ff65cdf750395f96",
+    "scripts/atomic_records.py": "783b9f65ccc88d49e5695a0ef201bb04d2e1e0de4f30a2ea6e240e8ed8b5368f",
+    "scripts/run_reference_count_ablation.py": "0462d79186d619bf493b2e7ee5d7b719784d220135812075b25f9c8ac8feb7f3"
+  },
+  "candidates": [
+    {
+      "case_id": "identity_620",
+      "identity": "620",
+      "reference_count": 1,
+      "reference_files": [
+        "outputs/reference_diagnostics_v1/identity_620/reference_1.png"
+      ],
+      "scale": 0.8,
+      "strength": 0.99,
+      "seed": 17,
+      "inference_seconds": 21.784458100039046,
+      "outputs": [
+        {
+          "compositor": "hard",
+          "file": "outputs/reference_count_ablation_v1/identity_620_refs1/result_hard.png",
+          "sha256": "51b9591cdf776c93d34c1808d765959c4b5a079e055b2d429b2f94fb63a5d090"
+        },
+        {
+          "compositor": "poisson",
+          "file": "outputs/reference_count_ablation_v1/identity_620_refs1/result.png",
+          "sha256": "54312e5f9ddaeef8ae2dd261db8b25190f04968d3768671453a50ae1d1805b3f"
+        }
+      ]
+    },
+    {
+      "case_id": "identity_620",
+      "identity": "620",
+      "reference_count": 2,
+      "reference_files": [
+        "outputs/reference_diagnostics_v1/identity_620/reference_1.png",
+        "outputs/reference_diagnostics_v1/identity_620/reference_2.png"
+      ],
+      "scale": 0.8,
+      "strength": 0.99,
+      "seed": 17,
+      "inference_seconds": 15.58588830003282,
+      "outputs": [
+        {
+          "compositor": "hard",
+          "file": "outputs/reference_count_ablation_v1/identity_620_refs2/result_hard.png",
+          "sha256": "8deec92eee2e1868a9b9ff1880c9314fb433f5f22b864eaa3eed56e47420438e"
+        },
+        {
+          "compositor": "poisson",
+          "file": "outputs/reference_count_ablation_v1/identity_620_refs2/result.png",
+          "sha256": "b9097e0326b4448f2272b811bf25ee366d780411ebf6586007b287833e49895b"
+        }
+      ]
+    },
+    {
+      "case_id": "identity_4423",
+      "identity": "4423",
+      "reference_count": 1,
+      "reference_files": [
+        "outputs/reference_diagnostics_v1/identity_4423/reference_1.png"
+      ],
+      "scale": 0.8,
+      "strength": 0.99,
+      "seed": 17,
+      "inference_seconds": 15.012769000022672,
+      "outputs": [
+        {
+          "compositor": "hard",
+          "file": "outputs/reference_count_ablation_v1/identity_4423_refs1/result_hard.png",
+          "sha256": "126c18aaf111490faeaa0c0195cd872422a895dfc6f2fa451b74f640739fe4b5"
+        },
+        {
+          "compositor": "poisson",
+          "file": "outputs/reference_count_ablation_v1/identity_4423_refs1/result.png",
+          "sha256": "5c48ed95edc4d16e36f72223d7171a252edb4394619ebf7a494b09a4f2ebb29f"
+        }
+      ]
+    },
+    {
+      "case_id": "identity_4423",
+      "identity": "4423",
+      "reference_count": 2,
+      "reference_files": [
+        "outputs/reference_diagnostics_v1/identity_4423/reference_1.png",
+        "outputs/reference_diagnostics_v1/identity_4423/reference_2.png"
+      ],
+      "scale": 0.8,
+      "strength": 0.99,
+      "seed": 17,
+      "inference_seconds": 15.010079299972858,
+      "outputs": [
+        {
+          "compositor": "hard",
+          "file": "outputs/reference_count_ablation_v1/identity_4423_refs2/result_hard.png",
+          "sha256": "2b82495a6e18998d8f699f09e61a14819edf6c7aff6684177a12a8dd7a317c92"
+        },
+        {
+          "compositor": "poisson",
+          "file": "outputs/reference_count_ablation_v1/identity_4423_refs2/result.png",
+          "sha256": "f242c00d83d2775d1e896c7504e08dd57dd67a80d3b413cfbfc46b59598e2e5f"
+        }
+      ]
+    },
+    {
+      "case_id": "identity_4017",
+      "identity": "4017",
+      "reference_count": 1,
+      "reference_files": [
+        "outputs/reference_diagnostics_v1/identity_4017/reference_1.png"
+      ],
+      "scale": 0.8,
+      "strength": 0.99,
+      "seed": 17,
+      "inference_seconds": 14.774801700026728,
+      "outputs": [
+        {
+          "compositor": "hard",
+          "file": "outputs/reference_count_ablation_v1/identity_4017_refs1/result_hard.png",
+          "sha256": "a23943a19c4e9cccee1da52e648a37ac9ca999a470baf8df9f52928614ab28de"
+        },
+        {
+          "compositor": "poisson",
+          "file": "outputs/reference_count_ablation_v1/identity_4017_refs1/result.png",
+          "sha256": "da5e3b4601f745c9f023490eacb40b239aea168021978c5784d3c9666800106d"
+        }
+      ]
+    },
+    {
+      "case_id": "identity_4017",
+      "identity": "4017",
+      "reference_count": 2,
+      "reference_files": [
+        "outputs/reference_diagnostics_v1/identity_4017/reference_1.png",
+        "outputs/reference_diagnostics_v1/identity_4017/reference_2.png"
+      ],
+      "scale": 0.8,
+      "strength": 0.99,
+      "seed": 17,
+      "inference_seconds": 16.24832959997002,
+      "outputs": [
+        {
+          "compositor": "hard",
+          "file": "outputs/reference_count_ablation_v1/identity_4017_refs2/result_hard.png",
+          "sha256": "4695bb7c2211a1bcea6680523c82b86ace45695ca621133e30b151d80d02c294"
+        },
+        {
+          "compositor": "poisson",
+          "file": "outputs/reference_count_ablation_v1/identity_4017_refs2/result.png",
+          "sha256": "a215631c4b5679c579da37833dbf9656c4c9159a0e3bcf3966edec012c21a326"
+        }
+      ]
+    },
+    {
+      "case_id": "identity_1293",
+      "identity": "1293",
+      "reference_count": 1,
+      "reference_files": [
+        "outputs/reference_diagnostics_v1/identity_1293/reference_1.png"
+      ],
+      "scale": 0.8,
+      "strength": 0.99,
+      "seed": 17,
+      "inference_seconds": 18.838585500023328,
+      "outputs": [
+        {
+          "compositor": "hard",
+          "file": "outputs/reference_count_ablation_v1/identity_1293_refs1/result_hard.png",
+          "sha256": "8f5f29626c96c381ee530819b4a6b7026981a2548eb8fa8d3a2f8cddaa8d2b21"
+        },
+        {
+          "compositor": "poisson",
+          "file": "outputs/reference_count_ablation_v1/identity_1293_refs1/result.png",
+          "sha256": "7eb8a0c8d1694d69533f81e44a6ac07445e34d95d184cc84fcbc350f254868c4"
+        }
+      ]
+    },
+    {
+      "case_id": "identity_1293",
+      "identity": "1293",
+      "reference_count": 2,
+      "reference_files": [
+        "outputs/reference_diagnostics_v1/identity_1293/reference_1.png",
+        "outputs/reference_diagnostics_v1/identity_1293/reference_2.png"
+      ],
+      "scale": 0.8,
+      "strength": 0.99,
+      "seed": 17,
+      "inference_seconds": 19.100709799968172,
+      "outputs": [
+        {
+          "compositor": "hard",
+          "file": "outputs/reference_count_ablation_v1/identity_1293_refs2/result_hard.png",
+          "sha256": "824e557b4280934edf7befc9bd52b54182acece364f290ea8f214617cc0f39c4"
+        },
+        {
+          "compositor": "poisson",
+          "file": "outputs/reference_count_ablation_v1/identity_1293_refs2/result.png",
+          "sha256": "c532d21ff6e9664df4c4549cb7331e6852bf5e3cfafee69c4ebab6319dd9304b"
+        }
+      ]
+    },
+    {
+      "case_id": "identity_376",
+      "identity": "376",
+      "reference_count": 1,
+      "reference_files": [
+        "outputs/reference_diagnostics_v1/identity_376/reference_1.png"
+      ],
+      "scale": 0.8,
+      "strength": 0.99,
+      "seed": 17,
+      "inference_seconds": 18.98662089998834,
+      "outputs": [
+        {
+          "compositor": "hard",
+          "file": "outputs/reference_count_ablation_v1/identity_376_refs1/result_hard.png",
+          "sha256": "2a4bb041cf45e630fd8fdd050211d66991e94b8144bb40181fc90eca537dd261"
+        },
+        {
+          "compositor": "poisson",
+          "file": "outputs/reference_count_ablation_v1/identity_376_refs1/result.png",
+          "sha256": "824f1eb5c92dae3754cafbeb10fabaf05e03918b668b3363e4baad1d29569353"
+        }
+      ]
+    },
+    {
+      "case_id": "identity_376",
+      "identity": "376",
+      "reference_count": 2,
+      "reference_files": [
+        "outputs/reference_diagnostics_v1/identity_376/reference_1.png",
+        "outputs/reference_diagnostics_v1/identity_376/reference_2.png"
+      ],
+      "scale": 0.8,
+      "strength": 0.99,
+      "seed": 17,
+      "inference_seconds": 19.28077100001974,
+      "outputs": [
+        {
+          "compositor": "hard",
+          "file": "outputs/reference_count_ablation_v1/identity_376_refs2/result_hard.png",
+          "sha256": "b0b5089e03df90c83bdab4603e0360da85079b2b524823e2430927099262f933"
+        },
+        {
+          "compositor": "poisson",
+          "file": "outputs/reference_count_ablation_v1/identity_376_refs2/result.png",
+          "sha256": "7fe7ad8f383ba8332c551a037f33a1d95f16fab0597f9f62324817b2ca61bacb"
+        }
+      ]
+    },
+    {
+      "case_id": "identity_1027",
+      "identity": "1027",
+      "reference_count": 1,
+      "reference_files": [
+        "outputs/reference_diagnostics_v1/identity_1027/reference_1.png"
+      ],
+      "scale": 0.8,
+      "strength": 0.99,
+      "seed": 17,
+      "inference_seconds": 19.50817610003287,
+      "outputs": [
+        {
+          "compositor": "hard",
+          "file": "outputs/reference_count_ablation_v1/identity_1027_refs1/result_hard.png",
+          "sha256": "d06a5f35c1d68a0873ec95e1a7e47703d07a64f1ecbb5912a1e45290b176331a"
+        },
+        {
+          "compositor": "poisson",
+          "file": "outputs/reference_count_ablation_v1/identity_1027_refs1/result.png",
+          "sha256": "c2b22652cc7417f5ee1a1122de56f547e19f19faafe9a47562ca2fe9dcfb4a91"
+        }
+      ]
+    },
+    {
+      "case_id": "identity_1027",
+      "identity": "1027",
+      "reference_count": 2,
+      "reference_files": [
+        "outputs/reference_diagnostics_v1/identity_1027/reference_1.png",
+        "outputs/reference_diagnostics_v1/identity_1027/reference_2.png"
+      ],
+      "scale": 0.8,
+      "strength": 0.99,
+      "seed": 17,
+      "inference_seconds": 19.42608800000744,
+      "outputs": [
+        {
+          "compositor": "hard",
+          "file": "outputs/reference_count_ablation_v1/identity_1027_refs2/result_hard.png",
+          "sha256": "84fdf20c9cc78af9695f5df97d6245df725f698788736998f3c8e31cf36a0eaf"
+        },
+        {
+          "compositor": "poisson",
+          "file": "outputs/reference_count_ablation_v1/identity_1027_refs2/result.png",
+          "sha256": "7ea58a5bada6a1b7e9ec0551bccab91fc8304803a209c1a68fce6282baade511"
+        }
+      ]
+    },
+    {
+      "case_id": "identity_3731",
+      "identity": "3731",
+      "reference_count": 1,
+      "reference_files": [
+        "outputs/reference_diagnostics_v1/identity_3731/reference_1.png"
+      ],
+      "scale": 0.8,
+      "strength": 0.99,
+      "seed": 17,
+      "inference_seconds": 19.224156200012658,
+      "outputs": [
+        {
+          "compositor": "hard",
+          "file": "outputs/reference_count_ablation_v1/identity_3731_refs1/result_hard.png",
+          "sha256": "d896149755a5af60ac5daaa3e50278bd67a15a5555c659a0863bc229d89dc388"
+        },
+        {
+          "compositor": "poisson",
+          "file": "outputs/reference_count_ablation_v1/identity_3731_refs1/result.png",
+          "sha256": "07309d82d83f97adcdfff5c6598a03ae1588d7fa77080389764a2cc5cc1c27ef"
+        }
+      ]
+    },
+    {
+      "case_id": "identity_3731",
+      "identity": "3731",
+      "reference_count": 2,
+      "reference_files": [
+        "outputs/reference_diagnostics_v1/identity_3731/reference_1.png",
+        "outputs/reference_diagnostics_v1/identity_3731/reference_2.png"
+      ],
+      "scale": 0.8,
+      "strength": 0.99,
+      "seed": 17,
+      "inference_seconds": 19.273273399972823,
+      "outputs": [
+        {
+          "compositor": "hard",
+          "file": "outputs/reference_count_ablation_v1/identity_3731_refs2/result_hard.png",
+          "sha256": "3b76728a71fcf6c9d6d438b7c2cdd47da48481d37c3301344cead465905d3cbf"
+        },
+        {
+          "compositor": "poisson",
+          "file": "outputs/reference_count_ablation_v1/identity_3731_refs2/result.png",
+          "sha256": "1f26eb420ef7356fff306fa6673390cace36384266a3d31a75c0aad95abeca3d"
+        }
+      ]
+    },
+    {
+      "case_id": "identity_56",
+      "identity": "56",
+      "reference_count": 1,
+      "reference_files": [
+        "outputs/reference_diagnostics_v1/identity_56/reference_1.png"
+      ],
+      "scale": 0.8,
+      "strength": 0.99,
+      "seed": 17,
+      "inference_seconds": 18.711198600009084,
+      "outputs": [
+        {
+          "compositor": "hard",
+          "file": "outputs/reference_count_ablation_v1/identity_56_refs1/result_hard.png",
+          "sha256": "09a6cd744ac2ec678f2a8090d9d5cef5499340eb5cf50fbcf9ebf43fd0cfa3de"
+        },
+        {
+          "compositor": "poisson",
+          "file": "outputs/reference_count_ablation_v1/identity_56_refs1/result.png",
+          "sha256": "6fd715a46f7db87be6aaeff0b87c823df80c524e4bae92117bffffcbe581f5a6"
+        }
+      ]
+    },
+    {
+      "case_id": "identity_56",
+      "identity": "56",
+      "reference_count": 2,
+      "reference_files": [
+        "outputs/reference_diagnostics_v1/identity_56/reference_1.png",
+        "outputs/reference_diagnostics_v1/identity_56/reference_2.png"
+      ],
+      "scale": 0.8,
+      "strength": 0.99,
+      "seed": 17,
+      "inference_seconds": 18.938670000003185,
+      "outputs": [
+        {
+          "compositor": "hard",
+          "file": "outputs/reference_count_ablation_v1/identity_56_refs2/result_hard.png",
+          "sha256": "9db6558f3c7c2d95c32137be3470e95dff95713c7e40d82f1561a64203d1d8d5"
+        },
+        {
+          "compositor": "poisson",
+          "file": "outputs/reference_count_ablation_v1/identity_56_refs2/result.png",
+          "sha256": "84f9e853916696e02a82ace55f19579a211801d805bf7db2f803558ec91cf949"
+        }
+      ]
+    },
+    {
+      "case_id": "identity_4663",
+      "identity": "4663",
+      "reference_count": 1,
+      "reference_files": [
+        "outputs/reference_diagnostics_v1/identity_4663/reference_1.png"
+      ],
+      "scale": 0.8,
+      "strength": 0.99,
+      "seed": 17,
+      "inference_seconds": 19.239032300014514,
+      "outputs": [
+        {
+          "compositor": "hard",
+          "file": "outputs/reference_count_ablation_v1/identity_4663_refs1/result_hard.png",
+          "sha256": "8f2126a5bff80203cdd74127e27d69ceb5eb94a153b1e357d6ef9dbea3a09b11"
+        },
+        {
+          "compositor": "poisson",
+          "file": "outputs/reference_count_ablation_v1/identity_4663_refs1/result.png",
+          "sha256": "6617d619353a972b3cab1eba7ce162c2b216b6bb161b7e7fd333622722c154e0"
+        }
+      ]
+    },
+    {
+      "case_id": "identity_4663",
+      "identity": "4663",
+      "reference_count": 2,
+      "reference_files": [
+        "outputs/reference_diagnostics_v1/identity_4663/reference_1.png",
+        "outputs/reference_diagnostics_v1/identity_4663/reference_2.png"
+      ],
+      "scale": 0.8,
+      "strength": 0.99,
+      "seed": 17,
+      "inference_seconds": 12.631214699998964,
+      "outputs": [
+        {
+          "compositor": "hard",
+          "file": "outputs/reference_count_ablation_v1/identity_4663_refs2/result_hard.png",
+          "sha256": "ce6e99f2e5e96d878d4fcddce351d7f9003a0e42b2e8536ac138c711b6d4e412"
+        },
+        {
+          "compositor": "poisson",
+          "file": "outputs/reference_count_ablation_v1/identity_4663_refs2/result.png",
+          "sha256": "c2696607d4c375f67179e5c47a515b5c769ee84fcb2992170aeaf0c9a9196a01"
+        }
+      ]
+    },
+    {
+      "case_id": "identity_2547",
+      "identity": "2547",
+      "reference_count": 1,
+      "reference_files": [
+        "outputs/reference_diagnostics_v1/identity_2547/reference_1.png"
+      ],
+      "scale": 0.8,
+      "strength": 0.99,
+      "seed": 17,
+      "inference_seconds": 7.562396199966315,
+      "outputs": [
+        {
+          "compositor": "hard",
+          "file": "outputs/reference_count_ablation_v1/identity_2547_refs1/result_hard.png",
+          "sha256": "813e1cebfac9160c861e659f9c8743215fbb8e1fbeecd906df2867a18eb3d727"
+        },
+        {
+          "compositor": "poisson",
+          "file": "outputs/reference_count_ablation_v1/identity_2547_refs1/result.png",
+          "sha256": "b20a2a5fbfe4ddb82b4256f1df44185919e1b72c9fcaba5961d9f5aa11c5f298"
+        }
+      ]
+    },
+    {
+      "case_id": "identity_2547",
+      "identity": "2547",
+      "reference_count": 2,
+      "reference_files": [
+        "outputs/reference_diagnostics_v1/identity_2547/reference_1.png",
+        "outputs/reference_diagnostics_v1/identity_2547/reference_2.png"
+      ],
+      "scale": 0.8,
+      "strength": 0.99,
+      "seed": 17,
+      "inference_seconds": 7.761784000031184,
+      "outputs": [
+        {
+          "compositor": "hard",
+          "file": "outputs/reference_count_ablation_v1/identity_2547_refs2/result_hard.png",
+          "sha256": "7db71490731ae4a614686338d160dbb8ebde1d146a571819f461b930eb59e7ff"
+        },
+        {
+          "compositor": "poisson",
+          "file": "outputs/reference_count_ablation_v1/identity_2547_refs2/result.png",
+          "sha256": "16cf5e01d2a4bd4f703d6c8d81c871ec268d1b06ec4533ca2924d7e6e9a70711"
+        }
+      ]
+    },
+    {
+      "case_id": "identity_3559",
+      "identity": "3559",
+      "reference_count": 1,
+      "reference_files": [
+        "outputs/reference_diagnostics_v1/identity_3559/reference_1.png"
+      ],
+      "scale": 0.8,
+      "strength": 0.99,
+      "seed": 17,
+      "inference_seconds": 7.655165300006047,
+      "outputs": [
+        {
+          "compositor": "hard",
+          "file": "outputs/reference_count_ablation_v1/identity_3559_refs1/result_hard.png",
+          "sha256": "5778335e712126dfaa232a1990d2446550927968b0778e816be9b76c45bbea61"
+        },
+        {
+          "compositor": "poisson",
+          "file": "outputs/reference_count_ablation_v1/identity_3559_refs1/result.png",
+          "sha256": "056ddecb9cc8982a859e1255402f852fc724f26293522062c3abaafcd539a583"
+        }
+      ]
+    },
+    {
+      "case_id": "identity_3559",
+      "identity": "3559",
+      "reference_count": 2,
+      "reference_files": [
+        "outputs/reference_diagnostics_v1/identity_3559/reference_1.png",
+        "outputs/reference_diagnostics_v1/identity_3559/reference_2.png"
+      ],
+      "scale": 0.8,
+      "strength": 0.99,
+      "seed": 17,
+      "inference_seconds": 7.904037899977993,
+      "outputs": [
+        {
+          "compositor": "hard",
+          "file": "outputs/reference_count_ablation_v1/identity_3559_refs2/result_hard.png",
+          "sha256": "1acc407c6135de73be39daa08cbf0a51d2586a5661f0e5d30511e6c2213af9f2"
+        },
+        {
+          "compositor": "poisson",
+          "file": "outputs/reference_count_ablation_v1/identity_3559_refs2/result.png",
+          "sha256": "088536e9db6795db7c38fe84af419162a692d3fba69fee9c41df6f8629d2020c"
+        }
+      ]
+    },
+    {
+      "case_id": "identity_1519",
+      "identity": "1519",
+      "reference_count": 1,
+      "reference_files": [
+        "outputs/reference_diagnostics_v1/identity_1519/reference_1.png"
+      ],
+      "scale": 0.8,
+      "strength": 0.99,
+      "seed": 17,
+      "inference_seconds": 8.529396200028714,
+      "outputs": [
+        {
+          "compositor": "hard",
+          "file": "outputs/reference_count_ablation_v1/identity_1519_refs1/result_hard.png",
+          "sha256": "b844773f1506c4ae92302aadd2c8b79c21387ac1c542bac2a059657a3c7e8059"
+        },
+        {
+          "compositor": "poisson",
+          "file": "outputs/reference_count_ablation_v1/identity_1519_refs1/result.png",
+          "sha256": "83c511b08bb525177d23f83eb038847e71f436eccf106d1accc4d09619c7dab1"
+        }
+      ]
+    },
+    {
+      "case_id": "identity_1519",
+      "identity": "1519",
+      "reference_count": 2,
+      "reference_files": [
+        "outputs/reference_diagnostics_v1/identity_1519/reference_1.png",
+        "outputs/reference_diagnostics_v1/identity_1519/reference_2.png"
+      ],
+      "scale": 0.8,
+      "strength": 0.99,
+      "seed": 17,
+      "inference_seconds": 8.154353599995375,
+      "outputs": [
+        {
+          "compositor": "hard",
+          "file": "outputs/reference_count_ablation_v1/identity_1519_refs2/result_hard.png",
+          "sha256": "da736f8a5d4fca06574bd57816aac5129920b68a80fe83f56603be0d1724bec0"
+        },
+        {
+          "compositor": "poisson",
+          "file": "outputs/reference_count_ablation_v1/identity_1519_refs2/result.png",
+          "sha256": "49f65ad31d59c7409f0abac7b0d1e6ee20d17184f6e979e05b6c1349153fa6dd"
+        }
+      ]
+    }
+  ]
+}

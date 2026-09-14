@@ -1,0 +1,26 @@
+{
+  "verified_rows": 144,
+  "max_facenet_difference_from_prior": 0.0,
+  "max_lpips_difference_from_prior": 7.450580596923828e-09,
+  "all_output_hashes_verified": true,
+  "all_evaluator_signatures_verified": true,
+  "matched_generation_candidates": 24,
+  "coverage": {
+    "original": {
+      "facenet_cosine": 88,
+      "arcface_conditioning_cosine": 92,
+      "niqe": 96,
+      "brisque": 96,
+      "ssim_rgb": 96,
+      "hole_psnr": 96
+    },
+    "count": {
+      "facenet_cosine": 44,
+      "arcface_conditioning_cosine": 48,
+      "niqe": 48,
+      "brisque": 48,
+      "ssim_rgb": 48,
+      "hole_psnr": 48
+    }
+  }
+}
