@@ -1,0 +1,3143 @@
+{
+  "status": "development_only",
+  "protocol_sha256": "64ebbb34ee8447a69582d2e66c0452c37a604847277456650ec846a451b25804",
+  "evaluator_source_sha256": "9110cfd112d04e975a2c6868676c530329b4429682f34f715c0eb3987e97875c",
+  "provenance_sha256": "fb579bbbe014baae54c216f12324e5d9ec34a7eaffc5156315cf275105d3f578",
+  "manifest_sha256": "3680b1a0f49370fc9e78049664e4019c45dcf70d87b313c99a9d9e12f02f684f",
+  "original_metrics_sha256": "56a2380fa3c30b33ef2576ff7a4cdc09f2cd5856196ed51fa3fba7b3f92d4851",
+  "runtime": {
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "torch": "2.11.0+cu128",
+    "numpy": "2.5.2",
+    "device": "cpu"
+  },
+  "summary": {
+    "scale0.0_strength1.0_hard": {
+      "total": 12,
+      "valid": 11,
+      "mean_cosine": 0.42574593966657465
+    },
+    "scale0.0_strength1.0_poisson": {
+      "total": 12,
+      "valid": 11,
+      "mean_cosine": 0.4826882102272727
+    },
+    "scale0.0_strength0.99_hard": {
+      "total": 12,
+      "valid": 11,
+      "mean_cosine": 0.4453691284764897
+    },
+    "scale0.0_strength0.99_poisson": {
+      "total": 12,
+      "valid": 11,
+      "mean_cosine": 0.4941898828203028
+    },
+    "scale0.8_strength1.0_hard": {
+      "total": 12,
+      "valid": 11,
+      "mean_cosine": 0.6084778471426531
+    },
+    "scale0.8_strength1.0_poisson": {
+      "total": 12,
+      "valid": 11,
+      "mean_cosine": 0.6596151129765944
+    },
+    "scale0.8_strength0.99_hard": {
+      "total": 12,
+      "valid": 11,
+      "mean_cosine": 0.6377761120145972
+    },
+    "scale0.8_strength0.99_poisson": {
+      "total": 12,
+      "valid": 11,
+      "mean_cosine": 0.6587806804613634
+    }
+  },
+  "paired_contrasts": [
+    {
+      "strength": "1.0",
+      "compositor": "hard",
+      "joint_valid": 11,
+      "identities": [
+        "1027",
+        "1293",
+        "1519",
+        "2547",
+        "3559",
+        "3731",
+        "376",
+        "4017",
+        "4663",
+        "56",
+        "620"
+      ],
+      "reference_on_minus_off": 0.18273190747607837,
+      "ci95": [
+        0.08692234957760032,
+        0.3018239536068656
+      ]
+    },
+    {
+      "strength": "1.0",
+      "compositor": "poisson",
+      "joint_valid": 11,
+      "identities": [
+        "1027",
+        "1293",
+        "1519",
+        "2547",
+        "3559",
+        "3731",
+        "376",
+        "4017",
+        "4663",
+        "56",
+        "620"
+      ],
+      "reference_on_minus_off": 0.17692690274932169,
+      "ci95": [
+        0.08732700246301564,
+        0.28663341436873774
+      ]
+    },
+    {
+      "strength": "0.99",
+      "compositor": "hard",
+      "joint_valid": 11,
+      "identities": [
+        "1027",
+        "1293",
+        "1519",
+        "2547",
+        "3559",
+        "3731",
+        "376",
+        "4017",
+        "4663",
+        "56",
+        "620"
+      ],
+      "reference_on_minus_off": 0.19240698353810745,
+      "ci95": [
+        0.07795944027602672,
+        0.308655631813136
+      ]
+    },
+    {
+      "strength": "0.99",
+      "compositor": "poisson",
+      "joint_valid": 11,
+      "identities": [
+        "1027",
+        "1293",
+        "1519",
+        "2547",
+        "3559",
+        "3731",
+        "376",
+        "4017",
+        "4663",
+        "56",
+        "620"
+      ],
+      "reference_on_minus_off": 0.16459079764106058,
+      "ci95": [
+        0.04922269474376331,
+        0.2902873860164122
+      ]
+    }
+  ],
+  "targets": {
+    "identity_620": {
+      "face_count": 1,
+      "status": "ok",
+      "box": [
+        120.03001403808594,
+        99.02484893798828,
+        401.5282287597656,
+        463.98919677734375
+      ],
+      "detection_probability": 0.9994242191314697
+    },
+    "identity_4423": {
+      "face_count": 2,
+      "status": "multiple_faces"
+    },
+    "identity_4017": {
+      "face_count": 1,
+      "status": "ok",
+      "box": [
+        128.923095703125,
+        96.99813079833984,
+        403.6828918457031,
+        461.5588073730469
+      ],
+      "detection_probability": 0.9984427094459534
+    },
+    "identity_1293": {
+      "face_count": 1,
+      "status": "ok",
+      "box": [
+        114.30955505371094,
+        90.6512680053711,
+        388.6925964355469,
+        450.54266357421875
+      ],
+      "detection_probability": 0.9998631477355957
+    },
+    "identity_376": {
+      "face_count": 1,
+      "status": "ok",
+      "box": [
+        130.54676818847656,
+        94.40667724609375,
+        393.6031799316406,
+        460.1363525390625
+      ],
+      "detection_probability": 0.9984734654426575
+    },
+    "identity_1027": {
+      "face_count": 1,
+      "status": "ok",
+      "box": [
+        110.72218322753906,
+        106.66595458984375,
+        380.0859069824219,
+        448.3708190917969
+      ],
+      "detection_probability": 0.999800980091095
+    },
+    "identity_3731": {
+      "face_count": 1,
+      "status": "ok",
+      "box": [
+        124.77522277832031,
+        106.28211212158203,
+        399.45477294921875,
+        467.5024719238281
+      ],
+      "detection_probability": 0.9980900883674622
+    },
+    "identity_56": {
+      "face_count": 1,
+      "status": "ok",
+      "box": [
+        103.72450256347656,
+        102.98285675048828,
+        389.6518859863281,
+        466.26336669921875
+      ],
+      "detection_probability": 0.9999675750732422
+    },
+    "identity_4663": {
+      "face_count": 1,
+      "status": "ok",
+      "box": [
+        114.10992431640625,
+        100.51707458496094,
+        377.56829833984375,
+        457.7437744140625
+      ],
+      "detection_probability": 0.9998899698257446
+    },
+    "identity_2547": {
+      "face_count": 1,
+      "status": "ok",
+      "box": [
+        108.7937240600586,
+        102.95088195800781,
+        378.5273742675781,
+        456.1352233886719
+      ],
+      "detection_probability": 0.9999990463256836
+    },
+    "identity_3559": {
+      "face_count": 1,
+      "status": "ok",
+      "box": [
+        126.06674194335938,
+        99.19096374511719,
+        395.19293212890625,
+        461.4298400878906
+      ],
+      "detection_probability": 0.9999803304672241
+    },
+    "identity_1519": {
+      "face_count": 1,
+      "status": "ok",
+      "box": [
+        147.84762573242188,
+        110.5145263671875,
+        399.3708801269531,
+        454.1796569824219
+      ],
+      "detection_probability": 0.9978139400482178
+    }
+  },
+  "rows": [
+    {
+      "identity": "620",
+      "case_id": "identity_620",
+      "scale": "0.0",
+      "strength": "1.0",
+      "compositor": "hard",
+      "output_sha256": "7005f0d6331cb24bc9a5ba3c2bdca59c1812a75bf9ed6abbedd05bc91cbdc3bc",
+      "cosine_similarity": 0.3567870855331421,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          116.1364517211914,
+          103.28707885742188,
+          400.59954833984375,
+          452.79534912109375
+        ],
+        "detection_probability": 0.9999991655349731
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          120.03001403808594,
+          99.02484893798828,
+          401.5282287597656,
+          463.98919677734375
+        ],
+        "detection_probability": 0.9994242191314697
+      }
+    },
+    {
+      "identity": "620",
+      "case_id": "identity_620",
+      "scale": "0.0",
+      "strength": "1.0",
+      "compositor": "poisson",
+      "output_sha256": "81ef0d351c48a919c3ed3e8b92af729faee8a61ca9c9cbc73fb62b8855933163",
+      "cosine_similarity": 0.4361872971057892,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          129.302978515625,
+          113.44081115722656,
+          396.7698059082031,
+          460.0416259765625
+        ],
+        "detection_probability": 0.999572217464447
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          120.03001403808594,
+          99.02484893798828,
+          401.5282287597656,
+          463.98919677734375
+        ],
+        "detection_probability": 0.9994242191314697
+      }
+    },
+    {
+      "identity": "620",
+      "case_id": "identity_620",
+      "scale": "0.0",
+      "strength": "0.99",
+      "compositor": "hard",
+      "output_sha256": "72f5b9998c5609ebc32176b003be1abb6faab6df75e61a9ed62919e2513c6857",
+      "cosine_similarity": 0.5885598659515381,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          115.28787994384766,
+          113.14178466796875,
+          391.6802062988281,
+          459.683837890625
+        ],
+        "detection_probability": 0.9999998807907104
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          120.03001403808594,
+          99.02484893798828,
+          401.5282287597656,
+          463.98919677734375
+        ],
+        "detection_probability": 0.9994242191314697
+      }
+    },
+    {
+      "identity": "620",
+      "case_id": "identity_620",
+      "scale": "0.0",
+      "strength": "0.99",
+      "compositor": "poisson",
+      "output_sha256": "e6519c1c9c3cd9c973a9c2c95d020ebddc74f18969ab4cef96dd3d3a77778382",
+      "cosine_similarity": 0.6265981197357178,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          110.56605529785156,
+          103.33892822265625,
+          394.2914123535156,
+          454.16827392578125
+        ],
+        "detection_probability": 1.0
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          120.03001403808594,
+          99.02484893798828,
+          401.5282287597656,
+          463.98919677734375
+        ],
+        "detection_probability": 0.9994242191314697
+      }
+    },
+    {
+      "identity": "620",
+      "case_id": "identity_620",
+      "scale": "0.8",
+      "strength": "1.0",
+      "compositor": "hard",
+      "output_sha256": "2b75ebad68f79eecb65521a0987965a09b07c3f635903cb8a29a7b779006559c",
+      "cosine_similarity": 0.7660613656044006,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          117.97384643554688,
+          114.40402221679688,
+          398.36260986328125,
+          454.87518310546875
+        ],
+        "detection_probability": 1.0
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          120.03001403808594,
+          99.02484893798828,
+          401.5282287597656,
+          463.98919677734375
+        ],
+        "detection_probability": 0.9994242191314697
+      }
+    },
+    {
+      "identity": "620",
+      "case_id": "identity_620",
+      "scale": "0.8",
+      "strength": "1.0",
+      "compositor": "poisson",
+      "output_sha256": "eb7278d3654ec94fae11c1b436c4695c6077f75ca8a4bdcf22f9d6aa489f4c49",
+      "cosine_similarity": 0.7714381217956543,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          113.76123046875,
+          103.9636459350586,
+          399.4074401855469,
+          457.4017333984375
+        ],
+        "detection_probability": 1.0
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          120.03001403808594,
+          99.02484893798828,
+          401.5282287597656,
+          463.98919677734375
+        ],
+        "detection_probability": 0.9994242191314697
+      }
+    },
+    {
+      "identity": "620",
+      "case_id": "identity_620",
+      "scale": "0.8",
+      "strength": "0.99",
+      "compositor": "hard",
+      "output_sha256": "2b8fb87b66c1adfe8fcca2cd341c18fe2e6ed534c38a22d12d34d392a6b22026",
+      "cosine_similarity": 0.8082023859024048,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          119.85692596435547,
+          108.27425384521484,
+          396.5525817871094,
+          461.5800476074219
+        ],
+        "detection_probability": 0.9999997615814209
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          120.03001403808594,
+          99.02484893798828,
+          401.5282287597656,
+          463.98919677734375
+        ],
+        "detection_probability": 0.9994242191314697
+      }
+    },
+    {
+      "identity": "620",
+      "case_id": "identity_620",
+      "scale": "0.8",
+      "strength": "0.99",
+      "compositor": "poisson",
+      "output_sha256": "5af6381bdce8040b0b08262c6a29950a9b3d85639ab831a3fe0370ff91fa2fd8",
+      "cosine_similarity": 0.8222628831863403,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          106.59465026855469,
+          102.02851867675781,
+          397.49444580078125,
+          462.3550720214844
+        ],
+        "detection_probability": 0.9999988079071045
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          120.03001403808594,
+          99.02484893798828,
+          401.5282287597656,
+          463.98919677734375
+        ],
+        "detection_probability": 0.9994242191314697
+      }
+    },
+    {
+      "identity": "4423",
+      "case_id": "identity_4423",
+      "scale": "0.0",
+      "strength": "1.0",
+      "compositor": "hard",
+      "output_sha256": "ec0498f50aecb7dd71c64fdb558341e1e980c4358ac6a8b3ae087addecd6fd9d",
+      "cosine_similarity": null,
+      "output_detection": {
+        "face_count": 2,
+        "status": "multiple_faces"
+      },
+      "target_detection": {
+        "face_count": 2,
+        "status": "multiple_faces"
+      }
+    },
+    {
+      "identity": "4423",
+      "case_id": "identity_4423",
+      "scale": "0.0",
+      "strength": "1.0",
+      "compositor": "poisson",
+      "output_sha256": "2634f2f6fbf9caef1415468ae12305f60a48ab8843c667d332285ed04cfa02e8",
+      "cosine_similarity": null,
+      "output_detection": {
+        "face_count": 2,
+        "status": "multiple_faces"
+      },
+      "target_detection": {
+        "face_count": 2,
+        "status": "multiple_faces"
+      }
+    },
+    {
+      "identity": "4423",
+      "case_id": "identity_4423",
+      "scale": "0.0",
+      "strength": "0.99",
+      "compositor": "hard",
+      "output_sha256": "aafabdc6cac18ba1638bd73a415206d83a33fc593b207cd5e289d5d6b5ce92a4",
+      "cosine_similarity": null,
+      "output_detection": {
+        "face_count": 2,
+        "status": "multiple_faces"
+      },
+      "target_detection": {
+        "face_count": 2,
+        "status": "multiple_faces"
+      }
+    },
+    {
+      "identity": "4423",
+      "case_id": "identity_4423",
+      "scale": "0.0",
+      "strength": "0.99",
+      "compositor": "poisson",
+      "output_sha256": "36cc6849e455b7dd5f503cb01bf0e2623fe2c148b7d12492273f93fc9c5b1caf",
+      "cosine_similarity": null,
+      "output_detection": {
+        "face_count": 2,
+        "status": "multiple_faces"
+      },
+      "target_detection": {
+        "face_count": 2,
+        "status": "multiple_faces"
+      }
+    },
+    {
+      "identity": "4423",
+      "case_id": "identity_4423",
+      "scale": "0.8",
+      "strength": "1.0",
+      "compositor": "hard",
+      "output_sha256": "49696600893058a6f151e7bff73e92976db9586ad6c6344a88097db94b353ba8",
+      "cosine_similarity": null,
+      "output_detection": {
+        "face_count": 2,
+        "status": "multiple_faces"
+      },
+      "target_detection": {
+        "face_count": 2,
+        "status": "multiple_faces"
+      }
+    },
+    {
+      "identity": "4423",
+      "case_id": "identity_4423",
+      "scale": "0.8",
+      "strength": "1.0",
+      "compositor": "poisson",
+      "output_sha256": "0a5e5779871460fcb6fea4bacf2100b018027ec05e28789bc7c143848f62d33e",
+      "cosine_similarity": null,
+      "output_detection": {
+        "face_count": 2,
+        "status": "multiple_faces"
+      },
+      "target_detection": {
+        "face_count": 2,
+        "status": "multiple_faces"
+      }
+    },
+    {
+      "identity": "4423",
+      "case_id": "identity_4423",
+      "scale": "0.8",
+      "strength": "0.99",
+      "compositor": "hard",
+      "output_sha256": "6f05509e80149c0db4f6a582239aa845790bf4eaf86cd2e063203a1081ce8f34",
+      "cosine_similarity": null,
+      "output_detection": {
+        "face_count": 2,
+        "status": "multiple_faces"
+      },
+      "target_detection": {
+        "face_count": 2,
+        "status": "multiple_faces"
+      }
+    },
+    {
+      "identity": "4423",
+      "case_id": "identity_4423",
+      "scale": "0.8",
+      "strength": "0.99",
+      "compositor": "poisson",
+      "output_sha256": "5d2a5bb926f0314f2f16b8126ac1503dae6094bda189235bccc1ee23e981055b",
+      "cosine_similarity": null,
+      "output_detection": {
+        "face_count": 2,
+        "status": "multiple_faces"
+      },
+      "target_detection": {
+        "face_count": 2,
+        "status": "multiple_faces"
+      }
+    },
+    {
+      "identity": "4017",
+      "case_id": "identity_4017",
+      "scale": "0.0",
+      "strength": "1.0",
+      "compositor": "hard",
+      "output_sha256": "bf4cf0fccaf0cfab55e227b7132bed0bdeb7ca5502438d82188afec58d6cc460",
+      "cosine_similarity": 0.39968621730804443,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          137.0855255126953,
+          106.42919158935547,
+          399.815673828125,
+          457.1275939941406
+        ],
+        "detection_probability": 0.9953877329826355
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          128.923095703125,
+          96.99813079833984,
+          403.6828918457031,
+          461.5588073730469
+        ],
+        "detection_probability": 0.9984427094459534
+      }
+    },
+    {
+      "identity": "4017",
+      "case_id": "identity_4017",
+      "scale": "0.0",
+      "strength": "1.0",
+      "compositor": "poisson",
+      "output_sha256": "87cd494a8c77941016894f92c3c550bce4a8ff90b4921a9cf66e19b4cebb8c4c",
+      "cosine_similarity": 0.3817160129547119,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          132.34259033203125,
+          93.31134033203125,
+          409.57861328125,
+          466.7796630859375
+        ],
+        "detection_probability": 0.9941452741622925
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          128.923095703125,
+          96.99813079833984,
+          403.6828918457031,
+          461.5588073730469
+        ],
+        "detection_probability": 0.9984427094459534
+      }
+    },
+    {
+      "identity": "4017",
+      "case_id": "identity_4017",
+      "scale": "0.0",
+      "strength": "0.99",
+      "compositor": "hard",
+      "output_sha256": "2d75e03d5952ef3fae073848a03a6c1efff4833538000fa1354dd82aa8d98d7e",
+      "cosine_similarity": 0.565126895904541,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          140.08639526367188,
+          104.84658813476562,
+          405.7695007324219,
+          454.6036376953125
+        ],
+        "detection_probability": 0.9992652535438538
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          128.923095703125,
+          96.99813079833984,
+          403.6828918457031,
+          461.5588073730469
+        ],
+        "detection_probability": 0.9984427094459534
+      }
+    },
+    {
+      "identity": "4017",
+      "case_id": "identity_4017",
+      "scale": "0.0",
+      "strength": "0.99",
+      "compositor": "poisson",
+      "output_sha256": "50e0927490125d84a7d02a9d34df3c63603dee401c4eb0e82a898160de79b718",
+      "cosine_similarity": 0.5767878293991089,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          131.96731567382812,
+          99.24878692626953,
+          406.8990478515625,
+          464.87872314453125
+        ],
+        "detection_probability": 0.9983360171318054
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          128.923095703125,
+          96.99813079833984,
+          403.6828918457031,
+          461.5588073730469
+        ],
+        "detection_probability": 0.9984427094459534
+      }
+    },
+    {
+      "identity": "4017",
+      "case_id": "identity_4017",
+      "scale": "0.8",
+      "strength": "1.0",
+      "compositor": "hard",
+      "output_sha256": "61aab8925e9fdacf6d47073d6557cd36e7c882234567776f7fb8149e53f544f0",
+      "cosine_similarity": 0.46910738945007324,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          138.6922607421875,
+          106.63691711425781,
+          400.4130554199219,
+          452.3187255859375
+        ],
+        "detection_probability": 0.9964726567268372
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          128.923095703125,
+          96.99813079833984,
+          403.6828918457031,
+          461.5588073730469
+        ],
+        "detection_probability": 0.9984427094459534
+      }
+    },
+    {
+      "identity": "4017",
+      "case_id": "identity_4017",
+      "scale": "0.8",
+      "strength": "1.0",
+      "compositor": "poisson",
+      "output_sha256": "eb72a283240ae882759178dbaa4a231eb8f36dcab64f73485b7872364fd4736a",
+      "cosine_similarity": 0.41921547055244446,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          131.79037475585938,
+          98.18101501464844,
+          406.0217590332031,
+          460.89990234375
+        ],
+        "detection_probability": 0.9972432851791382
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          128.923095703125,
+          96.99813079833984,
+          403.6828918457031,
+          461.5588073730469
+        ],
+        "detection_probability": 0.9984427094459534
+      }
+    },
+    {
+      "identity": "4017",
+      "case_id": "identity_4017",
+      "scale": "0.8",
+      "strength": "0.99",
+      "compositor": "hard",
+      "output_sha256": "13fb85faa9564f7cd08916e079644e7bdfb37078edc04b672519a7b33db326fe",
+      "cosine_similarity": 0.7775315046310425,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          144.09988403320312,
+          102.2999267578125,
+          400.69561767578125,
+          457.181640625
+        ],
+        "detection_probability": 0.951033353805542
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          128.923095703125,
+          96.99813079833984,
+          403.6828918457031,
+          461.5588073730469
+        ],
+        "detection_probability": 0.9984427094459534
+      }
+    },
+    {
+      "identity": "4017",
+      "case_id": "identity_4017",
+      "scale": "0.8",
+      "strength": "0.99",
+      "compositor": "poisson",
+      "output_sha256": "dcb19adafe99b433d94066c48648cd976b6dcb12b412e16d96d41a1eaaabe777",
+      "cosine_similarity": 0.7348747849464417,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          133.57374572753906,
+          99.97303771972656,
+          398.8320007324219,
+          453.8741455078125
+        ],
+        "detection_probability": 0.9997649788856506
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          128.923095703125,
+          96.99813079833984,
+          403.6828918457031,
+          461.5588073730469
+        ],
+        "detection_probability": 0.9984427094459534
+      }
+    },
+    {
+      "identity": "1293",
+      "case_id": "identity_1293",
+      "scale": "0.0",
+      "strength": "1.0",
+      "compositor": "hard",
+      "output_sha256": "9cfc4d179b7ba5393ff66f3003feb1161f98c0edad1c0aa532fce4e19ed94480",
+      "cosine_similarity": 0.4295302629470825,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          118.13497924804688,
+          131.13323974609375,
+          388.7626647949219,
+          451.4389343261719
+        ],
+        "detection_probability": 0.9989498257637024
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          114.30955505371094,
+          90.6512680053711,
+          388.6925964355469,
+          450.54266357421875
+        ],
+        "detection_probability": 0.9998631477355957
+      }
+    },
+    {
+      "identity": "1293",
+      "case_id": "identity_1293",
+      "scale": "0.0",
+      "strength": "1.0",
+      "compositor": "poisson",
+      "output_sha256": "d6ae97d89dd5e004d0c86b8a04b27222454bed28efd98102f260a7d7ea587b23",
+      "cosine_similarity": 0.4764969050884247,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          116.1315689086914,
+          95.60456848144531,
+          384.0118408203125,
+          448.61981201171875
+        ],
+        "detection_probability": 0.9997758269309998
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          114.30955505371094,
+          90.6512680053711,
+          388.6925964355469,
+          450.54266357421875
+        ],
+        "detection_probability": 0.9998631477355957
+      }
+    },
+    {
+      "identity": "1293",
+      "case_id": "identity_1293",
+      "scale": "0.0",
+      "strength": "0.99",
+      "compositor": "hard",
+      "output_sha256": "3f483a7a6b9b148ee43844a8cfd5ef2b9b967f8b0cbd99bccddde438ded04c45",
+      "cosine_similarity": 0.44295942783355713,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          137.89439392089844,
+          127.33829498291016,
+          386.1865234375,
+          447.2269287109375
+        ],
+        "detection_probability": 0.9999974966049194
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          114.30955505371094,
+          90.6512680053711,
+          388.6925964355469,
+          450.54266357421875
+        ],
+        "detection_probability": 0.9998631477355957
+      }
+    },
+    {
+      "identity": "1293",
+      "case_id": "identity_1293",
+      "scale": "0.0",
+      "strength": "0.99",
+      "compositor": "poisson",
+      "output_sha256": "fe265ead59548619a6f9a185b13e250484e9de604278ce6143cd9ca1c460e386",
+      "cosine_similarity": 0.415626585483551,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          117.9489517211914,
+          135.3189697265625,
+          366.9883728027344,
+          458.1488342285156
+        ],
+        "detection_probability": 0.9997686743736267
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          114.30955505371094,
+          90.6512680053711,
+          388.6925964355469,
+          450.54266357421875
+        ],
+        "detection_probability": 0.9998631477355957
+      }
+    },
+    {
+      "identity": "1293",
+      "case_id": "identity_1293",
+      "scale": "0.8",
+      "strength": "1.0",
+      "compositor": "hard",
+      "output_sha256": "47e3f7372af921a5e923a1066585f409484b2d157358ff8d7729eed4685ab54a",
+      "cosine_similarity": 0.531402587890625,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          116.43975830078125,
+          130.57395935058594,
+          389.0366516113281,
+          452.4095458984375
+        ],
+        "detection_probability": 0.9984753727912903
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          114.30955505371094,
+          90.6512680053711,
+          388.6925964355469,
+          450.54266357421875
+        ],
+        "detection_probability": 0.9998631477355957
+      }
+    },
+    {
+      "identity": "1293",
+      "case_id": "identity_1293",
+      "scale": "0.8",
+      "strength": "1.0",
+      "compositor": "poisson",
+      "output_sha256": "13f2dd090e1a107594e12688c2f3e8beeb9cc9d63e81c3a2ae655a8f2f8875bb",
+      "cosine_similarity": 0.540590763092041,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          120.46996307373047,
+          104.7409896850586,
+          381.9049987792969,
+          448.3214111328125
+        ],
+        "detection_probability": 0.9980983138084412
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          114.30955505371094,
+          90.6512680053711,
+          388.6925964355469,
+          450.54266357421875
+        ],
+        "detection_probability": 0.9998631477355957
+      }
+    },
+    {
+      "identity": "1293",
+      "case_id": "identity_1293",
+      "scale": "0.8",
+      "strength": "0.99",
+      "compositor": "hard",
+      "output_sha256": "dc399e92287e77779c1a907b22c3a0da28714852c0c5456dd276f99de6b3c0a5",
+      "cosine_similarity": 0.41929590702056885,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          143.4668426513672,
+          133.74462890625,
+          389.6361389160156,
+          447.1493225097656
+        ],
+        "detection_probability": 0.9999032020568848
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          114.30955505371094,
+          90.6512680053711,
+          388.6925964355469,
+          450.54266357421875
+        ],
+        "detection_probability": 0.9998631477355957
+      }
+    },
+    {
+      "identity": "1293",
+      "case_id": "identity_1293",
+      "scale": "0.8",
+      "strength": "0.99",
+      "compositor": "poisson",
+      "output_sha256": "5ef5306390862ee95209e228becb62534e020bc227e774e02c81805b4e03fa64",
+      "cosine_similarity": 0.4005875587463379,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          126.59956359863281,
+          115.40410614013672,
+          380.31634521484375,
+          445.6732482910156
+        ],
+        "detection_probability": 0.9983662962913513
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          114.30955505371094,
+          90.6512680053711,
+          388.6925964355469,
+          450.54266357421875
+        ],
+        "detection_probability": 0.9998631477355957
+      }
+    },
+    {
+      "identity": "376",
+      "case_id": "identity_376",
+      "scale": "0.0",
+      "strength": "1.0",
+      "compositor": "hard",
+      "output_sha256": "ddf446cfb3495dec4ea45062f5bdc44cafd7f6944555e944aad6a5352bfa2ded",
+      "cosine_similarity": 0.17511707544326782,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          140.70672607421875,
+          102.18571472167969,
+          390.3338623046875,
+          456.06390380859375
+        ],
+        "detection_probability": 0.9965811371803284
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          130.54676818847656,
+          94.40667724609375,
+          393.6031799316406,
+          460.1363525390625
+        ],
+        "detection_probability": 0.9984734654426575
+      }
+    },
+    {
+      "identity": "376",
+      "case_id": "identity_376",
+      "scale": "0.0",
+      "strength": "1.0",
+      "compositor": "poisson",
+      "output_sha256": "ee31789df2553f9acef69a8b8ca9147dc3810ed350c8de36a07730d6de7679b8",
+      "cosine_similarity": 0.24976366758346558,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          128.65261840820312,
+          100.7291030883789,
+          382.9578857421875,
+          456.5443115234375
+        ],
+        "detection_probability": 0.9994163513183594
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          130.54676818847656,
+          94.40667724609375,
+          393.6031799316406,
+          460.1363525390625
+        ],
+        "detection_probability": 0.9984734654426575
+      }
+    },
+    {
+      "identity": "376",
+      "case_id": "identity_376",
+      "scale": "0.0",
+      "strength": "0.99",
+      "compositor": "hard",
+      "output_sha256": "c492d5411437b094e2d8e1a63336bba9ef7f5c99df6a9664e14b1f021fa16d1f",
+      "cosine_similarity": 0.2225756049156189,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          134.23745727539062,
+          112.43490600585938,
+          389.9559326171875,
+          452.0929870605469
+        ],
+        "detection_probability": 0.9996092915534973
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          130.54676818847656,
+          94.40667724609375,
+          393.6031799316406,
+          460.1363525390625
+        ],
+        "detection_probability": 0.9984734654426575
+      }
+    },
+    {
+      "identity": "376",
+      "case_id": "identity_376",
+      "scale": "0.0",
+      "strength": "0.99",
+      "compositor": "poisson",
+      "output_sha256": "6ed202439cedb49da7261ab7d39f91e2a83832735e85c9563a4275dd0d7661ce",
+      "cosine_similarity": 0.13015598058700562,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          135.19894409179688,
+          108.1338882446289,
+          382.37908935546875,
+          453.9844970703125
+        ],
+        "detection_probability": 0.9984982013702393
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          130.54676818847656,
+          94.40667724609375,
+          393.6031799316406,
+          460.1363525390625
+        ],
+        "detection_probability": 0.9984734654426575
+      }
+    },
+    {
+      "identity": "376",
+      "case_id": "identity_376",
+      "scale": "0.8",
+      "strength": "1.0",
+      "compositor": "hard",
+      "output_sha256": "bb2af6ddc13773f3f6ba33e55ed684a1807e9f93f51069287cbb6868f22d5891",
+      "cosine_similarity": 0.8048762083053589,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          134.3974609375,
+          101.81242370605469,
+          394.7189636230469,
+          458.1877746582031
+        ],
+        "detection_probability": 0.9992039799690247
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          130.54676818847656,
+          94.40667724609375,
+          393.6031799316406,
+          460.1363525390625
+        ],
+        "detection_probability": 0.9984734654426575
+      }
+    },
+    {
+      "identity": "376",
+      "case_id": "identity_376",
+      "scale": "0.8",
+      "strength": "1.0",
+      "compositor": "poisson",
+      "output_sha256": "9546fa0150816ed1632be1a6fcba45a80fd4686f1c71f1f03fc4da8098e1d199",
+      "cosine_similarity": 0.8638989925384521,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          128.99761962890625,
+          103.54438781738281,
+          387.0118713378906,
+          458.71026611328125
+        ],
+        "detection_probability": 0.9918381571769714
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          130.54676818847656,
+          94.40667724609375,
+          393.6031799316406,
+          460.1363525390625
+        ],
+        "detection_probability": 0.9984734654426575
+      }
+    },
+    {
+      "identity": "376",
+      "case_id": "identity_376",
+      "scale": "0.8",
+      "strength": "0.99",
+      "compositor": "hard",
+      "output_sha256": "d102d937b5effb4fd551a2a116d8208c6d2cf44b72e4f740bdfeb443eebb7a41",
+      "cosine_similarity": 0.7696512937545776,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          128.14572143554688,
+          114.93766784667969,
+          393.87939453125,
+          446.38018798828125
+        ],
+        "detection_probability": 0.9995417594909668
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          130.54676818847656,
+          94.40667724609375,
+          393.6031799316406,
+          460.1363525390625
+        ],
+        "detection_probability": 0.9984734654426575
+      }
+    },
+    {
+      "identity": "376",
+      "case_id": "identity_376",
+      "scale": "0.8",
+      "strength": "0.99",
+      "compositor": "poisson",
+      "output_sha256": "937772eac379229a4f16914b49192b32a34ce04ca2d65e0a4eeb7f1fe1ec30c5",
+      "cosine_similarity": 0.7426259517669678,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          126.23296356201172,
+          99.32858276367188,
+          392.4298095703125,
+          460.41278076171875
+        ],
+        "detection_probability": 0.9992527365684509
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          130.54676818847656,
+          94.40667724609375,
+          393.6031799316406,
+          460.1363525390625
+        ],
+        "detection_probability": 0.9984734654426575
+      }
+    },
+    {
+      "identity": "1027",
+      "case_id": "identity_1027",
+      "scale": "0.0",
+      "strength": "1.0",
+      "compositor": "hard",
+      "output_sha256": "4a91020e5e5f9389eefa2339143dab309109dcbc30570e3153961a034a559c4e",
+      "cosine_similarity": 0.37962275743484497,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          110.14190673828125,
+          113.56565856933594,
+          384.0128173828125,
+          441.64019775390625
+        ],
+        "detection_probability": 0.9988065958023071
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          110.72218322753906,
+          106.66595458984375,
+          380.0859069824219,
+          448.3708190917969
+        ],
+        "detection_probability": 0.999800980091095
+      }
+    },
+    {
+      "identity": "1027",
+      "case_id": "identity_1027",
+      "scale": "0.0",
+      "strength": "1.0",
+      "compositor": "poisson",
+      "output_sha256": "d96908aa93eff6c2b81dc2e4c6ca98dce5152abdaeb7548a75aa1e52898c3178",
+      "cosine_similarity": 0.5363227725028992,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          113.5164794921875,
+          102.60428619384766,
+          381.16888427734375,
+          449.1625061035156
+        ],
+        "detection_probability": 0.999160885810852
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          110.72218322753906,
+          106.66595458984375,
+          380.0859069824219,
+          448.3708190917969
+        ],
+        "detection_probability": 0.999800980091095
+      }
+    },
+    {
+      "identity": "1027",
+      "case_id": "identity_1027",
+      "scale": "0.0",
+      "strength": "0.99",
+      "compositor": "hard",
+      "output_sha256": "3901ff965963002a65b89b9e474f7c5f06d3da69dfd9b0eedfae9dc39bfc3c0f",
+      "cosine_similarity": 0.42698585987091064,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          110.69830322265625,
+          122.2342300415039,
+          383.4043884277344,
+          453.7190246582031
+        ],
+        "detection_probability": 0.9998630285263062
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          110.72218322753906,
+          106.66595458984375,
+          380.0859069824219,
+          448.3708190917969
+        ],
+        "detection_probability": 0.999800980091095
+      }
+    },
+    {
+      "identity": "1027",
+      "case_id": "identity_1027",
+      "scale": "0.0",
+      "strength": "0.99",
+      "compositor": "poisson",
+      "output_sha256": "c8930f914aed8ccf95a1c48a6aac7f4554d691d3e4cd07db75e482487a7e515e",
+      "cosine_similarity": 0.6060453057289124,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          115.34180450439453,
+          120.09455871582031,
+          382.61859130859375,
+          440.2443542480469
+        ],
+        "detection_probability": 0.9999594688415527
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          110.72218322753906,
+          106.66595458984375,
+          380.0859069824219,
+          448.3708190917969
+        ],
+        "detection_probability": 0.999800980091095
+      }
+    },
+    {
+      "identity": "1027",
+      "case_id": "identity_1027",
+      "scale": "0.8",
+      "strength": "1.0",
+      "compositor": "hard",
+      "output_sha256": "77250ec50401cf616f8b0ae57b333a59c26e09cff1022763ced33b9e10a2ebc7",
+      "cosine_similarity": 0.698003351688385,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          111.84156799316406,
+          125.19074249267578,
+          375.38299560546875,
+          442.0302734375
+        ],
+        "detection_probability": 0.9991099238395691
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          110.72218322753906,
+          106.66595458984375,
+          380.0859069824219,
+          448.3708190917969
+        ],
+        "detection_probability": 0.999800980091095
+      }
+    },
+    {
+      "identity": "1027",
+      "case_id": "identity_1027",
+      "scale": "0.8",
+      "strength": "1.0",
+      "compositor": "poisson",
+      "output_sha256": "35213ede073cd341f4b7a1c58337e38212011c78d017bb1633fa685cdf5a01c8",
+      "cosine_similarity": 0.7444741725921631,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          115.40696716308594,
+          112.60321807861328,
+          381.98931884765625,
+          455.23480224609375
+        ],
+        "detection_probability": 0.9993298053741455
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          110.72218322753906,
+          106.66595458984375,
+          380.0859069824219,
+          448.3708190917969
+        ],
+        "detection_probability": 0.999800980091095
+      }
+    },
+    {
+      "identity": "1027",
+      "case_id": "identity_1027",
+      "scale": "0.8",
+      "strength": "0.99",
+      "compositor": "hard",
+      "output_sha256": "566c525c305ee92a7348181891bc5de7e5513ec6216a9cefe5bea6cd7733552e",
+      "cosine_similarity": 0.6918275356292725,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          112.82029724121094,
+          118.28295135498047,
+          374.0693359375,
+          436.79833984375
+        ],
+        "detection_probability": 0.9999569654464722
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          110.72218322753906,
+          106.66595458984375,
+          380.0859069824219,
+          448.3708190917969
+        ],
+        "detection_probability": 0.999800980091095
+      }
+    },
+    {
+      "identity": "1027",
+      "case_id": "identity_1027",
+      "scale": "0.8",
+      "strength": "0.99",
+      "compositor": "poisson",
+      "output_sha256": "ad1bb32dee9190612a45c462bbb7a7a6f734667b417ff476d0870832379100e2",
+      "cosine_similarity": 0.7694334387779236,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          118.89140319824219,
+          119.328369140625,
+          385.5527038574219,
+          445.0806884765625
+        ],
+        "detection_probability": 0.9992870688438416
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          110.72218322753906,
+          106.66595458984375,
+          380.0859069824219,
+          448.3708190917969
+        ],
+        "detection_probability": 0.999800980091095
+      }
+    },
+    {
+      "identity": "3731",
+      "case_id": "identity_3731",
+      "scale": "0.0",
+      "strength": "1.0",
+      "compositor": "hard",
+      "output_sha256": "747f30e4a318783252f99e317310c852cf08bc33dc460ddeeaf768473caa0587",
+      "cosine_similarity": 0.3866764307022095,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          129.43820190429688,
+          115.56413269042969,
+          394.52587890625,
+          460.7501525878906
+        ],
+        "detection_probability": 0.9999582767486572
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          124.77522277832031,
+          106.28211212158203,
+          399.45477294921875,
+          467.5024719238281
+        ],
+        "detection_probability": 0.9980900883674622
+      }
+    },
+    {
+      "identity": "3731",
+      "case_id": "identity_3731",
+      "scale": "0.0",
+      "strength": "1.0",
+      "compositor": "poisson",
+      "output_sha256": "05707fa086faf78dba8b8163cdcbc231f8bdef5abc1b7b7f4dc5fe209ce704c4",
+      "cosine_similarity": 0.42444685101509094,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          119.9955062866211,
+          107.04267120361328,
+          397.0500183105469,
+          460.2335205078125
+        ],
+        "detection_probability": 0.9999247789382935
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          124.77522277832031,
+          106.28211212158203,
+          399.45477294921875,
+          467.5024719238281
+        ],
+        "detection_probability": 0.9980900883674622
+      }
+    },
+    {
+      "identity": "3731",
+      "case_id": "identity_3731",
+      "scale": "0.0",
+      "strength": "0.99",
+      "compositor": "hard",
+      "output_sha256": "7afade4ec1730afc30fc27d26dc0e7559eba7b15819ce542d7ce1b287ebe6dd0",
+      "cosine_similarity": 0.5344264507293701,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          133.66995239257812,
+          118.03404998779297,
+          397.9743347167969,
+          466.00897216796875
+        ],
+        "detection_probability": 0.9997915625572205
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          124.77522277832031,
+          106.28211212158203,
+          399.45477294921875,
+          467.5024719238281
+        ],
+        "detection_probability": 0.9980900883674622
+      }
+    },
+    {
+      "identity": "3731",
+      "case_id": "identity_3731",
+      "scale": "0.0",
+      "strength": "0.99",
+      "compositor": "poisson",
+      "output_sha256": "955b1d93455be0e81f3a8df098961cc519b1ca7a894325d7c0d56d390c41c94b",
+      "cosine_similarity": 0.6760909557342529,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          129.49099731445312,
+          114.99259948730469,
+          390.39276123046875,
+          460.5461730957031
+        ],
+        "detection_probability": 0.9999558925628662
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          124.77522277832031,
+          106.28211212158203,
+          399.45477294921875,
+          467.5024719238281
+        ],
+        "detection_probability": 0.9980900883674622
+      }
+    },
+    {
+      "identity": "3731",
+      "case_id": "identity_3731",
+      "scale": "0.8",
+      "strength": "1.0",
+      "compositor": "hard",
+      "output_sha256": "281cd0b888ffb5cc869c0782d55758e08e2a1303300f1d46f4c159517fc9d76d",
+      "cosine_similarity": 0.5307793617248535,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          131.56399536132812,
+          115.78022766113281,
+          403.439453125,
+          463.6387023925781
+        ],
+        "detection_probability": 0.9999392032623291
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          124.77522277832031,
+          106.28211212158203,
+          399.45477294921875,
+          467.5024719238281
+        ],
+        "detection_probability": 0.9980900883674622
+      }
+    },
+    {
+      "identity": "3731",
+      "case_id": "identity_3731",
+      "scale": "0.8",
+      "strength": "1.0",
+      "compositor": "poisson",
+      "output_sha256": "825c3a3c3ca0ff5d5d69b49a6c095f2377831a84b353cbd9beeb778373afdacd",
+      "cosine_similarity": 0.60672926902771,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          128.7208709716797,
+          117.051025390625,
+          398.05224609375,
+          462.4359130859375
+        ],
+        "detection_probability": 0.9923014640808105
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          124.77522277832031,
+          106.28211212158203,
+          399.45477294921875,
+          467.5024719238281
+        ],
+        "detection_probability": 0.9980900883674622
+      }
+    },
+    {
+      "identity": "3731",
+      "case_id": "identity_3731",
+      "scale": "0.8",
+      "strength": "0.99",
+      "compositor": "hard",
+      "output_sha256": "6bef12df81af71c3773bdef7cb95fc8dc92007472bbdc7406f652c7d1ffd44f2",
+      "cosine_similarity": 0.5423873662948608,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          133.0082550048828,
+          126.79854583740234,
+          390.4687194824219,
+          456.989013671875
+        ],
+        "detection_probability": 0.9999629259109497
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          124.77522277832031,
+          106.28211212158203,
+          399.45477294921875,
+          467.5024719238281
+        ],
+        "detection_probability": 0.9980900883674622
+      }
+    },
+    {
+      "identity": "3731",
+      "case_id": "identity_3731",
+      "scale": "0.8",
+      "strength": "0.99",
+      "compositor": "poisson",
+      "output_sha256": "b9f2218c49064dcdd2a3f01d5e75632744d5b5412517cf5b1fbc08c0d9783132",
+      "cosine_similarity": 0.5979621410369873,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          127.39555358886719,
+          116.13887023925781,
+          393.3977966308594,
+          465.52093505859375
+        ],
+        "detection_probability": 0.9995073080062866
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          124.77522277832031,
+          106.28211212158203,
+          399.45477294921875,
+          467.5024719238281
+        ],
+        "detection_probability": 0.9980900883674622
+      }
+    },
+    {
+      "identity": "56",
+      "case_id": "identity_56",
+      "scale": "0.0",
+      "strength": "1.0",
+      "compositor": "hard",
+      "output_sha256": "2196cb3f960f0d7ffa3b13e8d7a986ad812ae9627fdbf30f06a015226d349917",
+      "cosine_similarity": 0.7431224584579468,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          104.70747375488281,
+          94.25662231445312,
+          400.6255798339844,
+          464.4270935058594
+        ],
+        "detection_probability": 0.9997923970222473
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          103.72450256347656,
+          102.98285675048828,
+          389.6518859863281,
+          466.26336669921875
+        ],
+        "detection_probability": 0.9999675750732422
+      }
+    },
+    {
+      "identity": "56",
+      "case_id": "identity_56",
+      "scale": "0.0",
+      "strength": "1.0",
+      "compositor": "poisson",
+      "output_sha256": "4693c4d5205f1cc51e724e1def56ab4b7237c82ed97014ce014d263f507db97d",
+      "cosine_similarity": 0.5828454494476318,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          104.17189025878906,
+          95.77044677734375,
+          393.2960510253906,
+          461.5464782714844
+        ],
+        "detection_probability": 0.9999282360076904
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          103.72450256347656,
+          102.98285675048828,
+          389.6518859863281,
+          466.26336669921875
+        ],
+        "detection_probability": 0.9999675750732422
+      }
+    },
+    {
+      "identity": "56",
+      "case_id": "identity_56",
+      "scale": "0.0",
+      "strength": "0.99",
+      "compositor": "hard",
+      "output_sha256": "03bdbd0a51a461503a95145097adb057c7016f8a1f57ed83e7bf85ef3784f461",
+      "cosine_similarity": 0.66839998960495,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          113.78375244140625,
+          109.9529800415039,
+          392.04071044921875,
+          459.1270446777344
+        ],
+        "detection_probability": 0.9999406337738037
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          103.72450256347656,
+          102.98285675048828,
+          389.6518859863281,
+          466.26336669921875
+        ],
+        "detection_probability": 0.9999675750732422
+      }
+    },
+    {
+      "identity": "56",
+      "case_id": "identity_56",
+      "scale": "0.0",
+      "strength": "0.99",
+      "compositor": "poisson",
+      "output_sha256": "9506bbc4203965b6f107be542778467ff8fcc9f909501e14234f70b601ddcaa4",
+      "cosine_similarity": 0.7433128356933594,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          107.034912109375,
+          107.26300048828125,
+          389.92449951171875,
+          470.619384765625
+        ],
+        "detection_probability": 0.9999043941497803
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          103.72450256347656,
+          102.98285675048828,
+          389.6518859863281,
+          466.26336669921875
+        ],
+        "detection_probability": 0.9999675750732422
+      }
+    },
+    {
+      "identity": "56",
+      "case_id": "identity_56",
+      "scale": "0.8",
+      "strength": "1.0",
+      "compositor": "hard",
+      "output_sha256": "d1b474c464e0e688e062c1a3d3ac195702a447fa26868bb693f000f78f04e9fd",
+      "cosine_similarity": 0.8495607972145081,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          97.09709930419922,
+          95.85375213623047,
+          400.0745849609375,
+          460.3084411621094
+        ],
+        "detection_probability": 0.9999785423278809
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          103.72450256347656,
+          102.98285675048828,
+          389.6518859863281,
+          466.26336669921875
+        ],
+        "detection_probability": 0.9999675750732422
+      }
+    },
+    {
+      "identity": "56",
+      "case_id": "identity_56",
+      "scale": "0.8",
+      "strength": "1.0",
+      "compositor": "poisson",
+      "output_sha256": "d3681425804a37e70a5163c8e890a9a44c33016b71f6e9babd6f14910bac65cf",
+      "cosine_similarity": 0.8631516098976135,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          95.5963363647461,
+          98.91925048828125,
+          390.35546875,
+          467.74810791015625
+        ],
+        "detection_probability": 0.9999909400939941
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          103.72450256347656,
+          102.98285675048828,
+          389.6518859863281,
+          466.26336669921875
+        ],
+        "detection_probability": 0.9999675750732422
+      }
+    },
+    {
+      "identity": "56",
+      "case_id": "identity_56",
+      "scale": "0.8",
+      "strength": "0.99",
+      "compositor": "hard",
+      "output_sha256": "78f9aaf3f7d60a87010c979a77fa56898cfa463846205eadb9b83afb880646c8",
+      "cosine_similarity": 0.8873491287231445,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          109.52124786376953,
+          97.5938720703125,
+          395.1628112792969,
+          468.9808044433594
+        ],
+        "detection_probability": 0.999998927116394
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          103.72450256347656,
+          102.98285675048828,
+          389.6518859863281,
+          466.26336669921875
+        ],
+        "detection_probability": 0.9999675750732422
+      }
+    },
+    {
+      "identity": "56",
+      "case_id": "identity_56",
+      "scale": "0.8",
+      "strength": "0.99",
+      "compositor": "poisson",
+      "output_sha256": "69058daace346dcaf8e234bf529d0d5645e7ace8ac4959f4c4872b3c5fc68519",
+      "cosine_similarity": 0.9022115468978882,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          103.45718383789062,
+          99.50422668457031,
+          392.4175109863281,
+          465.551025390625
+        ],
+        "detection_probability": 0.9999551773071289
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          103.72450256347656,
+          102.98285675048828,
+          389.6518859863281,
+          466.26336669921875
+        ],
+        "detection_probability": 0.9999675750732422
+      }
+    },
+    {
+      "identity": "4663",
+      "case_id": "identity_4663",
+      "scale": "0.0",
+      "strength": "1.0",
+      "compositor": "hard",
+      "output_sha256": "79f5a99c2c25a4c0eea74bb0fee77e771d7aefff439b1eaa93bcc3d075bbf148",
+      "cosine_similarity": 0.3818581998348236,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          122.62008666992188,
+          121.41044616699219,
+          371.1007995605469,
+          444.456787109375
+        ],
+        "detection_probability": 0.9999982118606567
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          114.10992431640625,
+          100.51707458496094,
+          377.56829833984375,
+          457.7437744140625
+        ],
+        "detection_probability": 0.9998899698257446
+      }
+    },
+    {
+      "identity": "4663",
+      "case_id": "identity_4663",
+      "scale": "0.0",
+      "strength": "1.0",
+      "compositor": "poisson",
+      "output_sha256": "2e02dd3cf64f004f5d6e5e627d9927e8ffeca2a7360c1a32de36fdf7d16f0151",
+      "cosine_similarity": 0.4579041600227356,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          121.7813491821289,
+          125.38648986816406,
+          363.0752868652344,
+          443.8417663574219
+        ],
+        "detection_probability": 0.999919056892395
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          114.10992431640625,
+          100.51707458496094,
+          377.56829833984375,
+          457.7437744140625
+        ],
+        "detection_probability": 0.9998899698257446
+      }
+    },
+    {
+      "identity": "4663",
+      "case_id": "identity_4663",
+      "scale": "0.0",
+      "strength": "0.99",
+      "compositor": "hard",
+      "output_sha256": "1fe490365598811ac7510c991bea7839e7e2eabd434b3babe45ebeacbde55e8b",
+      "cosine_similarity": 0.37732794880867004,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          136.3293914794922,
+          128.9514617919922,
+          374.51654052734375,
+          445.4244384765625
+        ],
+        "detection_probability": 0.9999977350234985
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          114.10992431640625,
+          100.51707458496094,
+          377.56829833984375,
+          457.7437744140625
+        ],
+        "detection_probability": 0.9998899698257446
+      }
+    },
+    {
+      "identity": "4663",
+      "case_id": "identity_4663",
+      "scale": "0.0",
+      "strength": "0.99",
+      "compositor": "poisson",
+      "output_sha256": "9db420fe85ed202202857779bc326d14e764189e85544a0bc95aa1a56dc39edf",
+      "cosine_similarity": 0.4089300036430359,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          116.27261352539062,
+          124.59143829345703,
+          375.4136962890625,
+          458.6986389160156
+        ],
+        "detection_probability": 0.9999039173126221
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          114.10992431640625,
+          100.51707458496094,
+          377.56829833984375,
+          457.7437744140625
+        ],
+        "detection_probability": 0.9998899698257446
+      }
+    },
+    {
+      "identity": "4663",
+      "case_id": "identity_4663",
+      "scale": "0.8",
+      "strength": "1.0",
+      "compositor": "hard",
+      "output_sha256": "0bec7db7687ceca3c51ec0bd3583aa5981ab650e267b35794ad54f190210659f",
+      "cosine_similarity": 0.38908541202545166,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          127.74221801757812,
+          129.7144012451172,
+          367.088623046875,
+          450.8061218261719
+        ],
+        "detection_probability": 0.9999911785125732
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          114.10992431640625,
+          100.51707458496094,
+          377.56829833984375,
+          457.7437744140625
+        ],
+        "detection_probability": 0.9998899698257446
+      }
+    },
+    {
+      "identity": "4663",
+      "case_id": "identity_4663",
+      "scale": "0.8",
+      "strength": "1.0",
+      "compositor": "poisson",
+      "output_sha256": "c11f573311755a6dcadd51a69be03d0aae14eac6a6e70de39a1dd75020b9100d",
+      "cosine_similarity": 0.45650625228881836,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          134.8504638671875,
+          143.61117553710938,
+          361.66552734375,
+          438.9609375
+        ],
+        "detection_probability": 0.9999892711639404
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          114.10992431640625,
+          100.51707458496094,
+          377.56829833984375,
+          457.7437744140625
+        ],
+        "detection_probability": 0.9998899698257446
+      }
+    },
+    {
+      "identity": "4663",
+      "case_id": "identity_4663",
+      "scale": "0.8",
+      "strength": "0.99",
+      "compositor": "hard",
+      "output_sha256": "c2caa2f76593ddfe330f894b17b9e6a207ff8f6f001acfd5b11c3e16b06a1343",
+      "cosine_similarity": 0.34566032886505127,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          144.3450164794922,
+          139.37371826171875,
+          369.4684143066406,
+          447.1653747558594
+        ],
+        "detection_probability": 0.9999970197677612
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          114.10992431640625,
+          100.51707458496094,
+          377.56829833984375,
+          457.7437744140625
+        ],
+        "detection_probability": 0.9998899698257446
+      }
+    },
+    {
+      "identity": "4663",
+      "case_id": "identity_4663",
+      "scale": "0.8",
+      "strength": "0.99",
+      "compositor": "poisson",
+      "output_sha256": "3507eb5208293329bb907f6bf6cd60fd1ba7f5312216e6e34cbaa7233d0d8daa",
+      "cosine_similarity": 0.3947356939315796,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          134.69972229003906,
+          127.94622039794922,
+          372.2442932128906,
+          446.1519775390625
+        ],
+        "detection_probability": 0.9996532201766968
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          114.10992431640625,
+          100.51707458496094,
+          377.56829833984375,
+          457.7437744140625
+        ],
+        "detection_probability": 0.9998899698257446
+      }
+    },
+    {
+      "identity": "2547",
+      "case_id": "identity_2547",
+      "scale": "0.0",
+      "strength": "1.0",
+      "compositor": "hard",
+      "output_sha256": "87e83242be10f13ca1e0cdc02b8c14b9e4c45b8f83059aae23b385708942971e",
+      "cosine_similarity": 0.473422646522522,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          105.96488952636719,
+          128.8668670654297,
+          372.03607177734375,
+          460.738525390625
+        ],
+        "detection_probability": 0.9997730851173401
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          108.7937240600586,
+          102.95088195800781,
+          378.5273742675781,
+          456.1352233886719
+        ],
+        "detection_probability": 0.9999990463256836
+      }
+    },
+    {
+      "identity": "2547",
+      "case_id": "identity_2547",
+      "scale": "0.0",
+      "strength": "1.0",
+      "compositor": "poisson",
+      "output_sha256": "4a2143415338daa75c5d6b729959d2d58635ead0bd96341d0867749d81c23295",
+      "cosine_similarity": 0.7170674204826355,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          109.02798461914062,
+          111.03316497802734,
+          379.24102783203125,
+          460.0372314453125
+        ],
+        "detection_probability": 0.9999815225601196
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          108.7937240600586,
+          102.95088195800781,
+          378.5273742675781,
+          456.1352233886719
+        ],
+        "detection_probability": 0.9999990463256836
+      }
+    },
+    {
+      "identity": "2547",
+      "case_id": "identity_2547",
+      "scale": "0.0",
+      "strength": "0.99",
+      "compositor": "hard",
+      "output_sha256": "a94bdae2623bb72e2ebbf4395676f42708592714ddb9185018ec377578ed965b",
+      "cosine_similarity": 0.27465394139289856,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          113.1242446899414,
+          136.3656768798828,
+          368.6270751953125,
+          466.52716064453125
+        ],
+        "detection_probability": 0.9997861981391907
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          108.7937240600586,
+          102.95088195800781,
+          378.5273742675781,
+          456.1352233886719
+        ],
+        "detection_probability": 0.9999990463256836
+      }
+    },
+    {
+      "identity": "2547",
+      "case_id": "identity_2547",
+      "scale": "0.0",
+      "strength": "0.99",
+      "compositor": "poisson",
+      "output_sha256": "0f6cb0e90d0330fe1ea916220b7f5877c7a3bd713aa2681c109456814cca2f8b",
+      "cosine_similarity": 0.365439772605896,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          112.5374984741211,
+          117.16744995117188,
+          379.6946105957031,
+          472.6904602050781
+        ],
+        "detection_probability": 0.9994397759437561
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          108.7937240600586,
+          102.95088195800781,
+          378.5273742675781,
+          456.1352233886719
+        ],
+        "detection_probability": 0.9999990463256836
+      }
+    },
+    {
+      "identity": "2547",
+      "case_id": "identity_2547",
+      "scale": "0.8",
+      "strength": "1.0",
+      "compositor": "hard",
+      "output_sha256": "87eb1bad3418d9820cb320d5a4ee64ce5a6d1a2063037413979db71de7dadf45",
+      "cosine_similarity": 0.6230323910713196,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          103.48622131347656,
+          114.59776306152344,
+          370.1096496582031,
+          468.3620910644531
+        ],
+        "detection_probability": 0.9999473094940186
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          108.7937240600586,
+          102.95088195800781,
+          378.5273742675781,
+          456.1352233886719
+        ],
+        "detection_probability": 0.9999990463256836
+      }
+    },
+    {
+      "identity": "2547",
+      "case_id": "identity_2547",
+      "scale": "0.8",
+      "strength": "1.0",
+      "compositor": "poisson",
+      "output_sha256": "2f4a041c55bbf26622a03ed9e4be685195305e4de296de56eead654a1532926b",
+      "cosine_similarity": 0.7658919095993042,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          103.97061920166016,
+          104.72283172607422,
+          374.695556640625,
+          468.2216796875
+        ],
+        "detection_probability": 0.99982750415802
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          108.7937240600586,
+          102.95088195800781,
+          378.5273742675781,
+          456.1352233886719
+        ],
+        "detection_probability": 0.9999990463256836
+      }
+    },
+    {
+      "identity": "2547",
+      "case_id": "identity_2547",
+      "scale": "0.8",
+      "strength": "0.99",
+      "compositor": "hard",
+      "output_sha256": "1e1bba61938dbc45d9cd821b754ca89cb232a9ff8bec2c192f165811db197064",
+      "cosine_similarity": 0.6647881269454956,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          113.98021697998047,
+          126.48599243164062,
+          379.1379089355469,
+          461.72283935546875
+        ],
+        "detection_probability": 0.9999997615814209
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          108.7937240600586,
+          102.95088195800781,
+          378.5273742675781,
+          456.1352233886719
+        ],
+        "detection_probability": 0.9999990463256836
+      }
+    },
+    {
+      "identity": "2547",
+      "case_id": "identity_2547",
+      "scale": "0.8",
+      "strength": "0.99",
+      "compositor": "poisson",
+      "output_sha256": "b6a81a1b7f3e93fe8de29e35850568d2923ed309db8daf39fa2dabac02164443",
+      "cosine_similarity": 0.6917061805725098,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          112.686767578125,
+          112.97555541992188,
+          379.2003479003906,
+          456.49993896484375
+        ],
+        "detection_probability": 0.9999996423721313
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          108.7937240600586,
+          102.95088195800781,
+          378.5273742675781,
+          456.1352233886719
+        ],
+        "detection_probability": 0.9999990463256836
+      }
+    },
+    {
+      "identity": "3559",
+      "case_id": "identity_3559",
+      "scale": "0.0",
+      "strength": "1.0",
+      "compositor": "hard",
+      "output_sha256": "5b950e1e7ae1414db02fac3ccd8929001a9f67b65674418406978f9d4d680479",
+      "cosine_similarity": 0.2652278542518616,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          123.98927307128906,
+          127.8336410522461,
+          389.49310302734375,
+          457.20654296875
+        ],
+        "detection_probability": 0.9995042085647583
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          126.06674194335938,
+          99.19096374511719,
+          395.19293212890625,
+          461.4298400878906
+        ],
+        "detection_probability": 0.9999803304672241
+      }
+    },
+    {
+      "identity": "3559",
+      "case_id": "identity_3559",
+      "scale": "0.0",
+      "strength": "1.0",
+      "compositor": "poisson",
+      "output_sha256": "94c2e4b755b102533b386806899201fcc2783697792838d41940a12304f4446e",
+      "cosine_similarity": 0.29812368750572205,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          126.20362091064453,
+          116.16574096679688,
+          388.47430419921875,
+          459.4818115234375
+        ],
+        "detection_probability": 0.9998871088027954
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          126.06674194335938,
+          99.19096374511719,
+          395.19293212890625,
+          461.4298400878906
+        ],
+        "detection_probability": 0.9999803304672241
+      }
+    },
+    {
+      "identity": "3559",
+      "case_id": "identity_3559",
+      "scale": "0.0",
+      "strength": "0.99",
+      "compositor": "hard",
+      "output_sha256": "7fbb2ac14080628ebc50e6a28abf6c4535f3c8e4903b7d17bf86dc6db1223416",
+      "cosine_similarity": 0.08238492906093597,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          129.99591064453125,
+          134.841064453125,
+          392.63348388671875,
+          462.5654602050781
+        ],
+        "detection_probability": 0.9999558925628662
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          126.06674194335938,
+          99.19096374511719,
+          395.19293212890625,
+          461.4298400878906
+        ],
+        "detection_probability": 0.9999803304672241
+      }
+    },
+    {
+      "identity": "3559",
+      "case_id": "identity_3559",
+      "scale": "0.0",
+      "strength": "0.99",
+      "compositor": "poisson",
+      "output_sha256": "2520f66e71217643032afdc779070795183b204a6a59776626baf931283e93ab",
+      "cosine_similarity": 0.10539326071739197,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          128.8673553466797,
+          112.21429443359375,
+          388.9734802246094,
+          464.20257568359375
+        ],
+        "detection_probability": 0.9999680519104004
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          126.06674194335938,
+          99.19096374511719,
+          395.19293212890625,
+          461.4298400878906
+        ],
+        "detection_probability": 0.9999803304672241
+      }
+    },
+    {
+      "identity": "3559",
+      "case_id": "identity_3559",
+      "scale": "0.8",
+      "strength": "1.0",
+      "compositor": "hard",
+      "output_sha256": "107716804c8511a9fcb4fb9a0fccc62235d50a80bec1b142e424d3112135f1d7",
+      "cosine_similarity": 0.31743448972702026,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          117.81407165527344,
+          118.47055053710938,
+          390.5027770996094,
+          460.67669677734375
+        ],
+        "detection_probability": 0.9992031455039978
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          126.06674194335938,
+          99.19096374511719,
+          395.19293212890625,
+          461.4298400878906
+        ],
+        "detection_probability": 0.9999803304672241
+      }
+    },
+    {
+      "identity": "3559",
+      "case_id": "identity_3559",
+      "scale": "0.8",
+      "strength": "1.0",
+      "compositor": "poisson",
+      "output_sha256": "267ac510658b037f24ec09cd14446d07a6329f0127296d1430865a0df423ec34",
+      "cosine_similarity": 0.4267158508300781,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          127.53472900390625,
+          114.2397689819336,
+          388.1009521484375,
+          457.41925048828125
+        ],
+        "detection_probability": 0.9865087866783142
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          126.06674194335938,
+          99.19096374511719,
+          395.19293212890625,
+          461.4298400878906
+        ],
+        "detection_probability": 0.9999803304672241
+      }
+    },
+    {
+      "identity": "3559",
+      "case_id": "identity_3559",
+      "scale": "0.8",
+      "strength": "0.99",
+      "compositor": "hard",
+      "output_sha256": "df0c8002cef4153e3a7e745794eb09a04d08862a930d0033562df09060057441",
+      "cosine_similarity": 0.47941967844963074,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          127.93978881835938,
+          126.2280044555664,
+          398.4031677246094,
+          462.7320556640625
+        ],
+        "detection_probability": 0.9999696016311646
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          126.06674194335938,
+          99.19096374511719,
+          395.19293212890625,
+          461.4298400878906
+        ],
+        "detection_probability": 0.9999803304672241
+      }
+    },
+    {
+      "identity": "3559",
+      "case_id": "identity_3559",
+      "scale": "0.8",
+      "strength": "0.99",
+      "compositor": "poisson",
+      "output_sha256": "1fbe55f2de4b68c616d4ac4e8606bfd4629f3f962b031d5371e671d4e65a3c75",
+      "cosine_similarity": 0.4937112033367157,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          124.7863998413086,
+          108.50555419921875,
+          394.1335754394531,
+          467.36761474609375
+        ],
+        "detection_probability": 0.9998502731323242
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          126.06674194335938,
+          99.19096374511719,
+          395.19293212890625,
+          461.4298400878906
+        ],
+        "detection_probability": 0.9999803304672241
+      }
+    },
+    {
+      "identity": "1519",
+      "case_id": "identity_1519",
+      "scale": "0.0",
+      "strength": "1.0",
+      "compositor": "hard",
+      "output_sha256": "e7e8d37c6ea60a7923dcf8a4ab59929147b84079ca5f3481c9f6828521fca5e4",
+      "cosine_similarity": 0.6921543478965759,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          126.75874328613281,
+          98.38995361328125,
+          398.767578125,
+          448.562744140625
+        ],
+        "detection_probability": 0.9996778964996338
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          147.84762573242188,
+          110.5145263671875,
+          399.3708801269531,
+          454.1796569824219
+        ],
+        "detection_probability": 0.9978139400482178
+      }
+    },
+    {
+      "identity": "1519",
+      "case_id": "identity_1519",
+      "scale": "0.0",
+      "strength": "1.0",
+      "compositor": "poisson",
+      "output_sha256": "a53298f7777eec4aef828a363cb4daee376d48549554aa5d1f4d55002f2aa148",
+      "cosine_similarity": 0.7486960887908936,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          123.50594329833984,
+          79.59329986572266,
+          407.75189208984375,
+          474.24053955078125
+        ],
+        "detection_probability": 0.9991958737373352
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          147.84762573242188,
+          110.5145263671875,
+          399.3708801269531,
+          454.1796569824219
+        ],
+        "detection_probability": 0.9978139400482178
+      }
+    },
+    {
+      "identity": "1519",
+      "case_id": "identity_1519",
+      "scale": "0.0",
+      "strength": "0.99",
+      "compositor": "hard",
+      "output_sha256": "9d46ce031d13daab7fe6fd4b5b801054d245c863df6270a0fbb624e5ae2de185",
+      "cosine_similarity": 0.715659499168396,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          141.38613891601562,
+          112.89433288574219,
+          394.0146789550781,
+          452.7283020019531
+        ],
+        "detection_probability": 0.9998358488082886
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          147.84762573242188,
+          110.5145263671875,
+          399.3708801269531,
+          454.1796569824219
+        ],
+        "detection_probability": 0.9978139400482178
+      }
+    },
+    {
+      "identity": "1519",
+      "case_id": "identity_1519",
+      "scale": "0.0",
+      "strength": "0.99",
+      "compositor": "poisson",
+      "output_sha256": "b98ae06877e829d30a6a7d0c4066c382f7b552f8a2aa768b973cfd5a501abd11",
+      "cosine_similarity": 0.7817080616950989,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          150.67324829101562,
+          81.16310119628906,
+          395.6705627441406,
+          435.1410827636719
+        ],
+        "detection_probability": 0.9999876022338867
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          147.84762573242188,
+          110.5145263671875,
+          399.3708801269531,
+          454.1796569824219
+        ],
+        "detection_probability": 0.9978139400482178
+      }
+    },
+    {
+      "identity": "1519",
+      "case_id": "identity_1519",
+      "scale": "0.8",
+      "strength": "1.0",
+      "compositor": "hard",
+      "output_sha256": "1acb3cce9c431682e63943d4aa1e87a3ccc898500ebb8dd60570449a2a5d8743",
+      "cosine_similarity": 0.7139129638671875,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          136.55824279785156,
+          102.92604064941406,
+          406.0490417480469,
+          460.2300109863281
+        ],
+        "detection_probability": 0.9999204874038696
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          147.84762573242188,
+          110.5145263671875,
+          399.3708801269531,
+          454.1796569824219
+        ],
+        "detection_probability": 0.9978139400482178
+      }
+    },
+    {
+      "identity": "1519",
+      "case_id": "identity_1519",
+      "scale": "0.8",
+      "strength": "1.0",
+      "compositor": "poisson",
+      "output_sha256": "a55b2bcb70024ee285831564fcdc3592bc6817e13eca50cc5d46436216bfa389",
+      "cosine_similarity": 0.7971538305282593,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          145.68966674804688,
+          99.28106689453125,
+          402.683349609375,
+          455.09503173828125
+        ],
+        "detection_probability": 0.9975321292877197
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          147.84762573242188,
+          110.5145263671875,
+          399.3708801269531,
+          454.1796569824219
+        ],
+        "detection_probability": 0.9978139400482178
+      }
+    },
+    {
+      "identity": "1519",
+      "case_id": "identity_1519",
+      "scale": "0.8",
+      "strength": "0.99",
+      "compositor": "hard",
+      "output_sha256": "6a6ff810b9ffc3b108469c4b7bb4dd0fcd602809f06d976fc0ab75b8254b82e9",
+      "cosine_similarity": 0.629423975944519,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          151.47715759277344,
+          100.66863250732422,
+          397.7348327636719,
+          456.9452819824219
+        ],
+        "detection_probability": 0.993623673915863
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          147.84762573242188,
+          110.5145263671875,
+          399.3708801269531,
+          454.1796569824219
+        ],
+        "detection_probability": 0.9978139400482178
+      }
+    },
+    {
+      "identity": "1519",
+      "case_id": "identity_1519",
+      "scale": "0.8",
+      "strength": "0.99",
+      "compositor": "poisson",
+      "output_sha256": "c33188fafd74b236a498a843540c141d46fc0f12e23b5905c5a36f2298f347b3",
+      "cosine_similarity": 0.6964761018753052,
+      "output_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          145.24911499023438,
+          120.65202331542969,
+          392.55731201171875,
+          451.609130859375
+        ],
+        "detection_probability": 0.9992382526397705
+      },
+      "target_detection": {
+        "face_count": 1,
+        "status": "ok",
+        "box": [
+          147.84762573242188,
+          110.5145263671875,
+          399.3708801269531,
+          454.1796569824219
+        ],
+        "detection_probability": 0.9978139400482178
+      }
+    }
+  ]
+}

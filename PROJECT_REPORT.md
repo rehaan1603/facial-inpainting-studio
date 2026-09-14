@@ -85,7 +85,7 @@ Temporary public sharing was implemented and an HTTPS GPU test completed. The in
 
 **Reference guidance has not shown a consistent benefit in the completed diagnostic.** At strength 0.99 with Poisson composition, mean LPIPS was 0.032674 with references and 0.032460 with reference conditioning disabled. The paired difference was +0.000214, with an exploratory 95% interval spanning zero. Hole MAE was also worse with references in this setting. Other settings differ; the complete table must be retained rather than selecting the most favorable contrast.
 
-**Identity fidelity is still unmeasured independently.** Realistic output, exact preservation outside the mask and a successful download do not establish correct identity, gaze, expression or missing facial details.
+**Independent identity diagnostic completed on 14 September:** FaceNet scored the frozen reference outputs, with 88/96 valid scores across 11/12 identities. At strength 0.99 with Poisson composition, reference conditioning increased mean cosine similarity from 0.4942 to 0.6588 (paired difference +0.1646, descriptive bootstrap 95% interval [0.0492, 0.2903]). One identity returned multiple detections in its target and all outputs and remains unscorable under the frozen protocol. This small development result does not establish final generalization, correct gaze/expression or a novel contribution. See `research/IDENTITY_DIAGNOSTIC_RESULTS_V1.md`.
 
 The research is therefore not yet ready to claim the proposed method improves identity preservation or is publication-ready.
 
@@ -93,7 +93,7 @@ The research is therefore not yet ready to claim the proposed method improves id
 
 | Area | Missing work | Priority |
 |---|---|---|
-| Identity evaluation | Independent output embeddings, preprocessing, detection failures, paired identity-level analysis | Immediate |
+| Identity evaluation | FaceNet development diagnostic completed; fresh final evaluation and independent gallery still required | Partly complete |
 | Quality evaluation | NIQE/BRISQUE as secondary measures; structural/landmark error; retain LPIPS and masked/visible errors | Immediate |
 | Reference protocol | Disjoint conditioning and evaluation photos; stronger transformed-copy checks; adequate identity groups | Immediate |
 | Severe damage | Defined face-region/image-area severity, locations, reference variation and failure cases | Before final testing |
@@ -108,7 +108,7 @@ The research is therefore not yet ready to claim the proposed method improves id
 | Final paper | Specific venue, corrected literature/architecture claims, figures, limitations, reproducibility and author review | After final evidence |
 | Public hosting | Browser-compatible access and a suitable long-term deployment | Paused |
 
-NIQE, BRISQUE, FID, SSIM, independent identity similarity, ROC/TAR and reconstructed-landmark error are not part of the completed reference metric set. Earlier pilot code does include hole PSNR. Dataset annotation syntax checks are not reconstructed-landmark accuracy measurements.
+Independent FaceNet similarity is now part of the completed development metric set. NIQE, BRISQUE, FID, SSIM, ROC/TAR and reconstructed-landmark error remain incomplete. Earlier pilot code does include hole PSNR. Dataset annotation syntax checks are not reconstructed-landmark accuracy measurements.
 
 ## 5. Planned execution and acceptance criteria
 
