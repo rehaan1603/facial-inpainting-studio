@@ -1,5 +1,7 @@
 # Private online research demo
 
+**Paused on 14 September 2026 at the owner's request.** The tunnel and sharing gateway are stopped. Use Start Studio.cmd and http://127.0.0.1:8765/ on the laptop without sign-in. The remaining opaque-origin browser sign-in investigation is deferred; do not treat the historical deployment checks as proof that every browser can sign in. The temporary internet link has been removed from the repository homepage.
+
 This deployment shares the running Windows GPU app through an HTTPS Cloudflare Quick Tunnel. Inference still runs on the host RTX 5070 Laptop GPU. It is a temporary private demo, not an independently hosted or always-on GPU service.
 
 ## Start and open

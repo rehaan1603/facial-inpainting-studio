@@ -1,6 +1,6 @@
 # Facial inpainting under inaccurate masks
 
-**Online private demo:** [Open Inpainting Studio](https://formula-silk-herein-tape.trycloudflare.com). This temporary link uses the owner's laptop GPU and works while the laptop is awake and connected. Login credentials are stored locally in `.local-share/LOGIN.txt` and are not published. See [deployment and restart instructions](DEPLOYMENT.md).
+**Hosting status (14 September 2026):** Public sharing is paused. Run **Start Studio.cmd** and open [the local studio](http://127.0.0.1:8765/) on the host laptop. No sign-in is required locally. Deployment work is retained for later; the old temporary internet link is inactive.
 
 For official dataset downloads and exact local restoration of the website/reference samples, see [Dataset downloads and samples](research/DATASET_DOWNLOADS_AND_SAMPLES.md). The photos remain local; the repository records their selections, roles and hashes.
 

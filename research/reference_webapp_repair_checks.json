@@ -52,6 +52,30 @@
       "browser_result_visible": true,
       "browser_result_download": true,
       "browser_mask_download": true
+    },
+    {
+      "job_id": "6a46bdd76cd54909b630a105bda472d8",
+      "detail": "standard",
+      "references": 4,
+      "changed_pixels": 19238,
+      "outside_mask_exact": true,
+      "wall_seconds": 45.29700000002049,
+      "inference_seconds": 16.5,
+      "model_resolution": [
+        512,
+        512
+      ],
+      "result_sha256": "9b73ebba77628c7faea663ce012cc3eb891e079ad1e59e357d9c68d60e602114",
+      "environment": {
+        "torch": "2.11.0+cu128",
+        "diffusers": "0.40.0",
+        "transformers": "5.17.0",
+        "tokenizers": "0.23.2",
+        "regex": "2025.11.3",
+        "onnx": "1.20.1",
+        "ml_dtypes": "0.5.4",
+        "insightface": "2.0"
+      }
     }
   ],
   "new_input_reference_reset": {

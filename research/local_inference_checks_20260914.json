@@ -1,0 +1,45 @@
+{
+  "scope": "Five real local HTTP/GPU checks; functional evidence, not a quality benchmark. Sample images excluded from release archive.",
+  "results": [
+    {
+      "backbone": "lama",
+      "mode": "painted",
+      "job_id": "653dc0f6029c410ea3553689529772b4",
+      "changed_pixels": 11494,
+      "outside_effective_mask_exact": true,
+      "inference_seconds": 1.07
+    },
+    {
+      "backbone": "lama",
+      "mode": "expand",
+      "job_id": "7ce9a0660b54400096c3c2afce224b91",
+      "changed_pixels": 17450,
+      "outside_effective_mask_exact": true,
+      "inference_seconds": 0.71
+    },
+    {
+      "backbone": "lama",
+      "mode": "learned",
+      "job_id": "c9d92a87e9a841c3bda77920577eae58",
+      "changed_pixels": 11705,
+      "outside_effective_mask_exact": true,
+      "inference_seconds": 0.72
+    },
+    {
+      "backbone": "resshift",
+      "mode": "painted",
+      "job_id": "b9d0b343cb3c48dd83aa4e883cfb3c24",
+      "changed_pixels": 11494,
+      "outside_effective_mask_exact": true,
+      "inference_seconds": 1.37
+    },
+    {
+      "backbone": "resshift",
+      "mode": "expand",
+      "job_id": "b59e1d3d9caa4d6f961706fbd748a618",
+      "changed_pixels": 17452,
+      "outside_effective_mask_exact": true,
+      "inference_seconds": 0.5
+    }
+  ]
+}
