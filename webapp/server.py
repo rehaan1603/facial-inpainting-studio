@@ -59,7 +59,8 @@ def run_job(job_id,source,mask,backbone,mode,references=None,blend='poisson',det
         from inpaint import Inpainter,RefinerPredictor
         from pilot import morph
         torch.set_num_threads(4);job.update(status='running',message=f'Loading {"LaMa" if backbone=="lama" else "ResShift"}…')
-        folder.mkdir(parents=True,exist_ok=False);source=source.resize((256,256),Image.Resampling.LANCZOS);mask=mask.resize((256,256),Image.Resampling.NEAREST)
+        resolution=512 if backbone=='lama' else 256
+        folder.mkdir(parents=True,exist_ok=False);source=source.resize((resolution,resolution),Image.Resampling.LANCZOS);mask=mask.resize((resolution,resolution),Image.Resampling.NEAREST)
         observed=np.asarray(source).astype('float32')/255;supplied=np.asarray(mask)>=128
         if not supplied.any():raise ValueError('Paint or upload a mask before running inpainting.')
         effective=morph(supplied,8) if mode=='expand' else supplied
@@ -71,9 +72,9 @@ def run_job(job_id,source,mask,backbone,mode,references=None,blend='poisson',det
         model=Inpainter(backbone);job['message']='Reconstructing the masked area…';start=time.perf_counter();pred=model(observed,effective,17);torch.cuda.synchronize();elapsed=time.perf_counter()-start
         if not np.isfinite(pred).all():raise RuntimeError('The model returned invalid pixels. Please try another image or model.')
         Image.fromarray((pred.clip(0,1)*255).round().astype('uint8')).save(folder/'result.png')
-        metadata={'backbone':backbone,'mask_mode':mode,'resolution':[256,256],'seed':17,'inference_seconds':elapsed,'input_sha256':hashlib.sha256((folder/'input.png').read_bytes()).hexdigest(),'refiner_sha256':hashlib.sha256(refiner_path.read_bytes()).hexdigest() if refiner_path else None,'scope':'Local research inference. Generated hidden facial content is a prediction, not verified recovery.'}
+        metadata={'backbone':backbone,'mask_mode':mode,'resolution':[resolution,resolution],'seed':17,'inference_seconds':elapsed,'input_sha256':hashlib.sha256((folder/'input.png').read_bytes()).hexdigest(),'refiner_sha256':hashlib.sha256(refiner_path.read_bytes()).hexdigest() if refiner_path else None,'scope':'Local research inference. Generated hidden facial content is a prediction, not verified recovery.'}
         (folder/'metadata.json').write_text(json.dumps(metadata,indent=2));del model;torch.cuda.empty_cache()
-        job.update(status='complete',message='Restoration ready',result=f'/runs/{job_id}/result.png',input=f'/runs/{job_id}/input.png',mask=f'/runs/{job_id}/effective_mask.png',metadata=f'/runs/{job_id}/metadata.json',seconds=round(elapsed,2),resolution=256)
+        job.update(status='complete',message='Restoration ready',result=f'/runs/{job_id}/result.png',input=f'/runs/{job_id}/input.png',mask=f'/runs/{job_id}/effective_mask.png',metadata=f'/runs/{job_id}/metadata.json',seconds=round(elapsed,2),resolution=resolution)
     except Exception as exc:
         traceback.print_exc();message=str(exc) if isinstance(exc,ValueError) else 'Inpainting could not finish. The local server log has details; try again with LaMa.'
         job.update(status='error',message=message)
@@ -109,7 +110,7 @@ class Handler(BaseHTTPRequestHandler):
             if not file.is_file():return self.send(404,{'error':'Result not available.'})
         else:
             name='index.html' if path=='/' else path.removeprefix('/')
-            if name not in ['index.html','app.js','style.css','favicon.svg']:return self.send(404,{'error':'Not found.'})
+            if name not in ['index.html','app.js','framing.js','style.css','favicon.svg']:return self.send(404,{'error':'Not found.'})
             file=STATIC/name
         if not file.is_file():return self.send(404,{'error':'Not found.'})
         return self.send(200,file.read_bytes(),mimetypes.guess_type(file.name)[0] or 'application/octet-stream')

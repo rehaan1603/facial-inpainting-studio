@@ -62,7 +62,7 @@ Rows are correlated experimental measurements, not independent images or indepen
 
 The site supports image upload, crop/fit, mask painting/erasing/undo, mask upload, model selection, three/four-reference upload, standard or detailed reference processing, output comparison and result/mask downloads. A new input clears the previous person's reference photographs.
 
-Local output sizes are 256 × 256 for LaMa/ResShift and 512 × 512 for reference mode. Detailed reference mode processes at 1024 and exports 512; it is not an established quality improvement. Images are saved locally with run metadata.
+Website output sizes are now 512 × 512 for LaMa/reference mode and 256 × 256 for ResShift. LaMa's unnecessary downsampling and nonsquare uploaded-mask alignment were repaired on 14 September. Its missing-eye/large-feature reconstruction remains unreliable; retaining resolution is not a semantic-quality fix. Historical command-line/research settings remain unchanged. Detailed reference mode processes at 1024 and exports 512; it is not an established quality improvement. Images are saved locally with run metadata.
 
 The reference runtime was repaired in a separate environment after Windows blocked native dependencies. Package pins and installation records were retained. No Windows protection was disabled. Progress-file retries prevent transient OneDrive locks from needlessly aborting reference inference.
 
@@ -186,6 +186,7 @@ Open http://127.0.0.1:8765/. Use matching references for the selected person, ma
 ## 8. Evidence index
 
 - [Current local verification](research/LOCAL_WORK_STATUS_20260914.md)
+- [LaMa quality findings and repairs](research/LAMA_QUALITY_CHECK_20260914.md)
 - [Expanded metrics and ablations](research/EXTENDED_ABLATION_RESULTS_V1.md)
 - [Expanded evaluation protocol](research/EXTENDED_EVALUATION_PROTOCOL_V1.md)
 - [Integrity and numerical verification](research/extended_evaluation_verification_v1.json)

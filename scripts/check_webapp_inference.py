@@ -20,10 +20,11 @@ def main():
             time.sleep(.5)
         read=lambda url:np.array(Image.open(io.BytesIO(fetch(url))))
         source=read(status['input']);result=read(status['result']);mask=read(status['mask'])>=128
-        assert result.shape==(256,256,3) and mask.any()
+        size=512 if backbone=='lama' else 256
+        assert result.shape==(size,size,3) and mask.any()
         assert np.array_equal(result[~mask],source[~mask]),'Visible pixels changed outside effective mask'
         assert np.any(result[mask]!=source[mask]),'Masked pixels were not reconstructed'
-        record={'backbone':backbone,'mode':mode,'job_id':job['id'],'changed_pixels':int((result!=source).any(2).sum()),'outside_effective_mask_exact':True,'inference_seconds':status['seconds']}
+        record={'backbone':backbone,'mode':mode,'job_id':job['id'],'resolution':size,'changed_pixels':int((result!=source).any(2).sum()),'outside_effective_mask_exact':True,'inference_seconds':status['seconds']}
         results.append(record);print(record,flush=True)
     args.report.write_text(json.dumps({'scope':'Five real local HTTP/GPU checks; functional evidence, not a quality benchmark. Sample images excluded from release archive.','results':results},indent=2),encoding='utf-8')
 if __name__=='__main__':main()
