@@ -1,0 +1,23 @@
+{
+  "date": "2026-09-20",
+  "web_job_id": "84f1bcb8ab4544eaaf2fc8f6d0834e68",
+  "web_mode": "reference_select",
+  "status": "complete",
+  "reference_count": 1,
+  "mask_mode": "expand",
+  "output_sha256": "7512378f0d4e3d1aeb6693e7641d5413720cba0e1e41fea726e811982d153950",
+  "metadata_sha256": "381f2b529639dd04024b4569b0f3462db48629d0ad9080d1cffcad37051132a1",
+  "diagnostics_http_status": 200,
+  "outside_mask_identical": true,
+  "cli_no_valid_reference_explicit_lama_fallback": "passed; outside-mask pixels identical",
+  "fallback_output_sha256": "8b6945f16d1dd48d1f21d0846fb52df27963fad7351a74ae8b81e9225a1ffff1",
+  "python_tests": {
+    "script_suite": 46,
+    "script_suite_skipped": 3,
+    "tests_suite": 13,
+    "failures": 0
+  },
+  "javascript_checks": "syntax and framing passed",
+  "browser_evidence": "Result displayed at 512x512 with result/mask/diagnostics links and Selected 1 reference message",
+  "server_recovery": "Server was stopped at resume; launcher restarted it successfully"
+}

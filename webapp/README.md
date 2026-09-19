@@ -19,3 +19,8 @@ Validation: eleven HTTP boundary tests in `scripts/test_webapp.py`; five real HT
 Reference validation: `research/reference_webapp_check.json` records a four-photo upload, GPU reconstruction, both download events and exact outside-mask pixel preservation. Nine boundary-blending tests pass in the separate reference environment. WebMCP reconstruction acknowledges immediately; read its state tool for progress and completion. The twelve-identity development diagnostic is complete; it does not establish consistent reference benefit or correct identity recovery. See `research/REFERENCE_DIAGNOSTIC_RESULTS.md`.
 
 Runtime repair: use the parent project Python to run `scripts/prepare_reference_runtime_v2.py`. The app explicitly uses `reference_env_v2`; it does not fall back to the legacy blocked environment. The repaired package pins, installation receipt and lock are tracked. See `research/QUALITY_FIX_STATUS.md` for measured repair outcomes.
+# Experimental selection mode
+
+**Choose from 1–4 photos · experimental** accepts one through four runtime reference images and selects one with an untrained mask-aware heuristic. It uses the painted/expanded mask; learned mask refinement is unavailable in reference modes. Original **Use 3–4 reference photos** retains its existing behavior.
+
+After a successful run, **Run diagnostics** downloads JSON containing reference validity, selection scores, warnings, source hashes and generator settings. No usable reference causes an explicit error; the website does not silently fall back to a different model. A damaged region must be marked by the user. This mode does not establish better resemblance or perform learned regional fusion.

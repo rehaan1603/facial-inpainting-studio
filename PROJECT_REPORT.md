@@ -1,6 +1,6 @@
 # Facial Inpainting Project — Progress and Completion Report
 
-**Report date:** 14 September 2026  
+**Report date:** 20 September 2026
 **Current platform:** Windows laptop, NVIDIA RTX 5070 Laptop GPU with 8 GB VRAM  
 **Current application:** http://127.0.0.1:8765/  
 **Repository:** https://github.com/rehaan1603/facial-inpainting-studio  
@@ -8,19 +8,31 @@
 
 ## Latest status update
 
+### 19 September: first generalization implementation cycle
+
+- **Implemented:** identity-disjoint local validation/final reservation; deterministic synthetic removal/blur/noise/JPEG/resolution/mixed/illumination damage; mask-aware reference diagnostics and top-one selection; first/random/identity-only/quality-only/all-reference controls; a new 1–4-reference experimental website mode with downloadable diagnostics.
+- **Protocol:** four fresh local validation identities, three conditions and two seeds, with eight separate identities reserved for final evaluation. All reviewed training identities and previously inspected experiment groups are excluded. Pretraining overlap remains unknown.
+- **Experiment completed:** 168 comparison rows from 110 distinct GPU generations, with all requested metrics evaluated. All output pixels outside the effective mask were preserved. No generation/evaluation or identity-detection failures occurred in this selected sample. See `research/GENERALIZATION_RESULTS.md` and the numerical evidence ledger.
+- **Result is mixed:** mean target FaceNet cosine was 0.8113 for mask-aware selection, 0.7959 random, 0.7896 identity-only, 0.7938 quality-only and 0.8180 all-reference conditioning. All four primary Holm-adjusted p-values were at least 0.50. Gallery FaceNet also favored all references (0.5304 versus 0.5015). Four identities are insufficient to establish a general quality advantage; visible facial distortions remain. Regional fusion remains unimplemented.
+- **Dataset folders corrected:** `Downloads/Celeb TEST data` contains 18 same-person folders and 116 images: 13 earlier prepared sets plus five additional training/practice sets. These are convenience samples, not evidence of training the generator or a fresh final test. Dataset photos remain local.
+- **Preservation:** historical generators, metrics, protocols and checkpoints remain unchanged. The baseline audit is `research/upgrade_baseline_audit_v1.json`. The original local website modes remain available; public hosting remains paused.
+- **Final verification:** 59 Python tests ran with no failures and three environment-dependent skips; JavaScript checks passed. A real one-reference browser reconstruction and the explicit CLI LaMa fallback passed. The local server was restarted successfully on 20 September. Detailed completion status and blockers are in `research/GENERALIZATION_CYCLE_STATUS.md`.
+
+The completed baseline and remaining research work are summarized below.
+
 - **Completed:** local website, reference-guided baseline, six locally trained mask-refinement controls, expanded 144-output evaluation, ArcFace/FaceNet/NIQE/BRISQUE/SSIM/PSNR/LPIPS measurements, and initial reference-count and configuration ablations.
 - **Quality remains unresolved:** the user still finds LaMa facial completion unsatisfactory. The 512-pixel website processing and mask-framing fixes address preprocessing, not its tendency to blur or invent missing facial features. A successful run is not evidence of a correct face.
 - **Current priority:** improve facial fidelity and test the proposed reference-selection/fusion mechanisms. Adding more metric names alone will not complete the research contribution.
-- **Dataset usability request:** organize distinct photographs of each same person from the local dataset into convenient person-specific folders. The previously created Downloads test folder contains only the existing identity_620 development example, separated by input/mask/reference role; it does not fulfill the broader requested dataset grouping. That broader grouping remains pending.
+- **Dataset usability request completed:** 18 same-person sets containing 116 images are available in `Downloads/Celeb TEST data`, with source/split records. These local convenience photos must not be confused with the newly reserved final-test identities.
 - **Training clarification:** “local dataset” does not mean all supplied images trained the current generator. Actual local training covered the compact mask refiners. LaMa, ResShift, SDXL, FaceID and recognition encoders use pretrained weights; no new regional identity-fusion module has been trained.
 - **Release status:** the LaMa repair checkpoint was pushed as `8303b97`. This report update follows that checkpoint. Dataset photographs and downloaded pretrained weights remain local.
 
 ### Next work in order
 
-1. Build same-person photo folders using the existing dataset identity annotations and preserve source/split records. Keep target/comparison photos separate from conditioning references when assembling an experiment; training/development examples must not be presented as fresh tests.
-2. Implement and compare reference selection and mask-aware fusion against the working pretrained baseline, using only damaged input, mask and permitted references at inference.
-3. Expand mask locations/severity and generation seeds, prepare disjoint evaluation galleries and identities, and run fair external-method comparisons.
-4. Freeze the final method, evaluate reserved data, document failures, and prepare the manuscript and corrected presentation for a specific venue.
+1. Use the completed selection comparison and its visible failures to plan a larger, versioned development experiment. Its four validation identities cannot become a fresh final test later.
+2. Use that evidence to decide whether to develop regional feature fusion. The implemented selector chooses one global FaceID reference; no regional adapter exists yet.
+3. Expand development identities, mask shapes and severity; run fair external-method comparisons and human assessment. Three conditions and two seeds are an initial diagnostic, not exhaustive robustness evidence.
+4. Freeze a defensible method, evaluate the reserved identities once, and prepare the manuscript and corrected presentation for a specific venue. Unknown pretrained overlap must remain explicit.
 
 Publication readiness remains incomplete. No acceptance, novel-method superiority or reliable recovery of hidden facial features is claimed.
 

@@ -17,7 +17,7 @@ def decode_image(value,mask=False):
         im.load();im=ImageOps.exif_transpose(im)
         return im.convert('L' if mask else 'RGB').copy()
 
-def run_reference_job(job_id,source,mask,mode,references,blend,detail='standard'):
+def run_reference_job(job_id,source,mask,mode,references,blend,detail='standard',selection=False):
     job=JOBS[job_id];folder=RUNS/job_id;folder.mkdir(parents=True,exist_ok=False)
     import numpy as np
     from pilot import morph
@@ -31,6 +31,7 @@ def run_reference_job(job_id,source,mask,mode,references,blend,detail='standard'
     cache=Path(json.loads((ROOT/'configs/local.json').read_text())['cache']);python=cache/'reference_env_v2/Scripts/python.exe';progress=folder/'progress.json'
     if not python.is_file():raise ValueError('The reference environment is not installed. Run scripts/prepare_reference_runtime_v2.py with the project Python, then restart the studio.')
     command=[str(python),str(ROOT/'scripts/reference_inpaint.py'),'--image',str(folder/'input.png'),'--mask',str(folder/'effective_mask.png'),'--references',*[str(p) for p in paths],'--output',str(folder/'result.png'),'--progress',str(progress),'--blend',blend,'--strength','0.99','--model-resolution','1024' if detail=='detailed' else '512']
+    if selection:command[1]=str(ROOT/'scripts/mask_aware_inpaint.py')
     job.update(status='running',message='Preparing the reference photos…');start=time.monotonic()
     with (folder/'inference.log').open('w',encoding='utf-8') as log:
         process=subprocess.Popen(command,cwd=ROOT,stdout=log,stderr=log,creationflags=subprocess.CREATE_NO_WINDOW)
@@ -47,13 +48,16 @@ def run_reference_job(job_id,source,mask,mode,references,blend,detail='standard'
         detail=json.loads(progress.read_text()).get('error') if progress.exists() else None
         raise ValueError(detail or 'Reference reconstruction failed. The saved inference log has details.')
     metadata=json.loads((folder/'result.json').read_text());metadata['mask_mode']=mode;(folder/'metadata.json').write_text(json.dumps(metadata,indent=2))
+    if selection:
+        diagnostics=metadata.get('reference_selection',{})
+        job.update(warnings=diagnostics.get('warnings',[]),selected_reference_count=len(diagnostics.get('selected_paths',[])))
     job.update(status='complete',message='Reference-guided reconstruction ready',result=f'/runs/{job_id}/result.png',input=f'/runs/{job_id}/input.png',mask=f'/runs/{job_id}/effective_mask.png',metadata=f'/runs/{job_id}/metadata.json',seconds=round(metadata['inference_seconds_including_offload'],2),resolution=512)
 
 def run_job(job_id,source,mask,backbone,mode,references=None,blend='poisson',detail='standard'):
     global ACTIVE
     job=JOBS[job_id];folder=RUNS/job_id
     try:
-        if backbone=='reference':return run_reference_job(job_id,source,mask,mode,references,blend,detail)
+        if backbone in ['reference','reference_select']:return run_reference_job(job_id,source,mask,mode,references,blend,detail,selection=backbone=='reference_select')
         import numpy as np
         import torch
         from inpaint import Inpainter,RefinerPredictor
@@ -128,16 +132,17 @@ class Handler(BaseHTTPRequestHandler):
             data=json.loads(self.rfile.read(length))
             if not isinstance(data,dict):raise ValueError('Expected a JSON object.')
             backbone=data.get('backbone');mode=data.get('mode')
-            if backbone not in ['lama','resshift','reference'] or mode not in ['painted','expand','learned']:raise ValueError('Choose a supported model and mask mode.')
+            if backbone not in ['lama','resshift','reference','reference_select'] or mode not in ['painted','expand','learned']:raise ValueError('Choose a supported model and mask mode.')
             source=decode_image(data.get('image'));mask=decode_image(data.get('mask'),True)
             if source.size!=mask.size:raise ValueError('Image and mask dimensions must match.')
             if mask.getextrema()[1]<128:raise ValueError('Paint or upload a mask first.')
             references=[];blend=data.get('blend','poisson');detail=data.get('detail','standard')
             if blend not in ['poisson','hard']:raise ValueError('Choose supported edge blending.')
             if detail not in ['standard','detailed']:raise ValueError('Choose standard or detailed processing.')
-            if backbone=='reference':
+            if backbone in ['reference','reference_select']:
                 values=data.get('references')
-                if not isinstance(values,list) or not 3<=len(values)<=4:raise ValueError('Upload three or four reference photos of the same person.')
+                minimum=1 if backbone=='reference_select' else 3
+                if not isinstance(values,list) or not minimum<=len(values)<=4:raise ValueError(f'Upload {minimum} to 4 reference photos of the same person.')
                 if mode=='learned':raise ValueError('Use the painted or expanded mask with reference photos.')
                 references=[decode_image(value) for value in values]
         except (ValueError,TypeError,UnidentifiedImageError,Image.DecompressionBombError,binascii.Error,OSError) as exc:return self.send(400,{'error':str(exc)})

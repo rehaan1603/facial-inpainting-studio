@@ -89,3 +89,8 @@ Neither the full generative backbones nor an identity-recognition model was trai
 ## GitHub checkpoint
 
 This repository contains code, reports, detailed experiment tables and settings, data-integrity manifests, and the project-trained mask-refiner checkpoints (including training-resume states). `research/REPOSITORY_ARTIFACT_INVENTORY.json` records the earlier artifact snapshot; subsequent evaluation records carry their own source/model/output hashes. Photographs, downloaded model weights, environments and `configs/local.json` remain local. See `REPOSITORY_SCOPE.md` for restoration requirements and current limits.
+# Experimental mask-aware reference selection (19 September 2026)
+
+The local studio now also offers **Choose from 1–4 photos · experimental**. Upload the damaged face, mark its damaged region and add matching reference photographs. The selector chooses one usable reference before the existing pretrained generator runs. **Run diagnostics** downloads the selection scores, warnings and provenance. The original LaMa, ResShift and 3–4-reference modes remain available.
+
+This is a research experiment, not a proven improvement or trained regional-fusion model. Read [the implementation plan](research/GENERALIZATION_AND_RESTORATION_UPGRADE_PLAN.md), [selection definition](research/MASK_AWARE_REFERENCE_SELECTION.md), [identity protocol](research/UNSEEN_IDENTITY_EVALUATION.md), [completed 168-row comparison](research/GENERALIZATION_RESULTS.md) and [project report](PROJECT_REPORT.md). The selector did not outperform all-reference conditioning on mean target identity similarity, and no primary comparison was statistically significant. Dataset photos and model weights remain local.

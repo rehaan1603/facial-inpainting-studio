@@ -42,6 +42,16 @@ class WebBoundaryTests(unittest.TestCase):
             self.assertEqual(self.request(payload=data)[0],202)
         studio.ACTIVE=False
     def test_non_object_json_is_client_error(self):self.assertEqual(self.request(payload=[])[0],400)
+    def test_experimental_selection_accepts_one_to_four(self):
+        data=self.valid();data.update(backbone='reference_select',references=[])
+        self.assertEqual(self.request(payload=data)[0],400)
+        for count in [1,2,3,4]:
+            data['references']=[png()]*count
+            with patch.object(studio,'run_job'):
+                self.assertEqual(self.request(payload=data)[0],202)
+            studio.ACTIVE=False
+        data['references']=[png()]*5
+        self.assertEqual(self.request(payload=data)[0],400)
     def test_invalid_blending_rejected(self):
         data=self.valid();data['blend']='unknown';self.assertEqual(self.request(payload=data)[0],400)
     def test_reference_detail_validation_and_dispatch(self):

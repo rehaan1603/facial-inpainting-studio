@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "weights": {"regional_quality": 0.45, "regional_visibility_proxy": 0.2, "global_quality": 0.1, "pose_similarity": 0.1, "identity_compatibility": 0.1, "regional_exposure": 0.05},
+  "target_identity_min_visible_fraction": 0.6,
+  "disagreement_cosine_threshold": 0.2,
+  "policy": "select_one_reference",
+  "confidence": "uncalibrated heuristic, not a probability",
+  "limitations": "Sharpness can reward noise; five landmarks cannot establish true regional visibility. FaceID conditioning remains global."
+}
