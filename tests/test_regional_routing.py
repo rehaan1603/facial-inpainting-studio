@@ -38,6 +38,7 @@ class RoutingTests(unittest.TestCase):
             from diffusers.models.attention_processor import Attention,IPAdapterAttnProcessor2_0
         except ImportError:self.skipTest('Run this test in reference_env_v2 for stock attention verification')
         torch.manual_seed(17)
+        torch.set_num_threads(4)
         attn=Attention(query_dim=8,cross_attention_dim=8,heads=2,dim_head=4)
         processor=IPAdapterAttnProcessor2_0(hidden_size=8,cross_attention_dim=8,num_tokens=[3],scale=.8)
         hidden=torch.randn(1,16,8);text=torch.randn(1,5,8);ip=torch.randn(1,2,3,8)
@@ -52,5 +53,17 @@ class RoutingTests(unittest.TestCase):
         routed=processor(attn,hidden,encoder_hidden_states=(text,[ip]),ip_adapter_masks=[spatial])
         expected=torch.cat([singles[0][:,:8],singles[1][:,8:]],dim=1)
         self.assertTrue(torch.allclose(routed,expected,atol=1e-6))
+    def test_gpu_proxy_moves_masks_and_preserves_values(self):
+        import torch
+        from src.reference_fusion.gpu_masks import GPUInputPipeline
+        if not torch.cuda.is_available():self.skipTest('CUDA unavailable')
+        class Capture:
+            _execution_device=torch.device('cuda:0')
+            def __call__(self,**kwargs):return kwargs
+        source=torch.rand(1,4,8,8)
+        result=GPUInputPipeline(Capture())(cross_attention_kwargs={'ip_adapter_masks':[source]})
+        target=result['cross_attention_kwargs']['ip_adapter_masks'][0]
+        self.assertEqual(target.device.type,'cuda');self.assertEqual(target.dtype,source.dtype)
+        self.assertTrue(torch.equal(target.cpu(),source));self.assertEqual(source.device.type,'cpu')
 
 if __name__=='__main__':unittest.main()

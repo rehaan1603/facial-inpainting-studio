@@ -1,0 +1,36 @@
+{
+  "date": "2026-09-20",
+  "tests": {
+    "regional_routing": {
+      "passed": 5,
+      "skipped": 0
+    },
+    "identity_level_statistics": {
+      "passed": 1,
+      "skipped": 0
+    }
+  },
+  "local_http": {
+    "root": 200,
+    "session": 200
+  },
+  "integrity": {
+    "comparison_sha256": "d877c400f451dd8cd52ab1955907c689dabd22dbace43effa6842e9dc3d77808",
+    "evaluation_sha256": "5bec8e743b1066b2d94d949d4ca84af0fb1d356a6f20a578b4c6f5cf4bf8e3ef",
+    "expected_rows": 144,
+    "verified_outputs": 144,
+    "evaluation_failures": [],
+    "final_test_used": false,
+    "note": "Integrity verification is not evidence of visual quality or superiority."
+  },
+  "preservation": {
+    "audited_source_count": 203,
+    "changed_since_pre_upgrade": [
+      "scripts/test_webapp.py"
+    ],
+    "checkpoint_count": 24,
+    "changed_checkpoints": [],
+    "note": "The webapp test change belongs to the first implementation cycle; no frozen historical generator or metric changed."
+  },
+  "visual_review": "Eight mixed-damage sheets, all four identities and both seeds, plus one eye-removal engineering sheet. Unblinded assistant inspection; no human preference study."
+}
