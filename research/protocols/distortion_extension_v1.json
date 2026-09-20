@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "date": "2026-09-20",
+  "stage": "Fresh development confirmation, never final test",
+  "identities": [
+    "386",
+    "2087",
+    "2289",
+    "1485"
+  ],
+  "kinds": [
+    "removal",
+    "gaussian_blur",
+    "noise",
+    "jpeg",
+    "downsample",
+    "mixed"
+  ],
+  "strengths": [
+    0.5,
+    0.99
+  ],
+  "scales": [
+    0.8
+  ],
+  "seeds": [
+    29
+  ],
+  "steps": 30,
+  "guidance_scale": 5.0,
+  "blend": "poisson",
+  "resolution": 512,
+  "severities": [
+    "medium",
+    "severe"
+  ],
+  "mask_schedule": {
+    "medium": "central_face",
+    "severe": "half_face"
+  },
+  "reference_variation": "First reference JPEG quality 20, remaining three unchanged; all references remain same-person. Not an isolated reference-quality ablation.",
+  "preservation_confidence": 0.5,
+  "statistical_unit": "identity",
+  "primary_contrasts": [
+    "low minus high strength on five partially degraded types",
+    "preserved high minus standard high on five partially degraded types"
+  ],
+  "primary_metrics": [
+    "facenet_cosine",
+    "hole_mae"
+  ],
+  "multiplicity": "Holm over four identity-averaged primary tests; medium/severe strata and observed-input comparisons retained",
+  "selection": "Fixed hash ranking; val split only; exclude all earlier training, inspected, attempted and reserved identity labels; exact and pHash<=6 duplicate exclusion; one-face detector screening",
+  "source_sha256": "8706a1193fba1f425bae7158442024799e51ad67e32185b779a171ed2fe43e7b",
+  "fingerprints_sha256": "d4ddd0017520bb3920c4a36c78656a417208093a9061326f48f667c528cee0c0",
+  "pretraining_overlap": "unknown",
+  "final_test_used": false,
+  "interpretation": "Mask geometry and severity vary together; do not attribute cross-stratum differences solely to severity. Within-case method comparisons are paired. No promotion if output loses target fidelity against unchanged input."
+}

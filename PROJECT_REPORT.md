@@ -8,6 +8,37 @@
 
 ## Latest status update
 
+**Latest verification:** local server restarted; 19 tests passed (7 preservation/correspondence/fusion and 12 HTTP tests). All 552 successful output hashes, three frozen generation-source signatures and 24 historical checkpoints verified. Editor image/confidence import and all three exported PNGs verified pixel-for-pixel. The new real CLI reconstruction attempt failed before generation because Windows Application Control blocked a SciPy DLL; no security policy was changed. Existing saved metrics remain valid, but fresh GPU inference is not currently verified. See `research/distortion_phase_verification_v1.json`.
+
+### 20 September: distortion, preservation and true local-feature experiments completed
+
+- **Initial distortion screen:** 144/144 generations completed; 312/312 rows scored, including preservation outputs and unchanged-input controls. Six separate degradation classes, strengths 0.50/0.75/0.99 and adapter scales 0.8/1.2 were compared on four previously observed development identities. Lower strength was not universally better: for removal, FaceNet fell from 0.7079 at 0.99 to 0.4684 at 0.50. For partially degraded inputs, preserving evidence often helped relative to aggressive generation, but the unchanged input retained better identity similarity. This is not a validated restoration improvement.
+- **Actual local-feature fusion:** aligned spatial VAE reference features now enter the denoiser's masked-image context; regional AlexNet descriptors provide compatibility estimates. All six policies were evaluated over two seeds: 48/48 rows scored (32 new generations, 16 reused controls). Damage-conditioned fusion reached FaceNet **0.6846**, versus matched global **0.6894**; hole MAE worsened from **0.09054 to 0.09486**. The primary paired difference was **−0.00483**, Holm p **1.0**. All reported metrics had full coverage and known pixels remained unchanged. True local transfer is implemented, but superiority is not established.
+- **Expanded development completed with failures retained:** four additional identities, six kinds, two severity/mask strata and compressed-reference variation. Of 96 planned generations, **72 succeeded and 24 failed**; 72 preservation outputs and 48 unchanged controls produced **192 scored rows out of 240 scheduled rows (80%)**. Identity 386's compressed first reference failed face detection, causing 24 generation failures and 24 corresponding unavailable preservation outputs. No replacement identity or easier reference was substituted. This leaves three complete identity units for the primary paired contrasts.
+- **Expanded results:** lower strength versus aggressive generation improved FaceNet by **+0.03731** and reduced hole MAE by **0.02063**; preservation at high strength improved FaceNet by **+0.06892** and reduced hole MAE by **0.03298**. All four Holm-adjusted p-values were **1.0**. These are small-sample descriptive trends. Compared with unchanged-input controls, generation/preservation still reduced identity similarity and increased hole error on complete pairs, despite LPIPS improvements. Metric disagreement is explicitly retained.
+- **Visual failures:** all eight local-fusion sheets inspected across both seeds: altered gaze/eye geometry, changed smiles and teeth, loss of original expressions and central-face smoothing. Expanded-stratum visual review remains incomplete; no blinded human study has been performed.
+- **New local tool:** an experimental editable evidence map distinguishes missing, partially damaged and reliable pixels. Painting, suggestions, undo/reset were exercised in the browser; seven preservation/correspondence/fusion unit tests passed and JavaScript syntax passed. The editor exports inputs for an experimental CLI; it is not yet a fully verified end-to-end website reconstruction workflow. Heuristic suggestions are not validated blind degradation estimates.
+- **Research decision:** no default generator is promoted. Conditional compact-adapter training is deferred because deterministic local fusion has not shown a convincing multi-metric benefit. Candidate reranking remains deferred until restoration is stable. The prior-work audit weakens a broad novelty claim: aligned components, spatial reference transfer and spatial strength control already exist.
+- **Protection and publication status:** all eight reserved-final identities remain unused. No improvement over the historical **0.8180** all-reference aggregate is established; that aggregate covers a different condition mixture. No publication-ready superiority or acceptance is claimed. Photos, reference features and model weights remain local. This phase is prepared for the GitHub checkpoint; restricted photos and weights are excluded.
+
+Evidence: [distortion screen](research/DISTORTION_AWARE_GENERATION_RESULTS.md), [expanded confirmation](research/DISTORTION_EXTENSION_RESULTS_V1.md), [local-fusion results](research/LOCAL_LATENT_RESULTS_V1.md), [correspondence and visual limitations](research/LOCAL_FEATURE_CORRESPONDENCE.md), and [novelty audit](research/NOVELTY_GAP_ANALYSIS.md).
+
+### Completion percentages — explicit denominators
+
+These percentages describe finite tasks or recorded rows, not overall scientific quality or probability of publication.
+
+| Deliverable | Completion | Meaning |
+|---|---:|---|
+| Initial distortion evaluation | 100% (312/312) | All planned screen rows scored |
+| Local-feature diagnostic evaluation | 100% (48/48) | All six policies and two seeds scored |
+| Expanded run accounting | 100% (240/240) | Every scheduled row has a success/failure record |
+| Expanded usable evaluation | 80% (192/240) | Remaining 48 rows unavailable after reference detection failure |
+| Combined new-phase usable evaluation | 92% (552/600) | Includes controls and reused rows; not 600 independent samples |
+| Local-fusion visual sheet review | 100% (8/8) | Both seeds reviewed; not a blinded study |
+| Reserved final evaluation | 0% (0/8 identities) | Deliberately untouched until method freeze |
+| Demonstrated advantage over historical 0.8180 | Not established | No defensible percentage applies |
+| Publication readiness | Incomplete | External controls, human review, method freeze and final evidence remain |
+
 ### 20 September: regional-routing comparison completed
 
 - **Implemented and tested:** deterministic regional weighting of global FaceID reference descriptors, six matched conditioning policies, GPU-resident routing masks, integrity verification and identity-level statistical reporting. Six routing/statistics tests passed. This has zero trained parameters and does not transfer local reference patches.
@@ -38,10 +69,11 @@ The completed baseline and remaining research work are summarized below.
 
 ### Next work in order
 
-1. Use the completed selection comparison and its visible failures to plan a larger, versioned development experiment. Its four validation identities cannot become a fresh final test later.
-2. Use the completed negative regional-routing comparison to prioritize distortion-aware denoising/conditioning calibration and visible facial fidelity. Test the hypothesis that high denoising strength discards useful surviving information under a new development protocol. Actual spatial reference-feature fusion and learned correspondence remain unimplemented.
-3. Expand development identities, mask shapes and severity; run fair external-method comparisons and human assessment. Three conditions and two seeds are an initial diagnostic, not exhaustive robustness evidence.
-4. Freeze a defensible method, evaluate the reserved identities once, and prepare the manuscript and corrected presentation for a specific venue. Unknown pretrained overlap must remain explicit.
+1. Restore an approved inference runtime: the live CLI check currently fails before generation because Windows Application Control blocks scipy.linalg._batched_linalg. Do not disable the policy. Repeat the real CLI/website reconstruction check after an approved dependency repair. Editor import/export and all eight local visual sheets are now verified.
+2. Investigate the documented compressed-reference detector failure in a separately versioned robustness experiment, without replacing or rewriting the failed cases.
+3. Prioritize evidence-preserving restoration-specific conditioning. Current local latent injection does not justify training a fusion adapter. Compare close external reference-restoration methods before another mechanism claim.
+4. Expand pose/expression correspondence, independently varied severity/masks/reference quality and identity groups. Conduct blinded human fidelity assessment; confidence intervals from three or four identities are insufficient.
+5. Once a method is stable, perform the prescribed 1/2/4-candidate comparison with an independent reporting evaluator. Then freeze the method, evaluate the reserved identities once, and prepare the manuscript for a specific conference or journal.
 
 Publication readiness remains incomplete. No acceptance, novel-method superiority or reliable recovery of hidden facial features is claimed.
 
@@ -135,24 +167,26 @@ The measurement baseline is substantially stronger, but the research is not yet 
 
 ## 4. Remaining work
 
-| Area | Missing work | Priority |
+| Area | Current evidence and remaining work | Status |
 |---|---|---|
-| Identity evaluation | FaceNet and conditioning-encoder ArcFace diagnostics completed; fresh final evaluation and independent gallery still required | Development complete |
-| Quality evaluation | NIQE/BRISQUE, SSIM, PSNR and LPIPS completed; reconstructed-landmark error and broader validation remain | Partly complete |
-| Reference protocol | Disjoint conditioning and evaluation photos; stronger transformed-copy checks; adequate identity groups | Immediate |
-| Severe damage | Defined face-region/image-area severity, locations, reference variation and failure cases | Before final testing |
-| Reference scoring | Pose/quality/visibility measurements and mask-conditioned ranking | Core method development |
-| Regional fusion | Actual regional features and a compact learned mask-aware fusion module | Conditional on baseline findings |
-| Candidate selection | Multiple seeds, quality/identity selection and separate reporting evaluator | After scoring/fusion baseline |
-| Ablations | Reference on/off, strength, composition and fixed 1/2/4-reference comparisons completed; selection/fusion A1–A7, masks and multiple seeds remain | Partly complete |
-| Close comparisons | Reproducible reference-based competitors; complete or explicitly delimit paused OSOR comparison | Required for comparative claims |
-| Verification statistics | Genuine/impostor trials, calibrated thresholds, ROC/TAR only if data supports low-FAR claims | Conditional on dataset feasibility |
-| Distributional quality | FID on an appropriately sized, controlled evaluation set | Later; not meaningful on the current small reference set |
-| Text control/CLIP | Optional attribute experiments | Deferred |
-| Final paper | Specific venue, corrected literature/architecture claims, figures, limitations, reproducibility and author review | After final evidence |
-| Public hosting | Browser-compatible access and a suitable long-term deployment | Paused |
+| Identity/quality measurement | FaceNet target/gallery, diagnostic ArcFace, LPIPS, SSIM, PSNR, hole/visible MAE, NIQE and BRISQUE executed; final evaluation remains sealed | Development implemented |
+| Distortion/preservation | Six kinds, strength/scale screen and fresh development extension completed; unchanged-input controls still expose fidelity loss | Diagnostic complete; method unresolved |
+| Reference robustness | Compressed reference for identity 386 fails detection; retain failure and study correction in a new protocol | Immediate |
+| Local correspondence | Five-point similarity and eight regional features implemented; 22/24 initial cases detected; 3D pose/expression/occlusion unresolved | Prototype complete |
+| Local fusion | Six-policy, two-seed 48-row comparison complete; no multi-metric advantage established | Negative/mixed result |
+| Learned adapter | Train only after deterministic local fusion shows convincing benefit; do not train full SDXL | Conditional gate not met |
+| Confidence UI | Browser painting/suggestions/undo/reset checked; image/map import and all three exported PNGs verified pixel-for-pixel; live CLI generation blocked by Windows Application Control; website integration remains | Partly complete |
+| Visual assessment | All eight local sheets inspected; expanded cases and blinded human evaluation remain | Partly complete |
+| Candidate selection | Matched 1/2/4 candidate pools, random/identity/quality/combined selection and separate evaluator | Deferred until stable restoration |
+| External comparisons | Reproduce close reference-restoration controls; delimit paused OSOR results honestly | Required for comparative claims |
+| Statistical power | More identity units, independent severity/mask/reference factors, additional seeds | Required before method freeze |
+| Optional metrics | Reconstructed-landmark error; FID only at adequate sample size; ROC/TAR only with adequate verification trials | Unimplemented; scope-dependent |
+| Final evaluation | Freeze method/parameters first; eight reserved identities remain unused | 0/8, intentionally |
+| Manuscript and presentation | Correct novelty/architecture/results, choose actual venue, prepare figures, limitations and reproducibility | Incomplete |
+| GitHub release | Code, documentation and numerical evidence checkpoint; restricted photos and weights excluded | Verification completed; see Git history for push status |
+| Public hosting | Continue loopback-only use on the laptop | Paused by user |
 
-FaceNet, conditioning-encoder ArcFace, NIQE, BRISQUE, SSIM, PSNR and LPIPS are now implemented and executed on the expanded development set. FID, ROC/TAR and reconstructed-landmark error remain incomplete. Dataset annotation syntax checks are not reconstructed-landmark accuracy measurements.
+No single overall project-completion percentage is assigned because successful research findings are not predictable implementation tasks. The explicit measured percentages above separate finished experiments from unsolved quality and publication requirements.
 
 ## 5. Planned execution and acceptance criteria
 
@@ -170,16 +204,16 @@ Count eligible multi-photo identity groups and reserve conditioning, calibration
 **Deliverable:** versioned manifests and a frozen protocol.  
 **Acceptance criterion:** no target/reference leakage or reuse of observed development cases as fresh final evidence; limitations recorded explicitly.
 
-### Phase 3 — test simple reference selection
+### Phase 3 — test simple reference selection (completed diagnostic; no superiority established)
 
 Compare random single-reference, all-reference and global-quality baselines against a mask-aware scorer while keeping the generator and candidate seeds fixed. Use only information available from the damaged input, supplied mask and input references. Diagnose whether poor results arise from visibility estimation, geometry or inadequate global features.
 
 **Deliverable:** implemented selection rules and controlled comparison.  
 **Acceptance criterion:** the proposed scoring mechanism has measurable support, or its failure is documented before adding complexity.
 
-### Phase 4 — develop the smallest justified fusion method
+### Phase 4 — develop the smallest justified fusion method (deterministic prototype completed; training gate not met)
 
-If earlier results support the direction, implement regional reference features and a compact fusion adapter. Compare equal weighting, global attention and mask-aware fusion at matched capacity and training budgets. Profile actual laptop memory and speed before committing to a large training schedule. Preserve the working pretrained baseline and all frozen earlier results.
+Regional reference features and deterministic latent fusion are implemented and evaluated. Their negative/mixed results do not yet justify a compact learned adapter. If future evidence supports the direction, train a compact fusion adapter. Compare equal weighting, global attention and mask-aware fusion at matched capacity and training budgets. Profile actual laptop memory and speed before committing to a large training schedule. Preserve the working pretrained baseline and all frozen earlier results.
 
 **Deliverable:** trained candidate module, checkpoints, loss histories and mechanism ablations.  
 **Acceptance criterion:** reproducible improvement on declared measures, acceptable failure behavior and a defensible distinction from closest prior work. Implementation alone is not evidence of novelty.

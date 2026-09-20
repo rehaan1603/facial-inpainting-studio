@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Evidence map · Inpainting Studio</title><link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/confidence.css"><script src="/confidence.js" defer></script></head>
+<body><header class="topbar"><a class="brand" href="/">← Inpainting Studio</a><span class="local-badge">Experimental map editor</span></header>
+<main><h1>Keep the useful details.</h1><p>Mark missing areas separately from areas that are blurry or noisy. Your photos stay in this browser.</p>
+<div class="evidence-layout"><section class="controls"><label for="photo">Choose an image</label><input id="photo" type="file" accept="image/png,image/jpeg,image/webp">
+<button id="sample">Load local research sample</button><label for="mapFile">Load a saved confidence map</label><input id="mapFile" type="file" accept="image/png">
+<label for="evidence">What is in this area?</label><select id="evidence"><option value="128">Damaged, with some detail left</option><option value="0">Completely missing</option><option value="255">Reliable — keep it</option></select>
+<label for="size">Brush size</label><input id="size" type="range" min="4" max="100" value="30">
+<button id="suggest" disabled>Suggest confidence in marked areas</button><p class="helper">Texture-based suggestions can mistake smooth skin for blur or edges for noise. Review and repaint the map. This is not automatic damage detection.</p>
+<button id="undo" disabled>Undo last edit</button><button id="reset" disabled>Keep everything</button>
+<label class="check-label"><input id="overlayToggle" type="checkbox" checked> Show confidence overlay</label>
+<button id="export" disabled>Download image, mask & confidence</button><p class="helper">Exports three matching PNG files for the experimental preservation tool. It does not start reconstruction or change the studio’s default model.</p>
+</section><section><canvas id="editor" width="512" height="512" tabindex="0" aria-label="Paint confidence using a pointer; a saved map can also be uploaded"></canvas><p>Red: missing · Amber: partial evidence · Clear: reliable</p><p id="mapStatus" role="status" aria-live="polite">Choose an image to begin.</p></section></div></main></body></html>

@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "date": "2026-09-20",
+  "stage": "Small development screening; seed-29 confirmation required before promotion",
+  "identities": [
+    "1306",
+    "2790",
+    "1043",
+    "787"
+  ],
+  "previously_observed_identities": true,
+  "kinds": [
+    "removal",
+    "gaussian_blur",
+    "noise",
+    "jpeg",
+    "downsample",
+    "mixed"
+  ],
+  "strengths": [
+    0.5,
+    0.75,
+    0.99
+  ],
+  "scales": [
+    0.8,
+    1.2
+  ],
+  "seeds": [
+    17
+  ],
+  "steps": 30,
+  "guidance_scale": 5.0,
+  "blend": "poisson",
+  "resolution": 512,
+  "severity": "medium",
+  "mask": "Same central-face mask within each identity for every distortion",
+  "preservation_confidence": 0.5,
+  "statistical_unit": "identity",
+  "primary_contrasts": [
+    "strength .50 vs .99 at scale .8, by damage kind",
+    "strength .75 vs .99 at scale .8, by damage kind",
+    "preserve vs standard at .99/.8, by degraded kind"
+  ],
+  "multiplicity": "Holm across 17 primary FaceNet contrasts (12 strengths and 5 preservation); other metrics descriptive safeguards",
+  "promotion_gate": "No promotion from this n=4 single-seed screen. Require independent development confirmation, identity and LPIPS/hole-error agreement, exact visible preservation, failure review and stable seed behavior.",
+  "final_test_used": false,
+  "generator_sha256": "6fa4fe9c7742c8a1ec69d1586cc98a07573b1b85e5bebf0ad4c899b75a782daf",
+  "prior_manifest_sha256": "9facfe179ce75efe0789ab897592074bf2eae383e09bc769dfda82723409876b",
+  "known_limitations": [
+    "Supplied distortion class and confidence, not blind restoration",
+    "Fixed confidence is a heuristic",
+    "Unknown pretraining exposure",
+    "Same step budget but lower strength executes fewer denoising steps",
+    "No matched-active-step causal ablation yet"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "date": "2026-09-20",
+  "experiments": {
+    "distortion_aware_v1": {
+      "scheduled_rows": 312,
+      "verified_output_hashes": 312,
+      "scored_rows": 312
+    },
+    "local_latent_v1": {
+      "scheduled_rows": 48,
+      "verified_output_hashes": 48,
+      "scored_rows": 48
+    },
+    "distortion_extension_v1": {
+      "scheduled_rows": 240,
+      "verified_output_hashes": 192,
+      "scored_rows": 192
+    }
+  },
+  "historical_checkpoints_verified": 24,
+  "changed_sources_since_preupgrade_audit": [
+    "scripts/test_webapp.py"
+  ],
+  "tests": {
+    "unit_passed": 7,
+    "http_passed": 12,
+    "javascript_syntax": "passed"
+  },
+  "browser_export": {
+    "image_pixels_match": true,
+    "confidence_pixels_match": true,
+    "mask_equals_confidence_less_than_255": true,
+    "dimensions": [
+      512,
+      512
+    ]
+  },
+  "visual_review": {
+    "local_latent_sheets_reviewed": 8,
+    "total_local_latent_sheets": 8
+  },
+  "live_cli": {
+    "status": "blocked_before_generation",
+    "reason": "Windows Application Control blocked scipy.linalg._batched_linalg during diffusers import",
+    "security_policy_changed": false
+  },
+  "final_test_used": false
+}

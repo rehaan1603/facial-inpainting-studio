@@ -114,7 +114,7 @@ class Handler(BaseHTTPRequestHandler):
             if not file.is_file():return self.send(404,{'error':'Result not available.'})
         else:
             name='index.html' if path=='/' else path.removeprefix('/')
-            if name not in ['index.html','app.js','framing.js','style.css','favicon.svg']:return self.send(404,{'error':'Not found.'})
+            if name not in ['index.html','app.js','framing.js','style.css','favicon.svg','confidence.html','confidence.js','confidence.css']:return self.send(404,{'error':'Not found.'})
             file=STATIC/name
         if not file.is_file():return self.send(404,{'error':'Not found.'})
         return self.send(200,file.read_bytes(),mimetypes.guess_type(file.name)[0] or 'application/octet-stream')

@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "date": "2026-09-20",
+  "scope": "Four observed development identities, mixed damage, two seeds; mechanism diagnostic, no promotion",
+  "policies": [
+    "global",
+    "regional_global",
+    "single",
+    "equal",
+    "quality",
+    "damage"
+  ],
+  "seeds": [
+    17,
+    29
+  ],
+  "strength": 0.99,
+  "scale": 0.8,
+  "steps": 30,
+  "blend": "poisson",
+  "latent_injection_gain": 0.25,
+  "weights": "Single argmax regional quality; equal uniform; quality softmax(q/.15); damage softmax((q+.25*compatibility*reliability)/.15). q includes in-bounds and alignment confidence.",
+  "alignment": "Five-point least-squares similarity from each reference to damaged target; no clean target geometry",
+  "feature_space": "Frozen native SDXL VAE posterior means, scaling_factor applied, 4x64x64; region maps on damaged target",
+  "injection": "After first unchanged denoising step, blend masked-image conditioning latents inside damage with aligned fused features, gain .25. Same global FaceID tokens in every arm. No output reference-pixel pasting.",
+  "controls": "Global and prior global-regional routing on identical inputs; zero-gain equivalence tested separately",
+  "limitations": [
+    "Out-of-training-distribution context for inpainting UNet",
+    "No 3D pose or expression correction",
+    "Heuristic visibility and confidence",
+    "Only mixed damage in generative diagnostic",
+    "AlexNet local compatibility shares backbone with LPIPS; final FaceNet remains separate"
+  ],
+  "trainable_parameters": 0,
+  "final_test_used": false
+}
