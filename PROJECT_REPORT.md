@@ -178,7 +178,7 @@ The measurement baseline is substantially stronger, but the research is not yet 
 | Local correspondence | Five-point similarity and eight regional features implemented; 22/24 initial cases detected; 3D pose/expression/occlusion unresolved | Prototype complete |
 | Local fusion | Six-policy, two-seed 48-row comparison complete; no multi-metric advantage established | Negative/mixed result |
 | Learned adapter | Train only after deterministic local fusion shows convincing benefit; do not train full SDXL | Conditional gate not met |
-| Confidence UI | Browser painting/suggestions/undo/reset checked; image/map import and all three exported PNGs verified pixel-for-pixel; live CLI generation blocked by Windows Application Control; website integration remains | Partly complete |
+| Confidence UI | Browser painting/suggestions/undo/reset checked; image/map import and all three exported PNGs verified pixel-for-pixel; live CLI generation blocked by Windows Application Control; saved-output CLI preservation now verified; fresh website generation remains blocked | Partly complete |
 | Visual assessment | All eight local sheets and all 36 successful expanded cases inspected; blinded human evaluation remains | Partly complete |
 | Candidate selection | Matched 1/2/4 candidate pools, random/identity/quality/combined selection and separate evaluator | Deferred until stable restoration |
 | External comparisons | Reproduce close reference-restoration controls; delimit paused OSOR results honestly | Required for comparative claims |

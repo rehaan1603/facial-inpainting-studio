@@ -1,0 +1,13 @@
+{
+  "mode": "saved_reconstruction_preservation",
+  "new_generation": false,
+  "input_sha256": "0f0cbc37a06b7cdf63a1beeacf6d1fe7f7afe2e323f900df6035243703cc7b78",
+  "mask_sha256": "a3d7f3fc10933ec10fe21823344260f20639a280c995188ce6475715eef9fdbd",
+  "confidence_sha256": "419298fd9ee7174e9afbfd280962c05c43c7208c11d0095ab741440aac30301c",
+  "parent_output_sha256": "9f45af17be3789cf3bd5b2aeac63de7a5ad34064dfbcdba2b69a522834e157d7",
+  "parent_metadata_sha256": "85a5369cd74cce40d51e5d895f62b6da9cfc8710790cbfbb7fd125fdfedc2994",
+  "result_sha256": "c76f59fbec8671ecd01cce7b79154d1455ef084040db13380a09c877a2bfa495",
+  "known_pixels_unchanged": true,
+  "scope": "User-supplied evidence blending; no quality or true-face recovery guarantee.",
+  "overwrite_rejected": true
+}
