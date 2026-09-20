@@ -63,7 +63,7 @@ Matched local fusion: FaceNet 0.6846 versus global 0.6894; hole MAE 0.09486 vers
 
 ## 6. Visual failures
 
-All eight local-fusion sheets reviewed. Eye shape, gaze, mouth/teeth and expression change; texture smoothing remains. Second seed sometimes changes lip color/closure markedly. Expanded-stratum visual review and blinded human assessment remain pending.
+All eight local-fusion sheets reviewed. Eye shape, gaze, mouth/teeth and expression change; texture smoothing remains. Second seed sometimes changes lip color/closure markedly. All 36 successful expanded cases are now visually reviewed; see DISTORTION_EXTENSION_VISUAL_REVIEW_V1.md. Blinded human assessment remains pending.
 
 ## 7–8. Supported and failed hypotheses
 

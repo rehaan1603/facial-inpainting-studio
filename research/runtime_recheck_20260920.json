@@ -1,0 +1,18 @@
+{
+  "date": "2026-09-20",
+  "attempt": "preservation_cli_check_v2",
+  "scipy_linalg_import_probe": "passed in unchanged reference_env_v2",
+  "full_inference": "failed before generation",
+  "blocked_component": "scipy sparse csgraph _matching",
+  "error": "An Application Control policy has blocked this file",
+  "windows_event_ids_observed": [
+    3077,
+    3089,
+    3118
+  ],
+  "log_sha256": "9a4f6f97099e4b7ebf96f9e615cc7609195ad80876f5f246fa18d454da5564b8",
+  "environment_modified": false,
+  "security_policy_modified": false,
+  "final_test_used": false,
+  "next_requirement": "A runtime accepted by the device application-control policy, followed by a full inference check; a successful single-module import is insufficient."
+}
