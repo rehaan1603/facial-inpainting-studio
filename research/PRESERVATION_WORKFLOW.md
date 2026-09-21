@@ -12,8 +12,10 @@ Use the original input and mask from that generation. Their file hashes, the sav
 
 A real saved development reconstruction was processed successfully. Output pixels outside damage remain exactly unchanged; overwrite and mismatched-generation rejection were checked. See saved_preservation_check_v1.json. This operation does not generate a new face, repair errors in the saved reconstruction, or resolve the blocked inference runtime.
 
-## Current runtime blocker
+## Historical runtime blocker
 
 Windows Code Integrity event 3077 reports that scipy/linalg/_batched_linalg.cp312-win_amd64.pyd and scipy/sparse/csgraph/_matching.cp312-win_amd64.pyd fail the device application-control policy. A later single-module import succeeded, but full model loading still failed. No dependency or security policy was changed. Repeated generation retries are not a repair.
 
 The device administrator/owner must review the blocked Python package under the existing application-control policy and provide a permitted runtime or an explicitly approved policy decision. Do not disable Smart App Control, rename/move blocked libraries to evade detection, or claim the runtime is repaired from a partial import. After resolution, repeat a complete reference reconstruction in a new output folder before running more experiments.
+
+Recovery verified on 20–21 September: full imports, a real preservation CLI run and a website HTTP reconstruction passed in the existing runtime. See runtime_recovery_20260920.json and website_recovery_20260921.json. No security policy was changed by the assistant.

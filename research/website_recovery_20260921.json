@@ -1,0 +1,15 @@
+{
+  "verified_date": "2026-09-21",
+  "job": "8c63ed5af5544212a172de63ca4a0302",
+  "status": "complete",
+  "resolution": [
+    512,
+    512
+  ],
+  "reference_count": 4,
+  "strength": 0.99,
+  "known_pixels_unchanged": true,
+  "output_sha256": "8bf3a5f683e3006923bff427aa8a48792f0e50bd19c23ca7d3683db14e8e5ff4",
+  "scope": "Real localhost HTTP reconstruction, not a browser-click workflow test; no quality superiority claim",
+  "final_test_used": false
+}

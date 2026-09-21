@@ -1,12 +1,19 @@
 # Facial Inpainting Project — Progress and Completion Report
 
-**Report date:** 20 September 2026
+**Report date:** 21 September 2026
 **Current platform:** Windows laptop, NVIDIA RTX 5070 Laptop GPU with 8 GB VRAM  
 **Current application:** http://127.0.0.1:8765/  
 **Repository:** https://github.com/rehaan1603/facial-inpainting-studio  
 **Status:** Working local research baseline; proposed multi-reference research method and final validation incomplete. Public hosting paused at the owner's request.
 
 ## Latest status update
+
+### 21 September: website inference restored, GPU control passed
+
+- Full imports and CUDA now pass. A real four-reference preservation CLI reconstruction and a localhost HTTP reconstruction at 512×512 completed. Output hashes and exact known-pixel preservation were verified. Earlier blocked attempts below are historical; no security policy was changed by the assistant.
+- The actual GPU zero-gain control passed: disabling local-feature injection gives identical raw, hard-composited, final, input and effective-mask PNG hashes to the baseline on one development case. This confirms baseline equivalence, not restoration superiority.
+- Reference 386/1 detection failure was reproduced at fixed JPEG levels: original and qualities 95/75 detect one face; 50/35/20 detect none. Reproduced quality-20 pixels match the historical failed reference. Failures remain in the original experiment; no replacement, threshold tuning or retrospective exclusion occurred.
+- Evidence: `research/website_recovery_20260921.json`, `research/runtime_recovery_20260920.json`, `research/local_zero_gain_verification_v1.json`, and `research/REFERENCE_COMPRESSION_DIAGNOSIS.md`. All reserved-final identities remain untouched.
 
 **Follow-up verification:** all 36 successful expanded cases visually reviewed across six degradation kinds and two strata. Low-strength removal leaves holes; severe mixed inputs can yield colored/cross-like artifacts; stronger generation changes eyes/lips/expression. See `research/DISTORTION_EXTENSION_VISUAL_REVIEW_V1.md`. A fresh unchanged-runtime retry passed a SciPy linalg import probe but failed full model loading on another blocked component (`_matching`); Windows Code Integrity events confirm the application-control block. No security policy or dependency version was changed. Fresh inference remains blocked.
 
@@ -72,8 +79,8 @@ The completed baseline and remaining research work are summarized below.
 
 ### Next work in order
 
-1. Restore an approved inference runtime: the live CLI check currently fails before generation because Windows Application Control blocks scipy.linalg._batched_linalg. Do not disable the policy. Repeat the real CLI/website reconstruction check after an approved dependency repair. Editor import/export and all eight local visual sheets are now verified.
-2. Investigate the documented compressed-reference detector failure in a separately versioned robustness experiment, without replacing or rewriting the failed cases.
+1. Integrate the confidence map into the website reconstruction flow with explicit experimental labeling; fresh CLI and website-backend generation now pass.
+2. Use the completed compression diagnosis to design separately versioned post-degradation validity handling with failure coverage and matched reference-count controls.
 3. Prioritize evidence-preserving restoration-specific conditioning. Current local latent injection does not justify training a fusion adapter. Compare close external reference-restoration methods before another mechanism claim.
 4. Expand pose/expression correspondence, independently varied severity/masks/reference quality and identity groups. Conduct blinded human fidelity assessment; confidence intervals from three or four identities are insufficient.
 5. Once a method is stable, perform the prescribed 1/2/4-candidate comparison with an independent reporting evaluator. Then freeze the method, evaluate the reserved identities once, and prepare the manuscript for a specific conference or journal.
@@ -174,11 +181,11 @@ The measurement baseline is substantially stronger, but the research is not yet 
 |---|---|---|
 | Identity/quality measurement | FaceNet target/gallery, diagnostic ArcFace, LPIPS, SSIM, PSNR, hole/visible MAE, NIQE and BRISQUE executed; final evaluation remains sealed | Development implemented |
 | Distortion/preservation | Six kinds, strength/scale screen and fresh development extension completed; unchanged-input controls still expose fidelity loss | Diagnostic complete; method unresolved |
-| Reference robustness | Compressed reference for identity 386 fails detection; retain failure and study correction in a new protocol | Immediate |
+| Reference robustness | Compression-sensitive failure diagnosed at fixed JPEG levels; retain failed cases and test robust handling in a new protocol | Immediate |
 | Local correspondence | Five-point similarity and eight regional features implemented; 22/24 initial cases detected; 3D pose/expression/occlusion unresolved | Prototype complete |
 | Local fusion | Six-policy, two-seed 48-row comparison complete; no multi-metric advantage established | Negative/mixed result |
 | Learned adapter | Train only after deterministic local fusion shows convincing benefit; do not train full SDXL | Conditional gate not met |
-| Confidence UI | Browser painting/suggestions/undo/reset checked; image/map import and all three exported PNGs verified pixel-for-pixel; live CLI generation blocked by Windows Application Control; saved-output CLI preservation now verified; fresh website generation remains blocked | Partly complete |
+| Confidence UI | Browser painting/suggestions/undo/reset checked; image/map import and all three exported PNGs verified pixel-for-pixel; fresh CLI, saved-output preservation and website backend verified; confidence-map website integration remains | Partly complete |
 | Visual assessment | All eight local sheets and all 36 successful expanded cases inspected; blinded human evaluation remains | Partly complete |
 | Candidate selection | Matched 1/2/4 candidate pools, random/identity/quality/combined selection and separate evaluator | Deferred until stable restoration |
 | External comparisons | Reproduce close reference-restoration controls; delimit paused OSOR results honestly | Required for comparative claims |

@@ -1,0 +1,74 @@
+{
+  "protocol": {
+    "identity": "386",
+    "role": "reference_1",
+    "qualities": [
+      95,
+      75,
+      50,
+      35,
+      20
+    ],
+    "detector_size": [
+      640,
+      640
+    ],
+    "threshold": "unchanged default",
+    "scope": "Observed development failure diagnosis; no replacement of historical failed rows; no clean target or gallery used",
+    "source_sha256": "4e48d6d2f9995fda090ae6804c01b6c0edacc97117023194b43258f5ea113c65",
+    "prior_degraded_sha256": "3efe2f1137be1d0db9b85e1c8e55c9211b76ac16a64dfa6a7eafe767830d7b12",
+    "script_sha256": "a73855f69c4441a46e47b198828c3e438f0eea9bbf3f883b04f420ff73e3a5c9",
+    "final_test_used": false
+  },
+  "rows": [
+    {
+      "variant": "original",
+      "face_count": 1,
+      "scores": [
+        0.5069191455841064
+      ],
+      "rgb_sha256": "7518ba6e9b4cd64971cce7ba0bdd0217777cec9c6096a4d2527c715195a56f18"
+    },
+    {
+      "variant": "historical_jpeg20",
+      "face_count": 0,
+      "scores": [],
+      "rgb_sha256": "a293581fba218da3ea7042570b2fd5843648150d2ae048a59d92a551ac135692"
+    },
+    {
+      "variant": "jpeg95",
+      "face_count": 1,
+      "scores": [
+        0.5112472772598267
+      ],
+      "rgb_sha256": "675908dad0ecc5176810c26fbca8ee35330734cae52ce88e43e1d617ff884d69"
+    },
+    {
+      "variant": "jpeg75",
+      "face_count": 1,
+      "scores": [
+        0.5088167190551758
+      ],
+      "rgb_sha256": "5ad5fd20dfc8a288edfc828309e7ccba75d7465fb403e2bfe29944cbef0f918d"
+    },
+    {
+      "variant": "jpeg50",
+      "face_count": 0,
+      "scores": [],
+      "rgb_sha256": "e748ee28f68d86860dc787ec6e28178293b8e328a02ec6a8598365d9af4fa3d4"
+    },
+    {
+      "variant": "jpeg35",
+      "face_count": 0,
+      "scores": [],
+      "rgb_sha256": "4a958201c7ecf53d73f7528cb4354faa007280d701bfc0996dd6a9e6f8205fca"
+    },
+    {
+      "variant": "jpeg20",
+      "face_count": 0,
+      "scores": [],
+      "rgb_sha256": "a293581fba218da3ea7042570b2fd5843648150d2ae048a59d92a551ac135692"
+    }
+  ],
+  "final_test_used": false
+}

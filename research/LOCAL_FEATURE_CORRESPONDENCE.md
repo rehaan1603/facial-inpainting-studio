@@ -24,7 +24,7 @@ Damage-conditioned local fusion reached target FaceNet **0.6846**, compared with
 
 Single-best local conditioning slightly increased target similarity to 0.6925, while worsening hole MAE to 0.09579. This mixed result is not a sufficient training gate. No compact adapter is trained at this stage. Candidate reranking is deferred until restoration is stable, as requested. No claim of improvement over the historical 0.8180 aggregate is justified because that aggregate uses a different damage mixture.
 
-Seven unit tests cover three-state preservation, invalid maps, similarity recovery/degeneracy, spatial weighting, zero-gain passthrough and callback injection. These are not substitutes for the completed real generations. An independent full-GPU zero-gain replay remains outstanding.
+Seven unit tests cover three-state preservation, invalid maps, similarity recovery/degeneracy, spatial weighting, zero-gain passthrough and callback injection. These are not substitutes for the completed real generations. A full-GPU zero-gain replay passed on 21 September: raw/final/hard outputs and input/mask PNGs exactly matched the baseline on one development case. See local_zero_gain_verification_v1.json.
 
 ## Visual review
 

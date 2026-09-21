@@ -1,0 +1,18 @@
+{
+  "date": "2026-09-20",
+  "status": "passed",
+  "full_model_import": true,
+  "cuda_available": true,
+  "real_generation_exit_code": 0,
+  "reference_count": 4,
+  "strength": 0.5,
+  "resolution": [
+    512,
+    512
+  ],
+  "known_pixels_unchanged": true,
+  "result_sha256": "c76f59fbec8671ecd01cce7b79154d1455ef084040db13380a09c877a2bfa495",
+  "localhost_http_status": 200,
+  "final_test_used": false,
+  "scope": "One real development CLI reconstruction and preservation pass; quality superiority and website job execution are not established by this check."
+}

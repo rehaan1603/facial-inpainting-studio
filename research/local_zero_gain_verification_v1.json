@@ -1,0 +1,26 @@
+{
+  "date": "2026-09-21",
+  "case_id": "1306_mixed",
+  "settings": {
+    "seed": 17,
+    "steps": 30,
+    "scale": 0.8,
+    "strength": 0.99,
+    "blend": "poisson"
+  },
+  "pixel_file_equivalence": {
+    ".png": true,
+    "_raw.png": true,
+    "_hard.png": true,
+    "_input.png": true,
+    "_effective_mask.png": true
+  },
+  "passed": true,
+  "baseline_sha256": "8bf3a5f683e3006923bff427aa8a48792f0e50bd19c23ca7d3683db14e8e5ff4",
+  "zero_gain_sha256": "8bf3a5f683e3006923bff427aa8a48792f0e50bd19c23ca7d3683db14e8e5ff4",
+  "source_sha256": "70fc707cf0e29da45d10652ce69185c02c42394811c0d1789b0b4f4785df8ab7",
+  "wrapper_sha256": "74390e453d7c44c4e596da1b8db5dca54db58c5b990d3163ee327bc697f94f28",
+  "generator_sha256": "6fa4fe9c7742c8a1ec69d1586cc98a07573b1b85e5bebf0ad4c899b75a782daf",
+  "final_test_used": false,
+  "scope": "One matched full-GPU equivalence pair; no quality superiority claim"
+}
