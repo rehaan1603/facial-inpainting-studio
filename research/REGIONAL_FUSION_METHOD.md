@@ -15,3 +15,8 @@ Outstanding research includes larger disjoint development groups, real visibilit
 The preceding sections describe the historical global-routing cycle and remain unchanged. A new, separate prototype now aligns reference images to damaged-target five-point geometry, extracts regional AlexNet compatibility descriptors, and injects fused spatial native VAE features into the masked-image conditioning context. It keeps global FaceID as context. Single, equal, quality and damage-conditioned local policies are compared against original concatenation and prior global regional routing.
 
 This achieves actual local-feature transfer, with zero trained parameters. It does not establish a better restoration method: the 48-row mixed-damage comparison gives damage-conditioned FaceNet 0.6846 versus matched global 0.6894, and worse hole MAE. See `LOCAL_FEATURE_CORRESPONDENCE.md` and `LOCAL_LATENT_RESULTS_V1.md`. The historical 0.8180 aggregate is not directly comparable to this mixed-only subset. No new default website generator is promoted, and the conditional training gate is not met.
+
+
+## 22 September continuation
+
+ReF-LDM is now a measured external restoration baseline (REFLDM_RESULTS_V1.md). Its spatial conditioning is existing prior art, not our contribution. Regional and native-latent fusion results remain unchanged; adapter training remains deferred. The next unvalidated hypothesis concerns predicting harmful edits and calibrating preservation on identity-separated development data.

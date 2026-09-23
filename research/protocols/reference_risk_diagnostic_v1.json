@@ -1,0 +1,20 @@
+{
+  "date": "2026-09-22",
+  "stage": "exploratory mechanism diagnostic, not calibrated or final validation",
+  "cases": ["1306_mixed", "2790_mixed", "1043_mixed", "787_mixed"],
+  "identities_previously_observed": true,
+  "backbone": "frozen ReF-LDM author weights and compatibility patch",
+  "seed": 17,
+  "steps": 50,
+  "guidance": 1.5,
+  "perturbations": "four leave-one-reference-out runs per input; same seed, order of retained references unchanged",
+  "risk_feature": "mean RGB pixel standard deviation across the all-reference and four leave-one-out native outputs, normalized to 0..1",
+  "candidate_controls": ["all-reference hard composition", "preserve highest reference-disagreement quarter of masked pixels", "preserve highest edit-magnitude quarter of masked pixels"],
+  "coverage": "rank exactly ceil(0.25 * mask pixels) for preservation; stable flat-index tie break; both gates edit identical area",
+  "calibration": "none; no probability interpretation or learned threshold",
+  "evaluation": "all existing independent metrics on candidate images; per-identity risk AUC against per-pixel increase in absolute reconstruction error relative to observation; pixel AUC is descriptive, not a significance test",
+  "target_access": "clean targets and gallery are evaluator-only; never used for risk features or gating",
+  "decision": "reference disagreement must add value beyond edit magnitude and unchanged-input controls before any fresh-identity calibration study; four observed identities cannot establish generalization",
+  "failures": "retain all; no reference replacement or output selection based on quality",
+  "final_test_used": false
+}

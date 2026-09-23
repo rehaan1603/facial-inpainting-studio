@@ -1,0 +1,43 @@
+{
+  "date": "2026-09-22",
+  "stage": "external reference-restoration baseline, development only",
+  "source": "https://github.com/ChiWeiHsiao/ref-ldm",
+  "source_commit": "af6690c19fdc6421802fd7996510bcfef259bfd1",
+  "input_manifest_sha256": "e5f13ff6f7d17c11828e4806de94ff56e2186779409ca7750131a79aa8246db7",
+  "cases": "all 24 initial-screen cases, four already-observed identities and six damage types",
+  "seed": 17,
+  "steps": 50,
+  "guidance": 1.5,
+  "schedule": "uniform_trailing",
+  "reference_count": 4,
+  "resolution": 512,
+  "arms": [
+    "author raw output",
+    "same raw output with exact outside-mask observed-pixel pasteback"
+  ],
+  "controls": [
+    "unchanged observed input",
+    "frozen SDXL global strength .5 scale .8",
+    "frozen SDXL global strength .99 scale .8",
+    "frozen preservation high strength"
+  ],
+  "primary_domain": "five partially degraded conditions; removal reported separately as exploratory out-of-domain behavior",
+  "metrics": [
+    "FaceNet target/gallery",
+    "ArcFace diagnostic",
+    "LPIPS",
+    "SSIM",
+    "PSNR",
+    "hole MAE",
+    "visible MAE",
+    "NIQE",
+    "BRISQUE"
+  ],
+  "statistics": "identity means across the five degraded kinds; paired differences, bootstrap CI, exact sign flips; Holm across two arms x two SDXL controls x FaceNet/hole MAE = eight comparisons",
+  "small_sample_limitation": "four identities are underpowered; no final superiority claim from this screen",
+  "pretraining_overlap": "unknown",
+  "clean_target_conditioning": false,
+  "final_test_used": false,
+  "runtime": "isolated Python 3.12 / shared torch 2.11 CUDA128; Lightning 2.5.5 rank_zero import compatibility patch; differences from author requirements must be reported",
+  "status": "frozen before baseline inference; setup not yet verified"
+}

@@ -42,6 +42,27 @@ class WebBoundaryTests(unittest.TestCase):
             self.assertEqual(self.request(payload=data)[0],202)
         studio.ACTIVE=False
     def test_non_object_json_is_client_error(self):self.assertEqual(self.request(payload=[])[0],400)
+    def test_partial_restoration_requires_evidence_and_rejects_missing(self):
+        data=self.valid();data.update(backbone='refldm',references=[png()]*3)
+        self.assertEqual(self.request(payload=data)[0],400)
+        data['confidence']=png(value=0)
+        self.assertEqual(self.request(payload=data)[0],400)
+        data['confidence']=png(value=128);data['detail']='detailed'
+        self.assertEqual(self.request(payload=data)[0],400)
+        data['detail']='standard';data['mode']='expand'
+        self.assertEqual(self.request(payload=data)[0],400)
+        data['mode']='painted';called=threading.Event()
+        with patch.object(studio,'run_job',side_effect=lambda *a,**kw:called.set()) as worker:
+            self.assertEqual(self.request(payload=data)[0],202)
+            self.assertTrue(called.wait(5))
+            self.assertEqual(worker.call_args.args[3],'refldm')
+            self.assertEqual(worker.call_args.kwargs['confidence'].getextrema(),(128,128))
+    def test_evidence_validation(self):
+        data=self.valid();data.update(backbone='reference',references=[png()]*3,confidence=png(value=128))
+        for strength in [True,.2,float('nan')]:
+            data['strength']=strength;self.assertEqual(self.request(payload=data)[0],400)
+        data['strength']=.5;data['confidence']=png((16,16),128)
+        self.assertEqual(self.request(payload=data)[0],400)
     def test_experimental_selection_accepts_one_to_four(self):
         data=self.valid();data.update(backbone='reference_select',references=[])
         self.assertEqual(self.request(payload=data)[0],400)

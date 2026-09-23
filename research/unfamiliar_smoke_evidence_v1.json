@@ -1,0 +1,1730 @@
+{
+  "original_rows": [
+    {
+      "case_id": "1590_gaussian_blur",
+      "identity": "1590",
+      "kind": "gaussian_blur",
+      "key": "1590_gaussian_blur_observed",
+      "mode": "observed",
+      "status": "complete",
+      "output_sha256": "9a97182e558c56143001557333a9fc046863a971d998b554986f0fdb83375b16",
+      "evaluation": {
+        "status": "complete",
+        "metrics": {
+          "niqe": 4.223111276220021,
+          "brisque": 0.73016357421875,
+          "detections": {
+            "facenet": {
+              "face_count": 3,
+              "status": "multiple_faces"
+            },
+            "arcface_conditioning": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                2.693682909011841,
+                303.5243835449219,
+                123.92146301269531,
+                486.57122802734375
+              ],
+              "probability": 0.511479914188385
+            }
+          },
+          "facenet_cosine": null,
+          "arcface_conditioning_cosine": 0.8865663409233093,
+          "hole_mae": 0.03221877898446201,
+          "visible_mae": 0.0,
+          "ssim_rgb": 0.9972896360836087,
+          "psnr_rgb": 41.23059092440204,
+          "hole_psnr": 23.292137017606237,
+          "lpips": 0.007728023920208216,
+          "outside_observation_mae": 0.0,
+          "known_pixels_unchanged": true,
+          "facenet_gallery_cosine": null,
+          "facenet_gallery_valid_count": 0,
+          "arcface_conditioning_gallery_cosine": -0.05228845775127411,
+          "arcface_conditioning_gallery_valid_count": 3
+        },
+        "target_detections": {
+          "facenet": {
+            "face_count": 3,
+            "status": "multiple_faces"
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              6.772430419921875,
+              308.6308898925781,
+              130.1349639892578,
+              492.5196228027344
+            ],
+            "probability": 0.5607175230979919
+          }
+        },
+        "gallery_detections": [
+          {
+            "facenet": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                138.28543090820312,
+                98.41301727294922,
+                396.06719970703125,
+                454.6861572265625
+              ],
+              "probability": 0.9998878240585327
+            },
+            "arcface_conditioning": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                128.80831909179688,
+                85.6413803100586,
+                390.1701354980469,
+                469.25067138671875
+              ],
+              "probability": 0.6284997463226318
+            }
+          },
+          {
+            "facenet": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                110.6725845336914,
+                99.74215698242188,
+                380.085205078125,
+                455.26202392578125
+              ],
+              "probability": 0.9996598958969116
+            },
+            "arcface_conditioning": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                113.1949691772461,
+                84.04594421386719,
+                378.27227783203125,
+                461.55291748046875
+              ],
+              "probability": 0.6089138388633728
+            }
+          },
+          {
+            "facenet": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                129.61148071289062,
+                90.28837585449219,
+                402.05865478515625,
+                461.1334533691406
+              ],
+              "probability": 0.9998832941055298
+            },
+            "arcface_conditioning": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                135.89126586914062,
+                91.0992660522461,
+                405.45703125,
+                464.15753173828125
+              ],
+              "probability": 0.6086428761482239
+            }
+          }
+        ],
+        "output_sha256": "9a97182e558c56143001557333a9fc046863a971d998b554986f0fdb83375b16"
+      }
+    },
+    {
+      "case_id": "1590_gaussian_blur",
+      "identity": "1590",
+      "kind": "gaussian_blur",
+      "key": "1590_gaussian_blur_native",
+      "mode": "native",
+      "status": "complete",
+      "output_sha256": "f7dd492342186aec7196537a3ea0222b343814fb0f570d47fc78fc14c93ee86a",
+      "evaluation": {
+        "status": "complete",
+        "metrics": {
+          "niqe": 3.936303900133578,
+          "brisque": -16.02325439453125,
+          "detections": {
+            "facenet": {
+              "face_count": 2,
+              "status": "multiple_faces"
+            },
+            "arcface_conditioning": {
+              "face_count": 0,
+              "status": "no_face"
+            }
+          },
+          "facenet_cosine": null,
+          "arcface_conditioning_cosine": null,
+          "hole_mae": 0.04749744859183984,
+          "visible_mae": 0.032018369477050695,
+          "ssim_rgb": 0.7428877243012524,
+          "psnr_rgb": 26.323141907004704,
+          "hole_psnr": 21.72949673598986,
+          "lpips": 0.18336747586727142,
+          "outside_observation_mae": 0.032018369477050695,
+          "known_pixels_unchanged": false,
+          "facenet_gallery_cosine": null,
+          "facenet_gallery_valid_count": 0,
+          "arcface_conditioning_gallery_cosine": null,
+          "arcface_conditioning_gallery_valid_count": 0
+        },
+        "target_detections": {
+          "facenet": {
+            "face_count": 3,
+            "status": "multiple_faces"
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              6.772430419921875,
+              308.6308898925781,
+              130.1349639892578,
+              492.5196228027344
+            ],
+            "probability": 0.5607175230979919
+          }
+        },
+        "gallery_detections": [
+          {
+            "facenet": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                138.28543090820312,
+                98.41301727294922,
+                396.06719970703125,
+                454.6861572265625
+              ],
+              "probability": 0.9998878240585327
+            },
+            "arcface_conditioning": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                128.80831909179688,
+                85.6413803100586,
+                390.1701354980469,
+                469.25067138671875
+              ],
+              "probability": 0.6284997463226318
+            }
+          },
+          {
+            "facenet": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                110.6725845336914,
+                99.74215698242188,
+                380.085205078125,
+                455.26202392578125
+              ],
+              "probability": 0.9996598958969116
+            },
+            "arcface_conditioning": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                113.1949691772461,
+                84.04594421386719,
+                378.27227783203125,
+                461.55291748046875
+              ],
+              "probability": 0.6089138388633728
+            }
+          },
+          {
+            "facenet": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                129.61148071289062,
+                90.28837585449219,
+                402.05865478515625,
+                461.1334533691406
+              ],
+              "probability": 0.9998832941055298
+            },
+            "arcface_conditioning": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                135.89126586914062,
+                91.0992660522461,
+                405.45703125,
+                464.15753173828125
+              ],
+              "probability": 0.6086428761482239
+            }
+          }
+        ],
+        "output_sha256": "f7dd492342186aec7196537a3ea0222b343814fb0f570d47fc78fc14c93ee86a"
+      }
+    },
+    {
+      "case_id": "1590_gaussian_blur",
+      "identity": "1590",
+      "kind": "gaussian_blur",
+      "key": "1590_gaussian_blur_composited",
+      "mode": "composited",
+      "status": "complete",
+      "output_sha256": "823e72e4b94cb4d619fcae40fc7a605ab2d417b411e726b286324c9f9fd48247",
+      "evaluation": {
+        "status": "complete",
+        "metrics": {
+          "niqe": 4.241040110334066,
+          "brisque": 0.15106201171875,
+          "detections": {
+            "facenet": {
+              "face_count": 3,
+              "status": "multiple_faces"
+            },
+            "arcface_conditioning": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                6.989013671875,
+                312.74847412109375,
+                121.67918395996094,
+                488.81671142578125
+              ],
+              "probability": 0.5364041328430176
+            }
+          },
+          "facenet_cosine": null,
+          "arcface_conditioning_cosine": 0.7967984676361084,
+          "hole_mae": 0.04749744859183984,
+          "visible_mae": 0.0,
+          "ssim_rgb": 0.9959500586782167,
+          "psnr_rgb": 39.66795064278566,
+          "hole_psnr": 21.72949673598986,
+          "lpips": 0.00625183479860425,
+          "outside_observation_mae": 0.0,
+          "known_pixels_unchanged": true,
+          "facenet_gallery_cosine": null,
+          "facenet_gallery_valid_count": 0,
+          "arcface_conditioning_gallery_cosine": -0.023178846885760624,
+          "arcface_conditioning_gallery_valid_count": 3
+        },
+        "target_detections": {
+          "facenet": {
+            "face_count": 3,
+            "status": "multiple_faces"
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              6.772430419921875,
+              308.6308898925781,
+              130.1349639892578,
+              492.5196228027344
+            ],
+            "probability": 0.5607175230979919
+          }
+        },
+        "gallery_detections": [
+          {
+            "facenet": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                138.28543090820312,
+                98.41301727294922,
+                396.06719970703125,
+                454.6861572265625
+              ],
+              "probability": 0.9998878240585327
+            },
+            "arcface_conditioning": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                128.80831909179688,
+                85.6413803100586,
+                390.1701354980469,
+                469.25067138671875
+              ],
+              "probability": 0.6284997463226318
+            }
+          },
+          {
+            "facenet": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                110.6725845336914,
+                99.74215698242188,
+                380.085205078125,
+                455.26202392578125
+              ],
+              "probability": 0.9996598958969116
+            },
+            "arcface_conditioning": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                113.1949691772461,
+                84.04594421386719,
+                378.27227783203125,
+                461.55291748046875
+              ],
+              "probability": 0.6089138388633728
+            }
+          },
+          {
+            "facenet": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                129.61148071289062,
+                90.28837585449219,
+                402.05865478515625,
+                461.1334533691406
+              ],
+              "probability": 0.9998832941055298
+            },
+            "arcface_conditioning": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                135.89126586914062,
+                91.0992660522461,
+                405.45703125,
+                464.15753173828125
+              ],
+              "probability": 0.6086428761482239
+            }
+          }
+        ],
+        "output_sha256": "823e72e4b94cb4d619fcae40fc7a605ab2d417b411e726b286324c9f9fd48247"
+      }
+    },
+    {
+      "case_id": "1590_mixed",
+      "identity": "1590",
+      "kind": "mixed",
+      "key": "1590_mixed_observed",
+      "mode": "observed",
+      "status": "complete",
+      "output_sha256": "e76e1c48f25182047c03e798c6ea41bfd417507a862897648d466b92cc2af7a7",
+      "evaluation": {
+        "status": "complete",
+        "metrics": {
+          "niqe": 4.309704231382076,
+          "brisque": 0.24237060546875,
+          "detections": {
+            "facenet": {
+              "face_count": 3,
+              "status": "multiple_faces"
+            },
+            "arcface_conditioning": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                8.364126205444336,
+                309.69354248046875,
+                118.72758483886719,
+                491.6424865722656
+              ],
+              "probability": 0.5681474804878235
+            }
+          },
+          "facenet_cosine": null,
+          "arcface_conditioning_cosine": 0.6248824596405029,
+          "hole_mae": 0.050598844188838324,
+          "visible_mae": 0.0,
+          "ssim_rgb": 0.9917139414094395,
+          "psnr_rgb": 39.824739623260285,
+          "hole_psnr": 21.886285716464478,
+          "lpips": 0.02544618397951126,
+          "outside_observation_mae": 0.0,
+          "known_pixels_unchanged": true,
+          "facenet_gallery_cosine": null,
+          "facenet_gallery_valid_count": 0,
+          "arcface_conditioning_gallery_cosine": -0.0014939047396183014,
+          "arcface_conditioning_gallery_valid_count": 3
+        },
+        "target_detections": {
+          "facenet": {
+            "face_count": 3,
+            "status": "multiple_faces"
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              6.772430419921875,
+              308.6308898925781,
+              130.1349639892578,
+              492.5196228027344
+            ],
+            "probability": 0.5607175230979919
+          }
+        },
+        "gallery_detections": [
+          {
+            "facenet": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                138.28543090820312,
+                98.41301727294922,
+                396.06719970703125,
+                454.6861572265625
+              ],
+              "probability": 0.9998878240585327
+            },
+            "arcface_conditioning": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                128.80831909179688,
+                85.6413803100586,
+                390.1701354980469,
+                469.25067138671875
+              ],
+              "probability": 0.6284997463226318
+            }
+          },
+          {
+            "facenet": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                110.6725845336914,
+                99.74215698242188,
+                380.085205078125,
+                455.26202392578125
+              ],
+              "probability": 0.9996598958969116
+            },
+            "arcface_conditioning": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                113.1949691772461,
+                84.04594421386719,
+                378.27227783203125,
+                461.55291748046875
+              ],
+              "probability": 0.6089138388633728
+            }
+          },
+          {
+            "facenet": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                129.61148071289062,
+                90.28837585449219,
+                402.05865478515625,
+                461.1334533691406
+              ],
+              "probability": 0.9998832941055298
+            },
+            "arcface_conditioning": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                135.89126586914062,
+                91.0992660522461,
+                405.45703125,
+                464.15753173828125
+              ],
+              "probability": 0.6086428761482239
+            }
+          }
+        ],
+        "output_sha256": "e76e1c48f25182047c03e798c6ea41bfd417507a862897648d466b92cc2af7a7"
+      }
+    },
+    {
+      "case_id": "1590_mixed",
+      "identity": "1590",
+      "kind": "mixed",
+      "key": "1590_mixed_native",
+      "mode": "native",
+      "status": "failed",
+      "error": "CalledProcessError: Command '['C:\\\\Users\\\\rehaa\\\\.cache\\\\facial-inpainting\\\\refldm_env_v1\\\\Scripts\\\\python.exe', 'C:\\\\Users\\\\rehaa\\\\OneDrive\\\\Documents\\\\ChatGPT\\\\Facial inpainting Project\\\\scripts\\\\refldm_restore.py', '--image', 'C:\\\\Users\\\\rehaa\\\\OneDrive\\\\Documents\\\\ChatGPT\\\\Facial inpainting Project\\\\outputs\\\\unfamiliar_smoke_v1\\\\cases\\\\1590_mixed\\\\observed.png', '--mask', 'C:\\\\Users\\\\rehaa\\\\OneDrive\\\\Documents\\\\ChatGPT\\\\Facial inpainting Project\\\\outputs\\\\unfamiliar_smoke_v1\\\\cases\\\\1590_mixed\\\\mask.png', '--references', 'C:\\\\Users\\\\rehaa\\\\OneDrive\\\\Documents\\\\ChatGPT\\\\Facial inpainting Project\\\\outputs\\\\unfamiliar_smoke_v1\\\\roles\\\\1590\\\\role_1.png', 'C:\\\\Users\\\\rehaa\\\\OneDrive\\\\Documents\\\\ChatGPT\\\\Facial inpainting Project\\\\outputs\\\\unfamiliar_smoke_v1\\\\roles\\\\1590\\\\role_2.png', 'C:\\\\Users\\\\rehaa\\\\OneDrive\\\\Documents\\\\ChatGPT\\\\Facial inpainting Project\\\\outputs\\\\unfamiliar_smoke_v1\\\\roles\\\\1590\\\\role_3.png', 'C:\\\\Users\\\\rehaa\\\\OneDrive\\\\Documents\\\\ChatGPT\\\\Facial inpainting Project\\\\outputs\\\\unfamiliar_smoke_v1\\\\roles\\\\1590\\\\role_4.png', '--output', 'C:\\\\Users\\\\rehaa\\\\OneDrive\\\\Documents\\\\ChatGPT\\\\Facial inpainting Project\\\\outputs\\\\unfamiliar_smoke_v1\\\\results\\\\1590_mixed\\\\result.png']' returned non-zero exit status 3221227274.",
+      "evaluation": {
+        "status": "failed",
+        "error": "ValueError: CalledProcessError: Command '['C:\\\\Users\\\\rehaa\\\\.cache\\\\facial-inpainting\\\\refldm_env_v1\\\\Scripts\\\\python.exe', 'C:\\\\Users\\\\rehaa\\\\OneDrive\\\\Documents\\\\ChatGPT\\\\Facial inpainting Project\\\\scripts\\\\refldm_restore.py', '--image', 'C:\\\\Users\\\\rehaa\\\\OneDrive\\\\Documents\\\\ChatGPT\\\\Facial inpainting Project\\\\outputs\\\\unfamiliar_smoke_v1\\\\cases\\\\1590_mixed\\\\observed.png', '--mask', 'C:\\\\Users\\\\rehaa\\\\OneDrive\\\\Documents\\\\ChatGPT\\\\Facial inpainting Project\\\\outputs\\\\unfamiliar_smoke_v1\\\\cases\\\\1590_mixed\\\\mask.png', '--references', 'C:\\\\Users\\\\rehaa\\\\OneDrive\\\\Documents\\\\ChatGPT\\\\Facial inpainting Project\\\\outputs\\\\unfamiliar_smoke_v1\\\\roles\\\\1590\\\\role_1.png', 'C:\\\\Users\\\\rehaa\\\\OneDrive\\\\Documents\\\\ChatGPT\\\\Facial inpainting Project\\\\outputs\\\\unfamiliar_smoke_v1\\\\roles\\\\1590\\\\role_2.png', 'C:\\\\Users\\\\rehaa\\\\OneDrive\\\\Documents\\\\ChatGPT\\\\Facial inpainting Project\\\\outputs\\\\unfamiliar_smoke_v1\\\\roles\\\\1590\\\\role_3.png', 'C:\\\\Users\\\\rehaa\\\\OneDrive\\\\Documents\\\\ChatGPT\\\\Facial inpainting Project\\\\outputs\\\\unfamiliar_smoke_v1\\\\roles\\\\1590\\\\role_4.png', '--output', 'C:\\\\Users\\\\rehaa\\\\OneDrive\\\\Documents\\\\ChatGPT\\\\Facial inpainting Project\\\\outputs\\\\unfamiliar_smoke_v1\\\\results\\\\1590_mixed\\\\result.png']' returned non-zero exit status 3221227274."
+      }
+    },
+    {
+      "case_id": "1590_mixed",
+      "identity": "1590",
+      "kind": "mixed",
+      "key": "1590_mixed_composited",
+      "mode": "composited",
+      "status": "failed",
+      "error": "CalledProcessError: Command '['C:\\\\Users\\\\rehaa\\\\.cache\\\\facial-inpainting\\\\refldm_env_v1\\\\Scripts\\\\python.exe', 'C:\\\\Users\\\\rehaa\\\\OneDrive\\\\Documents\\\\ChatGPT\\\\Facial inpainting Project\\\\scripts\\\\refldm_restore.py', '--image', 'C:\\\\Users\\\\rehaa\\\\OneDrive\\\\Documents\\\\ChatGPT\\\\Facial inpainting Project\\\\outputs\\\\unfamiliar_smoke_v1\\\\cases\\\\1590_mixed\\\\observed.png', '--mask', 'C:\\\\Users\\\\rehaa\\\\OneDrive\\\\Documents\\\\ChatGPT\\\\Facial inpainting Project\\\\outputs\\\\unfamiliar_smoke_v1\\\\cases\\\\1590_mixed\\\\mask.png', '--references', 'C:\\\\Users\\\\rehaa\\\\OneDrive\\\\Documents\\\\ChatGPT\\\\Facial inpainting Project\\\\outputs\\\\unfamiliar_smoke_v1\\\\roles\\\\1590\\\\role_1.png', 'C:\\\\Users\\\\rehaa\\\\OneDrive\\\\Documents\\\\ChatGPT\\\\Facial inpainting Project\\\\outputs\\\\unfamiliar_smoke_v1\\\\roles\\\\1590\\\\role_2.png', 'C:\\\\Users\\\\rehaa\\\\OneDrive\\\\Documents\\\\ChatGPT\\\\Facial inpainting Project\\\\outputs\\\\unfamiliar_smoke_v1\\\\roles\\\\1590\\\\role_3.png', 'C:\\\\Users\\\\rehaa\\\\OneDrive\\\\Documents\\\\ChatGPT\\\\Facial inpainting Project\\\\outputs\\\\unfamiliar_smoke_v1\\\\roles\\\\1590\\\\role_4.png', '--output', 'C:\\\\Users\\\\rehaa\\\\OneDrive\\\\Documents\\\\ChatGPT\\\\Facial inpainting Project\\\\outputs\\\\unfamiliar_smoke_v1\\\\results\\\\1590_mixed\\\\result.png']' returned non-zero exit status 3221227274.",
+      "evaluation": {
+        "status": "failed",
+        "error": "ValueError: CalledProcessError: Command '['C:\\\\Users\\\\rehaa\\\\.cache\\\\facial-inpainting\\\\refldm_env_v1\\\\Scripts\\\\python.exe', 'C:\\\\Users\\\\rehaa\\\\OneDrive\\\\Documents\\\\ChatGPT\\\\Facial inpainting Project\\\\scripts\\\\refldm_restore.py', '--image', 'C:\\\\Users\\\\rehaa\\\\OneDrive\\\\Documents\\\\ChatGPT\\\\Facial inpainting Project\\\\outputs\\\\unfamiliar_smoke_v1\\\\cases\\\\1590_mixed\\\\observed.png', '--mask', 'C:\\\\Users\\\\rehaa\\\\OneDrive\\\\Documents\\\\ChatGPT\\\\Facial inpainting Project\\\\outputs\\\\unfamiliar_smoke_v1\\\\cases\\\\1590_mixed\\\\mask.png', '--references', 'C:\\\\Users\\\\rehaa\\\\OneDrive\\\\Documents\\\\ChatGPT\\\\Facial inpainting Project\\\\outputs\\\\unfamiliar_smoke_v1\\\\roles\\\\1590\\\\role_1.png', 'C:\\\\Users\\\\rehaa\\\\OneDrive\\\\Documents\\\\ChatGPT\\\\Facial inpainting Project\\\\outputs\\\\unfamiliar_smoke_v1\\\\roles\\\\1590\\\\role_2.png', 'C:\\\\Users\\\\rehaa\\\\OneDrive\\\\Documents\\\\ChatGPT\\\\Facial inpainting Project\\\\outputs\\\\unfamiliar_smoke_v1\\\\roles\\\\1590\\\\role_3.png', 'C:\\\\Users\\\\rehaa\\\\OneDrive\\\\Documents\\\\ChatGPT\\\\Facial inpainting Project\\\\outputs\\\\unfamiliar_smoke_v1\\\\roles\\\\1590\\\\role_4.png', '--output', 'C:\\\\Users\\\\rehaa\\\\OneDrive\\\\Documents\\\\ChatGPT\\\\Facial inpainting Project\\\\outputs\\\\unfamiliar_smoke_v1\\\\results\\\\1590_mixed\\\\result.png']' returned non-zero exit status 3221227274."
+      }
+    },
+    {
+      "case_id": "1529_gaussian_blur",
+      "identity": "1529",
+      "kind": "gaussian_blur",
+      "key": "1529_gaussian_blur_observed",
+      "mode": "observed",
+      "status": "complete",
+      "output_sha256": "c3bf7c1c00c88887db712706759835e87b6f3332ee6ed5da734d13dc412fd3c3",
+      "evaluation": {
+        "status": "complete",
+        "metrics": {
+          "niqe": 3.792832946414912,
+          "brisque": -4.59552001953125,
+          "detections": {
+            "facenet": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                127.8961181640625,
+                95.11441802978516,
+                393.45751953125,
+                455.94561767578125
+              ],
+              "probability": 0.9996448755264282
+            },
+            "arcface_conditioning": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                137.12741088867188,
+                95.29659271240234,
+                402.32293701171875,
+                452.89105224609375
+              ],
+              "probability": 0.5980799794197083
+            }
+          },
+          "facenet_cosine": 0.9633558392524719,
+          "arcface_conditioning_cosine": 0.9545420408248901,
+          "hole_mae": 0.032006460117166256,
+          "visible_mae": 0.0,
+          "ssim_rgb": 0.984010048895958,
+          "psnr_rgb": 38.07679438525249,
+          "hole_psnr": 25.98761751085138,
+          "lpips": 0.038905106484889984,
+          "outside_observation_mae": 0.0,
+          "known_pixels_unchanged": true,
+          "facenet_gallery_cosine": 0.6447159051895142,
+          "facenet_gallery_valid_count": 2,
+          "arcface_conditioning_gallery_cosine": 0.4324974771589041,
+          "arcface_conditioning_gallery_valid_count": 3
+        },
+        "target_detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              137.7801055908203,
+              89.62239837646484,
+              405.8171691894531,
+              458.8929443359375
+            ],
+            "probability": 0.9991773962974548
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              138.07559204101562,
+              99.11170959472656,
+              398.30438232421875,
+              455.22357177734375
+            ],
+            "probability": 0.6148966550827026
+          }
+        },
+        "gallery_detections": [
+          {
+            "facenet": {
+              "face_count": 2,
+              "status": "multiple_faces"
+            },
+            "arcface_conditioning": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                8.149408340454102,
+                47.90555953979492,
+                94.0505599975586,
+                199.8388671875
+              ],
+              "probability": 0.5917003750801086
+            }
+          },
+          {
+            "facenet": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                122.91680908203125,
+                97.76654815673828,
+                374.63348388671875,
+                455.43719482421875
+              ],
+              "probability": 0.9983453750610352
+            },
+            "arcface_conditioning": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                127.53653717041016,
+                89.35933685302734,
+                373.4786682128906,
+                449.81915283203125
+              ],
+              "probability": 0.6564417481422424
+            }
+          },
+          {
+            "facenet": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                131.9300994873047,
+                92.27360534667969,
+                409.42877197265625,
+                448.7335510253906
+              ],
+              "probability": 0.9997881054878235
+            },
+            "arcface_conditioning": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                137.51119995117188,
+                101.4697265625,
+                414.95953369140625,
+                448.33599853515625
+              ],
+              "probability": 0.5725529789924622
+            }
+          }
+        ],
+        "output_sha256": "c3bf7c1c00c88887db712706759835e87b6f3332ee6ed5da734d13dc412fd3c3"
+      }
+    },
+    {
+      "case_id": "1529_gaussian_blur",
+      "identity": "1529",
+      "kind": "gaussian_blur",
+      "key": "1529_gaussian_blur_native",
+      "mode": "native",
+      "status": "complete",
+      "output_sha256": "3ce0d287a72503ee4ba80aec1975d408c5816a02ba2152164e78e87fedcc73c9",
+      "evaluation": {
+        "status": "complete",
+        "metrics": {
+          "niqe": 4.932222443677222,
+          "brisque": 22.64276123046875,
+          "detections": {
+            "facenet": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                139.398681640625,
+                92.77790832519531,
+                402.3402404785156,
+                456.2527160644531
+              ],
+              "probability": 0.9994811415672302
+            },
+            "arcface_conditioning": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                137.99752807617188,
+                99.7297134399414,
+                383.51953125,
+                456.01068115234375
+              ],
+              "probability": 0.645624041557312
+            }
+          },
+          "facenet_cosine": 0.94957035779953,
+          "arcface_conditioning_cosine": 0.8990820646286011,
+          "hole_mae": 0.03921431487101547,
+          "visible_mae": 0.04080002508715394,
+          "ssim_rgb": 0.5561127143948591,
+          "psnr_rgb": 24.73937165383571,
+          "hole_psnr": 24.680565039322886,
+          "lpips": 0.2216687798500061,
+          "outside_observation_mae": 0.04080002508715395,
+          "known_pixels_unchanged": false,
+          "facenet_gallery_cosine": 0.7034681141376495,
+          "facenet_gallery_valid_count": 2,
+          "arcface_conditioning_gallery_cosine": 0.4250370239218076,
+          "arcface_conditioning_gallery_valid_count": 3
+        },
+        "target_detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              137.7801055908203,
+              89.62239837646484,
+              405.8171691894531,
+              458.8929443359375
+            ],
+            "probability": 0.9991773962974548
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              138.07559204101562,
+              99.11170959472656,
+              398.30438232421875,
+              455.22357177734375
+            ],
+            "probability": 0.6148966550827026
+          }
+        },
+        "gallery_detections": [
+          {
+            "facenet": {
+              "face_count": 2,
+              "status": "multiple_faces"
+            },
+            "arcface_conditioning": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                8.149408340454102,
+                47.90555953979492,
+                94.0505599975586,
+                199.8388671875
+              ],
+              "probability": 0.5917003750801086
+            }
+          },
+          {
+            "facenet": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                122.91680908203125,
+                97.76654815673828,
+                374.63348388671875,
+                455.43719482421875
+              ],
+              "probability": 0.9983453750610352
+            },
+            "arcface_conditioning": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                127.53653717041016,
+                89.35933685302734,
+                373.4786682128906,
+                449.81915283203125
+              ],
+              "probability": 0.6564417481422424
+            }
+          },
+          {
+            "facenet": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                131.9300994873047,
+                92.27360534667969,
+                409.42877197265625,
+                448.7335510253906
+              ],
+              "probability": 0.9997881054878235
+            },
+            "arcface_conditioning": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                137.51119995117188,
+                101.4697265625,
+                414.95953369140625,
+                448.33599853515625
+              ],
+              "probability": 0.5725529789924622
+            }
+          }
+        ],
+        "output_sha256": "3ce0d287a72503ee4ba80aec1975d408c5816a02ba2152164e78e87fedcc73c9"
+      }
+    },
+    {
+      "case_id": "1529_gaussian_blur",
+      "identity": "1529",
+      "kind": "gaussian_blur",
+      "key": "1529_gaussian_blur_composited",
+      "mode": "composited",
+      "status": "complete",
+      "output_sha256": "7ad30bf20432629d17cfa5f09b00b8cf7519417893d1e837eb11fb8c7006ebfd",
+      "evaluation": {
+        "status": "complete",
+        "metrics": {
+          "niqe": 3.6248289473290525,
+          "brisque": -4.53253173828125,
+          "detections": {
+            "facenet": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                136.52210998535156,
+                90.10099029541016,
+                403.7224426269531,
+                459.9013977050781
+              ],
+              "probability": 0.9995038509368896
+            },
+            "arcface_conditioning": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                137.29220581054688,
+                96.50004577636719,
+                398.06646728515625,
+                455.0934143066406
+              ],
+              "probability": 0.5904366374015808
+            }
+          },
+          "facenet_cosine": 0.9667109251022339,
+          "arcface_conditioning_cosine": 0.9292947053909302,
+          "hole_mae": 0.03921431487101547,
+          "visible_mae": 0.0,
+          "ssim_rgb": 0.9804543069774597,
+          "psnr_rgb": 36.769741913724,
+          "hole_psnr": 24.680565039322886,
+          "lpips": 0.013774732127785683,
+          "outside_observation_mae": 0.0,
+          "known_pixels_unchanged": true,
+          "facenet_gallery_cosine": 0.662576824426651,
+          "facenet_gallery_valid_count": 2,
+          "arcface_conditioning_gallery_cosine": 0.4329748551050822,
+          "arcface_conditioning_gallery_valid_count": 3
+        },
+        "target_detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              137.7801055908203,
+              89.62239837646484,
+              405.8171691894531,
+              458.8929443359375
+            ],
+            "probability": 0.9991773962974548
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              138.07559204101562,
+              99.11170959472656,
+              398.30438232421875,
+              455.22357177734375
+            ],
+            "probability": 0.6148966550827026
+          }
+        },
+        "gallery_detections": [
+          {
+            "facenet": {
+              "face_count": 2,
+              "status": "multiple_faces"
+            },
+            "arcface_conditioning": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                8.149408340454102,
+                47.90555953979492,
+                94.0505599975586,
+                199.8388671875
+              ],
+              "probability": 0.5917003750801086
+            }
+          },
+          {
+            "facenet": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                122.91680908203125,
+                97.76654815673828,
+                374.63348388671875,
+                455.43719482421875
+              ],
+              "probability": 0.9983453750610352
+            },
+            "arcface_conditioning": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                127.53653717041016,
+                89.35933685302734,
+                373.4786682128906,
+                449.81915283203125
+              ],
+              "probability": 0.6564417481422424
+            }
+          },
+          {
+            "facenet": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                131.9300994873047,
+                92.27360534667969,
+                409.42877197265625,
+                448.7335510253906
+              ],
+              "probability": 0.9997881054878235
+            },
+            "arcface_conditioning": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                137.51119995117188,
+                101.4697265625,
+                414.95953369140625,
+                448.33599853515625
+              ],
+              "probability": 0.5725529789924622
+            }
+          }
+        ],
+        "output_sha256": "7ad30bf20432629d17cfa5f09b00b8cf7519417893d1e837eb11fb8c7006ebfd"
+      }
+    },
+    {
+      "case_id": "1529_mixed",
+      "identity": "1529",
+      "kind": "mixed",
+      "key": "1529_mixed_observed",
+      "mode": "observed",
+      "status": "complete",
+      "output_sha256": "15796fdfb76a7b22cb5c283978118ce01e6134d7436e25cad117a58c53475586",
+      "evaluation": {
+        "status": "complete",
+        "metrics": {
+          "niqe": 3.3442901028516703,
+          "brisque": -3.57989501953125,
+          "detections": {
+            "facenet": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                128.41473388671875,
+                96.75132751464844,
+                393.4454650878906,
+                456.81744384765625
+              ],
+              "probability": 0.9998037219047546
+            },
+            "arcface_conditioning": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                141.86656188964844,
+                96.91998291015625,
+                402.9016418457031,
+                451.5289611816406
+              ],
+              "probability": 0.6164743304252625
+            }
+          },
+          "facenet_cosine": 0.9583454132080078,
+          "arcface_conditioning_cosine": 0.9027112722396851,
+          "hole_mae": 0.04480617228377404,
+          "visible_mae": 0.0,
+          "ssim_rgb": 0.9700979446022145,
+          "psnr_rgb": 36.2325673001527,
+          "hole_psnr": 24.143390425751594,
+          "lpips": 0.0421895869076252,
+          "outside_observation_mae": 0.0,
+          "known_pixels_unchanged": true,
+          "facenet_gallery_cosine": 0.6542591750621796,
+          "facenet_gallery_valid_count": 2,
+          "arcface_conditioning_gallery_cosine": 0.39208334498107433,
+          "arcface_conditioning_gallery_valid_count": 3
+        },
+        "target_detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              137.7801055908203,
+              89.62239837646484,
+              405.8171691894531,
+              458.8929443359375
+            ],
+            "probability": 0.9991773962974548
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              138.07559204101562,
+              99.11170959472656,
+              398.30438232421875,
+              455.22357177734375
+            ],
+            "probability": 0.6148966550827026
+          }
+        },
+        "gallery_detections": [
+          {
+            "facenet": {
+              "face_count": 2,
+              "status": "multiple_faces"
+            },
+            "arcface_conditioning": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                8.149408340454102,
+                47.90555953979492,
+                94.0505599975586,
+                199.8388671875
+              ],
+              "probability": 0.5917003750801086
+            }
+          },
+          {
+            "facenet": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                122.91680908203125,
+                97.76654815673828,
+                374.63348388671875,
+                455.43719482421875
+              ],
+              "probability": 0.9983453750610352
+            },
+            "arcface_conditioning": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                127.53653717041016,
+                89.35933685302734,
+                373.4786682128906,
+                449.81915283203125
+              ],
+              "probability": 0.6564417481422424
+            }
+          },
+          {
+            "facenet": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                131.9300994873047,
+                92.27360534667969,
+                409.42877197265625,
+                448.7335510253906
+              ],
+              "probability": 0.9997881054878235
+            },
+            "arcface_conditioning": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                137.51119995117188,
+                101.4697265625,
+                414.95953369140625,
+                448.33599853515625
+              ],
+              "probability": 0.5725529789924622
+            }
+          }
+        ],
+        "output_sha256": "15796fdfb76a7b22cb5c283978118ce01e6134d7436e25cad117a58c53475586"
+      }
+    },
+    {
+      "case_id": "1529_mixed",
+      "identity": "1529",
+      "kind": "mixed",
+      "key": "1529_mixed_native",
+      "mode": "native",
+      "status": "complete",
+      "output_sha256": "e684e6785e403cee692d4d5801cfe9b1f53470262ca4039f30e1a5abb6b12b30",
+      "evaluation": {
+        "status": "complete",
+        "metrics": {
+          "niqe": 4.6959584874683085,
+          "brisque": 19.48065185546875,
+          "detections": {
+            "facenet": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                127.78028869628906,
+                96.06146240234375,
+                393.6456298828125,
+                456.6038513183594
+              ],
+              "probability": 0.9996386766433716
+            },
+            "arcface_conditioning": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                138.9994659423828,
+                101.32734680175781,
+                382.58782958984375,
+                453.653076171875
+              ],
+              "probability": 0.6462867259979248
+            }
+          },
+          "facenet_cosine": 0.9560693502426147,
+          "arcface_conditioning_cosine": 0.8460800647735596,
+          "hole_mae": 0.04741845392810296,
+          "visible_mae": 0.03928884828171598,
+          "ssim_rgb": 0.5566905509019779,
+          "psnr_rgb": 24.960734456962065,
+          "hole_psnr": 23.332112347450934,
+          "lpips": 0.21420055627822876,
+          "outside_observation_mae": 0.039288848281715985,
+          "known_pixels_unchanged": false,
+          "facenet_gallery_cosine": 0.7007543444633484,
+          "facenet_gallery_valid_count": 2,
+          "arcface_conditioning_gallery_cosine": 0.38501834124326706,
+          "arcface_conditioning_gallery_valid_count": 3
+        },
+        "target_detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              137.7801055908203,
+              89.62239837646484,
+              405.8171691894531,
+              458.8929443359375
+            ],
+            "probability": 0.9991773962974548
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              138.07559204101562,
+              99.11170959472656,
+              398.30438232421875,
+              455.22357177734375
+            ],
+            "probability": 0.6148966550827026
+          }
+        },
+        "gallery_detections": [
+          {
+            "facenet": {
+              "face_count": 2,
+              "status": "multiple_faces"
+            },
+            "arcface_conditioning": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                8.149408340454102,
+                47.90555953979492,
+                94.0505599975586,
+                199.8388671875
+              ],
+              "probability": 0.5917003750801086
+            }
+          },
+          {
+            "facenet": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                122.91680908203125,
+                97.76654815673828,
+                374.63348388671875,
+                455.43719482421875
+              ],
+              "probability": 0.9983453750610352
+            },
+            "arcface_conditioning": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                127.53653717041016,
+                89.35933685302734,
+                373.4786682128906,
+                449.81915283203125
+              ],
+              "probability": 0.6564417481422424
+            }
+          },
+          {
+            "facenet": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                131.9300994873047,
+                92.27360534667969,
+                409.42877197265625,
+                448.7335510253906
+              ],
+              "probability": 0.9997881054878235
+            },
+            "arcface_conditioning": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                137.51119995117188,
+                101.4697265625,
+                414.95953369140625,
+                448.33599853515625
+              ],
+              "probability": 0.5725529789924622
+            }
+          }
+        ],
+        "output_sha256": "e684e6785e403cee692d4d5801cfe9b1f53470262ca4039f30e1a5abb6b12b30"
+      }
+    },
+    {
+      "case_id": "1529_mixed",
+      "identity": "1529",
+      "kind": "mixed",
+      "key": "1529_mixed_composited",
+      "mode": "composited",
+      "status": "complete",
+      "output_sha256": "37ca7ab1f24aaf9f49043feeb510dfb1ece9d628f410115c3477703b1ce5b9ed",
+      "evaluation": {
+        "status": "complete",
+        "metrics": {
+          "niqe": 3.471722963351436,
+          "brisque": -5.66876220703125,
+          "detections": {
+            "facenet": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                132.83465576171875,
+                91.13182067871094,
+                401.8238830566406,
+                456.6678466796875
+              ],
+              "probability": 0.9998229146003723
+            },
+            "arcface_conditioning": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                138.42413330078125,
+                96.22935485839844,
+                400.56939697265625,
+                452.94940185546875
+              ],
+              "probability": 0.6059316396713257
+            }
+          },
+          "facenet_cosine": 0.9602841138839722,
+          "arcface_conditioning_cosine": 0.8373051285743713,
+          "hole_mae": 0.04741845392810296,
+          "visible_mae": 0.0,
+          "ssim_rgb": 0.9741097956568477,
+          "psnr_rgb": 35.42128922185204,
+          "hole_psnr": 23.332112347450934,
+          "lpips": 0.02299926057457924,
+          "outside_observation_mae": 0.0,
+          "known_pixels_unchanged": true,
+          "facenet_gallery_cosine": 0.6506789326667786,
+          "facenet_gallery_valid_count": 2,
+          "arcface_conditioning_gallery_cosine": 0.35972736527522403,
+          "arcface_conditioning_gallery_valid_count": 3
+        },
+        "target_detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              137.7801055908203,
+              89.62239837646484,
+              405.8171691894531,
+              458.8929443359375
+            ],
+            "probability": 0.9991773962974548
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              138.07559204101562,
+              99.11170959472656,
+              398.30438232421875,
+              455.22357177734375
+            ],
+            "probability": 0.6148966550827026
+          }
+        },
+        "gallery_detections": [
+          {
+            "facenet": {
+              "face_count": 2,
+              "status": "multiple_faces"
+            },
+            "arcface_conditioning": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                8.149408340454102,
+                47.90555953979492,
+                94.0505599975586,
+                199.8388671875
+              ],
+              "probability": 0.5917003750801086
+            }
+          },
+          {
+            "facenet": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                122.91680908203125,
+                97.76654815673828,
+                374.63348388671875,
+                455.43719482421875
+              ],
+              "probability": 0.9983453750610352
+            },
+            "arcface_conditioning": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                127.53653717041016,
+                89.35933685302734,
+                373.4786682128906,
+                449.81915283203125
+              ],
+              "probability": 0.6564417481422424
+            }
+          },
+          {
+            "facenet": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                131.9300994873047,
+                92.27360534667969,
+                409.42877197265625,
+                448.7335510253906
+              ],
+              "probability": 0.9997881054878235
+            },
+            "arcface_conditioning": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                137.51119995117188,
+                101.4697265625,
+                414.95953369140625,
+                448.33599853515625
+              ],
+              "probability": 0.5725529789924622
+            }
+          }
+        ],
+        "output_sha256": "37ca7ab1f24aaf9f49043feeb510dfb1ece9d628f410115c3477703b1ce5b9ed"
+      }
+    }
+  ],
+  "separate_recovery_rows": [
+    {
+      "case_id": "1590_mixed",
+      "identity": "1590",
+      "kind": "mixed",
+      "key": "1590_mixed_native",
+      "mode": "native",
+      "status": "complete",
+      "output_sha256": "4d701948993ff7a97e157739edd995e5692688c6df2f7e54985c85297a3cbc80",
+      "recovery_of_initial_failure": true,
+      "evaluation": {
+        "status": "complete",
+        "metrics": {
+          "niqe": 4.039828836618739,
+          "brisque": -15.31671142578125,
+          "detections": {
+            "facenet": {
+              "face_count": 2,
+              "status": "multiple_faces"
+            },
+            "arcface_conditioning": {
+              "face_count": 0,
+              "status": "no_face"
+            }
+          },
+          "facenet_cosine": null,
+          "arcface_conditioning_cosine": null,
+          "hole_mae": 0.05694680973164459,
+          "visible_mae": 0.03189310876006537,
+          "ssim_rgb": 0.7407039868394992,
+          "psnr_rgb": 26.295062071008193,
+          "hole_psnr": 20.48373938662216,
+          "lpips": 0.1942179799079895,
+          "outside_observation_mae": 0.03189310876006537,
+          "known_pixels_unchanged": false,
+          "facenet_gallery_cosine": null,
+          "facenet_gallery_valid_count": 0,
+          "arcface_conditioning_gallery_cosine": null,
+          "arcface_conditioning_gallery_valid_count": 0
+        },
+        "target_detections": {
+          "facenet": {
+            "face_count": 3,
+            "status": "multiple_faces"
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              6.772430419921875,
+              308.6308898925781,
+              130.1349639892578,
+              492.5196228027344
+            ],
+            "probability": 0.5607175230979919
+          }
+        },
+        "gallery_detections": [
+          {
+            "facenet": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                138.28543090820312,
+                98.41301727294922,
+                396.06719970703125,
+                454.6861572265625
+              ],
+              "probability": 0.9998878240585327
+            },
+            "arcface_conditioning": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                128.80831909179688,
+                85.6413803100586,
+                390.1701354980469,
+                469.25067138671875
+              ],
+              "probability": 0.6284997463226318
+            }
+          },
+          {
+            "facenet": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                110.6725845336914,
+                99.74215698242188,
+                380.085205078125,
+                455.26202392578125
+              ],
+              "probability": 0.9996598958969116
+            },
+            "arcface_conditioning": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                113.1949691772461,
+                84.04594421386719,
+                378.27227783203125,
+                461.55291748046875
+              ],
+              "probability": 0.6089138388633728
+            }
+          },
+          {
+            "facenet": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                129.61148071289062,
+                90.28837585449219,
+                402.05865478515625,
+                461.1334533691406
+              ],
+              "probability": 0.9998832941055298
+            },
+            "arcface_conditioning": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                135.89126586914062,
+                91.0992660522461,
+                405.45703125,
+                464.15753173828125
+              ],
+              "probability": 0.6086428761482239
+            }
+          }
+        ],
+        "output_sha256": "4d701948993ff7a97e157739edd995e5692688c6df2f7e54985c85297a3cbc80"
+      }
+    },
+    {
+      "case_id": "1590_mixed",
+      "identity": "1590",
+      "kind": "mixed",
+      "key": "1590_mixed_composited",
+      "mode": "composited",
+      "status": "complete",
+      "output_sha256": "759c0293f53fc555942c12db6a9b961f0e5ae81807225d138b658822acc8b9db",
+      "recovery_of_initial_failure": true,
+      "evaluation": {
+        "status": "complete",
+        "metrics": {
+          "niqe": 4.304221754530134,
+          "brisque": -0.21319580078125,
+          "detections": {
+            "facenet": {
+              "face_count": 3,
+              "status": "multiple_faces"
+            },
+            "arcface_conditioning": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                5.706552028656006,
+                312.357666015625,
+                121.7138900756836,
+                493.7137756347656
+              ],
+              "probability": 0.6746317744255066
+            }
+          },
+          "facenet_cosine": null,
+          "arcface_conditioning_cosine": 0.7718735337257385,
+          "hole_mae": 0.05694680973164459,
+          "visible_mae": 0.0,
+          "ssim_rgb": 0.9924395693184883,
+          "psnr_rgb": 38.42219329341796,
+          "hole_psnr": 20.48373938662216,
+          "lpips": 0.01744125783443451,
+          "outside_observation_mae": 0.0,
+          "known_pixels_unchanged": true,
+          "facenet_gallery_cosine": null,
+          "facenet_gallery_valid_count": 0,
+          "arcface_conditioning_gallery_cosine": 0.0015281525750954945,
+          "arcface_conditioning_gallery_valid_count": 3
+        },
+        "target_detections": {
+          "facenet": {
+            "face_count": 3,
+            "status": "multiple_faces"
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              6.772430419921875,
+              308.6308898925781,
+              130.1349639892578,
+              492.5196228027344
+            ],
+            "probability": 0.5607175230979919
+          }
+        },
+        "gallery_detections": [
+          {
+            "facenet": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                138.28543090820312,
+                98.41301727294922,
+                396.06719970703125,
+                454.6861572265625
+              ],
+              "probability": 0.9998878240585327
+            },
+            "arcface_conditioning": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                128.80831909179688,
+                85.6413803100586,
+                390.1701354980469,
+                469.25067138671875
+              ],
+              "probability": 0.6284997463226318
+            }
+          },
+          {
+            "facenet": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                110.6725845336914,
+                99.74215698242188,
+                380.085205078125,
+                455.26202392578125
+              ],
+              "probability": 0.9996598958969116
+            },
+            "arcface_conditioning": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                113.1949691772461,
+                84.04594421386719,
+                378.27227783203125,
+                461.55291748046875
+              ],
+              "probability": 0.6089138388633728
+            }
+          },
+          {
+            "facenet": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                129.61148071289062,
+                90.28837585449219,
+                402.05865478515625,
+                461.1334533691406
+              ],
+              "probability": 0.9998832941055298
+            },
+            "arcface_conditioning": {
+              "face_count": 1,
+              "status": "ok",
+              "box": [
+                135.89126586914062,
+                91.0992660522461,
+                405.45703125,
+                464.15753173828125
+              ],
+              "probability": 0.6086428761482239
+            }
+          }
+        ],
+        "output_sha256": "759c0293f53fc555942c12db6a9b961f0e5ae81807225d138b658822acc8b9db"
+      }
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "date": "2026-09-22",
+  "identities": [
+    "1590",
+    "1529"
+  ],
+  "purpose": "unfamiliar local development functional smoke, not final or pretraining-disjoint validation",
+  "selection": "fixed hash order, exclude all earlier protocol and extension attempted/selected identities, exact and pHash<=6 duplicate filtering, one detected face, eight photos per identity",
+  "conditions": [
+    "gaussian_blur",
+    "mixed"
+  ],
+  "seed": 17,
+  "steps": 50,
+  "guidance": 1.5,
+  "final_test_used": false
+}

@@ -1,12 +1,33 @@
 # Facial Inpainting Project — Progress and Completion Report
 
-**Report date:** 21 September 2026
+**Report date:** 23 September 2026
 **Current platform:** Windows laptop, NVIDIA RTX 5070 Laptop GPU with 8 GB VRAM  
 **Current application:** http://127.0.0.1:8765/  
 **Repository:** https://github.com/rehaan1603/facial-inpainting-studio  
 **Status:** Working local research baseline; proposed multi-reference research method and final validation incomplete. Public hosting paused at the owner's request.
 
 ## Latest status update
+
+### 23 September: browser workflows verified; first uncertainty mechanism tested
+
+- Local hosting is running at `http://127.0.0.1:8765/`. Both reference-guided evidence-map reconstruction and the separate experimental ReF-LDM blur/noise mode completed through the browser with downloadable outputs and no console errors. Actual result hashes and exact preservation outside the mask were checked; ReF-LDM's raw website result exactly matches the frozen baseline. Evidence: `research/website_browser_verification_20260922.json`. The browser-verification-pending statements below are superseded.
+- ReF-LDM is available for testing as an explicitly experimental partial-damage option, not as a superior default. Requests marking completely missing pixels are rejected for this mode because it does not fill erased regions. The original missing-area reconstruction remains available. Fourteen HTTP tests, three upload-geometry tests and one matched-coverage gate test pass; JavaScript syntax passes. Instructions are in `LOCAL_TESTING.md`.
+- Implemented and completed the reference-disagreement diagnostic: 16 leave-one-reference-out generations and 12/12 scored candidate/control images. On four observed mixed cases, FaceNet is **0.8725** for all-reference restoration, **0.8897** for disagreement gating and **0.9037** for edit-magnitude gating. Masked MAE is **0.05043 / 0.04829 / 0.04793**. Disagreement harm-prediction AUC ranges **0.417–0.533**, providing weak evidence. LPIPS worsens under both gates, particularly edit gating. The proposed reference-risk mechanism does not demonstrate incremental identity/pixel-error benefit over the simpler control; it is not calibrated and is not promoted to the website. See `REFERENCE_RISK_RESULTS_V1.md`.
+- Two new local development identities, **1590 and 1529**, were selected with the earlier identities/attempts and all reserved-final identities excluded before pixel access. Initial inference completed 3/4 cases; one native process terminated without a Python traceback. Its unchanged-settings retry succeeded, with the initial failure retained separately. These are functionality checks on newly observed development identities, not pretraining-disjoint or final evaluation.
+- Unfamiliar-case scoring is complete: **10/12 initial rows**, then **12/12 after the separately recorded runtime recovery**. On four cases from two identities, composed restoration / unchanged input FaceNet is **0.9635 / 0.9609**, LPIPS **0.01512 / 0.02857**, and masked MAE **0.04777 / 0.03991**. Identity/perceptual scores improve descriptively while pixel fidelity worsens. All four rows visually reviewed: blur is reduced, but skin texture and eye detail differ; native restoration also changes reliable context. No statistical generalization claim follows. See `research/UNFAMILIAR_SMOKE_RESULTS_V1.md`.
+- No novel-method superiority is established. Remaining scientific work is a justified mechanism revision, larger identity-separated calibration/validation with simple controls, human fidelity review, then method freeze and reserved-final evaluation. Adapter training remains deferred. Publication readiness is incomplete.
+
+### 22 September: restoration-specific baseline now runs; novelty remains unproven
+
+- ReF-LDM completed a real 50-step GPU restoration on development case `1306_mixed`. The saved image was visually inspected and hashed (`research/refldm_smoke_v1.json`). This establishes execution only: no unfamiliar-identity success or measured quality advantage is claimed. The model is not yet integrated into the website.
+- Windows dependency loading now succeeds after the owner allowed the blocked component. Compatibility changes are recorded: Lightning's rank-zero import location and explicit historical checkpoint loading for the verified author-release VAE. The older dependency-block statements below are historical, not the current runtime status.
+- The confidence-map reconstruction endpoint completed real GPU generation with exact known-pixel preservation and four invalid-request checks (`research/confidence_web_integration_v2.json`). Final browser verification remains pending. Non-square confidence uploads now share an aspect-preserving image/mask/evidence transform; three geometry tests and twelve HTTP tests pass.
+- Completed the frozen ReF-LDM comparison: 24/24 generations and 48/48 scored native/composited outputs. On 20 partially damaged cases, composited FaceNet is **0.9216**, versus **0.7134** for matched high-strength SDXL, but **0.9538** for unchanged observations. Masked MAE is **0.04603**, versus **0.09032** and **0.03367**, respectively. All eight primary Holm p-values are **1.0** with four identity units. This is an external baseline, not our novelty. See `research/REFLDM_RESULTS_V1.md` and `research/refldm_results_v1.json`.
+- All four six-condition contact sheets were visually reviewed. ReF-LDM retains erased regions in all four removal cases; it is not a substitute for missing-region inpainting. Partial-damage outputs generally preserve facial structure better than the displayed SDXL control, but smoothing and eye/mouth differences remain. Native whole-image restoration alters reliable regions; composition preserves them. Review was not blinded.
+- The narrower research hypothesis is whether calibrated reference uncertainty can prevent harmful replacement of surviving facial evidence. Manual blending, multiple references and spatial transfer alone are not new contributions. Any candidate must beat unchanged-input and simple-preservation controls on held-out development identities, with identity-level statistics and failure coverage.
+- Still remaining: broader external controls, unfamiliar-person development tests, a beneficial and defensible mechanism, independent human fidelity review, conditional candidate/adapter experiments, method freeze, untouched final evaluation and manuscript. The concrete next hypothesis and rejection criteria are in `research/NOVELTY_NEXT_EXPERIMENT.md`. All eight reserved-final identities remain sealed. Latest integration and baseline work is local and not yet pushed.
+
+The dated entries below retain the history of successful and blocked attempts. Their older “currently blocked” wording is superseded by this update.
 
 ### 21 September: website inference restored, GPU control passed
 
@@ -46,6 +67,14 @@ These percentages describe finite tasks or recorded rows, not overall scientific
 | Local-fusion visual sheet review | 100% (8/8) | Both seeds reviewed; not a blinded study |
 | Expanded successful-case visual review | 100% (36/36) | Failed identity has no generated outputs; blinded review still pending |
 | Reserved final evaluation | 0% (0/8 identities) | Deliberately untouched until method freeze |
+| ReF-LDM development generation | 100% (24/24) | External baseline, existing development identities |
+| ReF-LDM development scoring | 100% (48/48) | Native and composed outputs, not 48 independent identities |
+| ReF-LDM visual sheet review | 100% (4/4) | Six conditions per identity; not blinded |
+| Reference-risk diagnostic generation | 100% (16/16) | Leave-one-reference-out, four observed mixed cases |
+| Reference-risk diagnostic scoring | 100% (12/12) | All-reference and two matched-coverage gates |
+| Unfamiliar development initial generation | 75% (3/4) | One native process failure retained |
+| Unfamiliar development after runtime retry | 100% (4/4) | One separately recorded successful retry |
+| Unfamiliar development scoring after retry | 100% (12/12) | Two identities, controls and native/composed outputs |
 | Demonstrated advantage over historical 0.8180 | Not established | No defensible percentage applies |
 | Publication readiness | Incomplete | External controls, human review, method freeze and final evidence remain |
 
@@ -79,9 +108,9 @@ The completed baseline and remaining research work are summarized below.
 
 ### Next work in order
 
-1. Integrate the confidence map into the website reconstruction flow with explicit experimental labeling; fresh CLI and website-backend generation now pass.
+1. Maintain and broaden the verified browser workflow: confidence reconstruction and experimental blur/noise restoration now work. Investigate the isolated native-process termination; add broader real-photo and non-square end-to-end coverage beyond the passing geometry tests.
 2. Use the completed compression diagnosis to design separately versioned post-degradation validity handling with failure coverage and matched reference-count controls.
-3. Prioritize evidence-preserving restoration-specific conditioning. Current local latent injection does not justify training a fusion adapter. Compare close external reference-restoration methods before another mechanism claim.
+3. Revise the evidence-preservation mechanism using the completed external comparison and negative reference-disagreement diagnostic. Current local latent injection and disagreement gating do not justify fusion-adapter training or a novelty claim. Expand appropriate external controls before claiming an incremental contribution.
 4. Expand pose/expression correspondence, independently varied severity/masks/reference quality and identity groups. Conduct blinded human fidelity assessment; confidence intervals from three or four identities are insufficient.
 5. Once a method is stable, perform the prescribed 1/2/4-candidate comparison with an independent reporting evaluator. Then freeze the method, evaluate the reserved identities once, and prepare the manuscript for a specific conference or journal.
 

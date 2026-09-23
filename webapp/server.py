@@ -5,7 +5,7 @@ from pathlib import Path
 from urllib.parse import urlparse,parse_qs
 from PIL import Image,ImageOps,UnidentifiedImageError
 ROOT=Path(__file__).resolve().parents[1];STATIC=Path(__file__).parent/'dist';RUNS=ROOT/'outputs/webapp_runs'
-sys.path.insert(0,str(ROOT/'scripts'))
+sys.path.insert(0,str(ROOT));sys.path.insert(0,str(ROOT/'scripts'))
 Image.MAX_IMAGE_PIXELS=16_000_000
 JOBS={};LOCK=threading.Lock();TOKEN=os.environ.get('INPAINTING_LOCAL_TOKEN') or secrets.token_urlsafe(32);ACTIVE=False
 
@@ -17,10 +17,14 @@ def decode_image(value,mask=False):
         im.load();im=ImageOps.exif_transpose(im)
         return im.convert('L' if mask else 'RGB').copy()
 
-def run_reference_job(job_id,source,mask,mode,references,blend,detail='standard',selection=False):
+def run_reference_job(job_id,source,mask,mode,references,blend,detail='standard',selection=False,confidence=None,strength=.99,restoration=False):
     job=JOBS[job_id];folder=RUNS/job_id;folder.mkdir(parents=True,exist_ok=False)
     import numpy as np
     from pilot import morph
+    geometry=None
+    if confidence is not None:
+        from webapp.geometry import fit_evidence
+        source,mask,confidence,geometry=fit_evidence(source,mask,confidence)
     source=source.resize((512,512),Image.Resampling.LANCZOS);supplied=np.asarray(mask.resize((512,512),Image.Resampling.NEAREST))>=128
     if mode=='learned':raise ValueError('Use the painted or expanded mask with reference photos.')
     effective=morph(supplied,8) if mode=='expand' else supplied
@@ -30,8 +34,12 @@ def run_reference_job(job_id,source,mask,mode,references,blend,detail='standard'
         path=folder/f'reference_{index+1}.png';reference.save(path);paths.append(path)
     cache=Path(json.loads((ROOT/'configs/local.json').read_text())['cache']);python=cache/'reference_env_v2/Scripts/python.exe';progress=folder/'progress.json'
     if not python.is_file():raise ValueError('The reference environment is not installed. Run scripts/prepare_reference_runtime_v2.py with the project Python, then restart the studio.')
-    command=[str(python),str(ROOT/'scripts/reference_inpaint.py'),'--image',str(folder/'input.png'),'--mask',str(folder/'effective_mask.png'),'--references',*[str(p) for p in paths],'--output',str(folder/'result.png'),'--progress',str(progress),'--blend',blend,'--strength','0.99','--model-resolution','1024' if detail=='detailed' else '512']
+    command=[str(python),str(ROOT/'scripts/reference_inpaint.py'),'--image',str(folder/'input.png'),'--mask',str(folder/'effective_mask.png'),'--references',*[str(p) for p in paths],'--output',str(folder/'result.png'),'--progress',str(progress),'--blend',blend,'--strength',str(strength),'--model-resolution','1024' if detail=='detailed' else '512']
     if selection:command[1]=str(ROOT/'scripts/mask_aware_inpaint.py')
+    if restoration:
+        python=cache/'refldm_env_v1/Scripts/python.exe'
+        if not python.is_file():raise ValueError('The experimental restoration environment is not installed.')
+        command=[str(python),str(ROOT/'scripts/refldm_restore.py'),'--image',str(folder/'input.png'),'--mask',str(folder/'effective_mask.png'),'--references',*[str(p) for p in paths],'--output',str(folder/'result.png')]
     job.update(status='running',message='Preparing the reference photos…');start=time.monotonic()
     with (folder/'inference.log').open('w',encoding='utf-8') as log:
         process=subprocess.Popen(command,cwd=ROOT,stdout=log,stderr=log,creationflags=subprocess.CREATE_NO_WINDOW)
@@ -47,17 +55,28 @@ def run_reference_job(job_id,source,mask,mode,references,blend,detail='standard'
             raise ValueError('Windows blocked a required reference-model component. The reference environment needs repair. LaMa remains available as a separate single-image option.')
         detail=json.loads(progress.read_text()).get('error') if progress.exists() else None
         raise ValueError(detail or 'Reference reconstruction failed. The saved inference log has details.')
-    metadata=json.loads((folder/'result.json').read_text());metadata['mask_mode']=mode;(folder/'metadata.json').write_text(json.dumps(metadata,indent=2))
+    metadata=json.loads((folder/'result.json').read_text());metadata['mask_mode']=mode
+    if geometry is not None:metadata['upload_geometry']=geometry
+    result_name='result.png'
+    if confidence is not None:
+        from src.preservation.confidence import preserve_observation
+        confidence=confidence.resize((512,512),Image.Resampling.NEAREST)
+        confidence.save(folder/'confidence.png')
+        observed=np.asarray(source);generated=np.asarray(Image.open(folder/'result.png').convert('RGB'))
+        preserved=preserve_observation(observed,generated,effective,np.asarray(confidence,dtype=float)/255)
+        result_name='preserved.png';Image.fromarray(preserved).save(folder/result_name)
+        metadata.update(experimental_mode='user_confidence_preservation',parent_output_sha256=metadata['result_sha256'],confidence_sha256=hashlib.sha256((folder/'confidence.png').read_bytes()).hexdigest(),result_sha256=hashlib.sha256((folder/result_name).read_bytes()).hexdigest(),scope='Experimental user-supplied evidence blending; not verified recovery of the true face.')
+    (folder/'metadata.json').write_text(json.dumps(metadata,indent=2))
     if selection:
         diagnostics=metadata.get('reference_selection',{})
         job.update(warnings=diagnostics.get('warnings',[]),selected_reference_count=len(diagnostics.get('selected_paths',[])))
-    job.update(status='complete',message='Reference-guided reconstruction ready',result=f'/runs/{job_id}/result.png',input=f'/runs/{job_id}/input.png',mask=f'/runs/{job_id}/effective_mask.png',metadata=f'/runs/{job_id}/metadata.json',seconds=round(metadata['inference_seconds_including_offload'],2),resolution=512)
+    job.update(status='complete',message='Evidence-weighted reconstruction ready' if confidence is not None else 'Reference-guided reconstruction ready',result=f'/runs/{job_id}/{result_name}',input=f'/runs/{job_id}/input.png',mask=f'/runs/{job_id}/effective_mask.png',metadata=f'/runs/{job_id}/metadata.json',seconds=round(metadata['inference_seconds_including_offload'],2),resolution=512)
 
-def run_job(job_id,source,mask,backbone,mode,references=None,blend='poisson',detail='standard'):
+def run_job(job_id,source,mask,backbone,mode,references=None,blend='poisson',detail='standard',confidence=None,strength=.99):
     global ACTIVE
     job=JOBS[job_id];folder=RUNS/job_id
     try:
-        if backbone in ['reference','reference_select']:return run_reference_job(job_id,source,mask,mode,references,blend,detail,selection=backbone=='reference_select')
+        if backbone in ['reference','reference_select','refldm']:return run_reference_job(job_id,source,mask,mode,references,blend,detail,selection=backbone=='reference_select',confidence=confidence,strength=strength,restoration=backbone=='refldm')
         import numpy as np
         import torch
         from inpaint import Inpainter,RefinerPredictor
@@ -108,7 +127,7 @@ class Handler(BaseHTTPRequestHandler):
             return self.send(200,{'image':encode(folder/'observed.png'),'mask':encode(folder/'true_mask.png')})
         if path.startswith('/api/jobs/'):
             job=JOBS.get(path.rsplit('/',1)[-1]);return self.send(200,job) if job else self.send(404,{'error':'Run not found. Start a new run.'})
-        match=re.fullmatch(r'/runs/([a-f0-9]{32})/(input\.png|result\.png|mask\.png|effective_mask\.png|metadata\.json)',path)
+        match=re.fullmatch(r'/runs/([a-f0-9]{32})/(input\.png|result\.png|preserved\.png|mask\.png|effective_mask\.png|metadata\.json)',path)
         if match:
             job_id,name=match.groups();file=RUNS/job_id/name
             if not file.is_file():return self.send(404,{'error':'Result not available.'})
@@ -132,25 +151,38 @@ class Handler(BaseHTTPRequestHandler):
             data=json.loads(self.rfile.read(length))
             if not isinstance(data,dict):raise ValueError('Expected a JSON object.')
             backbone=data.get('backbone');mode=data.get('mode')
-            if backbone not in ['lama','resshift','reference','reference_select'] or mode not in ['painted','expand','learned']:raise ValueError('Choose a supported model and mask mode.')
+            if backbone not in ['lama','resshift','reference','reference_select','refldm'] or mode not in ['painted','expand','learned']:raise ValueError('Choose a supported model and mask mode.')
             source=decode_image(data.get('image'));mask=decode_image(data.get('mask'),True)
             if source.size!=mask.size:raise ValueError('Image and mask dimensions must match.')
             if mask.getextrema()[1]<128:raise ValueError('Paint or upload a mask first.')
             references=[];blend=data.get('blend','poisson');detail=data.get('detail','standard')
             if blend not in ['poisson','hard']:raise ValueError('Choose supported edge blending.')
             if detail not in ['standard','detailed']:raise ValueError('Choose standard or detailed processing.')
-            if backbone in ['reference','reference_select']:
+            if backbone in ['reference','reference_select','refldm']:
                 values=data.get('references')
                 minimum=1 if backbone=='reference_select' else 3
                 if not isinstance(values,list) or not minimum<=len(values)<=4:raise ValueError(f'Upload {minimum} to 4 reference photos of the same person.')
                 if mode=='learned':raise ValueError('Use the painted or expanded mask with reference photos.')
                 references=[decode_image(value) for value in values]
+            confidence=None;strength=.99
+            if 'confidence' in data:
+                if backbone not in ['reference','refldm'] or mode!='painted' or detail!='standard':raise ValueError('Evidence maps require standard reference reconstruction with the exact painted mask.')
+                confidence=decode_image(data['confidence'],True)
+                if confidence.size!=source.size:raise ValueError('Evidence map dimensions must match the image.')
+                import numpy as np
+                supplied=np.asarray(mask)>=128;weights=np.asarray(confidence)
+                if not np.all(weights[~supplied]==255):raise ValueError('Evidence outside the damage mask must be white (keep).')
+                if backbone=='refldm' and np.any(weights[supplied]==0):raise ValueError('Blur/noise restoration cannot fill missing areas. Choose missing-area reconstruction instead.')
+                strength=data.get('strength',.99)
+                if isinstance(strength,bool) or not isinstance(strength,(int,float)) or not .5<=strength<=1:raise ValueError('Strength must be between 0.5 and 1.')
+            elif 'strength' in data:raise ValueError('Custom strength requires an evidence map.')
+            if backbone=='refldm' and confidence is None:raise ValueError('Blur/noise restoration requires a partial-damage evidence map.')
         except (ValueError,TypeError,UnidentifiedImageError,Image.DecompressionBombError,binascii.Error,OSError) as exc:return self.send(400,{'error':str(exc)})
         with LOCK:
             if ACTIVE:return self.send(409,{'error':'Another inpainting run is using the GPU. Try again when it finishes.'})
             ACTIVE=True
         job_id=uuid.uuid4().hex;JOBS[job_id]={'id':job_id,'status':'queued','message':'Preparing your image…'}
-        threading.Thread(target=run_job,args=(job_id,source,mask,backbone,mode,references,blend,detail),daemon=True).start();self.send(202,{'id':job_id})
+        threading.Thread(target=run_job,args=(job_id,source,mask,backbone,mode,references,blend,detail),kwargs={'confidence':confidence,'strength':strength} if confidence is not None else {},daemon=True).start();self.send(202,{'id':job_id})
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--port',type=int,default=8765);args=parser.parse_args();RUNS.mkdir(parents=True,exist_ok=True)

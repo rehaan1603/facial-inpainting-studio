@@ -1,0 +1,17 @@
+{
+  "protocol_sha256": "5f5441b1d0bb347d2e0db28724c228b9163948f1462820008a307f512da6fbb2",
+  "runner_sha256": "bb323192eee9ebf488304f83046bed4471ed18dee15baed174960ec4cb5bc6e0",
+  "manifest_sha256": "e5f13ff6f7d17c11828e4806de94ff56e2186779409ca7750131a79aa8246db7",
+  "source_commit": "af6690c19fdc6421802fd7996510bcfef259bfd1",
+  "patch_sha256": "3d2c8aa592d3a87a7ba71c9379bd7cb39a8b5c043b5023ae5560c282a8958ee9",
+  "torch": "2.11.0+cu128",
+  "precision": "author default float32",
+  "checkpoint_load_device": "cpu",
+  "checkpoint_keys": {
+    "missing": [],
+    "unexpected": []
+  },
+  "generated_rows": 48,
+  "standalone_smoke_png_identical": true,
+  "final_test_used": false
+}

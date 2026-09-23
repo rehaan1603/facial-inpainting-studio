@@ -1,0 +1,28 @@
+{
+  "date": "2026-09-22",
+  "runs": [
+    {
+      "job": "a5e0ffb1840c402fb32d4e2a19cc5790",
+      "engine": "reference",
+      "browser_completed": true,
+      "console_errors": 0,
+      "served_image": true,
+      "known_pixels_exact": true,
+      "result_sha256": "c76f59fbec8671ecd01cce7b79154d1455ef084040db13380a09c877a2bfa495"
+    },
+    {
+      "job": "cea21d04bcf24670944f53d45eda749c",
+      "engine": "refldm",
+      "browser_completed": true,
+      "console_errors": 0,
+      "served_image": true,
+      "known_pixels_exact": true,
+      "result_sha256": "436230257a62b30fb66a05629a524f8bad05fb5f240decaaa57a55355991d79a"
+    }
+  ],
+  "refldm_raw_matches_frozen_baseline": true,
+  "http_tests": 14,
+  "geometry_tests": 3,
+  "risk_gate_tests": 1,
+  "final_test_used": false
+}

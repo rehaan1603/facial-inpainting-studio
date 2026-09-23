@@ -1,0 +1,22 @@
+{
+  "date": "2026-09-22",
+  "status": "real_gpu_smoke_passed",
+  "case_id": "1306_mixed",
+  "previously_observed_development_identity": true,
+  "unknown_identity_test": false,
+  "final_test_used": false,
+  "seed": 17,
+  "steps": 50,
+  "guidance": 1.5,
+  "schedule": "uniform_trailing",
+  "result": "outputs/refldm_smoke_v1/result.png",
+  "result_sha256": "db7d7a03c6c48d4be6ac16837040e8ad107f7ceb533f2618af4c532b17b4ecc2",
+  "source_commit": "af6690c19fdc6421802fd7996510bcfef259bfd1",
+  "compatibility_changes": [
+    "Lightning rank_zero import path",
+    "Author-release VAE checkpoint explicitly loaded with weights_only=False, matching historical PyTorch default"
+  ],
+  "metrics_complete": false,
+  "website_integrated": false,
+  "scope": "Successful execution and visual inspection only; no fidelity or generalization claim"
+}

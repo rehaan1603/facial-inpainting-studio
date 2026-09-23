@@ -1,4 +1,12 @@
-# Novelty gap audit — 20 September 2026
+# Novelty gap audit — updated 22 September 2026
+
+## 22 September update
+
+23 September continuation: the leave-one-reference-out risk prototype is now implemented and evaluated (16 generations, 12 scored images). It does not beat the simpler edit-magnitude control on identity or masked error, and harmful-edit AUC is 0.417–0.533. Thus the specific disagreement-based mechanism remains unsupported. Two newly selected development identities also completed restoration after one separately retained runtime recovery; this validates additional operation, not novelty. See `REFERENCE_RISK_RESULTS_V1.md` and `UNFAMILIAR_SMOKE_RESULTS_V1.md`.
+
+The author ReF-LDM baseline is now reproduced locally on 24 development cases, with 48 native/composited outputs scored. It improves descriptive partial-damage identity scores relative to matched SDXL, but does not beat unchanged observations on identity or masked error and fails to fill erased regions. See `REFLDM_RESULTS_V1.md`. This result supports separating missing-region completion from evidence-preserving restoration; that separation alone is not a novelty claim.
+
+The authors' [ID-PreFeR project page](https://id-prefer.pages.dev/) was inspected on 22 September. It describes adaptation using mixed-quality personal references, degradation separation and identity-guided sampling. Its code was listed as forthcoming. This expands relevant prior art; the paper and implementation are not reproduced here, and its reported scores must not be compared numerically with our different protocol. The narrower unvalidated hypothesis and necessary controls are in `NOVELTY_NEXT_EXPERIMENT.md`.
 
 This is a mechanism audit, not a claim that all external methods were reproduced. NR means not verified in the inspected primary source, not that a feature is absent. Pretraining identity overlap remains unknown even when a paper has an identity-disjoint evaluation split.
 

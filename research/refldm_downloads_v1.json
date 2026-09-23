@@ -1,0 +1,18 @@
+{
+  "source": "official author release 1.0.0",
+  "files": [
+    {
+      "name": "refldm.ckpt",
+      "bytes": 1171354376,
+      "sha256": "ad953ba72b52ed32dd280232ff0070bc6cb097a71dce250318730c884e38b778",
+      "url": "https://github.com/ChiWeiHsiao/ref-ldm/releases/download/1.0.0/refldm.ckpt"
+    },
+    {
+      "name": "vqgan.ckpt",
+      "bytes": 778550621,
+      "sha256": "7b08407b454f5328aaaf1eda35418a5a53dcc68caaf3bcf12ab88b8f21ec1a5d",
+      "url": "https://github.com/ChiWeiHsiao/ref-ldm/releases/download/1.0.0/vqgan.ckpt"
+    }
+  ],
+  "usage": "non-commercial research; local weights only"
+}

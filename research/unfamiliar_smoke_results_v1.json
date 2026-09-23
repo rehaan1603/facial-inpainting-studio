@@ -1,0 +1,173 @@
+{
+  "date": "2026-09-23",
+  "identities": [
+    "1590",
+    "1529"
+  ],
+  "initial_generations_succeeded": 3,
+  "initial_generations_scheduled": 4,
+  "initial_scored_rows": 10,
+  "initial_scheduled_rows": 12,
+  "runtime_retry_succeeded": 1,
+  "post_retry_scored_rows": 12,
+  "summaries": {
+    "observed": {
+      "cases": 4,
+      "facenet_cosine": {
+        "mean": 0.9608506262302399,
+        "valid": 2
+      },
+      "facenet_gallery_cosine": {
+        "mean": 0.6494875401258469,
+        "valid": 2
+      },
+      "arcface_conditioning_cosine": {
+        "mean": 0.8421755284070969,
+        "valid": 4
+      },
+      "arcface_conditioning_gallery_cosine": {
+        "mean": 0.1926996149122715,
+        "valid": 4
+      },
+      "lpips": {
+        "mean": 0.028567225323058665,
+        "valid": 4
+      },
+      "ssim_rgb": {
+        "mean": 0.9857778927478053,
+        "valid": 4
+      },
+      "psnr_rgb": {
+        "mean": 38.84117305826688,
+        "valid": 4
+      },
+      "hole_psnr": {
+        "mean": 23.827357667668423,
+        "valid": 4
+      },
+      "hole_mae": {
+        "mean": 0.039907563893560156,
+        "valid": 4
+      },
+      "visible_mae": {
+        "mean": 0.0,
+        "valid": 4
+      },
+      "niqe": {
+        "mean": 3.91748463921717,
+        "valid": 4
+      },
+      "brisque": {
+        "mean": -1.80072021484375,
+        "valid": 4
+      }
+    },
+    "native": {
+      "cases": 4,
+      "facenet_cosine": {
+        "mean": 0.9528198540210724,
+        "valid": 2
+      },
+      "facenet_gallery_cosine": {
+        "mean": 0.702111229300499,
+        "valid": 2
+      },
+      "arcface_conditioning_cosine": {
+        "mean": 0.8725810647010803,
+        "valid": 2
+      },
+      "arcface_conditioning_gallery_cosine": {
+        "mean": 0.4050276825825373,
+        "valid": 2
+      },
+      "lpips": {
+        "mean": 0.20336369797587395,
+        "valid": 4
+      },
+      "ssim_rgb": {
+        "mean": 0.6490987441093972,
+        "valid": 4
+      },
+      "psnr_rgb": {
+        "mean": 25.57957752220267,
+        "valid": 4
+      },
+      "hole_psnr": {
+        "mean": 22.55647837734646,
+        "valid": 4
+      },
+      "hole_mae": {
+        "mean": 0.047769256780650714,
+        "valid": 4
+      },
+      "visible_mae": {
+        "mean": 0.036000087901496496,
+        "valid": 4
+      },
+      "niqe": {
+        "mean": 4.401078416974462,
+        "valid": 4
+      },
+      "brisque": {
+        "mean": 2.69586181640625,
+        "valid": 4
+      }
+    },
+    "composited": {
+      "cases": 4,
+      "facenet_cosine": {
+        "mean": 0.963497519493103,
+        "valid": 2
+      },
+      "facenet_gallery_cosine": {
+        "mean": 0.6566278785467148,
+        "valid": 2
+      },
+      "arcface_conditioning_cosine": {
+        "mean": 0.8338179588317871,
+        "valid": 4
+      },
+      "arcface_conditioning_gallery_cosine": {
+        "mean": 0.19276288151741028,
+        "valid": 4
+      },
+      "lpips": {
+        "mean": 0.01511677133385092,
+        "valid": 4
+      },
+      "ssim_rgb": {
+        "mean": 0.9857384326577532,
+        "valid": 4
+      },
+      "psnr_rgb": {
+        "mean": 37.57029376794492,
+        "valid": 4
+      },
+      "hole_psnr": {
+        "mean": 22.55647837734646,
+        "valid": 4
+      },
+      "hole_mae": {
+        "mean": 0.047769256780650714,
+        "valid": 4
+      },
+      "visible_mae": {
+        "mean": 0.0,
+        "valid": 4
+      },
+      "niqe": {
+        "mean": 3.9104534438861718,
+        "valid": 4
+      },
+      "brisque": {
+        "mean": -2.56585693359375,
+        "valid": 4
+      }
+    }
+  },
+  "original_evaluation_sha256": "7a8899ded9a26ed39f9173ca9005c786a1745052ec8b6f107690a21aa875795a",
+  "recovery_evaluation_sha256": "0297f116c62b22761863c083fcf4c96cc33cf6023f12f374d6ba33a73d933c86",
+  "final_test_used": false,
+  "pretraining_overlap": "unknown",
+  "novelty_claim": false
+}

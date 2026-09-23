@@ -33,3 +33,8 @@ All eight contact sheets, both seeds for each development identity, were inspect
 ## Next defensible direction
 
 Prioritize observed-evidence preservation and a restoration-specific conditioning path over stronger identity forcing. Before training, demonstrate local conditioning benefit with robust correspondence and a matched evidence-preserving control. Add explicit correspondence failure handling, pose/expression stress tests and independent reference-restoration baselines. Keep final identities sealed until method and parameters are frozen.
+
+
+## 22 September continuation
+
+The 22 September external ReF-LDM comparison does not change the negative local-feature-injection result. True local transfer remains implemented but lacks demonstrated benefit. New work should separate surviving evidence from missing-region synthesis; see NOVELTY_NEXT_EXPERIMENT.md. No fusion adapter has been trained.

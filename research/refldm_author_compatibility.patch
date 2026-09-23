@@ -1,0 +1,35 @@
+diff --git a/ldm/models/autoencoder.py b/ldm/models/autoencoder.py
+index 6a9c4f4..f4e5243 100644
+--- a/ldm/models/autoencoder.py
++++ b/ldm/models/autoencoder.py
+@@ -76,7 +76,7 @@ class VQModel(pl.LightningModule):
+                     print(f"{context}: Restored training weights")
+ 
+     def init_from_ckpt(self, path, ignore_keys=list()):
+-        sd = torch.load(path, map_location="cpu")["state_dict"]
++        sd = torch.load(path, map_location="cpu", weights_only=False)["state_dict"]
+         keys = list(sd.keys())
+         for k in keys:
+             for ik in ignore_keys:
+@@ -311,7 +311,7 @@ class AutoencoderKL(pl.LightningModule):
+             self.init_from_ckpt(ckpt_path, ignore_keys=ignore_keys)
+ 
+     def init_from_ckpt(self, path, ignore_keys=list()):
+-        sd = torch.load(path, map_location="cpu")["state_dict"]
++        sd = torch.load(path, map_location="cpu", weights_only=False)["state_dict"]
+         keys = list(sd.keys())
+         for k in keys:
+             for ik in ignore_keys:
+diff --git a/ldm/models/diffusion/ddpm.py b/ldm/models/diffusion/ddpm.py
+index e4a49a4..7b592a9 100644
+--- a/ldm/models/diffusion/ddpm.py
++++ b/ldm/models/diffusion/ddpm.py
+@@ -19,7 +19,7 @@ from contextlib import contextmanager
+ from functools import partial
+ from tqdm import tqdm
+ from torchvision.utils import make_grid
+-from pytorch_lightning.utilities.distributed import rank_zero_only
++from pytorch_lightning.utilities.rank_zero import rank_zero_only
+ # import pytorch_ssim
+ # import lpips
+ # from pytorch_memlab import profile, profile_every

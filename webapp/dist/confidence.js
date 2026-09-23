@@ -28,3 +28,25 @@ function download(name,data){const off=document.createElement('canvas');off.widt
 el('export').addEventListener('click',()=>{if(!photo)return;const map=new ImageData(canvas.width,canvas.height),mask=new ImageData(canvas.width,canvas.height);for(let i=0;i<confidence.length;i++){for(let j=0;j<3;j++){map.data[4*i+j]=confidence[i];mask.data[4*i+j]=confidence[i]<255?255:0;}map.data[4*i+3]=mask.data[4*i+3]=255;}download('observed.png',photo);download('damage-mask.png',mask);download('evidence-confidence.png',map);notify('Exported matching image, damage mask and confidence map. Your browser may ask to allow multiple downloads.');});
 
 el('sample').addEventListener('click',async()=>{try{const response=await fetch('/api/demo?reference=1');const data=await response.json();if(!response.ok)throw Error(data.error||'Sample unavailable.');const image=await createImageBitmap(new Blob([Uint8Array.from(atob(data.image.split(',')[1]),c=>c.charCodeAt(0))],{type:'image/png'}));canvas.width=image.width;canvas.height=image.height;context.drawImage(image,0,0);image.close();photo=context.getImageData(0,0,canvas.width,canvas.height);confidence=new Uint8Array(canvas.width*canvas.height).fill(255);history=[];for(const id of ['suggest','reset','export'])el(id).disabled=false;el('undo').disabled=true;render();notify('Local research sample loaded. Mark missing and partially damaged areas separately.');}catch(e){notify(e.message);}});
+
+let references=[],running=false;
+function pngData(data){const c=document.createElement('canvas');c.width=data.width;c.height=data.height;c.getContext('2d').putImageData(data,0,0);return c.toDataURL('image/png');}
+el('references').addEventListener('change',async()=>{try{const files=[...el('references').files];if(files.length<3||files.length>4)throw Error('Select 3 or 4 reference photos together.');const next=[];for(const file of files){const im=await load(file);if(im.width*im.height>16000000){im.close();throw Error('Use reference photos below 16 megapixels.');}const c=document.createElement('canvas'),ratio=Math.min(1,512/Math.max(im.width,im.height));c.width=Math.round(im.width*ratio);c.height=Math.round(im.height*ratio);c.getContext('2d').drawImage(im,0,0,c.width,c.height);im.close();next.push(c.toDataURL('image/png'));}references=next;el('referenceStatus').textContent=`${next.length} reference photos ready.`;el('reconstruct').disabled=false;}catch(error){references=[];el('reconstruct').disabled=true;el('referenceStatus').textContent=error.message;}});
+el('reconstruct').addEventListener('click',async()=>{
+ if(running)return;
+ try{
+  if(!photo||!confidence.some(v=>v<255))throw Error('Load an image and mark at least one damaged area.');
+  if(references.length<3)throw Error('Add 3 or 4 matching reference photos.');
+  const map=new ImageData(canvas.width,canvas.height),mask=new ImageData(canvas.width,canvas.height);
+  for(let i=0;i<confidence.length;i++){for(let k=0;k<3;k++){map.data[4*i+k]=confidence[i];mask.data[4*i+k]=confidence[i]<255?255:0;}map.data[4*i+3]=mask.data[4*i+3]=255;}
+  const payload={image:pngData(photo),mask:pngData(mask),confidence:pngData(map),references:[...references],backbone:el('method').value,mode:'painted',detail:'standard',blend:'poisson',strength:Number(el('strength').value)};
+  running=true;const controls=[...document.querySelectorAll('button,input,select')];const previous=controls.map(e=>e.disabled);controls.forEach(e=>e.disabled=true);canvas.style.pointerEvents='none';el('resultPanel').hidden=true;
+  try{
+   notify('Preparing reconstruction…');const sr=await fetch('/api/session'),session=await sr.json();if(!sr.ok)throw Error('Local studio unavailable.');
+   const response=await fetch('/api/inpaint',{method:'POST',headers:{'Content-Type':'application/json','X-Local-Token':session.token},body:JSON.stringify(payload)});const job=await response.json();if(!response.ok)throw Error(job.error||'Could not start reconstruction.');
+   for(;;){await new Promise(resolve=>setTimeout(resolve,1000));const r=await fetch('/api/jobs/'+job.id),state=await r.json();if(!r.ok)throw Error(state.error||'Could not read reconstruction progress.');notify(state.message);if(state.status==='error')throw Error(state.message);if(state.status==='complete'){el('resultImage').src=state.result;el('resultDownload').href=state.result;el('metadataDownload').href=state.metadata;el('resultPanel').hidden=false;notify('Reconstruction ready. Compare identity and expression carefully; preserved evidence may retain degradation.');break;}}
+  }finally{controls.forEach((e,i)=>e.disabled=previous[i]);canvas.style.pointerEvents='';}
+ }catch(error){notify(error.message);}finally{running=false;}
+});
+
+el('method').addEventListener('change',()=>{el('strength').disabled=el('method').value==='refldm';});

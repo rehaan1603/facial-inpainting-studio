@@ -70,3 +70,8 @@ Local feature correspondence and novelty findings are reported separately. Seed 
 ## Fresh development extension completed
 
 See `DISTORTION_EXTENSION_RESULTS_V1.md`: four additional identities, six types, two severity/mask strata and a compressed-reference stressor. 192/240 scheduled rows were scoreable; 48 retain generation/dependent failures for one identity. The three complete primary identity pairs favor lower denoising and preservation versus aggressive generation descriptively, but all four Holm p-values are 1.0. Unchanged inputs still expose fidelity loss. This does not establish a publishable superiority claim or improvement over the historical 0.8180 aggregate.
+
+
+## 22 September continuation
+
+The 22 September restoration-specific comparison is complete: 24 ReF-LDM generations and 48 scored outputs. Composited partial-damage FaceNet is 0.9216 versus matched SDXL high-strength 0.7134, but unchanged observations remain 0.9538. This supports a better external restoration baseline, not a new denoising contribution. Erased regions remain unfilled. See REFLDM_RESULTS_V1.md.
