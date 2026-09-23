@@ -8,6 +8,13 @@
 
 ## Latest status update
 
+### 23 September: main website generation repair
+
+- Investigated the user-upload failure across LaMa, ResShift and reference modes. Five fresh HTTP/GPU runs completed; all preserve pixels outside the effective mask exactly. Reference missing-area inference now neutralizes masked RGB and uses full denoising, with original-image composition. The tested 1024-pixel case generates eyes instead of sunglasses, but identity/expression accuracy is not established.
+- ResShift still infers at 256 pixels but now preserves visible detail in a 512-pixel output. Mask expansion is consistently 8 pixels on the display canvas. Higher-resolution reference inference is explicitly experimental. LaMa blur and ResShift eye errors remain on the large missing-eye case; generation quality is not solved.
+- Twenty automated tests pass (14 HTTP, 6 geometry/composition); JavaScript syntax passes. Local hosting restarted. Frozen research generators and final identities are untouched. See `research/STUDIO_GENERATION_REPAIR_20260923.md` for evidence and remaining limitations.
+
+
 ### 23 September continuation: reference-proxy mechanism implemented and tested
 
 - Replaced disagreement ranking with a fitted reference-proxy preservation rule. The first supplied reference is synthetically damaged and restored using only the other three references; its original supervises a nine-coefficient blending rule. Actual target truth and withheld gallery are evaluation-only. The generator and reference adapter remain frozen. This is an implemented postprocessing mechanism, not trained local-feature fusion or calibrated correctness probability.

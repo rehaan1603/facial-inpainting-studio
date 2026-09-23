@@ -1,0 +1,107 @@
+{
+  "scope": "Functional checks on a user-upload failure; not a quality benchmark; images remain local",
+  "checks": [
+    {
+      "source_job": "0cff7b883abd492c9d4ab41980f35c45",
+      "model": "lama",
+      "detail": "standard",
+      "job_id": "1513a0a3fd2e452a8d5bb8c2a140f3ba",
+      "status": "complete",
+      "outside_exact": true,
+      "changed_inside": 16916,
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "source_job": "0cff7b883abd492c9d4ab41980f35c45",
+      "model": "resshift",
+      "detail": "standard",
+      "job_id": "b5eb4a07519a4a05b7977f329162c91c",
+      "status": "complete",
+      "outside_exact": true,
+      "changed_inside": 16919,
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "source_job": "0cff7b883abd492c9d4ab41980f35c45",
+      "model": "reference",
+      "detail": "standard",
+      "job_id": "2413baa5cb0d4c3f8770af4bb5f5364f",
+      "status": "complete",
+      "outside_exact": true,
+      "changed_inside": 16933,
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "source_job": "0cff7b883abd492c9d4ab41980f35c45",
+      "model": "reference",
+      "detail": "detailed",
+      "job_id": "0ddfe78ccde5465eb29f0d44c02f6670",
+      "status": "complete",
+      "outside_exact": true,
+      "changed_inside": 16910,
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "source_job": "0cff7b883abd492c9d4ab41980f35c45",
+      "model": "reference_select",
+      "detail": "standard",
+      "job_id": "faf50f10fefc4b9e8344edcb6a6d4d7d",
+      "status": "complete",
+      "outside_exact": true,
+      "changed_inside": 16932,
+      "size": [
+        512,
+        512
+      ]
+    }
+  ],
+  "tests": {
+    "http": 14,
+    "geometry_and_composition": 6,
+    "javascript_syntax": "pass"
+  },
+  "quality_remaining": [
+    "LaMa blurred missing eyes",
+    "ResShift altered eye shape/expression",
+    "Reference identity, gaze and expression fidelity unverified"
+  ],
+  "frozen_research_unchanged": true,
+  "browser_checks": [
+    {
+      "model": "reference",
+      "job_id": "511d0de4ad4e44b493319e6154ba930c",
+      "outside_exact": true,
+      "changed_inside": 24526,
+      "download_http_status": 200,
+      "browser_console_errors": 0
+    },
+    {
+      "model": "resshift",
+      "job_id": "31a9b20ad5bf4191be2ff76c847351ed",
+      "outside_exact": true,
+      "changed_inside": 24521,
+      "download_http_status": 200,
+      "browser_console_errors": 0
+    },
+    {
+      "model": "lama",
+      "job_id": "1fcc0de231e4495c9594bd81aaa14aba",
+      "outside_exact": true,
+      "changed_inside": 24515,
+      "download_http_status": 200,
+      "browser_console_errors": 0
+    }
+  ]
+}

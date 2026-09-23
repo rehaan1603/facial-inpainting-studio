@@ -36,6 +36,9 @@ def run_reference_job(job_id,source,mask,mode,references,blend,detail='standard'
     if not python.is_file():raise ValueError('The reference environment is not installed. Run scripts/prepare_reference_runtime_v2.py with the project Python, then restart the studio.')
     command=[str(python),str(ROOT/'scripts/reference_inpaint.py'),'--image',str(folder/'input.png'),'--mask',str(folder/'effective_mask.png'),'--references',*[str(p) for p in paths],'--output',str(folder/'result.png'),'--progress',str(progress),'--blend',blend,'--strength',str(strength),'--model-resolution','1024' if detail=='detailed' else '512']
     if selection:command[1]=str(ROOT/'scripts/mask_aware_inpaint.py')
+    if confidence is None and not restoration:
+        command[1]=str(ROOT/'scripts/studio_reference_inpaint.py')
+        if selection:command.append('--select')
     if restoration:
         python=cache/'refldm_env_v1/Scripts/python.exe'
         if not python.is_file():raise ValueError('The experimental restoration environment is not installed.')
@@ -83,21 +86,29 @@ def run_job(job_id,source,mask,backbone,mode,references=None,blend='poisson',det
         from pilot import morph
         torch.set_num_threads(4);job.update(status='running',message=f'Loading {"LaMa" if backbone=="lama" else "ResShift"}…')
         resolution=512 if backbone=='lama' else 256
-        folder.mkdir(parents=True,exist_ok=False);source=source.resize((resolution,resolution),Image.Resampling.LANCZOS);mask=mask.resize((resolution,resolution),Image.Resampling.NEAREST)
+        from webapp.geometry import fit_evidence
+        from webapp.output import compose_prediction
+        source,mask,_,geometry=fit_evidence(source,mask,Image.new('L',source.size,255))
+        display_source=source.copy();display_supplied=np.asarray(mask)>=128
+        display_effective=morph(display_supplied,8) if mode=='expand' else display_supplied
+        folder.mkdir(parents=True,exist_ok=False);source=source.resize((resolution,resolution),Image.Resampling.LANCZOS);mask=Image.fromarray(display_effective.astype('uint8')*255).resize((resolution,resolution),Image.Resampling.NEAREST)
         observed=np.asarray(source).astype('float32')/255;supplied=np.asarray(mask)>=128
         if not supplied.any():raise ValueError('Paint or upload a mask before running inpainting.')
-        effective=morph(supplied,8) if mode=='expand' else supplied
+        effective=supplied
         refiner_path=None
         if mode=='learned':
             refiner_path=ROOT/'outputs/learned_refiner/generic_17/best.pt';effective=RefinerPredictor(refiner_path).probability(observed,supplied)>=.5
         if not effective.any():raise ValueError('The learned refiner selected no pixels. Try Use mask exactly or Expand mask by 8 px.')
-        source.save(folder/'input.png');Image.fromarray(supplied.astype('uint8')*255).save(folder/'mask.png');Image.fromarray(effective.astype('uint8')*255).save(folder/'effective_mask.png')
+        if mode=='learned':display_effective=np.asarray(Image.fromarray(effective.astype('uint8')*255).resize((512,512),Image.Resampling.NEAREST))>=128
+        display_mask=Image.fromarray(display_effective.astype('uint8')*255)
+        display_source.save(folder/'input.png');Image.fromarray(display_supplied.astype('uint8')*255).save(folder/'mask.png');display_mask.save(folder/'effective_mask.png')
         model=Inpainter(backbone);job['message']='Reconstructing the masked area…';start=time.perf_counter();pred=model(observed,effective,17);torch.cuda.synchronize();elapsed=time.perf_counter()-start
         if not np.isfinite(pred).all():raise RuntimeError('The model returned invalid pixels. Please try another image or model.')
-        Image.fromarray((pred.clip(0,1)*255).round().astype('uint8')).save(folder/'result.png')
+        compose_prediction(display_source,display_mask,pred).save(folder/'result.png')
         metadata={'backbone':backbone,'mask_mode':mode,'resolution':[resolution,resolution],'seed':17,'inference_seconds':elapsed,'input_sha256':hashlib.sha256((folder/'input.png').read_bytes()).hexdigest(),'refiner_sha256':hashlib.sha256(refiner_path.read_bytes()).hexdigest() if refiner_path else None,'scope':'Local research inference. Generated hidden facial content is a prediction, not verified recovery.'}
+        metadata.update(resolution=[512,512],model_resolution=[resolution,resolution],upload_geometry=geometry,outside_effective_mask='Exact preservation at 512-pixel processed input resolution',result_sha256=hashlib.sha256((folder/'result.png').read_bytes()).hexdigest())
         (folder/'metadata.json').write_text(json.dumps(metadata,indent=2));del model;torch.cuda.empty_cache()
-        job.update(status='complete',message='Restoration ready',result=f'/runs/{job_id}/result.png',input=f'/runs/{job_id}/input.png',mask=f'/runs/{job_id}/effective_mask.png',metadata=f'/runs/{job_id}/metadata.json',seconds=round(elapsed,2),resolution=resolution)
+        job.update(status='complete',message='Restoration ready',result=f'/runs/{job_id}/result.png',input=f'/runs/{job_id}/input.png',mask=f'/runs/{job_id}/effective_mask.png',metadata=f'/runs/{job_id}/metadata.json',seconds=round(elapsed,2),resolution=512)
     except Exception as exc:
         traceback.print_exc();message=str(exc) if isinstance(exc,ValueError) else 'Inpainting could not finish. The local server log has details; try again with LaMa.'
         job.update(status='error',message=message)
