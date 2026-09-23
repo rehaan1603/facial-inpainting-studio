@@ -206,6 +206,8 @@ The measurement baseline is substantially stronger, but the research is not yet 
 
 ## 4. Remaining work
 
+**Reconciled with completed work on 23 September 2026.** Completed implementation is distinguished from unresolved research claims below.
+
 | Area | Current evidence and remaining work | Status |
 |---|---|---|
 | Identity/quality measurement | FaceNet target/gallery, diagnostic ArcFace, LPIPS, SSIM, PSNR, hole/visible MAE, NIQE and BRISQUE executed; final evaluation remains sealed | Development implemented |
@@ -214,15 +216,18 @@ The measurement baseline is substantially stronger, but the research is not yet 
 | Local correspondence | Five-point similarity and eight regional features implemented; 22/24 initial cases detected; 3D pose/expression/occlusion unresolved | Prototype complete |
 | Local fusion | Six-policy, two-seed 48-row comparison complete; no multi-metric advantage established | Negative/mixed result |
 | Learned adapter | Train only after deterministic local fusion shows convincing benefit; do not train full SDXL | Conditional gate not met |
-| Confidence UI | Browser painting/suggestions/undo/reset checked; image/map import and all three exported PNGs verified pixel-for-pixel; fresh CLI, saved-output preservation and website backend verified; confidence-map website integration remains | Partly complete |
-| Visual assessment | All eight local sheets and all 36 successful expanded cases inspected; blinded human evaluation remains | Partly complete |
+| Confidence UI | Integration complete: reference-guided evidence-map reconstruction and experimental ReF-LDM restoration both passed real browser generation/download checks; known pixels and output hashes verified. Broader real-photo/non-square end-to-end coverage remains | Implemented and browser verified |
+| Runtime reliability | One unfamiliar-case native process termination recovered on unchanged-settings retry; original failure retained. Root cause remains unresolved; investigate recurrence | Follow-up required |
+| Visual assessment | Eight local-fusion sheets, 36 successful expanded cases, four ReF-LDM six-condition sheets, four risk-diagnostic rows and four unfamiliar-case rows reviewed; blinded human evaluation remains | Internal review complete for these runs; human study pending |
 | Candidate selection | Matched 1/2/4 candidate pools, random/identity/quality/combined selection and separate evaluator | Deferred until stable restoration |
-| External comparisons | Reproduce close reference-restoration controls; delimit paused OSOR results honestly | Required for comparative claims |
+| External comparisons | ReF-LDM completed 24/24 generations and 48/48 native/composed evaluations; partial-damage results are stronger than matched SDXL but fail erased-region completion. Additional appropriate external controls and broader validation remain; paused OSOR results remain explicitly delimited | First external baseline complete |
+| Reference-risk mechanism | Implemented 16 leave-one-reference-out generations and 12/12 scored controls. Disagreement does not beat edit magnitude on identity or masked error; AUC 0.417–0.533. Revise the mechanism before calibration/training or novelty claims | Diagnostic complete; incremental benefit unsupported |
+| Unfamiliar-person checks | Two new development identities, four cases: 3/4 initial generations, 4/4 after a separate runtime retry; 12/12 rows scored after recovery. Mixed metrics; these identities are now observed. Larger identity-separated validation remains | Functional smoke complete; generalization unproven |
 | Statistical power | More identity units, independent severity/mask/reference factors, additional seeds | Required before method freeze |
 | Optional metrics | Reconstructed-landmark error; FID only at adequate sample size; ROC/TAR only with adequate verification trials | Unimplemented; scope-dependent |
 | Final evaluation | Freeze method/parameters first; eight reserved identities remain unused | 0/8, intentionally |
 | Manuscript and presentation | Correct novelty/architecture/results, choose actual venue, prepare figures, limitations and reproducibility | Incomplete |
-| GitHub release | Code, documentation and numerical evidence checkpoint; restricted photos and weights excluded | Verification completed; see Git history for push status |
+| GitHub release | Verified application, experiment scripts, reports and numerical evidence pushed in checkpoint `43ac507` on the repository's default branch. Restricted photos and weights excluded; keep later changes synchronized | Checkpoint pushed; ongoing |
 | Public hosting | Continue loopback-only use on the laptop | Paused by user |
 
 No single overall project-completion percentage is assigned because successful research findings are not predictable implementation tasks. The explicit measured percentages above separate finished experiments from unsolved quality and publication requirements.
