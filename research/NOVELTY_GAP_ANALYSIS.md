@@ -1,5 +1,11 @@
 # Novelty gap audit — updated 22 September 2026
 
+## 23 September reference-proxy revision
+
+`REFERENCE_PROXY_METHOD.md` documents a newly implemented nine-coefficient spatial blend fitted from synthetic damage to a supplied reference held out of proxy conditioning. The frozen experiment completed 20 proxy generations and 20 scored outputs. Spatial calibration slightly improves MAE over fixed blending but worsens target/gallery identity and LPIPS; no overall benefit or novelty claim is established. See `PROXY_CALIBRATION_RESULTS_V1.md`.
+
+Primary-source checks add [SAIR](https://arxiv.org/abs/2203.03005), [Dual-Pivot Tuning](https://personalized-restoration.github.io/) and [Test-Time Degradation Adaptation](https://arxiv.org/abs/2312.02197). They already address self-supervised reference semantics, personalized restoration, or test-time degradation adaptation. A broad claim to those ideas is unavailable. [WaveFace](https://arxiv.org/abs/2403.12760) and [WaveFreqAnchor](https://arxiv.org/abs/2608.06717) also constrain claims based merely on frequency decomposition/structural anchoring. These methods were inspected as prior art, not reproduced as new external baselines in this phase.
+
 ## 22 September update
 
 23 September continuation: the leave-one-reference-out risk prototype is now implemented and evaluated (16 generations, 12 scored images). It does not beat the simpler edit-magnitude control on identity or masked error, and harmful-edit AUC is 0.417–0.533. Thus the specific disagreement-based mechanism remains unsupported. Two newly selected development identities also completed restoration after one separately retained runtime recovery; this validates additional operation, not novelty. See `REFERENCE_RISK_RESULTS_V1.md` and `UNFAMILIAR_SMOKE_RESULTS_V1.md`.

@@ -8,6 +8,13 @@
 
 ## Latest status update
 
+### 23 September continuation: reference-proxy mechanism implemented and tested
+
+- Replaced disagreement ranking with a fitted reference-proxy preservation rule. The first supplied reference is synthetically damaged and restored using only the other three references; its original supervises a nine-coefficient blending rule. Actual target truth and withheld gallery are evaluation-only. The generator and reference adapter remain frozen. This is an implemented postprocessing mechanism, not trained local-feature fusion or calibrated correctness probability.
+- Frozen protocol completed **20/20 proxy generations and 20/20 scored candidate/control images** on four already-observed mixed-damage cases. Three new unit tests pass; all output hashes and frozen mechanism source verified. All four visual comparison rows inspected. Evidence: `research/REFERENCE_PROXY_METHOD.md`, `research/PROXY_CALIBRATION_RESULTS_V1.md`, protocol and numerical receipts.
+- Spatial calibration / fixed-half blending: FaceNet **0.9197 / 0.9218**, gallery FaceNet **0.5060 / 0.5146**, masked MAE **0.041095 / 0.041459**, LPIPS **0.041328 / 0.036034**. Slightly lower pixel error does not compensate for worse identity and perceptual metrics. All four primary Holm p-values are **1.0**; progression gate not met. No fresh-identity expansion, fusion training or website promotion is justified by this experiment.
+- Novelty remains unproven. Prior-art review also covers self-supervised reference restoration and test-time adaptation; a new name or fitted blending rule is insufficient. Future work must address the structural/identity errors of the restorer and demonstrate incremental benefit over fixed blending, rather than expanding these unsupported gates. Reserved-final identities remain untouched and the local testing site is unchanged.
+
 ### 23 September: browser workflows verified; first uncertainty mechanism tested
 
 - Local hosting is running at `http://127.0.0.1:8765/`. Both reference-guided evidence-map reconstruction and the separate experimental ReF-LDM blur/noise mode completed through the browser with downloadable outputs and no console errors. Actual result hashes and exact preservation outside the mask were checked; ReF-LDM's raw website result exactly matches the frozen baseline. Evidence: `research/website_browser_verification_20260922.json`. The browser-verification-pending statements below are superseded.
@@ -72,6 +79,8 @@ These percentages describe finite tasks or recorded rows, not overall scientific
 | ReF-LDM visual sheet review | 100% (4/4) | Six conditions per identity; not blinded |
 | Reference-risk diagnostic generation | 100% (16/16) | Leave-one-reference-out, four observed mixed cases |
 | Reference-risk diagnostic scoring | 100% (12/12) | All-reference and two matched-coverage gates |
+| Reference-proxy calibration generation | 100% (20/20) | Five proxy degradations per observed identity |
+| Reference-proxy candidate scoring | 100% (20/20) | Four identities and five arms; progression gate not met |
 | Unfamiliar development initial generation | 75% (3/4) | One native process failure retained |
 | Unfamiliar development after runtime retry | 100% (4/4) | One separately recorded successful retry |
 | Unfamiliar development scoring after retry | 100% (12/12) | Two identities, controls and native/composed outputs |
@@ -222,6 +231,7 @@ The measurement baseline is substantially stronger, but the research is not yet 
 | Candidate selection | Matched 1/2/4 candidate pools, random/identity/quality/combined selection and separate evaluator | Deferred until stable restoration |
 | External comparisons | ReF-LDM completed 24/24 generations and 48/48 native/composed evaluations; partial-damage results are stronger than matched SDXL but fail erased-region completion. Additional appropriate external controls and broader validation remain; paused OSOR results remain explicitly delimited | First external baseline complete |
 | Reference-risk mechanism | Implemented 16 leave-one-reference-out generations and 12/12 scored controls. Disagreement does not beat edit magnitude on identity or masked error; AUC 0.417–0.533. Revise the mechanism before calibration/training or novelty claims | Diagnostic complete; incremental benefit unsupported |
+| Reference-proxy mechanism | Implemented a reference-only fitted spatial blend; 20 proxy generations and 20 scored images complete. Slight MAE gain versus fixed blending comes with worse identity/gallery/LPIPS. Three new tests pass. Address structural fidelity or develop a justified alternative before further expansion | Diagnostic complete; progression gate not met |
 | Unfamiliar-person checks | Two new development identities, four cases: 3/4 initial generations, 4/4 after a separate runtime retry; 12/12 rows scored after recovery. Mixed metrics; these identities are now observed. Larger identity-separated validation remains | Functional smoke complete; generalization unproven |
 | Statistical power | More identity units, independent severity/mask/reference factors, additional seeds | Required before method freeze |
 | Optional metrics | Reconstructed-landmark error; FID only at adequate sample size; ROC/TAR only with adequate verification trials | Unimplemented; scope-dependent |

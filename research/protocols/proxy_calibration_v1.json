@@ -1,0 +1,22 @@
+{
+  "date": "2026-09-23",
+  "stage": "frozen exploratory partial-damage mechanism screen, four observed development identities",
+  "cases": ["1306_mixed", "2790_mixed", "1043_mixed", "787_mixed"],
+  "proxy": "first supplied reference is the calibration original, withheld from all proxy conditioning; remaining three references condition the frozen restorer",
+  "proxy_degradation_bank": ["gaussian_blur", "noise", "jpeg", "downsample", "mixed"],
+  "proxy_mask": "reuse supplied target damage-mask coordinates on aligned reference photo; no target landmarks or clean pixels read",
+  "proxy_severity": "medium fixed for all proxies, not selected from target labels",
+  "proxy_seed": 29,
+  "restoration_seed": 17,
+  "steps": 50,
+  "guidance": 1.5,
+  "calibration": "per-person weighted ridge least squares on every fourth masked proxy pixel; eight input/output local statistics, standardized; ridge 0.01, unpenalized intercept; no gradient update to restoration model",
+  "prediction": "clip blend to [0,1], normalized box smoothing radius 2 inside supplied mask; exact observed pixels outside",
+  "arms": ["observed", "all_reference", "fixed_half", "proxy_global", "proxy_spatial"],
+  "primary_contrasts": "proxy_spatial versus fixed_half and versus proxy_global on FaceNet and hole MAE; four identity-level tests with Holm correction",
+  "safeguards": "all independent metrics including LPIPS, gallery similarity and visible MAE; visual review; retain all failures",
+  "clean_target_access": "evaluation only; calibration targets are supplied reference photos, never actual target or withheld gallery",
+  "interpretation": "mixing coefficients are not calibrated probabilities; proxy-to-target domain shift and alignment mismatch can defeat transfer",
+  "progression": "do not expand or train a fusion adapter unless spatial calibration improves beyond global/fixed blending without material fidelity/perceptual regressions; otherwise retain a negative result",
+  "final_test_used": false
+}
