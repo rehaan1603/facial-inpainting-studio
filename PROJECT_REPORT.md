@@ -1,12 +1,26 @@
 # Facial Inpainting Project — Progress and Completion Report
 
-**Report date:** 23 September 2026
+**Report date:** 24 September 2026
 **Current platform:** Windows laptop, NVIDIA RTX 5070 Laptop GPU with 8 GB VRAM  
 **Current application:** http://127.0.0.1:8765/  
 **Repository:** https://github.com/rehaan1603/facial-inpainting-studio  
 **Status:** Working local research baseline; proposed multi-reference research method and final validation incomplete. Public hosting paused at the owner's request.
 
 ## Latest status update
+
+### 24 September: user-requested processing-size comparison
+
+- Added 256 / 512 / 1024 reference-processing choices and a three-run comparison with shared image, mask, photos and seed. Each result has its own image, timing, settings and download; failures are displayed without discarding successful sizes. Exports stay at 512 pixels for visual comparison. Default processing remains 512, with obstruction-colour neutralization off.
+- Real browser comparison completed at all three actual model resolutions, with matching inputs/settings, HTTP 200 downloads and exact outside-mask preservation. All three images loaded; no browser console errors. **23 automated tests pass**. The 256-pixel result had a severe coloured eye-region artifact and is explicitly experimental, not a quality upgrade.
+- The 256-pixel path is a studio-only extension; frozen research generators are unchanged. This feature does not establish that a larger or smaller size is more accurate. It is separate from the preceding 36-generation audit.
+
+### 24 September: full studio-mode accuracy audit and default correction
+
+- Attempted **36 generations across four development identities** and eight unchanged controls: **34/36 generations completed, 42/44 rows scored**. All 34 completed reconstructions preserve outside-mask pixels exactly. Two runtime failures remain counted; separate recovery attempts are documented independently.
+- The recent neutralized 512-pixel reference path regressed identity in **3/3 completed historical comparisons**. Restored the previous reference path as the default; obstruction-colour removal is now an unchecked experimental option. This supersedes the earlier default-preprocessing claim below. ResShift's visible-detail preservation fix remains.
+- On four mixed-damage cases, ReF-LDM plus the fixed evidence blend improved identity, masked MAE and LPIPS over unchanged input in **4/4** cases; SDXL evidence blending reduced identity in **4/4** cases. This does not establish performance on arbitrary unknown images. All eight target/output sheets were inspected; gaze, expression, blur and mouth/eye errors remain.
+- **21 automated tests pass** after the default correction; JavaScript syntax passes. See `research/STUDIO_ACCURACY_V1.md`, `research/STUDIO_ACCURACY_REVIEW_20260924.md` and numerical receipts. Accuracy inside missing regions and novelty remain unproven; reserved final identities remain untouched.
+
 
 ### 23 September: main website generation repair
 

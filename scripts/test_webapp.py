@@ -75,16 +75,47 @@ class WebBoundaryTests(unittest.TestCase):
         self.assertEqual(self.request(payload=data)[0],400)
     def test_invalid_blending_rejected(self):
         data=self.valid();data['blend']='unknown';self.assertEqual(self.request(payload=data)[0],400)
+    def test_neutralization_is_explicit_and_only_for_missing_reference_mode(self):
+        data=self.valid();data['neutralize']='yes';self.assertEqual(self.request(payload=data)[0],400)
+        data['neutralize']=True;self.assertEqual(self.request(payload=data)[0],400)
+        data.update(backbone='reference',references=[png()]*3)
+        called=threading.Event()
+        with patch.object(studio,'run_job',side_effect=lambda *a,**kw:called.set()) as worker:
+            self.assertEqual(self.request(payload=data)[0],202);self.assertTrue(called.wait(5))
+            self.assertTrue(worker.call_args.kwargs['neutralize'])
+        studio.ACTIVE=False;data['confidence']=png(value=128)
+        self.assertEqual(self.request(payload=data)[0],400)
     def test_reference_detail_validation_and_dispatch(self):
         data=self.valid();data.update(backbone='reference',references=[png()]*3,detail='unsupported')
         self.assertEqual(self.request(payload=data)[0],400)
-        for detail in ['standard','detailed']:
+        for detail in ['compact','standard','detailed','compare']:
             data['detail']=detail;studio.ACTIVE=False
             called=threading.Event()
             with patch.object(studio,'run_job',side_effect=lambda *args:called.set()) as worker:
                 self.assertEqual(self.request(payload=data)[0],202)
                 self.assertTrue(called.wait(5),'The admitted background job was not dispatched')
                 self.assertEqual(worker.call_args.args[-1],detail)
+    def test_compare_rejects_fixed_resolution_models(self):
+        for model in ['lama','resshift']:
+            data=self.valid();data.update(backbone=model,detail='compare')
+            self.assertEqual(self.request(payload=data)[0],400)
+    def test_comparison_keeps_partial_failures_and_same_inputs(self):
+        import tempfile
+        from pathlib import Path
+        photo=Image.new('RGB',(32,32));mask=Image.new('L',(32,32),255);refs=[photo]*3
+        calls=[];parent='comparison_test';studio.JOBS[parent]={'id':parent}
+        def fake(child,source,supplied,mode,references,blend,detail,**kwargs):
+            calls.append((source,supplied,references,detail))
+            if detail=='detailed':raise ValueError('test failure')
+            studio.JOBS[child].update(status='complete',result='/runs/'+child+'/result.png',input='/input',mask='/mask',metadata='/metadata',seconds=1,resolution=512)
+        with tempfile.TemporaryDirectory() as folder,patch.object(studio,'RUNS',Path(folder)),patch.object(studio,'run_reference_job',side_effect=fake):
+            studio.run_size_comparison(parent,photo,mask,'reference','painted',refs,'hard',False)
+            self.assertTrue((Path(folder)/parent/'metadata.json').exists())
+        self.assertEqual([c[3] for c in calls],['compact','standard','detailed'])
+        self.assertTrue(all(c[0] is photo and c[1] is mask and c[2] is refs for c in calls))
+        self.assertEqual(studio.JOBS[parent]['status'],'complete')
+        self.assertEqual(len(studio.JOBS[parent]['comparisons']),3)
+        self.assertEqual(len(studio.JOBS[parent]['warnings']),1)
     def test_mismatched_and_empty_masks_rejected(self):
         data=self.valid();data['mask']=png((16,16));self.assertEqual(self.request(payload=data)[0],400)
         data['mask']=png(value=0);self.assertEqual(self.request(payload=data)[0],400)

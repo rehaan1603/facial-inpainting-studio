@@ -1,0 +1,49 @@
+{
+  "date": "2026-09-23",
+  "scope": "Development accuracy audit, not final validation or novelty evidence",
+  "identities": [
+    "1306",
+    "2790",
+    "1043",
+    "787"
+  ],
+  "already_observed": true,
+  "removal_arms": [
+    "lama",
+    "resshift",
+    "reference_512",
+    "reference_1024",
+    "selection_512",
+    "selection_1024"
+  ],
+  "partial_mixed_arms": [
+    "evidence_low",
+    "evidence_high",
+    "refldm_partial"
+  ],
+  "controls": "unchanged observation per case",
+  "mask": "exact painted mask, same mask across arms",
+  "partial_confidence": "uniform 128/255 inside supplied mask, 255 outside; not inferred from clean target",
+  "seed": 17,
+  "expected_generations": 36,
+  "expected_rows_including_controls": 44,
+  "metrics": [
+    "FaceNet target and gallery",
+    "ArcFace diagnostic target and gallery",
+    "PSNR",
+    "SSIM",
+    "LPIPS",
+    "hole MAE",
+    "NIQE",
+    "BRISQUE",
+    "exact known pixels"
+  ],
+  "rules": [
+    "All failures retained",
+    "No clean target/gallery in generation",
+    "No quality-based retries or output selection",
+    "No reserved-final access",
+    "Four independent identities; descriptive analysis only"
+  ],
+  "runner_sha256": "63b60624a3403e1ef1f5f1b90f366f1170a530da347099f487e5c0935816b8eb"
+}

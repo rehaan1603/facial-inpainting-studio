@@ -17,7 +17,7 @@ def decode_image(value,mask=False):
         im.load();im=ImageOps.exif_transpose(im)
         return im.convert('L' if mask else 'RGB').copy()
 
-def run_reference_job(job_id,source,mask,mode,references,blend,detail='standard',selection=False,confidence=None,strength=.99,restoration=False):
+def run_reference_job(job_id,source,mask,mode,references,blend,detail='standard',selection=False,confidence=None,strength=.99,restoration=False,neutralize=False):
     job=JOBS[job_id];folder=RUNS/job_id;folder.mkdir(parents=True,exist_ok=False)
     import numpy as np
     from pilot import morph
@@ -36,9 +36,14 @@ def run_reference_job(job_id,source,mask,mode,references,blend,detail='standard'
     if not python.is_file():raise ValueError('The reference environment is not installed. Run scripts/prepare_reference_runtime_v2.py with the project Python, then restart the studio.')
     command=[str(python),str(ROOT/'scripts/reference_inpaint.py'),'--image',str(folder/'input.png'),'--mask',str(folder/'effective_mask.png'),'--references',*[str(p) for p in paths],'--output',str(folder/'result.png'),'--progress',str(progress),'--blend',blend,'--strength',str(strength),'--model-resolution','1024' if detail=='detailed' else '512']
     if selection:command[1]=str(ROOT/'scripts/mask_aware_inpaint.py')
-    if confidence is None and not restoration:
+    if neutralize and confidence is None and not restoration:
         command[1]=str(ROOT/'scripts/studio_reference_inpaint.py')
         if selection:command.append('--select')
+    if detail=='compact':
+        command[1]=str(ROOT/'scripts/studio_reference_inpaint.py')
+        command[command.index('--model-resolution')+1]='256'
+        if not neutralize:command.append('--keep-observation')
+        if selection and '--select' not in command:command.append('--select')
     if restoration:
         python=cache/'refldm_env_v1/Scripts/python.exe'
         if not python.is_file():raise ValueError('The experimental restoration environment is not installed.')
@@ -53,6 +58,7 @@ def run_reference_job(job_id,source,mask,mode,references,blend,detail='standard'
             if time.monotonic()-start>1800:process.terminate();process.wait();raise ValueError('Reference reconstruction timed out. See the saved inference log.')
             time.sleep(.5)
     if process.returncode:
+        with (folder/'inference.log').open('a',encoding='utf-8') as log:log.write(f'\nProcess exit code: {process.returncode}\n')
         log_text=(folder/'inference.log').read_text(encoding='utf-8',errors='replace')
         if 'Application Control policy has blocked this file' in log_text:
             raise ValueError('Windows blocked a required reference-model component. The reference environment needs repair. LaMa remains available as a separate single-image option.')
@@ -75,11 +81,31 @@ def run_reference_job(job_id,source,mask,mode,references,blend,detail='standard'
         job.update(warnings=diagnostics.get('warnings',[]),selected_reference_count=len(diagnostics.get('selected_paths',[])))
     job.update(status='complete',message='Evidence-weighted reconstruction ready' if confidence is not None else 'Reference-guided reconstruction ready',result=f'/runs/{job_id}/{result_name}',input=f'/runs/{job_id}/input.png',mask=f'/runs/{job_id}/effective_mask.png',metadata=f'/runs/{job_id}/metadata.json',seconds=round(metadata['inference_seconds_including_offload'],2),resolution=512)
 
-def run_job(job_id,source,mask,backbone,mode,references=None,blend='poisson',detail='standard',confidence=None,strength=.99):
+def run_size_comparison(job_id,source,mask,backbone,mode,references,blend,neutralize):
+    job=JOBS[job_id];items=[]
+    for index,(detail,size) in enumerate([('compact',256),('standard',512),('detailed',1024)]):
+        job.update(status='running',message=f'Comparing sizes: processing {size} pixels ({index+1}/3)…')
+        child=uuid.uuid4().hex;JOBS[child]={'id':child,'status':'queued'}
+        try:
+            run_reference_job(child,source,mask,mode,references,blend,detail,selection=backbone=='reference_select',neutralize=neutralize)
+            items.append(dict(JOBS[child],processing_size=size))
+        except Exception as error:
+            JOBS[child].update(status='error',message=str(error))
+            items.append(dict(JOBS[child],processing_size=size))
+    folder=RUNS/job_id;folder.mkdir(parents=True,exist_ok=False)
+    (folder/'metadata.json').write_text(json.dumps({'scope':'Processing-size comparison; same uploaded image, mask, references, seed and settings. All exports are 512 pixels. No ground truth or automatic quality ranking.','results':items},indent=2))
+    successes=[r for r in items if r['status']=='complete']
+    if not successes:raise ValueError('All comparison runs failed. '+ '; '.join(r['message'] for r in items))
+    first=successes[0]
+    job.update(status='complete',message='Size comparison ready',comparisons=items,result=first['result'],input=first['input'],mask=first['mask'],metadata=f'/runs/{job_id}/metadata.json',resolution=512,seconds=sum(r['seconds'] for r in successes),warnings=[f"{r['processing_size']} px failed: {r['message']}" for r in items if r['status']=='error'])
+
+
+def run_job(job_id,source,mask,backbone,mode,references=None,blend='poisson',detail='standard',confidence=None,strength=.99,neutralize=False):
     global ACTIVE
     job=JOBS[job_id];folder=RUNS/job_id
     try:
-        if backbone in ['reference','reference_select','refldm']:return run_reference_job(job_id,source,mask,mode,references,blend,detail,selection=backbone=='reference_select',confidence=confidence,strength=strength,restoration=backbone=='refldm')
+        if detail=='compare':return run_size_comparison(job_id,source,mask,backbone,mode,references,blend,neutralize)
+        if backbone in ['reference','reference_select','refldm']:return run_reference_job(job_id,source,mask,mode,references,blend,detail,selection=backbone=='reference_select',confidence=confidence,strength=strength,restoration=backbone=='refldm',neutralize=neutralize)
         import numpy as np
         import torch
         from inpaint import Inpainter,RefinerPredictor
@@ -168,7 +194,8 @@ class Handler(BaseHTTPRequestHandler):
             if mask.getextrema()[1]<128:raise ValueError('Paint or upload a mask first.')
             references=[];blend=data.get('blend','poisson');detail=data.get('detail','standard')
             if blend not in ['poisson','hard']:raise ValueError('Choose supported edge blending.')
-            if detail not in ['standard','detailed']:raise ValueError('Choose standard or detailed processing.')
+            if detail not in ['compact','standard','detailed','compare']:raise ValueError('Choose a supported processing size.')
+            if detail in ['compact','compare'] and backbone not in ['reference','reference_select']:raise ValueError('Size comparison requires a reference model. Other models have fixed native sizes.')
             if backbone in ['reference','reference_select','refldm']:
                 values=data.get('references')
                 minimum=1 if backbone=='reference_select' else 3
@@ -188,12 +215,17 @@ class Handler(BaseHTTPRequestHandler):
                 if isinstance(strength,bool) or not isinstance(strength,(int,float)) or not .5<=strength<=1:raise ValueError('Strength must be between 0.5 and 1.')
             elif 'strength' in data:raise ValueError('Custom strength requires an evidence map.')
             if backbone=='refldm' and confidence is None:raise ValueError('Blur/noise restoration requires a partial-damage evidence map.')
+            neutralize=data.get('neutralize',False)
+            if not isinstance(neutralize,bool):raise ValueError('Obstruction colour option must be true or false.')
+            if neutralize and (backbone not in ['reference','reference_select'] or confidence is not None):raise ValueError('Obstruction colour removal is only for reference missing-area reconstruction without an evidence map.')
         except (ValueError,TypeError,UnidentifiedImageError,Image.DecompressionBombError,binascii.Error,OSError) as exc:return self.send(400,{'error':str(exc)})
         with LOCK:
             if ACTIVE:return self.send(409,{'error':'Another inpainting run is using the GPU. Try again when it finishes.'})
             ACTIVE=True
         job_id=uuid.uuid4().hex;JOBS[job_id]={'id':job_id,'status':'queued','message':'Preparing your image…'}
-        threading.Thread(target=run_job,args=(job_id,source,mask,backbone,mode,references,blend,detail),kwargs={'confidence':confidence,'strength':strength} if confidence is not None else {},daemon=True).start();self.send(202,{'id':job_id})
+        options={'confidence':confidence,'strength':strength} if confidence is not None else {}
+        if neutralize:options['neutralize']=True
+        threading.Thread(target=run_job,args=(job_id,source,mask,backbone,mode,references,blend,detail),kwargs=options,daemon=True).start();self.send(202,{'id':job_id})
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--port',type=int,default=8765);args=parser.parse_args();RUNS.mkdir(parents=True,exist_ok=True)

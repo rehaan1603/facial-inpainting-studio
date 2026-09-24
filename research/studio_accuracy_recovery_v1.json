@@ -1,0 +1,150 @@
+{
+  "scope": "Separate unchanged-setting retries after main audit completed and CPU evaluator stopped; original failures remain counted. Third row verifies restored legacy default.",
+  "rows": [
+    {
+      "case_id": "2790_removal",
+      "model": "reference",
+      "detail": "standard",
+      "neutralize": true,
+      "status": "complete",
+      "job_id": "cc8b429b456442e5a621fbbe7a812118",
+      "output_sha256": "fbbdc760b2c453f05af3035ea6782cbc714972763877d4f2f1d41214ca9e82e5",
+      "metrics": {
+        "niqe": 4.5537461395381165,
+        "brisque": 13.32391357421875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              123.29443359375,
+              101.93367004394531,
+              392.8804016113281,
+              456.8758239746094
+            ],
+            "probability": 0.9999878406524658
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              133.5060272216797,
+              104.5386962890625,
+              407.50054931640625,
+              453.2508850097656
+            ],
+            "probability": 0.6256515383720398
+          }
+        },
+        "facenet_cosine": 0.7612547874450684,
+        "arcface_conditioning_cosine": 0.7075451612472534,
+        "hole_mae": 0.07610782000247765,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9672694407519601,
+        "psnr_rgb": 30.433861849968768,
+        "hole_psnr": 18.682811995653033,
+        "lpips": 0.03452093526721001,
+        "facenet_gallery_cosine": 0.6744507352511088,
+        "arcface_conditioning_gallery_cosine": 0.5119249920050303
+      },
+      "known_pixels_unchanged": true
+    },
+    {
+      "case_id": "2790_removal",
+      "model": "reference_select",
+      "detail": "detailed",
+      "neutralize": true,
+      "status": "complete",
+      "job_id": "cfe0fd75dbf346298b0182cadf184527",
+      "output_sha256": "f5823b5ae424864a35149b8b409d75d8ce98858cfd475451d897f5fa5808b061",
+      "metrics": {
+        "niqe": 4.40081859067485,
+        "brisque": 14.44842529296875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              137.85987854003906,
+              96.77738189697266,
+              415.1014404296875,
+              458.9347839355469
+            ],
+            "probability": 0.9999996423721313
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              133.49024963378906,
+              104.64768981933594,
+              406.01397705078125,
+              452.6771545410156
+            ],
+            "probability": 0.6215580105781555
+          }
+        },
+        "facenet_cosine": 0.7769604325294495,
+        "arcface_conditioning_cosine": 0.7431272864341736,
+        "hole_mae": 0.08563315407612387,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9635768389127429,
+        "psnr_rgb": 29.807940717519323,
+        "hole_psnr": 18.05689086320359,
+        "lpips": 0.029495086520910263,
+        "facenet_gallery_cosine": 0.6635036468505859,
+        "arcface_conditioning_gallery_cosine": 0.5105351308981577
+      },
+      "known_pixels_unchanged": true
+    },
+    {
+      "case_id": "1306_removal",
+      "model": "reference",
+      "detail": "standard",
+      "neutralize": false,
+      "status": "complete",
+      "job_id": "588e5a4c409d437596a4af901dce5014",
+      "output_sha256": "739927fd338b57a256258b14e75c035cbc689593d32085555d8faab6281142e1",
+      "metrics": {
+        "niqe": 5.126214700552859,
+        "brisque": 18.75115966796875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              113.21690368652344,
+              85.53264617919922,
+              396.8111572265625,
+              457.10394287109375
+            ],
+            "probability": 0.9999661445617676
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              118.87469482421875,
+              92.90187072753906,
+              391.00164794921875,
+              465.02783203125
+            ],
+            "probability": 0.5593149662017822
+          }
+        },
+        "facenet_cosine": 0.7527672052383423,
+        "arcface_conditioning_cosine": 0.5576380491256714,
+        "hole_mae": 0.09363302335691036,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9655164727082614,
+        "psnr_rgb": 28.828512843789262,
+        "hole_psnr": 17.404053541864823,
+        "lpips": 0.03329000622034073,
+        "facenet_gallery_cosine": 0.4689158300558726,
+        "arcface_conditioning_gallery_cosine": 0.131389948228995
+      },
+      "known_pixels_unchanged": true,
+      "matches_historical_png": true
+    }
+  ]
+}
