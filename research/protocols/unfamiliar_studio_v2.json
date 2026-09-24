@@ -1,0 +1,17 @@
+{
+  "date": "2026-09-24",
+  "identities": [
+    "3182",
+    "1037"
+  ],
+  "purpose": "unfamiliar local development studio accuracy audit, not final or pretraining-disjoint validation",
+  "selection": "fixed hash order, exclude all earlier protocol, extension and unfamiliar-smoke attempted/selected identities, exact and pHash<=6 duplicate filtering, one detected face, eight photos per identity",
+  "conditions": [
+    "removal",
+    "mixed"
+  ],
+  "seed": 17,
+  "steps": 50,
+  "guidance": 1.5,
+  "final_test_used": false
+}

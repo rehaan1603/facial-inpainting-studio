@@ -1,0 +1,111 @@
+{
+  "scope": "Two functional runs on one already-observed development identity. Union ensures painted damage cannot be dropped; not a novel method or general quality guarantee.",
+  "server_sha256": "efc046000350d7f44470ef888f8f65e779fdc9389adbd87c336c303aad3765c4",
+  "rows": [
+    {
+      "case_id": "1037_removal",
+      "backbone": "lama",
+      "status": "complete",
+      "job_id": "9d094cbdffeb456085c32dc0a0d20b84",
+      "output_sha256": "424083b450d6ef4c1cb939b53c2590ca07602cef50043ddff3395c161b4675ef",
+      "requested_pixels": 16593,
+      "dropped_requested_pixels": 0,
+      "known_pixels_unchanged": true,
+      "metrics": {
+        "niqe": 4.8524341641389865,
+        "brisque": 34.61395263671875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              127.91326904296875,
+              92.47407531738281,
+              399.872314453125,
+              462.75201416015625
+            ],
+            "probability": 0.9996856451034546
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              141.60662841796875,
+              83.5936508178711,
+              403.61920166015625,
+              441.2804260253906
+            ],
+            "probability": 0.6125513315200806
+          }
+        },
+        "facenet_cosine": 0.6897627115249634,
+        "arcface_conditioning_cosine": 0.7181594967842102,
+        "hole_mae": 0.09874088029834312,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9607520786016733,
+        "psnr_rgb": 28.525468013468895,
+        "hole_psnr": 17.400456957315765,
+        "lpips": 0.039110466837882996,
+        "original_damage_mae": 0.11280873224357543
+      },
+      "delta_vs_prior_learned": {
+        "facenet_cosine": 0.01179516315460205,
+        "original_damage_mae": -0.07999459572092965,
+        "lpips": -0.018612109124660492
+      }
+    },
+    {
+      "case_id": "1037_removal",
+      "backbone": "resshift",
+      "status": "complete",
+      "job_id": "02a37d5499aa4fa98f438eca7785b3b1",
+      "output_sha256": "320d6687e83b48169cf5c7b92b61494794d82845dc49dab38dbcca9870b0372d",
+      "requested_pixels": 16593,
+      "dropped_requested_pixels": 0,
+      "known_pixels_unchanged": true,
+      "metrics": {
+        "niqe": 4.691384636724977,
+        "brisque": 37.23211669921875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              139.57626342773438,
+              88.66901397705078,
+              403.8457336425781,
+              452.7275390625
+            ],
+            "probability": 0.9999929666519165
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              138.23226928710938,
+              85.10014343261719,
+              403.54522705078125,
+              454.21533203125
+            ],
+            "probability": 0.5609921813011169
+          }
+        },
+        "facenet_cosine": 0.845238447189331,
+        "arcface_conditioning_cosine": 0.7676478624343872,
+        "hole_mae": 0.07861475153311555,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9675460604856818,
+        "psnr_rgb": 29.831603559667915,
+        "hole_psnr": 18.70315662926988,
+        "lpips": 0.030980391427874565,
+        "original_damage_mae": 0.08655811628574771
+      },
+      "delta_vs_prior_learned": {
+        "facenet_cosine": 0.08684808015823364,
+        "original_damage_mae": -0.012124413436802428,
+        "lpips": -0.007201900705695152
+      }
+    }
+  ],
+  "final_test_used": false
+}

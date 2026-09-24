@@ -1,0 +1,285 @@
+{
+  "scope": "Post-fix geometry and restoration validation. No generalization or accuracy claim. Initial failures remain in the original receipt.",
+  "server_sha256": "4a0f79cc2969882b9a904c158d1845fda729b3c050580aa0001cd672b644a13d",
+  "worker_sha256": "ef0df7cb5761158d76c9d89f8e251a4cdc298a42464c4d4834c58f5cc1010ae7",
+  "rows": [
+    {
+      "case_id": "3182_mixed",
+      "backbone": "refldm",
+      "framing": "square",
+      "status": "complete",
+      "job_id": "825c988572b740aab4d47e34469abdfe",
+      "output_sha256": "d21fe3f71adb51729024acfb07b9704fde2abb3250511557feb9b747cb8d1992",
+      "seconds": 10.48,
+      "known_pixels_unchanged": true,
+      "reference_preparation": [
+        {
+          "reference_index": 1,
+          "original_sha256": "a64db936d23d25aaf7fdac05c9f00eab5984972a8ec56c28b149c76760dd4289",
+          "prepared_sha256": "a64db936d23d25aaf7fdac05c9f00eab5984972a8ec56c28b149c76760dd4289",
+          "oriented_source_size": [
+            512,
+            512
+          ],
+          "source_exif_orientation": 1,
+          "face_bbox": [
+            138.3256378173828,
+            82.82266998291016,
+            395.50750732421875,
+            474.07958984375
+          ],
+          "detection_score": 0.5190244317054749,
+          "geometry": {
+            "operation": "unchanged_square",
+            "prepared_size": [
+              512,
+              512
+            ]
+          }
+        },
+        {
+          "reference_index": 2,
+          "original_sha256": "656b1290189231e5b96c1fd0f9114db8f16f453ff111cbb7df6f3d9295fe7f2c",
+          "prepared_sha256": "656b1290189231e5b96c1fd0f9114db8f16f453ff111cbb7df6f3d9295fe7f2c",
+          "oriented_source_size": [
+            512,
+            512
+          ],
+          "source_exif_orientation": 1,
+          "face_bbox": [
+            115.89041900634766,
+            111.34246826171875,
+            377.03607177734375,
+            454.69451904296875
+          ],
+          "detection_score": 0.7244200706481934,
+          "geometry": {
+            "operation": "unchanged_square",
+            "prepared_size": [
+              512,
+              512
+            ]
+          }
+        },
+        {
+          "reference_index": 3,
+          "original_sha256": "92a3f3df30fbba7521aa92ba3179d3bdcbc4ce9038d4df84fcf3ba67967914d8",
+          "prepared_sha256": "92a3f3df30fbba7521aa92ba3179d3bdcbc4ce9038d4df84fcf3ba67967914d8",
+          "oriented_source_size": [
+            512,
+            512
+          ],
+          "source_exif_orientation": 1,
+          "face_bbox": [
+            127.96134948730469,
+            97.84779357910156,
+            376.4712219238281,
+            465.16162109375
+          ],
+          "detection_score": 0.5856742858886719,
+          "geometry": {
+            "operation": "unchanged_square",
+            "prepared_size": [
+              512,
+              512
+            ]
+          }
+        },
+        {
+          "reference_index": 4,
+          "original_sha256": "2c78092ce2979dbf65210c964430ada1a53af51e40c15d4336b6ba0a2d1ed607",
+          "prepared_sha256": "2c78092ce2979dbf65210c964430ada1a53af51e40c15d4336b6ba0a2d1ed607",
+          "oriented_source_size": [
+            512,
+            512
+          ],
+          "source_exif_orientation": 1,
+          "face_bbox": [
+            111.59159851074219,
+            102.12247467041016,
+            377.044189453125,
+            461.25946044921875
+          ],
+          "detection_score": 0.6513885259628296,
+          "geometry": {
+            "operation": "unchanged_square",
+            "prepared_size": [
+              512,
+              512
+            ]
+          }
+        }
+      ],
+      "byte_matches_pre_fix_default": true
+    },
+    {
+      "case_id": "3182_mixed",
+      "backbone": "refldm",
+      "framing": "rectangular_references",
+      "status": "complete",
+      "job_id": "9b55dfa5d5e04495b7a761fa31dac676",
+      "output_sha256": "32430045f4dc6f9d375bde9855504e1eba5d409e6c59091c3fda8a8de7accad2",
+      "seconds": 10.23,
+      "known_pixels_unchanged": true,
+      "reference_preparation": [
+        {
+          "reference_index": 1,
+          "original_sha256": "c9832ee8f742eb51ab03b5233f8bddbdf92bbfda7c8347a6a84f2aec1c7d3df5",
+          "prepared_sha256": "67bef5f0f4fe0719f6c5b0d1e48636b4fbee8532bd964055bc856d9d29238967",
+          "oriented_source_size": [
+            400,
+            512
+          ],
+          "source_exif_orientation": 1,
+          "face_bbox": [
+            82.34297180175781,
+            82.30233001708984,
+            334.8262634277344,
+            474.47686767578125
+          ],
+          "detection_score": 0.5891849398612976,
+          "geometry": {
+            "operation": "face_centered_square_crop",
+            "crop_box_in_oriented_source": [
+              -145,
+              -75,
+              561,
+              631
+            ],
+            "padding_left_top_right_bottom": [
+              145,
+              75,
+              161,
+              119
+            ],
+            "padding_mode": "edge",
+            "uniform_scale": 0.7252124645892352,
+            "prepared_size": [
+              512,
+              512
+            ],
+            "scope": "Deterministic framing without aspect distortion; not learned alignment."
+          }
+        },
+        {
+          "reference_index": 2,
+          "original_sha256": "b1e93b35c4f19e8a691f5f80c9d83dce97978416e44282f72a8e2537a3d7415f",
+          "prepared_sha256": "6be81f63754a1701210f545cb0e3a6aedbef3fa165b0accc8e05a82ffe1718c4",
+          "oriented_source_size": [
+            400,
+            512
+          ],
+          "source_exif_orientation": 1,
+          "face_bbox": [
+            60.1369743347168,
+            114.0763931274414,
+            322.62420654296875,
+            453.37518310546875
+          ],
+          "detection_score": 0.7363871932029724,
+          "geometry": {
+            "operation": "face_centered_square_crop",
+            "crop_box_in_oriented_source": [
+              -115,
+              -22,
+              496,
+              589
+            ],
+            "padding_left_top_right_bottom": [
+              115,
+              22,
+              96,
+              77
+            ],
+            "padding_mode": "edge",
+            "uniform_scale": 0.8379705400981997,
+            "prepared_size": [
+              512,
+              512
+            ],
+            "scope": "Deterministic framing without aspect distortion; not learned alignment."
+          }
+        },
+        {
+          "reference_index": 3,
+          "original_sha256": "8a42c1433d3c61e535740198460abdaf47e2150501f0332c321cadfcf391eb07",
+          "prepared_sha256": "56d5fe477f5169c743aeaccfa9cef7582aea19e53716f445f5ab247bd3559c6f",
+          "oriented_source_size": [
+            400,
+            512
+          ],
+          "source_exif_orientation": 1,
+          "face_bbox": [
+            75.24790954589844,
+            96.0254135131836,
+            320.24066162109375,
+            465.69000244140625
+          ],
+          "detection_score": 0.6072466373443604,
+          "geometry": {
+            "operation": "face_centered_square_crop",
+            "crop_box_in_oriented_source": [
+              -136,
+              -53,
+              530,
+              613
+            ],
+            "padding_left_top_right_bottom": [
+              136,
+              53,
+              130,
+              101
+            ],
+            "padding_mode": "edge",
+            "uniform_scale": 0.7687687687687688,
+            "prepared_size": [
+              512,
+              512
+            ],
+            "scope": "Deterministic framing without aspect distortion; not learned alignment."
+          }
+        },
+        {
+          "reference_index": 4,
+          "original_sha256": "9c742a9f51fbe8990d8e5fb65ccc48b7e3aa0d4b8afbee5dc8ab5fc2c7e57533",
+          "prepared_sha256": "900b326572c252cfb00812a7c22b20c99f27c9f796f43310835a67398acc8830",
+          "oriented_source_size": [
+            400,
+            512
+          ],
+          "source_exif_orientation": 1,
+          "face_bbox": [
+            57.020729064941406,
+            103.09171295166016,
+            324.35791015625,
+            459.9639587402344
+          ],
+          "detection_score": 0.6642655730247498,
+          "geometry": {
+            "operation": "face_centered_square_crop",
+            "crop_box_in_oriented_source": [
+              -131,
+              -40,
+              512,
+              603
+            ],
+            "padding_left_top_right_bottom": [
+              131,
+              40,
+              112,
+              91
+            ],
+            "padding_mode": "edge",
+            "uniform_scale": 0.7962674961119751,
+            "prepared_size": [
+              512,
+              512
+            ],
+            "scope": "Deterministic framing without aspect distortion; not learned alignment."
+          }
+        }
+      ]
+    }
+  ],
+  "final_test_used": false
+}

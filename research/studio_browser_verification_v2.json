@@ -1,0 +1,98 @@
+{
+  "scope": "Real local-browser upload, reconstruction, display and state-invalidation checks. No claim of true-face recovery.",
+  "date": "2026-09-24",
+  "browser_observations": {
+    "missing_result_loaded": true,
+    "new_target_cleared_references_and_disabled_generation": true,
+    "strong_missing_guard_displayed": true,
+    "partial_repeat_result_visible_and_image_loaded_512": true,
+    "map_edit_cleared_old_links_and_explained_invalidation": true,
+    "comparison_three_images_available": true,
+    "comparison_primary_processing_size": 512,
+    "observed_console_errors": 0,
+    "note": "An earlier partial result was observed invalidated with stale ready text; the trigger was not captured. Result invalidation now updates status; the repeated completion and explicit map-edit sequence passed."
+  },
+  "comparison_job": "4e04975df6ab43a08c3a6c5aaeb01b9f",
+  "checks": [
+    {
+      "check": "evidence_missing",
+      "case_id": "3182_removal",
+      "job_id": "1f2fb8a47d134e21b6fa640242159ae7",
+      "output_sha256": "1ea962e15cfd94f3aba9b7075f0d587a296bb53f2ae7a770866cdbd0564ef2b7",
+      "metadata_sha256": "efad6f915fc049d931d3a02451aac67cb954591cd137fd3dd185d094c000c1ee",
+      "http_status": 200,
+      "http_sha_matches": true,
+      "known_pixels_unchanged": true,
+      "input_pixels_match_expected": true,
+      "matching_person_references": true
+    },
+    {
+      "check": "evidence_partial_first",
+      "case_id": "1037_mixed",
+      "job_id": "b3fdde501b8d4d7f893e26a23cf75a6b",
+      "output_sha256": "e74a9598abcd4472ef7255d61d8b8f9be19ec1ec556c208c23d1528eab3dce07",
+      "metadata_sha256": "bffa43883b907ce0dcaf8bd6a1a5d2438de0c5e39ce1129f7f762ccfdf5d9620",
+      "http_status": 200,
+      "http_sha_matches": true,
+      "known_pixels_unchanged": true,
+      "input_pixels_match_expected": true,
+      "matching_person_references": true
+    },
+    {
+      "check": "evidence_partial_repeat",
+      "case_id": "1037_mixed",
+      "job_id": "77b904a039b24b0888448a03f488a69d",
+      "output_sha256": "e74a9598abcd4472ef7255d61d8b8f9be19ec1ec556c208c23d1528eab3dce07",
+      "metadata_sha256": "1711516c8b3b5e749a97c2d32b02467bd0910e6a3868051c720012526c59efb3",
+      "http_status": 200,
+      "http_sha_matches": true,
+      "known_pixels_unchanged": true,
+      "input_pixels_match_expected": true,
+      "matching_person_references": true
+    },
+    {
+      "check": "selection_256",
+      "case_id": "1037_removal",
+      "job_id": "840fa44f73b14c3499a05f2d8791176b",
+      "output_sha256": "b2f3b1350606d5f7f7d160d1b933329809056152588b16543d5f4c380bb30506",
+      "metadata_sha256": "a7972a5626ad711d70086cd9d3632eae2a96e2745ae5d3a91e201c34db925cb9",
+      "http_status": 200,
+      "http_sha_matches": true,
+      "known_pixels_unchanged": true,
+      "input_pixels_match_expected": true,
+      "matching_person_references": true
+    },
+    {
+      "check": "selection_512",
+      "case_id": "1037_removal",
+      "job_id": "71accfe6c13c4ebd85cdcc05115a7797",
+      "output_sha256": "2501b35c167eef18567c151ed64cd0422a227254d686f0ffeabc19abd3bf3189",
+      "metadata_sha256": "b48cb1a35cb8b002d144a9bc62d2580b654ee49d1bcfabea18d1a8257b0075a0",
+      "http_status": 200,
+      "http_sha_matches": true,
+      "known_pixels_unchanged": true,
+      "input_pixels_match_expected": true,
+      "matching_person_references": true
+    },
+    {
+      "check": "selection_1024",
+      "case_id": "1037_removal",
+      "job_id": "8902612f5fe249e6bd2f65d64b48f8df",
+      "output_sha256": "d34b3b1ec125265e2523a8d385fef3685745b53828650a67ca4946e4da311c7d",
+      "metadata_sha256": "bdd6a356742ae49aa4d7c8e1d1e54bc1420599b34662f17a26f1c63756c14d0e",
+      "http_status": 200,
+      "http_sha_matches": true,
+      "known_pixels_unchanged": true,
+      "input_pixels_match_expected": true,
+      "matching_person_references": true
+    }
+  ],
+  "final_test_used": false,
+  "files_at_verification_sha256": {
+    "webapp/server.py": "efc046000350d7f44470ef888f8f65e779fdc9389adbd87c336c303aad3765c4",
+    "webapp/dist/app.js": "2e61718758064baa9666e065ad03e89a3232d30c9d9f823a47243d0ce5f5e2da",
+    "webapp/dist/confidence.js": "42c35b59a3c796ccf17b46184d31d1c0e1093e046fea0d72d0d6b78555ba40ee",
+    "webapp/dist/framing.js": "7963a4eb5862d93484e06c6888382f2d4ffa66c39b6def32214b1970669b97b6"
+  },
+  "code_timing_note": "Hashes describe files when the receipt was written. The comparison preceded the final copy-only mask hint and comparison warning aggregation; output selection was verified on its saved job. HTTP/unit checks cover final source."
+}

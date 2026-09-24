@@ -8,6 +8,22 @@
 
 ## Latest status update
 
+### 24 September: final client-input repair verification
+
+- Real browser uploads completed missing-area reconstruction, repeated partial restoration and a 256/512/1024 selected-reference comparison. Six generated outputs have verified matching input/reference pixels, HTTP 200 downloads, hashes and exact outside-mask preservation. The main comparison uses 512 processing. Changing targets clears old-person references; editing the map clears the previous result with an explanation. No console errors were observed.
+- Corrected ResShift mask coverage improved FaceNet **0.7481 → 0.8630**, original-damage MAE **0.08800 → 0.07163**, and LPIPS **0.02982 → 0.02037** on the same two diagnostic identities. Both cases improved on these metrics, but this small before/after check does not establish arbitrary-client accuracy.
+- Visual inspection exposed learned refinement dropping user-painted pixels. The studio now preserves every requested pixel and allows refinement only to add coverage. Two subsequent LaMa/ResShift runs and scores passed, with **zero** requested pixels dropped. LaMa still produces poor large-feature reconstructions; it remains a small-repair option. References, larger sizes and confidence blending do not guarantee the hidden face.
+- Final validation: **41 Python checks and three Node suites passed**. The initial four expanded/refined score failures were traced to the caller passing an original mask into an effective-mask preservation check; a separate corrected receipt scores all four saved outputs without changing the evaluator or images. All runtime and evaluator failures remain recorded. See `research/STUDIO_CLIENT_FIXES_20260924.md` and `research/studio_browser_verification_v2.json`.
+
+### 24 September: unfamiliar-image audit and client reconstruction fixes
+
+- Audited all offered generation variants on two newly selected local development identities: **25/26 generations completed and 29/30 rows scored**, including four unchanged-input controls. One OpenCV runtime failure remains in the original audit. All four comparison sheets were reviewed: 256-pixel reference output can leave coloured hole artifacts, gentle 0.5 reconstruction can retain erased damage, and large missing features still produce identity/expression errors. These identities are now observed; pretrained exposure is unknown. See [the accuracy audit](research/UNFAMILIAR_STUDIO_ACCURACY_V2.md).
+- Fixed client-input handling: narrow ResShift masks survive resolution reduction; image/mask/evidence transforms preserve aspect ratio; reduced evidence maps conservatively retain missing/partial marks. Unsupported thin SDXL components are rejected with actionable guidance rather than silently losing mask support. This guard does not make every fine boundary reconstructible. Successful 512 processing is now the main result in size comparisons.
+- The evidence editor clears stale references/results on target changes, guards asynchronous uploads and running jobs, preserves explicit missing/reliable labels during suggestions, rejects transparent evidence maps, and prevents gentle reconstruction of completely missing areas. ReF-LDM now validates each reference before GPU work and frames rectangular references without stretching. This is studio preprocessing, not a change to the frozen research models.
+- Separate post-fix verification passed **8/8 functional checks**, including the previously failed 1024 run, a byte-identical 512 default output, thin-mask ResShift, portrait uploads, and expanded/learned masks. A further client-input check had two successful ResShift runs and two ReF-LDM wrapper failures caused by an unnecessary OpenCV import in its separate environment. That wrapper fault was fixed; **both separately recorded recovery runs passed**. Square-reference ReF-LDM output exactly matches its pre-fix result. Original failures are retained in their receipts.
+- **41 Python checks (19 HTTP and 22 geometry/preparation/runtime checks) and three Node suites pass.** The studio worker enforces its OpenCV thread cap through nested calls; the ReF-LDM child avoids the unneeded OpenCV import. This mitigates the observed failures but does not establish a universal native-runtime root cause. **Final browser verification of the current main-page and evidence-page flows is complete**; the six outputs and state checks are recorded in `research/studio_browser_verification_v2.json`.
+- Frozen research generators, reserved final identities and local-only photo/weight handling remain unchanged. Facial accuracy on arbitrary client images, a beneficial novel method and publication readiness are still unresolved. Fix details and evidence: [client reconstruction fixes](research/STUDIO_CLIENT_FIXES_20260924.md).
+
 ### 24 September: user-requested processing-size comparison
 
 - Added 256 / 512 / 1024 reference-processing choices and a three-run comparison with shared image, mask, photos and seed. Each result has its own image, timing, settings and download; failures are displayed without discarding successful sizes. Exports stay at 512 pixels for visual comparison. Default processing remains 512, with obstruction-colour neutralization off.
@@ -105,6 +121,11 @@ These percentages describe finite tasks or recorded rows, not overall scientific
 | Unfamiliar development initial generation | 75% (3/4) | One native process failure retained |
 | Unfamiliar development after runtime retry | 100% (4/4) | One separately recorded successful retry |
 | Unfamiliar development scoring after retry | 100% (12/12) | Two identities, controls and native/composed outputs |
+| New studio audit initial generation | 96.2% (25/26) | Two additional development identities; one original runtime failure retained |
+| New studio audit scoring | 96.7% (29/30) | Includes four unchanged controls; not 30 independent people |
+| New studio visual sheet review | 100% (4/4) | Missing/mixed conditions on two identities; internal review, not blinded |
+| Separate studio repair verification | 100% (8/8) | Functional checks on now-observed images, not an accuracy benchmark |
+| Further client-input check / recovery | 2/4 initially; 2/2 recovery | Two ReF-LDM wrapper failures retained separately from successful reruns |
 | Demonstrated advantage over historical 0.8180 | Not established | No defensible percentage applies |
 | Publication readiness | Incomplete | External controls, human review, method freeze and final evidence remain |
 
@@ -138,7 +159,7 @@ The completed baseline and remaining research work are summarized below.
 
 ### Next work in order
 
-1. Maintain and broaden the verified browser workflow: confidence reconstruction and experimental blur/noise restoration now work. Investigate the isolated native-process termination; add broader real-photo and non-square end-to-end coverage beyond the passing geometry tests.
+1. Broaden real client-photo and varied framing/reference coverage; the current main/evidence browser flows are verified. Retain native-runtime failures and monitor recurrence; passing repairs do not establish universal reconstruction accuracy.
 2. Use the completed compression diagnosis to design separately versioned post-degradation validity handling with failure coverage and matched reference-count controls.
 3. Revise the evidence-preservation mechanism using the completed external comparison and negative reference-disagreement diagnostic. Current local latent injection and disagreement gating do not justify fusion-adapter training or a novelty claim. Expand appropriate external controls before claiming an incremental contribution.
 4. Expand pose/expression correspondence, independently varied severity/masks/reference quality and identity groups. Conduct blinded human fidelity assessment; confidence intervals from three or four identities are insufficient.
@@ -200,9 +221,9 @@ Rows are correlated experimental measurements, not independent images or indepen
 
 ### 2.4 Working local website
 
-The site supports image upload, crop/fit, mask painting/erasing/undo, mask upload, model selection, three/four-reference upload, standard or detailed reference processing, output comparison and result/mask downloads. A new input clears the previous person's reference photographs.
+The site supports image upload, crop/fit, mask painting/erasing/undo, mask upload, model selection, reference upload, 256/512/1024 reference processing and comparison, and result/mask downloads. Ordinary reference mode uses three or four photos; experimental selection accepts one to four and selects one. A new input clears the previous person's reference photographs on both upload pages.
 
-Website output sizes are now 512 × 512 for LaMa/reference mode and 256 × 256 for ResShift. LaMa's unnecessary downsampling and nonsquare uploaded-mask alignment were repaired on 14 September. Its missing-eye/large-feature reconstruction remains unreliable; retaining resolution is not a semantic-quality fix. Historical command-line/research settings remain unchanged. Detailed reference mode processes at 1024 and exports 512; it is not an established quality improvement. Images are saved locally with run metadata.
+Website exports are 512 × 512 for every method. ResShift operates at 256 internally and composites into the 512-pixel input to preserve visible detail. Reference models offer 256, 512 and 1024 processing; comparison defaults to a successful 512 result. LaMa's unnecessary downsampling and nonsquare uploaded-mask alignment were repaired on 14 September. The 24 September client fixes additionally preserve thin ResShift mask coverage and aspect ratio, validate ReF-LDM references, and reject unsupported thin reference marks. Large missing-feature reconstruction remains unreliable; these repairs do not establish semantic accuracy. Historical command-line/research settings remain unchanged. Images are saved locally with run metadata.
 
 The reference runtime was repaired in a separate environment after Windows blocked native dependencies. Package pins and installation records were retained. No Windows protection was disabled. Progress-file retries prevent transient OneDrive locks from needlessly aborting reference inference.
 
@@ -216,7 +237,7 @@ These timings describe individual checks, not a population latency benchmark. Fu
 
 ### 2.5 Repository and hosting
 
-Code, local refiner checkpoints, experiment records, provenance and reproduction instructions are in the repository. The current verified local checkpoint is commit 5a55eb6; this report is a subsequent documentation addition.
+Code, local refiner checkpoints, experiment records, provenance and reproduction instructions are in the repository. The client-input repair release follows `d712706` on `codex/local-studio-checkpoint` and includes the new audit, runtime/geometry/UI fixes, mask-coverage corrections and numerical verification receipts. Restricted photographs and pretrained weights remain local.
 
 Temporary public sharing was implemented and an HTTPS GPU test completed. The in-app browser then exposed sign-in compatibility problems. Public sharing is now stopped, its homepage link removed, and further hosting work deferred. The local app requires no sign-in. The paused hosting investigation is not a blocker for local research.
 
@@ -236,29 +257,30 @@ The measurement baseline is substantially stronger, but the research is not yet 
 
 ## 4. Remaining work
 
-**Reconciled with completed work on 23 September 2026.** Completed implementation is distinguished from unresolved research claims below.
+**Reconciled with completed work on 24 September 2026.** Completed implementation is distinguished from unresolved research claims below.
 
 | Area | Current evidence and remaining work | Status |
 |---|---|---|
 | Identity/quality measurement | FaceNet target/gallery, diagnostic ArcFace, LPIPS, SSIM, PSNR, hole/visible MAE, NIQE and BRISQUE executed; final evaluation remains sealed | Development implemented |
 | Distortion/preservation | Six kinds, strength/scale screen and fresh development extension completed; unchanged-input controls still expose fidelity loss | Diagnostic complete; method unresolved |
-| Reference robustness | Compression-sensitive failure diagnosed at fixed JPEG levels; retain failed cases and test robust handling in a new protocol | Immediate |
+| Reference robustness | Compression failure diagnosed; studio ReF-LDM now validates one face per reference and frames rectangular uploads without distortion. Broader poor-quality, pose and expression handling still needs matched validation with failures retained | Basic client checks implemented; broader validation pending |
 | Local correspondence | Five-point similarity and eight regional features implemented; 22/24 initial cases detected; 3D pose/expression/occlusion unresolved | Prototype complete |
 | Local fusion | Six-policy, two-seed 48-row comparison complete; no multi-metric advantage established | Negative/mixed result |
 | Learned adapter | Train only after deterministic local fusion shows convincing benefit; do not train full SDXL | Conditional gate not met |
-| Confidence UI | Integration complete: reference-guided evidence-map reconstruction and experimental ReF-LDM restoration both passed real browser generation/download checks; known pixels and output hashes verified. Broader real-photo/non-square end-to-end coverage remains | Implemented and browser verified |
-| Runtime reliability | One unfamiliar-case native process termination recovered on unchanged-settings retry; original failure retained. Root cause remains unresolved; investigate recurrence | Follow-up required |
-| Visual assessment | Eight local-fusion sheets, 36 successful expanded cases, four ReF-LDM six-condition sheets, four risk-diagnostic rows and four unfamiliar-case rows reviewed; blinded human evaluation remains | Internal review complete for these runs; human study pending |
+| Confidence UI | Prior generation/download checks passed. Current update fixes stale state, upload races, evidence suggestions/transparency, and missing-area strength selection; new HTTP/GPU checks pass. Current main/evidence browser flows are verified with real generated images, matching references, downloads and state invalidation | Implemented and browser verified |
+| Runtime reliability | Original native/OpenCV failures retained; fixed-thread studio retry passed. Two wrapper failures from an unnecessary OpenCV import were fixed and both recovery runs passed. Continue recurrence checks; no universal root-cause claim | Mitigations and recoveries verified |
+| Visual assessment | Prior reviewed studies retained; all four new studio audit sheets reviewed, with coloured holes, retained erasures and facial errors documented. Blinded human evaluation remains | Internal review complete for these runs; human study pending |
 | Candidate selection | Matched 1/2/4 candidate pools, random/identity/quality/combined selection and separate evaluator | Deferred until stable restoration |
 | External comparisons | ReF-LDM completed 24/24 generations and 48/48 native/composed evaluations; partial-damage results are stronger than matched SDXL but fail erased-region completion. Additional appropriate external controls and broader validation remain; paused OSOR results remain explicitly delimited | First external baseline complete |
 | Reference-risk mechanism | Implemented 16 leave-one-reference-out generations and 12/12 scored controls. Disagreement does not beat edit magnitude on identity or masked error; AUC 0.417–0.533. Revise the mechanism before calibration/training or novelty claims | Diagnostic complete; incremental benefit unsupported |
 | Reference-proxy mechanism | Implemented a reference-only fitted spatial blend; 20 proxy generations and 20 scored images complete. Slight MAE gain versus fixed blending comes with worse identity/gallery/LPIPS. Three new tests pass. Address structural fidelity or develop a justified alternative before further expansion | Diagnostic complete; progression gate not met |
-| Unfamiliar-person checks | Two new development identities, four cases: 3/4 initial generations, 4/4 after a separate runtime retry; 12/12 rows scored after recovery. Mixed metrics; these identities are now observed. Larger identity-separated validation remains | Functional smoke complete; generalization unproven |
+| Unfamiliar-person checks | Earlier two-identity smoke retained. Two additional identities now have 25/26 initial studio generations and 29/30 scores; separate repair/recovery checks preserve original failures. All are now observed development cases, with unknown pretraining exposure. Larger independent validation remains | Expanded diagnostic complete; generalization unproven |
+| Client geometry and mask handling | Thin ResShift masks, paired evidence downsampling, nonsquare API framing and primary 512 comparison fixed. SDXL latent-unsupported components are rejected; fine-boundary fidelity and broad client-photo accuracy remain unresolved | Concrete bugs fixed; model limits remain |
 | Statistical power | More identity units, independent severity/mask/reference factors, additional seeds | Required before method freeze |
 | Optional metrics | Reconstructed-landmark error; FID only at adequate sample size; ROC/TAR only with adequate verification trials | Unimplemented; scope-dependent |
 | Final evaluation | Freeze method/parameters first; eight reserved identities remain unused | 0/8, intentionally |
 | Manuscript and presentation | Correct novelty/architecture/results, choose actual venue, prepare figures, limitations and reproducibility | Incomplete |
-| GitHub release | Verified application, experiment scripts, reports and numerical evidence pushed in checkpoint `43ac507` on the repository's default branch. Restricted photos and weights excluded; keep later changes synchronized | Checkpoint pushed; ongoing |
+| GitHub release | Client repairs, new unfamiliar audit, numerical receipts and current report follow checkpoint `d712706` in this release. Restricted photos and weights remain excluded | Included in the client-repair release |
 | Public hosting | Continue loopback-only use on the laptop | Paused by user |
 
 No single overall project-completion percentage is assigned because successful research findings are not predictable implementation tasks. The explicit measured percentages above separate finished experiments from unsolved quality and publication requirements.
@@ -333,6 +355,10 @@ Open http://127.0.0.1:8765/. Use matching references for the selected person, ma
 
 ## 8. Evidence index
 
+- [Current client reconstruction fixes and remaining limitations](research/STUDIO_CLIENT_FIXES_20260924.md)
+- [New unfamiliar-identity studio accuracy audit](research/UNFAMILIAR_STUDIO_ACCURACY_V2.md)
+- [Separate repair verification](research/studio_fixes_verification_v2.json)
+- [Client-input failures retained](research/studio_client_inputs_verification_v2.json) and [separate recovery](research/studio_client_inputs_verification_v2_recovery.json)
 - [Current local verification](research/LOCAL_WORK_STATUS_20260914.md)
 - [LaMa quality findings and repairs](research/LAMA_QUALITY_CHECK_20260914.md)
 - [Expanded metrics and ablations](research/EXTENDED_ABLATION_RESULTS_V1.md)

@@ -63,6 +63,19 @@ class WebBoundaryTests(unittest.TestCase):
             data['strength']=strength;self.assertEqual(self.request(payload=data)[0],400)
         data['strength']=.5;data['confidence']=png((16,16),128)
         self.assertEqual(self.request(payload=data)[0],400)
+    def test_missing_evidence_rejects_gentle_but_partial_allows_it(self):
+        data=self.valid();data.update(backbone='reference',references=[png()]*3,confidence=png(value=0),strength=.5)
+        status,body=self.request(payload=data);self.assertEqual(status,400)
+        self.assertIn('Strong reconstruction',json.loads(body)['error'])
+        for confidence,strength in [(0,.99),(128,.5)]:
+            studio.ACTIVE=False;data.update(confidence=png(value=confidence),strength=strength)
+            with patch.object(studio,'run_job'):
+                self.assertEqual(self.request(payload=data)[0],202)
+    def test_transparent_evidence_map_is_not_silent_missing_data(self):
+        stream=io.BytesIO();Image.new('RGBA',(32,32),(0,0,0,0)).save(stream,format='PNG')
+        data=self.valid();data.update(backbone='reference',references=[png()]*3,confidence='data:image/png;base64,'+base64.b64encode(stream.getvalue()).decode())
+        status,body=self.request(payload=data);self.assertEqual(status,400)
+        self.assertIn('opaque',json.loads(body)['error'])
     def test_experimental_selection_accepts_one_to_four(self):
         data=self.valid();data.update(backbone='reference_select',references=[])
         self.assertEqual(self.request(payload=data)[0],400)
@@ -107,7 +120,7 @@ class WebBoundaryTests(unittest.TestCase):
         def fake(child,source,supplied,mode,references,blend,detail,**kwargs):
             calls.append((source,supplied,references,detail))
             if detail=='detailed':raise ValueError('test failure')
-            studio.JOBS[child].update(status='complete',result='/runs/'+child+'/result.png',input='/input',mask='/mask',metadata='/metadata',seconds=1,resolution=512)
+            studio.JOBS[child].update(status='complete',result='/runs/'+child+'/result.png',input='/input',mask='/mask',metadata='/metadata',seconds=1,resolution=512,warnings=['Low reference reliability'])
         with tempfile.TemporaryDirectory() as folder,patch.object(studio,'RUNS',Path(folder)),patch.object(studio,'run_reference_job',side_effect=fake):
             studio.run_size_comparison(parent,photo,mask,'reference','painted',refs,'hard',False)
             self.assertTrue((Path(folder)/parent/'metadata.json').exists())
@@ -115,7 +128,11 @@ class WebBoundaryTests(unittest.TestCase):
         self.assertTrue(all(c[0] is photo and c[1] is mask and c[2] is refs for c in calls))
         self.assertEqual(studio.JOBS[parent]['status'],'complete')
         self.assertEqual(len(studio.JOBS[parent]['comparisons']),3)
-        self.assertEqual(len(studio.JOBS[parent]['warnings']),1)
+        self.assertEqual(len(studio.JOBS[parent]['warnings']),2)
+        self.assertEqual(studio.JOBS[parent]['warnings'].count('Low reference reliability'),1)
+        self.assertEqual(studio.JOBS[parent]['primary_processing_size'],512)
+        standard=next(r for r in studio.JOBS[parent]['comparisons'] if r['processing_size']==512)
+        self.assertEqual(studio.JOBS[parent]['result'],standard['result'])
     def test_mismatched_and_empty_masks_rejected(self):
         data=self.valid();data['mask']=png((16,16));self.assertEqual(self.request(payload=data)[0],400)
         data['mask']=png(value=0);self.assertEqual(self.request(payload=data)[0],400)

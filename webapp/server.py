@@ -9,25 +9,28 @@ sys.path.insert(0,str(ROOT));sys.path.insert(0,str(ROOT/'scripts'))
 Image.MAX_IMAGE_PIXELS=16_000_000
 JOBS={};LOCK=threading.Lock();TOKEN=os.environ.get('INPAINTING_LOCAL_TOKEN') or secrets.token_urlsafe(32);ACTIVE=False
 
-def decode_image(value,mask=False):
+def decode_image(value,mask=False,opaque=False):
     if not isinstance(value,str) or not value.startswith('data:image/png;base64,'):raise ValueError('Images must be PNG data URLs.')
     blob=base64.b64decode(value.split(',',1)[1],validate=True)
     with Image.open(io.BytesIO(blob)) as im:
         if im.width*im.height>16_000_000 or min(im.size)<16:raise ValueError('Use an image between 16 pixels and 16 megapixels.')
         im.load();im=ImageOps.exif_transpose(im)
+        if opaque and im.convert('RGBA').getchannel('A').getextrema()!=(255,255):raise ValueError('Confidence maps must be opaque grayscale PNGs. Transparent pixels do not specify how much evidence to keep.')
         return im.convert('L' if mask else 'RGB').copy()
 
 def run_reference_job(job_id,source,mask,mode,references,blend,detail='standard',selection=False,confidence=None,strength=.99,restoration=False,neutralize=False):
     job=JOBS[job_id];folder=RUNS/job_id;folder.mkdir(parents=True,exist_ok=False)
     import numpy as np
     from pilot import morph
-    geometry=None
-    if confidence is not None:
-        from webapp.geometry import fit_evidence
-        source,mask,confidence,geometry=fit_evidence(source,mask,confidence)
-    source=source.resize((512,512),Image.Resampling.LANCZOS);supplied=np.asarray(mask.resize((512,512),Image.Resampling.NEAREST))>=128
+    from webapp.geometry import fit_evidence
+    source,mask,fitted_confidence,geometry=fit_evidence(source,mask,confidence if confidence is not None else Image.new('L',source.size,255))
+    if confidence is not None:confidence=fitted_confidence
+    supplied=np.asarray(mask)>=128
     if mode=='learned':raise ValueError('Use the painted or expanded mask with reference photos.')
     effective=morph(supplied,8) if mode=='expand' else supplied
+    if not restoration:
+        from webapp.geometry import require_reference_mask_support
+        require_reference_mask_support(Image.fromarray(effective.astype('uint8')*255), {'compact':256,'standard':512,'detailed':1024}[detail])
     source.save(folder/'input.png');Image.fromarray(supplied.astype('uint8')*255).save(folder/'mask.png');Image.fromarray(effective.astype('uint8')*255).save(folder/'effective_mask.png')
     paths=[]
     for index,reference in enumerate(references):
@@ -45,9 +48,9 @@ def run_reference_job(job_id,source,mask,mode,references,blend,detail='standard'
         if not neutralize:command.append('--keep-observation')
         if selection and '--select' not in command:command.append('--select')
     if restoration:
-        python=cache/'refldm_env_v1/Scripts/python.exe'
-        if not python.is_file():raise ValueError('The experimental restoration environment is not installed.')
-        command=[str(python),str(ROOT/'scripts/refldm_restore.py'),'--image',str(folder/'input.png'),'--mask',str(folder/'effective_mask.png'),'--references',*[str(p) for p in paths],'--output',str(folder/'result.png')]
+        if not (cache/'refldm_env_v1/Scripts/python.exe').is_file():raise ValueError('The experimental restoration environment is not installed.')
+        command=[str(python),str(ROOT/'scripts/studio_refldm_restore.py'),'--image',str(folder/'input.png'),'--mask',str(folder/'effective_mask.png'),'--references',*[str(p) for p in paths],'--output',str(folder/'result.png'),'--progress',str(progress)]
+    command=[command[0],str(ROOT/'scripts/studio_inference_worker.py'),*command[1:]]
     job.update(status='running',message='Preparing the reference photos…');start=time.monotonic()
     with (folder/'inference.log').open('w',encoding='utf-8') as log:
         process=subprocess.Popen(command,cwd=ROOT,stdout=log,stderr=log,creationflags=subprocess.CREATE_NO_WINDOW)
@@ -55,7 +58,10 @@ def run_reference_job(job_id,source,mask,mode,references,blend,detail='standard'
             if progress.exists():
                 try:job['message']=json.loads(progress.read_text()).get('message','Reconstructing…')
                 except (ValueError,OSError):pass
-            if time.monotonic()-start>1800:process.terminate();process.wait();raise ValueError('Reference reconstruction timed out. See the saved inference log.')
+            if time.monotonic()-start>1800:
+                subprocess.run(['taskkill','/PID',str(process.pid),'/T','/F'],capture_output=True,check=False)
+                process.wait(timeout=15)
+                raise ValueError('Reference reconstruction timed out. See the saved inference log.')
             time.sleep(.5)
     if process.returncode:
         with (folder/'inference.log').open('a',encoding='utf-8') as log:log.write(f'\nProcess exit code: {process.returncode}\n')
@@ -96,8 +102,8 @@ def run_size_comparison(job_id,source,mask,backbone,mode,references,blend,neutra
     (folder/'metadata.json').write_text(json.dumps({'scope':'Processing-size comparison; same uploaded image, mask, references, seed and settings. All exports are 512 pixels. No ground truth or automatic quality ranking.','results':items},indent=2))
     successes=[r for r in items if r['status']=='complete']
     if not successes:raise ValueError('All comparison runs failed. '+ '; '.join(r['message'] for r in items))
-    first=successes[0]
-    job.update(status='complete',message='Size comparison ready',comparisons=items,result=first['result'],input=first['input'],mask=first['mask'],metadata=f'/runs/{job_id}/metadata.json',resolution=512,seconds=sum(r['seconds'] for r in successes),warnings=[f"{r['processing_size']} px failed: {r['message']}" for r in items if r['status']=='error'])
+    first=next((r for r in successes if r['processing_size']==512),successes[0])
+    job.update(status='complete',message=f"Size comparison ready — main result: {first['processing_size']} px",primary_processing_size=first['processing_size'],comparisons=items,result=first['result'],input=first['input'],mask=first['mask'],metadata=f'/runs/{job_id}/metadata.json',resolution=512,seconds=sum(r['seconds'] for r in successes),warnings=list(dict.fromkeys(warning for r in successes for warning in r.get('warnings',[])))+[f"{r['processing_size']} px failed: {r['message']}" for r in items if r['status']=='error'])
 
 
 def run_job(job_id,source,mask,backbone,mode,references=None,blend='poisson',detail='standard',confidence=None,strength=.99,neutralize=False):
@@ -112,18 +118,18 @@ def run_job(job_id,source,mask,backbone,mode,references=None,blend='poisson',det
         from pilot import morph
         torch.set_num_threads(4);job.update(status='running',message=f'Loading {"LaMa" if backbone=="lama" else "ResShift"}…')
         resolution=512 if backbone=='lama' else 256
-        from webapp.geometry import fit_evidence
+        from webapp.geometry import fit_evidence,resize_binary_mask
         from webapp.output import compose_prediction
         source,mask,_,geometry=fit_evidence(source,mask,Image.new('L',source.size,255))
         display_source=source.copy();display_supplied=np.asarray(mask)>=128
         display_effective=morph(display_supplied,8) if mode=='expand' else display_supplied
-        folder.mkdir(parents=True,exist_ok=False);source=source.resize((resolution,resolution),Image.Resampling.LANCZOS);mask=Image.fromarray(display_effective.astype('uint8')*255).resize((resolution,resolution),Image.Resampling.NEAREST)
+        folder.mkdir(parents=True,exist_ok=False);source=source.resize((resolution,resolution),Image.Resampling.LANCZOS);mask=resize_binary_mask(Image.fromarray(display_effective.astype('uint8')*255),(resolution,resolution))
         observed=np.asarray(source).astype('float32')/255;supplied=np.asarray(mask)>=128
         if not supplied.any():raise ValueError('Paint or upload a mask before running inpainting.')
         effective=supplied
         refiner_path=None
         if mode=='learned':
-            refiner_path=ROOT/'outputs/learned_refiner/generic_17/best.pt';effective=RefinerPredictor(refiner_path).probability(observed,supplied)>=.5
+            refiner_path=ROOT/'outputs/learned_refiner/generic_17/best.pt';effective=supplied | (RefinerPredictor(refiner_path).probability(observed,supplied)>=.5)
         if not effective.any():raise ValueError('The learned refiner selected no pixels. Try Use mask exactly or Expand mask by 8 px.')
         if mode=='learned':display_effective=np.asarray(Image.fromarray(effective.astype('uint8')*255).resize((512,512),Image.Resampling.NEAREST))>=128
         display_mask=Image.fromarray(display_effective.astype('uint8')*255)
@@ -132,7 +138,7 @@ def run_job(job_id,source,mask,backbone,mode,references=None,blend='poisson',det
         if not np.isfinite(pred).all():raise RuntimeError('The model returned invalid pixels. Please try another image or model.')
         compose_prediction(display_source,display_mask,pred).save(folder/'result.png')
         metadata={'backbone':backbone,'mask_mode':mode,'resolution':[resolution,resolution],'seed':17,'inference_seconds':elapsed,'input_sha256':hashlib.sha256((folder/'input.png').read_bytes()).hexdigest(),'refiner_sha256':hashlib.sha256(refiner_path.read_bytes()).hexdigest() if refiner_path else None,'scope':'Local research inference. Generated hidden facial content is a prediction, not verified recovery.'}
-        metadata.update(resolution=[512,512],model_resolution=[resolution,resolution],upload_geometry=geometry,outside_effective_mask='Exact preservation at 512-pixel processed input resolution',result_sha256=hashlib.sha256((folder/'result.png').read_bytes()).hexdigest())
+        metadata.update(mask_policy='Preserve all requested pixels; learned refinement may add pixels.' if mode=='learned' else 'Use requested mask treatment.',resolution=[512,512],model_resolution=[resolution,resolution],upload_geometry=geometry,outside_effective_mask='Exact preservation at 512-pixel processed input resolution',result_sha256=hashlib.sha256((folder/'result.png').read_bytes()).hexdigest())
         (folder/'metadata.json').write_text(json.dumps(metadata,indent=2));del model;torch.cuda.empty_cache()
         job.update(status='complete',message='Restoration ready',result=f'/runs/{job_id}/result.png',input=f'/runs/{job_id}/input.png',mask=f'/runs/{job_id}/effective_mask.png',metadata=f'/runs/{job_id}/metadata.json',seconds=round(elapsed,2),resolution=512)
     except Exception as exc:
@@ -205,7 +211,7 @@ class Handler(BaseHTTPRequestHandler):
             confidence=None;strength=.99
             if 'confidence' in data:
                 if backbone not in ['reference','refldm'] or mode!='painted' or detail!='standard':raise ValueError('Evidence maps require standard reference reconstruction with the exact painted mask.')
-                confidence=decode_image(data['confidence'],True)
+                confidence=decode_image(data['confidence'],True,opaque=True)
                 if confidence.size!=source.size:raise ValueError('Evidence map dimensions must match the image.')
                 import numpy as np
                 supplied=np.asarray(mask)>=128;weights=np.asarray(confidence)
@@ -213,6 +219,7 @@ class Handler(BaseHTTPRequestHandler):
                 if backbone=='refldm' and np.any(weights[supplied]==0):raise ValueError('Blur/noise restoration cannot fill missing areas. Choose missing-area reconstruction instead.')
                 strength=data.get('strength',.99)
                 if isinstance(strength,bool) or not isinstance(strength,(int,float)) or not .5<=strength<=1:raise ValueError('Strength must be between 0.5 and 1.')
+                if backbone=='reference' and np.any(weights[supplied]==0) and strength<.99:raise ValueError('Completely missing areas require Strong reconstruction (0.99 or higher). Gentler reconstruction can retain the erased area.')
             elif 'strength' in data:raise ValueError('Custom strength requires an evidence map.')
             if backbone=='refldm' and confidence is None:raise ValueError('Blur/noise restoration requires a partial-damage evidence map.')
             neutralize=data.get('neutralize',False)

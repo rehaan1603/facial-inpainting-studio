@@ -1,0 +1,26 @@
+{
+  "date": "2026-09-24",
+  "http_tests": {
+    "first_final_attempt": {
+      "tests": 19,
+      "errors": 1,
+      "error": "Windows10053 connection aborted in cross-origin rejection check"
+    },
+    "unchanged_repeat": {
+      "tests": 19,
+      "errors": 0
+    }
+  },
+  "geometry_preparation_runtime_tests": 22,
+  "node_suites": [
+    "tests/test_studio_upload_state.cjs",
+    "tests/test_mask_framing.cjs",
+    "scripts/test_shared_polling.cjs"
+  ],
+  "node_suites_passed": 3,
+  "javascript_syntax_passed": true,
+  "http_log_sha256": {
+    "studio_http_tests_v2.log": "48a0461e4f6d67620dc0a936ac7fc741a6bbe78537e51e4482ac7ee4bb5cfcb8",
+    "studio_http_tests_v2_retry.log": "8fcfe3ee608395f0a9e2c7d732740e8834cb939beed3aea863d709f8d5b7e872"
+  }
+}

@@ -1,9 +1,26 @@
 const assert = require('node:assert/strict');
-const {frameGeometry, maskGeometry} = require('../webapp/dist/framing.js');
+const {frameGeometry, maskGeometry, rasterizeMask} = require('../webapp/dist/framing.js');
 assert.deepEqual(frameGeometry(800,1200,'crop'),[0,200,800,800,0,0,512,512]);
 assert.deepEqual(maskGeometry(800,1200,800,1200,'crop'),frameGeometry(800,1200,'crop'));
 assert.deepEqual(frameGeometry(1200,600,'fit'),[0,0,1200,600,0,128,512,256]);
 assert.deepEqual(maskGeometry(1200,600,1200,600,'fit'),frameGeometry(1200,600,'fit'));
 assert.deepEqual(maskGeometry(512,512,800,1200,'crop'),[0,0,512,512,0,0,512,512]);
 assert.throws(()=>maskGeometry(300,200,800,1200,'crop'),/matching/);
-console.log('Mask framing: crop, fit, framed masks and mismatched-size rejection passed');
+const pixelMask = (width, height, x, y, alpha = 255) => {
+  const pixels = new Uint8ClampedArray(width * height * 4), i = 4 * (y * width + x);
+  pixels[i] = pixels[i + 1] = pixels[i + 2] = 255; pixels[i + 3] = alpha;
+  return pixels;
+};
+let mask = rasterizeMask(pixelMask(2048, 2048, 1, 1), 2048, 2048, frameGeometry(2048,2048,'fit'));
+assert.equal(mask[0],255,'A one-pixel mask must survive 4x downsampling');
+assert.equal(mask.filter(Boolean).length,1);
+mask = rasterizeMask(pixelMask(1200, 600, 600, 300), 1200, 600, frameGeometry(1200,600,'fit'));
+assert.equal(mask[256 * 512 + 256],255,'Fit offsets must match the photograph');
+assert.equal(mask.slice(0,128*512).some(Boolean),false,'Padding must remain unmasked');
+mask = rasterizeMask(pixelMask(800, 1200, 0, 0),800,1200,frameGeometry(800,1200,'crop'));
+assert.equal(mask.some(Boolean),false,'Pixels outside the crop must be excluded');
+mask = rasterizeMask(pixelMask(512,512,100,100,0),512,512,frameGeometry(512,512,'fit'));
+assert.equal(mask.some(Boolean),false,'Transparent pixels must not become damage');
+mask = rasterizeMask(pixelMask(512,512,100,100),512,512,frameGeometry(512,512,'fit'));
+assert.equal(mask[100*512+100],255);assert.equal(mask.filter(Boolean).length,1,'Native-size masks must stay exact');
+console.log('Mask framing: geometry, thin-mask coverage, crop, padding and alpha checks passed');

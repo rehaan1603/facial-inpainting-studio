@@ -1,0 +1,43 @@
+{
+  "scope": "Post-fix geometry and restoration validation. No generalization or accuracy claim.",
+  "server_sha256": "4a0f79cc2969882b9a904c158d1845fda729b3c050580aa0001cd672b644a13d",
+  "rows": [
+    {
+      "case_id": "3182_removal",
+      "backbone": "resshift",
+      "framing": "square",
+      "status": "complete",
+      "job_id": "aa1ceb8a09de438080f1ca4e025ce4d5",
+      "output_sha256": "27f23fda06234f9cddf4456fe9defa01a913acfaf9dc043d6402e67e180bd168",
+      "seconds": 0.79,
+      "known_pixels_unchanged": true
+    },
+    {
+      "case_id": "1037_removal",
+      "backbone": "resshift",
+      "framing": "square",
+      "status": "complete",
+      "job_id": "eb9d30fd57d64dd78739ea9d680eb142",
+      "output_sha256": "11fd18cb30735479af9774d3a51c3120048883f2056e8f0dec54aa539dc5c651",
+      "seconds": 0.36,
+      "known_pixels_unchanged": true
+    },
+    {
+      "case_id": "3182_mixed",
+      "backbone": "refldm",
+      "framing": "square",
+      "status": "failed",
+      "job_id": "17dc090a1a6240a9b52925897b2fa905",
+      "error": "Partial-damage restoration failed (exit code 1). See the saved inference log."
+    },
+    {
+      "case_id": "3182_mixed",
+      "backbone": "refldm",
+      "framing": "rectangular_references",
+      "status": "failed",
+      "job_id": "7b3f80b0ec53436c84a5b3631f7c90d3",
+      "error": "Partial-damage restoration failed (exit code 1). See the saved inference log."
+    }
+  ],
+  "final_test_used": false
+}

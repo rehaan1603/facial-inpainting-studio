@@ -1,0 +1,22 @@
+{
+  "date": "2026-09-24",
+  "stage": "new local development identities, no tuning or final-test access",
+  "identities": [
+    "3182",
+    "1037"
+  ],
+  "expected_generations": 26,
+  "expected_rows": 30,
+  "cases": "removal and mixed damage per identity",
+  "main": "LaMa, ResShift, all-reference and automatic-selection at 256/512/1024",
+  "evidence": "Missing reconstruction at strengths .5/.99 with confidence zero; mixed at .5/.99 and ReF-LDM with confidence 128/255",
+  "mask": "exact painted mask, constant across arms",
+  "neutralize": false,
+  "settings": "seed17; default steps/scale; Poisson composition",
+  "failures": "all attempts retained; any runtime retries separately recorded",
+  "metrics": "frozen independent FaceNet plus gallery; ArcFace diagnostic; LPIPS, SSIM, PSNR, hole/visible MAE, NIQE, BRISQUE, exact outside-mask pixels",
+  "limits": "two identities and one seed/severity do not prove arbitrary-photo reliability; pretrained overlap unknown",
+  "runner_sha256": "6b3abcc5eb1a747695eb88ddcc4792bd287763d48e316ccc050251b267392dba",
+  "deployed_server_sha256": "3cf9c0d3d21db44af076da8ada5fcddcf478ca3cbf1fd320e0fe03c22b7bb8e9",
+  "base_commit": "d712706"
+}
