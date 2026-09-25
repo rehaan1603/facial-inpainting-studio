@@ -1,0 +1,56 @@
+{
+  "date": "2026-09-25",
+  "source_signatures_verified": true,
+  "generation_image_hashes_verified": 104,
+  "comparison_image_hashes_and_preservation_verified": 80,
+  "selection_matches_locked_radius": 8,
+  "detector_failures_in_damaged_input_controls": [
+    {
+      "key": "1306_removal_s17_observed",
+      "evaluator": "arcface_conditioning",
+      "status": "no_face"
+    },
+    {
+      "key": "1306_removal_s29_observed",
+      "evaluator": "arcface_conditioning",
+      "status": "no_face"
+    },
+    {
+      "key": "787_removal_s17_observed",
+      "evaluator": "facenet",
+      "status": "no_face"
+    },
+    {
+      "key": "787_removal_s17_observed",
+      "evaluator": "arcface_conditioning",
+      "status": "no_face"
+    },
+    {
+      "key": "787_removal_s29_observed",
+      "evaluator": "facenet",
+      "status": "no_face"
+    },
+    {
+      "key": "787_removal_s29_observed",
+      "evaluator": "arcface_conditioning",
+      "status": "no_face"
+    }
+  ],
+  "reconstructed_detector_failures": 0,
+  "review_sheet_hashes": {
+    "1043_removal_s17.jpg": "6529c0374bddfe5479b4e7f69f58283270ef1a7ae4c6533c2217c0bb7510da86",
+    "1043_removal_s29.jpg": "0f5b6bb59e573ba70dd21493adc9b75ba532a5674481cff0fe84b88a317b6d3d",
+    "1306_removal_s17.jpg": "b5cbb88b7c0aeede5a6d4d591a30bed56229948997cf4c5300f9063a93f06bea",
+    "1306_removal_s29.jpg": "25297db00cfcc1c808460dcfb52d9f924b4c8a10fc37f0e5edda1d2951a7ec04",
+    "2790_removal_s17.jpg": "e8e67412c2a543cb9c6c139f2d95a2eb885a03c11f7b6b1eb07862fbd0a9525d",
+    "2790_removal_s29.jpg": "abc9e5cc47846855a5d537b44dcb3bbfcae03f86d0a4cd9514b9d41bfb793bcc",
+    "787_removal_s17.jpg": "c3f6c5aeea10aabe790c8c7fc0dc896c3487605acd1993c9a3662b2bb79a9817",
+    "787_removal_s29.jpg": "8377f89e4fa55e73780b4ea4969fa7a9ba4dda2579d4136f10e9b20c0e4a61ac"
+  },
+  "statistics_source_sha256": "e15d8427b6015093d5de74d61a819287cb442dd8c23ed1f59a4d166778863be6",
+  "statistics_tests_sha256": "f64a980fc16d159e8b76fd7f4be23af0f41511eb07cec0e175c5a02868fcb672",
+  "mechanism_tests_sha256": "4f2679ce85e1293ad834f7baf676d4e1f2e294174a30142d5382b048088e5212",
+  "audit_source_sha256": "cdbc1f015e69e8a7f9dd4c743a785de0e555bb360eda29bd4c12be41d6b9e353",
+  "reserved_final_pixels_accessed": false,
+  "scope": "Technical audit of this frozen run; not evidence of novelty or generalization"
+}

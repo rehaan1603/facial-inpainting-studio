@@ -1,12 +1,20 @@
 # Facial Inpainting Project — Progress and Completion Report
 
-**Report date:** 24 September 2026
+**Report date:** 25 September 2026
 **Current platform:** Windows laptop, NVIDIA RTX 5070 Laptop GPU with 8 GB VRAM  
 **Current application:** http://127.0.0.1:8765/  
 **Repository:** https://github.com/rehaan1603/facial-inpainting-studio  
 **Status:** Working local research baseline; proposed multi-reference research method and final validation incomplete. Public hosting paused at the owner's request.
 
 ## Latest status update
+
+### 25 September: new mask-support mechanism implemented and rejected by its controls
+
+- Implemented a frozen-generator policy that hides reliable context patches, measures their recovery, and selects how far to expand the reconstruction mask. This addresses fully missing regions; it does not read reference photos, clean target pixels or withheld galleries during inference. A protocol and source signatures were frozen before generation. Existing research generators and website defaults are unchanged.
+- Completed **104/104 generator calls and 80/80 scored candidate/control rows**, across four already observed development identities and two seeds. Controls include four fixed mask radii, random support, support averaging and equal-cost five-seed averaging. **Eight new unit/statistical checks pass**; all eight visual comparison sheets were inspected. All 72 reconstructed rows have successful FaceNet/ArcFace detections and exact visible-pixel preservation. Damaged-input detector failures remain counted separately.
+- The candidate loses to the original-mask control: FaceNet **0.6111 versus 0.7415**, gallery FaceNet **0.3550 versus 0.4230**, missing-region MAE **0.07665 versus 0.06266**, and LPIPS **0.02962 versus 0.02540**. Probe error and actual missing-region error have negative rank correlation in five of eight case/seed comparisons. The available visible-patch signal does not support this selection rule. All eight primary Holm p-values are 1.0; four identity units cannot establish superiority.
+- **Progression gate failed.** Do not promote this mechanism, expand its data collection, train an adapter on this premise, or describe it as proven novelty. Novelty review found substantial overlap with self-supervised calibration, internal-image adaptation and mask perturbation. Details, primary sources, immutable numerical receipts and visual findings are in `research/CONTEXT_SUPPORT_METHOD.md`, `research/CONTEXT_SUPPORT_RESULTS_V1.md` and `research/CONTEXT_SUPPORT_REVIEW_V1.md`.
+- Remaining main research work is a mechanism that improves missing-feature identity/expression over matched controls, followed by independent development confirmation and final evaluation. Small visible-patch errors, reference agreement and visual sharpness have all proved insufficient here. Broader client accuracy and publication readiness remain unresolved. The local studio was restarted and its readiness checked at `http://127.0.0.1:8765/`; public hosting stays paused.
 
 ### 24 September: final client-input repair verification
 
@@ -257,7 +265,7 @@ The measurement baseline is substantially stronger, but the research is not yet 
 
 ## 4. Remaining work
 
-**Reconciled with completed work on 24 September 2026.** Completed implementation is distinguished from unresolved research claims below.
+**Reconciled with completed work on 25 September 2026.** Completed implementation is distinguished from unresolved research claims below.
 
 | Area | Current evidence and remaining work | Status |
 |---|---|---|
@@ -274,13 +282,14 @@ The measurement baseline is substantially stronger, but the research is not yet 
 | External comparisons | ReF-LDM completed 24/24 generations and 48/48 native/composed evaluations; partial-damage results are stronger than matched SDXL but fail erased-region completion. Additional appropriate external controls and broader validation remain; paused OSOR results remain explicitly delimited | First external baseline complete |
 | Reference-risk mechanism | Implemented 16 leave-one-reference-out generations and 12/12 scored controls. Disagreement does not beat edit magnitude on identity or masked error; AUC 0.417–0.533. Revise the mechanism before calibration/training or novelty claims | Diagnostic complete; incremental benefit unsupported |
 | Reference-proxy mechanism | Implemented a reference-only fitted spatial blend; 20 proxy generations and 20 scored images complete. Slight MAE gain versus fixed blending comes with worse identity/gallery/LPIPS. Three new tests pass. Address structural fidelity or develop a justified alternative before further expansion | Diagnostic complete; progression gate not met |
+| Context-support mechanism | New input-only mask-support calibration completed 104 generations, 80 scores, two seeds and eight visual sheets. It loses to fixed-mask and equal-budget controls; small visible probes do not reliably predict missing-feature fidelity. No expansion or website promotion is justified | Implemented and tested; progression gate not met |
 | Unfamiliar-person checks | Earlier two-identity smoke retained. Two additional identities now have 25/26 initial studio generations and 29/30 scores; separate repair/recovery checks preserve original failures. All are now observed development cases, with unknown pretraining exposure. Larger independent validation remains | Expanded diagnostic complete; generalization unproven |
 | Client geometry and mask handling | Thin ResShift masks, paired evidence downsampling, nonsquare API framing and primary 512 comparison fixed. SDXL latent-unsupported components are rejected; fine-boundary fidelity and broad client-photo accuracy remain unresolved | Concrete bugs fixed; model limits remain |
 | Statistical power | More identity units, independent severity/mask/reference factors, additional seeds | Required before method freeze |
 | Optional metrics | Reconstructed-landmark error; FID only at adequate sample size; ROC/TAR only with adequate verification trials | Unimplemented; scope-dependent |
 | Final evaluation | Freeze method/parameters first; eight reserved identities remain unused | 0/8, intentionally |
 | Manuscript and presentation | Correct novelty/architecture/results, choose actual venue, prepare figures, limitations and reproducibility | Incomplete |
-| GitHub release | Client repairs, new unfamiliar audit, numerical receipts and current report follow checkpoint `d712706` in this release. Restricted photos and weights remain excluded | Included in the client-repair release |
+| GitHub release | This research checkpoint follows client-repair commit `c1bc5e3`; includes context-support source/tests, frozen protocol, numerical receipts, prior-art boundaries and updated report. Restricted photos and weights remain excluded | Included in the context-support research release |
 | Public hosting | Continue loopback-only use on the laptop | Paused by user |
 
 No single overall project-completion percentage is assigned because successful research findings are not predictable implementation tasks. The explicit measured percentages above separate finished experiments from unsolved quality and publication requirements.
