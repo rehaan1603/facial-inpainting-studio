@@ -1,0 +1,2453 @@
+{
+  "signature": {
+    "frozen_at_utc": "2026-09-25T12:36:27.213932+00:00",
+    "protocol_sha256": "cf8dec4ee1ee07214d5b38fb998fc0ba50c96a0758782a5729989e516c297297",
+    "runner_sha256": "478071c93189a869e3a8b7f54617714caecc6a432e2c334194823b0ef4ae0dcf",
+    "mechanism_sha256": "6f0be6a52aacf0631747d05f776f8b3d1c8db77a1b1ae80e6912b05d184aa7c8",
+    "manifest_sha256": "e5f13ff6f7d17c11828e4806de94ff56e2186779409ca7750131a79aa8246db7",
+    "scaffold_comparison_sha256": "0b8f6fc423320338bced876bd90e40cc9df8cee57cd9b40c6cbf754fb78e206e",
+    "source_commit": "af6690c19fdc6421802fd7996510bcfef259bfd1",
+    "patch_sha256": "3d2c8aa592d3a87a7ba71c9379bd7cb39a8b5c043b5023ae5560c282a8958ee9",
+    "weight_sha256": {
+      "refldm.ckpt": "ad953ba72b52ed32dd280232ff0070bc6cb097a71dce250318730c884e38b778",
+      "vqgan.ckpt": "7b08407b454f5328aaaf1eda35418a5a53dcc68caaf3bcf12ab88b8f21ec1a5d"
+    },
+    "torch": "2.11.0+cu128",
+    "inference_scope": "Observed pixels, masks, supplied references and prior scaffold only"
+  },
+  "evaluation_signature": {
+    "comparison_sha256": "a861f850a312658381f5bc64a6bcde4a0653f987497fbedc41502cd59ac710b0",
+    "evaluator_sha256": "098498337c294e8d7dddc6bd23fe687477c46bfb5788a995fc1c8ada82797d34",
+    "metric_source_sha256": "023d368e19ff66233afba9c61eef4de8d01ab1adb0bf4e73b1e934db23d7b6bf",
+    "evaluation_manifest_sha256": "7cba27590f6a7e9109041bbeb48e2e5f356e7c4d8bf45e5e69bd99a0d1864ef0"
+  },
+  "initial_failure": {
+    "key": "1306_removal_s17_no_reference",
+    "case_id": "1306_removal",
+    "identity": "1306",
+    "seed": 17,
+    "mode": "no_reference",
+    "status": "failed",
+    "scaffold_sha256": "b46cd498ae1133470ab91c55f1fc1a64dd0a5b8471f55fd1b2078fcf0fa3d988",
+    "error": "AssertionError: ",
+    "seconds_including_setup": 0.10999999998603016
+  },
+  "initial_signature": {
+    "frozen_at_utc": "2026-09-25T12:34:05.065870+00:00",
+    "protocol_sha256": "28ac8a90e47e4f1ca1916b2f776e12556deb1238d11bbb9bbd16f5dfeb47a7a9",
+    "runner_sha256": "45addfdc100bd5f6b4dc029ae61c721ca36d069edfbe363724738763535a3011",
+    "mechanism_sha256": "3b2d49676dca8b68c2a7622a0df1c8dd9adfd3234e2559e3af1c1311226535af",
+    "manifest_sha256": "e5f13ff6f7d17c11828e4806de94ff56e2186779409ca7750131a79aa8246db7",
+    "scaffold_comparison_sha256": "0b8f6fc423320338bced876bd90e40cc9df8cee57cd9b40c6cbf754fb78e206e",
+    "source_commit": "af6690c19fdc6421802fd7996510bcfef259bfd1",
+    "patch_sha256": "3d2c8aa592d3a87a7ba71c9379bd7cb39a8b5c043b5023ae5560c282a8958ee9",
+    "weight_sha256": {
+      "refldm.ckpt": "ad953ba72b52ed32dd280232ff0070bc6cb097a71dce250318730c884e38b778",
+      "vqgan.ckpt": "7b08407b454f5328aaaf1eda35418a5a53dcc68caaf3bcf12ab88b8f21ec1a5d"
+    },
+    "torch": "2.11.0+cu128",
+    "inference_scope": "Observed pixels, masks, supplied references and prior scaffold only"
+  },
+  "rows": [
+    {
+      "key": "1306_removal_s17_scaffold",
+      "case_id": "1306_removal",
+      "identity": "1306",
+      "seed": 17,
+      "mode": "scaffold",
+      "status": "complete",
+      "scaffold_sha256": "b46cd498ae1133470ab91c55f1fc1a64dd0a5b8471f55fd1b2078fcf0fa3d988",
+      "output_sha256": "b46cd498ae1133470ab91c55f1fc1a64dd0a5b8471f55fd1b2078fcf0fa3d988",
+      "reused_scaffold": true,
+      "evaluation": {
+        "status": "complete",
+        "output_sha256": "b46cd498ae1133470ab91c55f1fc1a64dd0a5b8471f55fd1b2078fcf0fa3d988",
+        "metrics": {
+          "niqe": 4.997871114628976,
+          "brisque": 18.53436279296875,
+          "facenet_cosine": 0.7999691963195801,
+          "arcface_conditioning_cosine": 0.6891783475875854,
+          "hole_mae": 0.07168630496751408,
+          "visible_mae": 0.0,
+          "ssim_rgb": 0.9703692449437747,
+          "psnr_rgb": 30.01766079164735,
+          "hole_psnr": 18.59320148972291,
+          "lpips": 0.02513827569782734,
+          "known_pixels_unchanged": true,
+          "facenet_gallery_cosine": 0.13128725190957388,
+          "facenet_gallery_valid_count": 3,
+          "arcface_conditioning_gallery_cosine": -0.05640918513139089,
+          "arcface_conditioning_gallery_valid_count": 3
+        },
+        "detection_status": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok"
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok"
+          }
+        }
+      }
+    },
+    {
+      "key": "1306_removal_s17_no_reference",
+      "case_id": "1306_removal",
+      "identity": "1306",
+      "seed": 17,
+      "mode": "no_reference",
+      "status": "complete",
+      "scaffold_sha256": "b46cd498ae1133470ab91c55f1fc1a64dd0a5b8471f55fd1b2078fcf0fa3d988",
+      "output_sha256": "7543475a2f0911d41d982e0452d3b81ecc3517d5812862e0a7528584ecdf0784",
+      "raw_sha256": "088e323098f16e6e42f17b0dffbb94fb69c38d21fdb27c60373fe17f786faae8",
+      "reference_condition_sha256": "07854d2fef297a06ba81685e660c332de36d5d18d546927d30daad6d7fda1541",
+      "reference_condition_abs_sum": 0.0,
+      "low_quality_condition_sha256": "c8930ff82657aa222e7169b5136264d758e351fdd105936f535f4a7f6a9996d2",
+      "correction_gain": 0,
+      "correction_applied": [],
+      "hook_calls": 50,
+      "generation_seconds": 3.26500000001397,
+      "peak_allocated_bytes": 2837433856,
+      "known_pixels_unchanged": true,
+      "seconds_including_setup": 9.65600000001723,
+      "evaluation": {
+        "status": "complete",
+        "output_sha256": "7543475a2f0911d41d982e0452d3b81ecc3517d5812862e0a7528584ecdf0784",
+        "metrics": {
+          "niqe": 4.7407002462301,
+          "brisque": 14.47772216796875,
+          "facenet_cosine": 0.8078439831733704,
+          "arcface_conditioning_cosine": 0.6756367683410645,
+          "hole_mae": 0.07574015696796264,
+          "visible_mae": 0.0,
+          "ssim_rgb": 0.9659829365466829,
+          "psnr_rgb": 29.726605671824284,
+          "hole_psnr": 18.30214636989984,
+          "lpips": 0.028445689007639885,
+          "known_pixels_unchanged": true,
+          "facenet_gallery_cosine": 0.1428988352417946,
+          "facenet_gallery_valid_count": 3,
+          "arcface_conditioning_gallery_cosine": -0.06382574637730916,
+          "arcface_conditioning_gallery_valid_count": 3
+        },
+        "detection_status": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok"
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok"
+          }
+        }
+      }
+    },
+    {
+      "key": "1306_removal_s17_reference",
+      "case_id": "1306_removal",
+      "identity": "1306",
+      "seed": 17,
+      "mode": "reference",
+      "status": "complete",
+      "scaffold_sha256": "b46cd498ae1133470ab91c55f1fc1a64dd0a5b8471f55fd1b2078fcf0fa3d988",
+      "output_sha256": "f42312ec7669517b3f254ce82143eba5320d1b8f9f59d7f00346bb7b1a5850e9",
+      "raw_sha256": "e58c36ba8dac2097437d290d0de4a84da49bde83b0173afeb3c469342d0d3304",
+      "reference_condition_sha256": "1c9038ecdcadcc269027daf53b26f83a87730b1e2f6303d501947b319ffc8d55",
+      "reference_condition_abs_sum": 82981.734375,
+      "low_quality_condition_sha256": "c8930ff82657aa222e7169b5136264d758e351fdd105936f535f4a7f6a9996d2",
+      "correction_gain": 0,
+      "correction_applied": [],
+      "hook_calls": 50,
+      "generation_seconds": 3.1880000000237487,
+      "peak_allocated_bytes": 2840604160,
+      "known_pixels_unchanged": true,
+      "seconds_including_setup": 3.2820000000065193,
+      "evaluation": {
+        "status": "complete",
+        "output_sha256": "f42312ec7669517b3f254ce82143eba5320d1b8f9f59d7f00346bb7b1a5850e9",
+        "metrics": {
+          "niqe": 4.612653066223896,
+          "brisque": 13.90106201171875,
+          "facenet_cosine": 0.8296009302139282,
+          "arcface_conditioning_cosine": 0.7149895429611206,
+          "hole_mae": 0.07544845517109618,
+          "visible_mae": 0.0,
+          "ssim_rgb": 0.9640836620201858,
+          "psnr_rgb": 29.694405655603767,
+          "hole_psnr": 18.269946353679323,
+          "lpips": 0.030231736600399017,
+          "known_pixels_unchanged": true,
+          "facenet_gallery_cosine": 0.2260542263587316,
+          "facenet_gallery_valid_count": 3,
+          "arcface_conditioning_gallery_cosine": -0.02218478173017502,
+          "arcface_conditioning_gallery_valid_count": 3
+        },
+        "detection_status": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok"
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok"
+          }
+        }
+      }
+    },
+    {
+      "key": "1306_removal_s17_no_reference_context",
+      "case_id": "1306_removal",
+      "identity": "1306",
+      "seed": 17,
+      "mode": "no_reference_context",
+      "status": "complete",
+      "scaffold_sha256": "b46cd498ae1133470ab91c55f1fc1a64dd0a5b8471f55fd1b2078fcf0fa3d988",
+      "output_sha256": "a6efd614251453ca76655587a561336c7b5d611e0cf0aa9d2a4f1881f6a45510",
+      "raw_sha256": "a1e30ec93cf38a68a336277601c7b74865ec796352de5611b4bc2e303f4e3a37",
+      "reference_condition_sha256": "07854d2fef297a06ba81685e660c332de36d5d18d546927d30daad6d7fda1541",
+      "reference_condition_abs_sum": 0.0,
+      "low_quality_condition_sha256": "c8930ff82657aa222e7169b5136264d758e351fdd105936f535f4a7f6a9996d2",
+      "correction_gain": 0.5,
+      "correction_applied": [
+        {
+          "step_index": 46,
+          "timestep": 79,
+          "latent_delta_abs_mean": 0.35866349935531616,
+          "visible_error_before": 0.07010327279567719
+        },
+        {
+          "step_index": 47,
+          "timestep": 59,
+          "latent_delta_abs_mean": 0.3367732763290405,
+          "visible_error_before": 0.06460212171077728
+        },
+        {
+          "step_index": 48,
+          "timestep": 39,
+          "latent_delta_abs_mean": 0.30914145708084106,
+          "visible_error_before": 0.06037065014243126
+        },
+        {
+          "step_index": 49,
+          "timestep": 19,
+          "latent_delta_abs_mean": 0.2753394842147827,
+          "visible_error_before": 0.05442894622683525
+        }
+      ],
+      "hook_calls": 50,
+      "generation_seconds": 4.437000000034459,
+      "peak_allocated_bytes": 2840763904,
+      "known_pixels_unchanged": true,
+      "seconds_including_setup": 4.51500000001397,
+      "evaluation": {
+        "status": "complete",
+        "output_sha256": "a6efd614251453ca76655587a561336c7b5d611e0cf0aa9d2a4f1881f6a45510",
+        "metrics": {
+          "niqe": 4.762221153903428,
+          "brisque": 14.27362060546875,
+          "facenet_cosine": 0.801600456237793,
+          "arcface_conditioning_cosine": 0.6762920022010803,
+          "hole_mae": 0.0728002264946083,
+          "visible_mae": 0.0,
+          "ssim_rgb": 0.9675445374491497,
+          "psnr_rgb": 29.901402546945533,
+          "hole_psnr": 18.47694324502109,
+          "lpips": 0.028674904257059097,
+          "known_pixels_unchanged": true,
+          "facenet_gallery_cosine": 0.17107748240232468,
+          "facenet_gallery_valid_count": 3,
+          "arcface_conditioning_gallery_cosine": -0.06346592555443446,
+          "arcface_conditioning_gallery_valid_count": 3
+        },
+        "detection_status": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok"
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok"
+          }
+        }
+      }
+    },
+    {
+      "key": "1306_removal_s17_reference_context",
+      "case_id": "1306_removal",
+      "identity": "1306",
+      "seed": 17,
+      "mode": "reference_context",
+      "status": "complete",
+      "scaffold_sha256": "b46cd498ae1133470ab91c55f1fc1a64dd0a5b8471f55fd1b2078fcf0fa3d988",
+      "output_sha256": "567bb90387021deb6a6528cbc9e1c5f42bfdb49000dcd4439911f2ea08655a43",
+      "raw_sha256": "43335b670ff3e4ab4e7dab6ec36799b08a9a1c47789c8cafffb3137c974f1b0a",
+      "reference_condition_sha256": "1c9038ecdcadcc269027daf53b26f83a87730b1e2f6303d501947b319ffc8d55",
+      "reference_condition_abs_sum": 82981.734375,
+      "low_quality_condition_sha256": "c8930ff82657aa222e7169b5136264d758e351fdd105936f535f4a7f6a9996d2",
+      "correction_gain": 0.5,
+      "correction_applied": [
+        {
+          "step_index": 46,
+          "timestep": 79,
+          "latent_delta_abs_mean": 0.3710697591304779,
+          "visible_error_before": 0.07125861942768097
+        },
+        {
+          "step_index": 47,
+          "timestep": 59,
+          "latent_delta_abs_mean": 0.3472183346748352,
+          "visible_error_before": 0.06593388319015503
+        },
+        {
+          "step_index": 48,
+          "timestep": 39,
+          "latent_delta_abs_mean": 0.32082200050354004,
+          "visible_error_before": 0.06157730147242546
+        },
+        {
+          "step_index": 49,
+          "timestep": 19,
+          "latent_delta_abs_mean": 0.28214818239212036,
+          "visible_error_before": 0.05601002648472786
+        }
+      ],
+      "hook_calls": 50,
+      "generation_seconds": 4.51600000000326,
+      "peak_allocated_bytes": 2839985664,
+      "known_pixels_unchanged": true,
+      "seconds_including_setup": 4.60999999998603,
+      "evaluation": {
+        "status": "complete",
+        "output_sha256": "567bb90387021deb6a6528cbc9e1c5f42bfdb49000dcd4439911f2ea08655a43",
+        "metrics": {
+          "niqe": 4.698019797861469,
+          "brisque": 13.47967529296875,
+          "facenet_cosine": 0.8187888860702515,
+          "arcface_conditioning_cosine": 0.6596369743347168,
+          "hole_mae": 0.07523677408547264,
+          "visible_mae": 0.0,
+          "ssim_rgb": 0.9649787212167903,
+          "psnr_rgb": 29.67212432128411,
+          "hole_psnr": 18.247665019359665,
+          "lpips": 0.030020739883184433,
+          "known_pixels_unchanged": true,
+          "facenet_gallery_cosine": 0.2023917535940806,
+          "facenet_gallery_valid_count": 3,
+          "arcface_conditioning_gallery_cosine": -0.008776367331544558,
+          "arcface_conditioning_gallery_valid_count": 3
+        },
+        "detection_status": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok"
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok"
+          }
+        }
+      }
+    },
+    {
+      "key": "1306_removal_s29_scaffold",
+      "case_id": "1306_removal",
+      "identity": "1306",
+      "seed": 29,
+      "mode": "scaffold",
+      "status": "complete",
+      "scaffold_sha256": "8f1e87298481621ce00c07c5737da298e46e16401edef70082d501fdc96baf0c",
+      "output_sha256": "8f1e87298481621ce00c07c5737da298e46e16401edef70082d501fdc96baf0c",
+      "reused_scaffold": true,
+      "evaluation": {
+        "status": "complete",
+        "output_sha256": "8f1e87298481621ce00c07c5737da298e46e16401edef70082d501fdc96baf0c",
+        "metrics": {
+          "niqe": 4.999250385782214,
+          "brisque": 18.21649169921875,
+          "facenet_cosine": 0.7878944873809814,
+          "arcface_conditioning_cosine": 0.7065943479537964,
+          "hole_mae": 0.06915485392066874,
+          "visible_mae": 0.0,
+          "ssim_rgb": 0.9707238554732077,
+          "psnr_rgb": 30.4539294807444,
+          "hole_psnr": 19.029470178819956,
+          "lpips": 0.02571503445506096,
+          "known_pixels_unchanged": true,
+          "facenet_gallery_cosine": 0.1558928738037745,
+          "facenet_gallery_valid_count": 3,
+          "arcface_conditioning_gallery_cosine": -0.01023884459088246,
+          "arcface_conditioning_gallery_valid_count": 3
+        },
+        "detection_status": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok"
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok"
+          }
+        }
+      }
+    },
+    {
+      "key": "1306_removal_s29_no_reference",
+      "case_id": "1306_removal",
+      "identity": "1306",
+      "seed": 29,
+      "mode": "no_reference",
+      "status": "complete",
+      "scaffold_sha256": "8f1e87298481621ce00c07c5737da298e46e16401edef70082d501fdc96baf0c",
+      "output_sha256": "9095157135d0baff27203b2854fa08b603dc8ce9970a3f757bf40db3253fe0b9",
+      "raw_sha256": "19f52a19808ac878975a03fa2f4f9654d65f262364c8f4d8a6fbecaa92d29435",
+      "reference_condition_sha256": "07854d2fef297a06ba81685e660c332de36d5d18d546927d30daad6d7fda1541",
+      "reference_condition_abs_sum": 0.0,
+      "low_quality_condition_sha256": "efc5c71baeeecc51031c992b200282bb9a06e02e21eefdb7fe76169c69b5a0af",
+      "correction_gain": 0,
+      "correction_applied": [],
+      "hook_calls": 50,
+      "generation_seconds": 3.312999999965541,
+      "peak_allocated_bytes": 2840591872,
+      "known_pixels_unchanged": true,
+      "seconds_including_setup": 3.9219999999622814,
+      "evaluation": {
+        "status": "complete",
+        "output_sha256": "9095157135d0baff27203b2854fa08b603dc8ce9970a3f757bf40db3253fe0b9",
+        "metrics": {
+          "niqe": 4.852700282144824,
+          "brisque": 14.54608154296875,
+          "facenet_cosine": 0.845971405506134,
+          "arcface_conditioning_cosine": 0.7416273951530457,
+          "hole_mae": 0.07281150969178182,
+          "visible_mae": 0.0,
+          "ssim_rgb": 0.9667002583898304,
+          "psnr_rgb": 30.16410475224553,
+          "hole_psnr": 18.73964545032109,
+          "lpips": 0.026836037635803223,
+          "known_pixels_unchanged": true,
+          "facenet_gallery_cosine": 0.240699569384257,
+          "facenet_gallery_valid_count": 3,
+          "arcface_conditioning_gallery_cosine": -0.02093454822897911,
+          "arcface_conditioning_gallery_valid_count": 3
+        },
+        "detection_status": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok"
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok"
+          }
+        }
+      }
+    },
+    {
+      "key": "1306_removal_s29_reference",
+      "case_id": "1306_removal",
+      "identity": "1306",
+      "seed": 29,
+      "mode": "reference",
+      "status": "complete",
+      "scaffold_sha256": "8f1e87298481621ce00c07c5737da298e46e16401edef70082d501fdc96baf0c",
+      "output_sha256": "872dbf68da16097870eea4107b31188336f9c4f97cc9b8db004d18acaa9dd1f0",
+      "raw_sha256": "807c7c7698b4049ed015a3c265ae978a2331039b936c759c079d71f66d8bea64",
+      "reference_condition_sha256": "1c9038ecdcadcc269027daf53b26f83a87730b1e2f6303d501947b319ffc8d55",
+      "reference_condition_abs_sum": 82981.734375,
+      "low_quality_condition_sha256": "efc5c71baeeecc51031c992b200282bb9a06e02e21eefdb7fe76169c69b5a0af",
+      "correction_gain": 0,
+      "correction_applied": [],
+      "hook_calls": 50,
+      "generation_seconds": 3.25,
+      "peak_allocated_bytes": 2840096256,
+      "known_pixels_unchanged": true,
+      "seconds_including_setup": 3.3429999999934807,
+      "evaluation": {
+        "status": "complete",
+        "output_sha256": "872dbf68da16097870eea4107b31188336f9c4f97cc9b8db004d18acaa9dd1f0",
+        "metrics": {
+          "niqe": 4.49405480879955,
+          "brisque": 14.03973388671875,
+          "facenet_cosine": 0.8369396924972534,
+          "arcface_conditioning_cosine": 0.7672722339630127,
+          "hole_mae": 0.07547212911854002,
+          "visible_mae": 0.0,
+          "ssim_rgb": 0.9645368860483022,
+          "psnr_rgb": 29.791587299825927,
+          "hole_psnr": 18.367127997901484,
+          "lpips": 0.02899676188826561,
+          "known_pixels_unchanged": true,
+          "facenet_gallery_cosine": 0.31668607393900555,
+          "facenet_gallery_valid_count": 3,
+          "arcface_conditioning_gallery_cosine": 0.01676074229180813,
+          "arcface_conditioning_gallery_valid_count": 3
+        },
+        "detection_status": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok"
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok"
+          }
+        }
+      }
+    },
+    {
+      "key": "1306_removal_s29_no_reference_context",
+      "case_id": "1306_removal",
+      "identity": "1306",
+      "seed": 29,
+      "mode": "no_reference_context",
+      "status": "complete",
+      "scaffold_sha256": "8f1e87298481621ce00c07c5737da298e46e16401edef70082d501fdc96baf0c",
+      "output_sha256": "fe0858cde64396f38ec1a4627285020b0e0832d4c51df53240481ed64bb654e4",
+      "raw_sha256": "b4c3192e49b64df9671107008b293698a3f10d5bd815ec9022b69cb4835226e5",
+      "reference_condition_sha256": "07854d2fef297a06ba81685e660c332de36d5d18d546927d30daad6d7fda1541",
+      "reference_condition_abs_sum": 0.0,
+      "low_quality_condition_sha256": "efc5c71baeeecc51031c992b200282bb9a06e02e21eefdb7fe76169c69b5a0af",
+      "correction_gain": 0.5,
+      "correction_applied": [
+        {
+          "step_index": 46,
+          "timestep": 79,
+          "latent_delta_abs_mean": 0.3542020916938782,
+          "visible_error_before": 0.07157319784164429
+        },
+        {
+          "step_index": 47,
+          "timestep": 59,
+          "latent_delta_abs_mean": 0.3314982056617737,
+          "visible_error_before": 0.06787832081317902
+        },
+        {
+          "step_index": 48,
+          "timestep": 39,
+          "latent_delta_abs_mean": 0.30522310733795166,
+          "visible_error_before": 0.06270372122526169
+        },
+        {
+          "step_index": 49,
+          "timestep": 19,
+          "latent_delta_abs_mean": 0.269907146692276,
+          "visible_error_before": 0.05668662488460541
+        }
+      ],
+      "hook_calls": 50,
+      "generation_seconds": 4.39000000001397,
+      "peak_allocated_bytes": 2840858112,
+      "known_pixels_unchanged": true,
+      "seconds_including_setup": 4.485000000044238,
+      "evaluation": {
+        "status": "complete",
+        "output_sha256": "fe0858cde64396f38ec1a4627285020b0e0832d4c51df53240481ed64bb654e4",
+        "metrics": {
+          "niqe": 4.8525867417156165,
+          "brisque": 15.14276123046875,
+          "facenet_cosine": 0.8523931503295898,
+          "arcface_conditioning_cosine": 0.7607817649841309,
+          "hole_mae": 0.0723947236170469,
+          "visible_mae": 0.0,
+          "ssim_rgb": 0.9679709566900988,
+          "psnr_rgb": 30.361419343703112,
+          "hole_psnr": 18.93696004177867,
+          "lpips": 0.025217551738023758,
+          "known_pixels_unchanged": true,
+          "facenet_gallery_cosine": 0.24697836736838022,
+          "facenet_gallery_valid_count": 3,
+          "arcface_conditioning_gallery_cosine": -0.011640433842937151,
+          "arcface_conditioning_gallery_valid_count": 3
+        },
+        "detection_status": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok"
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok"
+          }
+        }
+      }
+    },
+    {
+      "key": "1306_removal_s29_reference_context",
+      "case_id": "1306_removal",
+      "identity": "1306",
+      "seed": 29,
+      "mode": "reference_context",
+      "status": "complete",
+      "scaffold_sha256": "8f1e87298481621ce00c07c5737da298e46e16401edef70082d501fdc96baf0c",
+      "output_sha256": "dba5e8c764a9399d06102c2b4577d6b694fc913f2d194265af07db0c819bd634",
+      "raw_sha256": "62e3c26ef9d2e00ef293bbca0fb0b4d81bdabd335b79e7cf4a184544af38fd49",
+      "reference_condition_sha256": "1c9038ecdcadcc269027daf53b26f83a87730b1e2f6303d501947b319ffc8d55",
+      "reference_condition_abs_sum": 82981.734375,
+      "low_quality_condition_sha256": "efc5c71baeeecc51031c992b200282bb9a06e02e21eefdb7fe76169c69b5a0af",
+      "correction_gain": 0.5,
+      "correction_applied": [
+        {
+          "step_index": 46,
+          "timestep": 79,
+          "latent_delta_abs_mean": 0.36183422803878784,
+          "visible_error_before": 0.07045789062976837
+        },
+        {
+          "step_index": 47,
+          "timestep": 59,
+          "latent_delta_abs_mean": 0.339480996131897,
+          "visible_error_before": 0.06733692437410355
+        },
+        {
+          "step_index": 48,
+          "timestep": 39,
+          "latent_delta_abs_mean": 0.3158739507198334,
+          "visible_error_before": 0.0636969655752182
+        },
+        {
+          "step_index": 49,
+          "timestep": 19,
+          "latent_delta_abs_mean": 0.2763274013996124,
+          "visible_error_before": 0.05741620063781738
+        }
+      ],
+      "hook_calls": 50,
+      "generation_seconds": 4.4060000000172295,
+      "peak_allocated_bytes": 2839494144,
+      "known_pixels_unchanged": true,
+      "seconds_including_setup": 4.5,
+      "evaluation": {
+        "status": "complete",
+        "output_sha256": "dba5e8c764a9399d06102c2b4577d6b694fc913f2d194265af07db0c819bd634",
+        "metrics": {
+          "niqe": 4.530794874882089,
+          "brisque": 13.26971435546875,
+          "facenet_cosine": 0.8301188349723816,
+          "arcface_conditioning_cosine": 0.7581304907798767,
+          "hole_mae": 0.07555138838702889,
+          "visible_mae": 0.0,
+          "ssim_rgb": 0.9653269870272948,
+          "psnr_rgb": 29.709940286040897,
+          "hole_psnr": 18.285480984116454,
+          "lpips": 0.02836119383573532,
+          "known_pixels_unchanged": true,
+          "facenet_gallery_cosine": 0.30411291122436523,
+          "facenet_gallery_valid_count": 3,
+          "arcface_conditioning_gallery_cosine": 0.02609079082806905,
+          "arcface_conditioning_gallery_valid_count": 3
+        },
+        "detection_status": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok"
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok"
+          }
+        }
+      }
+    },
+    {
+      "key": "2790_removal_s17_scaffold",
+      "case_id": "2790_removal",
+      "identity": "2790",
+      "seed": 17,
+      "mode": "scaffold",
+      "status": "complete",
+      "scaffold_sha256": "15279f451d16a3446c23e933a39fc409fbd7d9befeed8f2b1bec7471710c9f9a",
+      "output_sha256": "15279f451d16a3446c23e933a39fc409fbd7d9befeed8f2b1bec7471710c9f9a",
+      "reused_scaffold": true,
+      "evaluation": {
+        "status": "complete",
+        "output_sha256": "15279f451d16a3446c23e933a39fc409fbd7d9befeed8f2b1bec7471710c9f9a",
+        "metrics": {
+          "niqe": 4.469959758095997,
+          "brisque": 13.48065185546875,
+          "facenet_cosine": 0.7220374345779419,
+          "arcface_conditioning_cosine": 0.7446497678756714,
+          "hole_mae": 0.06872267670865256,
+          "visible_mae": 0.0,
+          "ssim_rgb": 0.9706195745892932,
+          "psnr_rgb": 32.01312563172525,
+          "hole_psnr": 20.262075777409514,
+          "lpips": 0.03201804310083389,
+          "known_pixels_unchanged": true,
+          "facenet_gallery_cosine": 0.5548599362373352,
+          "facenet_gallery_valid_count": 3,
+          "arcface_conditioning_gallery_cosine": 0.4034894605477651,
+          "arcface_conditioning_gallery_valid_count": 3
+        },
+        "detection_status": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok"
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok"
+          }
+        }
+      }
+    },
+    {
+      "key": "2790_removal_s17_no_reference",
+      "case_id": "2790_removal",
+      "identity": "2790",
+      "seed": 17,
+      "mode": "no_reference",
+      "status": "complete",
+      "scaffold_sha256": "15279f451d16a3446c23e933a39fc409fbd7d9befeed8f2b1bec7471710c9f9a",
+      "output_sha256": "4dc016c99814419670f8069f81c2a7f9862c62a53602a19ecb183d8857f821fa",
+      "raw_sha256": "e21b701c1b639942fbc5efb4eeb12e4cd904193d761c6d32784ca1e7e0c7a467",
+      "reference_condition_sha256": "07854d2fef297a06ba81685e660c332de36d5d18d546927d30daad6d7fda1541",
+      "reference_condition_abs_sum": 0.0,
+      "low_quality_condition_sha256": "d354b1fa6411027ba822f9f1741f7a9da22b8634747acc5e587fcb01cd7b6be4",
+      "correction_gain": 0,
+      "correction_applied": [],
+      "hook_calls": 50,
+      "generation_seconds": 3.3439999999827705,
+      "peak_allocated_bytes": 2838277632,
+      "known_pixels_unchanged": true,
+      "seconds_including_setup": 3.952999999979511,
+      "evaluation": {
+        "status": "complete",
+        "output_sha256": "4dc016c99814419670f8069f81c2a7f9862c62a53602a19ecb183d8857f821fa",
+        "metrics": {
+          "niqe": 4.511803989310286,
+          "brisque": 12.91522216796875,
+          "facenet_cosine": 0.75950026512146,
+          "arcface_conditioning_cosine": 0.7136666774749756,
+          "hole_mae": 0.06979165267385784,
+          "visible_mae": 0.0,
+          "ssim_rgb": 0.9684506593419075,
+          "psnr_rgb": 31.85315604691976,
+          "hole_psnr": 20.102106192604026,
+          "lpips": 0.036077991127967834,
+          "known_pixels_unchanged": true,
+          "facenet_gallery_cosine": 0.5898903210957845,
+          "facenet_gallery_valid_count": 3,
+          "arcface_conditioning_gallery_cosine": 0.3755277097225189,
+          "arcface_conditioning_gallery_valid_count": 3
+        },
+        "detection_status": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok"
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok"
+          }
+        }
+      }
+    },
+    {
+      "key": "2790_removal_s17_reference",
+      "case_id": "2790_removal",
+      "identity": "2790",
+      "seed": 17,
+      "mode": "reference",
+      "status": "complete",
+      "scaffold_sha256": "15279f451d16a3446c23e933a39fc409fbd7d9befeed8f2b1bec7471710c9f9a",
+      "output_sha256": "61ef2a7778d2ceaaf36bb807d2bd9ae1341af9425275d45764fcd38cfead852c",
+      "raw_sha256": "09338d997ead66b83bdd2f69bdd8c6f4bb97ad8abc9cd851bbc7957fa1242f0b",
+      "reference_condition_sha256": "59cd60cab01ca1463a6aa358caadd88110ff37a06296625e3bac8b0053bc5eb2",
+      "reference_condition_abs_sum": 86215.4921875,
+      "low_quality_condition_sha256": "d354b1fa6411027ba822f9f1741f7a9da22b8634747acc5e587fcb01cd7b6be4",
+      "correction_gain": 0,
+      "correction_applied": [],
+      "hook_calls": 50,
+      "generation_seconds": 3.2660000000032596,
+      "peak_allocated_bytes": 2844253696,
+      "known_pixels_unchanged": true,
+      "seconds_including_setup": 3.3589999999967404,
+      "evaluation": {
+        "status": "complete",
+        "output_sha256": "61ef2a7778d2ceaaf36bb807d2bd9ae1341af9425275d45764fcd38cfead852c",
+        "metrics": {
+          "niqe": 4.484520686544973,
+          "brisque": 12.85223388671875,
+          "facenet_cosine": 0.7975894212722778,
+          "arcface_conditioning_cosine": 0.7327113151550293,
+          "hole_mae": 0.07196617247797345,
+          "visible_mae": 0.0,
+          "ssim_rgb": 0.9669807922954621,
+          "psnr_rgb": 31.59506639964148,
+          "hole_psnr": 19.844016545325744,
+          "lpips": 0.03298746794462204,
+          "known_pixels_unchanged": true,
+          "facenet_gallery_cosine": 0.6487030784289042,
+          "facenet_gallery_valid_count": 3,
+          "arcface_conditioning_gallery_cosine": 0.40706268946329754,
+          "arcface_conditioning_gallery_valid_count": 3
+        },
+        "detection_status": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok"
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok"
+          }
+        }
+      }
+    },
+    {
+      "key": "2790_removal_s17_no_reference_context",
+      "case_id": "2790_removal",
+      "identity": "2790",
+      "seed": 17,
+      "mode": "no_reference_context",
+      "status": "complete",
+      "scaffold_sha256": "15279f451d16a3446c23e933a39fc409fbd7d9befeed8f2b1bec7471710c9f9a",
+      "output_sha256": "b7dac34d3e3746ac34b57d96b697175217949cb83d2e5d4757ba0e8c653299ac",
+      "raw_sha256": "de90a4f6a69b7e868d15461b83735cc7e2bf8e6413ff9c1ab4281965e5651ef0",
+      "reference_condition_sha256": "07854d2fef297a06ba81685e660c332de36d5d18d546927d30daad6d7fda1541",
+      "reference_condition_abs_sum": 0.0,
+      "low_quality_condition_sha256": "d354b1fa6411027ba822f9f1741f7a9da22b8634747acc5e587fcb01cd7b6be4",
+      "correction_gain": 0.5,
+      "correction_applied": [
+        {
+          "step_index": 46,
+          "timestep": 79,
+          "latent_delta_abs_mean": 0.3386381268501282,
+          "visible_error_before": 0.08939443528652191
+        },
+        {
+          "step_index": 47,
+          "timestep": 59,
+          "latent_delta_abs_mean": 0.3193139433860779,
+          "visible_error_before": 0.085312120616436
+        },
+        {
+          "step_index": 48,
+          "timestep": 39,
+          "latent_delta_abs_mean": 0.29458972811698914,
+          "visible_error_before": 0.08035144209861755
+        },
+        {
+          "step_index": 49,
+          "timestep": 19,
+          "latent_delta_abs_mean": 0.263179212808609,
+          "visible_error_before": 0.0742330253124237
+        }
+      ],
+      "hook_calls": 50,
+      "generation_seconds": 4.48399999999674,
+      "peak_allocated_bytes": 2843442688,
+      "known_pixels_unchanged": true,
+      "seconds_including_setup": 4.563000000023749,
+      "evaluation": {
+        "status": "complete",
+        "output_sha256": "b7dac34d3e3746ac34b57d96b697175217949cb83d2e5d4757ba0e8c653299ac",
+        "metrics": {
+          "niqe": 4.600445364539625,
+          "brisque": 12.79266357421875,
+          "facenet_cosine": 0.7575910091400146,
+          "arcface_conditioning_cosine": 0.701084554195404,
+          "hole_mae": 0.06764190946988524,
+          "visible_mae": 0.0,
+          "ssim_rgb": 0.969555773692868,
+          "psnr_rgb": 32.02736515631227,
+          "hole_psnr": 20.27631530199653,
+          "lpips": 0.03560338914394379,
+          "known_pixels_unchanged": true,
+          "facenet_gallery_cosine": 0.5924318631490072,
+          "facenet_gallery_valid_count": 3,
+          "arcface_conditioning_gallery_cosine": 0.3684017260869344,
+          "arcface_conditioning_gallery_valid_count": 3
+        },
+        "detection_status": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok"
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok"
+          }
+        }
+      }
+    },
+    {
+      "key": "2790_removal_s17_reference_context",
+      "case_id": "2790_removal",
+      "identity": "2790",
+      "seed": 17,
+      "mode": "reference_context",
+      "status": "complete",
+      "scaffold_sha256": "15279f451d16a3446c23e933a39fc409fbd7d9befeed8f2b1bec7471710c9f9a",
+      "output_sha256": "1bb6cc94e79a6702caa1d5623ac4cbc907bc30c372c0e4de0997d6515babba98",
+      "raw_sha256": "0a7949a40dc356aaa109933df5a6182ee2619ef09f921cf3108c5b313bba6e9c",
+      "reference_condition_sha256": "59cd60cab01ca1463a6aa358caadd88110ff37a06296625e3bac8b0053bc5eb2",
+      "reference_condition_abs_sum": 86215.4921875,
+      "low_quality_condition_sha256": "d354b1fa6411027ba822f9f1741f7a9da22b8634747acc5e587fcb01cd7b6be4",
+      "correction_gain": 0.5,
+      "correction_applied": [
+        {
+          "step_index": 46,
+          "timestep": 79,
+          "latent_delta_abs_mean": 0.3533666133880615,
+          "visible_error_before": 0.09279545396566391
+        },
+        {
+          "step_index": 47,
+          "timestep": 59,
+          "latent_delta_abs_mean": 0.3332732319831848,
+          "visible_error_before": 0.08913681656122208
+        },
+        {
+          "step_index": 48,
+          "timestep": 39,
+          "latent_delta_abs_mean": 0.3069220781326294,
+          "visible_error_before": 0.08348528295755386
+        },
+        {
+          "step_index": 49,
+          "timestep": 19,
+          "latent_delta_abs_mean": 0.2725386619567871,
+          "visible_error_before": 0.07629823684692383
+        }
+      ],
+      "hook_calls": 50,
+      "generation_seconds": 4.438000000023749,
+      "peak_allocated_bytes": 2841226752,
+      "known_pixels_unchanged": true,
+      "seconds_including_setup": 4.51600000000326,
+      "evaluation": {
+        "status": "complete",
+        "output_sha256": "1bb6cc94e79a6702caa1d5623ac4cbc907bc30c372c0e4de0997d6515babba98",
+        "metrics": {
+          "niqe": 4.57474024463063,
+          "brisque": 12.84002685546875,
+          "facenet_cosine": 0.7646010518074036,
+          "arcface_conditioning_cosine": 0.7386289238929749,
+          "hole_mae": 0.06881006646397617,
+          "visible_mae": 0.0,
+          "ssim_rgb": 0.9688750473447904,
+          "psnr_rgb": 31.889427644991308,
+          "hole_psnr": 20.13837779067557,
+          "lpips": 0.03343620151281357,
+          "known_pixels_unchanged": true,
+          "facenet_gallery_cosine": 0.6365416844685873,
+          "facenet_gallery_valid_count": 3,
+          "arcface_conditioning_gallery_cosine": 0.4172982374827067,
+          "arcface_conditioning_gallery_valid_count": 3
+        },
+        "detection_status": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok"
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok"
+          }
+        }
+      }
+    },
+    {
+      "key": "2790_removal_s29_scaffold",
+      "case_id": "2790_removal",
+      "identity": "2790",
+      "seed": 29,
+      "mode": "scaffold",
+      "status": "complete",
+      "scaffold_sha256": "c6e924379ffee826b30c10a2c8f5ff5562076c87c8f4b18f51976a87787baaa4",
+      "output_sha256": "c6e924379ffee826b30c10a2c8f5ff5562076c87c8f4b18f51976a87787baaa4",
+      "reused_scaffold": true,
+      "evaluation": {
+        "status": "complete",
+        "output_sha256": "c6e924379ffee826b30c10a2c8f5ff5562076c87c8f4b18f51976a87787baaa4",
+        "metrics": {
+          "niqe": 4.463882449087183,
+          "brisque": 13.42694091796875,
+          "facenet_cosine": 0.7373404502868652,
+          "arcface_conditioning_cosine": 0.7530657052993774,
+          "hole_mae": 0.06355235250833224,
+          "visible_mae": 0.0,
+          "ssim_rgb": 0.9725654500864885,
+          "psnr_rgb": 32.55247817697168,
+          "hole_psnr": 20.80142832265595,
+          "lpips": 0.03151099383831024,
+          "known_pixels_unchanged": true,
+          "facenet_gallery_cosine": 0.6185267368952433,
+          "facenet_gallery_valid_count": 3,
+          "arcface_conditioning_gallery_cosine": 0.4134243329366048,
+          "arcface_conditioning_gallery_valid_count": 3
+        },
+        "detection_status": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok"
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok"
+          }
+        }
+      }
+    },
+    {
+      "key": "2790_removal_s29_no_reference",
+      "case_id": "2790_removal",
+      "identity": "2790",
+      "seed": 29,
+      "mode": "no_reference",
+      "status": "complete",
+      "scaffold_sha256": "c6e924379ffee826b30c10a2c8f5ff5562076c87c8f4b18f51976a87787baaa4",
+      "output_sha256": "77df5b432c01f82be52f4d73d253bf8129c9a9f62e28cdb5830e81c340c2e088",
+      "raw_sha256": "23c423e42dd58972ca394895a3ad554d9d9d144da5564bfbadcdebd87e679610",
+      "reference_condition_sha256": "07854d2fef297a06ba81685e660c332de36d5d18d546927d30daad6d7fda1541",
+      "reference_condition_abs_sum": 0.0,
+      "low_quality_condition_sha256": "cdbd0c968b3c57b08cdd8e1704939c2acb69acd652b26b0ea2863d8ad1d43a06",
+      "correction_gain": 0,
+      "correction_applied": [],
+      "hook_calls": 50,
+      "generation_seconds": 3.4689999999827705,
+      "peak_allocated_bytes": 2841533952,
+      "known_pixels_unchanged": true,
+      "seconds_including_setup": 4.0939999999827705,
+      "evaluation": {
+        "status": "complete",
+        "output_sha256": "77df5b432c01f82be52f4d73d253bf8129c9a9f62e28cdb5830e81c340c2e088",
+        "metrics": {
+          "niqe": 4.532322809166456,
+          "brisque": 12.21697998046875,
+          "facenet_cosine": 0.7654770612716675,
+          "arcface_conditioning_cosine": 0.7497357130050659,
+          "hole_mae": 0.06759556528708766,
+          "visible_mae": 0.0,
+          "ssim_rgb": 0.9696623864505924,
+          "psnr_rgb": 32.136111147018774,
+          "hole_psnr": 20.385061292703035,
+          "lpips": 0.0358676053583622,
+          "known_pixels_unchanged": true,
+          "facenet_gallery_cosine": 0.5724679430325826,
+          "facenet_gallery_valid_count": 3,
+          "arcface_conditioning_gallery_cosine": 0.3993821044762929,
+          "arcface_conditioning_gallery_valid_count": 3
+        },
+        "detection_status": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok"
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok"
+          }
+        }
+      }
+    },
+    {
+      "key": "2790_removal_s29_reference",
+      "case_id": "2790_removal",
+      "identity": "2790",
+      "seed": 29,
+      "mode": "reference",
+      "status": "complete",
+      "scaffold_sha256": "c6e924379ffee826b30c10a2c8f5ff5562076c87c8f4b18f51976a87787baaa4",
+      "output_sha256": "8931b382acb1e6b8884ba6baf74525fcd93f498be40dadb7dd226b1e7868767a",
+      "raw_sha256": "137c08f4ad40639b05092f89f0e2739bf2f179d7d6598b76a47016321192539d",
+      "reference_condition_sha256": "59cd60cab01ca1463a6aa358caadd88110ff37a06296625e3bac8b0053bc5eb2",
+      "reference_condition_abs_sum": 86215.4921875,
+      "low_quality_condition_sha256": "cdbd0c968b3c57b08cdd8e1704939c2acb69acd652b26b0ea2863d8ad1d43a06",
+      "correction_gain": 0,
+      "correction_applied": [],
+      "hook_calls": 50,
+      "generation_seconds": 3.4679999999934807,
+      "peak_allocated_bytes": 2844556800,
+      "known_pixels_unchanged": true,
+      "seconds_including_setup": 3.5459999999729916,
+      "evaluation": {
+        "status": "complete",
+        "output_sha256": "8931b382acb1e6b8884ba6baf74525fcd93f498be40dadb7dd226b1e7868767a",
+        "metrics": {
+          "niqe": 4.403265716076426,
+          "brisque": 12.04022216796875,
+          "facenet_cosine": 0.7876321077346802,
+          "arcface_conditioning_cosine": 0.7710959911346436,
+          "hole_mae": 0.06727533519307091,
+          "visible_mae": 0.0,
+          "ssim_rgb": 0.9689644666455347,
+          "psnr_rgb": 32.082578707240266,
+          "hole_psnr": 20.331528852924524,
+          "lpips": 0.03375210613012314,
+          "known_pixels_unchanged": true,
+          "facenet_gallery_cosine": 0.6865663528442383,
+          "facenet_gallery_valid_count": 3,
+          "arcface_conditioning_gallery_cosine": 0.44208507736523944,
+          "arcface_conditioning_gallery_valid_count": 3
+        },
+        "detection_status": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok"
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok"
+          }
+        }
+      }
+    },
+    {
+      "key": "2790_removal_s29_no_reference_context",
+      "case_id": "2790_removal",
+      "identity": "2790",
+      "seed": 29,
+      "mode": "no_reference_context",
+      "status": "complete",
+      "scaffold_sha256": "c6e924379ffee826b30c10a2c8f5ff5562076c87c8f4b18f51976a87787baaa4",
+      "output_sha256": "8abd4b69dd893bc5e5c8d38a78e209183c2b55fe20e9aa2391424c5b6acca86d",
+      "raw_sha256": "58d464a93f07a7d4682313fcec836c4e4ca4e61caeadc3902deea0a16a13e4b2",
+      "reference_condition_sha256": "07854d2fef297a06ba81685e660c332de36d5d18d546927d30daad6d7fda1541",
+      "reference_condition_abs_sum": 0.0,
+      "low_quality_condition_sha256": "cdbd0c968b3c57b08cdd8e1704939c2acb69acd652b26b0ea2863d8ad1d43a06",
+      "correction_gain": 0.5,
+      "correction_applied": [
+        {
+          "step_index": 46,
+          "timestep": 79,
+          "latent_delta_abs_mean": 0.3445032238960266,
+          "visible_error_before": 0.09877724200487137
+        },
+        {
+          "step_index": 47,
+          "timestep": 59,
+          "latent_delta_abs_mean": 0.32504475116729736,
+          "visible_error_before": 0.09433530271053314
+        },
+        {
+          "step_index": 48,
+          "timestep": 39,
+          "latent_delta_abs_mean": 0.2988966405391693,
+          "visible_error_before": 0.0887773409485817
+        },
+        {
+          "step_index": 49,
+          "timestep": 19,
+          "latent_delta_abs_mean": 0.2663998007774353,
+          "visible_error_before": 0.08197740465402603
+        }
+      ],
+      "hook_calls": 50,
+      "generation_seconds": 4.577999999979511,
+      "peak_allocated_bytes": 2842074624,
+      "known_pixels_unchanged": true,
+      "seconds_including_setup": 4.657000000006519,
+      "evaluation": {
+        "status": "complete",
+        "output_sha256": "8abd4b69dd893bc5e5c8d38a78e209183c2b55fe20e9aa2391424c5b6acca86d",
+        "metrics": {
+          "niqe": 4.562227427649845,
+          "brisque": 12.55926513671875,
+          "facenet_cosine": 0.7536503076553345,
+          "arcface_conditioning_cosine": 0.7753357887268066,
+          "hole_mae": 0.06614008928531448,
+          "visible_mae": 0.0,
+          "ssim_rgb": 0.9703582309335722,
+          "psnr_rgb": 32.27681485971014,
+          "hole_psnr": 20.525765005394412,
+          "lpips": 0.03541649132966995,
+          "known_pixels_unchanged": true,
+          "facenet_gallery_cosine": 0.5869492093722025,
+          "facenet_gallery_valid_count": 3,
+          "arcface_conditioning_gallery_cosine": 0.404991219441096,
+          "arcface_conditioning_gallery_valid_count": 3
+        },
+        "detection_status": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok"
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok"
+          }
+        }
+      }
+    },
+    {
+      "key": "2790_removal_s29_reference_context",
+      "case_id": "2790_removal",
+      "identity": "2790",
+      "seed": 29,
+      "mode": "reference_context",
+      "status": "complete",
+      "scaffold_sha256": "c6e924379ffee826b30c10a2c8f5ff5562076c87c8f4b18f51976a87787baaa4",
+      "output_sha256": "0649e66b498ae5882c5bcf7344e466e810e077da381576606fc3c960a71cf6cf",
+      "raw_sha256": "185043010e303ae881fa3a4f0fd3afec7707a1921c8f49ce966c3af27e203232",
+      "reference_condition_sha256": "59cd60cab01ca1463a6aa358caadd88110ff37a06296625e3bac8b0053bc5eb2",
+      "reference_condition_abs_sum": 86215.4921875,
+      "low_quality_condition_sha256": "cdbd0c968b3c57b08cdd8e1704939c2acb69acd652b26b0ea2863d8ad1d43a06",
+      "correction_gain": 0.5,
+      "correction_applied": [
+        {
+          "step_index": 46,
+          "timestep": 79,
+          "latent_delta_abs_mean": 0.3629652261734009,
+          "visible_error_before": 0.1006452888250351
+        },
+        {
+          "step_index": 47,
+          "timestep": 59,
+          "latent_delta_abs_mean": 0.3393791913986206,
+          "visible_error_before": 0.09478749334812164
+        },
+        {
+          "step_index": 48,
+          "timestep": 39,
+          "latent_delta_abs_mean": 0.3125111758708954,
+          "visible_error_before": 0.08781789988279343
+        },
+        {
+          "step_index": 49,
+          "timestep": 19,
+          "latent_delta_abs_mean": 0.27668944001197815,
+          "visible_error_before": 0.08169849961996078
+        }
+      ],
+      "hook_calls": 50,
+      "generation_seconds": 4.547000000020489,
+      "peak_allocated_bytes": 2843254272,
+      "known_pixels_unchanged": true,
+      "seconds_including_setup": 4.64000000001397,
+      "evaluation": {
+        "status": "complete",
+        "output_sha256": "0649e66b498ae5882c5bcf7344e466e810e077da381576606fc3c960a71cf6cf",
+        "metrics": {
+          "niqe": 4.60767043715876,
+          "brisque": 12.46356201171875,
+          "facenet_cosine": 0.767796516418457,
+          "arcface_conditioning_cosine": 0.7733115553855896,
+          "hole_mae": 0.06641852752366838,
+          "visible_mae": 0.0,
+          "ssim_rgb": 0.9699337244301409,
+          "psnr_rgb": 32.086479614183745,
+          "hole_psnr": 20.335429759868013,
+          "lpips": 0.03269680589437485,
+          "known_pixels_unchanged": true,
+          "facenet_gallery_cosine": 0.6206946770350138,
+          "facenet_gallery_valid_count": 3,
+          "arcface_conditioning_gallery_cosine": 0.4223198692003886,
+          "arcface_conditioning_gallery_valid_count": 3
+        },
+        "detection_status": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok"
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok"
+          }
+        }
+      }
+    },
+    {
+      "key": "1043_removal_s17_scaffold",
+      "case_id": "1043_removal",
+      "identity": "1043",
+      "seed": 17,
+      "mode": "scaffold",
+      "status": "complete",
+      "scaffold_sha256": "b7e33b54e5c25b008798f4a568bf2838db4af9dfd226978e61e4c4684ba12592",
+      "output_sha256": "b7e33b54e5c25b008798f4a568bf2838db4af9dfd226978e61e4c4684ba12592",
+      "reused_scaffold": true,
+      "evaluation": {
+        "status": "complete",
+        "output_sha256": "b7e33b54e5c25b008798f4a568bf2838db4af9dfd226978e61e4c4684ba12592",
+        "metrics": {
+          "niqe": 3.730530008921626,
+          "brisque": -14.58966064453125,
+          "facenet_cosine": 0.767890453338623,
+          "arcface_conditioning_cosine": 0.6961172819137573,
+          "hole_mae": 0.06503486782661075,
+          "visible_mae": 0.0,
+          "ssim_rgb": 0.9764819461744892,
+          "psnr_rgb": 32.02965256241336,
+          "hole_psnr": 19.672392855470402,
+          "lpips": 0.020505541935563087,
+          "known_pixels_unchanged": true,
+          "facenet_gallery_cosine": 0.6185558438301086,
+          "facenet_gallery_valid_count": 3,
+          "arcface_conditioning_gallery_cosine": 0.49102145433425903,
+          "arcface_conditioning_gallery_valid_count": 3
+        },
+        "detection_status": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok"
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok"
+          }
+        }
+      }
+    },
+    {
+      "key": "1043_removal_s17_no_reference",
+      "case_id": "1043_removal",
+      "identity": "1043",
+      "seed": 17,
+      "mode": "no_reference",
+      "status": "complete",
+      "scaffold_sha256": "b7e33b54e5c25b008798f4a568bf2838db4af9dfd226978e61e4c4684ba12592",
+      "output_sha256": "0584220d6d9086734ddb8ac285c9b8a10034731b9834b5ab6d8f5d0076a3f06f",
+      "raw_sha256": "192a369cacddbed134828218c5df8afa089b09cc79632fee1d90455d15e0c202",
+      "reference_condition_sha256": "07854d2fef297a06ba81685e660c332de36d5d18d546927d30daad6d7fda1541",
+      "reference_condition_abs_sum": 0.0,
+      "low_quality_condition_sha256": "495fc8b825f77568e5dc503593cd67d69b7ae882c92379ea68576029fcc4fd0b",
+      "correction_gain": 0,
+      "correction_applied": [],
+      "hook_calls": 50,
+      "generation_seconds": 3.3439999999827705,
+      "peak_allocated_bytes": 2840219136,
+      "known_pixels_unchanged": true,
+      "seconds_including_setup": 3.9689999999827705,
+      "evaluation": {
+        "status": "complete",
+        "output_sha256": "0584220d6d9086734ddb8ac285c9b8a10034731b9834b5ab6d8f5d0076a3f06f",
+        "metrics": {
+          "niqe": 3.656240988543,
+          "brisque": -14.59356689453125,
+          "facenet_cosine": 0.7748677134513855,
+          "arcface_conditioning_cosine": 0.7171213626861572,
+          "hole_mae": 0.07004636172441933,
+          "visible_mae": 0.0,
+          "ssim_rgb": 0.974791189766592,
+          "psnr_rgb": 32.2651360379253,
+          "hole_psnr": 19.907876330982347,
+          "lpips": 0.017757268622517586,
+          "known_pixels_unchanged": true,
+          "facenet_gallery_cosine": 0.5826480984687805,
+          "facenet_gallery_valid_count": 3,
+          "arcface_conditioning_gallery_cosine": 0.4889763394991557,
+          "arcface_conditioning_gallery_valid_count": 3
+        },
+        "detection_status": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok"
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok"
+          }
+        }
+      }
+    },
+    {
+      "key": "1043_removal_s17_reference",
+      "case_id": "1043_removal",
+      "identity": "1043",
+      "seed": 17,
+      "mode": "reference",
+      "status": "complete",
+      "scaffold_sha256": "b7e33b54e5c25b008798f4a568bf2838db4af9dfd226978e61e4c4684ba12592",
+      "output_sha256": "6a79a277f79e45d81f8c962d63756cdac032923fbce84e6f75c8993ac7afc83b",
+      "raw_sha256": "34c154122045c02bf2238619f7486d4a798ba4d1c37fa3075ba6882b2cfe2381",
+      "reference_condition_sha256": "07b2e660ce7f11911846c7cb4448e9850cd0c84deca22e51eabf3fe5145aaec2",
+      "reference_condition_abs_sum": 81364.84375,
+      "low_quality_condition_sha256": "495fc8b825f77568e5dc503593cd67d69b7ae882c92379ea68576029fcc4fd0b",
+      "correction_gain": 0,
+      "correction_applied": [],
+      "hook_calls": 50,
+      "generation_seconds": 3.375,
+      "peak_allocated_bytes": 2843987456,
+      "known_pixels_unchanged": true,
+      "seconds_including_setup": 3.4679999999934807,
+      "evaluation": {
+        "status": "complete",
+        "output_sha256": "6a79a277f79e45d81f8c962d63756cdac032923fbce84e6f75c8993ac7afc83b",
+        "metrics": {
+          "niqe": 3.503227440049419,
+          "brisque": -14.30792236328125,
+          "facenet_cosine": 0.8040212392807007,
+          "arcface_conditioning_cosine": 0.73492830991745,
+          "hole_mae": 0.07829099168440734,
+          "visible_mae": 0.0,
+          "ssim_rgb": 0.9732832064392772,
+          "psnr_rgb": 31.659094904395552,
+          "hole_psnr": 19.301835197452597,
+          "lpips": 0.017820093780755997,
+          "known_pixels_unchanged": true,
+          "facenet_gallery_cosine": 0.6188388268152872,
+          "facenet_gallery_valid_count": 3,
+          "arcface_conditioning_gallery_cosine": 0.5253232518831888,
+          "arcface_conditioning_gallery_valid_count": 3
+        },
+        "detection_status": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok"
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok"
+          }
+        }
+      }
+    },
+    {
+      "key": "1043_removal_s17_no_reference_context",
+      "case_id": "1043_removal",
+      "identity": "1043",
+      "seed": 17,
+      "mode": "no_reference_context",
+      "status": "complete",
+      "scaffold_sha256": "b7e33b54e5c25b008798f4a568bf2838db4af9dfd226978e61e4c4684ba12592",
+      "output_sha256": "a2c09fbb7abf3c54f99fece3da109b7a644fec3af1bdd7dc79ad0bc229b8255e",
+      "raw_sha256": "4e63e10e19a35605bcea5e2c91b424e89e3c30ee894ec87e9dfb168ca5c3700c",
+      "reference_condition_sha256": "07854d2fef297a06ba81685e660c332de36d5d18d546927d30daad6d7fda1541",
+      "reference_condition_abs_sum": 0.0,
+      "low_quality_condition_sha256": "495fc8b825f77568e5dc503593cd67d69b7ae882c92379ea68576029fcc4fd0b",
+      "correction_gain": 0.5,
+      "correction_applied": [
+        {
+          "step_index": 46,
+          "timestep": 79,
+          "latent_delta_abs_mean": 0.3225359618663788,
+          "visible_error_before": 0.11301703751087189
+        },
+        {
+          "step_index": 47,
+          "timestep": 59,
+          "latent_delta_abs_mean": 0.30534827709198,
+          "visible_error_before": 0.1080072671175003
+        },
+        {
+          "step_index": 48,
+          "timestep": 39,
+          "latent_delta_abs_mean": 0.281851589679718,
+          "visible_error_before": 0.10179995745420456
+        },
+        {
+          "step_index": 49,
+          "timestep": 19,
+          "latent_delta_abs_mean": 0.25158143043518066,
+          "visible_error_before": 0.09527385979890823
+        }
+      ],
+      "hook_calls": 50,
+      "generation_seconds": 4.547000000020489,
+      "peak_allocated_bytes": 2846027264,
+      "known_pixels_unchanged": true,
+      "seconds_including_setup": 4.64100000000326,
+      "evaluation": {
+        "status": "complete",
+        "output_sha256": "a2c09fbb7abf3c54f99fece3da109b7a644fec3af1bdd7dc79ad0bc229b8255e",
+        "metrics": {
+          "niqe": 3.7375574891490904,
+          "brisque": -14.89190673828125,
+          "facenet_cosine": 0.7647691965103149,
+          "arcface_conditioning_cosine": 0.6994341611862183,
+          "hole_mae": 0.06684789184152064,
+          "visible_mae": 0.0,
+          "ssim_rgb": 0.9755617083175016,
+          "psnr_rgb": 32.56956912857902,
+          "hole_psnr": 20.212309421636064,
+          "lpips": 0.017781171947717667,
+          "known_pixels_unchanged": true,
+          "facenet_gallery_cosine": 0.5851895213127136,
+          "facenet_gallery_valid_count": 3,
+          "arcface_conditioning_gallery_cosine": 0.48189449310302734,
+          "arcface_conditioning_gallery_valid_count": 3
+        },
+        "detection_status": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok"
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok"
+          }
+        }
+      }
+    },
+    {
+      "key": "1043_removal_s17_reference_context",
+      "case_id": "1043_removal",
+      "identity": "1043",
+      "seed": 17,
+      "mode": "reference_context",
+      "status": "complete",
+      "scaffold_sha256": "b7e33b54e5c25b008798f4a568bf2838db4af9dfd226978e61e4c4684ba12592",
+      "output_sha256": "a9e050f09ad1e8e6921287a454f0e939c3a1111e4e24617af9192e37fd0e544d",
+      "raw_sha256": "72a59593f4b89f28a8eccd36643dd3ac217909915d61c7e78d52aa70295417ec",
+      "reference_condition_sha256": "07b2e660ce7f11911846c7cb4448e9850cd0c84deca22e51eabf3fe5145aaec2",
+      "reference_condition_abs_sum": 81364.84375,
+      "low_quality_condition_sha256": "495fc8b825f77568e5dc503593cd67d69b7ae882c92379ea68576029fcc4fd0b",
+      "correction_gain": 0.5,
+      "correction_applied": [
+        {
+          "step_index": 46,
+          "timestep": 79,
+          "latent_delta_abs_mean": 0.34586799144744873,
+          "visible_error_before": 0.1293763369321823
+        },
+        {
+          "step_index": 47,
+          "timestep": 59,
+          "latent_delta_abs_mean": 0.32715684175491333,
+          "visible_error_before": 0.12388848513364792
+        },
+        {
+          "step_index": 48,
+          "timestep": 39,
+          "latent_delta_abs_mean": 0.2984781861305237,
+          "visible_error_before": 0.11605723202228546
+        },
+        {
+          "step_index": 49,
+          "timestep": 19,
+          "latent_delta_abs_mean": 0.26589393615722656,
+          "visible_error_before": 0.10343778133392334
+        }
+      ],
+      "hook_calls": 50,
+      "generation_seconds": 4.563000000023749,
+      "peak_allocated_bytes": 2844814848,
+      "known_pixels_unchanged": true,
+      "seconds_including_setup": 4.64100000000326,
+      "evaluation": {
+        "status": "complete",
+        "output_sha256": "a9e050f09ad1e8e6921287a454f0e939c3a1111e4e24617af9192e37fd0e544d",
+        "metrics": {
+          "niqe": 3.7314607603412155,
+          "brisque": -14.56329345703125,
+          "facenet_cosine": 0.8223798274993896,
+          "arcface_conditioning_cosine": 0.7476304173469543,
+          "hole_mae": 0.06954001240774635,
+          "visible_mae": 0.0,
+          "ssim_rgb": 0.9757636922506253,
+          "psnr_rgb": 32.36136576668076,
+          "hole_psnr": 20.004106059737808,
+          "lpips": 0.015844272449612617,
+          "known_pixels_unchanged": true,
+          "facenet_gallery_cosine": 0.6399956941604614,
+          "facenet_gallery_valid_count": 3,
+          "arcface_conditioning_gallery_cosine": 0.536321739355723,
+          "arcface_conditioning_gallery_valid_count": 3
+        },
+        "detection_status": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok"
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok"
+          }
+        }
+      }
+    },
+    {
+      "key": "1043_removal_s29_scaffold",
+      "case_id": "1043_removal",
+      "identity": "1043",
+      "seed": 29,
+      "mode": "scaffold",
+      "status": "complete",
+      "scaffold_sha256": "b9b46f431e692d4482b8f2418e439f270651df8b85c82fa223db34cd8457c3e5",
+      "output_sha256": "b9b46f431e692d4482b8f2418e439f270651df8b85c82fa223db34cd8457c3e5",
+      "reused_scaffold": true,
+      "evaluation": {
+        "status": "complete",
+        "output_sha256": "b9b46f431e692d4482b8f2418e439f270651df8b85c82fa223db34cd8457c3e5",
+        "metrics": {
+          "niqe": 3.7438063625130504,
+          "brisque": -14.38653564453125,
+          "facenet_cosine": 0.7547142505645752,
+          "arcface_conditioning_cosine": 0.7131590843200684,
+          "hole_mae": 0.0670341796514676,
+          "visible_mae": 0.0,
+          "ssim_rgb": 0.9760957270861311,
+          "psnr_rgb": 31.955282138275848,
+          "hole_psnr": 19.598022431332897,
+          "lpips": 0.021995794028043747,
+          "known_pixels_unchanged": true,
+          "facenet_gallery_cosine": 0.6692219177881876,
+          "facenet_gallery_valid_count": 3,
+          "arcface_conditioning_gallery_cosine": 0.5254317919413248,
+          "arcface_conditioning_gallery_valid_count": 3
+        },
+        "detection_status": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok"
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok"
+          }
+        }
+      }
+    },
+    {
+      "key": "1043_removal_s29_no_reference",
+      "case_id": "1043_removal",
+      "identity": "1043",
+      "seed": 29,
+      "mode": "no_reference",
+      "status": "complete",
+      "scaffold_sha256": "b9b46f431e692d4482b8f2418e439f270651df8b85c82fa223db34cd8457c3e5",
+      "output_sha256": "f7a955ba8e682657d21395a519f2762002c8d30017ba4fceab71bd66cceefae2",
+      "raw_sha256": "4a728e213575d76eb84cc6886988e0b10d34a003b4221856e0e1058a1d607688",
+      "reference_condition_sha256": "07854d2fef297a06ba81685e660c332de36d5d18d546927d30daad6d7fda1541",
+      "reference_condition_abs_sum": 0.0,
+      "low_quality_condition_sha256": "fb5d9ed8dcefae5b7f27429b1b126d44ce7b3e131a23b1a840ad0c7f9536b66e",
+      "correction_gain": 0,
+      "correction_applied": [],
+      "hook_calls": 50,
+      "generation_seconds": 3.4219999999622814,
+      "peak_allocated_bytes": 2843237888,
+      "known_pixels_unchanged": true,
+      "seconds_including_setup": 4.061999999976251,
+      "evaluation": {
+        "status": "complete",
+        "output_sha256": "f7a955ba8e682657d21395a519f2762002c8d30017ba4fceab71bd66cceefae2",
+        "metrics": {
+          "niqe": 3.6315142497502175,
+          "brisque": -14.54083251953125,
+          "facenet_cosine": 0.7703447341918945,
+          "arcface_conditioning_cosine": 0.7228958606719971,
+          "hole_mae": 0.07057107381922617,
+          "visible_mae": 0.0,
+          "ssim_rgb": 0.9736010674633522,
+          "psnr_rgb": 31.98573884027015,
+          "hole_psnr": 19.628479133327197,
+          "lpips": 0.018501952290534973,
+          "known_pixels_unchanged": true,
+          "facenet_gallery_cosine": 0.6604552268981934,
+          "facenet_gallery_valid_count": 3,
+          "arcface_conditioning_gallery_cosine": 0.5297777652740479,
+          "arcface_conditioning_gallery_valid_count": 3
+        },
+        "detection_status": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok"
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok"
+          }
+        }
+      }
+    },
+    {
+      "key": "1043_removal_s29_reference",
+      "case_id": "1043_removal",
+      "identity": "1043",
+      "seed": 29,
+      "mode": "reference",
+      "status": "complete",
+      "scaffold_sha256": "b9b46f431e692d4482b8f2418e439f270651df8b85c82fa223db34cd8457c3e5",
+      "output_sha256": "3d71b3fd3d6cffefa9b70faab357186911524289dc1b087a0a09bcef98640b83",
+      "raw_sha256": "d58c41d71048c9319e265176fd4ae66c693933f3d5d0a89301e855a20f50d545",
+      "reference_condition_sha256": "07b2e660ce7f11911846c7cb4448e9850cd0c84deca22e51eabf3fe5145aaec2",
+      "reference_condition_abs_sum": 81364.84375,
+      "low_quality_condition_sha256": "fb5d9ed8dcefae5b7f27429b1b126d44ce7b3e131a23b1a840ad0c7f9536b66e",
+      "correction_gain": 0,
+      "correction_applied": [],
+      "hook_calls": 50,
+      "generation_seconds": 3.422000000020489,
+      "peak_allocated_bytes": 2843594240,
+      "known_pixels_unchanged": true,
+      "seconds_including_setup": 3.5160000000032596,
+      "evaluation": {
+        "status": "complete",
+        "output_sha256": "3d71b3fd3d6cffefa9b70faab357186911524289dc1b087a0a09bcef98640b83",
+        "metrics": {
+          "niqe": 3.653429209946237,
+          "brisque": -14.22882080078125,
+          "facenet_cosine": 0.7938787341117859,
+          "arcface_conditioning_cosine": 0.728302538394928,
+          "hole_mae": 0.07366400063154228,
+          "visible_mae": 0.0,
+          "ssim_rgb": 0.9736402638455899,
+          "psnr_rgb": 31.75977644927245,
+          "hole_psnr": 19.402516742329496,
+          "lpips": 0.01519736833870411,
+          "known_pixels_unchanged": true,
+          "facenet_gallery_cosine": 0.6619647741317749,
+          "facenet_gallery_valid_count": 3,
+          "arcface_conditioning_gallery_cosine": 0.5367235143979391,
+          "arcface_conditioning_gallery_valid_count": 3
+        },
+        "detection_status": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok"
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok"
+          }
+        }
+      }
+    },
+    {
+      "key": "1043_removal_s29_no_reference_context",
+      "case_id": "1043_removal",
+      "identity": "1043",
+      "seed": 29,
+      "mode": "no_reference_context",
+      "status": "complete",
+      "scaffold_sha256": "b9b46f431e692d4482b8f2418e439f270651df8b85c82fa223db34cd8457c3e5",
+      "output_sha256": "5057ed691aa0b63f055fde6ed00299e21779b0a46a33367d5c1a95af888aad88",
+      "raw_sha256": "8e49575b8a5c37f034427bacaffe108d6fb5cefd4b7eaad69dde5e64641a8eb8",
+      "reference_condition_sha256": "07854d2fef297a06ba81685e660c332de36d5d18d546927d30daad6d7fda1541",
+      "reference_condition_abs_sum": 0.0,
+      "low_quality_condition_sha256": "fb5d9ed8dcefae5b7f27429b1b126d44ce7b3e131a23b1a840ad0c7f9536b66e",
+      "correction_gain": 0.5,
+      "correction_applied": [
+        {
+          "step_index": 46,
+          "timestep": 79,
+          "latent_delta_abs_mean": 0.3157113790512085,
+          "visible_error_before": 0.11221886426210403
+        },
+        {
+          "step_index": 47,
+          "timestep": 59,
+          "latent_delta_abs_mean": 0.297798216342926,
+          "visible_error_before": 0.10860756039619446
+        },
+        {
+          "step_index": 48,
+          "timestep": 39,
+          "latent_delta_abs_mean": 0.2744596600532532,
+          "visible_error_before": 0.10386493802070618
+        },
+        {
+          "step_index": 49,
+          "timestep": 19,
+          "latent_delta_abs_mean": 0.24648571014404297,
+          "visible_error_before": 0.09733400493860245
+        }
+      ],
+      "hook_calls": 50,
+      "generation_seconds": 4.25,
+      "peak_allocated_bytes": 2846547456,
+      "known_pixels_unchanged": true,
+      "seconds_including_setup": 4.3439999999827705,
+      "evaluation": {
+        "status": "complete",
+        "output_sha256": "5057ed691aa0b63f055fde6ed00299e21779b0a46a33367d5c1a95af888aad88",
+        "metrics": {
+          "niqe": 3.6840327899966936,
+          "brisque": -14.65118408203125,
+          "facenet_cosine": 0.7563053369522095,
+          "arcface_conditioning_cosine": 0.7359523177146912,
+          "hole_mae": 0.07107141661968713,
+          "visible_mae": 0.0,
+          "ssim_rgb": 0.97426728670799,
+          "psnr_rgb": 31.922902940378894,
+          "hole_psnr": 19.56564323343594,
+          "lpips": 0.017668403685092926,
+          "known_pixels_unchanged": true,
+          "facenet_gallery_cosine": 0.6379626194636027,
+          "facenet_gallery_valid_count": 3,
+          "arcface_conditioning_gallery_cosine": 0.5203386147816976,
+          "arcface_conditioning_gallery_valid_count": 3
+        },
+        "detection_status": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok"
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok"
+          }
+        }
+      }
+    },
+    {
+      "key": "1043_removal_s29_reference_context",
+      "case_id": "1043_removal",
+      "identity": "1043",
+      "seed": 29,
+      "mode": "reference_context",
+      "status": "complete",
+      "scaffold_sha256": "b9b46f431e692d4482b8f2418e439f270651df8b85c82fa223db34cd8457c3e5",
+      "output_sha256": "5edf29397c8910bcd60fcd6b4b878ad1b248aa4e66b8f61339a75275253f6bae",
+      "raw_sha256": "09b077e3e82555aed680fac216f9364737cf935d93787854006e7b994dd79d12",
+      "reference_condition_sha256": "07b2e660ce7f11911846c7cb4448e9850cd0c84deca22e51eabf3fe5145aaec2",
+      "reference_condition_abs_sum": 81364.84375,
+      "low_quality_condition_sha256": "fb5d9ed8dcefae5b7f27429b1b126d44ce7b3e131a23b1a840ad0c7f9536b66e",
+      "correction_gain": 0.5,
+      "correction_applied": [
+        {
+          "step_index": 46,
+          "timestep": 79,
+          "latent_delta_abs_mean": 0.3350123465061188,
+          "visible_error_before": 0.1215193122625351
+        },
+        {
+          "step_index": 47,
+          "timestep": 59,
+          "latent_delta_abs_mean": 0.31782373785972595,
+          "visible_error_before": 0.11671528965234756
+        },
+        {
+          "step_index": 48,
+          "timestep": 39,
+          "latent_delta_abs_mean": 0.2915794551372528,
+          "visible_error_before": 0.11255253851413727
+        },
+        {
+          "step_index": 49,
+          "timestep": 19,
+          "latent_delta_abs_mean": 0.26179730892181396,
+          "visible_error_before": 0.10396047681570053
+        }
+      ],
+      "hook_calls": 50,
+      "generation_seconds": 4.2189999999827705,
+      "peak_allocated_bytes": 2845347328,
+      "known_pixels_unchanged": true,
+      "seconds_including_setup": 4.297000000020489,
+      "evaluation": {
+        "status": "complete",
+        "output_sha256": "5edf29397c8910bcd60fcd6b4b878ad1b248aa4e66b8f61339a75275253f6bae",
+        "metrics": {
+          "niqe": 3.7500501872756677,
+          "brisque": -14.60284423828125,
+          "facenet_cosine": 0.8132233619689941,
+          "arcface_conditioning_cosine": 0.7515591382980347,
+          "hole_mae": 0.07013139683250658,
+          "visible_mae": 0.0,
+          "ssim_rgb": 0.9744407717060236,
+          "psnr_rgb": 32.03751028855434,
+          "hole_psnr": 19.68025058161138,
+          "lpips": 0.015344330109655857,
+          "known_pixels_unchanged": true,
+          "facenet_gallery_cosine": 0.6766722202301025,
+          "facenet_gallery_valid_count": 3,
+          "arcface_conditioning_gallery_cosine": 0.5470409790674845,
+          "arcface_conditioning_gallery_valid_count": 3
+        },
+        "detection_status": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok"
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok"
+          }
+        }
+      }
+    },
+    {
+      "key": "787_removal_s17_scaffold",
+      "case_id": "787_removal",
+      "identity": "787",
+      "seed": 17,
+      "mode": "scaffold",
+      "status": "complete",
+      "scaffold_sha256": "428b3d39d99cc0efcbb4d4e841225bb6d43b73ea76fc5eb29fc816402650dd68",
+      "output_sha256": "428b3d39d99cc0efcbb4d4e841225bb6d43b73ea76fc5eb29fc816402650dd68",
+      "reused_scaffold": true,
+      "evaluation": {
+        "status": "complete",
+        "output_sha256": "428b3d39d99cc0efcbb4d4e841225bb6d43b73ea76fc5eb29fc816402650dd68",
+        "metrics": {
+          "niqe": 5.6994478577273044,
+          "brisque": 21.61541748046875,
+          "facenet_cosine": 0.6162241101264954,
+          "arcface_conditioning_cosine": 0.618732750415802,
+          "hole_mae": 0.04735805761418958,
+          "visible_mae": 0.0,
+          "ssim_rgb": 0.9784008472937783,
+          "psnr_rgb": 35.760462987327976,
+          "hole_psnr": 23.38663694661742,
+          "lpips": 0.022951658815145493,
+          "known_pixels_unchanged": true,
+          "facenet_gallery_cosine": 0.2954097588857015,
+          "facenet_gallery_valid_count": 3,
+          "arcface_conditioning_gallery_cosine": 0.3063851594924927,
+          "arcface_conditioning_gallery_valid_count": 3
+        },
+        "detection_status": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok"
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok"
+          }
+        }
+      }
+    },
+    {
+      "key": "787_removal_s17_no_reference",
+      "case_id": "787_removal",
+      "identity": "787",
+      "seed": 17,
+      "mode": "no_reference",
+      "status": "complete",
+      "scaffold_sha256": "428b3d39d99cc0efcbb4d4e841225bb6d43b73ea76fc5eb29fc816402650dd68",
+      "output_sha256": "729654b85b68347f108cde0815d3209656b1100c9e01a18131b3cdffe9136337",
+      "raw_sha256": "98b7d4d30850c951cd1becacd38dfb6d7927f57326166dfd8491c0c1aa28019c",
+      "reference_condition_sha256": "07854d2fef297a06ba81685e660c332de36d5d18d546927d30daad6d7fda1541",
+      "reference_condition_abs_sum": 0.0,
+      "low_quality_condition_sha256": "a68eceabb8d95cde83648a9f5ea1fd4907df721824860b33fe989429fd412367",
+      "correction_gain": 0,
+      "correction_applied": [],
+      "hook_calls": 50,
+      "generation_seconds": 3.1410000000032596,
+      "peak_allocated_bytes": 2848112128,
+      "known_pixels_unchanged": true,
+      "seconds_including_setup": 3.797000000020489,
+      "evaluation": {
+        "status": "complete",
+        "output_sha256": "729654b85b68347f108cde0815d3209656b1100c9e01a18131b3cdffe9136337",
+        "metrics": {
+          "niqe": 5.044738029075271,
+          "brisque": 18.48944091796875,
+          "facenet_cosine": 0.6412782669067383,
+          "arcface_conditioning_cosine": 0.6323862075805664,
+          "hole_mae": 0.05153596493948132,
+          "visible_mae": 0.0,
+          "ssim_rgb": 0.9751988758724721,
+          "psnr_rgb": 35.28075224695933,
+          "hole_psnr": 22.906926206248773,
+          "lpips": 0.02853000909090042,
+          "known_pixels_unchanged": true,
+          "facenet_gallery_cosine": 0.28219446539878845,
+          "facenet_gallery_valid_count": 3,
+          "arcface_conditioning_gallery_cosine": 0.3258379101753235,
+          "arcface_conditioning_gallery_valid_count": 3
+        },
+        "detection_status": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok"
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok"
+          }
+        }
+      }
+    },
+    {
+      "key": "787_removal_s17_reference",
+      "case_id": "787_removal",
+      "identity": "787",
+      "seed": 17,
+      "mode": "reference",
+      "status": "complete",
+      "scaffold_sha256": "428b3d39d99cc0efcbb4d4e841225bb6d43b73ea76fc5eb29fc816402650dd68",
+      "output_sha256": "fd4e9065e9e6c96403a417ab0eb0c7ada87a2c08095b41d79d2791ecf1814ea1",
+      "raw_sha256": "519c40b9081c0090ba13dde0c7794b6c2525343d169c838c6616a4ec04baa4e7",
+      "reference_condition_sha256": "0176c271cdda0ffb2ffd69a0c2a0cea047ee1272eea55fc63e49c9ad5ea55966",
+      "reference_condition_abs_sum": 78888.0625,
+      "low_quality_condition_sha256": "a68eceabb8d95cde83648a9f5ea1fd4907df721824860b33fe989429fd412367",
+      "correction_gain": 0,
+      "correction_applied": [],
+      "hook_calls": 50,
+      "generation_seconds": 3.125,
+      "peak_allocated_bytes": 2848722432,
+      "known_pixels_unchanged": true,
+      "seconds_including_setup": 3.2339999999967404,
+      "evaluation": {
+        "status": "complete",
+        "output_sha256": "fd4e9065e9e6c96403a417ab0eb0c7ada87a2c08095b41d79d2791ecf1814ea1",
+        "metrics": {
+          "niqe": 4.493155022997058,
+          "brisque": 17.62518310546875,
+          "facenet_cosine": 0.6693231463432312,
+          "arcface_conditioning_cosine": 0.688809871673584,
+          "hole_mae": 0.05286735850551783,
+          "visible_mae": 0.0,
+          "ssim_rgb": 0.9737577157700894,
+          "psnr_rgb": 35.12463605158127,
+          "hole_psnr": 22.750810010870715,
+          "lpips": 0.03160547837615013,
+          "known_pixels_unchanged": true,
+          "facenet_gallery_cosine": 0.33000434438387555,
+          "facenet_gallery_valid_count": 3,
+          "arcface_conditioning_gallery_cosine": 0.3975367446740468,
+          "arcface_conditioning_gallery_valid_count": 3
+        },
+        "detection_status": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok"
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok"
+          }
+        }
+      }
+    },
+    {
+      "key": "787_removal_s17_no_reference_context",
+      "case_id": "787_removal",
+      "identity": "787",
+      "seed": 17,
+      "mode": "no_reference_context",
+      "status": "complete",
+      "scaffold_sha256": "428b3d39d99cc0efcbb4d4e841225bb6d43b73ea76fc5eb29fc816402650dd68",
+      "output_sha256": "7cfa7fcee64bef2e7beed58514f032a8c1ef8dedc0794b52d2434e41d3e02748",
+      "raw_sha256": "395a84279ddba882fe1768b8c9174e80b32b6ae55b0bb09e368a9b6f8f4516a7",
+      "reference_condition_sha256": "07854d2fef297a06ba81685e660c332de36d5d18d546927d30daad6d7fda1541",
+      "reference_condition_abs_sum": 0.0,
+      "low_quality_condition_sha256": "a68eceabb8d95cde83648a9f5ea1fd4907df721824860b33fe989429fd412367",
+      "correction_gain": 0.5,
+      "correction_applied": [
+        {
+          "step_index": 46,
+          "timestep": 79,
+          "latent_delta_abs_mean": 0.376467764377594,
+          "visible_error_before": 0.04927843064069748
+        },
+        {
+          "step_index": 47,
+          "timestep": 59,
+          "latent_delta_abs_mean": 0.3548707365989685,
+          "visible_error_before": 0.045761190354824066
+        },
+        {
+          "step_index": 48,
+          "timestep": 39,
+          "latent_delta_abs_mean": 0.3268100619316101,
+          "visible_error_before": 0.04218253865838051
+        },
+        {
+          "step_index": 49,
+          "timestep": 19,
+          "latent_delta_abs_mean": 0.28987061977386475,
+          "visible_error_before": 0.03971298411488533
+        }
+      ],
+      "hook_calls": 50,
+      "generation_seconds": 4.25,
+      "peak_allocated_bytes": 2848988672,
+      "known_pixels_unchanged": true,
+      "seconds_including_setup": 4.327999999979511,
+      "evaluation": {
+        "status": "complete",
+        "output_sha256": "7cfa7fcee64bef2e7beed58514f032a8c1ef8dedc0794b52d2434e41d3e02748",
+        "metrics": {
+          "niqe": 5.104032313655149,
+          "brisque": 18.94110107421875,
+          "facenet_cosine": 0.609362006187439,
+          "arcface_conditioning_cosine": 0.6310691833496094,
+          "hole_mae": 0.04850503547052277,
+          "visible_mae": 0.0,
+          "ssim_rgb": 0.9766262792159878,
+          "psnr_rgb": 35.69655352818842,
+          "hole_psnr": 23.322727487477867,
+          "lpips": 0.027714524418115616,
+          "known_pixels_unchanged": true,
+          "facenet_gallery_cosine": 0.29074705640474957,
+          "facenet_gallery_valid_count": 3,
+          "arcface_conditioning_gallery_cosine": 0.3180123766263326,
+          "arcface_conditioning_gallery_valid_count": 3
+        },
+        "detection_status": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok"
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok"
+          }
+        }
+      }
+    },
+    {
+      "key": "787_removal_s17_reference_context",
+      "case_id": "787_removal",
+      "identity": "787",
+      "seed": 17,
+      "mode": "reference_context",
+      "status": "complete",
+      "scaffold_sha256": "428b3d39d99cc0efcbb4d4e841225bb6d43b73ea76fc5eb29fc816402650dd68",
+      "output_sha256": "68b3ab6ad361473b63ddcf75eee49b625f9c691e516da95337bcd0675c41d269",
+      "raw_sha256": "fbc612ac5114a8b6801582a6e44e48f0ab55a951a9f4f8ed56c3960c15bada21",
+      "reference_condition_sha256": "0176c271cdda0ffb2ffd69a0c2a0cea047ee1272eea55fc63e49c9ad5ea55966",
+      "reference_condition_abs_sum": 78888.0625,
+      "low_quality_condition_sha256": "a68eceabb8d95cde83648a9f5ea1fd4907df721824860b33fe989429fd412367",
+      "correction_gain": 0.5,
+      "correction_applied": [
+        {
+          "step_index": 46,
+          "timestep": 79,
+          "latent_delta_abs_mean": 0.39217740297317505,
+          "visible_error_before": 0.052882641553878784
+        },
+        {
+          "step_index": 47,
+          "timestep": 59,
+          "latent_delta_abs_mean": 0.3688804805278778,
+          "visible_error_before": 0.04836030676960945
+        },
+        {
+          "step_index": 48,
+          "timestep": 39,
+          "latent_delta_abs_mean": 0.3397214412689209,
+          "visible_error_before": 0.04554331675171852
+        },
+        {
+          "step_index": 49,
+          "timestep": 19,
+          "latent_delta_abs_mean": 0.2999843657016754,
+          "visible_error_before": 0.04029770940542221
+        }
+      ],
+      "hook_calls": 50,
+      "generation_seconds": 4.26500000001397,
+      "peak_allocated_bytes": 2846129664,
+      "known_pixels_unchanged": true,
+      "seconds_including_setup": 4.360000000044238,
+      "evaluation": {
+        "status": "complete",
+        "output_sha256": "68b3ab6ad361473b63ddcf75eee49b625f9c691e516da95337bcd0675c41d269",
+        "metrics": {
+          "niqe": 4.779107682256275,
+          "brisque": 18.32928466796875,
+          "facenet_cosine": 0.7017755508422852,
+          "arcface_conditioning_cosine": 0.6861236095428467,
+          "hole_mae": 0.048567225168049996,
+          "visible_mae": 0.0,
+          "ssim_rgb": 0.9750177751155441,
+          "psnr_rgb": 35.64969475890337,
+          "hole_psnr": 23.275868718192815,
+          "lpips": 0.02974417619407177,
+          "known_pixels_unchanged": true,
+          "facenet_gallery_cosine": 0.32744131485621136,
+          "facenet_gallery_valid_count": 3,
+          "arcface_conditioning_gallery_cosine": 0.38567760586738586,
+          "arcface_conditioning_gallery_valid_count": 3
+        },
+        "detection_status": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok"
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok"
+          }
+        }
+      }
+    },
+    {
+      "key": "787_removal_s29_scaffold",
+      "case_id": "787_removal",
+      "identity": "787",
+      "seed": 29,
+      "mode": "scaffold",
+      "status": "complete",
+      "scaffold_sha256": "4a75e7467b01c70ade4bf0d80f895a3d4f0fceb1ada7ab30f423ba81373177c1",
+      "output_sha256": "4a75e7467b01c70ade4bf0d80f895a3d4f0fceb1ada7ab30f423ba81373177c1",
+      "reused_scaffold": true,
+      "evaluation": {
+        "status": "complete",
+        "output_sha256": "4a75e7467b01c70ade4bf0d80f895a3d4f0fceb1ada7ab30f423ba81373177c1",
+        "metrics": {
+          "niqe": 5.706975783293827,
+          "brisque": 21.46307373046875,
+          "facenet_cosine": 0.7458428144454956,
+          "arcface_conditioning_cosine": 0.5781614780426025,
+          "hole_mae": 0.048774466736264,
+          "visible_mae": 0.0,
+          "ssim_rgb": 0.9770414887242186,
+          "psnr_rgb": 35.46926352439774,
+          "hole_psnr": 23.09543748368718,
+          "lpips": 0.023384643718600273,
+          "known_pixels_unchanged": true,
+          "facenet_gallery_cosine": 0.34031424423058826,
+          "facenet_gallery_valid_count": 3,
+          "arcface_conditioning_gallery_cosine": 0.27816430230935413,
+          "arcface_conditioning_gallery_valid_count": 3
+        },
+        "detection_status": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok"
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok"
+          }
+        }
+      }
+    },
+    {
+      "key": "787_removal_s29_no_reference",
+      "case_id": "787_removal",
+      "identity": "787",
+      "seed": 29,
+      "mode": "no_reference",
+      "status": "complete",
+      "scaffold_sha256": "4a75e7467b01c70ade4bf0d80f895a3d4f0fceb1ada7ab30f423ba81373177c1",
+      "output_sha256": "c810c686edbe0f5da6e13efea22939f5d8cf2bc2e27ffecfd40ae6c54e8e61e9",
+      "raw_sha256": "86235f464401e61446f9a59ab3f4d1d6265ba7f7dab7b736287a37038b109baf",
+      "reference_condition_sha256": "07854d2fef297a06ba81685e660c332de36d5d18d546927d30daad6d7fda1541",
+      "reference_condition_abs_sum": 0.0,
+      "low_quality_condition_sha256": "95e6ef091922b915a07a6524a714bc8283f7e51d17f34870f1c6331e2a26ddb3",
+      "correction_gain": 0,
+      "correction_applied": [],
+      "hook_calls": 50,
+      "generation_seconds": 8.14100000000326,
+      "peak_allocated_bytes": 2848398848,
+      "known_pixels_unchanged": true,
+      "seconds_including_setup": 16.43800000002375,
+      "evaluation": {
+        "status": "complete",
+        "output_sha256": "c810c686edbe0f5da6e13efea22939f5d8cf2bc2e27ffecfd40ae6c54e8e61e9",
+        "metrics": {
+          "niqe": 4.883514081384721,
+          "brisque": 19.01824951171875,
+          "facenet_cosine": 0.7027671933174133,
+          "arcface_conditioning_cosine": 0.5542765855789185,
+          "hole_mae": 0.05514167536633349,
+          "visible_mae": 0.0,
+          "ssim_rgb": 0.9732285078307569,
+          "psnr_rgb": 34.59407285589275,
+          "hole_psnr": 22.2202468151822,
+          "lpips": 0.03242630138993263,
+          "known_pixels_unchanged": true,
+          "facenet_gallery_cosine": 0.3154331296682358,
+          "facenet_gallery_valid_count": 3,
+          "arcface_conditioning_gallery_cosine": 0.2626866300900777,
+          "arcface_conditioning_gallery_valid_count": 3
+        },
+        "detection_status": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok"
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok"
+          }
+        }
+      }
+    },
+    {
+      "key": "787_removal_s29_reference",
+      "case_id": "787_removal",
+      "identity": "787",
+      "seed": 29,
+      "mode": "reference",
+      "status": "complete",
+      "scaffold_sha256": "4a75e7467b01c70ade4bf0d80f895a3d4f0fceb1ada7ab30f423ba81373177c1",
+      "output_sha256": "4829237ee0e5a3bb01d4526d7cbc1373c5f553f0511506190f155dedc9c70bbb",
+      "raw_sha256": "eabc13ec54eb60456ad760ddf53fd9291795c53feec537415cc41f746b56d508",
+      "reference_condition_sha256": "0176c271cdda0ffb2ffd69a0c2a0cea047ee1272eea55fc63e49c9ad5ea55966",
+      "reference_condition_abs_sum": 78888.0625,
+      "low_quality_condition_sha256": "95e6ef091922b915a07a6524a714bc8283f7e51d17f34870f1c6331e2a26ddb3",
+      "correction_gain": 0,
+      "correction_applied": [],
+      "hook_calls": 50,
+      "generation_seconds": 3.14000000001397,
+      "peak_allocated_bytes": 2848505344,
+      "known_pixels_unchanged": true,
+      "seconds_including_setup": 3.2339999999967404,
+      "evaluation": {
+        "status": "complete",
+        "output_sha256": "4829237ee0e5a3bb01d4526d7cbc1373c5f553f0511506190f155dedc9c70bbb",
+        "metrics": {
+          "niqe": 4.544283228703515,
+          "brisque": 18.02606201171875,
+          "facenet_cosine": 0.728932797908783,
+          "arcface_conditioning_cosine": 0.5540555119514465,
+          "hole_mae": 0.05503219738079733,
+          "visible_mae": 0.0,
+          "ssim_rgb": 0.9718577430595987,
+          "psnr_rgb": 34.54009099628356,
+          "hole_psnr": 22.166264955573006,
+          "lpips": 0.03457560017704964,
+          "known_pixels_unchanged": true,
+          "facenet_gallery_cosine": 0.3518596688906352,
+          "facenet_gallery_valid_count": 3,
+          "arcface_conditioning_gallery_cosine": 0.27108235160509747,
+          "arcface_conditioning_gallery_valid_count": 3
+        },
+        "detection_status": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok"
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok"
+          }
+        }
+      }
+    },
+    {
+      "key": "787_removal_s29_no_reference_context",
+      "case_id": "787_removal",
+      "identity": "787",
+      "seed": 29,
+      "mode": "no_reference_context",
+      "status": "complete",
+      "scaffold_sha256": "4a75e7467b01c70ade4bf0d80f895a3d4f0fceb1ada7ab30f423ba81373177c1",
+      "output_sha256": "462b3ae420942c974e957305b8e8ed32a2a6ac9f6abe1e69d2d2cb773ead9caf",
+      "raw_sha256": "57405e8c1d6e112af0dd842c15b9310067602ffe9ecddc22152b6a211aba8f59",
+      "reference_condition_sha256": "07854d2fef297a06ba81685e660c332de36d5d18d546927d30daad6d7fda1541",
+      "reference_condition_abs_sum": 0.0,
+      "low_quality_condition_sha256": "95e6ef091922b915a07a6524a714bc8283f7e51d17f34870f1c6331e2a26ddb3",
+      "correction_gain": 0.5,
+      "correction_applied": [
+        {
+          "step_index": 46,
+          "timestep": 79,
+          "latent_delta_abs_mean": 0.37365496158599854,
+          "visible_error_before": 0.05566524341702461
+        },
+        {
+          "step_index": 47,
+          "timestep": 59,
+          "latent_delta_abs_mean": 0.3522401452064514,
+          "visible_error_before": 0.05307244881987572
+        },
+        {
+          "step_index": 48,
+          "timestep": 39,
+          "latent_delta_abs_mean": 0.3228246569633484,
+          "visible_error_before": 0.049335777759552
+        },
+        {
+          "step_index": 49,
+          "timestep": 19,
+          "latent_delta_abs_mean": 0.28731900453567505,
+          "visible_error_before": 0.04529990255832672
+        }
+      ],
+      "hook_calls": 50,
+      "generation_seconds": 4.23399999999674,
+      "peak_allocated_bytes": 2850418176,
+      "known_pixels_unchanged": true,
+      "seconds_including_setup": 4.327999999979511,
+      "evaluation": {
+        "status": "complete",
+        "output_sha256": "462b3ae420942c974e957305b8e8ed32a2a6ac9f6abe1e69d2d2cb773ead9caf",
+        "metrics": {
+          "niqe": 5.320264738188539,
+          "brisque": 19.36883544921875,
+          "facenet_cosine": 0.7295565605163574,
+          "arcface_conditioning_cosine": 0.5628250241279602,
+          "hole_mae": 0.052275178213967016,
+          "visible_mae": 0.0,
+          "ssim_rgb": 0.9745687302617632,
+          "psnr_rgb": 34.93350399729452,
+          "hole_psnr": 22.55967795658397,
+          "lpips": 0.02798359841108322,
+          "known_pixels_unchanged": true,
+          "facenet_gallery_cosine": 0.3299434781074524,
+          "facenet_gallery_valid_count": 3,
+          "arcface_conditioning_gallery_cosine": 0.27017009258270264,
+          "arcface_conditioning_gallery_valid_count": 3
+        },
+        "detection_status": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok"
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok"
+          }
+        }
+      }
+    },
+    {
+      "key": "787_removal_s29_reference_context",
+      "case_id": "787_removal",
+      "identity": "787",
+      "seed": 29,
+      "mode": "reference_context",
+      "status": "complete",
+      "scaffold_sha256": "4a75e7467b01c70ade4bf0d80f895a3d4f0fceb1ada7ab30f423ba81373177c1",
+      "output_sha256": "08881e0eaf0712d7fd8b12ed7e20461096d6d9637ca34f8632837593227fcfcf",
+      "raw_sha256": "1e7dc91b4c52fb6c051a80615e7a4e68c66ce5a9adf79c8c62d1b71248846b06",
+      "reference_condition_sha256": "0176c271cdda0ffb2ffd69a0c2a0cea047ee1272eea55fc63e49c9ad5ea55966",
+      "reference_condition_abs_sum": 78888.0625,
+      "low_quality_condition_sha256": "95e6ef091922b915a07a6524a714bc8283f7e51d17f34870f1c6331e2a26ddb3",
+      "correction_gain": 0.5,
+      "correction_applied": [
+        {
+          "step_index": 46,
+          "timestep": 79,
+          "latent_delta_abs_mean": 0.3825242519378662,
+          "visible_error_before": 0.053021371364593506
+        },
+        {
+          "step_index": 47,
+          "timestep": 59,
+          "latent_delta_abs_mean": 0.3608432710170746,
+          "visible_error_before": 0.05077818036079407
+        },
+        {
+          "step_index": 48,
+          "timestep": 39,
+          "latent_delta_abs_mean": 0.33039480447769165,
+          "visible_error_before": 0.0476866140961647
+        },
+        {
+          "step_index": 49,
+          "timestep": 19,
+          "latent_delta_abs_mean": 0.2922109365463257,
+          "visible_error_before": 0.043585240840911865
+        }
+      ],
+      "hook_calls": 50,
+      "generation_seconds": 4.23499999998603,
+      "peak_allocated_bytes": 2846035456,
+      "known_pixels_unchanged": true,
+      "seconds_including_setup": 4.328000000037719,
+      "evaluation": {
+        "status": "complete",
+        "output_sha256": "08881e0eaf0712d7fd8b12ed7e20461096d6d9637ca34f8632837593227fcfcf",
+        "metrics": {
+          "niqe": 5.117562290232923,
+          "brisque": 18.63201904296875,
+          "facenet_cosine": 0.7328449487686157,
+          "arcface_conditioning_cosine": 0.5542693138122559,
+          "hole_mae": 0.053649122625680036,
+          "visible_mae": 0.0,
+          "ssim_rgb": 0.9725669701135352,
+          "psnr_rgb": 34.73200844709935,
+          "hole_psnr": 22.3581824063888,
+          "lpips": 0.03143307939171791,
+          "known_pixels_unchanged": true,
+          "facenet_gallery_cosine": 0.4032682180404663,
+          "facenet_gallery_valid_count": 3,
+          "arcface_conditioning_gallery_cosine": 0.2747443914413452,
+          "arcface_conditioning_gallery_valid_count": 3
+        },
+        "detection_status": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok"
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok"
+          }
+        }
+      }
+    }
+  ]
+}

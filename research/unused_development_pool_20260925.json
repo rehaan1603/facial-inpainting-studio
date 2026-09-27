@@ -1,0 +1,28 @@
+{
+  "date": "2026-09-25",
+  "metadata_only": true,
+  "dataset_pixels_opened": false,
+  "source_sha256": "8706a1193fba1f425bae7158442024799e51ad67e32185b779a171ed2fe43e7b",
+  "ledger_sha256": {
+    "research/protocols/unseen_identity_protocol_v1.json": "56ba063e1475c85555a10c243322e75b20076e88f2abc0c0ad2fa8140965ea10",
+    "outputs/distortion_extension_v1/selection.json": "3349acae8a5c718137b5373c327b741a0820f7337259f102112c6ee12389df08",
+    "outputs/unfamiliar_smoke_v1/selection.json": "92583cd6f42fb09cb5d62be6c590de63470f274940bb881d3cd822b5c11196f2",
+    "outputs/unfamiliar_studio_v2/selection.json": "7c4a1830de1abfe2b844ccb42a2ff6d0de4cf2fae1909e3b6157636586aaf9c9"
+  },
+  "excluded_identity_count": 5291,
+  "val_identity_count": 604,
+  "val_with_at_least_8_before_exclusion": 142,
+  "unused_val_identity_count": 394,
+  "unused_val_with_at_least_8": 11,
+  "photos_in_those_groups": 129,
+  "remaining_photo_count_distribution": {
+    "14": 2,
+    "13": 1,
+    "10": 4,
+    "20": 1,
+    "9": 1,
+    "11": 1,
+    "8": 1
+  },
+  "meaning": "Upper bound before duplicate and detector checks; no identities selected. A 12-identity confirmation is unavailable from this remaining val pool."
+}

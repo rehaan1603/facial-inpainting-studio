@@ -1,4 +1,12 @@
-# Novelty gap audit — updated 22 September 2026
+# Novelty gap audit — updated 27 September 2026
+
+## 27 September mechanism and overlap update
+
+The context-support selector, reference/context correction cascade and spatially dropped scaffold conditioning have all been implemented and rejected by their prespecified controls. The last two screens add 56 actual reconstructions and 80 scored rows including reused controls. Reference identity similarity can improve while hidden expression and pixel/perceptual fidelity remain worse. The masked-conditioning screen also has incomplete face detection, explicitly retained. See `NOVELTY_ESTABLISHMENT_20260925.md`; these results do not establish a beneficial novel mechanism.
+
+Further primary-source checks include [Reference-Guided Large-Scale Face Inpainting](https://arxiv.org/abs/2303.07014), [ReSample](https://arxiv.org/abs/2307.08123), [PFStorer](https://openaccess.thecvf.com/content/CVPR2024/html/Varanka_PFStorer_Personalized_Face_Restoration_and_Super-Resolution_CVPR_2024_paper.html), [CLR-Face](https://arxiv.org/abs/2402.06106) and [InstantIR](https://arxiv.org/abs/2410.06551). They respectively constrain broad claims to reference-guided missing-face completion, diffusion data consistency, avoiding unreliable input identity evidence, selective latent identity guidance and dynamically updated restoration conditioning. They are related work, not methods reproduced in this update. Official RefFaceInpainting code/asset preparation has started as the next external baseline.
+
+The supported contribution remains reproducible diagnostics and explicit evidence preservation. A publishable novel-method claim still needs a technically distinct, useful mechanism, matched ablations, broader independent identities and visual fidelity evidence. First-in-literature priority has not been established by this targeted search.
 
 ## 23 September reference-proxy revision
 

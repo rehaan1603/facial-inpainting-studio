@@ -1,0 +1,62 @@
+{
+  "date": "2026-09-25",
+  "stage": "New frozen masked-conditioning mechanism screen after completed reference/context v2; same observed development cases, not independent replication",
+  "cases": [
+    "1306_removal",
+    "2790_removal",
+    "1043_removal",
+    "787_removal"
+  ],
+  "seeds": [
+    17,
+    29
+  ],
+  "scaffold": "Unchanged fixed_r0 ResShift outputs from context_support_v1, with source/input/seed/output hashes verified. All original visible bytes preserved.",
+  "restorer": "Pinned author ReF-LDM with 50 uniform_trailing DDIM steps, eta zero, CFG 1.5, float32, four supplied references",
+  "arms": [
+    "scaffold",
+    "reference_context",
+    "masked_lq_context",
+    "masked_lq_no_reference_context",
+    "global_lq_context"
+  ],
+  "reference_ablation": "Zero the encoded reference condition, retaining the scaffold, noise and all other parameters. Both CFG branches then have the same reference condition.",
+  "correction": {
+    "gain": 0.5,
+    "steps": [
+      46,
+      47,
+      48,
+      49
+    ]
+  },
+  "mechanism": "Suppress the scaffold low-quality latent at cells overlapping the supplied missing mask, using conservative max pooling to latent resolution. Keep actual references and late visible-context correction unchanged. Global control multiplies every low-quality latent by one minus the fraction of suppressed cells, matching mean multiplier (not exact latent norm). Reference-disabled masked arm isolates reference benefit. No target/gallery/identity metrics select the mask.",
+  "implementation_guard": "Preserve author EMA parameter registration (eval and no_grad, not requires_grad mutation); pass corrector_kwargs={}. Author sample does forward this hook, correcting the initial protocol description. Verify full GPU gain-zero equality before experiment.",
+  "compute": "24 new ReF-LDM calls, eight unchanged scaffold and eight unchanged reference_context outputs reused from v2. Two full GPU zero-gain equivalence calls retained as a preflight. Same 50 UNet steps and four context corrections for each new arm.",
+  "primary_controls": [
+    "scaffold",
+    "reference_context",
+    "global_lq_context",
+    "masked_lq_no_reference_context"
+  ],
+  "primary_metrics": [
+    "facenet_cosine",
+    "hole_mae"
+  ],
+  "statistics": "Average two seeds within identity; eight prespecified paired tests with Holm correction. All failures retained; only fully paired identities in a contrast. Four identities cannot establish statistical superiority.",
+  "gate": "Each seed: masked_lq_context must improve FaceNet >=0.005 and reduce hole MAE >=1 percent over scaffold, reference_context and global_lq_context; gallery may decrease by <=0.002 and LPIPS increase by <=1 percent. Must improve FaceNet and not worsen MAE versus reference-disabled masked arm. Complete metrics/detection/gallery coverage and visual review required. Failure means no tuning on these targets or expansion of this policy. Passing permits separately frozen unfamiliar-development confirmation only.",
+  "interpretation": "Masking/conditioning reliability have prior art. This narrow intervention separates generated scaffold conditioning from original visible evidence inside a frozen personal-reference restorer. The VAE is nonlocal: masking cells is not proof of exact semantic locality. No novel superiority claim before controls and independent confirmation.",
+  "inference_scope": "Only supplied observation, missing mask, references and verified prior scaffold. Clean targets/gallery available solely to separate evaluator and visual review.",
+  "reserved_identities": [
+    "7789",
+    "8726",
+    "5774",
+    "6632",
+    "7170",
+    "6225",
+    "5170",
+    "8561"
+  ],
+  "final_test_used": false,
+  "primary_candidate": "masked_lq_context"
+}

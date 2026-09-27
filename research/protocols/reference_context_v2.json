@@ -1,0 +1,61 @@
+{
+  "date": "2026-09-25",
+  "stage": "Frozen causal development screen, not a novel-method success claim",
+  "cases": [
+    "1306_removal",
+    "2790_removal",
+    "1043_removal",
+    "787_removal"
+  ],
+  "seeds": [
+    17,
+    29
+  ],
+  "scaffold": "Unchanged fixed_r0 ResShift outputs from context_support_v1, with source/input/seed/output hashes verified. All original visible bytes preserved.",
+  "restorer": "Pinned author ReF-LDM with 50 uniform_trailing DDIM steps, eta zero, CFG 1.5, float32, four supplied references",
+  "arms": [
+    "scaffold",
+    "no_reference",
+    "reference",
+    "no_reference_context",
+    "reference_context"
+  ],
+  "reference_ablation": "Zero the encoded reference condition, retaining the scaffold, noise and all other parameters. Both CFG branches then have the same reference condition.",
+  "correction": {
+    "gain": 0.5,
+    "steps": [
+      46,
+      47,
+      48,
+      49
+    ]
+  },
+  "mechanism": "At each specified step, decode predicted clean latent, replace only reliable visible pixels with the observed RGB, encode both projected and unprojected images, and add gain times their latent difference to the predicted clean latent. Return its implied epsilon before DDIM computes the next state. Original missing pixels are never used as evidence.",
+  "implementation_guard": "Preserve author EMA parameter registration (eval and no_grad, not requires_grad mutation); pass corrector_kwargs={}. Author sample does forward this hook, correcting the initial protocol description. Verify full GPU gain-zero equality before experiment.",
+  "compute": "32 new ReF-LDM calls plus eight reused scaffold controls and two full GPU equivalence calls. Correction adds four decode/eight encode passes but no extra UNet calls. Report actual latency and peak memory. No claim of equal total compute for corrected versus plain cascade.",
+  "primary_controls": [
+    "scaffold",
+    "reference",
+    "no_reference_context"
+  ],
+  "primary_metrics": [
+    "facenet_cosine",
+    "hole_mae"
+  ],
+  "statistics": "Average the two seeds within identity, exact sign flips and identity bootstrap; six primary tests with Holm correction. Four identities cannot establish statistical superiority. Retain detector and runtime failures. Only fully paired identities contribute to a contrast.",
+  "gate": "For each seed, reference_context must improve mean FaceNet by at least 0.005 and mean hole MAE by at least 1 percent over BOTH scaffold and plain reference cascade, without gallery reduction >0.002 or LPIPS increase >1 percent. It must also beat no_reference_context on FaceNet and not worsen hole MAE. All reconstructed arms must have complete scores, both detectors and three gallery features. Human review of all cases required. This permits a separate fresh-development confirmation only; it does not establish novelty or authorize training/website promotion.",
+  "interpretation": "Coarse-to-fine cascades, known-context diffusion projection and reference restoration have prior art. Test whether their specific interaction corrects scaffold errors. No first/best claim, no true-expression recovery guarantee and no pretraining-disjoint claim.",
+  "inference_scope": "Only supplied observation, missing mask, references and verified prior scaffold. Clean targets/gallery available solely to separate evaluator and visual review.",
+  "reserved_identities": [
+    "7789",
+    "8726",
+    "5774",
+    "6632",
+    "7170",
+    "6225",
+    "5170",
+    "8561"
+  ],
+  "final_test_used": false,
+  "technical_recovery_of": "reference_context_v1: EMA assertion before sampling; additionally missing empty corrector kwargs detected in review. Initial attempt retained. No method parameters, cases, seeds or gates changed."
+}

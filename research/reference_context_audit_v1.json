@@ -1,0 +1,168 @@
+{
+  "completed_at_utc": "2026-09-27T05:11:30.300977+00:00",
+  "studies": [
+    {
+      "experiment": "reference_context_v2",
+      "rows_and_pixel_preservation_verified": 40,
+      "new_generation_receipts": 32,
+      "source_and_evaluation_signatures_verified": true,
+      "zero_gain_bit_exact": true,
+      "detector_failures": [],
+      "metric_identity_counts": {
+        "scaffold": {
+          "facenet_cosine": 4,
+          "facenet_gallery_cosine": 4,
+          "arcface_conditioning_cosine": 4,
+          "hole_mae": 4,
+          "lpips": 4
+        },
+        "no_reference": {
+          "facenet_cosine": 4,
+          "facenet_gallery_cosine": 4,
+          "arcface_conditioning_cosine": 4,
+          "hole_mae": 4,
+          "lpips": 4
+        },
+        "reference": {
+          "facenet_cosine": 4,
+          "facenet_gallery_cosine": 4,
+          "arcface_conditioning_cosine": 4,
+          "hole_mae": 4,
+          "lpips": 4
+        },
+        "no_reference_context": {
+          "facenet_cosine": 4,
+          "facenet_gallery_cosine": 4,
+          "arcface_conditioning_cosine": 4,
+          "hole_mae": 4,
+          "lpips": 4
+        },
+        "reference_context": {
+          "facenet_cosine": 4,
+          "facenet_gallery_cosine": 4,
+          "arcface_conditioning_cosine": 4,
+          "hole_mae": 4,
+          "lpips": 4
+        }
+      },
+      "visual_sheets_reviewed": {
+        "1043_removal_s17.jpg": "423ece12ce3c61ff99e9219ad40a642ed606c6dd6fe93ccfbd36a9a1cf40378a",
+        "1043_removal_s29.jpg": "3767fe8a6619b0414d8146cfc72e7c646ce546c679790abba847fdf672ecf4f0",
+        "1306_removal_s17.jpg": "a7b6563445f3219dd762208bbdc03ebfadd529d080165e27f49d2fed87973f14",
+        "1306_removal_s29.jpg": "72a034df2c462162a1ab653caae478b083783d7985daf353b2a9912e4b67f09d",
+        "2790_removal_s17.jpg": "7f4425204c28150cc534a0b06b238a73599c77968b130741a8f363a570ae79ef",
+        "2790_removal_s29.jpg": "9e61308a92ac9c3562ade93cf52a363380a4f89969b14b7d6e69f34ab62740f4",
+        "787_removal_s17.jpg": "08ca1a4a44484fbe4662bdcef51a7746a832b5ba7c084e1ff79a5eaef6e90360",
+        "787_removal_s29.jpg": "71feb2f96e757191ee4a3ffb1bd2da393af57ef327a774cec76d9cc2ba82c26a"
+      },
+      "review_scope": "All eight sheets inspected by assistant; not a blinded human study"
+    },
+    {
+      "experiment": "scaffold_conditioning_v1",
+      "rows_and_pixel_preservation_verified": 40,
+      "new_generation_receipts": 24,
+      "source_and_evaluation_signatures_verified": true,
+      "zero_gain_bit_exact": true,
+      "detector_failures": [
+        {
+          "key": "1306_removal_s17_masked_lq_context",
+          "detector": "arcface_conditioning",
+          "status": "no_face"
+        },
+        {
+          "key": "1306_removal_s17_masked_lq_no_reference_context",
+          "detector": "arcface_conditioning",
+          "status": "no_face"
+        },
+        {
+          "key": "1306_removal_s29_masked_lq_context",
+          "detector": "arcface_conditioning",
+          "status": "no_face"
+        },
+        {
+          "key": "1306_removal_s29_masked_lq_no_reference_context",
+          "detector": "arcface_conditioning",
+          "status": "no_face"
+        },
+        {
+          "key": "787_removal_s17_masked_lq_context",
+          "detector": "facenet",
+          "status": "no_face"
+        },
+        {
+          "key": "787_removal_s17_masked_lq_context",
+          "detector": "arcface_conditioning",
+          "status": "no_face"
+        },
+        {
+          "key": "787_removal_s17_masked_lq_no_reference_context",
+          "detector": "facenet",
+          "status": "no_face"
+        },
+        {
+          "key": "787_removal_s17_masked_lq_no_reference_context",
+          "detector": "arcface_conditioning",
+          "status": "no_face"
+        },
+        {
+          "key": "787_removal_s29_masked_lq_context",
+          "detector": "arcface_conditioning",
+          "status": "no_face"
+        }
+      ],
+      "metric_identity_counts": {
+        "scaffold": {
+          "facenet_cosine": 4,
+          "facenet_gallery_cosine": 4,
+          "arcface_conditioning_cosine": 4,
+          "hole_mae": 4,
+          "lpips": 4
+        },
+        "reference_context": {
+          "facenet_cosine": 4,
+          "facenet_gallery_cosine": 4,
+          "arcface_conditioning_cosine": 4,
+          "hole_mae": 4,
+          "lpips": 4
+        },
+        "masked_lq_context": {
+          "facenet_cosine": 3,
+          "facenet_gallery_cosine": 3,
+          "arcface_conditioning_cosine": 2,
+          "hole_mae": 4,
+          "lpips": 4
+        },
+        "masked_lq_no_reference_context": {
+          "facenet_cosine": 3,
+          "facenet_gallery_cosine": 3,
+          "arcface_conditioning_cosine": 2,
+          "hole_mae": 4,
+          "lpips": 4
+        },
+        "global_lq_context": {
+          "facenet_cosine": 4,
+          "facenet_gallery_cosine": 4,
+          "arcface_conditioning_cosine": 4,
+          "hole_mae": 4,
+          "lpips": 4
+        }
+      },
+      "visual_sheets_reviewed": {
+        "1043_removal_s17.jpg": "45d5616399aa7adfa2e59900067aeeb4f995f7ed8c2eadb379c730ba476676d6",
+        "1043_removal_s29.jpg": "dccaa0a0b2b550a8b3d383c1a554bfdbea6a225e3f4c622cb228c0f82cfebf31",
+        "1306_removal_s17.jpg": "64667c1a3d84a9553053067c58bb202b02182d40a52154a8d6ba27fac185634a",
+        "1306_removal_s29.jpg": "ad506ea311e199ad0f156bcfdf58c22338158eea96e1205e5e866b8627523ee3",
+        "2790_removal_s17.jpg": "65827c3cc6518c2691f308efe6c3c0af242f2f6c2eb881e0d933977c4cd8f38c",
+        "2790_removal_s29.jpg": "1a36f37074ddfe2cc0bcfe735284e501aecafd4d03a7ea30c6bb62d6614457e8",
+        "787_removal_s17.jpg": "06c3b084a109ae3b4f84c133ef5689da0cceb69fffacb1fa011e86190c10b408",
+        "787_removal_s29.jpg": "e65d2367d0f893150b9febc046b21db458e0a0e2350563d5f17f3f1b000ff442"
+      },
+      "review_scope": "All eight sheets inspected by assistant; not a blinded human study"
+    }
+  ],
+  "initial_v1_failure_preserved": true,
+  "audit_source_sha256": "4e743119283e37e0b2f00cdb03ac2b56104cca62334b335d12ff3e7f22d8cd4d",
+  "clean_targets_or_gallery_pixels_read_by_auditor": false,
+  "reserved_final_pixels_accessed": false,
+  "scope": "Integrity and coverage, not novelty or statistical superiority"
+}

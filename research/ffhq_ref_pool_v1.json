@@ -1,0 +1,100 @@
+{
+  "completed_at_utc": "2026-09-27T05:11:30.996240+00:00",
+  "splits": {
+    "train": {
+      "listed_images": 68411,
+      "mapping_rows": 18816,
+      "graph_components": 55668,
+      "component_size_distribution": {
+        "1": 49595,
+        "2": 3825,
+        "3": 1177,
+        "4": 421,
+        "5": 221,
+        "6": 106,
+        "7": 83,
+        "8": 57,
+        "9": 36,
+        "10": 30,
+        "11": 17,
+        "12": 9,
+        "13": 11,
+        "14": 7,
+        "15": 10,
+        "16": 8,
+        "17": 5,
+        "18": 9,
+        "19": 2,
+        "20": 7,
+        "21": 2,
+        "22": 3,
+        "23": 4,
+        "24": 2,
+        "25": 1,
+        "26": 3,
+        "28": 1,
+        "30": 2,
+        "32": 1,
+        "34": 1,
+        "35": 1,
+        "39": 1,
+        "40": 1,
+        "41": 1,
+        "45": 1,
+        "46": 1,
+        "51": 1,
+        "54": 2,
+        "58": 1,
+        "102": 1,
+        "240": 1
+      },
+      "components_at_least_8_photos": 240,
+      "photos_in_components_at_least_8": 3629,
+      "cross_split_or_missing_reference_edges": 0
+    },
+    "val": {
+      "listed_images": 732,
+      "mapping_rows": 732,
+      "graph_components": 300,
+      "component_size_distribution": {
+        "2": 219,
+        "3": 59,
+        "4": 11,
+        "5": 5,
+        "6": 2,
+        "8": 2,
+        "10": 2
+      },
+      "components_at_least_8_photos": 4,
+      "photos_in_components_at_least_8": 36,
+      "cross_split_or_missing_reference_edges": 0
+    },
+    "test": {
+      "listed_images": 857,
+      "mapping_rows": 857,
+      "graph_components": 150,
+      "component_size_distribution": {
+        "4": 26,
+        "5": 62,
+        "6": 23,
+        "7": 21,
+        "8": 7,
+        "9": 8,
+        "10": 3
+      },
+      "components_at_least_8_photos": 18,
+      "photos_in_components_at_least_8": 158,
+      "cross_split_or_missing_reference_edges": 0
+    }
+  },
+  "image_filename_overlap_between_splits": {
+    "train_val": 0,
+    "train_test": 0,
+    "val_test": 0
+  },
+  "metadata_receipt_sha256": "72b9602a323eb139c931dbae511331fe09234a5418adb26154266e197ffa800b",
+  "script_sha256": "231aa451e9a315442f97414d9cf622e838fe874672220a8a234b99bc4dd0f8da",
+  "image_pixels_opened": false,
+  "experiment_people_selected": false,
+  "interpretation": "Connected components of author-provided ArcFace-predicted reference links, not verified identities. Eight photos allow one target, four references and three gallery images before quality/duplicate exclusions. Author train data are not an independent ReF-LDM evaluation. Keep author test data unopened; val is only a possible development source. Cross-dataset identity/pretraining overlap is unknown."
+}

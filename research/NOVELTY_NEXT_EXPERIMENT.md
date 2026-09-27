@@ -1,5 +1,15 @@
 # Next contribution hypothesis — 22 September 2026
 
+## Current decision — 27 September 2026
+
+Two additional mechanisms have now been implemented and tested, not merely proposed. Reference restoration with original-context correction completed 32 new generations; a subsequent masked-conditioning screen completed 24. Each has 40 scored comparison rows including reused controls and two separate GPU equivalence calls. The first improves identity but worsens pixel/perceptual error against the original scaffold. The second visibly erases facial features and loses detector coverage. Both fail their frozen gates; no training or website promotion is justified. See `NOVELTY_ESTABLISHMENT_20260925.md` for metrics, visual review, integrity and prior art.
+
+The next action is a **published missing-region reference baseline**, followed by a prospectively defined mechanism only if a reproducible structural limitation can be targeted. Existing restoration-plus-completion combinations are not sufficient novelty. RefFaceInpainting's official code accepts a damaged target, one reference and reference-only parsing; ground-truth target parsing is not needed in its inference path. Local reproduction still requires the exact author weights and preprocessing, strict loading, a frozen development comparison and failure-inclusive evaluation.
+
+A larger fresh cohort is also unresolved: at most 11 unused local validation groups have eight photos, and the official FFHQ-Ref validation metadata adds only four predicted reference groups of that size before screening. No FFHQ pixels have been accessed. Do not take author training data or reserved-final images to enlarge development results. A different reference/gallery count is a new protocol, not a retrospective relaxation of completed gates.
+
+The historical hypotheses below document the research trajectory. They do not override this decision or authorize further tuning on the same observed targets.
+
 ## Latest continuation — 25 September 2026
 
 A different, single-image mask-support selection mechanism is now implemented and tested. It uses deliberately hidden reliable context to choose among four conditioning-mask radii, without updating the generator or reading target truth. The frozen screen completed 104 generations and 80 scored rows over four already observed identities and two seeds, including equal-compute controls. It failed: selected/original-mask FaceNet is 0.6111/0.7415 and hole MAE is 0.07665/0.06266. Five of eight probe-versus-hole-error rank correlations are negative. See `CONTEXT_SUPPORT_METHOD.md`, `CONTEXT_SUPPORT_RESULTS_V1.md` and `CONTEXT_SUPPORT_REVIEW_V1.md`.

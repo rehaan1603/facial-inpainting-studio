@@ -1,0 +1,49 @@
+{
+  "completed_at_utc": "2026-09-27T05:10:16.882042+00:00",
+  "source_url": "https://github.com/ChiWeiHsiao/ref-ldm/releases/download/0.1.0/FFHQ-Ref.zip",
+  "archive_bytes": 446546859,
+  "archive_entry_count": 1733,
+  "central_directory_sha256": "37fa279afb022bcbb9d9db00ffda09162035395170dfc7561783cbb5918e0d2a",
+  "files": [
+    {
+      "name": "id_based_ffhq_split/test_image.txt",
+      "sha256": "e175884e81518e025ac43d40ba35781c8b180f8f018212bbc8d19dae7bfb0625",
+      "bytes": 9425,
+      "compressed_bytes": 2451
+    },
+    {
+      "name": "id_based_ffhq_split/train_image.txt",
+      "sha256": "a9352033d1f15e1e164ad27a83ff962eb78a2bfd9e1ccbf249325ab4a266b47b",
+      "bytes": 752519,
+      "compressed_bytes": 153338
+    },
+    {
+      "name": "id_based_ffhq_split/val_image.txt",
+      "sha256": "de1118a3b2f69f6ced954ea5a8862c618265213e41434e4d5be38b12df246bdd",
+      "bytes": 8050,
+      "compressed_bytes": 2114
+    },
+    {
+      "name": "reference_mapping/test_references.csv",
+      "sha256": "bd3c49433df356394978800da09b4f6167debb4b49eef254ac6bb238d841391f",
+      "bytes": 73767,
+      "compressed_bytes": 15757
+    },
+    {
+      "name": "reference_mapping/train_references.csv",
+      "sha256": "19fbcbcfe4471b34818f133bd80e0425d7e66aaf51b7a74752c189e6a03a494b",
+      "bytes": 1726331,
+      "compressed_bytes": 388351
+    },
+    {
+      "name": "reference_mapping/val_references.csv",
+      "sha256": "78238dbaf86af9e99202b212ae5698141f81633cc35901e7637d8a259de3feb9",
+      "bytes": 33772,
+      "compressed_bytes": 8511
+    }
+  ],
+  "image_entries_requested": 0,
+  "image_pixels_opened": false,
+  "script_sha256": "e58d3366538f5020a87610a466f30e4f5f1ec4baee3316afc4bd1a8de1963278",
+  "scope": "Author-predicted grouping metadata only; no image selection or evaluation"
+}

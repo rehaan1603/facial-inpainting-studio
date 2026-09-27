@@ -1,12 +1,21 @@
 # Facial Inpainting Project — Progress and Completion Report
 
-**Report date:** 25 September 2026
+**Report date:** 27 September 2026
 **Current platform:** Windows laptop, NVIDIA RTX 5070 Laptop GPU with 8 GB VRAM  
 **Current application:** http://127.0.0.1:8765/  
 **Repository:** https://github.com/rehaan1603/facial-inpainting-studio  
 **Status:** Working local research baseline; proposed multi-reference research method and final validation incomplete. Public hosting paused at the owner's request.
 
 ## Latest status update
+
+### 27 September: two further mechanisms tested; missing-region baseline preparation started
+
+- Completed **56 new reconstructed images**, four additional full GPU sampler-equivalence calls and **80 scored comparison rows** across two frozen screens. Reused controls are counted separately. These runs used the same four already observed development identities and two seeds, not a fresh validation cohort. No generator training or final-test use occurred.
+- Personal references plus visible-context correction raise FaceNet similarity **0.7415 → 0.7814**, but missing-region MAE worsens **0.06266 → 0.06599** and LPIPS **0.02540 → 0.02711** relative to the original ResShift completion. Context correction helps relative to the plain reference cascade but does not satisfy the prespecified multi-metric gate. A follow-up that drops generated-region conditioning produces featureless patches and also fails. **Neither mechanism establishes novelty or is promoted to the website.**
+- All 80 rows preserve visible pixels exactly; all **16 visual sheets** were inspected. The first screen has complete identity measurements; the second has two FaceNet and seven ArcFace detector failures across seven output rows. Its masked-arm FaceNet means use three complete identities and ArcFace means two, with missing scores retained. Twelve relevant mechanism/statistical tests pass. The initial wrapper failure and its technical recovery remain separate.
+- Checked the next data source without downloading image pixels: local unused validation has at most **11 groups with eight photographs**; official FFHQ-Ref validation has only **four** author-predicted reference groups of that size. These counts are before duplicate/quality/identity screening. Training data and reserved final images cannot substitute for independent validation.
+- Next execution is a published **reference-guided missing-region inpainting** baseline, with reference parsing and no clean-target inputs. This addresses the observed limitation of applying restoration to complete erasures. Code/readiness and author asset preparation are underway; it is not yet a reproduced or scored baseline. Publication work still requires a beneficial mechanism, independent validation and human fidelity assessment.
+- Full results, failure counts, visual findings, prior-art boundaries and current decisions: [mechanism establishment](research/NOVELTY_ESTABLISHMENT_20260925.md), [reference/context results](research/REFERENCE_CONTEXT_RESULTS_V2.md), [scaffold-conditioning results](research/SCAFFOLD_CONDITIONING_RESULTS_V1.md) and [integrity audit](research/reference_context_audit_v1.json). The local main/evidence pages respond successfully; public hosting remains paused.
 
 ### 25 September: new mask-support mechanism implemented and rejected by its controls
 
@@ -265,7 +274,7 @@ The measurement baseline is substantially stronger, but the research is not yet 
 
 ## 4. Remaining work
 
-**Reconciled with completed work on 25 September 2026.** Completed implementation is distinguished from unresolved research claims below.
+**Reconciled with completed work on 27 September 2026.** Completed implementation is distinguished from unresolved research claims below. The newest mechanism outcomes are in `research/NOVELTY_ESTABLISHMENT_20260925.md`; earlier rejected hypotheses below remain history, not unexecuted promises.
 
 | Area | Current evidence and remaining work | Status |
 |---|---|---|
@@ -283,13 +292,16 @@ The measurement baseline is substantially stronger, but the research is not yet 
 | Reference-risk mechanism | Implemented 16 leave-one-reference-out generations and 12/12 scored controls. Disagreement does not beat edit magnitude on identity or masked error; AUC 0.417–0.533. Revise the mechanism before calibration/training or novelty claims | Diagnostic complete; incremental benefit unsupported |
 | Reference-proxy mechanism | Implemented a reference-only fitted spatial blend; 20 proxy generations and 20 scored images complete. Slight MAE gain versus fixed blending comes with worse identity/gallery/LPIPS. Three new tests pass. Address structural fidelity or develop a justified alternative before further expansion | Diagnostic complete; progression gate not met |
 | Context-support mechanism | New input-only mask-support calibration completed 104 generations, 80 scores, two seeds and eight visual sheets. It loses to fixed-mask and equal-budget controls; small visible probes do not reliably predict missing-feature fidelity. No expansion or website promotion is justified | Implemented and tested; progression gate not met |
+| Reference/context mechanism | Completed 32 new restorations, eight reused scaffolds, two equivalence calls and 40 scored rows. References improve identity; correction reduces some cascade error but still loses to the scaffold on pixel/perceptual error. All eight visual sheets reviewed | Implemented and tested; progression gate not met |
+| Scaffold-conditioning mechanism | Completed 24 new restorations, 16 reused controls, two equivalence calls and 40 scored rows. Spatial conditioning dropout causes featureless regions and nine detector-failure events; all failures and eight visual sheets retained | Implemented and rejected; no website promotion |
+| Missing-region external baseline | Official RefFaceInpainting source pinned and input requirements audited; public author checkpoints and reference parser being prepared. This is an external method, not our novelty, and has no local scored results yet | Preparation underway |
 | Unfamiliar-person checks | Earlier two-identity smoke retained. Two additional identities now have 25/26 initial studio generations and 29/30 scores; separate repair/recovery checks preserve original failures. All are now observed development cases, with unknown pretraining exposure. Larger independent validation remains | Expanded diagnostic complete; generalization unproven |
 | Client geometry and mask handling | Thin ResShift masks, paired evidence downsampling, nonsquare API framing and primary 512 comparison fixed. SDXL latent-unsupported components are rejected; fine-boundary fidelity and broad client-photo accuracy remain unresolved | Concrete bugs fixed; model limits remain |
-| Statistical power | More identity units, independent severity/mask/reference factors, additional seeds | Required before method freeze |
+| Statistical power and data availability | More identity units and independent severity/mask/reference factors needed. Remaining local validation has at most 11 groups with eight photos; official FFHQ-Ref validation only four such predicted groups. Metadata checked without opening new/final pixels. Larger studies need a verified additional cohort or a separately frozen different reference/gallery design | Required before method freeze |
 | Optional metrics | Reconstructed-landmark error; FID only at adequate sample size; ROC/TAR only with adequate verification trials | Unimplemented; scope-dependent |
 | Final evaluation | Freeze method/parameters first; eight reserved identities remain unused | 0/8, intentionally |
 | Manuscript and presentation | Correct novelty/architecture/results, choose actual venue, prepare figures, limitations and reproducibility | Incomplete |
-| GitHub release | This research checkpoint follows client-repair commit `c1bc5e3`; includes context-support source/tests, frozen protocol, numerical receipts, prior-art boundaries and updated report. Restricted photos and weights remain excluded | Included in the context-support research release |
+| GitHub release | Current research checkpoint adds two frozen screens, corrected technical recovery, numerical receipts, coverage/integrity audit, metadata-only data census and updated report after context-support commit `7c73cce`. Restricted photos, per-person feature arrays and weights remain local | Included in this research checkpoint |
 | Public hosting | Continue loopback-only use on the laptop | Paused by user |
 
 No single overall project-completion percentage is assigned because successful research findings are not predictable implementation tasks. The explicit measured percentages above separate finished experiments from unsolved quality and publication requirements.
