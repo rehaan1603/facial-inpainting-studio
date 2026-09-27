@@ -1,0 +1,22 @@
+{
+  "completed_at_utc": "2026-09-27T12:22:25.801765+00:00",
+  "source_commit": "0f1ad75677cc8fae4ae14d878e4c6cfce9365f28",
+  "parser_commit": "d2e684cf1588b46145635e8fe7bcc29544e5537e",
+  "source_checkouts_unmodified": true,
+  "all_three_models_strict_loaded": true,
+  "native_author_bit_exact": true,
+  "native_max_abs_difference": 0.0,
+  "reference_parser_exercised": true,
+  "dataset_pixels_read": false,
+  "weight_sha256": {
+    "model.pth": "e5e870bb1b2215e18bcc50fa2c36de56a013f472a9e26c3ea826704d5a22639a",
+    "BEST_checkpoint_r101.pth": "964e19d816f71ac3aaab3fb5775587470c7a64baf367f7cdde34ce6d1411b3cc",
+    "79999_iter.pth": "468e13ca13a9b43cc0881a9f99083a430e9c0a38abd935431d1c28ee94b26567"
+  },
+  "wrapper_sha256": "5442c707d6ebf8a47d3ca20cf0fc8b2459f44315b7c28ca5f63ff60952efaf04",
+  "preflight_sha256": "08900e9123b8a335b35c02215321e1f1d1690f76f511d0c396016e74c747f2ea",
+  "torch": "2.11.0+cu128",
+  "seconds": 5.26600000000326,
+  "peak_gpu_allocated_bytes": 975797248,
+  "scope": "Synthetic preflight only. No reconstruction accuracy or novelty result."
+}

@@ -1,0 +1,28 @@
+{
+  "files": [
+    {
+      "name": "model.pth",
+      "source_url": "https://drive.google.com/file/d/1qn1fKj-4iwykSZl_GT9kjz2UTnbMlU36/view",
+      "source_listing": "https://github.com/WuyangLuo/RefFaceInpainting/blob/0f1ad75677cc8fae4ae14d878e4c6cfce9365f28/README.md",
+      "bytes": 1636030075,
+      "sha256": "e5e870bb1b2215e18bcc50fa2c36de56a013f472a9e26c3ea826704d5a22639a",
+      "status": "complete",
+      "completed_at_utc": "2026-09-27T05:20:51.881259+00:00",
+      "author_published_digest_available": false,
+      "deserialized": false
+    },
+    {
+      "name": "BEST_checkpoint_r101.pth",
+      "source_url": "https://drive.google.com/file/d/1VpD27jHOPaOJRKFqOO_txLHAE05CbtLU/view",
+      "source_listing": "https://github.com/WuyangLuo/RefFaceInpainting/blob/0f1ad75677cc8fae4ae14d878e4c6cfce9365f28/README.md",
+      "bytes": 209247979,
+      "sha256": "964e19d816f71ac3aaab3fb5775587470c7a64baf367f7cdde34ce6d1411b3cc",
+      "status": "complete",
+      "completed_at_utc": "2026-09-27T05:21:55.174657+00:00",
+      "author_published_digest_available": false,
+      "deserialized": false
+    }
+  ],
+  "script_sha256": "ca3bcf08a034d173db4904f4a9fb8eaae475b8cb309b89b57ee88343bbce0640",
+  "scope": "Public author checkpoint acquisition, not model reproduction or an accuracy result"
+}

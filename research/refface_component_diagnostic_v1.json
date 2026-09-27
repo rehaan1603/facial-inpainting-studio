@@ -1,0 +1,1904 @@
+{
+  "completed_at_utc": "2026-09-27T12:30:05.300276+00:00",
+  "post_result_diagnostic": true,
+  "repeat_forwards": 16,
+  "all_saved_native_pixels_bit_exact": true,
+  "eligible_component_layer_events": 163,
+  "fully_suppressed_component_layer_events": 46,
+  "suppressed_with_visible_component_pixels": 46,
+  "rows": [
+    {
+      "key": "1306_removal_s17_reference_0",
+      "native_pixels_bit_exact": true,
+      "layers": [
+        {
+          "resolution": [
+            64,
+            64
+          ],
+          "components": [
+            {
+              "label": 2,
+              "predicted_pixels": 20,
+              "predicted_missing_pixels": 0,
+              "predicted_visible_pixels": 20,
+              "style_abs_sum_before_in_hole": 0.0,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 3,
+              "predicted_pixels": 15,
+              "predicted_missing_pixels": 0,
+              "predicted_visible_pixels": 15,
+              "style_abs_sum_before_in_hole": 0.0,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 4,
+              "predicted_pixels": 9,
+              "predicted_missing_pixels": 9,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 221.8857879638672,
+              "style_abs_sum_after_in_hole": 221.8857879638672
+            },
+            {
+              "label": 5,
+              "predicted_pixels": 14,
+              "predicted_missing_pixels": 14,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 352.35565185546875,
+              "style_abs_sum_after_in_hole": 352.35565185546875
+            },
+            {
+              "label": 12,
+              "predicted_pixels": 25,
+              "predicted_missing_pixels": 25,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 673.4041748046875,
+              "style_abs_sum_after_in_hole": 673.4041748046875
+            },
+            {
+              "label": 13,
+              "predicted_pixels": 39,
+              "predicted_missing_pixels": 39,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 950.8056640625,
+              "style_abs_sum_after_in_hole": 950.8056640625
+            }
+          ]
+        },
+        {
+          "resolution": [
+            128,
+            128
+          ],
+          "components": [
+            {
+              "label": 2,
+              "predicted_pixels": 84,
+              "predicted_missing_pixels": 0,
+              "predicted_visible_pixels": 84,
+              "style_abs_sum_before_in_hole": 0.0,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 3,
+              "predicted_pixels": 66,
+              "predicted_missing_pixels": 0,
+              "predicted_visible_pixels": 66,
+              "style_abs_sum_before_in_hole": 0.0,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 4,
+              "predicted_pixels": 50,
+              "predicted_missing_pixels": 50,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 1232.69873046875,
+              "style_abs_sum_after_in_hole": 1232.69873046875
+            },
+            {
+              "label": 5,
+              "predicted_pixels": 71,
+              "predicted_missing_pixels": 71,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 1786.946533203125,
+              "style_abs_sum_after_in_hole": 1786.946533203125
+            },
+            {
+              "label": 12,
+              "predicted_pixels": 105,
+              "predicted_missing_pixels": 105,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 2828.2978515625,
+              "style_abs_sum_after_in_hole": 2828.2978515625
+            },
+            {
+              "label": 13,
+              "predicted_pixels": 178,
+              "predicted_missing_pixels": 178,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 4339.5751953125,
+              "style_abs_sum_after_in_hole": 4339.5751953125
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "1306_removal_s17_reference_1",
+      "native_pixels_bit_exact": true,
+      "layers": [
+        {
+          "resolution": [
+            64,
+            64
+          ],
+          "components": [
+            {
+              "label": 2,
+              "predicted_pixels": 20,
+              "predicted_missing_pixels": 0,
+              "predicted_visible_pixels": 20,
+              "style_abs_sum_before_in_hole": 0.0,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 3,
+              "predicted_pixels": 15,
+              "predicted_missing_pixels": 0,
+              "predicted_visible_pixels": 15,
+              "style_abs_sum_before_in_hole": 0.0,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 4,
+              "predicted_pixels": 7,
+              "predicted_missing_pixels": 7,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 201.93955993652344,
+              "style_abs_sum_after_in_hole": 201.93955993652344
+            },
+            {
+              "label": 5,
+              "predicted_pixels": 16,
+              "predicted_missing_pixels": 16,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 461.30255126953125,
+              "style_abs_sum_after_in_hole": 461.30255126953125
+            },
+            {
+              "label": 12,
+              "predicted_pixels": 35,
+              "predicted_missing_pixels": 35,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 1554.732421875,
+              "style_abs_sum_after_in_hole": 1554.732421875
+            },
+            {
+              "label": 13,
+              "predicted_pixels": 37,
+              "predicted_missing_pixels": 37,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 1461.925537109375,
+              "style_abs_sum_after_in_hole": 1461.925537109375
+            }
+          ]
+        },
+        {
+          "resolution": [
+            128,
+            128
+          ],
+          "components": [
+            {
+              "label": 2,
+              "predicted_pixels": 83,
+              "predicted_missing_pixels": 0,
+              "predicted_visible_pixels": 83,
+              "style_abs_sum_before_in_hole": 0.0,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 3,
+              "predicted_pixels": 69,
+              "predicted_missing_pixels": 1,
+              "predicted_visible_pixels": 68,
+              "style_abs_sum_before_in_hole": 28.19137954711914,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 4,
+              "predicted_pixels": 59,
+              "predicted_missing_pixels": 59,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 1702.06201171875,
+              "style_abs_sum_after_in_hole": 1702.06201171875
+            },
+            {
+              "label": 5,
+              "predicted_pixels": 75,
+              "predicted_missing_pixels": 75,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 2162.35546875,
+              "style_abs_sum_after_in_hole": 2162.35546875
+            },
+            {
+              "label": 12,
+              "predicted_pixels": 130,
+              "predicted_missing_pixels": 130,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 5774.720703125,
+              "style_abs_sum_after_in_hole": 5774.720703125
+            },
+            {
+              "label": 13,
+              "predicted_pixels": 192,
+              "predicted_missing_pixels": 192,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 7586.208984375,
+              "style_abs_sum_after_in_hole": 7586.208984375
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "1306_removal_s17_reference_2",
+      "native_pixels_bit_exact": true,
+      "layers": [
+        {
+          "resolution": [
+            64,
+            64
+          ],
+          "components": [
+            {
+              "label": 2,
+              "predicted_pixels": 30,
+              "predicted_missing_pixels": 0,
+              "predicted_visible_pixels": 30,
+              "style_abs_sum_before_in_hole": 0.0,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 3,
+              "predicted_pixels": 4,
+              "predicted_missing_pixels": 0,
+              "predicted_visible_pixels": 4,
+              "style_abs_sum_before_in_hole": 0.0,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 4,
+              "predicted_pixels": 15,
+              "predicted_missing_pixels": 15,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 381.3266296386719,
+              "style_abs_sum_after_in_hole": 381.3266296386719
+            },
+            {
+              "label": 5,
+              "predicted_pixels": 0,
+              "predicted_missing_pixels": 0,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 0.0,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 12,
+              "predicted_pixels": 33,
+              "predicted_missing_pixels": 33,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 1068.5751953125,
+              "style_abs_sum_after_in_hole": 1068.5751953125
+            },
+            {
+              "label": 13,
+              "predicted_pixels": 38,
+              "predicted_missing_pixels": 38,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 881.8079833984375,
+              "style_abs_sum_after_in_hole": 881.8079833984375
+            }
+          ]
+        },
+        {
+          "resolution": [
+            128,
+            128
+          ],
+          "components": [
+            {
+              "label": 2,
+              "predicted_pixels": 154,
+              "predicted_missing_pixels": 0,
+              "predicted_visible_pixels": 154,
+              "style_abs_sum_before_in_hole": 0.0,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 3,
+              "predicted_pixels": 0,
+              "predicted_missing_pixels": 0,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 0.0,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 4,
+              "predicted_pixels": 98,
+              "predicted_missing_pixels": 98,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 2491.333984375,
+              "style_abs_sum_after_in_hole": 2491.333984375
+            },
+            {
+              "label": 5,
+              "predicted_pixels": 0,
+              "predicted_missing_pixels": 0,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 0.0,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 12,
+              "predicted_pixels": 123,
+              "predicted_missing_pixels": 123,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 3982.870849609375,
+              "style_abs_sum_after_in_hole": 3982.870849609375
+            },
+            {
+              "label": 13,
+              "predicted_pixels": 177,
+              "predicted_missing_pixels": 177,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 4107.369140625,
+              "style_abs_sum_after_in_hole": 4107.369140625
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "1306_removal_s17_reference_3",
+      "native_pixels_bit_exact": true,
+      "layers": [
+        {
+          "resolution": [
+            64,
+            64
+          ],
+          "components": [
+            {
+              "label": 2,
+              "predicted_pixels": 20,
+              "predicted_missing_pixels": 0,
+              "predicted_visible_pixels": 20,
+              "style_abs_sum_before_in_hole": 0.0,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 3,
+              "predicted_pixels": 15,
+              "predicted_missing_pixels": 0,
+              "predicted_visible_pixels": 15,
+              "style_abs_sum_before_in_hole": 0.0,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 4,
+              "predicted_pixels": 10,
+              "predicted_missing_pixels": 10,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 396.97869873046875,
+              "style_abs_sum_after_in_hole": 396.97869873046875
+            },
+            {
+              "label": 5,
+              "predicted_pixels": 10,
+              "predicted_missing_pixels": 10,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 263.3252258300781,
+              "style_abs_sum_after_in_hole": 263.3252258300781
+            },
+            {
+              "label": 12,
+              "predicted_pixels": 35,
+              "predicted_missing_pixels": 35,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 991.6126098632812,
+              "style_abs_sum_after_in_hole": 991.6126098632812
+            },
+            {
+              "label": 13,
+              "predicted_pixels": 42,
+              "predicted_missing_pixels": 42,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 937.8656616210938,
+              "style_abs_sum_after_in_hole": 937.8656616210938
+            }
+          ]
+        },
+        {
+          "resolution": [
+            128,
+            128
+          ],
+          "components": [
+            {
+              "label": 2,
+              "predicted_pixels": 90,
+              "predicted_missing_pixels": 0,
+              "predicted_visible_pixels": 90,
+              "style_abs_sum_before_in_hole": 0.0,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 3,
+              "predicted_pixels": 63,
+              "predicted_missing_pixels": 0,
+              "predicted_visible_pixels": 63,
+              "style_abs_sum_before_in_hole": 0.0,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 4,
+              "predicted_pixels": 56,
+              "predicted_missing_pixels": 56,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 2223.08056640625,
+              "style_abs_sum_after_in_hole": 2223.08056640625
+            },
+            {
+              "label": 5,
+              "predicted_pixels": 54,
+              "predicted_missing_pixels": 54,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 1421.9561767578125,
+              "style_abs_sum_after_in_hole": 1421.9561767578125
+            },
+            {
+              "label": 12,
+              "predicted_pixels": 118,
+              "predicted_missing_pixels": 118,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 3343.15087890625,
+              "style_abs_sum_after_in_hole": 3343.15087890625
+            },
+            {
+              "label": 13,
+              "predicted_pixels": 175,
+              "predicted_missing_pixels": 175,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 3907.7734375,
+              "style_abs_sum_after_in_hole": 3907.7734375
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "2790_removal_s17_reference_0",
+      "native_pixels_bit_exact": true,
+      "layers": [
+        {
+          "resolution": [
+            64,
+            64
+          ],
+          "components": [
+            {
+              "label": 2,
+              "predicted_pixels": 17,
+              "predicted_missing_pixels": 6,
+              "predicted_visible_pixels": 11,
+              "style_abs_sum_before_in_hole": 113.57150268554688,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 3,
+              "predicted_pixels": 13,
+              "predicted_missing_pixels": 9,
+              "predicted_visible_pixels": 4,
+              "style_abs_sum_before_in_hole": 214.2073974609375,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 4,
+              "predicted_pixels": 24,
+              "predicted_missing_pixels": 24,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 580.1943969726562,
+              "style_abs_sum_after_in_hole": 580.1943969726562
+            },
+            {
+              "label": 5,
+              "predicted_pixels": 19,
+              "predicted_missing_pixels": 19,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 501.1401062011719,
+              "style_abs_sum_after_in_hole": 501.1401062011719
+            },
+            {
+              "label": 12,
+              "predicted_pixels": 28,
+              "predicted_missing_pixels": 28,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 724.3857421875,
+              "style_abs_sum_after_in_hole": 724.3857421875
+            },
+            {
+              "label": 13,
+              "predicted_pixels": 38,
+              "predicted_missing_pixels": 38,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 682.4790649414062,
+              "style_abs_sum_after_in_hole": 682.4790649414062
+            }
+          ]
+        },
+        {
+          "resolution": [
+            128,
+            128
+          ],
+          "components": [
+            {
+              "label": 2,
+              "predicted_pixels": 59,
+              "predicted_missing_pixels": 17,
+              "predicted_visible_pixels": 42,
+              "style_abs_sum_before_in_hole": 321.78594970703125,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 3,
+              "predicted_pixels": 35,
+              "predicted_missing_pixels": 19,
+              "predicted_visible_pixels": 16,
+              "style_abs_sum_before_in_hole": 452.2156066894531,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 4,
+              "predicted_pixels": 83,
+              "predicted_missing_pixels": 83,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 2006.5057373046875,
+              "style_abs_sum_after_in_hole": 2006.5057373046875
+            },
+            {
+              "label": 5,
+              "predicted_pixels": 71,
+              "predicted_missing_pixels": 71,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 1872.681396484375,
+              "style_abs_sum_after_in_hole": 1872.681396484375
+            },
+            {
+              "label": 12,
+              "predicted_pixels": 110,
+              "predicted_missing_pixels": 110,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 2845.80078125,
+              "style_abs_sum_after_in_hole": 2845.80078125
+            },
+            {
+              "label": 13,
+              "predicted_pixels": 140,
+              "predicted_missing_pixels": 140,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 2514.396484375,
+              "style_abs_sum_after_in_hole": 2514.396484375
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "2790_removal_s17_reference_1",
+      "native_pixels_bit_exact": true,
+      "layers": [
+        {
+          "resolution": [
+            64,
+            64
+          ],
+          "components": [
+            {
+              "label": 2,
+              "predicted_pixels": 16,
+              "predicted_missing_pixels": 5,
+              "predicted_visible_pixels": 11,
+              "style_abs_sum_before_in_hole": 123.07792663574219,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 3,
+              "predicted_pixels": 13,
+              "predicted_missing_pixels": 9,
+              "predicted_visible_pixels": 4,
+              "style_abs_sum_before_in_hole": 227.96556091308594,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 4,
+              "predicted_pixels": 23,
+              "predicted_missing_pixels": 23,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 605.5624389648438,
+              "style_abs_sum_after_in_hole": 605.5624389648438
+            },
+            {
+              "label": 5,
+              "predicted_pixels": 19,
+              "predicted_missing_pixels": 19,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 532.9046630859375,
+              "style_abs_sum_after_in_hole": 532.9046630859375
+            },
+            {
+              "label": 12,
+              "predicted_pixels": 29,
+              "predicted_missing_pixels": 29,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 1030.05615234375,
+              "style_abs_sum_after_in_hole": 1030.05615234375
+            },
+            {
+              "label": 13,
+              "predicted_pixels": 41,
+              "predicted_missing_pixels": 41,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 1295.059326171875,
+              "style_abs_sum_after_in_hole": 1295.059326171875
+            }
+          ]
+        },
+        {
+          "resolution": [
+            128,
+            128
+          ],
+          "components": [
+            {
+              "label": 2,
+              "predicted_pixels": 65,
+              "predicted_missing_pixels": 17,
+              "predicted_visible_pixels": 48,
+              "style_abs_sum_before_in_hole": 418.4649658203125,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 3,
+              "predicted_pixels": 36,
+              "predicted_missing_pixels": 18,
+              "predicted_visible_pixels": 18,
+              "style_abs_sum_before_in_hole": 455.9311218261719,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 4,
+              "predicted_pixels": 74,
+              "predicted_missing_pixels": 74,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 1948.3314208984375,
+              "style_abs_sum_after_in_hole": 1948.3314208984375
+            },
+            {
+              "label": 5,
+              "predicted_pixels": 83,
+              "predicted_missing_pixels": 83,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 2327.9521484375,
+              "style_abs_sum_after_in_hole": 2327.9521484375
+            },
+            {
+              "label": 12,
+              "predicted_pixels": 110,
+              "predicted_missing_pixels": 110,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 3907.109375,
+              "style_abs_sum_after_in_hole": 3907.109375
+            },
+            {
+              "label": 13,
+              "predicted_pixels": 176,
+              "predicted_missing_pixels": 176,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 5559.279296875,
+              "style_abs_sum_after_in_hole": 5559.279296875
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "2790_removal_s17_reference_2",
+      "native_pixels_bit_exact": true,
+      "layers": [
+        {
+          "resolution": [
+            64,
+            64
+          ],
+          "components": [
+            {
+              "label": 2,
+              "predicted_pixels": 17,
+              "predicted_missing_pixels": 6,
+              "predicted_visible_pixels": 11,
+              "style_abs_sum_before_in_hole": 135.18202209472656,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 3,
+              "predicted_pixels": 12,
+              "predicted_missing_pixels": 9,
+              "predicted_visible_pixels": 3,
+              "style_abs_sum_before_in_hole": 239.78106689453125,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 4,
+              "predicted_pixels": 26,
+              "predicted_missing_pixels": 26,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 608.7161865234375,
+              "style_abs_sum_after_in_hole": 608.7161865234375
+            },
+            {
+              "label": 5,
+              "predicted_pixels": 20,
+              "predicted_missing_pixels": 20,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 490.01934814453125,
+              "style_abs_sum_after_in_hole": 490.01934814453125
+            },
+            {
+              "label": 12,
+              "predicted_pixels": 28,
+              "predicted_missing_pixels": 28,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 708.531494140625,
+              "style_abs_sum_after_in_hole": 708.531494140625
+            },
+            {
+              "label": 13,
+              "predicted_pixels": 37,
+              "predicted_missing_pixels": 37,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 1091.1505126953125,
+              "style_abs_sum_after_in_hole": 1091.1505126953125
+            }
+          ]
+        },
+        {
+          "resolution": [
+            128,
+            128
+          ],
+          "components": [
+            {
+              "label": 2,
+              "predicted_pixels": 57,
+              "predicted_missing_pixels": 15,
+              "predicted_visible_pixels": 42,
+              "style_abs_sum_before_in_hole": 337.9550476074219,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 3,
+              "predicted_pixels": 32,
+              "predicted_missing_pixels": 19,
+              "predicted_visible_pixels": 13,
+              "style_abs_sum_before_in_hole": 506.2044982910156,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 4,
+              "predicted_pixels": 88,
+              "predicted_missing_pixels": 88,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 2060.27001953125,
+              "style_abs_sum_after_in_hole": 2060.27001953125
+            },
+            {
+              "label": 5,
+              "predicted_pixels": 90,
+              "predicted_missing_pixels": 90,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 2205.0869140625,
+              "style_abs_sum_after_in_hole": 2205.0869140625
+            },
+            {
+              "label": 12,
+              "predicted_pixels": 112,
+              "predicted_missing_pixels": 112,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 2834.125732421875,
+              "style_abs_sum_after_in_hole": 2834.125732421875
+            },
+            {
+              "label": 13,
+              "predicted_pixels": 159,
+              "predicted_missing_pixels": 159,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 4688.998046875,
+              "style_abs_sum_after_in_hole": 4688.998046875
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "2790_removal_s17_reference_3",
+      "native_pixels_bit_exact": true,
+      "layers": [
+        {
+          "resolution": [
+            64,
+            64
+          ],
+          "components": [
+            {
+              "label": 2,
+              "predicted_pixels": 18,
+              "predicted_missing_pixels": 7,
+              "predicted_visible_pixels": 11,
+              "style_abs_sum_before_in_hole": 172.22122192382812,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 3,
+              "predicted_pixels": 14,
+              "predicted_missing_pixels": 9,
+              "predicted_visible_pixels": 5,
+              "style_abs_sum_before_in_hole": 266.31768798828125,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 4,
+              "predicted_pixels": 25,
+              "predicted_missing_pixels": 25,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 657.0982666015625,
+              "style_abs_sum_after_in_hole": 657.0982666015625
+            },
+            {
+              "label": 5,
+              "predicted_pixels": 20,
+              "predicted_missing_pixels": 20,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 504.2545471191406,
+              "style_abs_sum_after_in_hole": 504.2545471191406
+            },
+            {
+              "label": 12,
+              "predicted_pixels": 22,
+              "predicted_missing_pixels": 22,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 564.1466064453125,
+              "style_abs_sum_after_in_hole": 564.1466064453125
+            },
+            {
+              "label": 13,
+              "predicted_pixels": 35,
+              "predicted_missing_pixels": 35,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 980.9879150390625,
+              "style_abs_sum_after_in_hole": 980.9879150390625
+            }
+          ]
+        },
+        {
+          "resolution": [
+            128,
+            128
+          ],
+          "components": [
+            {
+              "label": 2,
+              "predicted_pixels": 64,
+              "predicted_missing_pixels": 18,
+              "predicted_visible_pixels": 46,
+              "style_abs_sum_before_in_hole": 442.85455322265625,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 3,
+              "predicted_pixels": 44,
+              "predicted_missing_pixels": 23,
+              "predicted_visible_pixels": 21,
+              "style_abs_sum_before_in_hole": 680.589599609375,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 4,
+              "predicted_pixels": 84,
+              "predicted_missing_pixels": 84,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 2207.850341796875,
+              "style_abs_sum_after_in_hole": 2207.850341796875
+            },
+            {
+              "label": 5,
+              "predicted_pixels": 80,
+              "predicted_missing_pixels": 80,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 2017.0181884765625,
+              "style_abs_sum_after_in_hole": 2017.0181884765625
+            },
+            {
+              "label": 12,
+              "predicted_pixels": 108,
+              "predicted_missing_pixels": 108,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 2769.447265625,
+              "style_abs_sum_after_in_hole": 2769.447265625
+            },
+            {
+              "label": 13,
+              "predicted_pixels": 156,
+              "predicted_missing_pixels": 156,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 4372.40283203125,
+              "style_abs_sum_after_in_hole": 4372.40283203125
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "1043_removal_s17_reference_0",
+      "native_pixels_bit_exact": true,
+      "layers": [
+        {
+          "resolution": [
+            64,
+            64
+          ],
+          "components": [
+            {
+              "label": 2,
+              "predicted_pixels": 17,
+              "predicted_missing_pixels": 13,
+              "predicted_visible_pixels": 4,
+              "style_abs_sum_before_in_hole": 326.582275390625,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 3,
+              "predicted_pixels": 17,
+              "predicted_missing_pixels": 12,
+              "predicted_visible_pixels": 5,
+              "style_abs_sum_before_in_hole": 268.9830322265625,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 4,
+              "predicted_pixels": 10,
+              "predicted_missing_pixels": 10,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 274.54986572265625,
+              "style_abs_sum_after_in_hole": 274.54986572265625
+            },
+            {
+              "label": 5,
+              "predicted_pixels": 15,
+              "predicted_missing_pixels": 15,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 385.6898193359375,
+              "style_abs_sum_after_in_hole": 385.6898193359375
+            },
+            {
+              "label": 12,
+              "predicted_pixels": 9,
+              "predicted_missing_pixels": 9,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 276.8900451660156,
+              "style_abs_sum_after_in_hole": 276.8900451660156
+            },
+            {
+              "label": 13,
+              "predicted_pixels": 32,
+              "predicted_missing_pixels": 29,
+              "predicted_visible_pixels": 3,
+              "style_abs_sum_before_in_hole": 707.9115600585938,
+              "style_abs_sum_after_in_hole": 0.0
+            }
+          ]
+        },
+        {
+          "resolution": [
+            128,
+            128
+          ],
+          "components": [
+            {
+              "label": 2,
+              "predicted_pixels": 27,
+              "predicted_missing_pixels": 9,
+              "predicted_visible_pixels": 18,
+              "style_abs_sum_before_in_hole": 226.09542846679688,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 3,
+              "predicted_pixels": 113,
+              "predicted_missing_pixels": 90,
+              "predicted_visible_pixels": 23,
+              "style_abs_sum_before_in_hole": 2017.372802734375,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 4,
+              "predicted_pixels": 52,
+              "predicted_missing_pixels": 52,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 1427.6591796875,
+              "style_abs_sum_after_in_hole": 1427.6591796875
+            },
+            {
+              "label": 5,
+              "predicted_pixels": 60,
+              "predicted_missing_pixels": 60,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 1542.75927734375,
+              "style_abs_sum_after_in_hole": 1542.75927734375
+            },
+            {
+              "label": 12,
+              "predicted_pixels": 49,
+              "predicted_missing_pixels": 49,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 1507.512451171875,
+              "style_abs_sum_after_in_hole": 1507.512451171875
+            },
+            {
+              "label": 13,
+              "predicted_pixels": 121,
+              "predicted_missing_pixels": 92,
+              "predicted_visible_pixels": 29,
+              "style_abs_sum_before_in_hole": 2245.78857421875,
+              "style_abs_sum_after_in_hole": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "1043_removal_s17_reference_1",
+      "native_pixels_bit_exact": true,
+      "layers": [
+        {
+          "resolution": [
+            64,
+            64
+          ],
+          "components": [
+            {
+              "label": 2,
+              "predicted_pixels": 16,
+              "predicted_missing_pixels": 13,
+              "predicted_visible_pixels": 3,
+              "style_abs_sum_before_in_hole": 323.96484375,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 3,
+              "predicted_pixels": 15,
+              "predicted_missing_pixels": 12,
+              "predicted_visible_pixels": 3,
+              "style_abs_sum_before_in_hole": 259.22064208984375,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 4,
+              "predicted_pixels": 15,
+              "predicted_missing_pixels": 15,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 402.1551513671875,
+              "style_abs_sum_after_in_hole": 402.1551513671875
+            },
+            {
+              "label": 5,
+              "predicted_pixels": 16,
+              "predicted_missing_pixels": 16,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 366.107666015625,
+              "style_abs_sum_after_in_hole": 366.107666015625
+            },
+            {
+              "label": 12,
+              "predicted_pixels": 14,
+              "predicted_missing_pixels": 14,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 459.071533203125,
+              "style_abs_sum_after_in_hole": 459.071533203125
+            },
+            {
+              "label": 13,
+              "predicted_pixels": 35,
+              "predicted_missing_pixels": 32,
+              "predicted_visible_pixels": 3,
+              "style_abs_sum_before_in_hole": 734.210205078125,
+              "style_abs_sum_after_in_hole": 0.0
+            }
+          ]
+        },
+        {
+          "resolution": [
+            128,
+            128
+          ],
+          "components": [
+            {
+              "label": 2,
+              "predicted_pixels": 59,
+              "predicted_missing_pixels": 53,
+              "predicted_visible_pixels": 6,
+              "style_abs_sum_before_in_hole": 1320.77978515625,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 3,
+              "predicted_pixels": 80,
+              "predicted_missing_pixels": 51,
+              "predicted_visible_pixels": 29,
+              "style_abs_sum_before_in_hole": 1101.687744140625,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 4,
+              "predicted_pixels": 62,
+              "predicted_missing_pixels": 62,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 1662.2412109375,
+              "style_abs_sum_after_in_hole": 1662.2412109375
+            },
+            {
+              "label": 5,
+              "predicted_pixels": 63,
+              "predicted_missing_pixels": 63,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 1441.549072265625,
+              "style_abs_sum_after_in_hole": 1441.549072265625
+            },
+            {
+              "label": 12,
+              "predicted_pixels": 71,
+              "predicted_missing_pixels": 71,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 2328.1484375,
+              "style_abs_sum_after_in_hole": 2328.1484375
+            },
+            {
+              "label": 13,
+              "predicted_pixels": 146,
+              "predicted_missing_pixels": 117,
+              "predicted_visible_pixels": 29,
+              "style_abs_sum_before_in_hole": 2684.4560546875,
+              "style_abs_sum_after_in_hole": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "1043_removal_s17_reference_2",
+      "native_pixels_bit_exact": true,
+      "layers": [
+        {
+          "resolution": [
+            64,
+            64
+          ],
+          "components": [
+            {
+              "label": 2,
+              "predicted_pixels": 18,
+              "predicted_missing_pixels": 14,
+              "predicted_visible_pixels": 4,
+              "style_abs_sum_before_in_hole": 0.0,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 3,
+              "predicted_pixels": 15,
+              "predicted_missing_pixels": 11,
+              "predicted_visible_pixels": 4,
+              "style_abs_sum_before_in_hole": 224.14901733398438,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 4,
+              "predicted_pixels": 12,
+              "predicted_missing_pixels": 12,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 0.0,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 5,
+              "predicted_pixels": 11,
+              "predicted_missing_pixels": 11,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 421.51239013671875,
+              "style_abs_sum_after_in_hole": 421.51239013671875
+            },
+            {
+              "label": 12,
+              "predicted_pixels": 3,
+              "predicted_missing_pixels": 3,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 78.13536071777344,
+              "style_abs_sum_after_in_hole": 78.13536071777344
+            },
+            {
+              "label": 13,
+              "predicted_pixels": 30,
+              "predicted_missing_pixels": 30,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 796.0556640625,
+              "style_abs_sum_after_in_hole": 796.0556640625
+            }
+          ]
+        },
+        {
+          "resolution": [
+            128,
+            128
+          ],
+          "components": [
+            {
+              "label": 2,
+              "predicted_pixels": 35,
+              "predicted_missing_pixels": 17,
+              "predicted_visible_pixels": 18,
+              "style_abs_sum_before_in_hole": 0.0,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 3,
+              "predicted_pixels": 87,
+              "predicted_missing_pixels": 71,
+              "predicted_visible_pixels": 16,
+              "style_abs_sum_before_in_hole": 1446.780029296875,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 4,
+              "predicted_pixels": 70,
+              "predicted_missing_pixels": 70,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 0.0,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 5,
+              "predicted_pixels": 37,
+              "predicted_missing_pixels": 37,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 1417.8143310546875,
+              "style_abs_sum_after_in_hole": 1417.8143310546875
+            },
+            {
+              "label": 12,
+              "predicted_pixels": 62,
+              "predicted_missing_pixels": 62,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 1614.7972412109375,
+              "style_abs_sum_after_in_hole": 1614.7972412109375
+            },
+            {
+              "label": 13,
+              "predicted_pixels": 122,
+              "predicted_missing_pixels": 118,
+              "predicted_visible_pixels": 4,
+              "style_abs_sum_before_in_hole": 3131.15185546875,
+              "style_abs_sum_after_in_hole": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "1043_removal_s17_reference_3",
+      "native_pixels_bit_exact": true,
+      "layers": [
+        {
+          "resolution": [
+            64,
+            64
+          ],
+          "components": [
+            {
+              "label": 2,
+              "predicted_pixels": 17,
+              "predicted_missing_pixels": 13,
+              "predicted_visible_pixels": 4,
+              "style_abs_sum_before_in_hole": 288.3309020996094,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 3,
+              "predicted_pixels": 14,
+              "predicted_missing_pixels": 10,
+              "predicted_visible_pixels": 4,
+              "style_abs_sum_before_in_hole": 267.8702697753906,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 4,
+              "predicted_pixels": 13,
+              "predicted_missing_pixels": 13,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 364.40301513671875,
+              "style_abs_sum_after_in_hole": 364.40301513671875
+            },
+            {
+              "label": 5,
+              "predicted_pixels": 10,
+              "predicted_missing_pixels": 10,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 247.68368530273438,
+              "style_abs_sum_after_in_hole": 247.68368530273438
+            },
+            {
+              "label": 12,
+              "predicted_pixels": 10,
+              "predicted_missing_pixels": 10,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 328.43951416015625,
+              "style_abs_sum_after_in_hole": 328.43951416015625
+            },
+            {
+              "label": 13,
+              "predicted_pixels": 37,
+              "predicted_missing_pixels": 33,
+              "predicted_visible_pixels": 4,
+              "style_abs_sum_before_in_hole": 792.9581909179688,
+              "style_abs_sum_after_in_hole": 0.0
+            }
+          ]
+        },
+        {
+          "resolution": [
+            128,
+            128
+          ],
+          "components": [
+            {
+              "label": 2,
+              "predicted_pixels": 34,
+              "predicted_missing_pixels": 17,
+              "predicted_visible_pixels": 17,
+              "style_abs_sum_before_in_hole": 377.048095703125,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 3,
+              "predicted_pixels": 88,
+              "predicted_missing_pixels": 70,
+              "predicted_visible_pixels": 18,
+              "style_abs_sum_before_in_hole": 1875.092041015625,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 4,
+              "predicted_pixels": 70,
+              "predicted_missing_pixels": 70,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 1962.170166015625,
+              "style_abs_sum_after_in_hole": 1962.170166015625
+            },
+            {
+              "label": 5,
+              "predicted_pixels": 24,
+              "predicted_missing_pixels": 24,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 594.4407958984375,
+              "style_abs_sum_after_in_hole": 594.4407958984375
+            },
+            {
+              "label": 12,
+              "predicted_pixels": 47,
+              "predicted_missing_pixels": 47,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 1543.665771484375,
+              "style_abs_sum_after_in_hole": 1543.665771484375
+            },
+            {
+              "label": 13,
+              "predicted_pixels": 116,
+              "predicted_missing_pixels": 99,
+              "predicted_visible_pixels": 17,
+              "style_abs_sum_before_in_hole": 2378.87451171875,
+              "style_abs_sum_after_in_hole": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "787_removal_s17_reference_0",
+      "native_pixels_bit_exact": true,
+      "layers": [
+        {
+          "resolution": [
+            64,
+            64
+          ],
+          "components": [
+            {
+              "label": 2,
+              "predicted_pixels": 4,
+              "predicted_missing_pixels": 2,
+              "predicted_visible_pixels": 2,
+              "style_abs_sum_before_in_hole": 0.0,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 3,
+              "predicted_pixels": 0,
+              "predicted_missing_pixels": 0,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 0.0,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 4,
+              "predicted_pixels": 15,
+              "predicted_missing_pixels": 15,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 346.1917419433594,
+              "style_abs_sum_after_in_hole": 346.1917419433594
+            },
+            {
+              "label": 5,
+              "predicted_pixels": 6,
+              "predicted_missing_pixels": 6,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 124.63780212402344,
+              "style_abs_sum_after_in_hole": 124.63780212402344
+            },
+            {
+              "label": 12,
+              "predicted_pixels": 5,
+              "predicted_missing_pixels": 5,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 136.6082763671875,
+              "style_abs_sum_after_in_hole": 136.6082763671875
+            },
+            {
+              "label": 13,
+              "predicted_pixels": 16,
+              "predicted_missing_pixels": 16,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 456.07415771484375,
+              "style_abs_sum_after_in_hole": 456.07415771484375
+            }
+          ]
+        },
+        {
+          "resolution": [
+            128,
+            128
+          ],
+          "components": [
+            {
+              "label": 2,
+              "predicted_pixels": 5,
+              "predicted_missing_pixels": 3,
+              "predicted_visible_pixels": 2,
+              "style_abs_sum_before_in_hole": 0.0,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 3,
+              "predicted_pixels": 5,
+              "predicted_missing_pixels": 0,
+              "predicted_visible_pixels": 5,
+              "style_abs_sum_before_in_hole": 0.0,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 4,
+              "predicted_pixels": 101,
+              "predicted_missing_pixels": 101,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 2331.0244140625,
+              "style_abs_sum_after_in_hole": 2331.0244140625
+            },
+            {
+              "label": 5,
+              "predicted_pixels": 3,
+              "predicted_missing_pixels": 3,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 62.31890106201172,
+              "style_abs_sum_after_in_hole": 62.31890106201172
+            },
+            {
+              "label": 12,
+              "predicted_pixels": 43,
+              "predicted_missing_pixels": 43,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 1174.831298828125,
+              "style_abs_sum_after_in_hole": 1174.831298828125
+            },
+            {
+              "label": 13,
+              "predicted_pixels": 80,
+              "predicted_missing_pixels": 80,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 2280.37060546875,
+              "style_abs_sum_after_in_hole": 2280.37060546875
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "787_removal_s17_reference_1",
+      "native_pixels_bit_exact": true,
+      "layers": [
+        {
+          "resolution": [
+            64,
+            64
+          ],
+          "components": [
+            {
+              "label": 2,
+              "predicted_pixels": 5,
+              "predicted_missing_pixels": 4,
+              "predicted_visible_pixels": 1,
+              "style_abs_sum_before_in_hole": 131.57177734375,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 3,
+              "predicted_pixels": 2,
+              "predicted_missing_pixels": 0,
+              "predicted_visible_pixels": 2,
+              "style_abs_sum_before_in_hole": 0.0,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 4,
+              "predicted_pixels": 9,
+              "predicted_missing_pixels": 9,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 254.623291015625,
+              "style_abs_sum_after_in_hole": 254.623291015625
+            },
+            {
+              "label": 5,
+              "predicted_pixels": 22,
+              "predicted_missing_pixels": 22,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 591.2694091796875,
+              "style_abs_sum_after_in_hole": 591.2694091796875
+            },
+            {
+              "label": 12,
+              "predicted_pixels": 3,
+              "predicted_missing_pixels": 3,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 101.0550537109375,
+              "style_abs_sum_after_in_hole": 101.0550537109375
+            },
+            {
+              "label": 13,
+              "predicted_pixels": 21,
+              "predicted_missing_pixels": 21,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 634.2470703125,
+              "style_abs_sum_after_in_hole": 634.2470703125
+            }
+          ]
+        },
+        {
+          "resolution": [
+            128,
+            128
+          ],
+          "components": [
+            {
+              "label": 2,
+              "predicted_pixels": 16,
+              "predicted_missing_pixels": 4,
+              "predicted_visible_pixels": 12,
+              "style_abs_sum_before_in_hole": 131.57177734375,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 3,
+              "predicted_pixels": 12,
+              "predicted_missing_pixels": 0,
+              "predicted_visible_pixels": 12,
+              "style_abs_sum_before_in_hole": 0.0,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 4,
+              "predicted_pixels": 100,
+              "predicted_missing_pixels": 100,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 2829.147705078125,
+              "style_abs_sum_after_in_hole": 2829.147705078125
+            },
+            {
+              "label": 5,
+              "predicted_pixels": 35,
+              "predicted_missing_pixels": 35,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 940.6558837890625,
+              "style_abs_sum_after_in_hole": 940.6558837890625
+            },
+            {
+              "label": 12,
+              "predicted_pixels": 55,
+              "predicted_missing_pixels": 55,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 1852.676025390625,
+              "style_abs_sum_after_in_hole": 1852.676025390625
+            },
+            {
+              "label": 13,
+              "predicted_pixels": 107,
+              "predicted_missing_pixels": 107,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 3231.64013671875,
+              "style_abs_sum_after_in_hole": 3231.64013671875
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "787_removal_s17_reference_2",
+      "native_pixels_bit_exact": true,
+      "layers": [
+        {
+          "resolution": [
+            64,
+            64
+          ],
+          "components": [
+            {
+              "label": 2,
+              "predicted_pixels": 11,
+              "predicted_missing_pixels": 7,
+              "predicted_visible_pixels": 4,
+              "style_abs_sum_before_in_hole": 158.1153564453125,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 3,
+              "predicted_pixels": 4,
+              "predicted_missing_pixels": 3,
+              "predicted_visible_pixels": 1,
+              "style_abs_sum_before_in_hole": 69.57986450195312,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 4,
+              "predicted_pixels": 6,
+              "predicted_missing_pixels": 6,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 142.6200408935547,
+              "style_abs_sum_after_in_hole": 142.6200408935547
+            },
+            {
+              "label": 5,
+              "predicted_pixels": 5,
+              "predicted_missing_pixels": 5,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 99.41749572753906,
+              "style_abs_sum_after_in_hole": 99.41749572753906
+            },
+            {
+              "label": 12,
+              "predicted_pixels": 10,
+              "predicted_missing_pixels": 10,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 254.67002868652344,
+              "style_abs_sum_after_in_hole": 254.67002868652344
+            },
+            {
+              "label": 13,
+              "predicted_pixels": 29,
+              "predicted_missing_pixels": 29,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 660.4337158203125,
+              "style_abs_sum_after_in_hole": 660.4337158203125
+            }
+          ]
+        },
+        {
+          "resolution": [
+            128,
+            128
+          ],
+          "components": [
+            {
+              "label": 2,
+              "predicted_pixels": 34,
+              "predicted_missing_pixels": 12,
+              "predicted_visible_pixels": 22,
+              "style_abs_sum_before_in_hole": 271.054931640625,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 3,
+              "predicted_pixels": 0,
+              "predicted_missing_pixels": 0,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 0.0,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 4,
+              "predicted_pixels": 77,
+              "predicted_missing_pixels": 77,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 1830.29052734375,
+              "style_abs_sum_after_in_hole": 1830.29052734375
+            },
+            {
+              "label": 5,
+              "predicted_pixels": 2,
+              "predicted_missing_pixels": 2,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 39.766998291015625,
+              "style_abs_sum_after_in_hole": 39.766998291015625
+            },
+            {
+              "label": 12,
+              "predicted_pixels": 69,
+              "predicted_missing_pixels": 69,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 1757.2232666015625,
+              "style_abs_sum_after_in_hole": 1757.2232666015625
+            },
+            {
+              "label": 13,
+              "predicted_pixels": 125,
+              "predicted_missing_pixels": 125,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 2846.697265625,
+              "style_abs_sum_after_in_hole": 2846.697265625
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "787_removal_s17_reference_3",
+      "native_pixels_bit_exact": true,
+      "layers": [
+        {
+          "resolution": [
+            64,
+            64
+          ],
+          "components": [
+            {
+              "label": 2,
+              "predicted_pixels": 8,
+              "predicted_missing_pixels": 5,
+              "predicted_visible_pixels": 3,
+              "style_abs_sum_before_in_hole": 141.04937744140625,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 3,
+              "predicted_pixels": 3,
+              "predicted_missing_pixels": 2,
+              "predicted_visible_pixels": 1,
+              "style_abs_sum_before_in_hole": 50.06856155395508,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 4,
+              "predicted_pixels": 12,
+              "predicted_missing_pixels": 12,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 291.1906433105469,
+              "style_abs_sum_after_in_hole": 291.1906433105469
+            },
+            {
+              "label": 5,
+              "predicted_pixels": 6,
+              "predicted_missing_pixels": 6,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 140.9912567138672,
+              "style_abs_sum_after_in_hole": 140.9912567138672
+            },
+            {
+              "label": 12,
+              "predicted_pixels": 10,
+              "predicted_missing_pixels": 10,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 303.6646728515625,
+              "style_abs_sum_after_in_hole": 303.6646728515625
+            },
+            {
+              "label": 13,
+              "predicted_pixels": 27,
+              "predicted_missing_pixels": 27,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 817.6437377929688,
+              "style_abs_sum_after_in_hole": 817.6437377929688
+            }
+          ]
+        },
+        {
+          "resolution": [
+            128,
+            128
+          ],
+          "components": [
+            {
+              "label": 2,
+              "predicted_pixels": 23,
+              "predicted_missing_pixels": 7,
+              "predicted_visible_pixels": 16,
+              "style_abs_sum_before_in_hole": 197.4691162109375,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 3,
+              "predicted_pixels": 1,
+              "predicted_missing_pixels": 0,
+              "predicted_visible_pixels": 1,
+              "style_abs_sum_before_in_hole": 0.0,
+              "style_abs_sum_after_in_hole": 0.0
+            },
+            {
+              "label": 4,
+              "predicted_pixels": 112,
+              "predicted_missing_pixels": 112,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 2717.779296875,
+              "style_abs_sum_after_in_hole": 2717.779296875
+            },
+            {
+              "label": 5,
+              "predicted_pixels": 2,
+              "predicted_missing_pixels": 2,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 46.99708557128906,
+              "style_abs_sum_after_in_hole": 46.99708557128906
+            },
+            {
+              "label": 12,
+              "predicted_pixels": 67,
+              "predicted_missing_pixels": 67,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 2034.5533447265625,
+              "style_abs_sum_after_in_hole": 2034.5533447265625
+            },
+            {
+              "label": 13,
+              "predicted_pixels": 118,
+              "predicted_missing_pixels": 118,
+              "predicted_visible_pixels": 0,
+              "style_abs_sum_before_in_hole": 3573.40576171875,
+              "style_abs_sum_after_in_hole": 3573.40576171875
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "script_sha256": "62e8bdbccddb72259ad44cedb98e8f4c6b089db6b118dd666f528610a4edb68e",
+  "baseline_signature_sha256": "d4a052afc0e45e9f480b5181c96ffa5a1b297b9d9c620455d619ed0e127b2e24",
+  "clean_target_or_gallery_pixels_accessed": false,
+  "reserved_final_pixels_accessed": false,
+  "interpretation": "This measures the author gate on its own predicted components; not true anatomical segmentation. It does not prove the gate caused poor reconstruction, nor that changing it will help. No weights, outputs or parameters changed."
+}

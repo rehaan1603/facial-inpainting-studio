@@ -1,0 +1,28 @@
+{
+  "date": "2026-09-27",
+  "evaluation_and_receipts_verified": 28,
+  "new_predictions_with_full_detector_gallery_coverage": 16,
+  "source_and_evaluation_hashes_verified": true,
+  "visual_sheets_reviewed": {
+    "1043_removal.jpg": "5f2c429b8baf86315bd129b0b34835127fc359e095537fda9b2da5983d082f93",
+    "1306_removal.jpg": "483b5a655f193e4b883d62eae9d69936f113376e8a9de90d9add474207e6936b",
+    "2790_removal.jpg": "af572c2673d198caa328e55e3167c42ed58cb5fcb673b8d498722243fe736968",
+    "787_removal.jpg": "4d2777f27eb112f9b89e473cd398306b148addc1823c3eea80c6c4f337db3962"
+  },
+  "repeat_native_predictions_bit_exact": 16,
+  "component_diagnostic_sha256": "1b63ab9c0c8b5a1ebc356829c7701e29085ee43832a23120113f0c06d2ea4c2f",
+  "studio_http_checks": {
+    "/": {
+      "status": 200
+    },
+    "/confidence.html": {
+      "status": 200
+    },
+    "/api/session": {
+      "status": 200,
+      "busy": false
+    }
+  },
+  "reserved_final_pixels_accessed": false,
+  "scope": "Post-run integrity and local availability; no method superiority claim"
+}
