@@ -1,0 +1,467 @@
+{
+  "reviewed_at_utc": "2026-09-29T13:18:59.862431+00:00",
+  "numerical_results_sha256": "6365912cea094ce62f437648100f1d7487079a01054f44f61564d607426535f9",
+  "evaluation_sha256": "0b13805cede1afe90a4aec768834ef7bf621e22cd8bf3cf7c0168a0d7e5d137e",
+  "generation_integrity_sha256": "5b5f0114c3e3fc2612fcb136658e18c0625cc07295d02579f577435a9620fe9b",
+  "new_transforms_attempted": 24,
+  "new_images_produced": 0,
+  "reused_control_slots_evaluated": 40,
+  "failure_rows": [
+    {
+      "key": "1306_removal_s17_candidate",
+      "identity": "1306",
+      "seed": 17,
+      "mode": "candidate",
+      "reason": "inverse warp has a nonpositive or nonfinite Jacobian",
+      "constraint_count": 32,
+      "mask_pixels": 18884,
+      "mask_components": 3,
+      "maximum_displacement_pixels": 29.559294496144492,
+      "minimum_changed_inverse_jacobian": -2.97021797828198,
+      "constraint_rms_residual_pixels": 0.9123121991564318
+    },
+    {
+      "key": "1306_removal_s17_single_reference",
+      "identity": "1306",
+      "seed": 17,
+      "mode": "single_reference",
+      "reason": "inverse warp has a nonpositive or nonfinite Jacobian",
+      "constraint_count": 20,
+      "mask_pixels": 18884,
+      "mask_components": 3,
+      "maximum_displacement_pixels": 50.43870664213251,
+      "minimum_changed_inverse_jacobian": -5.576631525469374,
+      "constraint_rms_residual_pixels": 2.1652213604619894
+    },
+    {
+      "key": "1306_removal_s17_wrong_identity",
+      "identity": "1306",
+      "seed": 17,
+      "mode": "wrong_identity",
+      "reason": "inverse warp has a nonpositive or nonfinite Jacobian",
+      "constraint_count": 38,
+      "mask_pixels": 18884,
+      "mask_components": 3,
+      "maximum_displacement_pixels": 20.614771103154563,
+      "minimum_changed_inverse_jacobian": -1.9512551529734667,
+      "constraint_rms_residual_pixels": 0.5844455571847954
+    },
+    {
+      "key": "1306_removal_s29_candidate",
+      "identity": "1306",
+      "seed": 29,
+      "mode": "candidate",
+      "reason": "inverse warp has a nonpositive or nonfinite Jacobian",
+      "constraint_count": 32,
+      "mask_pixels": 18884,
+      "mask_components": 3,
+      "maximum_displacement_pixels": 29.03011828386332,
+      "minimum_changed_inverse_jacobian": -2.8545608919150895,
+      "constraint_rms_residual_pixels": 0.8809177590663998
+    },
+    {
+      "key": "1306_removal_s29_single_reference",
+      "identity": "1306",
+      "seed": 29,
+      "mode": "single_reference",
+      "reason": "inverse warp has a nonpositive or nonfinite Jacobian",
+      "constraint_count": 20,
+      "mask_pixels": 18884,
+      "mask_components": 3,
+      "maximum_displacement_pixels": 49.65982322089539,
+      "minimum_changed_inverse_jacobian": -6.677458935275331,
+      "constraint_rms_residual_pixels": 2.1206274410578434
+    },
+    {
+      "key": "1306_removal_s29_wrong_identity",
+      "identity": "1306",
+      "seed": 29,
+      "mode": "wrong_identity",
+      "reason": "inverse warp has a nonpositive or nonfinite Jacobian",
+      "constraint_count": 38,
+      "mask_pixels": 18884,
+      "mask_components": 3,
+      "maximum_displacement_pixels": 19.419563838403363,
+      "minimum_changed_inverse_jacobian": -1.319738831925994,
+      "constraint_rms_residual_pixels": 0.5831277601334799
+    },
+    {
+      "key": "2790_removal_s17_candidate",
+      "identity": "2790",
+      "seed": 17,
+      "mode": "candidate",
+      "reason": "inverse warp has a nonpositive or nonfinite Jacobian",
+      "constraint_count": 30,
+      "mask_pixels": 17516,
+      "mask_components": 3,
+      "maximum_displacement_pixels": 35.367371615903075,
+      "minimum_changed_inverse_jacobian": -4.255966446351685,
+      "constraint_rms_residual_pixels": 1.4482249724447247
+    },
+    {
+      "key": "2790_removal_s17_single_reference",
+      "identity": "2790",
+      "seed": 17,
+      "mode": "single_reference",
+      "reason": "inverse warp has a nonpositive or nonfinite Jacobian",
+      "constraint_count": 29,
+      "mask_pixels": 17516,
+      "mask_components": 3,
+      "maximum_displacement_pixels": 38.96790616105599,
+      "minimum_changed_inverse_jacobian": -8.763378443060711,
+      "constraint_rms_residual_pixels": 1.7167881017385078
+    },
+    {
+      "key": "2790_removal_s17_wrong_identity",
+      "identity": "2790",
+      "seed": 17,
+      "mode": "wrong_identity",
+      "reason": "inverse warp has a nonpositive or nonfinite Jacobian",
+      "constraint_count": 36,
+      "mask_pixels": 17516,
+      "mask_components": 3,
+      "maximum_displacement_pixels": 33.59917277916345,
+      "minimum_changed_inverse_jacobian": -6.449257110654541,
+      "constraint_rms_residual_pixels": 1.1778887525623314
+    },
+    {
+      "key": "2790_removal_s29_candidate",
+      "identity": "2790",
+      "seed": 29,
+      "mode": "candidate",
+      "reason": "inverse warp has a nonpositive or nonfinite Jacobian",
+      "constraint_count": 30,
+      "mask_pixels": 17516,
+      "mask_components": 3,
+      "maximum_displacement_pixels": 35.24497348605011,
+      "minimum_changed_inverse_jacobian": -4.442358896125185,
+      "constraint_rms_residual_pixels": 1.6740841974752365
+    },
+    {
+      "key": "2790_removal_s29_single_reference",
+      "identity": "2790",
+      "seed": 29,
+      "mode": "single_reference",
+      "reason": "inverse warp has a nonpositive or nonfinite Jacobian",
+      "constraint_count": 28,
+      "mask_pixels": 17516,
+      "mask_components": 3,
+      "maximum_displacement_pixels": 39.762803289944856,
+      "minimum_changed_inverse_jacobian": -4.097646430032581,
+      "constraint_rms_residual_pixels": 1.4278816153316336
+    },
+    {
+      "key": "2790_removal_s29_wrong_identity",
+      "identity": "2790",
+      "seed": 29,
+      "mode": "wrong_identity",
+      "reason": "inverse warp has a nonpositive or nonfinite Jacobian",
+      "constraint_count": 35,
+      "mask_pixels": 17516,
+      "mask_components": 3,
+      "maximum_displacement_pixels": 32.39820986389511,
+      "minimum_changed_inverse_jacobian": -7.360051678048592,
+      "constraint_rms_residual_pixels": 1.410527908160096
+    },
+    {
+      "key": "1043_removal_s17_candidate",
+      "identity": "1043",
+      "seed": 17,
+      "mode": "candidate",
+      "reason": "inverse warp has a nonpositive or nonfinite Jacobian",
+      "constraint_count": 38,
+      "mask_pixels": 15234,
+      "mask_components": 3,
+      "maximum_displacement_pixels": 10.611822521514677,
+      "minimum_changed_inverse_jacobian": -0.7662357611576353,
+      "constraint_rms_residual_pixels": 0.39626401789923127
+    },
+    {
+      "key": "1043_removal_s17_single_reference",
+      "identity": "1043",
+      "seed": 17,
+      "mode": "single_reference",
+      "reason": "inverse warp has a nonpositive or nonfinite Jacobian",
+      "constraint_count": 39,
+      "mask_pixels": 15234,
+      "mask_components": 3,
+      "maximum_displacement_pixels": 13.548111108545106,
+      "minimum_changed_inverse_jacobian": -1.8871434928954391,
+      "constraint_rms_residual_pixels": 0.4095795711149657
+    },
+    {
+      "key": "1043_removal_s17_wrong_identity",
+      "identity": "1043",
+      "seed": 17,
+      "mode": "wrong_identity",
+      "reason": "inverse warp has a nonpositive or nonfinite Jacobian",
+      "constraint_count": 35,
+      "mask_pixels": 15234,
+      "mask_components": 3,
+      "maximum_displacement_pixels": 27.75493323708072,
+      "minimum_changed_inverse_jacobian": -3.910695660635745,
+      "constraint_rms_residual_pixels": 0.7191521714248791
+    },
+    {
+      "key": "1043_removal_s29_candidate",
+      "identity": "1043",
+      "seed": 29,
+      "mode": "candidate",
+      "reason": "inverse warp has a nonpositive or nonfinite Jacobian",
+      "constraint_count": 37,
+      "mask_pixels": 15234,
+      "mask_components": 3,
+      "maximum_displacement_pixels": 10.573947763447022,
+      "minimum_changed_inverse_jacobian": -0.6733570215300477,
+      "constraint_rms_residual_pixels": 0.3735070221601061
+    },
+    {
+      "key": "1043_removal_s29_single_reference",
+      "identity": "1043",
+      "seed": 29,
+      "mode": "single_reference",
+      "reason": "inverse warp has a nonpositive or nonfinite Jacobian",
+      "constraint_count": 38,
+      "mask_pixels": 15234,
+      "mask_components": 3,
+      "maximum_displacement_pixels": 13.729231576396778,
+      "minimum_changed_inverse_jacobian": -1.5261740819461664,
+      "constraint_rms_residual_pixels": 0.3757179453005324
+    },
+    {
+      "key": "1043_removal_s29_wrong_identity",
+      "identity": "1043",
+      "seed": 29,
+      "mode": "wrong_identity",
+      "reason": "inverse warp has a nonpositive or nonfinite Jacobian",
+      "constraint_count": 34,
+      "mask_pixels": 15234,
+      "mask_components": 3,
+      "maximum_displacement_pixels": 29.599067116930904,
+      "minimum_changed_inverse_jacobian": -4.703294194965847,
+      "constraint_rms_residual_pixels": 0.7160627812129218
+    },
+    {
+      "key": "787_removal_s17_candidate",
+      "identity": "787",
+      "seed": 17,
+      "mode": "candidate",
+      "reason": "inverse warp has a nonpositive or nonfinite Jacobian",
+      "constraint_count": 35,
+      "mask_pixels": 15176,
+      "mask_components": 3,
+      "maximum_displacement_pixels": 34.81707540536989,
+      "minimum_changed_inverse_jacobian": -4.171457720507574,
+      "constraint_rms_residual_pixels": 0.9909076318837957
+    },
+    {
+      "key": "787_removal_s17_single_reference",
+      "identity": "787",
+      "seed": 17,
+      "mode": "single_reference",
+      "reason": "inverse warp has a nonpositive or nonfinite Jacobian",
+      "constraint_count": 35,
+      "mask_pixels": 15176,
+      "mask_components": 3,
+      "maximum_displacement_pixels": 35.741557007513244,
+      "minimum_changed_inverse_jacobian": -3.44776161420364,
+      "constraint_rms_residual_pixels": 0.9035810517588265
+    },
+    {
+      "key": "787_removal_s17_wrong_identity",
+      "identity": "787",
+      "seed": 17,
+      "mode": "wrong_identity",
+      "reason": "inverse warp has a nonpositive or nonfinite Jacobian",
+      "constraint_count": 39,
+      "mask_pixels": 15176,
+      "mask_components": 3,
+      "maximum_displacement_pixels": 19.568892726454674,
+      "minimum_changed_inverse_jacobian": -0.8373017608299818,
+      "constraint_rms_residual_pixels": 0.4773095381756707
+    },
+    {
+      "key": "787_removal_s29_candidate",
+      "identity": "787",
+      "seed": 29,
+      "mode": "candidate",
+      "reason": "inverse warp has a nonpositive or nonfinite Jacobian",
+      "constraint_count": 35,
+      "mask_pixels": 15176,
+      "mask_components": 3,
+      "maximum_displacement_pixels": 39.040045673567526,
+      "minimum_changed_inverse_jacobian": -5.613625609243705,
+      "constraint_rms_residual_pixels": 1.3485997562871497
+    },
+    {
+      "key": "787_removal_s29_single_reference",
+      "identity": "787",
+      "seed": 29,
+      "mode": "single_reference",
+      "reason": "inverse warp has a nonpositive or nonfinite Jacobian",
+      "constraint_count": 35,
+      "mask_pixels": 15176,
+      "mask_components": 3,
+      "maximum_displacement_pixels": 40.80515582117834,
+      "minimum_changed_inverse_jacobian": -5.666746397323767,
+      "constraint_rms_residual_pixels": 1.1579532924826563
+    },
+    {
+      "key": "787_removal_s29_wrong_identity",
+      "identity": "787",
+      "seed": 29,
+      "mode": "wrong_identity",
+      "reason": "inverse warp has a nonpositive or nonfinite Jacobian",
+      "constraint_count": 39,
+      "mask_pixels": 15176,
+      "mask_components": 3,
+      "maximum_displacement_pixels": 23.115023247608367,
+      "minimum_changed_inverse_jacobian": -1.8446195009740873,
+      "constraint_rms_residual_pixels": 0.600733412102304
+    }
+  ],
+  "by_arm": {
+    "candidate": {
+      "attempts": 8,
+      "constraint_count_range": [
+        30,
+        38
+      ],
+      "minimum_jacobian_range": [
+        -5.613625609243705,
+        -0.6733570215300477
+      ],
+      "max_displacement_range": [
+        10.573947763447022,
+        39.040045673567526
+      ]
+    },
+    "single_reference": {
+      "attempts": 8,
+      "constraint_count_range": [
+        20,
+        39
+      ],
+      "minimum_jacobian_range": [
+        -8.763378443060711,
+        -1.5261740819461664
+      ],
+      "max_displacement_range": [
+        13.548111108545106,
+        50.43870664213251
+      ]
+    },
+    "wrong_identity": {
+      "attempts": 8,
+      "constraint_count_range": [
+        34,
+        39
+      ],
+      "minimum_jacobian_range": [
+        -7.360051678048592,
+        -0.8373017608299818
+      ],
+      "max_displacement_range": [
+        19.419563838403363,
+        33.59917277916345
+      ]
+    }
+  },
+  "sheets": [
+    {
+      "identity": "1306",
+      "seed": 17,
+      "sheet_sha256": "e3b18e4e788c1e29149ea0a0c2722b492678c6bffee498f28dd742d238a94ecc",
+      "reviewed": true,
+      "finding": "Both scaffold seeds remove visible teeth/open-mouth state from the target and alter eyelids/gaze. Reference/context and plain reference keep the wrong closed mouth with sharper texture. RefFace shows ghosted eyes and enlarged/smeared lips. No candidate image exists; candidate fidelity cannot be rated.",
+      "review_type": "Internal assistant visual inspection; not blinded human evaluation",
+      "candidate_fidelity": "unassessable_no_output"
+    },
+    {
+      "identity": "1306",
+      "seed": 29,
+      "sheet_sha256": "3dadb5409495035b3848ea855cffbc64fc6e8451a42f71892a2dd681fcc59f5b",
+      "reviewed": true,
+      "finding": "Both scaffold seeds remove visible teeth/open-mouth state from the target and alter eyelids/gaze. Reference/context and plain reference keep the wrong closed mouth with sharper texture. RefFace shows ghosted eyes and enlarged/smeared lips. No candidate image exists; candidate fidelity cannot be rated.",
+      "review_type": "Internal assistant visual inspection; not blinded human evaluation",
+      "candidate_fidelity": "unassessable_no_output"
+    },
+    {
+      "identity": "2790",
+      "seed": 17,
+      "sheet_sha256": "0401b201165a2202312c850542080a612a823ba5b9d8f0ea37adfd41315b9283",
+      "reviewed": true,
+      "finding": "Scaffold and cascades change eyelid shape and lip contour relative to target; hair across the face and target mouth asymmetry are not reconstructed faithfully. RefFace has blurred/misaligned eyes and lips. No candidate image exists.",
+      "review_type": "Internal assistant visual inspection; not blinded human evaluation",
+      "candidate_fidelity": "unassessable_no_output"
+    },
+    {
+      "identity": "2790",
+      "seed": 29,
+      "sheet_sha256": "df6e41ca5627a3accc165254350bf6bac47c0affb9a3d64ddd75776da8cf481b",
+      "reviewed": true,
+      "finding": "Scaffold and cascades change eyelid shape and lip contour relative to target; hair across the face and target mouth asymmetry are not reconstructed faithfully. RefFace has blurred/misaligned eyes and lips. No candidate image exists.",
+      "review_type": "Internal assistant visual inspection; not blinded human evaluation",
+      "candidate_fidelity": "unassessable_no_output"
+    },
+    {
+      "identity": "1043",
+      "seed": 17,
+      "sheet_sha256": "dcbe634c4fe4abaf443f51badb5a2ce060471329e1b3b2c196cf8f828dfcdf53",
+      "reviewed": true,
+      "finding": "Scaffold and cascades retain an open smile but change eye shape/gaze and tooth/lip geometry; the seed29 mouth is wider. RefFace smears eyes, nose and open-mouth structure. No candidate image exists.",
+      "review_type": "Internal assistant visual inspection; not blinded human evaluation",
+      "candidate_fidelity": "unassessable_no_output"
+    },
+    {
+      "identity": "1043",
+      "seed": 29,
+      "sheet_sha256": "be38107d275a8368b20737557967c9932c76e5f8536719bba23e7dad38e6d659",
+      "reviewed": true,
+      "finding": "Scaffold and cascades retain an open smile but change eye shape/gaze and tooth/lip geometry; the seed29 mouth is wider. RefFace smears eyes, nose and open-mouth structure. No candidate image exists.",
+      "review_type": "Internal assistant visual inspection; not blinded human evaluation",
+      "candidate_fidelity": "unassessable_no_output"
+    },
+    {
+      "identity": "787",
+      "seed": 17,
+      "sheet_sha256": "a63ac8269807c12f31f0fb9fd77bc95f8bd9e6dc693404a823bfc0f674442086",
+      "reviewed": true,
+      "finding": "Scaffold and cascades alter eye opening/gaze, nose shading and lip geometry; seed29 differs in mouth shape. RefFace produces conspicuously blurred eyes/nose and a distorted puckered mouth. No candidate image exists.",
+      "review_type": "Internal assistant visual inspection; not blinded human evaluation",
+      "candidate_fidelity": "unassessable_no_output"
+    },
+    {
+      "identity": "787",
+      "seed": 29,
+      "sheet_sha256": "b09463e5f8fcd732a4f7ed4557de9ef9fc3858f068d57641e67434dc81910d15",
+      "reviewed": true,
+      "finding": "Scaffold and cascades alter eye opening/gaze, nose shading and lip geometry; seed29 differs in mouth shape. RefFace produces conspicuously blurred eyes/nose and a distorted puckered mouth. No candidate image exists.",
+      "review_type": "Internal assistant visual inspection; not blinded human evaluation",
+      "candidate_fidelity": "unassessable_no_output"
+    }
+  ],
+  "visual_review_complete": true,
+  "visual_quality_gate_passed": false,
+  "visual_gate_reason": "No successful candidate output; improved fidelity cannot be assessed.",
+  "numerical_gate_passed": false,
+  "progression_authorized": false,
+  "primary_contrasts_interpretation": "No paired candidate scores: n=0, delta/CI/exact p unavailable. Holm p_holm=1 in frozen reporter is a missing-comparison bookkeeping placeholder, not an observed p-value or test of equivalence.",
+  "independent_human_evaluation_performed": false,
+  "final_model_evaluations": 0,
+  "reserved_identity_count": 8,
+  "reserved_history": "Historical automated duplicate/hash preparation decoded pixels; no new reserved access and no recorded final generation/evaluation.",
+  "local_studio_readiness": {
+    "/": {
+      "http_status": 200
+    },
+    "confidence.html": {
+      "http_status": 200
+    },
+    "api/session": {
+      "http_status": 200,
+      "busy": false
+    }
+  },
+  "website_generators_changed": false
+}

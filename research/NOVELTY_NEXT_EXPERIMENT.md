@@ -1,5 +1,13 @@
 # Next contribution hypothesis — 22 September 2026
 
+## Current decision — 29 September 2026
+
+The dedicated RefFace baseline remains complete and frozen. The requested history and primary-source audits ruled out claiming a texture-gate adjustment as a structural contribution. A separately frozen geometry-only screen has now been implemented and attempted on the four observed identities and two seeds: all24 personal/single-reference/wrong-person displacement fields failed their negative-Jacobian check, so0 candidate images exist. Forty prior control slots were evaluated with a new106-landmark proxy and eight sheets reviewed. The mechanism is rejected before candidate-quality comparison; no threshold tuning, training, fresh-cohort expansion or final use follows. See [full decision and reproduction](STRUCTURE_TRANSPORT_REVIEW_V1.md).
+
+The next mechanistically different hypothesis is shared canonical identity geometry estimated jointly from references, separated from per-photo pose/expression, conditioning fresh component synthesis. It would address both projection ambiguity and the inability of a warp to create missing teeth/structures. This is a research question only: 3DFaceFill and ReSem-Face have close related mechanisms. A specific incremental distinction and an input-only geometry feasibility protocol must be defensible before implementation or a large run. No successor is yet validated or promised to work. The broad landmark/shape-transfer idea is not new; see [prior art](STRUCTURAL_PRIOR_ART_20260928.md).
+
+Final model generation/evaluation remains0/8. Historical reserved-image duplicate/hash preparation involved pixel decoding, as disclosed in the [history audit](MECHANISM_HISTORY_AUDIT_20260928.md); none was accessed anew. Earlier proposals below are preserved as dated research history and do not supersede this decision.
+
 ## Current decision — 27 September 2026
 
 Two additional mechanisms have now been implemented and tested, not merely proposed. Reference restoration with original-context correction completed 32 new generations; a subsequent masked-conditioning screen completed 24. Each has 40 scored comparison rows including reused controls and two separate GPU equivalence calls. The first improves identity but worsens pixel/perceptual error against the original scaffold. The second visibly erases facial features and loses detector coverage. Both fail their frozen gates; no training or website promotion is justified. See `NOVELTY_ESTABLISHMENT_20260925.md` for metrics, visual review, integrity and prior art.

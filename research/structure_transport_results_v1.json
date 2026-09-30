@@ -1,0 +1,2528 @@
+{
+  "completed_at_utc": "2026-09-29T05:07:35.455698+00:00",
+  "scope": "Four previously observed development identities, two seed slots; structural feasibility only",
+  "new_transform_attempts": 24,
+  "new_transforms_complete": 0,
+  "new_neural_generations": 0,
+  "reused_control_slots": 40,
+  "evaluation_complete": 40,
+  "pixel_preservation_verified_rows": 40,
+  "summaries": {
+    "candidate": {
+      "rows": 8,
+      "generation_complete": 0,
+      "evaluation_complete": 0,
+      "facenet_cosine": {
+        "mean": null,
+        "identity_count": 0,
+        "excluded_identities": [
+          "1043",
+          "1306",
+          "2790",
+          "787"
+        ],
+        "valid_row_count": 0
+      },
+      "facenet_gallery_cosine": {
+        "mean": null,
+        "identity_count": 0,
+        "excluded_identities": [
+          "1043",
+          "1306",
+          "2790",
+          "787"
+        ],
+        "valid_row_count": 0
+      },
+      "arcface_conditioning_cosine": {
+        "mean": null,
+        "identity_count": 0,
+        "excluded_identities": [
+          "1043",
+          "1306",
+          "2790",
+          "787"
+        ],
+        "valid_row_count": 0
+      },
+      "arcface_conditioning_gallery_cosine": {
+        "mean": null,
+        "identity_count": 0,
+        "excluded_identities": [
+          "1043",
+          "1306",
+          "2790",
+          "787"
+        ],
+        "valid_row_count": 0
+      },
+      "lpips": {
+        "mean": null,
+        "identity_count": 0,
+        "excluded_identities": [
+          "1043",
+          "1306",
+          "2790",
+          "787"
+        ],
+        "valid_row_count": 0
+      },
+      "ssim_rgb": {
+        "mean": null,
+        "identity_count": 0,
+        "excluded_identities": [
+          "1043",
+          "1306",
+          "2790",
+          "787"
+        ],
+        "valid_row_count": 0
+      },
+      "psnr_rgb": {
+        "mean": null,
+        "identity_count": 0,
+        "excluded_identities": [
+          "1043",
+          "1306",
+          "2790",
+          "787"
+        ],
+        "valid_row_count": 0
+      },
+      "hole_psnr": {
+        "mean": null,
+        "identity_count": 0,
+        "excluded_identities": [
+          "1043",
+          "1306",
+          "2790",
+          "787"
+        ],
+        "valid_row_count": 0
+      },
+      "hole_mae": {
+        "mean": null,
+        "identity_count": 0,
+        "excluded_identities": [
+          "1043",
+          "1306",
+          "2790",
+          "787"
+        ],
+        "valid_row_count": 0
+      },
+      "visible_mae": {
+        "mean": null,
+        "identity_count": 0,
+        "excluded_identities": [
+          "1043",
+          "1306",
+          "2790",
+          "787"
+        ],
+        "valid_row_count": 0
+      },
+      "niqe": {
+        "mean": null,
+        "identity_count": 0,
+        "excluded_identities": [
+          "1043",
+          "1306",
+          "2790",
+          "787"
+        ],
+        "valid_row_count": 0
+      },
+      "brisque": {
+        "mean": null,
+        "identity_count": 0,
+        "excluded_identities": [
+          "1043",
+          "1306",
+          "2790",
+          "787"
+        ],
+        "valid_row_count": 0
+      },
+      "structure_nme": {
+        "mean": null,
+        "identity_count": 0,
+        "excluded_identities": [
+          "1043",
+          "1306",
+          "2790",
+          "787"
+        ],
+        "valid_row_count": 0
+      }
+    },
+    "single_reference": {
+      "rows": 8,
+      "generation_complete": 0,
+      "evaluation_complete": 0,
+      "facenet_cosine": {
+        "mean": null,
+        "identity_count": 0,
+        "excluded_identities": [
+          "1043",
+          "1306",
+          "2790",
+          "787"
+        ],
+        "valid_row_count": 0
+      },
+      "facenet_gallery_cosine": {
+        "mean": null,
+        "identity_count": 0,
+        "excluded_identities": [
+          "1043",
+          "1306",
+          "2790",
+          "787"
+        ],
+        "valid_row_count": 0
+      },
+      "arcface_conditioning_cosine": {
+        "mean": null,
+        "identity_count": 0,
+        "excluded_identities": [
+          "1043",
+          "1306",
+          "2790",
+          "787"
+        ],
+        "valid_row_count": 0
+      },
+      "arcface_conditioning_gallery_cosine": {
+        "mean": null,
+        "identity_count": 0,
+        "excluded_identities": [
+          "1043",
+          "1306",
+          "2790",
+          "787"
+        ],
+        "valid_row_count": 0
+      },
+      "lpips": {
+        "mean": null,
+        "identity_count": 0,
+        "excluded_identities": [
+          "1043",
+          "1306",
+          "2790",
+          "787"
+        ],
+        "valid_row_count": 0
+      },
+      "ssim_rgb": {
+        "mean": null,
+        "identity_count": 0,
+        "excluded_identities": [
+          "1043",
+          "1306",
+          "2790",
+          "787"
+        ],
+        "valid_row_count": 0
+      },
+      "psnr_rgb": {
+        "mean": null,
+        "identity_count": 0,
+        "excluded_identities": [
+          "1043",
+          "1306",
+          "2790",
+          "787"
+        ],
+        "valid_row_count": 0
+      },
+      "hole_psnr": {
+        "mean": null,
+        "identity_count": 0,
+        "excluded_identities": [
+          "1043",
+          "1306",
+          "2790",
+          "787"
+        ],
+        "valid_row_count": 0
+      },
+      "hole_mae": {
+        "mean": null,
+        "identity_count": 0,
+        "excluded_identities": [
+          "1043",
+          "1306",
+          "2790",
+          "787"
+        ],
+        "valid_row_count": 0
+      },
+      "visible_mae": {
+        "mean": null,
+        "identity_count": 0,
+        "excluded_identities": [
+          "1043",
+          "1306",
+          "2790",
+          "787"
+        ],
+        "valid_row_count": 0
+      },
+      "niqe": {
+        "mean": null,
+        "identity_count": 0,
+        "excluded_identities": [
+          "1043",
+          "1306",
+          "2790",
+          "787"
+        ],
+        "valid_row_count": 0
+      },
+      "brisque": {
+        "mean": null,
+        "identity_count": 0,
+        "excluded_identities": [
+          "1043",
+          "1306",
+          "2790",
+          "787"
+        ],
+        "valid_row_count": 0
+      },
+      "structure_nme": {
+        "mean": null,
+        "identity_count": 0,
+        "excluded_identities": [
+          "1043",
+          "1306",
+          "2790",
+          "787"
+        ],
+        "valid_row_count": 0
+      }
+    },
+    "wrong_identity": {
+      "rows": 8,
+      "generation_complete": 0,
+      "evaluation_complete": 0,
+      "facenet_cosine": {
+        "mean": null,
+        "identity_count": 0,
+        "excluded_identities": [
+          "1043",
+          "1306",
+          "2790",
+          "787"
+        ],
+        "valid_row_count": 0
+      },
+      "facenet_gallery_cosine": {
+        "mean": null,
+        "identity_count": 0,
+        "excluded_identities": [
+          "1043",
+          "1306",
+          "2790",
+          "787"
+        ],
+        "valid_row_count": 0
+      },
+      "arcface_conditioning_cosine": {
+        "mean": null,
+        "identity_count": 0,
+        "excluded_identities": [
+          "1043",
+          "1306",
+          "2790",
+          "787"
+        ],
+        "valid_row_count": 0
+      },
+      "arcface_conditioning_gallery_cosine": {
+        "mean": null,
+        "identity_count": 0,
+        "excluded_identities": [
+          "1043",
+          "1306",
+          "2790",
+          "787"
+        ],
+        "valid_row_count": 0
+      },
+      "lpips": {
+        "mean": null,
+        "identity_count": 0,
+        "excluded_identities": [
+          "1043",
+          "1306",
+          "2790",
+          "787"
+        ],
+        "valid_row_count": 0
+      },
+      "ssim_rgb": {
+        "mean": null,
+        "identity_count": 0,
+        "excluded_identities": [
+          "1043",
+          "1306",
+          "2790",
+          "787"
+        ],
+        "valid_row_count": 0
+      },
+      "psnr_rgb": {
+        "mean": null,
+        "identity_count": 0,
+        "excluded_identities": [
+          "1043",
+          "1306",
+          "2790",
+          "787"
+        ],
+        "valid_row_count": 0
+      },
+      "hole_psnr": {
+        "mean": null,
+        "identity_count": 0,
+        "excluded_identities": [
+          "1043",
+          "1306",
+          "2790",
+          "787"
+        ],
+        "valid_row_count": 0
+      },
+      "hole_mae": {
+        "mean": null,
+        "identity_count": 0,
+        "excluded_identities": [
+          "1043",
+          "1306",
+          "2790",
+          "787"
+        ],
+        "valid_row_count": 0
+      },
+      "visible_mae": {
+        "mean": null,
+        "identity_count": 0,
+        "excluded_identities": [
+          "1043",
+          "1306",
+          "2790",
+          "787"
+        ],
+        "valid_row_count": 0
+      },
+      "niqe": {
+        "mean": null,
+        "identity_count": 0,
+        "excluded_identities": [
+          "1043",
+          "1306",
+          "2790",
+          "787"
+        ],
+        "valid_row_count": 0
+      },
+      "brisque": {
+        "mean": null,
+        "identity_count": 0,
+        "excluded_identities": [
+          "1043",
+          "1306",
+          "2790",
+          "787"
+        ],
+        "valid_row_count": 0
+      },
+      "structure_nme": {
+        "mean": null,
+        "identity_count": 0,
+        "excluded_identities": [
+          "1043",
+          "1306",
+          "2790",
+          "787"
+        ],
+        "valid_row_count": 0
+      }
+    },
+    "scaffold": {
+      "rows": 8,
+      "generation_complete": 8,
+      "evaluation_complete": 8,
+      "facenet_cosine": {
+        "mean": 0.7414891496300697,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "facenet_gallery_cosine": {
+        "mean": 0.42300857044756407,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "arcface_conditioning_cosine": {
+        "mean": 0.6874573454260826,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "arcface_conditioning_gallery_cosine": {
+        "mean": 0.29390855897994084,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "lpips": {
+        "mean": 0.02540249819867313,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "ssim_rgb": {
+        "mean": 0.9740372667964227,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "psnr_rgb": {
+        "mean": 32.53148191168795,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "hole_psnr": {
+        "mean": 20.55483318571453,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "hole_mae": {
+        "mean": 0.06266471999171244,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "visible_mae": {
+        "mean": 0.0,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "niqe": {
+        "mean": 4.726465465006273,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "brisque": {
+        "mean": 9.7200927734375,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "structure_nme": {
+        "mean": 0.020542904218255165,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      }
+    },
+    "reference_context": {
+      "rows": 8,
+      "generation_complete": 8,
+      "evaluation_complete": 8,
+      "facenet_cosine": {
+        "mean": 0.7814411222934723,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "facenet_gallery_cosine": {
+        "mean": 0.47638980920116103,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "arcface_conditioning_cosine": {
+        "mean": 0.7086613029241562,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "arcface_conditioning_gallery_cosine": {
+        "mean": 0.32508965573894477,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "lpips": {
+        "mean": 0.02711009990889579,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "ssim_rgb": {
+        "mean": 0.970862961150593,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "psnr_rgb": {
+        "mean": 32.26731889096723,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "hole_psnr": {
+        "mean": 20.290670164993813,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "hole_mae": {
+        "mean": 0.06598806418676613,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "visible_mae": {
+        "mean": 0.0,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "niqe": {
+        "mean": 4.4736757843298784,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "brisque": {
+        "mean": 7.48101806640625,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "structure_nme": {
+        "mean": 0.01981205843749634,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      }
+    },
+    "reference": {
+      "rows": 8,
+      "generation_complete": 8,
+      "evaluation_complete": 8,
+      "facenet_cosine": {
+        "mean": 0.78098975867033,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "facenet_gallery_cosine": {
+        "mean": 0.48008466822405654,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "arcface_conditioning_cosine": {
+        "mean": 0.7115206643939018,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "arcface_conditioning_gallery_cosine": {
+        "mean": 0.3217986987438053,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "lpips": {
+        "mean": 0.02814582665450871,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "ssim_rgb": {
+        "mean": 0.969638092015505,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "psnr_rgb": {
+        "mean": 32.030904557980534,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "hole_psnr": {
+        "mean": 20.05425583200711,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "hole_mae": {
+        "mean": 0.06875208002036817,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "visible_mae": {
+        "mean": 0.0,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "niqe": {
+        "mean": 4.273573647417634,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "brisque": {
+        "mean": 7.49346923828125,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "structure_nme": {
+        "mean": 0.01897695997080801,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      }
+    },
+    "refface": {
+      "rows": 8,
+      "generation_complete": 8,
+      "evaluation_complete": 8,
+      "facenet_cosine": {
+        "mean": 0.5195787698030472,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "facenet_gallery_cosine": {
+        "mean": 0.34511255597074825,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "arcface_conditioning_cosine": {
+        "mean": 0.5797280818223953,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "arcface_conditioning_gallery_cosine": {
+        "mean": 0.2830740349988143,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "lpips": {
+        "mean": 0.04379144310951233,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "ssim_rgb": {
+        "mean": 0.9658853146391638,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "psnr_rgb": {
+        "mean": 30.00718463278219,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "hole_psnr": {
+        "mean": 18.030535906808772,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "hole_mae": {
+        "mean": 0.09230670211686273,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "visible_mae": {
+        "mean": 0.0,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "niqe": {
+        "mean": 4.6509700843726876,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "brisque": {
+        "mean": 9.87359619140625,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "structure_nme": {
+        "mean": 0.038886070382106674,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      }
+    },
+    "observed": {
+      "rows": 8,
+      "generation_complete": 8,
+      "evaluation_complete": 8,
+      "facenet_cosine": {
+        "mean": 0.48019977410634357,
+        "identity_count": 3,
+        "excluded_identities": [
+          "787"
+        ],
+        "valid_row_count": 6
+      },
+      "facenet_gallery_cosine": {
+        "mean": 0.18325388762685987,
+        "identity_count": 3,
+        "excluded_identities": [
+          "787"
+        ],
+        "valid_row_count": 6
+      },
+      "arcface_conditioning_cosine": {
+        "mean": 0.6751062572002411,
+        "identity_count": 2,
+        "excluded_identities": [
+          "1306",
+          "787"
+        ],
+        "valid_row_count": 4
+      },
+      "arcface_conditioning_gallery_cosine": {
+        "mean": 0.412348672747612,
+        "identity_count": 2,
+        "excluded_identities": [
+          "1306",
+          "787"
+        ],
+        "valid_row_count": 4
+      },
+      "lpips": {
+        "mean": 0.09877547062933445,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "ssim_rgb": {
+        "mean": 0.9550501658321392,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "psnr_rgb": {
+        "mean": 24.279452428934473,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "hole_psnr": {
+        "mean": 12.30280370296105,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "hole_mae": {
+        "mean": 0.19703665310171273,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "visible_mae": {
+        "mean": 0.0,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "niqe": {
+        "mean": 4.944436475436521,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "brisque": {
+        "mean": 11.04949951171875,
+        "identity_count": 4,
+        "excluded_identities": [],
+        "valid_row_count": 8
+      },
+      "structure_nme": {
+        "mean": 0.0690963837762923,
+        "identity_count": 2,
+        "excluded_identities": [
+          "1306",
+          "787"
+        ],
+        "valid_row_count": 4
+      }
+    }
+  },
+  "primary_contrasts": {
+    "candidate_minus_scaffold/facenet_cosine": {
+      "identities": 0,
+      "identity_deltas": {},
+      "excluded_identities": [
+        "1043",
+        "1306",
+        "2790",
+        "787"
+      ],
+      "mean_delta": null,
+      "ci95": null,
+      "p_exact": null,
+      "p_holm": 1.0
+    },
+    "candidate_minus_scaffold/hole_mae": {
+      "identities": 0,
+      "identity_deltas": {},
+      "excluded_identities": [
+        "1043",
+        "1306",
+        "2790",
+        "787"
+      ],
+      "mean_delta": null,
+      "ci95": null,
+      "p_exact": null,
+      "p_holm": 1.0
+    },
+    "candidate_minus_scaffold/structure_nme": {
+      "identities": 0,
+      "identity_deltas": {},
+      "excluded_identities": [
+        "1043",
+        "1306",
+        "2790",
+        "787"
+      ],
+      "mean_delta": null,
+      "ci95": null,
+      "p_exact": null,
+      "p_holm": 1.0
+    },
+    "candidate_minus_reference_context/facenet_cosine": {
+      "identities": 0,
+      "identity_deltas": {},
+      "excluded_identities": [
+        "1043",
+        "1306",
+        "2790",
+        "787"
+      ],
+      "mean_delta": null,
+      "ci95": null,
+      "p_exact": null,
+      "p_holm": 1.0
+    },
+    "candidate_minus_reference_context/hole_mae": {
+      "identities": 0,
+      "identity_deltas": {},
+      "excluded_identities": [
+        "1043",
+        "1306",
+        "2790",
+        "787"
+      ],
+      "mean_delta": null,
+      "ci95": null,
+      "p_exact": null,
+      "p_holm": 1.0
+    },
+    "candidate_minus_reference_context/structure_nme": {
+      "identities": 0,
+      "identity_deltas": {},
+      "excluded_identities": [
+        "1043",
+        "1306",
+        "2790",
+        "787"
+      ],
+      "mean_delta": null,
+      "ci95": null,
+      "p_exact": null,
+      "p_holm": 1.0
+    },
+    "candidate_minus_wrong_identity/facenet_cosine": {
+      "identities": 0,
+      "identity_deltas": {},
+      "excluded_identities": [
+        "1043",
+        "1306",
+        "2790",
+        "787"
+      ],
+      "mean_delta": null,
+      "ci95": null,
+      "p_exact": null,
+      "p_holm": 1.0
+    },
+    "candidate_minus_wrong_identity/hole_mae": {
+      "identities": 0,
+      "identity_deltas": {},
+      "excluded_identities": [
+        "1043",
+        "1306",
+        "2790",
+        "787"
+      ],
+      "mean_delta": null,
+      "ci95": null,
+      "p_exact": null,
+      "p_holm": 1.0
+    },
+    "candidate_minus_wrong_identity/structure_nme": {
+      "identities": 0,
+      "identity_deltas": {},
+      "excluded_identities": [
+        "1043",
+        "1306",
+        "2790",
+        "787"
+      ],
+      "mean_delta": null,
+      "ci95": null,
+      "p_exact": null,
+      "p_holm": 1.0
+    }
+  },
+  "progression_gate": {
+    "passed_numerical_gate": false,
+    "full_reconstructed_arm_coverage": false,
+    "coverage_failures": [
+      {
+        "key": "1306_removal_s17_candidate",
+        "reasons": [
+          "generation_failed",
+          "evaluation_failed",
+          "missing_metric:facenet_cosine",
+          "missing_metric:facenet_gallery_cosine",
+          "missing_metric:arcface_conditioning_cosine",
+          "missing_metric:arcface_conditioning_gallery_cosine",
+          "missing_metric:lpips",
+          "missing_metric:ssim_rgb",
+          "missing_metric:psnr_rgb",
+          "missing_metric:hole_psnr",
+          "missing_metric:hole_mae",
+          "missing_metric:visible_mae",
+          "missing_metric:niqe",
+          "missing_metric:brisque",
+          "missing_metric:structure_nme",
+          "output_detection:facenet",
+          "target_detection:facenet",
+          "gallery_coverage:facenet",
+          "gallery_detection:facenet",
+          "output_detection:arcface_conditioning",
+          "target_detection:arcface_conditioning",
+          "gallery_coverage:arcface_conditioning",
+          "gallery_detection:arcface_conditioning",
+          "structural_metric_failed",
+          "preservation_unverified"
+        ]
+      },
+      {
+        "key": "1306_removal_s29_candidate",
+        "reasons": [
+          "generation_failed",
+          "evaluation_failed",
+          "missing_metric:facenet_cosine",
+          "missing_metric:facenet_gallery_cosine",
+          "missing_metric:arcface_conditioning_cosine",
+          "missing_metric:arcface_conditioning_gallery_cosine",
+          "missing_metric:lpips",
+          "missing_metric:ssim_rgb",
+          "missing_metric:psnr_rgb",
+          "missing_metric:hole_psnr",
+          "missing_metric:hole_mae",
+          "missing_metric:visible_mae",
+          "missing_metric:niqe",
+          "missing_metric:brisque",
+          "missing_metric:structure_nme",
+          "output_detection:facenet",
+          "target_detection:facenet",
+          "gallery_coverage:facenet",
+          "gallery_detection:facenet",
+          "output_detection:arcface_conditioning",
+          "target_detection:arcface_conditioning",
+          "gallery_coverage:arcface_conditioning",
+          "gallery_detection:arcface_conditioning",
+          "structural_metric_failed",
+          "preservation_unverified"
+        ]
+      },
+      {
+        "key": "2790_removal_s17_candidate",
+        "reasons": [
+          "generation_failed",
+          "evaluation_failed",
+          "missing_metric:facenet_cosine",
+          "missing_metric:facenet_gallery_cosine",
+          "missing_metric:arcface_conditioning_cosine",
+          "missing_metric:arcface_conditioning_gallery_cosine",
+          "missing_metric:lpips",
+          "missing_metric:ssim_rgb",
+          "missing_metric:psnr_rgb",
+          "missing_metric:hole_psnr",
+          "missing_metric:hole_mae",
+          "missing_metric:visible_mae",
+          "missing_metric:niqe",
+          "missing_metric:brisque",
+          "missing_metric:structure_nme",
+          "output_detection:facenet",
+          "target_detection:facenet",
+          "gallery_coverage:facenet",
+          "gallery_detection:facenet",
+          "output_detection:arcface_conditioning",
+          "target_detection:arcface_conditioning",
+          "gallery_coverage:arcface_conditioning",
+          "gallery_detection:arcface_conditioning",
+          "structural_metric_failed",
+          "preservation_unverified"
+        ]
+      },
+      {
+        "key": "2790_removal_s29_candidate",
+        "reasons": [
+          "generation_failed",
+          "evaluation_failed",
+          "missing_metric:facenet_cosine",
+          "missing_metric:facenet_gallery_cosine",
+          "missing_metric:arcface_conditioning_cosine",
+          "missing_metric:arcface_conditioning_gallery_cosine",
+          "missing_metric:lpips",
+          "missing_metric:ssim_rgb",
+          "missing_metric:psnr_rgb",
+          "missing_metric:hole_psnr",
+          "missing_metric:hole_mae",
+          "missing_metric:visible_mae",
+          "missing_metric:niqe",
+          "missing_metric:brisque",
+          "missing_metric:structure_nme",
+          "output_detection:facenet",
+          "target_detection:facenet",
+          "gallery_coverage:facenet",
+          "gallery_detection:facenet",
+          "output_detection:arcface_conditioning",
+          "target_detection:arcface_conditioning",
+          "gallery_coverage:arcface_conditioning",
+          "gallery_detection:arcface_conditioning",
+          "structural_metric_failed",
+          "preservation_unverified"
+        ]
+      },
+      {
+        "key": "1043_removal_s17_candidate",
+        "reasons": [
+          "generation_failed",
+          "evaluation_failed",
+          "missing_metric:facenet_cosine",
+          "missing_metric:facenet_gallery_cosine",
+          "missing_metric:arcface_conditioning_cosine",
+          "missing_metric:arcface_conditioning_gallery_cosine",
+          "missing_metric:lpips",
+          "missing_metric:ssim_rgb",
+          "missing_metric:psnr_rgb",
+          "missing_metric:hole_psnr",
+          "missing_metric:hole_mae",
+          "missing_metric:visible_mae",
+          "missing_metric:niqe",
+          "missing_metric:brisque",
+          "missing_metric:structure_nme",
+          "output_detection:facenet",
+          "target_detection:facenet",
+          "gallery_coverage:facenet",
+          "gallery_detection:facenet",
+          "output_detection:arcface_conditioning",
+          "target_detection:arcface_conditioning",
+          "gallery_coverage:arcface_conditioning",
+          "gallery_detection:arcface_conditioning",
+          "structural_metric_failed",
+          "preservation_unverified"
+        ]
+      },
+      {
+        "key": "1043_removal_s29_candidate",
+        "reasons": [
+          "generation_failed",
+          "evaluation_failed",
+          "missing_metric:facenet_cosine",
+          "missing_metric:facenet_gallery_cosine",
+          "missing_metric:arcface_conditioning_cosine",
+          "missing_metric:arcface_conditioning_gallery_cosine",
+          "missing_metric:lpips",
+          "missing_metric:ssim_rgb",
+          "missing_metric:psnr_rgb",
+          "missing_metric:hole_psnr",
+          "missing_metric:hole_mae",
+          "missing_metric:visible_mae",
+          "missing_metric:niqe",
+          "missing_metric:brisque",
+          "missing_metric:structure_nme",
+          "output_detection:facenet",
+          "target_detection:facenet",
+          "gallery_coverage:facenet",
+          "gallery_detection:facenet",
+          "output_detection:arcface_conditioning",
+          "target_detection:arcface_conditioning",
+          "gallery_coverage:arcface_conditioning",
+          "gallery_detection:arcface_conditioning",
+          "structural_metric_failed",
+          "preservation_unverified"
+        ]
+      },
+      {
+        "key": "787_removal_s17_candidate",
+        "reasons": [
+          "generation_failed",
+          "evaluation_failed",
+          "missing_metric:facenet_cosine",
+          "missing_metric:facenet_gallery_cosine",
+          "missing_metric:arcface_conditioning_cosine",
+          "missing_metric:arcface_conditioning_gallery_cosine",
+          "missing_metric:lpips",
+          "missing_metric:ssim_rgb",
+          "missing_metric:psnr_rgb",
+          "missing_metric:hole_psnr",
+          "missing_metric:hole_mae",
+          "missing_metric:visible_mae",
+          "missing_metric:niqe",
+          "missing_metric:brisque",
+          "missing_metric:structure_nme",
+          "output_detection:facenet",
+          "target_detection:facenet",
+          "gallery_coverage:facenet",
+          "gallery_detection:facenet",
+          "output_detection:arcface_conditioning",
+          "target_detection:arcface_conditioning",
+          "gallery_coverage:arcface_conditioning",
+          "gallery_detection:arcface_conditioning",
+          "structural_metric_failed",
+          "preservation_unverified"
+        ]
+      },
+      {
+        "key": "787_removal_s29_candidate",
+        "reasons": [
+          "generation_failed",
+          "evaluation_failed",
+          "missing_metric:facenet_cosine",
+          "missing_metric:facenet_gallery_cosine",
+          "missing_metric:arcface_conditioning_cosine",
+          "missing_metric:arcface_conditioning_gallery_cosine",
+          "missing_metric:lpips",
+          "missing_metric:ssim_rgb",
+          "missing_metric:psnr_rgb",
+          "missing_metric:hole_psnr",
+          "missing_metric:hole_mae",
+          "missing_metric:visible_mae",
+          "missing_metric:niqe",
+          "missing_metric:brisque",
+          "missing_metric:structure_nme",
+          "output_detection:facenet",
+          "target_detection:facenet",
+          "gallery_coverage:facenet",
+          "gallery_detection:facenet",
+          "output_detection:arcface_conditioning",
+          "target_detection:arcface_conditioning",
+          "gallery_coverage:arcface_conditioning",
+          "gallery_detection:arcface_conditioning",
+          "structural_metric_failed",
+          "preservation_unverified"
+        ]
+      },
+      {
+        "key": "1306_removal_s17_single_reference",
+        "reasons": [
+          "generation_failed",
+          "evaluation_failed",
+          "missing_metric:facenet_cosine",
+          "missing_metric:facenet_gallery_cosine",
+          "missing_metric:arcface_conditioning_cosine",
+          "missing_metric:arcface_conditioning_gallery_cosine",
+          "missing_metric:lpips",
+          "missing_metric:ssim_rgb",
+          "missing_metric:psnr_rgb",
+          "missing_metric:hole_psnr",
+          "missing_metric:hole_mae",
+          "missing_metric:visible_mae",
+          "missing_metric:niqe",
+          "missing_metric:brisque",
+          "missing_metric:structure_nme",
+          "output_detection:facenet",
+          "target_detection:facenet",
+          "gallery_coverage:facenet",
+          "gallery_detection:facenet",
+          "output_detection:arcface_conditioning",
+          "target_detection:arcface_conditioning",
+          "gallery_coverage:arcface_conditioning",
+          "gallery_detection:arcface_conditioning",
+          "structural_metric_failed",
+          "preservation_unverified"
+        ]
+      },
+      {
+        "key": "1306_removal_s29_single_reference",
+        "reasons": [
+          "generation_failed",
+          "evaluation_failed",
+          "missing_metric:facenet_cosine",
+          "missing_metric:facenet_gallery_cosine",
+          "missing_metric:arcface_conditioning_cosine",
+          "missing_metric:arcface_conditioning_gallery_cosine",
+          "missing_metric:lpips",
+          "missing_metric:ssim_rgb",
+          "missing_metric:psnr_rgb",
+          "missing_metric:hole_psnr",
+          "missing_metric:hole_mae",
+          "missing_metric:visible_mae",
+          "missing_metric:niqe",
+          "missing_metric:brisque",
+          "missing_metric:structure_nme",
+          "output_detection:facenet",
+          "target_detection:facenet",
+          "gallery_coverage:facenet",
+          "gallery_detection:facenet",
+          "output_detection:arcface_conditioning",
+          "target_detection:arcface_conditioning",
+          "gallery_coverage:arcface_conditioning",
+          "gallery_detection:arcface_conditioning",
+          "structural_metric_failed",
+          "preservation_unverified"
+        ]
+      },
+      {
+        "key": "2790_removal_s17_single_reference",
+        "reasons": [
+          "generation_failed",
+          "evaluation_failed",
+          "missing_metric:facenet_cosine",
+          "missing_metric:facenet_gallery_cosine",
+          "missing_metric:arcface_conditioning_cosine",
+          "missing_metric:arcface_conditioning_gallery_cosine",
+          "missing_metric:lpips",
+          "missing_metric:ssim_rgb",
+          "missing_metric:psnr_rgb",
+          "missing_metric:hole_psnr",
+          "missing_metric:hole_mae",
+          "missing_metric:visible_mae",
+          "missing_metric:niqe",
+          "missing_metric:brisque",
+          "missing_metric:structure_nme",
+          "output_detection:facenet",
+          "target_detection:facenet",
+          "gallery_coverage:facenet",
+          "gallery_detection:facenet",
+          "output_detection:arcface_conditioning",
+          "target_detection:arcface_conditioning",
+          "gallery_coverage:arcface_conditioning",
+          "gallery_detection:arcface_conditioning",
+          "structural_metric_failed",
+          "preservation_unverified"
+        ]
+      },
+      {
+        "key": "2790_removal_s29_single_reference",
+        "reasons": [
+          "generation_failed",
+          "evaluation_failed",
+          "missing_metric:facenet_cosine",
+          "missing_metric:facenet_gallery_cosine",
+          "missing_metric:arcface_conditioning_cosine",
+          "missing_metric:arcface_conditioning_gallery_cosine",
+          "missing_metric:lpips",
+          "missing_metric:ssim_rgb",
+          "missing_metric:psnr_rgb",
+          "missing_metric:hole_psnr",
+          "missing_metric:hole_mae",
+          "missing_metric:visible_mae",
+          "missing_metric:niqe",
+          "missing_metric:brisque",
+          "missing_metric:structure_nme",
+          "output_detection:facenet",
+          "target_detection:facenet",
+          "gallery_coverage:facenet",
+          "gallery_detection:facenet",
+          "output_detection:arcface_conditioning",
+          "target_detection:arcface_conditioning",
+          "gallery_coverage:arcface_conditioning",
+          "gallery_detection:arcface_conditioning",
+          "structural_metric_failed",
+          "preservation_unverified"
+        ]
+      },
+      {
+        "key": "1043_removal_s17_single_reference",
+        "reasons": [
+          "generation_failed",
+          "evaluation_failed",
+          "missing_metric:facenet_cosine",
+          "missing_metric:facenet_gallery_cosine",
+          "missing_metric:arcface_conditioning_cosine",
+          "missing_metric:arcface_conditioning_gallery_cosine",
+          "missing_metric:lpips",
+          "missing_metric:ssim_rgb",
+          "missing_metric:psnr_rgb",
+          "missing_metric:hole_psnr",
+          "missing_metric:hole_mae",
+          "missing_metric:visible_mae",
+          "missing_metric:niqe",
+          "missing_metric:brisque",
+          "missing_metric:structure_nme",
+          "output_detection:facenet",
+          "target_detection:facenet",
+          "gallery_coverage:facenet",
+          "gallery_detection:facenet",
+          "output_detection:arcface_conditioning",
+          "target_detection:arcface_conditioning",
+          "gallery_coverage:arcface_conditioning",
+          "gallery_detection:arcface_conditioning",
+          "structural_metric_failed",
+          "preservation_unverified"
+        ]
+      },
+      {
+        "key": "1043_removal_s29_single_reference",
+        "reasons": [
+          "generation_failed",
+          "evaluation_failed",
+          "missing_metric:facenet_cosine",
+          "missing_metric:facenet_gallery_cosine",
+          "missing_metric:arcface_conditioning_cosine",
+          "missing_metric:arcface_conditioning_gallery_cosine",
+          "missing_metric:lpips",
+          "missing_metric:ssim_rgb",
+          "missing_metric:psnr_rgb",
+          "missing_metric:hole_psnr",
+          "missing_metric:hole_mae",
+          "missing_metric:visible_mae",
+          "missing_metric:niqe",
+          "missing_metric:brisque",
+          "missing_metric:structure_nme",
+          "output_detection:facenet",
+          "target_detection:facenet",
+          "gallery_coverage:facenet",
+          "gallery_detection:facenet",
+          "output_detection:arcface_conditioning",
+          "target_detection:arcface_conditioning",
+          "gallery_coverage:arcface_conditioning",
+          "gallery_detection:arcface_conditioning",
+          "structural_metric_failed",
+          "preservation_unverified"
+        ]
+      },
+      {
+        "key": "787_removal_s17_single_reference",
+        "reasons": [
+          "generation_failed",
+          "evaluation_failed",
+          "missing_metric:facenet_cosine",
+          "missing_metric:facenet_gallery_cosine",
+          "missing_metric:arcface_conditioning_cosine",
+          "missing_metric:arcface_conditioning_gallery_cosine",
+          "missing_metric:lpips",
+          "missing_metric:ssim_rgb",
+          "missing_metric:psnr_rgb",
+          "missing_metric:hole_psnr",
+          "missing_metric:hole_mae",
+          "missing_metric:visible_mae",
+          "missing_metric:niqe",
+          "missing_metric:brisque",
+          "missing_metric:structure_nme",
+          "output_detection:facenet",
+          "target_detection:facenet",
+          "gallery_coverage:facenet",
+          "gallery_detection:facenet",
+          "output_detection:arcface_conditioning",
+          "target_detection:arcface_conditioning",
+          "gallery_coverage:arcface_conditioning",
+          "gallery_detection:arcface_conditioning",
+          "structural_metric_failed",
+          "preservation_unverified"
+        ]
+      },
+      {
+        "key": "787_removal_s29_single_reference",
+        "reasons": [
+          "generation_failed",
+          "evaluation_failed",
+          "missing_metric:facenet_cosine",
+          "missing_metric:facenet_gallery_cosine",
+          "missing_metric:arcface_conditioning_cosine",
+          "missing_metric:arcface_conditioning_gallery_cosine",
+          "missing_metric:lpips",
+          "missing_metric:ssim_rgb",
+          "missing_metric:psnr_rgb",
+          "missing_metric:hole_psnr",
+          "missing_metric:hole_mae",
+          "missing_metric:visible_mae",
+          "missing_metric:niqe",
+          "missing_metric:brisque",
+          "missing_metric:structure_nme",
+          "output_detection:facenet",
+          "target_detection:facenet",
+          "gallery_coverage:facenet",
+          "gallery_detection:facenet",
+          "output_detection:arcface_conditioning",
+          "target_detection:arcface_conditioning",
+          "gallery_coverage:arcface_conditioning",
+          "gallery_detection:arcface_conditioning",
+          "structural_metric_failed",
+          "preservation_unverified"
+        ]
+      },
+      {
+        "key": "1306_removal_s17_wrong_identity",
+        "reasons": [
+          "generation_failed",
+          "evaluation_failed",
+          "missing_metric:facenet_cosine",
+          "missing_metric:facenet_gallery_cosine",
+          "missing_metric:arcface_conditioning_cosine",
+          "missing_metric:arcface_conditioning_gallery_cosine",
+          "missing_metric:lpips",
+          "missing_metric:ssim_rgb",
+          "missing_metric:psnr_rgb",
+          "missing_metric:hole_psnr",
+          "missing_metric:hole_mae",
+          "missing_metric:visible_mae",
+          "missing_metric:niqe",
+          "missing_metric:brisque",
+          "missing_metric:structure_nme",
+          "output_detection:facenet",
+          "target_detection:facenet",
+          "gallery_coverage:facenet",
+          "gallery_detection:facenet",
+          "output_detection:arcface_conditioning",
+          "target_detection:arcface_conditioning",
+          "gallery_coverage:arcface_conditioning",
+          "gallery_detection:arcface_conditioning",
+          "structural_metric_failed",
+          "preservation_unverified"
+        ]
+      },
+      {
+        "key": "1306_removal_s29_wrong_identity",
+        "reasons": [
+          "generation_failed",
+          "evaluation_failed",
+          "missing_metric:facenet_cosine",
+          "missing_metric:facenet_gallery_cosine",
+          "missing_metric:arcface_conditioning_cosine",
+          "missing_metric:arcface_conditioning_gallery_cosine",
+          "missing_metric:lpips",
+          "missing_metric:ssim_rgb",
+          "missing_metric:psnr_rgb",
+          "missing_metric:hole_psnr",
+          "missing_metric:hole_mae",
+          "missing_metric:visible_mae",
+          "missing_metric:niqe",
+          "missing_metric:brisque",
+          "missing_metric:structure_nme",
+          "output_detection:facenet",
+          "target_detection:facenet",
+          "gallery_coverage:facenet",
+          "gallery_detection:facenet",
+          "output_detection:arcface_conditioning",
+          "target_detection:arcface_conditioning",
+          "gallery_coverage:arcface_conditioning",
+          "gallery_detection:arcface_conditioning",
+          "structural_metric_failed",
+          "preservation_unverified"
+        ]
+      },
+      {
+        "key": "2790_removal_s17_wrong_identity",
+        "reasons": [
+          "generation_failed",
+          "evaluation_failed",
+          "missing_metric:facenet_cosine",
+          "missing_metric:facenet_gallery_cosine",
+          "missing_metric:arcface_conditioning_cosine",
+          "missing_metric:arcface_conditioning_gallery_cosine",
+          "missing_metric:lpips",
+          "missing_metric:ssim_rgb",
+          "missing_metric:psnr_rgb",
+          "missing_metric:hole_psnr",
+          "missing_metric:hole_mae",
+          "missing_metric:visible_mae",
+          "missing_metric:niqe",
+          "missing_metric:brisque",
+          "missing_metric:structure_nme",
+          "output_detection:facenet",
+          "target_detection:facenet",
+          "gallery_coverage:facenet",
+          "gallery_detection:facenet",
+          "output_detection:arcface_conditioning",
+          "target_detection:arcface_conditioning",
+          "gallery_coverage:arcface_conditioning",
+          "gallery_detection:arcface_conditioning",
+          "structural_metric_failed",
+          "preservation_unverified"
+        ]
+      },
+      {
+        "key": "2790_removal_s29_wrong_identity",
+        "reasons": [
+          "generation_failed",
+          "evaluation_failed",
+          "missing_metric:facenet_cosine",
+          "missing_metric:facenet_gallery_cosine",
+          "missing_metric:arcface_conditioning_cosine",
+          "missing_metric:arcface_conditioning_gallery_cosine",
+          "missing_metric:lpips",
+          "missing_metric:ssim_rgb",
+          "missing_metric:psnr_rgb",
+          "missing_metric:hole_psnr",
+          "missing_metric:hole_mae",
+          "missing_metric:visible_mae",
+          "missing_metric:niqe",
+          "missing_metric:brisque",
+          "missing_metric:structure_nme",
+          "output_detection:facenet",
+          "target_detection:facenet",
+          "gallery_coverage:facenet",
+          "gallery_detection:facenet",
+          "output_detection:arcface_conditioning",
+          "target_detection:arcface_conditioning",
+          "gallery_coverage:arcface_conditioning",
+          "gallery_detection:arcface_conditioning",
+          "structural_metric_failed",
+          "preservation_unverified"
+        ]
+      },
+      {
+        "key": "1043_removal_s17_wrong_identity",
+        "reasons": [
+          "generation_failed",
+          "evaluation_failed",
+          "missing_metric:facenet_cosine",
+          "missing_metric:facenet_gallery_cosine",
+          "missing_metric:arcface_conditioning_cosine",
+          "missing_metric:arcface_conditioning_gallery_cosine",
+          "missing_metric:lpips",
+          "missing_metric:ssim_rgb",
+          "missing_metric:psnr_rgb",
+          "missing_metric:hole_psnr",
+          "missing_metric:hole_mae",
+          "missing_metric:visible_mae",
+          "missing_metric:niqe",
+          "missing_metric:brisque",
+          "missing_metric:structure_nme",
+          "output_detection:facenet",
+          "target_detection:facenet",
+          "gallery_coverage:facenet",
+          "gallery_detection:facenet",
+          "output_detection:arcface_conditioning",
+          "target_detection:arcface_conditioning",
+          "gallery_coverage:arcface_conditioning",
+          "gallery_detection:arcface_conditioning",
+          "structural_metric_failed",
+          "preservation_unverified"
+        ]
+      },
+      {
+        "key": "1043_removal_s29_wrong_identity",
+        "reasons": [
+          "generation_failed",
+          "evaluation_failed",
+          "missing_metric:facenet_cosine",
+          "missing_metric:facenet_gallery_cosine",
+          "missing_metric:arcface_conditioning_cosine",
+          "missing_metric:arcface_conditioning_gallery_cosine",
+          "missing_metric:lpips",
+          "missing_metric:ssim_rgb",
+          "missing_metric:psnr_rgb",
+          "missing_metric:hole_psnr",
+          "missing_metric:hole_mae",
+          "missing_metric:visible_mae",
+          "missing_metric:niqe",
+          "missing_metric:brisque",
+          "missing_metric:structure_nme",
+          "output_detection:facenet",
+          "target_detection:facenet",
+          "gallery_coverage:facenet",
+          "gallery_detection:facenet",
+          "output_detection:arcface_conditioning",
+          "target_detection:arcface_conditioning",
+          "gallery_coverage:arcface_conditioning",
+          "gallery_detection:arcface_conditioning",
+          "structural_metric_failed",
+          "preservation_unverified"
+        ]
+      },
+      {
+        "key": "787_removal_s17_wrong_identity",
+        "reasons": [
+          "generation_failed",
+          "evaluation_failed",
+          "missing_metric:facenet_cosine",
+          "missing_metric:facenet_gallery_cosine",
+          "missing_metric:arcface_conditioning_cosine",
+          "missing_metric:arcface_conditioning_gallery_cosine",
+          "missing_metric:lpips",
+          "missing_metric:ssim_rgb",
+          "missing_metric:psnr_rgb",
+          "missing_metric:hole_psnr",
+          "missing_metric:hole_mae",
+          "missing_metric:visible_mae",
+          "missing_metric:niqe",
+          "missing_metric:brisque",
+          "missing_metric:structure_nme",
+          "output_detection:facenet",
+          "target_detection:facenet",
+          "gallery_coverage:facenet",
+          "gallery_detection:facenet",
+          "output_detection:arcface_conditioning",
+          "target_detection:arcface_conditioning",
+          "gallery_coverage:arcface_conditioning",
+          "gallery_detection:arcface_conditioning",
+          "structural_metric_failed",
+          "preservation_unverified"
+        ]
+      },
+      {
+        "key": "787_removal_s29_wrong_identity",
+        "reasons": [
+          "generation_failed",
+          "evaluation_failed",
+          "missing_metric:facenet_cosine",
+          "missing_metric:facenet_gallery_cosine",
+          "missing_metric:arcface_conditioning_cosine",
+          "missing_metric:arcface_conditioning_gallery_cosine",
+          "missing_metric:lpips",
+          "missing_metric:ssim_rgb",
+          "missing_metric:psnr_rgb",
+          "missing_metric:hole_psnr",
+          "missing_metric:hole_mae",
+          "missing_metric:visible_mae",
+          "missing_metric:niqe",
+          "missing_metric:brisque",
+          "missing_metric:structure_nme",
+          "output_detection:facenet",
+          "target_detection:facenet",
+          "gallery_coverage:facenet",
+          "gallery_detection:facenet",
+          "output_detection:arcface_conditioning",
+          "target_detection:arcface_conditioning",
+          "gallery_coverage:arcface_conditioning",
+          "gallery_detection:arcface_conditioning",
+          "structural_metric_failed",
+          "preservation_unverified"
+        ]
+      }
+    ],
+    "checks": [
+      {
+        "seed": 17,
+        "control": "scaffold",
+        "candidate_control_means": {
+          "facenet_cosine": [
+            null,
+            null
+          ],
+          "facenet_gallery_cosine": [
+            null,
+            null
+          ],
+          "hole_mae": [
+            null,
+            null
+          ],
+          "lpips": [
+            null,
+            null
+          ],
+          "ssim_rgb": [
+            null,
+            null
+          ],
+          "psnr_rgb": [
+            null,
+            null
+          ],
+          "structure_nme": [
+            null,
+            null
+          ]
+        },
+        "checks": {
+          "full_paired_support": false
+        },
+        "passed": false
+      },
+      {
+        "seed": 17,
+        "control": "reference_context",
+        "candidate_control_means": {
+          "facenet_cosine": [
+            null,
+            null
+          ],
+          "facenet_gallery_cosine": [
+            null,
+            null
+          ],
+          "hole_mae": [
+            null,
+            null
+          ],
+          "lpips": [
+            null,
+            null
+          ],
+          "ssim_rgb": [
+            null,
+            null
+          ],
+          "psnr_rgb": [
+            null,
+            null
+          ],
+          "structure_nme": [
+            null,
+            null
+          ]
+        },
+        "checks": {
+          "full_paired_support": false
+        },
+        "passed": false
+      },
+      {
+        "seed": 17,
+        "control": "scaffold",
+        "check": "at_least_3_of_4_improve_identity_and_structure",
+        "improved_identities": [],
+        "passed": false
+      },
+      {
+        "seed": 29,
+        "control": "scaffold",
+        "candidate_control_means": {
+          "facenet_cosine": [
+            null,
+            null
+          ],
+          "facenet_gallery_cosine": [
+            null,
+            null
+          ],
+          "hole_mae": [
+            null,
+            null
+          ],
+          "lpips": [
+            null,
+            null
+          ],
+          "ssim_rgb": [
+            null,
+            null
+          ],
+          "psnr_rgb": [
+            null,
+            null
+          ],
+          "structure_nme": [
+            null,
+            null
+          ]
+        },
+        "checks": {
+          "full_paired_support": false
+        },
+        "passed": false
+      },
+      {
+        "seed": 29,
+        "control": "reference_context",
+        "candidate_control_means": {
+          "facenet_cosine": [
+            null,
+            null
+          ],
+          "facenet_gallery_cosine": [
+            null,
+            null
+          ],
+          "hole_mae": [
+            null,
+            null
+          ],
+          "lpips": [
+            null,
+            null
+          ],
+          "ssim_rgb": [
+            null,
+            null
+          ],
+          "psnr_rgb": [
+            null,
+            null
+          ],
+          "structure_nme": [
+            null,
+            null
+          ]
+        },
+        "checks": {
+          "full_paired_support": false
+        },
+        "passed": false
+      },
+      {
+        "seed": 29,
+        "control": "scaffold",
+        "check": "at_least_3_of_4_improve_identity_and_structure",
+        "improved_identities": [],
+        "passed": false
+      },
+      {
+        "seed": 17,
+        "control": "single_reference",
+        "candidate_control_means": {
+          "facenet_cosine": [
+            null,
+            null
+          ],
+          "hole_mae": [
+            null,
+            null
+          ],
+          "lpips": [
+            null,
+            null
+          ]
+        },
+        "checks": {
+          "full_paired_support": false
+        },
+        "passed": false
+      },
+      {
+        "seed": 17,
+        "control": "wrong_identity",
+        "candidate_control_means": {
+          "facenet_cosine": [
+            null,
+            null
+          ],
+          "hole_mae": [
+            null,
+            null
+          ],
+          "lpips": [
+            null,
+            null
+          ]
+        },
+        "checks": {
+          "full_paired_support": false
+        },
+        "passed": false
+      },
+      {
+        "seed": 29,
+        "control": "single_reference",
+        "candidate_control_means": {
+          "facenet_cosine": [
+            null,
+            null
+          ],
+          "hole_mae": [
+            null,
+            null
+          ],
+          "lpips": [
+            null,
+            null
+          ]
+        },
+        "checks": {
+          "full_paired_support": false
+        },
+        "passed": false
+      },
+      {
+        "seed": 29,
+        "control": "wrong_identity",
+        "candidate_control_means": {
+          "facenet_cosine": [
+            null,
+            null
+          ],
+          "hole_mae": [
+            null,
+            null
+          ],
+          "lpips": [
+            null,
+            null
+          ]
+        },
+        "checks": {
+          "full_paired_support": false
+        },
+        "passed": false
+      }
+    ],
+    "visual_review_status": "pending",
+    "visual_review_required": true,
+    "progression_authorized": false,
+    "interpretation": "A numerical pass needs separate visual review and prospective independent confirmation; it does not establish novelty."
+  },
+  "failures": [
+    {
+      "key": "1306_removal_s17_candidate",
+      "stage": "generation",
+      "status": "failed"
+    },
+    {
+      "key": "1306_removal_s17_candidate",
+      "stage": "evaluation",
+      "status": "failed"
+    },
+    {
+      "key": "1306_removal_s17_candidate",
+      "stage": "structural_metric",
+      "status": "not_evaluated"
+    },
+    {
+      "key": "1306_removal_s17_single_reference",
+      "stage": "generation",
+      "status": "failed"
+    },
+    {
+      "key": "1306_removal_s17_single_reference",
+      "stage": "evaluation",
+      "status": "failed"
+    },
+    {
+      "key": "1306_removal_s17_single_reference",
+      "stage": "structural_metric",
+      "status": "not_evaluated"
+    },
+    {
+      "key": "1306_removal_s17_wrong_identity",
+      "stage": "generation",
+      "status": "failed"
+    },
+    {
+      "key": "1306_removal_s17_wrong_identity",
+      "stage": "evaluation",
+      "status": "failed"
+    },
+    {
+      "key": "1306_removal_s17_wrong_identity",
+      "stage": "structural_metric",
+      "status": "not_evaluated"
+    },
+    {
+      "key": "1306_removal_s17_observed",
+      "stage": "output",
+      "detector": "arcface_conditioning",
+      "face_count": 0,
+      "status": "no_face"
+    },
+    {
+      "key": "1306_removal_s17_observed",
+      "stage": "structural_metric",
+      "status": "failed"
+    },
+    {
+      "key": "1306_removal_s17_observed",
+      "stage": "metric",
+      "metric": "arcface_conditioning_cosine",
+      "status": "missing_or_nonfinite"
+    },
+    {
+      "key": "1306_removal_s17_observed",
+      "stage": "metric",
+      "metric": "arcface_conditioning_gallery_cosine",
+      "status": "missing_or_nonfinite"
+    },
+    {
+      "key": "1306_removal_s17_observed",
+      "stage": "metric",
+      "metric": "structure_nme",
+      "status": "missing_or_nonfinite"
+    },
+    {
+      "key": "1306_removal_s29_candidate",
+      "stage": "generation",
+      "status": "failed"
+    },
+    {
+      "key": "1306_removal_s29_candidate",
+      "stage": "evaluation",
+      "status": "failed"
+    },
+    {
+      "key": "1306_removal_s29_candidate",
+      "stage": "structural_metric",
+      "status": "not_evaluated"
+    },
+    {
+      "key": "1306_removal_s29_single_reference",
+      "stage": "generation",
+      "status": "failed"
+    },
+    {
+      "key": "1306_removal_s29_single_reference",
+      "stage": "evaluation",
+      "status": "failed"
+    },
+    {
+      "key": "1306_removal_s29_single_reference",
+      "stage": "structural_metric",
+      "status": "not_evaluated"
+    },
+    {
+      "key": "1306_removal_s29_wrong_identity",
+      "stage": "generation",
+      "status": "failed"
+    },
+    {
+      "key": "1306_removal_s29_wrong_identity",
+      "stage": "evaluation",
+      "status": "failed"
+    },
+    {
+      "key": "1306_removal_s29_wrong_identity",
+      "stage": "structural_metric",
+      "status": "not_evaluated"
+    },
+    {
+      "key": "1306_removal_s29_observed",
+      "stage": "output",
+      "detector": "arcface_conditioning",
+      "face_count": 0,
+      "status": "no_face"
+    },
+    {
+      "key": "1306_removal_s29_observed",
+      "stage": "structural_metric",
+      "status": "failed"
+    },
+    {
+      "key": "1306_removal_s29_observed",
+      "stage": "metric",
+      "metric": "arcface_conditioning_cosine",
+      "status": "missing_or_nonfinite"
+    },
+    {
+      "key": "1306_removal_s29_observed",
+      "stage": "metric",
+      "metric": "arcface_conditioning_gallery_cosine",
+      "status": "missing_or_nonfinite"
+    },
+    {
+      "key": "1306_removal_s29_observed",
+      "stage": "metric",
+      "metric": "structure_nme",
+      "status": "missing_or_nonfinite"
+    },
+    {
+      "key": "2790_removal_s17_candidate",
+      "stage": "generation",
+      "status": "failed"
+    },
+    {
+      "key": "2790_removal_s17_candidate",
+      "stage": "evaluation",
+      "status": "failed"
+    },
+    {
+      "key": "2790_removal_s17_candidate",
+      "stage": "structural_metric",
+      "status": "not_evaluated"
+    },
+    {
+      "key": "2790_removal_s17_single_reference",
+      "stage": "generation",
+      "status": "failed"
+    },
+    {
+      "key": "2790_removal_s17_single_reference",
+      "stage": "evaluation",
+      "status": "failed"
+    },
+    {
+      "key": "2790_removal_s17_single_reference",
+      "stage": "structural_metric",
+      "status": "not_evaluated"
+    },
+    {
+      "key": "2790_removal_s17_wrong_identity",
+      "stage": "generation",
+      "status": "failed"
+    },
+    {
+      "key": "2790_removal_s17_wrong_identity",
+      "stage": "evaluation",
+      "status": "failed"
+    },
+    {
+      "key": "2790_removal_s17_wrong_identity",
+      "stage": "structural_metric",
+      "status": "not_evaluated"
+    },
+    {
+      "key": "2790_removal_s29_candidate",
+      "stage": "generation",
+      "status": "failed"
+    },
+    {
+      "key": "2790_removal_s29_candidate",
+      "stage": "evaluation",
+      "status": "failed"
+    },
+    {
+      "key": "2790_removal_s29_candidate",
+      "stage": "structural_metric",
+      "status": "not_evaluated"
+    },
+    {
+      "key": "2790_removal_s29_single_reference",
+      "stage": "generation",
+      "status": "failed"
+    },
+    {
+      "key": "2790_removal_s29_single_reference",
+      "stage": "evaluation",
+      "status": "failed"
+    },
+    {
+      "key": "2790_removal_s29_single_reference",
+      "stage": "structural_metric",
+      "status": "not_evaluated"
+    },
+    {
+      "key": "2790_removal_s29_wrong_identity",
+      "stage": "generation",
+      "status": "failed"
+    },
+    {
+      "key": "2790_removal_s29_wrong_identity",
+      "stage": "evaluation",
+      "status": "failed"
+    },
+    {
+      "key": "2790_removal_s29_wrong_identity",
+      "stage": "structural_metric",
+      "status": "not_evaluated"
+    },
+    {
+      "key": "1043_removal_s17_candidate",
+      "stage": "generation",
+      "status": "failed"
+    },
+    {
+      "key": "1043_removal_s17_candidate",
+      "stage": "evaluation",
+      "status": "failed"
+    },
+    {
+      "key": "1043_removal_s17_candidate",
+      "stage": "structural_metric",
+      "status": "not_evaluated"
+    },
+    {
+      "key": "1043_removal_s17_single_reference",
+      "stage": "generation",
+      "status": "failed"
+    },
+    {
+      "key": "1043_removal_s17_single_reference",
+      "stage": "evaluation",
+      "status": "failed"
+    },
+    {
+      "key": "1043_removal_s17_single_reference",
+      "stage": "structural_metric",
+      "status": "not_evaluated"
+    },
+    {
+      "key": "1043_removal_s17_wrong_identity",
+      "stage": "generation",
+      "status": "failed"
+    },
+    {
+      "key": "1043_removal_s17_wrong_identity",
+      "stage": "evaluation",
+      "status": "failed"
+    },
+    {
+      "key": "1043_removal_s17_wrong_identity",
+      "stage": "structural_metric",
+      "status": "not_evaluated"
+    },
+    {
+      "key": "1043_removal_s29_candidate",
+      "stage": "generation",
+      "status": "failed"
+    },
+    {
+      "key": "1043_removal_s29_candidate",
+      "stage": "evaluation",
+      "status": "failed"
+    },
+    {
+      "key": "1043_removal_s29_candidate",
+      "stage": "structural_metric",
+      "status": "not_evaluated"
+    },
+    {
+      "key": "1043_removal_s29_single_reference",
+      "stage": "generation",
+      "status": "failed"
+    },
+    {
+      "key": "1043_removal_s29_single_reference",
+      "stage": "evaluation",
+      "status": "failed"
+    },
+    {
+      "key": "1043_removal_s29_single_reference",
+      "stage": "structural_metric",
+      "status": "not_evaluated"
+    },
+    {
+      "key": "1043_removal_s29_wrong_identity",
+      "stage": "generation",
+      "status": "failed"
+    },
+    {
+      "key": "1043_removal_s29_wrong_identity",
+      "stage": "evaluation",
+      "status": "failed"
+    },
+    {
+      "key": "1043_removal_s29_wrong_identity",
+      "stage": "structural_metric",
+      "status": "not_evaluated"
+    },
+    {
+      "key": "787_removal_s17_candidate",
+      "stage": "generation",
+      "status": "failed"
+    },
+    {
+      "key": "787_removal_s17_candidate",
+      "stage": "evaluation",
+      "status": "failed"
+    },
+    {
+      "key": "787_removal_s17_candidate",
+      "stage": "structural_metric",
+      "status": "not_evaluated"
+    },
+    {
+      "key": "787_removal_s17_single_reference",
+      "stage": "generation",
+      "status": "failed"
+    },
+    {
+      "key": "787_removal_s17_single_reference",
+      "stage": "evaluation",
+      "status": "failed"
+    },
+    {
+      "key": "787_removal_s17_single_reference",
+      "stage": "structural_metric",
+      "status": "not_evaluated"
+    },
+    {
+      "key": "787_removal_s17_wrong_identity",
+      "stage": "generation",
+      "status": "failed"
+    },
+    {
+      "key": "787_removal_s17_wrong_identity",
+      "stage": "evaluation",
+      "status": "failed"
+    },
+    {
+      "key": "787_removal_s17_wrong_identity",
+      "stage": "structural_metric",
+      "status": "not_evaluated"
+    },
+    {
+      "key": "787_removal_s17_observed",
+      "stage": "output",
+      "detector": "facenet",
+      "face_count": 0,
+      "status": "no_face"
+    },
+    {
+      "key": "787_removal_s17_observed",
+      "stage": "output",
+      "detector": "arcface_conditioning",
+      "face_count": 0,
+      "status": "no_face"
+    },
+    {
+      "key": "787_removal_s17_observed",
+      "stage": "structural_metric",
+      "status": "failed"
+    },
+    {
+      "key": "787_removal_s17_observed",
+      "stage": "metric",
+      "metric": "facenet_cosine",
+      "status": "missing_or_nonfinite"
+    },
+    {
+      "key": "787_removal_s17_observed",
+      "stage": "metric",
+      "metric": "facenet_gallery_cosine",
+      "status": "missing_or_nonfinite"
+    },
+    {
+      "key": "787_removal_s17_observed",
+      "stage": "metric",
+      "metric": "arcface_conditioning_cosine",
+      "status": "missing_or_nonfinite"
+    },
+    {
+      "key": "787_removal_s17_observed",
+      "stage": "metric",
+      "metric": "arcface_conditioning_gallery_cosine",
+      "status": "missing_or_nonfinite"
+    },
+    {
+      "key": "787_removal_s17_observed",
+      "stage": "metric",
+      "metric": "structure_nme",
+      "status": "missing_or_nonfinite"
+    },
+    {
+      "key": "787_removal_s29_candidate",
+      "stage": "generation",
+      "status": "failed"
+    },
+    {
+      "key": "787_removal_s29_candidate",
+      "stage": "evaluation",
+      "status": "failed"
+    },
+    {
+      "key": "787_removal_s29_candidate",
+      "stage": "structural_metric",
+      "status": "not_evaluated"
+    },
+    {
+      "key": "787_removal_s29_single_reference",
+      "stage": "generation",
+      "status": "failed"
+    },
+    {
+      "key": "787_removal_s29_single_reference",
+      "stage": "evaluation",
+      "status": "failed"
+    },
+    {
+      "key": "787_removal_s29_single_reference",
+      "stage": "structural_metric",
+      "status": "not_evaluated"
+    },
+    {
+      "key": "787_removal_s29_wrong_identity",
+      "stage": "generation",
+      "status": "failed"
+    },
+    {
+      "key": "787_removal_s29_wrong_identity",
+      "stage": "evaluation",
+      "status": "failed"
+    },
+    {
+      "key": "787_removal_s29_wrong_identity",
+      "stage": "structural_metric",
+      "status": "not_evaluated"
+    },
+    {
+      "key": "787_removal_s29_observed",
+      "stage": "output",
+      "detector": "facenet",
+      "face_count": 0,
+      "status": "no_face"
+    },
+    {
+      "key": "787_removal_s29_observed",
+      "stage": "output",
+      "detector": "arcface_conditioning",
+      "face_count": 0,
+      "status": "no_face"
+    },
+    {
+      "key": "787_removal_s29_observed",
+      "stage": "structural_metric",
+      "status": "failed"
+    },
+    {
+      "key": "787_removal_s29_observed",
+      "stage": "metric",
+      "metric": "facenet_cosine",
+      "status": "missing_or_nonfinite"
+    },
+    {
+      "key": "787_removal_s29_observed",
+      "stage": "metric",
+      "metric": "facenet_gallery_cosine",
+      "status": "missing_or_nonfinite"
+    },
+    {
+      "key": "787_removal_s29_observed",
+      "stage": "metric",
+      "metric": "arcface_conditioning_cosine",
+      "status": "missing_or_nonfinite"
+    },
+    {
+      "key": "787_removal_s29_observed",
+      "stage": "metric",
+      "metric": "arcface_conditioning_gallery_cosine",
+      "status": "missing_or_nonfinite"
+    },
+    {
+      "key": "787_removal_s29_observed",
+      "stage": "metric",
+      "metric": "structure_nme",
+      "status": "missing_or_nonfinite"
+    }
+  ],
+  "protocol_sha256": "723a402269f453c80ea146758560084752d910d98f6bc19976360067a65fa8f8",
+  "generation_signature_sha256": "a3caeea6db1cfd4c4007c90960126fe957bdaa6cc6dab6e20df62589b3b757b5",
+  "evaluation_sha256": "0b13805cede1afe90a4aec768834ef7bf621e22cd8bf3cf7c0168a0d7e5d137e",
+  "reporter_sha256": "9f95753a016a195fd5b51457673b22b9fabf1fa9aa6c2e06ded2f9402be38320",
+  "statistics_sha256": "e15d8427b6015093d5de74d61a819287cb442dd8c23ed1f59a4d166778863be6",
+  "statistical_unit": "Identity; both seed scores required and averaged; deterministic repeated controls do not add sample size",
+  "structural_metric_limit": "Separate 106-point learned proxy, same vendor/detector family; no anatomical-truth claim",
+  "visual_review_status": "pending",
+  "final_test_used": false,
+  "novelty_established": false
+}

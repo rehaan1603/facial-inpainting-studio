@@ -1,4 +1,10 @@
-# Novelty gap audit — updated 27 September 2026
+# Novelty gap audit — updated 29 September 2026
+
+## 29 September structural screen
+
+The completed [history audit](MECHANISM_HISTORY_AUDIT_20260928.md) separates all prior mechanisms, controls and failures. A targeted [structural prior-art review](STRUCTURAL_PRIOR_ART_20260928.md) adds particularly close overlap with visible-region shape fitting and landmark warps from BMVC2004, r-FACE component-shape transfer, 3DFaceFill explicit geometry and ReSem-Face multi-reference semantics. No broad structure-transfer claim is available.
+
+The prospective structure-only coordinate intervention completed24 attempts on four previously observed identities/two seeds; all were rejected for negative Jacobians before producing an image. Forty prior control slots were evaluated and eight sheets reviewed. This is failure of the frozen feasibility gate, not measured candidate superiority/inferiority. See [analysis](STRUCTURE_TRANSPORT_REVIEW_V1.md). Novelty remains unsupported. A pose/expression-separated identity-geometry synthesis hypothesis is mechanistically different but overlaps existing work and needs a defensible specific distinction before implementation; no training or larger experiment is justified yet.
 
 ## 27 September mechanism and overlap update
 

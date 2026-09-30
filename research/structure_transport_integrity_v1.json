@@ -1,0 +1,603 @@
+{
+  "audit_completed_at_utc": "2026-09-29T05:08:26.247971+00:00",
+  "scope": "Metadata/source/model-integrity audit of generation phase. No photo/geometry array bytes read, no generation repeated, and ongoing/completed evaluation metrics are not audited here.",
+  "input_evidence_sha256": {
+    "outputs\\structure_transport_v1\\signature.json": "a3caeea6db1cfd4c4007c90960126fe957bdaa6cc6dab6e20df62589b3b757b5",
+    "outputs\\structure_transport_v1\\comparison.json": "445690399133aa4ee812626e57aab9757ba5e48d5ad6ab950b03a37fdf48ebb1",
+    "outputs\\structure_transport_v1\\input_hashes.json": "d9226c711503fedf4bc3a811e7fe242b4f9be1ac03baff2a20462bba9be0b213",
+    "outputs\\structure_transport_v1\\zero_equivalence.json": "49158b7c1da3907eb749aa56f5dff73e6469392e486d368a36dd614c5916b353",
+    "research\\protocols\\unseen_identity_protocol_v1.json": "56ba063e1475c85555a10c243322e75b20076e88f2abc0c0ad2fa8140965ea10",
+    "research\\protocols\\distortion_aware_v1.json": "30615bc17afc9a57407247683013cbbf21cd9e0440610d2a7694b1c9f7ef353c",
+    "outputs\\distortion_aware_v1\\evaluation_manifest.json": "7cba27590f6a7e9109041bbeb48e2e5f356e7c4d8bf45e5e69bd99a0d1864ef0"
+  },
+  "source_and_model_hash_checks": [
+    {
+      "file": "research/protocols/structure_transport_v1.json",
+      "expected_sha256": "723a402269f453c80ea146758560084752d910d98f6bc19976360067a65fa8f8",
+      "actual_sha256": "723a402269f453c80ea146758560084752d910d98f6bc19976360067a65fa8f8",
+      "matches": true
+    },
+    {
+      "file": "scripts/run_structure_transport.py",
+      "expected_sha256": "8e55f57b6610f0247596a79bf06b3c99cc90d85e6dbd4a352e6fe78b402d2e2f",
+      "actual_sha256": "8e55f57b6610f0247596a79bf06b3c99cc90d85e6dbd4a352e6fe78b402d2e2f",
+      "matches": true
+    },
+    {
+      "file": "src/preservation/structure_transport.py",
+      "expected_sha256": "c830e761729c193ca96e1679704b9643df2314c9d5693b6dab6f3555faa1d1cc",
+      "actual_sha256": "c830e761729c193ca96e1679704b9643df2314c9d5693b6dab6f3555faa1d1cc",
+      "matches": true
+    },
+    {
+      "file": "research/STRUCTURE_TRANSPORT_METHOD_V1.md",
+      "expected_sha256": "2f01d50d98da65bcf1d1864c32ed5022247f8d1141f346864d234dc605edf44f",
+      "actual_sha256": "2f01d50d98da65bcf1d1864c32ed5022247f8d1141f346864d234dc605edf44f",
+      "matches": true
+    },
+    {
+      "file": "scripts/evaluate_structure_transport.py",
+      "expected_sha256": "fa8aa4e90b31265e4cd1e04e6ec643dfdde67d3e1e73de27091fefa361d0c847",
+      "actual_sha256": "fa8aa4e90b31265e4cd1e04e6ec643dfdde67d3e1e73de27091fefa361d0c847",
+      "matches": true
+    },
+    {
+      "file": "scripts/report_structure_transport.py",
+      "expected_sha256": "9f95753a016a195fd5b51457673b22b9fabf1fa9aa6c2e06ded2f9402be38320",
+      "actual_sha256": "9f95753a016a195fd5b51457673b22b9fabf1fa9aa6c2e06ded2f9402be38320",
+      "matches": true
+    },
+    {
+      "file": "scripts/extended_evaluation_metrics.py",
+      "expected_sha256": "023d368e19ff66233afba9c61eef4de8d01ab1adb0bf4e73b1e934db23d7b6bf",
+      "actual_sha256": "023d368e19ff66233afba9c61eef4de8d01ab1adb0bf4e73b1e934db23d7b6bf",
+      "matches": true
+    },
+    {
+      "file": "src/preservation/context_statistics.py",
+      "expected_sha256": "e15d8427b6015093d5de74d61a819287cb442dd8c23ed1f59a4d166778863be6",
+      "actual_sha256": "e15d8427b6015093d5de74d61a819287cb442dd8c23ed1f59a4d166778863be6",
+      "matches": true
+    },
+    {
+      "file": "outputs/distortion_aware_v1/inference_manifest.json",
+      "expected_sha256": "e5f13ff6f7d17c11828e4806de94ff56e2186779409ca7750131a79aa8246db7",
+      "actual_sha256": "e5f13ff6f7d17c11828e4806de94ff56e2186779409ca7750131a79aa8246db7",
+      "matches": true
+    },
+    {
+      "file": "outputs/reference_context_v2/comparison.json",
+      "expected_sha256": "a861f850a312658381f5bc64a6bcde4a0653f987497fbedc41502cd59ac710b0",
+      "actual_sha256": "a861f850a312658381f5bc64a6bcde4a0653f987497fbedc41502cd59ac710b0",
+      "matches": true
+    },
+    {
+      "file": "outputs/refface_baseline_v1/comparison.json",
+      "expected_sha256": "a38b1f9041691623f755f122dc6c53379d58754d1f5abf192c354bb7be8ff5ed",
+      "actual_sha256": "a38b1f9041691623f755f122dc6c53379d58754d1f5abf192c354bb7be8ff5ed",
+      "matches": true
+    },
+    {
+      "file": "C:\\Users\\rehaa\\.cache\\facial-inpainting\\reference_env_v2\\Lib\\site-packages\\insightface\\model_zoo\\landmark.py",
+      "kind": "landmark_source_files",
+      "expected_sha256": "b10eac93241b8097af96f90497d40d63b0b7399d4a113eb1bf0823e321824526",
+      "actual_sha256": "b10eac93241b8097af96f90497d40d63b0b7399d4a113eb1bf0823e321824526",
+      "matches": true
+    },
+    {
+      "file": "C:\\Users\\rehaa\\.cache\\facial-inpainting\\reference_env_v2\\Lib\\site-packages\\insightface\\model_zoo\\scrfd.py",
+      "kind": "landmark_source_files",
+      "expected_sha256": "c06275fe207bd02b08b462cfb318054787058cd0005b2eac9004afb0e1943c64",
+      "actual_sha256": "c06275fe207bd02b08b462cfb318054787058cd0005b2eac9004afb0e1943c64",
+      "matches": true
+    },
+    {
+      "file": "C:\\Users\\rehaa\\.cache\\facial-inpainting\\reference_env_v2\\Lib\\site-packages\\insightface\\model_zoo\\model_zoo.py",
+      "kind": "landmark_source_files",
+      "expected_sha256": "769b9712cf066db399998768b2b4477e90e46df829a81d549c11b762d2da6013",
+      "actual_sha256": "769b9712cf066db399998768b2b4477e90e46df829a81d549c11b762d2da6013",
+      "matches": true
+    },
+    {
+      "file": "C:\\Users\\rehaa\\.cache\\facial-inpainting\\reference_env_v2\\Lib\\site-packages\\insightface\\app\\face_analysis.py",
+      "kind": "landmark_source_files",
+      "expected_sha256": "38751912e3e49583af62a8823da3b688b41779be101333be8a066cf490e11c3a",
+      "actual_sha256": "38751912e3e49583af62a8823da3b688b41779be101333be8a066cf490e11c3a",
+      "matches": true
+    },
+    {
+      "file": "C:\\Users\\rehaa\\.cache\\facial-inpainting\\reference_env_v2\\Lib\\site-packages\\insightface\\utils\\face_align.py",
+      "kind": "landmark_source_files",
+      "expected_sha256": "a8b34ddd06716f5ca7e7501415cbd3789ccbce18db9e557b35e537695290d922",
+      "actual_sha256": "a8b34ddd06716f5ca7e7501415cbd3789ccbce18db9e557b35e537695290d922",
+      "matches": true
+    },
+    {
+      "file": "C:\\Users\\rehaa\\.cache\\facial-inpainting\\reference_env_v2\\Lib\\site-packages\\insightface\\utils\\transform.py",
+      "kind": "landmark_source_files",
+      "expected_sha256": "50a42236e1041d3c3788cb9b60ed3f018dca88de2d1253333cef0aa1ca86ef07",
+      "actual_sha256": "50a42236e1041d3c3788cb9b60ed3f018dca88de2d1253333cef0aa1ca86ef07",
+      "matches": true
+    },
+    {
+      "file": "C:\\Users\\rehaa\\.cache\\facial-inpainting\\reference_models\\insightface\\models\\buffalo_l\\1k3d68.onnx",
+      "kind": "model_files",
+      "expected_sha256": "df5c06b8a0c12e422b2ed8947b8869faa4105387f199c477af038aa01f9a45cc",
+      "actual_sha256": "df5c06b8a0c12e422b2ed8947b8869faa4105387f199c477af038aa01f9a45cc",
+      "matches": true
+    },
+    {
+      "file": "C:\\Users\\rehaa\\.cache\\facial-inpainting\\reference_models\\insightface\\models\\buffalo_l\\2d106det.onnx",
+      "kind": "model_files",
+      "expected_sha256": "f001b856447c413801ef5c42091ed0cd516fcd21f2d6b79635b1e733a7109dbf",
+      "actual_sha256": "f001b856447c413801ef5c42091ed0cd516fcd21f2d6b79635b1e733a7109dbf",
+      "matches": true
+    },
+    {
+      "file": "C:\\Users\\rehaa\\.cache\\facial-inpainting\\reference_models\\insightface\\models\\buffalo_l\\det_10g.onnx",
+      "kind": "model_files",
+      "expected_sha256": "5838f7fe053675b1c7a08b633df49e7af5495cee0493c7dcf6697200b85b5b91",
+      "actual_sha256": "5838f7fe053675b1c7a08b633df49e7af5495cee0493c7dcf6697200b85b5b91",
+      "matches": true
+    }
+  ],
+  "all_frozen_source_model_hashes_match": true,
+  "comparison_signature_reference_matches": true,
+  "expected_rows": 64,
+  "actual_rows": 64,
+  "unique_case_seed_arm_tuples": 64,
+  "identities": [
+    "787",
+    "1043",
+    "1306",
+    "2790"
+  ],
+  "seeds": [
+    17,
+    29
+  ],
+  "statistical_identity_units": 4,
+  "receipt_rows_match_comparison": 64,
+  "receipt_hashes": [
+    {
+      "key": "1306_removal_s17_candidate",
+      "sha256": "01ab978cd097a128cf2a567989378ca87320064caaebe1c38304b862b0f38a28"
+    },
+    {
+      "key": "1306_removal_s17_single_reference",
+      "sha256": "e2f726da0313bb5f245a0cd74fdae5085cbf8d5f8aa80102fdb5e267be717ecf"
+    },
+    {
+      "key": "1306_removal_s17_wrong_identity",
+      "sha256": "96ba1a8e870a73719bc6488faf7dcdfc25f558638c85fcc4484d90ab6da3d2c2"
+    },
+    {
+      "key": "1306_removal_s17_scaffold",
+      "sha256": "d95b3bd3521b0f29e3f40c0645cfc165a256a46573b4191100dee6c74e2fd3a1"
+    },
+    {
+      "key": "1306_removal_s17_reference_context",
+      "sha256": "e41e6e488e7ce7aa598f67e0142dab341d757573e268f411929f64e05b2ee955"
+    },
+    {
+      "key": "1306_removal_s17_reference",
+      "sha256": "6a12df9fcf34399240ad4dd6e3150d36d63b77a23a961eaca9ff4fa1bbe0173c"
+    },
+    {
+      "key": "1306_removal_s17_refface",
+      "sha256": "038eef138358773ec593ac9ec52a914fe57fb8b3fe6c0c6a7a08c7d6f6c9597c"
+    },
+    {
+      "key": "1306_removal_s17_observed",
+      "sha256": "b1f10b87c22b3f46298cc7f4ec658e18ed1b5238297530fcc93f1f78ebffd5eb"
+    },
+    {
+      "key": "1306_removal_s29_candidate",
+      "sha256": "0d219f5cc110f7910db49e97e321bd467e488ae28fa33acb0e4f830fbc794fa7"
+    },
+    {
+      "key": "1306_removal_s29_single_reference",
+      "sha256": "f1efa9acc77bf1a264a36683efc0e83017f409899b764014e7cc9c9f24011e99"
+    },
+    {
+      "key": "1306_removal_s29_wrong_identity",
+      "sha256": "8392f36551191d1c3e82ab7116df2eee01205afe1503aee569569c85083b7d16"
+    },
+    {
+      "key": "1306_removal_s29_scaffold",
+      "sha256": "249451e4bfa97f755f03eabaf7ce26d9642cd48ff1be22934f6a21a601c27600"
+    },
+    {
+      "key": "1306_removal_s29_reference_context",
+      "sha256": "76390acfc1f582148ec42c82e07f1cc4b066e990fabefb356029e49903730365"
+    },
+    {
+      "key": "1306_removal_s29_reference",
+      "sha256": "3fcd70aaa71280352d21e635d4ffd563d44e876ca4c1ca03210f71692de6d861"
+    },
+    {
+      "key": "1306_removal_s29_refface",
+      "sha256": "077dbe6c3208fc18375da41ffb4a92227a595c0b9d7d02213d61d42b768ca986"
+    },
+    {
+      "key": "1306_removal_s29_observed",
+      "sha256": "543def21bfce3b2eee334ca1b61bd9a4cb1de9b6f4e531f9eb2b9c83cb1964c3"
+    },
+    {
+      "key": "2790_removal_s17_candidate",
+      "sha256": "9db1210f4df6e6eae17cf9ab39b141562e5252cbc58354ceb571989be2471a73"
+    },
+    {
+      "key": "2790_removal_s17_single_reference",
+      "sha256": "f9162b9e807f4ca5415f27bf9066f6cbfe4b790c01808d1f61b10ca38da1d3a6"
+    },
+    {
+      "key": "2790_removal_s17_wrong_identity",
+      "sha256": "e66f4dfa825a4a97d6367e52154837d513a4a297079b4e01a64ffea8514ce7c9"
+    },
+    {
+      "key": "2790_removal_s17_scaffold",
+      "sha256": "22f045ec64e889d7f5b585b8afa650e39bad0a3c5b64d5d48c28eb12eb02e9a8"
+    },
+    {
+      "key": "2790_removal_s17_reference_context",
+      "sha256": "baafecb08bc02e20c7feda9c6850e92ed9f0e7850dded45ea8a9f02a9dccef10"
+    },
+    {
+      "key": "2790_removal_s17_reference",
+      "sha256": "5d7c0bb7a0b2988a107c5d301cd34f0d07387d6ccb3bb19d3f94c55edd6ca68e"
+    },
+    {
+      "key": "2790_removal_s17_refface",
+      "sha256": "acfa510ff3ca021b5b7d0d9078e7a24b3bf249a26b49f985c71c8ee3ee1ef03b"
+    },
+    {
+      "key": "2790_removal_s17_observed",
+      "sha256": "d809c6e9b7d01919b5f1af8e09fe9342e645b0b85ccb347c1d3772a4d3af19da"
+    },
+    {
+      "key": "2790_removal_s29_candidate",
+      "sha256": "debda9ec5c93ce4196b0fe2758c3a5f0ccf6235157cc4528f831d564a0ea05f9"
+    },
+    {
+      "key": "2790_removal_s29_single_reference",
+      "sha256": "5875b771f3fd51d7e7cefef7330b35c7a3b6334aa67d5c26117d12bdf5df749c"
+    },
+    {
+      "key": "2790_removal_s29_wrong_identity",
+      "sha256": "d88cfac03883469a26e054d83c60de8664f83a436b7488bc80d6c27c842b103e"
+    },
+    {
+      "key": "2790_removal_s29_scaffold",
+      "sha256": "55cb2d51265f49f6041913f5fbc5b46cc1e0e36dec727fed302e1642e29e571d"
+    },
+    {
+      "key": "2790_removal_s29_reference_context",
+      "sha256": "20b5c011126e09d6b6166249304d62071dc33e158321aa455f6a4779447c59d2"
+    },
+    {
+      "key": "2790_removal_s29_reference",
+      "sha256": "b74a62a412f655aa9285c1dee2288b74e5f4b583c2bd990c9622638162e85c4c"
+    },
+    {
+      "key": "2790_removal_s29_refface",
+      "sha256": "739fd8d260ef17ea905481bbb971e8b6dd3885d08bac9e233ce7832db8ec7bdc"
+    },
+    {
+      "key": "2790_removal_s29_observed",
+      "sha256": "b531a74c0342f19f663803bc8745d64a41d2bb334b0d02e2509567ec95ecc52d"
+    },
+    {
+      "key": "1043_removal_s17_candidate",
+      "sha256": "9fab21a883c5f7b555ce101c3f77bcf7398f153f52ccf6a151d272ae68736d2e"
+    },
+    {
+      "key": "1043_removal_s17_single_reference",
+      "sha256": "0fe13adad0d69829df837cc2b202f5808bb6c3678562104b5d9985e113357398"
+    },
+    {
+      "key": "1043_removal_s17_wrong_identity",
+      "sha256": "0c82b9aba565d2c21ec7fcc54645d20e399f80f3ae6c9fbe9c868183f3fab7e3"
+    },
+    {
+      "key": "1043_removal_s17_scaffold",
+      "sha256": "8b0e74897593d586e364cacc586bfd3f765a8afffd78ebaead341fa25b3289fc"
+    },
+    {
+      "key": "1043_removal_s17_reference_context",
+      "sha256": "db03ee67881e32a01e8fa60665796c5345085e42fd38f01cc66a882bbe4fa574"
+    },
+    {
+      "key": "1043_removal_s17_reference",
+      "sha256": "f7527308511b0c7afa4d6c8ddd8fe1495f8b5dbcb26cf1a79e37d860f525c036"
+    },
+    {
+      "key": "1043_removal_s17_refface",
+      "sha256": "195abbc36550357c25ddc492aac7d6ecb8f8ca7bf2ff7765a8d68cb7d86342ef"
+    },
+    {
+      "key": "1043_removal_s17_observed",
+      "sha256": "8d186e6b2983ec2b1f7f58cee3786087c44d059ca6084cb18a30909ea718d64b"
+    },
+    {
+      "key": "1043_removal_s29_candidate",
+      "sha256": "98b9ae4dc49f415e2ce1611f1d5b2d24fab49d9ffc5b049682f4c357a7d93e8d"
+    },
+    {
+      "key": "1043_removal_s29_single_reference",
+      "sha256": "9adbcaa308d42333b151b9cfb10eca9b24e7d517823f27cc654ccd86b868bc53"
+    },
+    {
+      "key": "1043_removal_s29_wrong_identity",
+      "sha256": "08298cdb93ce2be6204e981865b4bc26aecd78b53ba256e9429ca93a38c6bbde"
+    },
+    {
+      "key": "1043_removal_s29_scaffold",
+      "sha256": "1cddda42e76ff876e11bfc625f27b598552abaad2bd28a569a117f8047fef378"
+    },
+    {
+      "key": "1043_removal_s29_reference_context",
+      "sha256": "b6f5b5150294a891ef0829fafe3a8a1d8aecbe35b973e4c58f3c0a84bd065e1a"
+    },
+    {
+      "key": "1043_removal_s29_reference",
+      "sha256": "6c4c700620dfe482fd55ac40053a062faf78010a2d514f3872ceadd11c8a75f5"
+    },
+    {
+      "key": "1043_removal_s29_refface",
+      "sha256": "5de85bce58e620b3851d8d3a32519dd91f16cf671dbd5d09f77dad5d964eb9f4"
+    },
+    {
+      "key": "1043_removal_s29_observed",
+      "sha256": "59141a4563a4a2690e9b8d96415549d33582736995e8ac0f73eec3380f88edb3"
+    },
+    {
+      "key": "787_removal_s17_candidate",
+      "sha256": "fa0f8633bcdb92c093f77e73ce6df9a32b217d51d66275cc6f818ad29252cc87"
+    },
+    {
+      "key": "787_removal_s17_single_reference",
+      "sha256": "3794611f09edb014a873112892a9d92fe7eb820b7643a81a4d41a860d74c5fce"
+    },
+    {
+      "key": "787_removal_s17_wrong_identity",
+      "sha256": "a5a0acbc5be6fa47d01d40cdaff9fc2117b172f14ac69637b4543bac76c03e2e"
+    },
+    {
+      "key": "787_removal_s17_scaffold",
+      "sha256": "52ff09d610652f5aeb2041d0e95fc06c6e637f8ce905154d8c3e0b9d9e820f83"
+    },
+    {
+      "key": "787_removal_s17_reference_context",
+      "sha256": "6ec77ea510b142eb8f2def2ec728adb39bf20650bf38adbb68cb3324ef72e379"
+    },
+    {
+      "key": "787_removal_s17_reference",
+      "sha256": "b15d153289d3b06fb928569fc552979720193d8de0be06f9906fc1b7cdcab851"
+    },
+    {
+      "key": "787_removal_s17_refface",
+      "sha256": "b2e620fe6da99ef832c7427e1f0a065bfd50b23711d7b2471a144886bbcc88ed"
+    },
+    {
+      "key": "787_removal_s17_observed",
+      "sha256": "ea31191ad6f59ff327ea9eaec28371aae51eb920674a87ae202ab17133eda2c0"
+    },
+    {
+      "key": "787_removal_s29_candidate",
+      "sha256": "dda08e56d31b52b2b37ecb7ed2fc8505348ec969a7759d4bfef2493d7773e694"
+    },
+    {
+      "key": "787_removal_s29_single_reference",
+      "sha256": "73ef560a19436273dd770f51dd003c655a4139f7cebf92cdc2b2d9e5a1d69772"
+    },
+    {
+      "key": "787_removal_s29_wrong_identity",
+      "sha256": "1cbc8130e0ad162e46895c063815650722e5b81e9702edce876f7c5b87d378b0"
+    },
+    {
+      "key": "787_removal_s29_scaffold",
+      "sha256": "225253b26f37e7f284af5d8f615f6ba12bb79b477e955cdcae19d8f9b52a66a3"
+    },
+    {
+      "key": "787_removal_s29_reference_context",
+      "sha256": "f46359ef7fc4b78644abee8c4f50d7edac025312277099baf258bf067d69600a"
+    },
+    {
+      "key": "787_removal_s29_reference",
+      "sha256": "cf6683ec53ef0f4e1641feff4e18fd73665b6e56994588573249d70381761fd7"
+    },
+    {
+      "key": "787_removal_s29_refface",
+      "sha256": "307d5439fa15ce426b9ae8f294de3e0e845b7d7ae77d9e6bb120cb056d89c38f"
+    },
+    {
+      "key": "787_removal_s29_observed",
+      "sha256": "5dfdb53d4c5e77a5955b6b935612caa2286e3ae266761589bf9e3cff3ef0db89"
+    }
+  ],
+  "zero_equivalence": {
+    "checks": 8,
+    "all_case_seed_slots_present": true,
+    "bit_exact_receipts": 8,
+    "pixel_bytes_independently_rechecked_in_this_audit": false,
+    "meaning": "Recorded exact intervention-off scaffold composition, not 8 new generations or independent subjects"
+  },
+  "new_transform_attempts": 24,
+  "new_transform_completions": 0,
+  "new_image_files": 0,
+  "new_neural_generations": 0,
+  "reused_control_slots": 40,
+  "unique_reused_image_paths": 32,
+  "reused_controls_exact_prior_path_hash_mapping": 40,
+  "control_bytes_independently_rehashed": false,
+  "failures": {
+    "reasons": {
+      "inverse warp has a nonpositive or nonfinite Jacobian": 24
+    },
+    "finite_negative_jacobian_failures": 24,
+    "displacement_bound_failures": 0,
+    "nonfinite_solver_failures": 0,
+    "no_admissible_constraint_failures": 0,
+    "reference_or_landmark_preparation_failures": 0,
+    "per_arm": {
+      "candidate": {
+        "attempted": 8,
+        "completed": 0,
+        "failures": {
+          "inverse warp has a nonpositive or nonfinite Jacobian": 8
+        },
+        "constraint_count": {
+          "n": 8,
+          "minimum": 30,
+          "maximum": 38,
+          "mean": 33.625
+        },
+        "maximum_displacement_pixels": {
+          "n": 8,
+          "minimum": 10.573947763447022,
+          "maximum": 39.040045673567526,
+          "mean": 28.030581155732513
+        },
+        "minimum_changed_inverse_jacobian": {
+          "n": 8,
+          "minimum": -5.613625609243705,
+          "maximum": -0.6733570215300477,
+          "mean": -3.218472540639113
+        },
+        "constraint_rms_residual_pixels": {
+          "n": 8,
+          "minimum": 0.3735070221601061,
+          "maximum": 1.6740841974752365,
+          "mean": 1.0031021945466345
+        },
+        "changed_mask_pixels": {
+          "n": 8,
+          "minimum": 15176,
+          "maximum": 18884,
+          "mean": 16702.5
+        }
+      },
+      "single_reference": {
+        "attempted": 8,
+        "completed": 0,
+        "failures": {
+          "inverse warp has a nonpositive or nonfinite Jacobian": 8
+        },
+        "constraint_count": {
+          "n": 8,
+          "minimum": 20,
+          "maximum": 39,
+          "mean": 30.5
+        },
+        "maximum_displacement_pixels": {
+          "n": 8,
+          "minimum": 13.548111108545106,
+          "maximum": 50.43870664213251,
+          "mean": 35.331661853457774
+        },
+        "minimum_changed_inverse_jacobian": {
+          "n": 8,
+          "minimum": -8.763378443060711,
+          "maximum": -1.5261740819461664,
+          "mean": -4.705367615025876
+        },
+        "constraint_rms_residual_pixels": {
+          "n": 8,
+          "minimum": 0.3757179453005324,
+          "maximum": 2.1652213604619894,
+          "mean": 1.2846687974058695
+        },
+        "changed_mask_pixels": {
+          "n": 8,
+          "minimum": 15176,
+          "maximum": 18884,
+          "mean": 16702.5
+        }
+      },
+      "wrong_identity": {
+        "attempted": 8,
+        "completed": 0,
+        "failures": {
+          "inverse warp has a nonpositive or nonfinite Jacobian": 8
+        },
+        "constraint_count": {
+          "n": 8,
+          "minimum": 34,
+          "maximum": 39,
+          "mean": 36.75
+        },
+        "maximum_displacement_pixels": {
+          "n": 8,
+          "minimum": 19.419563838403363,
+          "maximum": 33.59917277916345,
+          "mean": 25.758704239086395
+        },
+        "minimum_changed_inverse_jacobian": {
+          "n": 8,
+          "minimum": -7.360051678048592,
+          "maximum": -0.8373017608299818,
+          "mean": -3.547026736376032
+        },
+        "constraint_rms_residual_pixels": {
+          "n": 8,
+          "minimum": 0.4773095381756707,
+          "maximum": 1.410527908160096,
+          "mean": 0.7836559851195598
+        },
+        "changed_mask_pixels": {
+          "n": 8,
+          "minimum": 15176,
+          "maximum": 18884,
+          "mean": 16702.5
+        }
+      }
+    },
+    "recorded_constraint_indices_plus_rejections_equal_68": true,
+    "metadata_resolution_pixels": 512,
+    "maximum_allowed_displacement_pixels": 51.2,
+    "all_recorded_max_displacements_below_bound": true,
+    "resolution_source": "research/protocols/distortion_aware_v1.json; no image header/pixels read",
+    "interpretation": "All24 fail at the frozen finite-difference inverse-map fold check. This is a feasibility rejection; no candidate quality metrics or superiority can be inferred."
+  },
+  "inference_whitelist": {
+    "count": 52,
+    "categories": {
+      "observations": 4,
+      "masks": 4,
+      "supplied_references": 16,
+      "prior_scaffold": 8,
+      "prior_reference": 8,
+      "prior_reference_context": 8,
+      "prior_refface": 4
+    },
+    "exactly_matches_inference_manifest_and_prior_output_metadata": true,
+    "clean_target_or_gallery_path_intersection": 0,
+    "clean_target_or_gallery_encoded_hash_intersection": 0,
+    "reserved_original_path_intersection": 0,
+    "reserved_original_encoded_hash_intersection": 0,
+    "reserved_row_identity_intersection": 0,
+    "limits": "Confirms code/metadata separation and signed row mappings, not an OS-wide access trace or independent image-content comparison."
+  },
+  "reserved_final_status": {
+    "model_generation_evaluation_count": 0,
+    "reserved_count": 8,
+    "reserved_labels": [
+      "5170",
+      "5774",
+      "6225",
+      "6632",
+      "7170",
+      "7789",
+      "8561",
+      "8726"
+    ],
+    "new_reserved_pixels_read_by_this_audit": false,
+    "historical_preparation_note": "Earlier reservation preparation decoded images for automated integrity/duplicate screening; this audit does not claim the files were never opened historically."
+  },
+  "no_image_pixels_or_geometry_arrays_read_by_auditor": true,
+  "historical_or_frozen_files_modified": false,
+  "audit_status": "passed_generation_integrity_checks",
+  "research_gate_status": "failed_feasibility_all_candidate_attempts_rejected",
+  "evaluation_status": "separate process; no metric completion or correctness claim in this generation audit"
+}

@@ -1,12 +1,22 @@
 # Facial Inpainting Project — Progress and Completion Report
 
-**Report date:** 27 September 2026
+**Report date:** 29 September 2026
 **Current platform:** Windows laptop, NVIDIA RTX 5070 Laptop GPU with 8 GB VRAM  
 **Current application:** http://127.0.0.1:8765/  
 **Repository:** https://github.com/rehaan1603/facial-inpainting-studio  
 **Status:** Working local research baseline; proposed multi-reference research method and final validation incomplete. Public hosting paused at the owner's request.
 
 ## Latest status update
+
+### 29 September: structural mechanism tested and rejected before image production
+
+- Completed the requested [mechanism-history audit](research/MECHANISM_HISTORY_AUDIT_20260928.md) and [structural prior-art review](research/STRUCTURAL_PRIOR_ART_20260928.md). The published missing-region baseline was already complete; it was not rerun or modified. Shape transfer, visible-anchor fitting and landmark warping have substantial prior art and are not claimed as new.
+- Specified one geometry-only diagnostic, then froze its code, controls, evaluators, models and anti-regression gate before attempts. It registers personal reference landmarks to surviving target anchors and transports the fixed ResShift geometry inside the original mask. This differs from prior blending/routing experiments but is not established novelty.
+- **All 24 structural attempts were rejected for negative inverse-map Jacobians; 0 new images were produced.** Candidate, single-reference and wrong-person arms each fail 8/8. Eight intervention-off checks are byte-exact and 19 synthetic tests pass. Do not mistake these method-feasibility failures for completed but poor candidate reconstructions.
+- **40 reused control slots evaluated; 64 total terminal rows retained.** Candidate metrics/paired contrasts have n=0 and are unavailable. The reporter's Holm 1.0 missing-comparison placeholders are not statistical results. The separate 106-landmark metric shows that slightly improved landmark alignment can still accompany worse pixel/perceptual fidelity in existing reference controls. All eight visual sheets were reviewed; candidate panels explicitly show no output.
+- Numerical results, failure analysis, source integrity, per-seed coverage and the next mechanistically different hypothesis are in [structural review](research/STRUCTURE_TRANSPORT_REVIEW_V1.md), [results](research/STRUCTURE_TRANSPORT_RESULTS_V1.md), [CSV](research/structure_transport_metrics_v1.csv), [integrity receipt](research/structure_transport_integrity_v1.json) and [visual review receipt](research/structure_transport_review_v1.json). No parameter search, training, website promotion or independent-cohort expansion follows this failed gate.
+- **Reserved-data correction:** recorded final model generation/evaluation remains 0/8. Earlier automated duplicate/hash preparation decoded reserved images, so historical wording that they were never opened was too broad. No reserved image was accessed in this continuation. This clarification preserves all historical results.
+- Local studio restored and main/evidence/session routes checked: HTTP 200, idle. Public hosting remains paused. The dataset browsing library and existing practice sets are in Downloads/All Face Datasets; licensed photos remain local.
 
 ### 27 September: two further mechanisms and a published missing-region baseline tested
 
@@ -275,7 +285,7 @@ The measurement baseline is substantially stronger, but the research is not yet 
 
 ## 4. Remaining work
 
-**Reconciled with completed work on 27 September 2026.** Completed implementation is distinguished from unresolved research claims below. The newest mechanism outcomes are in `research/NOVELTY_ESTABLISHMENT_20260925.md`; earlier rejected hypotheses below remain history, not unexecuted promises.
+**Reconciled with completed work on 29 September 2026.** Completed implementation is distinguished from unresolved research claims below. The newest structural screen is in `research/STRUCTURE_TRANSPORT_REVIEW_V1.md`; preceding mechanism outcomes remain in `research/NOVELTY_ESTABLISHMENT_20260925.md`. Rejected hypotheses remain history, not unexecuted promises.
 
 | Area | Current evidence and remaining work | Status |
 |---|---|---|
@@ -296,11 +306,12 @@ The measurement baseline is substantially stronger, but the research is not yet 
 | Reference/context mechanism | Completed 32 new restorations, eight reused scaffolds, two equivalence calls and 40 scored rows. References improve identity; correction reduces some cascade error but still loses to the scaffold on pixel/perceptual error. All eight visual sheets reviewed | Implemented and tested; progression gate not met |
 | Scaffold-conditioning mechanism | Completed 24 new restorations, 16 reused controls, two equivalence calls and 40 scored rows. Spatial conditioning dropout causes featureless regions and nine detector-failure events; all failures and eight visual sheets retained | Implemented and rejected; no website promotion |
 | Missing-region external baseline | Official RefFaceInpainting and parser pinned, all three checkpoints strict-loaded, synthetic author equivalence passed. Sixteen predictions, 28 scores and all four visual sheets completed; fixed first-reference result loses to ResShift. Component gate measured with 16 bit-exact repeat forwards; its causal role remains untested | Reproduced locally; not suitable for website promotion on these results |
+| Structure-only reference transport | Frozen personal/single/wrong-person geometry screen: 24/24 inverse fields rejected for negative Jacobians; 0 new images, 40 reused control slots evaluated, 8 visual sheets reviewed. 19 tests and 8 zero-displacement checks pass. No candidate quality scores exist. Next hypothesis must separate identity geometry from pose/expression and synthesize missing structure; its novelty/feasibility remain unresolved | Implemented; feasibility gate failed; no promotion or expansion |
 | Unfamiliar-person checks | Earlier two-identity smoke retained. Two additional identities now have 25/26 initial studio generations and 29/30 scores; separate repair/recovery checks preserve original failures. All are now observed development cases, with unknown pretraining exposure. Larger independent validation remains | Expanded diagnostic complete; generalization unproven |
 | Client geometry and mask handling | Thin ResShift masks, paired evidence downsampling, nonsquare API framing and primary 512 comparison fixed. SDXL latent-unsupported components are rejected; fine-boundary fidelity and broad client-photo accuracy remain unresolved | Concrete bugs fixed; model limits remain |
 | Statistical power and data availability | More identity units and independent severity/mask/reference factors needed. Remaining local validation has at most 11 groups with eight photos; official FFHQ-Ref validation only four such predicted groups. Metadata checked without opening new/final pixels. Larger studies need a verified additional cohort or a separately frozen different reference/gallery design | Required before method freeze |
 | Optional metrics | Reconstructed-landmark error; FID only at adequate sample size; ROC/TAR only with adequate verification trials | Unimplemented; scope-dependent |
-| Final evaluation | Freeze method/parameters first; eight reserved identities remain unused | 0/8, intentionally |
+| Final evaluation | Require method/parameters/evaluator freeze, independent confirmation, ablations and baseline comparison first. No reserved model generation/evaluation; historical automated duplicate/hash preparation did decode files, disclosed in the history audit | 0/8 model evaluations; no new reserved access |
 | Manuscript and presentation | Correct novelty/architecture/results, choose actual venue, prepare figures, limitations and reproducibility | Incomplete |
 | GitHub release | Current research checkpoint adds two frozen screens, corrected technical recovery, numerical receipts, coverage/integrity audit, metadata-only data census and updated report after context-support commit `7c73cce`. Restricted photos, per-person feature arrays and weights remain local | Included in this research checkpoint |
 | Public hosting | Continue loopback-only use on the laptop | Paused by user |
@@ -376,6 +387,10 @@ cd "C:\Users\rehaa\OneDrive\Documents\ChatGPT\Facial inpainting Project"
 Open http://127.0.0.1:8765/. Use matching references for the selected person, mark the complete damaged region and inspect the generated output. The laptop must be running; no public internet hosting is required.
 
 ## 8. Evidence index
+
+- [Complete mechanism history and reserved-data clarification](research/MECHANISM_HISTORY_AUDIT_20260928.md)
+- [New structural method review and next decision](research/STRUCTURE_TRANSPORT_REVIEW_V1.md)
+- [Frozen structural protocol](research/protocols/structure_transport_v1.json) and [numerical results](research/structure_transport_results_v1.json)
 
 - [Current client reconstruction fixes and remaining limitations](research/STUDIO_CLIENT_FIXES_20260924.md)
 - [New unfamiliar-identity studio accuracy audit](research/UNFAMILIAR_STUDIO_ACCURACY_V2.md)
