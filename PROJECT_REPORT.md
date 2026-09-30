@@ -447,3 +447,8 @@ Completed four RefFaceInpainting predictions (one per supplied synthetic referen
 ### 30 September 2026 - visible-landmark alignment diagnostic
 
 Tested eight reference-transfer outputs: four supplied synthetic references aligned using only unmasked nose/mouth landmarks, each with ordinary or collar-aware Poisson composition. No clean target entered inference. Collar-aware composition reduced the grey colour artifact, but incorrect eye placement and pose artifacts remained on visual review. These candidates are not promoted. This does not establish that alignment fixes unknown-image reconstruction. A real near-frontal independent reference is needed to test whether reliable reference geometry helps this case; success is not guaranteed. See research/unknown_alignment_diagnostic_20260930.json.
+
+
+### 30 September 2026 - single-image seed and framing screen
+
+Generated 30 fresh ResShift predictions: seeds 17/42/12345 and vertical shifts -32/-64/+32, on four existing development identities plus the uploaded portrait. Inference used no reference photos or clean targets. Every scored output preserves unmarked pixels. Seed changes did not repair the uploaded eye geometry. The -32px shift reduced uploaded masked MAE from 41.53 to 27.40 but worsened the four-identity development mean from 18.31 to 25.47; gaze remained wrong. No offset or seed was promoted as a general fix. This development diagnostic is not independent confirmation. See research/single_image_diagnostic_20260930.json. Reliable framing normalization and unknown-image fidelity remain unresolved.

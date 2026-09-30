@@ -1,0 +1,220 @@
+{
+  "scope": "30 single-image ResShift predictions; 4 previously observed development identities and 1 user portrait; no references or clean target supplied during inference. Post-hoc diagnostics, not independent confirmation.",
+  "seed_results": [
+    {
+      "case": "1306",
+      "seed": 17,
+      "output": "outputs\\single_image_seed_screen_20260930\\1306_17.png",
+      "seconds": 0.6570000000065193,
+      "mae": 19.356278801843317,
+      "outside_unchanged": true
+    },
+    {
+      "case": "1306",
+      "seed": 42,
+      "output": "outputs\\single_image_seed_screen_20260930\\1306_42.png",
+      "seconds": 0.20300000000861473,
+      "mae": 18.568884408602152,
+      "outside_unchanged": true
+    },
+    {
+      "case": "1306",
+      "seed": 12345,
+      "output": "outputs\\single_image_seed_screen_20260930\\1306_12345.png",
+      "seconds": 0.21799999999348074,
+      "mae": 18.117703533026113,
+      "outside_unchanged": true
+    },
+    {
+      "case": "2790",
+      "seed": 17,
+      "output": "outputs\\single_image_seed_screen_20260930\\2790_17.png",
+      "seconds": 0.21899999998277053,
+      "mae": 19.889447491367054,
+      "outside_unchanged": true
+    },
+    {
+      "case": "2790",
+      "seed": 42,
+      "output": "outputs\\single_image_seed_screen_20260930\\2790_42.png",
+      "seconds": 0.2340000000258442,
+      "mae": 17.12116595571806,
+      "outside_unchanged": true
+    },
+    {
+      "case": "2790",
+      "seed": 12345,
+      "output": "outputs\\single_image_seed_screen_20260930\\2790_12345.png",
+      "seconds": 0.21899999998277053,
+      "mae": 17.899299207800123,
+      "outside_unchanged": true
+    },
+    {
+      "case": "1043",
+      "seed": 17,
+      "output": "outputs\\single_image_seed_screen_20260930\\1043_17.png",
+      "seconds": 0.2960000000020955,
+      "mae": 19.68795584466785,
+      "outside_unchanged": true
+    },
+    {
+      "case": "1043",
+      "seed": 42,
+      "output": "outputs\\single_image_seed_screen_20260930\\1043_42.png",
+      "seconds": 0.21900000001187436,
+      "mae": 20.888971023063277,
+      "outside_unchanged": true
+    },
+    {
+      "case": "1043",
+      "seed": 12345,
+      "output": "outputs\\single_image_seed_screen_20260930\\1043_12345.png",
+      "seconds": 0.21899999998277053,
+      "mae": 19.35117287601025,
+      "outside_unchanged": true
+    },
+    {
+      "case": "787",
+      "seed": 17,
+      "output": "outputs\\single_image_seed_screen_20260930\\787_17.png",
+      "seconds": 0.26500000001396984,
+      "mae": 14.307144422529039,
+      "outside_unchanged": true
+    },
+    {
+      "case": "787",
+      "seed": 42,
+      "output": "outputs\\single_image_seed_screen_20260930\\787_42.png",
+      "seconds": 0.23499999998603016,
+      "mae": 13.13395792241946,
+      "outside_unchanged": true
+    },
+    {
+      "case": "787",
+      "seed": 12345,
+      "output": "outputs\\single_image_seed_screen_20260930\\787_12345.png",
+      "seconds": 0.28099999998812564,
+      "mae": 13.85952224413763,
+      "outside_unchanged": true
+    },
+    {
+      "case": "uploaded",
+      "seed": 17,
+      "output": "outputs\\single_image_seed_screen_20260930\\uploaded_17.png",
+      "seconds": 0.20399999999790452,
+      "mae": 41.5349086326402,
+      "outside_unchanged": true
+    },
+    {
+      "case": "uploaded",
+      "seed": 42,
+      "output": "outputs\\single_image_seed_screen_20260930\\uploaded_42.png",
+      "seconds": 0.21799999999348074,
+      "mae": 37.53562276832598,
+      "outside_unchanged": true
+    },
+    {
+      "case": "uploaded",
+      "seed": 12345,
+      "output": "outputs\\single_image_seed_screen_20260930\\uploaded_12345.png",
+      "seconds": 0.20300000000861473,
+      "mae": 42.112287334593574,
+      "outside_unchanged": true
+    }
+  ],
+  "position_results": [
+    {
+      "case": "1306",
+      "shift": -32,
+      "mae": 20.289314516129032,
+      "outside_unchanged": true
+    },
+    {
+      "case": "1306",
+      "shift": -64,
+      "mae": 18.480462749615974,
+      "outside_unchanged": true
+    },
+    {
+      "case": "1306",
+      "shift": 32,
+      "mae": 19.339717741935484,
+      "outside_unchanged": true
+    },
+    {
+      "case": "2790",
+      "shift": -32,
+      "mae": 24.38954905545399,
+      "outside_unchanged": true
+    },
+    {
+      "case": "2790",
+      "shift": -64,
+      "mae": 20.97780824700386,
+      "outside_unchanged": true
+    },
+    {
+      "case": "2790",
+      "shift": 32,
+      "mae": 19.85862279098111,
+      "outside_unchanged": true
+    },
+    {
+      "case": "1043",
+      "shift": -32,
+      "mae": 37.38399369209541,
+      "outside_unchanged": true
+    },
+    {
+      "case": "1043",
+      "shift": -64,
+      "mae": 24.113394441159077,
+      "outside_unchanged": true
+    },
+    {
+      "case": "1043",
+      "shift": 32,
+      "mae": 22.87694657993298,
+      "outside_unchanged": true
+    },
+    {
+      "case": "787",
+      "shift": -32,
+      "mae": 19.80895244356783,
+      "outside_unchanged": true
+    },
+    {
+      "case": "787",
+      "shift": -64,
+      "mae": 15.353933815472278,
+      "outside_unchanged": true
+    },
+    {
+      "case": "787",
+      "shift": 32,
+      "mae": 16.5298597413982,
+      "outside_unchanged": true
+    },
+    {
+      "case": "uploaded",
+      "shift": -32,
+      "mae": 27.399453896240285,
+      "outside_unchanged": true
+    },
+    {
+      "case": "uploaded",
+      "shift": -64,
+      "mae": 37.96735979836169,
+      "outside_unchanged": true
+    },
+    {
+      "case": "uploaded",
+      "shift": 32,
+      "mae": 43.17366099558916,
+      "outside_unchanged": true
+    }
+  ],
+  "decision": "No production change. Seed changes do not repair uploaded eyes; fixed translations harm development mean.",
+  "baseline_development_mae": 18.310206640101814,
+  "minus32_development_mae": 25.467952426811564
+}
