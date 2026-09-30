@@ -30,19 +30,22 @@ function notify(text){el('mapStatus').textContent=text;}
 function clearResult(){completedResult=null;if(!el('resultPanel').hidden)notify('The image, evidence map or settings changed. Reconstruct again to update the result.');el('resultPanel').hidden=true;el('resultImage').removeAttribute('src');el('resultDownload').removeAttribute('href');el('metadataDownload').removeAttribute('href');}
 function showResultVariant(){
  if(!completedResult)return;
+ const smooth=el('resultVariant').value==='smooth' && completedResult.smooth;
  const full=el('resultVariant').value==='full' && completedResult.full;
  const restored=el('resultVariant').value==='restored';
- const url=full|| (restored?completedResult.restored:completedResult.preserved);
+ const url=smooth||full|| (restored?completedResult.restored:completedResult.preserved);
  el('resultImage').src=url;el('resultDownload').href=url;
- el('resultDownload').download=full?'full-restoration.png':restored?'restored.png':'evidence-blended.png';
- el('resultImage').alt=full?'Full-image model restoration; may change identity, expression and unmarked areas':restored?'Model restoration inside the marked area':'Restoration blended with the original damaged pixels';
- el('variantExplanation').textContent=full?'Full model output without patch seams. This can change unmarked areas, identity and expression; it is not verified recovery. Settings record this image as raw_sha256.':restored?'Model restoration inside the marked area; pixels outside stay unchanged. Check facial details and mask boundaries. Settings record this image as parent_output_sha256.':'Evidence blend: gray map values mix the original damaged pixels back into the prediction, which can retain noise and blur. Settings record this image as result_sha256.';
+ el('resultDownload').download=smooth?'smooth-restoration.png':full?'full-restoration.png':restored?'restored.png':'evidence-blended.png';
+ el('resultImage').alt=smooth?'Restoration with matched patch lighting':full?'Full-image model restoration; may change identity, expression and unmarked areas':restored?'Model restoration inside the marked area':'Restoration blended with the original damaged pixels';
+ el('variantExplanation').textContent=smooth?'Patch lighting matched; unmarked pixels stay unchanged. Facial details may still be inaccurate. Settings record this image as smooth_sha256.':full?'Full model output without patch seams. This can change unmarked areas, identity and expression; it is not verified recovery. Settings record this image as raw_sha256.':restored?'Model restoration inside the marked area; pixels outside stay unchanged. Check facial details and mask boundaries. Settings record this image as parent_output_sha256.':'Evidence blend: gray map values mix the original damaged pixels back into the prediction, which can retain noise and blur. Settings record this image as result_sha256.';
 }
 el('resultVariant').addEventListener('change',showResultVariant);
 function installResult(state){
  completedResult={preserved:state.result,restored:state.result.replace(/preserved\.png$/, 'result.png'),full:el('method').value==='refldm'?state.result.replace(/(?:preserved|result)\.png$/, 'result_raw.png'):null};
+ completedResult.smooth=completedResult.full?state.result.replace(/(?:preserved|result)\.png$/, 'result_smooth.png'):null;
+ el('smoothRestorationOption').disabled=!completedResult.smooth;
  el('fullRestorationOption').disabled=!completedResult.full;
- el('resultVariant').value=el('method').value==='refldm'?'restored':'preserved';
+ el('resultVariant').value=el('method').value==='refldm'?'smooth':'preserved';
  showResultVariant();el('metadataDownload').href=state.metadata;el('resultPanel').hidden=false;
 }
 function checkpoint(){clearResult();history.push(confidence.slice());if(history.length>12)history.shift();ready();}

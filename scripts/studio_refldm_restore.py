@@ -30,7 +30,7 @@ def main():
     try:
         if not 3 <= len(args.references) <= 4:
             raise ValueError('Provide 3–4 same-person reference photos.')
-        destinations = [args.output, args.output.with_suffix('.json'), args.output.with_name(args.output.stem + '_raw.png')]
+        destinations = [args.output, args.output.with_suffix('.json'), args.output.with_name(args.output.stem + '_raw.png'), args.output.with_name(args.output.stem + '_smooth.png')]
         inputs = {path.resolve() for path in [args.image, args.mask, *args.references]}
         if any(path.resolve() in inputs or path.exists() for path in destinations):
             raise ValueError('Use a new output path that does not overwrite an input or an earlier result.')
@@ -64,6 +64,18 @@ def main():
             print(child_log.read_text(encoding='utf-8', errors='replace')[-8000:], flush=True)
             raise ValueError(f'Partial-damage restoration failed (exit code {completed.returncode}). See the saved inference log.')
         metadata = json.loads(args.output.with_suffix('.json').read_text())
+        from PIL import Image
+        import numpy as np
+        import hashlib
+        from studio_restoration_finish import finish_restoration
+        raw_path=args.output.with_name(args.output.stem+'_raw.png')
+        smooth_path=args.output.with_name(args.output.stem+'_smooth.png')
+        smooth,finish_mode=finish_restoration(np.array(Image.open(args.image).convert('RGB')),np.array(Image.open(raw_path).convert('RGB')),np.array(Image.open(args.mask).convert('L'))>=128)
+        Image.fromarray(smooth).save(smooth_path)
+        metadata['smooth_sha256']=hashlib.sha256(smooth_path.read_bytes()).hexdigest()
+        metadata['studio_finish']=finish_mode
+        metadata['studio_finish_scope']='Lighting correction within marked pixels; not verified true-face recovery.'
+
         metadata.update(
             studio_reference_preparation=entries,
             original_reference_sha256=[entry['original_sha256'] for entry in entries],

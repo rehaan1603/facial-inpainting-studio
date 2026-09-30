@@ -422,3 +422,8 @@ Inspection of local job 12b33b5ab5a745969c81ca4b46a930da found that evidence ble
 ### 30 September 2026 - full restoration inspection
 
 Visual inspection of studio job d85fb5d619344c879498075514f5c5b1 found spatial disagreement between the whole-image ReF-LDM prediction and the original photo: composing small facial patches produces visible seams. Added an explicit full-image restoration comparison/download option for ReF-LDM. It is optional because it modifies unmarked regions and can alter eyes and expression. No model accuracy improvement is claimed. Interface regression checks passed; the local server was restarted while idle and the served raw PNG checksum matched existing metadata. No new model run or research evaluation was performed. Better spatial fidelity remains unresolved.
+
+
+### 30 September 2026 - tested restoration finishing
+
+Added studio-only gradient-domain patch lighting correction and made its separate output the default ReF-LDM preview. Original, full-image and evidence-blended outputs remain selectable. On 20 previously observed development cases (four identities; blur, noise, JPEG, downsample and mixed), mean masked MAE decreased from 11.7368 to 9.6629 on a 0-255 scale; 19/20 improved. These are reused model predictions, a limited engineering screen, not independent confirmation or an identity improvement claim. A fresh GPU wrapper run on the uploaded example completed. Synthetic tests cover outside-mask preservation, lighting continuity, border/empty masks and invalid geometry. Noise outside the selected mask and inaccurate facial structure remain possible. Frozen research sources and outputs were not modified.

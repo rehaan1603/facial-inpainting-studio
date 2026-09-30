@@ -52,7 +52,7 @@ async function confidenceTests(){
   const h=harness('confidence.js');await upload(h,'photo',[image('A')]);
   h.element('method').value='refldm';
   h.eval("installResult({result:'/runs/test/preserved.png',metadata:'/runs/test/metadata.json'})");
-  assert.equal(h.element('resultImage').src,'/runs/test/result.png','Restoration must not add the damaged observation back by default');
+  assert.equal(h.element('resultImage').src,'/runs/test/result_smooth.png','Restoration must not add the damaged observation back by default');
   h.element('resultVariant').value='full';await h.element('resultVariant').fire('change');
   assert.equal(h.element('resultDownload').href,'/runs/test/result_raw.png');
   assert.match(h.element('variantExplanation').textContent,/change unmarked areas/);

@@ -1,0 +1,105 @@
+{
+  "scope": "Engineering screen on 20 previously observed development cases. No new identity accuracy evaluation or novelty claim. Reused saved ReF-LDM predictions; mask MAE is on 0-255 scale.",
+  "rows": [
+    {
+      "case": "1306_gaussian_blur",
+      "hard_mae": 10.314287227282355,
+      "smooth_mae": 9.307350137682695
+    },
+    {
+      "case": "1306_noise",
+      "hard_mae": 13.900409517757538,
+      "smooth_mae": 13.106245145802443
+    },
+    {
+      "case": "1306_jpeg",
+      "hard_mae": 10.467644566829062,
+      "smooth_mae": 9.265639341947328
+    },
+    {
+      "case": "1306_downsample",
+      "hard_mae": 10.19056697027466,
+      "smooth_mae": 8.535532726117347
+    },
+    {
+      "case": "1306_mixed",
+      "hard_mae": 12.907381910612159,
+      "smooth_mae": 12.261738332274236
+    },
+    {
+      "case": "2790_gaussian_blur",
+      "hard_mae": 10.426600441501103,
+      "smooth_mae": 9.346939940625713
+    },
+    {
+      "case": "2790_noise",
+      "hard_mae": 13.104133363781685,
+      "smooth_mae": 12.209598842962624
+    },
+    {
+      "case": "2790_jpeg",
+      "hard_mae": 11.058860470427039,
+      "smooth_mae": 8.953737535205907
+    },
+    {
+      "case": "2790_downsample",
+      "hard_mae": 10.107634924259724,
+      "smooth_mae": 8.43628682347568
+    },
+    {
+      "case": "2790_mixed",
+      "hard_mae": 12.804654791809392,
+      "smooth_mae": 11.910006089670397
+    },
+    {
+      "case": "1043_gaussian_blur",
+      "hard_mae": 14.775327119163276,
+      "smooth_mae": 9.736291628375126
+    },
+    {
+      "case": "1043_noise",
+      "hard_mae": 17.54780972386329,
+      "smooth_mae": 11.605903461555293
+    },
+    {
+      "case": "1043_jpeg",
+      "hard_mae": 14.507067524397181,
+      "smooth_mae": 8.902783247997899
+    },
+    {
+      "case": "1043_downsample",
+      "hard_mae": 14.082031420944379,
+      "smooth_mae": 8.911557481073038
+    },
+    {
+      "case": "1043_mixed",
+      "hard_mae": 16.33114524528467,
+      "smooth_mae": 12.085357314778348
+    },
+    {
+      "case": "787_gaussian_blur",
+      "hard_mae": 7.570286417149886,
+      "smooth_mae": 6.5279827798277985
+    },
+    {
+      "case": "787_noise",
+      "hard_mae": 10.11902565454226,
+      "smooth_mae": 10.501164118784045
+    },
+    {
+      "case": "787_jpeg",
+      "hard_mae": 8.111096468107538,
+      "smooth_mae": 6.470677385345282
+    },
+    {
+      "case": "787_downsample",
+      "hard_mae": 7.01232208750659,
+      "smooth_mae": 5.9371815146722895
+    },
+    {
+      "case": "787_mixed",
+      "hard_mae": 9.397469688982603,
+      "smooth_mae": 9.24630996309963
+    }
+  ]
+}
