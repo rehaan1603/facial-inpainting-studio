@@ -1,0 +1,14 @@
+{
+  "repository": "https://github.com/srk1995/RAD",
+  "source_commit": "b3d42a6e0183e41ecf9a5f54e680a8446bb5eedd",
+  "checkpoint_official_folder": "https://drive.google.com/drive/folders/1huMbz5iDcnf3n2Cypt07gyncZUwi65Se",
+  "checkpoint_sha256": "e2ea8e58fd6d98b6c8cdc0bb6c9af11cf8ae3a123d5b5a4afa9d86a179a2ce8c",
+  "checkpoint_bytes": 389253928,
+  "architecture_config": "https://huggingface.co/xutongda/adm_ffhq_256x256/resolve/main/config.json",
+  "lora_rank": 16,
+  "strict_load": true,
+  "runtime": "Isolated rad_env_v1; torch inherited, transformers 4.44.2, tokenizers 0.19.1, peft 0.12.0, huggingface_hub 0.26.5; author diffusers checkout prepended only within its process.",
+  "status": "Both 100-step and 1000-step runs completed with unusable noisy outputs. Strict weight loading passed, but successful author reproduction has NOT been established. Not deployed.",
+  "open_issue": "Configuration warns attention_legacy_order is ignored. Strict tensor matching is not full author reproduction.",
+  "license": "Author repository includes GPL-3.0 and Apache-2.0 components. Source/weights remain cached, not vendored."
+}

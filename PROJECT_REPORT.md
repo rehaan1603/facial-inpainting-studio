@@ -452,3 +452,10 @@ Tested eight reference-transfer outputs: four supplied synthetic references alig
 ### 30 September 2026 - single-image seed and framing screen
 
 Generated 30 fresh ResShift predictions: seeds 17/42/12345 and vertical shifts -32/-64/+32, on four existing development identities plus the uploaded portrait. Inference used no reference photos or clean targets. Every scored output preserves unmarked pixels. Seed changes did not repair the uploaded eye geometry. The -32px shift reduced uploaded masked MAE from 41.53 to 27.40 but worsened the four-identity development mean from 18.31 to 25.47; gaze remained wrong. No offset or seed was promoted as a general fix. This development diagnostic is not independent confirmation. See research/single_image_diagnostic_20260930.json. Reliable framing normalization and unknown-image fidelity remain unresolved.
+
+
+### 30 September 2026 - paper map and RAD compatibility investigation
+
+Added research/PAPERS_AND_IMPLEMENTATION_MAP.md separating implemented generators, evaluation metrics, and related work. The single-image foundation is the extended ResShift restoration paper; blur/noise restoration uses ReF-LDM; reference-guided missing-region inference combines SDXL and FaceID Portrait. There is no validated single novel base method.
+
+Downloaded the official RAD FFHQ checkpoint, recorded its hash and source revision, and created an isolated runtime without changing the website environment. Full checkpoint tensors load strictly. Both 100-step and 1000-step smoke runs completed but produced unusable noise in the missing region. Treat this as an unresolved reproduction/compatibility problem, not a demonstrated failure of the published method. RAD is not deployed. The ignored attention_legacy_order config and checkpoint/inference compatibility need investigation. See research/rad_preflight_20260930.json and scripts/rad_diagnostic.py.
