@@ -1,0 +1,46 @@
+{
+  "scope": "Visible-landmark reference texture transfer diagnostic; synthetic source-derived references, not independent research evidence. Clean target used only after inference for scoring.",
+  "decision": "Not promoted: pose/geometry artifacts persist.",
+  "rows": [
+    {
+      "candidate": "unknown_visible_alignment/reference_1.png",
+      "masked_mae_0_255": 46.044801512287336,
+      "outside_unchanged": true
+    },
+    {
+      "candidate": "unknown_visible_alignment/reference_2.png",
+      "masked_mae_0_255": 46.91650913673598,
+      "outside_unchanged": true
+    },
+    {
+      "candidate": "unknown_visible_alignment/reference_3.png",
+      "masked_mae_0_255": 46.488846880907374,
+      "outside_unchanged": true
+    },
+    {
+      "candidate": "unknown_visible_alignment/reference_4.png",
+      "masked_mae_0_255": 52.70848561226633,
+      "outside_unchanged": true
+    },
+    {
+      "candidate": "unknown_visible_alignment_v2/reference_1.png",
+      "masked_mae_0_255": 42.74144087376602,
+      "outside_unchanged": true
+    },
+    {
+      "candidate": "unknown_visible_alignment_v2/reference_2.png",
+      "masked_mae_0_255": 41.514744801512286,
+      "outside_unchanged": true
+    },
+    {
+      "candidate": "unknown_visible_alignment_v2/reference_3.png",
+      "masked_mae_0_255": 28.930686830497795,
+      "outside_unchanged": true
+    },
+    {
+      "candidate": "unknown_visible_alignment_v2/reference_4.png",
+      "masked_mae_0_255": 41.47977315689981,
+      "outside_unchanged": true
+    }
+  ]
+}

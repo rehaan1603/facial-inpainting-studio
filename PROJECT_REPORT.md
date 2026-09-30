@@ -442,3 +442,8 @@ Inspected the user portrait eye-erasure size comparison. Input/mask alignment wa
 ### 30 September 2026 - replacement model screening on user portrait
 
 Completed four RefFaceInpainting predictions (one per supplied synthetic reference), one ResShift scaffold and one ReF-LDM refinement of that scaffold. All six saved predictions were scored after inference; reference1/reference4 and scaffold/cascade were visually inspected. Dedicated model outputs show severe artifacts; the cascade retains incorrect eye geometry. None is promoted to the application. All six preserve observed pixels outside the mask. This one-photo diagnostic does not support independent generalization or improved identity accuracy. Production remains unchanged; reliable unknown-image reconstruction remains an open core requirement. See research/unknown_portrait_candidates_20260930.json.
+
+
+### 30 September 2026 - visible-landmark alignment diagnostic
+
+Tested eight reference-transfer outputs: four supplied synthetic references aligned using only unmasked nose/mouth landmarks, each with ordinary or collar-aware Poisson composition. No clean target entered inference. Collar-aware composition reduced the grey colour artifact, but incorrect eye placement and pose artifacts remained on visual review. These candidates are not promoted. This does not establish that alignment fixes unknown-image reconstruction. A real near-frontal independent reference is needed to test whether reliable reference geometry helps this case; success is not guaranteed. See research/unknown_alignment_diagnostic_20260930.json.
