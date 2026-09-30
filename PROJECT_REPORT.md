@@ -8,6 +8,10 @@
 
 ## Latest status update
 
+### 30 September: base-paper improvement feasibility checked
+
+The [ReF-LDM comparison and experiment decision](research/REFLDM_IMPROVEMENT_FEASIBILITY_20260930.md) distinguishes inherited methods from possible contributions. Multiple references, identity/structure pathways and reference selection already have prior art. A training-time reference-intervention hypothesis is proposed for further overlap review and feasibility testing; it has not been implemented, trained or validated. Matched baseline reproduction, equal-capacity ablations and independent identity-level evaluation are required before claiming improvement. Missing-region inpainting remains a separate task. Novelty is not established.
+
 ### 29 September: structural mechanism tested and rejected before image production
 
 - Completed the requested [mechanism-history audit](research/MECHANISM_HISTORY_AUDIT_20260928.md) and [structural prior-art review](research/STRUCTURAL_PRIOR_ART_20260928.md). The published missing-region baseline was already complete; it was not rerun or modified. Shape transfer, visible-anchor fitting and landmark warping have substantial prior art and are not claimed as new.
