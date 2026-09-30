@@ -2,6 +2,7 @@
 const el=id=>document.getElementById(id), canvas=el('editor'), context=canvas.getContext('2d');
 let photo=null, confidence=null, history=[],painting=false,last=null;
 let references=[],running=false,currentJob=null,targetRevision=0,mapRevision=0,referenceRevision=0;
+let completedResult=null;
 let photoLoading=false,mapLoading=false,referencesLoading=false;
 function ready(){
  const locked=running||currentJob!==null;
@@ -26,7 +27,22 @@ function installPhoto(image){
  confidence=new Uint8Array(canvas.width*canvas.height).fill(255);history=[];render();
 }
 function notify(text){el('mapStatus').textContent=text;}
-function clearResult(){if(!el('resultPanel').hidden)notify('The image, evidence map or settings changed. Reconstruct again to update the result.');el('resultPanel').hidden=true;el('resultImage').removeAttribute('src');el('resultDownload').removeAttribute('href');el('metadataDownload').removeAttribute('href');}
+function clearResult(){completedResult=null;if(!el('resultPanel').hidden)notify('The image, evidence map or settings changed. Reconstruct again to update the result.');el('resultPanel').hidden=true;el('resultImage').removeAttribute('src');el('resultDownload').removeAttribute('href');el('metadataDownload').removeAttribute('href');}
+function showResultVariant(){
+ if(!completedResult)return;
+ const restored=el('resultVariant').value==='restored';
+ const url=restored?completedResult.restored:completedResult.preserved;
+ el('resultImage').src=url;el('resultDownload').href=url;
+ el('resultDownload').download=restored?'restored.png':'evidence-blended.png';
+ el('resultImage').alt=restored?'Model restoration inside the marked area':'Restoration blended with the original damaged pixels';
+ el('variantExplanation').textContent=restored?'Model restoration inside the marked area; pixels outside stay unchanged. Check facial details and mask boundaries. Settings record this image as parent_output_sha256.':'Evidence blend: gray map values mix the original damaged pixels back into the prediction, which can retain noise and blur. Settings record this image as result_sha256.';
+}
+el('resultVariant').addEventListener('change',showResultVariant);
+function installResult(state){
+ completedResult={preserved:state.result,restored:state.result.replace(/preserved\.png$/, 'result.png')};
+ el('resultVariant').value=el('method').value==='refldm'?'restored':'preserved';
+ showResultVariant();el('metadataDownload').href=state.metadata;el('resultPanel').hidden=false;
+}
 function checkpoint(){clearResult();history.push(confidence.slice());if(history.length>12)history.shift();ready();}
 function render(){
  if(!photo)return;context.putImageData(photo,0,0);
@@ -133,7 +149,7 @@ el('reconstruct').addEventListener('click',async()=>{
   for(;;){
    await new Promise(resolve=>setTimeout(resolve,1000));const state=await readJob(currentJob);notify(state.message);
    if(state.status==='error'){currentJob=null;throw Error(state.message);}
-   if(state.status==='complete'){el('resultImage').src=state.result;el('resultDownload').href=state.result;el('metadataDownload').href=state.metadata;el('resultPanel').hidden=false;currentJob=null;notify('Reconstruction ready. Compare identity and expression carefully; preserved evidence may retain degradation.');break;}
+   if(state.status==='complete'){installResult(state);currentJob=null;notify('Reconstruction ready. Compare the restored and evidence-blended versions below. Check identity, expression and boundaries.');break;}
   }
  }catch(error){if(error.fatal)currentJob=null;notify(error.message);}finally{running=false;ready();}
 });

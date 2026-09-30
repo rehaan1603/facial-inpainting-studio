@@ -412,3 +412,8 @@ Open http://127.0.0.1:8765/. Use matching references for the selected person, ma
 - [Data and model provenance](research/DATA_AND_LICENSES.md)
 
 This report documents existing evidence and planned work. Preparing it does not train a model, add a metric, establish novelty or complete the remaining experiments.
+
+
+### 30 September 2026 — restoration display correction
+
+Inspection of local job 12b33b5ab5a745969c81ca4b46a930da found that evidence blending visibly reintroduced noise into the restored facial regions. The evidence page now defaults to the unblended, mask-composited prediction for ReF-LDM and provides a selector for the evidence-blended alternative. Downloads follow the selected image. Outside-mask pixels were verified unchanged in the saved prediction. Synthetic interface regression checks and live HTTP asset checks passed. No new model inference or accuracy measurement was performed for this display correction. Facial detail and boundary imperfections remain; this is not evidence of improved model accuracy or established novelty. Frozen research results are unchanged.

@@ -50,6 +50,17 @@ const image = (name, extra={}) => ({name,size:64,width:4,height:4,...extra});
 async function upload(h,id,files){h.element(id).files=files;await h.element(id).fire('change');}
 async function confidenceTests(){
   const h=harness('confidence.js');await upload(h,'photo',[image('A')]);
+  h.element('method').value='refldm';
+  h.eval("installResult({result:'/runs/test/preserved.png',metadata:'/runs/test/metadata.json'})");
+  assert.equal(h.element('resultImage').src,'/runs/test/result.png','Restoration must not add the damaged observation back by default');
+  h.element('resultVariant').value='preserved';await h.element('resultVariant').fire('change');
+  assert.equal(h.element('resultDownload').href,'/runs/test/preserved.png');
+  h.eval('clearResult()');assert.equal(h.eval('completedResult'),null);
+  h.element('method').value='reference';
+  h.eval("installResult({result:'/runs/test/preserved.png',metadata:'/runs/test/metadata.json'})");
+  assert.equal(h.element('resultImage').src,'/runs/test/preserved.png','Missing-region evidence behavior stays explicit');
+  h.eval('clearResult()');
+
   h.eval("references=['A1','A2','A3'];ready()");assert.equal(h.element('reconstruct').disabled,false);
   await upload(h,'photo',[image('B')]);assert.equal(h.eval('references.length'),0);assert.equal(h.element('reconstruct').disabled,true);
   const refs=deferred();const pendingRefs=upload(h,'references',[image('Aref',{wait:refs.promise}),image('r2'),image('r3')]);
