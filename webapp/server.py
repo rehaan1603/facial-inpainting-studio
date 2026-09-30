@@ -170,7 +170,7 @@ class Handler(BaseHTTPRequestHandler):
             return self.send(200,{'image':encode(folder/'observed.png'),'mask':encode(folder/'true_mask.png')})
         if path.startswith('/api/jobs/'):
             job=JOBS.get(path.rsplit('/',1)[-1]);return self.send(200,job) if job else self.send(404,{'error':'Run not found. Start a new run.'})
-        match=re.fullmatch(r'/runs/([a-f0-9]{32})/(input\.png|result\.png|preserved\.png|mask\.png|effective_mask\.png|metadata\.json)',path)
+        match=re.fullmatch(r'/runs/([a-f0-9]{32})/(input\.png|result\.png|result_raw\.png|preserved\.png|mask\.png|effective_mask\.png|metadata\.json)',path)
         if match:
             job_id,name=match.groups();file=RUNS/job_id/name
             if not file.is_file():return self.send(404,{'error':'Result not available.'})

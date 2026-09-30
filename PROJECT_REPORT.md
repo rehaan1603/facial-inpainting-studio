@@ -417,3 +417,8 @@ This report documents existing evidence and planned work. Preparing it does not 
 ### 30 September 2026 — restoration display correction
 
 Inspection of local job 12b33b5ab5a745969c81ca4b46a930da found that evidence blending visibly reintroduced noise into the restored facial regions. The evidence page now defaults to the unblended, mask-composited prediction for ReF-LDM and provides a selector for the evidence-blended alternative. Downloads follow the selected image. Outside-mask pixels were verified unchanged in the saved prediction. Synthetic interface regression checks and live HTTP asset checks passed. No new model inference or accuracy measurement was performed for this display correction. Facial detail and boundary imperfections remain; this is not evidence of improved model accuracy or established novelty. Frozen research results are unchanged.
+
+
+### 30 September 2026 - full restoration inspection
+
+Visual inspection of studio job d85fb5d619344c879498075514f5c5b1 found spatial disagreement between the whole-image ReF-LDM prediction and the original photo: composing small facial patches produces visible seams. Added an explicit full-image restoration comparison/download option for ReF-LDM. It is optional because it modifies unmarked regions and can alter eyes and expression. No model accuracy improvement is claimed. Interface regression checks passed; the local server was restarted while idle and the served raw PNG checksum matched existing metadata. No new model run or research evaluation was performed. Better spatial fidelity remains unresolved.
