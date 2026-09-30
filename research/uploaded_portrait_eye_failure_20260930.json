@@ -1,0 +1,19 @@
+{
+  "scope": "Single user portrait with synthetic references derived from its clean source. Diagnostic only, not independent generalization evidence. Clean target used only for post-inference scoring.",
+  "results": [
+    {
+      "method": "baseline_512",
+      "masked_mae_0_255": 21.25335013652594
+    },
+    {
+      "method": "baseline_1024",
+      "masked_mae_0_255": 25.963642091997478
+    },
+    {
+      "method": "stronger_reference_1024",
+      "masked_mae_0_255": 32.2207729468599
+    }
+  ],
+  "decision": "Reject stronger adapter 1.2 / 50 steps trial; visually exaggerated eyes. No production setting changed.",
+  "unresolved": "Faithful recovery of erased eyes."
+}

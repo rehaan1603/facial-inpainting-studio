@@ -432,3 +432,8 @@ Added studio-only gradient-domain patch lighting correction and made its separat
 ### 30 September 2026 - noise-boundary defect
 
 The previous smoothing step retained a noisy ring because its solve boundary lay within the damage. Added a studio heuristic: median RGB residual against a 3x3 median filter above 6 at the inner mask edge triggers an 8px wider solve domain. Only originally marked pixels are written back. Four observed noise cases improved; the other 16 development cases retain prior processing. This rule was chosen using development diagnostics and is not independently validated. Uniform expansion worsened overall MAE and was rejected. A fresh ReF-LDM GPU trial with pre-denoising still distorted features and was rejected. Synthetic ring-removal/outside-preservation and UI regressions passed. Blur detail and identity fidelity remain unresolved model limitations; no novelty or universal accuracy claim.
+
+
+### 30 September 2026 - unknown portrait eye failure
+
+Inspected the user portrait eye-erasure size comparison. Input/mask alignment was correct, but generated eye shape and gaze were wrong. A fresh 1024px trial with adapter scale 1.2, 50 steps and full denoising exaggerated the eyes and was rejected. Production settings were not changed. Scores are recorded in research/uploaded_portrait_eye_failure_20260930.json; this is a single diagnostic using synthetic references derived from the target photo, not valid independent generalization evidence. Erased-eye identity fidelity remains unresolved.
