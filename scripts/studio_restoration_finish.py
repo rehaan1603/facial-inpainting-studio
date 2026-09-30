@@ -9,8 +9,17 @@ def finish_restoration(observed, generated, mask):
     hard=np.where(m[...,None],g,a)
     if not m.any() or m[0].any() or m[-1].any() or m[:,0].any() or m[:,-1].any():
         return hard, 'mask_composite_border_or_empty'
-    x,y,w,h=cv2.boundingRect(m.astype(np.uint8))
+    solve_mask=m.astype(np.uint8)
+    edge=m & ~cv2.erode(solve_mask,np.ones((5,5),np.uint8)).astype(bool)
+    residual=np.abs(a.astype(float)-cv2.medianBlur(a,3))
+    # Studio heuristic: noisy Dirichlet boundaries imprint damaged pixels.
+    # Expand the solve only; write back strictly inside the user's mask.
+    noisy_edge=bool(edge.any() and np.median(residual[edge])>6)
+    if noisy_edge:
+        solve_mask=cv2.dilate(solve_mask,np.ones((17,17),np.uint8))
+        solve_mask[[0,-1],:]=0;solve_mask[:,[0,-1]]=0
+    x,y,w,h=cv2.boundingRect(solve_mask)
     if min(w,h)<4:return hard, 'mask_composite_small_region'
-    result=cv2.seamlessClone(g,a,m.astype(np.uint8)*255,(x+w//2,y+h//2),cv2.NORMAL_CLONE)
+    result=cv2.seamlessClone(g,a,solve_mask*255,(x+w//2,y+h//2),cv2.NORMAL_CLONE)
     result[~m]=a[~m]
-    return result, 'gradient_domain_normal_clone'
+    return result, 'gradient_domain_noisy_boundary_context' if noisy_edge else 'gradient_domain_normal_clone'

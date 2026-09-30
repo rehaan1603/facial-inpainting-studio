@@ -9,3 +9,12 @@ try:finish_restoration(x,g[:3],m)
 except ValueError:pass
 else:raise AssertionError('geometry mismatch accepted')
 print('Finishing checks passed: lighting, outside preservation, full/empty masks, invalid geometry.')
+
+rng=np.random.default_rng(17)
+a=np.full((64,64,3),100,np.uint8);mask=np.zeros((64,64),bool);mask[16:48,16:48]=True
+a[mask]=rng.integers(50,151,size=(mask.sum(),3),dtype=np.uint8)
+r,mode=finish_restoration(a,np.full_like(a,100),mask)
+assert mode=='gradient_domain_noisy_boundary_context'
+assert np.array_equal(r[~mask],a[~mask])
+assert np.abs(r[mask].astype(float)-100).mean()<2
+print('Noisy boundary regression passed: no retained ring and exact outside pixels.')

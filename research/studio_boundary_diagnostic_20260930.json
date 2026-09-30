@@ -1,0 +1,106 @@
+{
+  "scope": "Development-guided heuristic, not independent validation. Uniform expansion rejected; median RGB high frequency residual >6 enables expanded solve only. Pre-denoising trial rejected visually.",
+  "uniform_expansion_rows": [
+    {
+      "case": "1306_gaussian_blur",
+      "old_mae": 9.307350137682695,
+      "new_mae": 9.790881169243804
+    },
+    {
+      "case": "1306_noise",
+      "old_mae": 13.106245145802443,
+      "new_mae": 12.768410647461696
+    },
+    {
+      "case": "1306_jpeg",
+      "old_mae": 9.265639341947328,
+      "new_mae": 9.883393348866765
+    },
+    {
+      "case": "1306_downsample",
+      "old_mae": 8.535532726117347,
+      "new_mae": 9.378733319212031
+    },
+    {
+      "case": "1306_mixed",
+      "old_mae": 12.261738332274236,
+      "new_mae": 12.486567111487679
+    },
+    {
+      "case": "2790_gaussian_blur",
+      "old_mae": 9.346939940625713,
+      "new_mae": 9.805282789069041
+    },
+    {
+      "case": "2790_noise",
+      "old_mae": 12.209598842962624,
+      "new_mae": 11.280524472862906
+    },
+    {
+      "case": "2790_jpeg",
+      "old_mae": 8.953737535205907,
+      "new_mae": 9.761627464413488
+    },
+    {
+      "case": "2790_downsample",
+      "old_mae": 8.43628682347568,
+      "new_mae": 9.113248839156581
+    },
+    {
+      "case": "2790_mixed",
+      "old_mae": 11.910006089670397,
+      "new_mae": 11.946068356550201
+    },
+    {
+      "case": "1043_gaussian_blur",
+      "old_mae": 9.736291628375126,
+      "new_mae": 10.160671305413329
+    },
+    {
+      "case": "1043_noise",
+      "old_mae": 11.605903461555293,
+      "new_mae": 10.602774495645704
+    },
+    {
+      "case": "1043_jpeg",
+      "old_mae": 8.902783247997899,
+      "new_mae": 9.783554330226249
+    },
+    {
+      "case": "1043_downsample",
+      "old_mae": 8.911557481073038,
+      "new_mae": 9.414511399938734
+    },
+    {
+      "case": "1043_mixed",
+      "old_mae": 12.085357314778348,
+      "new_mae": 11.88823246247429
+    },
+    {
+      "case": "787_gaussian_blur",
+      "old_mae": 6.5279827798277985,
+      "new_mae": 6.892198207696363
+    },
+    {
+      "case": "787_noise",
+      "old_mae": 10.501164118784045,
+      "new_mae": 9.149753997539975
+    },
+    {
+      "case": "787_jpeg",
+      "old_mae": 6.470677385345282,
+      "new_mae": 6.966438235810929
+    },
+    {
+      "case": "787_downsample",
+      "old_mae": 5.9371815146722895,
+      "new_mae": 6.53525303110174
+    },
+    {
+      "case": "787_mixed",
+      "old_mae": 9.24630996309963,
+      "new_mae": 9.123023194517659
+    }
+  ],
+  "conditional_mean_mae": 9.48184179278395
+}
