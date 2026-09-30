@@ -8,6 +8,10 @@
 
 ## Latest status update
 
+### 30 September: adapter backward feasibility passed; prior-art overlap tightened
+
+The [reference-intervention preflight](research/REFERENCE_INTERVENTION_PREFLIGHT_20260930.md) records three real GPU probes through the frozen pretrained ReF-LDM UNet. A 273-parameter synthetic-latent adapter completed an optimizer update with four references at approximately 2975 MiB peak tensor memory; its neutral initialization reproduced the baseline exactly and the backbone received no gradients. This excludes image encoding and full paired training losses, so full training feasibility and quality remain unverified. RefSTAR's full text already covers supervised reference-region selection; the broad reliability proposal is not novel. A narrower paired-intervention objective remains a hypothesis requiring further overlap checks and matched ablations. No dataset images or reserved identities were used in these probes; no production defaults changed.
+
 ### 30 September: base-paper improvement feasibility checked
 
 The [ReF-LDM comparison and experiment decision](research/REFLDM_IMPROVEMENT_FEASIBILITY_20260930.md) distinguishes inherited methods from possible contributions. Multiple references, identity/structure pathways and reference selection already have prior art. A training-time reference-intervention hypothesis is proposed for further overlap review and feasibility testing; it has not been implemented, trained or validated. Matched baseline reproduction, equal-capacity ablations and independent identity-level evaluation are required before claiming improvement. Missing-region inpainting remains a separate task. Novelty is not established.

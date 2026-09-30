@@ -1,0 +1,28 @@
+{
+  "scope": "Synthetic latent single backward step; not quality evidence or full training feasibility",
+  "references": 1,
+  "image_equivalent": 512,
+  "latent_size": 64,
+  "source_commit": "af6690c19fdc6421802fd7996510bcfef259bfd1",
+  "torch": "2.11.0+cu128",
+  "gpu": "NVIDIA GeForce RTX 5070 Laptop GPU",
+  "exclusions": [
+    "VQ encoder/decoder",
+    "image losses",
+    "paired intervention forward",
+    "dataset images"
+  ],
+  "precision": "float32 parameters, bfloat16 autocast",
+  "checkpointing": false,
+  "script_sha256": "8c8f135b8a37952db36eab1b62769c2ba3a0acb00cba45bcf657c5fab17835ed",
+  "checkpoint_sha256": "ad953ba72b52ed32dd280232ff0070bc6cb097a71dce250318730c884e38b778",
+  "status": "passed",
+  "loss": 1.9475759267807007,
+  "gradient_norm": 0.003943381831049919,
+  "parameter_update": true,
+  "trainable_parameters": 273,
+  "backward_step_seconds": 0.5620000000053551,
+  "elapsed_seconds": 4.203000000008615,
+  "peak_allocated_mib": 1626.20361328125,
+  "peak_reserved_mib": 1732.0
+}
