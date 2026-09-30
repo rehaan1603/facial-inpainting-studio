@@ -1,0 +1,42 @@
+{
+  "scope": "Single diagnostic only; synthetic references derived from source. Target used only for scoring after all inference, never supplied as model conditioning. No independent generalization claim.",
+  "rows": [
+    {
+      "candidate": "unknown_refface_screen/reference_1.png",
+      "masked_mae_0_255": 29.769817265280402,
+      "outside_pixels_unchanged": true,
+      "decision": "rejected_visual_structure_failure"
+    },
+    {
+      "candidate": "unknown_refface_screen/reference_2.png",
+      "masked_mae_0_255": 32.77009031716026,
+      "outside_pixels_unchanged": true,
+      "decision": "rejected_visual_structure_failure"
+    },
+    {
+      "candidate": "unknown_refface_screen/reference_3.png",
+      "masked_mae_0_255": 30.58134845620668,
+      "outside_pixels_unchanged": true,
+      "decision": "rejected_visual_structure_failure"
+    },
+    {
+      "candidate": "unknown_refface_screen/reference_4.png",
+      "masked_mae_0_255": 31.43648393194707,
+      "outside_pixels_unchanged": true,
+      "decision": "rejected_visual_structure_failure"
+    },
+    {
+      "candidate": "unknown_cascade_screen/scaffold.png",
+      "masked_mae_0_255": 41.5349086326402,
+      "outside_pixels_unchanged": true,
+      "decision": "rejected_visual_structure_failure"
+    },
+    {
+      "candidate": "unknown_cascade_screen/cascade.png",
+      "masked_mae_0_255": 37.969565217391306,
+      "outside_pixels_unchanged": true,
+      "decision": "rejected_visual_structure_failure"
+    }
+  ],
+  "production_changed": false
+}

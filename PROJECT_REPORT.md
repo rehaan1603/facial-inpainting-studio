@@ -437,3 +437,8 @@ The previous smoothing step retained a noisy ring because its solve boundary lay
 ### 30 September 2026 - unknown portrait eye failure
 
 Inspected the user portrait eye-erasure size comparison. Input/mask alignment was correct, but generated eye shape and gaze were wrong. A fresh 1024px trial with adapter scale 1.2, 50 steps and full denoising exaggerated the eyes and was rejected. Production settings were not changed. Scores are recorded in research/uploaded_portrait_eye_failure_20260930.json; this is a single diagnostic using synthetic references derived from the target photo, not valid independent generalization evidence. Erased-eye identity fidelity remains unresolved.
+
+
+### 30 September 2026 - replacement model screening on user portrait
+
+Completed four RefFaceInpainting predictions (one per supplied synthetic reference), one ResShift scaffold and one ReF-LDM refinement of that scaffold. All six saved predictions were scored after inference; reference1/reference4 and scaffold/cascade were visually inspected. Dedicated model outputs show severe artifacts; the cascade retains incorrect eye geometry. None is promoted to the application. All six preserve observed pixels outside the mask. This one-photo diagnostic does not support independent generalization or improved identity accuracy. Production remains unchanged; reliable unknown-image reconstruction remains an open core requirement. See research/unknown_portrait_candidates_20260930.json.
