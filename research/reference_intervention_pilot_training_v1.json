@@ -1,0 +1,54 @@
+{
+  "manifest_sha256": "f01f52bae44001bc9c23d36c0b4c5b48cd8e60e8f19cb1ba717be085143f117e",
+  "script_sha256": "a6883c171ebb61e3b87874bcba4dddcab124f1398bdbfa687ac786fde501d81e",
+  "core_sha256": "4a24642bd192383e5a791a26b40074af9778045baa8aca17b516cbbeb39d0365",
+  "arms": [
+    {
+      "arm": "reconstruction",
+      "steps": 64,
+      "elapsed_seconds": 50.23399999999674,
+      "peak_allocated_mib": 3545.81494140625,
+      "checkpoint_sha256": "4027a3ab1940ee6eac57eddadfebb88b0dbdf233997d80ca9d6354754760fc17",
+      "neutral_adapter_exact": true,
+      "backbone_frozen": true
+    },
+    {
+      "arm": "intervention",
+      "steps": 64,
+      "elapsed_seconds": 47.64100000000326,
+      "peak_allocated_mib": 3542.99658203125,
+      "checkpoint_sha256": "c6287086cbd6aeb4ff07d94ce4b024f193c2da90f6c86d043cfedc6197f0cb4c",
+      "neutral_adapter_exact": true,
+      "backbone_frozen": true
+    }
+  ],
+  "attention_layers": 16,
+  "trainable_parameters": 545,
+  "objective_scope": "latent diffusion epsilon prediction; no image-space or identity loss",
+  "cache_receipt_sha256": "40f0fdb209d906042a68ffe0b7931865bb203f6e50e1e81fa7ed819b0d031241",
+  "train_identities": [
+    "8570",
+    "6792",
+    "4410",
+    "2250",
+    "3930",
+    "8173",
+    "2083",
+    "7506",
+    "4625",
+    "38",
+    "4164",
+    "674",
+    "8660",
+    "476",
+    "1281",
+    "8748"
+  ],
+  "adapter_holdout_identities": [
+    "10149",
+    "263",
+    "6681",
+    "7400"
+  ],
+  "final_test_used": false
+}

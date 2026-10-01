@@ -1,12 +1,16 @@
 # Facial Inpainting Project — Progress and Completion Report
 
-**Report date:** 29 September 2026
+**Report date:** 1 October 2026
 **Current platform:** Windows laptop, NVIDIA RTX 5070 Laptop GPU with 8 GB VRAM  
 **Current application:** http://127.0.0.1:8765/  
 **Repository:** https://github.com/rehaan1603/facial-inpainting-studio  
 **Status:** Working local research baseline; proposed multi-reference research method and final validation incomplete. Public hosting paused at the owner's request.
 
 ## Latest status update
+
+### 1 October: real adapter training and comparison completed
+
+Implemented and tested a 545-parameter attention-logit adapter, then ran three 64-step training arms on 16 identities with four separate adapter-check identities. Completed **36 generated images and 40 scored image rows**, including damaged-input controls. The initial intervention worsened corrupted-reference FaceNet similarity (0.90060 baseline to 0.89208). A training-log-scaled follow-up reached 0.90082 but worsened LPIPS (0.26503 to 0.26872) and clean-reference identity. These four identities now constitute development data. **Neither candidate is promoted; novelty remains unestablished.** See [pilot results and remaining work](research/REFERENCE_INTERVENTION_PILOT_RESULTS_V1.md). Four attention integrity tests pass, and paired training fits in roughly 3.5 GiB of allocated GPU memory. Reserved final pixels were not used. A local 24-slide presentation now covers the architecture, algorithms, reconstructed outputs, results and remaining milestones.
 
 ### 30 September: adapter backward feasibility passed; prior-art overlap tightened
 

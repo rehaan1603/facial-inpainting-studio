@@ -1,0 +1,502 @@
+{
+  "score_sha256": "81664c439e2fc20f3ae40acbb415eb46e1e51fa848a013f8f52d4e72ba513ca3",
+  "analysis_script_sha256": "192c487170383be134ee79125bd2584987abc1078909d2b1af2483eda1ddae98",
+  "comparisons": [
+    {
+      "condition": "clean",
+      "contrast": "intervention - baseline",
+      "metric": "facenet_cosine",
+      "common_support": [
+        "10149",
+        "263",
+        "6681",
+        "7400"
+      ],
+      "n": 4,
+      "identity_deltas": [
+        -0.001455068588256836,
+        0.011469244956970215,
+        8.308887481689453e-05,
+        -0.0050882697105407715
+      ],
+      "mean_delta": 0.0012522488832473755
+    },
+    {
+      "condition": "clean",
+      "contrast": "intervention - baseline",
+      "metric": "arcface_conditioning_cosine",
+      "common_support": [
+        "263",
+        "6681"
+      ],
+      "n": 2,
+      "identity_deltas": [
+        0.017003893852233887,
+        -0.0004355311393737793
+      ],
+      "mean_delta": 0.008284181356430054
+    },
+    {
+      "condition": "clean",
+      "contrast": "intervention - baseline",
+      "metric": "lpips",
+      "common_support": [
+        "10149",
+        "263",
+        "6681",
+        "7400"
+      ],
+      "n": 4,
+      "identity_deltas": [
+        0.002492368221282959,
+        -0.0003782510757446289,
+        -0.0053140223026275635,
+        -0.0016134381294250488
+      ],
+      "mean_delta": -0.0012033358216285706
+    },
+    {
+      "condition": "clean",
+      "contrast": "intervention - baseline",
+      "metric": "mae",
+      "common_support": [
+        "10149",
+        "263",
+        "6681",
+        "7400"
+      ],
+      "n": 4,
+      "identity_deltas": [
+        -0.00024539723115809403,
+        4.597084195006457e-05,
+        -2.5531045751633896e-05,
+        -0.00030723521912020407
+      ],
+      "mean_delta": -0.00013304816351996686
+    },
+    {
+      "condition": "clean",
+      "contrast": "intervention - reconstruction",
+      "metric": "facenet_cosine",
+      "common_support": [
+        "10149",
+        "263",
+        "6681",
+        "7400"
+      ],
+      "n": 4,
+      "identity_deltas": [
+        -0.006339311599731445,
+        0.0014673471450805664,
+        0.003511667251586914,
+        -0.009585678577423096
+      ],
+      "mean_delta": -0.002736493945121765
+    },
+    {
+      "condition": "clean",
+      "contrast": "intervention - reconstruction",
+      "metric": "arcface_conditioning_cosine",
+      "common_support": [
+        "263",
+        "6681"
+      ],
+      "n": 2,
+      "identity_deltas": [
+        0.002062499523162842,
+        -0.0058817267417907715
+      ],
+      "mean_delta": -0.0019096136093139648
+    },
+    {
+      "condition": "clean",
+      "contrast": "intervention - reconstruction",
+      "metric": "lpips",
+      "common_support": [
+        "10149",
+        "263",
+        "6681",
+        "7400"
+      ],
+      "n": 4,
+      "identity_deltas": [
+        0.0009991228580474854,
+        -0.0015107989311218262,
+        -0.00173969566822052,
+        0.00034621357917785645
+      ],
+      "mean_delta": -0.0004762895405292511
+    },
+    {
+      "condition": "clean",
+      "contrast": "intervention - reconstruction",
+      "metric": "mae",
+      "common_support": [
+        "10149",
+        "263",
+        "6681",
+        "7400"
+      ],
+      "n": 4,
+      "identity_deltas": [
+        -7.327709322661052e-05,
+        -0.0005582572587954499,
+        4.975063348907488e-05,
+        0.00018902448267718586
+      ],
+      "mean_delta": -9.818980896394991e-05
+    },
+    {
+      "condition": "corrupt",
+      "contrast": "intervention - baseline",
+      "metric": "facenet_cosine",
+      "common_support": [
+        "10149",
+        "263",
+        "6681",
+        "7400"
+      ],
+      "n": 4,
+      "identity_deltas": [
+        0.0009390115737915039,
+        -0.009031713008880615,
+        -0.009595513343811035,
+        -0.016389966011047363
+      ],
+      "mean_delta": -0.008519545197486877
+    },
+    {
+      "condition": "corrupt",
+      "contrast": "intervention - baseline",
+      "metric": "arcface_conditioning_cosine",
+      "common_support": [
+        "263",
+        "6681"
+      ],
+      "n": 2,
+      "identity_deltas": [
+        0.00920039415359497,
+        0.004999041557312012
+      ],
+      "mean_delta": 0.007099717855453491
+    },
+    {
+      "condition": "corrupt",
+      "contrast": "intervention - baseline",
+      "metric": "lpips",
+      "common_support": [
+        "10149",
+        "263",
+        "6681",
+        "7400"
+      ],
+      "n": 4,
+      "identity_deltas": [
+        0.0002508610486984253,
+        -9.417533874511719e-05,
+        -0.003874465823173523,
+        0.0008783936500549316
+      ],
+      "mean_delta": -0.0007098466157913208
+    },
+    {
+      "condition": "corrupt",
+      "contrast": "intervention - baseline",
+      "metric": "mae",
+      "common_support": [
+        "10149",
+        "263",
+        "6681",
+        "7400"
+      ],
+      "n": 4,
+      "identity_deltas": [
+        5.9484344681892676e-05,
+        -0.0003022237540849723,
+        -7.255404603247889e-05,
+        0.0001277100806142753
+      ],
+      "mean_delta": -4.689584370532081e-05
+    },
+    {
+      "condition": "corrupt",
+      "contrast": "intervention - reconstruction",
+      "metric": "facenet_cosine",
+      "common_support": [
+        "10149",
+        "6681",
+        "7400"
+      ],
+      "n": 3,
+      "identity_deltas": [
+        -0.004858136177062988,
+        0.0037724971771240234,
+        0.004688143730163574
+      ],
+      "mean_delta": 0.0012008349100748699
+    },
+    {
+      "condition": "corrupt",
+      "contrast": "intervention - reconstruction",
+      "metric": "arcface_conditioning_cosine",
+      "common_support": [
+        "263",
+        "6681"
+      ],
+      "n": 2,
+      "identity_deltas": [
+        -0.0031099915504455566,
+        0.0013312101364135742
+      ],
+      "mean_delta": -0.0008893907070159912
+    },
+    {
+      "condition": "corrupt",
+      "contrast": "intervention - reconstruction",
+      "metric": "lpips",
+      "common_support": [
+        "10149",
+        "263",
+        "6681",
+        "7400"
+      ],
+      "n": 4,
+      "identity_deltas": [
+        -0.002536669373512268,
+        -0.0004260241985321045,
+        2.0265579223632812e-05,
+        -0.00028577446937561035
+      ],
+      "mean_delta": -0.0008070506155490875
+    },
+    {
+      "condition": "corrupt",
+      "contrast": "intervention - reconstruction",
+      "metric": "mae",
+      "common_support": [
+        "10149",
+        "263",
+        "6681",
+        "7400"
+      ],
+      "n": 4,
+      "identity_deltas": [
+        7.277843998928363e-05,
+        -0.00013012356228298688,
+        0.00011439603917739322,
+        -0.00011658014035692554
+      ],
+      "mean_delta": -1.4882305868308895e-05
+    }
+  ],
+  "detection_events": [
+    {
+      "identity": "263",
+      "arm": "reconstruction",
+      "condition": "corrupt",
+      "family": "output_detections",
+      "metric": "facenet",
+      "status": "multiple_faces"
+    },
+    {
+      "identity": "7400",
+      "arm": "baseline",
+      "condition": "clean",
+      "family": "target_detections",
+      "metric": "arcface_conditioning",
+      "status": "no_face"
+    },
+    {
+      "identity": "7400",
+      "arm": "baseline",
+      "condition": "clean",
+      "family": "output_detections",
+      "metric": "arcface_conditioning",
+      "status": "no_face"
+    },
+    {
+      "identity": "7400",
+      "arm": "baseline",
+      "condition": "corrupt",
+      "family": "target_detections",
+      "metric": "arcface_conditioning",
+      "status": "no_face"
+    },
+    {
+      "identity": "7400",
+      "arm": "baseline",
+      "condition": "corrupt",
+      "family": "output_detections",
+      "metric": "arcface_conditioning",
+      "status": "no_face"
+    },
+    {
+      "identity": "7400",
+      "arm": "reconstruction",
+      "condition": "clean",
+      "family": "target_detections",
+      "metric": "arcface_conditioning",
+      "status": "no_face"
+    },
+    {
+      "identity": "7400",
+      "arm": "reconstruction",
+      "condition": "clean",
+      "family": "output_detections",
+      "metric": "arcface_conditioning",
+      "status": "no_face"
+    },
+    {
+      "identity": "7400",
+      "arm": "reconstruction",
+      "condition": "corrupt",
+      "family": "target_detections",
+      "metric": "arcface_conditioning",
+      "status": "no_face"
+    },
+    {
+      "identity": "7400",
+      "arm": "reconstruction",
+      "condition": "corrupt",
+      "family": "output_detections",
+      "metric": "arcface_conditioning",
+      "status": "no_face"
+    },
+    {
+      "identity": "7400",
+      "arm": "intervention",
+      "condition": "clean",
+      "family": "target_detections",
+      "metric": "arcface_conditioning",
+      "status": "no_face"
+    },
+    {
+      "identity": "7400",
+      "arm": "intervention",
+      "condition": "clean",
+      "family": "output_detections",
+      "metric": "arcface_conditioning",
+      "status": "no_face"
+    },
+    {
+      "identity": "7400",
+      "arm": "intervention",
+      "condition": "corrupt",
+      "family": "target_detections",
+      "metric": "arcface_conditioning",
+      "status": "no_face"
+    },
+    {
+      "identity": "7400",
+      "arm": "intervention",
+      "condition": "corrupt",
+      "family": "output_detections",
+      "metric": "arcface_conditioning",
+      "status": "no_face"
+    },
+    {
+      "identity": "7400",
+      "arm": "no_reference",
+      "condition": "clean",
+      "family": "target_detections",
+      "metric": "arcface_conditioning",
+      "status": "no_face"
+    },
+    {
+      "identity": "7400",
+      "arm": "no_reference",
+      "condition": "clean",
+      "family": "output_detections",
+      "metric": "facenet",
+      "status": "multiple_faces"
+    },
+    {
+      "identity": "7400",
+      "arm": "no_reference",
+      "condition": "clean",
+      "family": "output_detections",
+      "metric": "arcface_conditioning",
+      "status": "no_face"
+    },
+    {
+      "identity": "10149",
+      "arm": "baseline",
+      "condition": "clean",
+      "family": "output_detections",
+      "metric": "arcface_conditioning",
+      "status": "no_face"
+    },
+    {
+      "identity": "10149",
+      "arm": "baseline",
+      "condition": "corrupt",
+      "family": "output_detections",
+      "metric": "arcface_conditioning",
+      "status": "no_face"
+    },
+    {
+      "identity": "10149",
+      "arm": "reconstruction",
+      "condition": "clean",
+      "family": "output_detections",
+      "metric": "arcface_conditioning",
+      "status": "no_face"
+    },
+    {
+      "identity": "10149",
+      "arm": "reconstruction",
+      "condition": "corrupt",
+      "family": "output_detections",
+      "metric": "arcface_conditioning",
+      "status": "no_face"
+    },
+    {
+      "identity": "10149",
+      "arm": "intervention",
+      "condition": "clean",
+      "family": "output_detections",
+      "metric": "arcface_conditioning",
+      "status": "no_face"
+    },
+    {
+      "identity": "10149",
+      "arm": "intervention",
+      "condition": "corrupt",
+      "family": "output_detections",
+      "metric": "arcface_conditioning",
+      "status": "no_face"
+    },
+    {
+      "identity": "10149",
+      "arm": "no_reference",
+      "condition": "clean",
+      "family": "output_detections",
+      "metric": "arcface_conditioning",
+      "status": "no_face"
+    }
+  ],
+  "decision": "Do not promote: corrupted-reference FaceNet regresses against baseline. Novelty is not established.",
+  "inference": "Descriptive pilot only. Four identities, one generation seed, no significance claim.",
+  "review": {
+    "sheets_reviewed": [
+      "10149",
+      "263",
+      "6681",
+      "7400"
+    ],
+    "blinded": false,
+    "observation": "Outputs are sharper than degraded inputs, but target-specific gaze, skin detail and mouth shape are not exact. No clear consistent visual advantage of intervention over reconstruction control."
+  },
+  "milestones": {
+    "literature_overlap_check": "partial; generic reliability overlaps RefSTAR",
+    "adapter_implementation": "complete for this prototype",
+    "unit_tests": "4 passed",
+    "pilot_data_and_encoding": "complete: 16 train and 4 adapter-heldout identities",
+    "paired_training": "complete: 64 steps per arm",
+    "generation": "complete: 28 images",
+    "metric_evaluation": "complete: 28 rows with missing identity scores retained",
+    "independent_benchmark": "not run",
+    "novelty": "not established",
+    "production_promotion": "rejected"
+  }
+}

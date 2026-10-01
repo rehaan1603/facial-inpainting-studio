@@ -1,0 +1,1937 @@
+{
+  "scope": "Four adapter-held-out identities, one seed and degradation; exploratory only",
+  "evaluator_sha256": "0f464e125bb39fe523faea9148fdf093666664a93a9efc0ac4a6e840c156a59b",
+  "metrics_source_sha256": "023d368e19ff66233afba9c61eef4de8d01ab1adb0bf4e73b1e934db23d7b6bf",
+  "generation_rows_sha256": "c278f5ec2a91c6f161d73b38b127fbd8e1fb7b91bb17371ffd68ddb414941b2e",
+  "rows": [
+    {
+      "identity": "263",
+      "arm": "baseline",
+      "condition": "clean",
+      "file": "263_baseline_clean.png",
+      "sha256": "608cffffc4307229af66fefdebacf6207d68f43ad89b4f5135e395da3ccb3947",
+      "seconds": 4.907000000006519,
+      "metrics": {
+        "niqe": 4.897466701870804,
+        "brisque": -3.55157470703125,
+        "facenet_cosine": 0.8837107419967651,
+        "arcface_conditioning_cosine": 0.8348510265350342,
+        "mae": 0.03877128152286305,
+        "psnr": 23.825855711872514,
+        "ssim": 0.7010346462261724,
+        "lpips": 0.26243752241134644
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            131.28285217285156,
+            92.28170776367188,
+            404.0132751464844,
+            452.57421875
+          ],
+          "probability": 0.9999887943267822
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            132.88772583007812,
+            112.3121109008789,
+            403.886474609375,
+            451.95703125
+          ],
+          "probability": 0.6385312080383301
+        }
+      },
+      "output_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            133.72840881347656,
+            108.31658935546875,
+            395.9002990722656,
+            459.8836669921875
+          ],
+          "probability": 0.9987342953681946
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            132.7722930908203,
+            114.867431640625,
+            407.467041015625,
+            451.83203125
+          ],
+          "probability": 0.6818574070930481
+        }
+      }
+    },
+    {
+      "identity": "263",
+      "arm": "baseline",
+      "condition": "corrupt",
+      "file": "263_baseline_corrupt.png",
+      "sha256": "176310c239301868470aa4d649e14b0b5c620200c1c6cf92d5facfe0a23cf017",
+      "seconds": 4.51600000000326,
+      "metrics": {
+        "niqe": 4.731347080868516,
+        "brisque": -2.90069580078125,
+        "facenet_cosine": 0.8628326654434204,
+        "arcface_conditioning_cosine": 0.8247890472412109,
+        "mae": 0.03971937092301114,
+        "psnr": 23.69336750115179,
+        "ssim": 0.6983368052547783,
+        "lpips": 0.2622886002063751
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            131.28285217285156,
+            92.28170776367188,
+            404.0132751464844,
+            452.57421875
+          ],
+          "probability": 0.9999887943267822
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            132.88772583007812,
+            112.3121109008789,
+            403.886474609375,
+            451.95703125
+          ],
+          "probability": 0.6385312080383301
+        }
+      },
+      "output_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            129.98477172851562,
+            105.44914245605469,
+            394.9788818359375,
+            450.80609130859375
+          ],
+          "probability": 0.9968793392181396
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            133.23794555664062,
+            116.4284439086914,
+            407.4141540527344,
+            451.6595153808594
+          ],
+          "probability": 0.681325376033783
+        }
+      }
+    },
+    {
+      "identity": "263",
+      "arm": "reconstruction",
+      "condition": "clean",
+      "file": "263_reconstruction_clean.png",
+      "sha256": "f0f0863277f36eb196633cc64f2a19b279487b1ef266199804c0cc1e3cb84a3e",
+      "seconds": 5.2960000000020955,
+      "metrics": {
+        "niqe": 5.169032851274126,
+        "brisque": -3.17315673828125,
+        "facenet_cosine": 0.8937126398086548,
+        "arcface_conditioning_cosine": 0.8497924208641052,
+        "mae": 0.039375509623608564,
+        "psnr": 23.7586027257067,
+        "ssim": 0.700679324796039,
+        "lpips": 0.26357007026672363
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            131.28285217285156,
+            92.28170776367188,
+            404.0132751464844,
+            452.57421875
+          ],
+          "probability": 0.9999887943267822
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            132.88772583007812,
+            112.3121109008789,
+            403.886474609375,
+            451.95703125
+          ],
+          "probability": 0.6385312080383301
+        }
+      },
+      "output_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            136.607177734375,
+            104.51010131835938,
+            400.163330078125,
+            458.45391845703125
+          ],
+          "probability": 0.9995912909507751
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            132.66943359375,
+            115.4247817993164,
+            407.35272216796875,
+            451.9556579589844
+          ],
+          "probability": 0.6797565817832947
+        }
+      }
+    },
+    {
+      "identity": "263",
+      "arm": "reconstruction",
+      "condition": "corrupt",
+      "file": "263_reconstruction_corrupt.png",
+      "sha256": "5520ab844f263ae715472ee2e8efd9bc7ae6543e861843c215aaa2e4ea5fe584",
+      "seconds": 5.312999999994645,
+      "metrics": {
+        "niqe": 4.900510832312075,
+        "brisque": -2.69171142578125,
+        "facenet_cosine": null,
+        "arcface_conditioning_cosine": 0.8370994329452515,
+        "mae": 0.03954727073120915,
+        "psnr": 23.700665332438895,
+        "ssim": 0.6984322099731036,
+        "lpips": 0.2626204490661621
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            131.28285217285156,
+            92.28170776367188,
+            404.0132751464844,
+            452.57421875
+          ],
+          "probability": 0.9999887943267822
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            132.88772583007812,
+            112.3121109008789,
+            403.886474609375,
+            451.95703125
+          ],
+          "probability": 0.6385312080383301
+        }
+      },
+      "output_detections": {
+        "facenet": {
+          "face_count": 2,
+          "status": "multiple_faces"
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            132.7646942138672,
+            116.03646087646484,
+            407.04498291015625,
+            451.63751220703125
+          ],
+          "probability": 0.6783300638198853
+        }
+      }
+    },
+    {
+      "identity": "263",
+      "arm": "intervention",
+      "condition": "clean",
+      "file": "263_intervention_clean.png",
+      "sha256": "76e89ff8f2cc1fd1920e7e2b6233677fa15d5c15ed5fdb2e9facff12f6a51f8a",
+      "seconds": 5.296999999991385,
+      "metrics": {
+        "niqe": 5.034723522458021,
+        "brisque": -3.09747314453125,
+        "facenet_cosine": 0.8951799869537354,
+        "arcface_conditioning_cosine": 0.8518549203872681,
+        "mae": 0.038817252364813114,
+        "psnr": 23.841982874814335,
+        "ssim": 0.7016493486399034,
+        "lpips": 0.2620592713356018
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            131.28285217285156,
+            92.28170776367188,
+            404.0132751464844,
+            452.57421875
+          ],
+          "probability": 0.9999887943267822
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            132.88772583007812,
+            112.3121109008789,
+            403.886474609375,
+            451.95703125
+          ],
+          "probability": 0.6385312080383301
+        }
+      },
+      "output_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            134.74560546875,
+            104.91038513183594,
+            398.480712890625,
+            459.3138732910156
+          ],
+          "probability": 0.9993883371353149
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            132.89181518554688,
+            115.83192443847656,
+            407.40185546875,
+            451.70977783203125
+          ],
+          "probability": 0.6723110675811768
+        }
+      }
+    },
+    {
+      "identity": "263",
+      "arm": "intervention",
+      "condition": "corrupt",
+      "file": "263_intervention_corrupt.png",
+      "sha256": "6327c1762168e28de60b91146217beb5681d7c6a65ac3b4aa5686248a3629f13",
+      "seconds": 5.312999999994645,
+      "metrics": {
+        "niqe": 4.879756958255038,
+        "brisque": -3.17608642578125,
+        "facenet_cosine": 0.8538009524345398,
+        "arcface_conditioning_cosine": 0.8339894413948059,
+        "mae": 0.039417147168926164,
+        "psnr": 23.701297914888656,
+        "ssim": 0.6989427193500077,
+        "lpips": 0.26219442486763
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            131.28285217285156,
+            92.28170776367188,
+            404.0132751464844,
+            452.57421875
+          ],
+          "probability": 0.9999887943267822
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            132.88772583007812,
+            112.3121109008789,
+            403.886474609375,
+            451.95703125
+          ],
+          "probability": 0.6385312080383301
+        }
+      },
+      "output_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            129.75741577148438,
+            104.59698486328125,
+            394.4302978515625,
+            449.87652587890625
+          ],
+          "probability": 0.9971278309822083
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            132.93809509277344,
+            117.10260009765625,
+            407.23193359375,
+            451.78302001953125
+          ],
+          "probability": 0.6788265705108643
+        }
+      }
+    },
+    {
+      "identity": "263",
+      "arm": "no_reference",
+      "condition": "clean",
+      "file": "263_no_reference_clean.png",
+      "sha256": "972250cb1bdf52cc2fb1ff9503ac171ff57ee73f1e33e119eaec6e51f04fb0c0",
+      "seconds": 2.2179999999934807,
+      "metrics": {
+        "niqe": 4.834363872700693,
+        "brisque": -5.93634033203125,
+        "facenet_cosine": 0.7999555468559265,
+        "arcface_conditioning_cosine": 0.846924901008606,
+        "mae": 0.03773697996451184,
+        "psnr": 23.956536680910816,
+        "ssim": 0.7103967004965962,
+        "lpips": 0.2829682230949402
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            131.28285217285156,
+            92.28170776367188,
+            404.0132751464844,
+            452.57421875
+          ],
+          "probability": 0.9999887943267822
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            132.88772583007812,
+            112.3121109008789,
+            403.886474609375,
+            451.95703125
+          ],
+          "probability": 0.6385312080383301
+        }
+      },
+      "output_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            138.413818359375,
+            101.35882568359375,
+            396.8073425292969,
+            445.2744140625
+          ],
+          "probability": 0.9984838366508484
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            133.13095092773438,
+            114.99678802490234,
+            407.5832824707031,
+            451.29754638671875
+          ],
+          "probability": 0.6686675548553467
+        }
+      }
+    },
+    {
+      "identity": "6681",
+      "arm": "baseline",
+      "condition": "clean",
+      "file": "6681_baseline_clean.png",
+      "sha256": "e7ae12c827dd297127f4fc8c5fc3c8108340f562042aa5122a023db6652e47b1",
+      "seconds": 4.453000000008615,
+      "metrics": {
+        "niqe": 5.109980948322121,
+        "brisque": -2.59600830078125,
+        "facenet_cosine": 0.9466608762741089,
+        "arcface_conditioning_cosine": 0.8565324544906616,
+        "mae": 0.037890525269352535,
+        "psnr": 25.093158416688134,
+        "ssim": 0.573121011930911,
+        "lpips": 0.21001961827278137
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            128.3203582763672,
+            116.23567962646484,
+            368.9162902832031,
+            436.7896423339844
+          ],
+          "probability": 0.9999423027038574
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            135.1565399169922,
+            98.70101165771484,
+            372.24346923828125,
+            446.4615173339844
+          ],
+          "probability": 0.802096962928772
+        }
+      },
+      "output_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            127.30093383789062,
+            118.14956665039062,
+            370.0547180175781,
+            437.2531433105469
+          ],
+          "probability": 0.9999529123306274
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            132.08145141601562,
+            99.37276458740234,
+            373.4017028808594,
+            447.37689208984375
+          ],
+          "probability": 0.7797418832778931
+        }
+      }
+    },
+    {
+      "identity": "6681",
+      "arm": "baseline",
+      "condition": "corrupt",
+      "file": "6681_baseline_corrupt.png",
+      "sha256": "be05b077b9149c212616ced7d247554fbdbfa673c348edf90b82d05fdcb0aa05",
+      "seconds": 4.48399999999674,
+      "metrics": {
+        "niqe": 5.0916635003611335,
+        "brisque": -2.47198486328125,
+        "facenet_cosine": 0.9372775554656982,
+        "arcface_conditioning_cosine": 0.8420727252960205,
+        "mae": 0.03811009724934896,
+        "psnr": 25.053662235385,
+        "ssim": 0.5711342868502322,
+        "lpips": 0.20908449590206146
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            128.3203582763672,
+            116.23567962646484,
+            368.9162902832031,
+            436.7896423339844
+          ],
+          "probability": 0.9999423027038574
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            135.1565399169922,
+            98.70101165771484,
+            372.24346923828125,
+            446.4615173339844
+          ],
+          "probability": 0.802096962928772
+        }
+      },
+      "output_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            127.16610717773438,
+            118.59834289550781,
+            366.9891662597656,
+            438.2776184082031
+          ],
+          "probability": 0.9998931884765625
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            134.1034698486328,
+            99.6544418334961,
+            373.0520324707031,
+            446.984619140625
+          ],
+          "probability": 0.792227029800415
+        }
+      }
+    },
+    {
+      "identity": "6681",
+      "arm": "reconstruction",
+      "condition": "clean",
+      "file": "6681_reconstruction_clean.png",
+      "sha256": "ff00668cf0f03478b79088a80032b06367bcad42b9e8c880ed91eca991041663",
+      "seconds": 5.217999999993481,
+      "metrics": {
+        "niqe": 5.137202044525807,
+        "brisque": -2.03106689453125,
+        "facenet_cosine": 0.9432322978973389,
+        "arcface_conditioning_cosine": 0.8619786500930786,
+        "mae": 0.037815243590111826,
+        "psnr": 25.08142009998016,
+        "ssim": 0.572969694361659,
+        "lpips": 0.20644529163837433
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            128.3203582763672,
+            116.23567962646484,
+            368.9162902832031,
+            436.7896423339844
+          ],
+          "probability": 0.9999423027038574
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            135.1565399169922,
+            98.70101165771484,
+            372.24346923828125,
+            446.4615173339844
+          ],
+          "probability": 0.802096962928772
+        }
+      },
+      "output_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            125.47291564941406,
+            116.79463958740234,
+            367.10589599609375,
+            438.8946838378906
+          ],
+          "probability": 0.999829888343811
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            132.34237670898438,
+            98.83673095703125,
+            373.68212890625,
+            447.0640563964844
+          ],
+          "probability": 0.7707360982894897
+        }
+      }
+    },
+    {
+      "identity": "6681",
+      "arm": "reconstruction",
+      "condition": "corrupt",
+      "file": "6681_reconstruction_corrupt.png",
+      "sha256": "73b2c20cb47ecaa1516b835ff646e3ca31cdb4b5d5ddb9865e857695ad920fae",
+      "seconds": 5.312999999994645,
+      "metrics": {
+        "niqe": 5.026568192752778,
+        "brisque": -1.69122314453125,
+        "facenet_cosine": 0.9239095449447632,
+        "arcface_conditioning_cosine": 0.845740556716919,
+        "mae": 0.03792314716413909,
+        "psnr": 25.05597478836617,
+        "ssim": 0.5702956914184365,
+        "lpips": 0.2051897644996643
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            128.3203582763672,
+            116.23567962646484,
+            368.9162902832031,
+            436.7896423339844
+          ],
+          "probability": 0.9999423027038574
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            135.1565399169922,
+            98.70101165771484,
+            372.24346923828125,
+            446.4615173339844
+          ],
+          "probability": 0.802096962928772
+        }
+      },
+      "output_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            126.4265365600586,
+            117.31108093261719,
+            367.0718688964844,
+            437.4209289550781
+          ],
+          "probability": 0.9998891353607178
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            133.89120483398438,
+            99.1304931640625,
+            373.7721862792969,
+            446.9891052246094
+          ],
+          "probability": 0.7902716398239136
+        }
+      }
+    },
+    {
+      "identity": "6681",
+      "arm": "intervention",
+      "condition": "clean",
+      "file": "6681_intervention_clean.png",
+      "sha256": "075302137717751f98b5cefa2aaef6a13cfa6ae4d476bf7a29d33b55d26baa1d",
+      "seconds": 5.25,
+      "metrics": {
+        "niqe": 5.121701788730305,
+        "brisque": -1.61260986328125,
+        "facenet_cosine": 0.9467439651489258,
+        "arcface_conditioning_cosine": 0.8560969233512878,
+        "mae": 0.0378649942236009,
+        "psnr": 25.070337388648678,
+        "ssim": 0.5716298534205814,
+        "lpips": 0.2047055959701538
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            128.3203582763672,
+            116.23567962646484,
+            368.9162902832031,
+            436.7896423339844
+          ],
+          "probability": 0.9999423027038574
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            135.1565399169922,
+            98.70101165771484,
+            372.24346923828125,
+            446.4615173339844
+          ],
+          "probability": 0.802096962928772
+        }
+      },
+      "output_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            126.43609619140625,
+            118.06819152832031,
+            369.18389892578125,
+            437.3562316894531
+          ],
+          "probability": 0.9999229907989502
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            132.19387817382812,
+            98.36131286621094,
+            374.5059509277344,
+            447.159423828125
+          ],
+          "probability": 0.7642725110054016
+        }
+      }
+    },
+    {
+      "identity": "6681",
+      "arm": "intervention",
+      "condition": "corrupt",
+      "file": "6681_intervention_corrupt.png",
+      "sha256": "943c62178bde3be53e7de52a7cfd94680b51069364fc229160d0ee510a3e450e",
+      "seconds": 5.25,
+      "metrics": {
+        "niqe": 5.095175672176994,
+        "brisque": -1.66387939453125,
+        "facenet_cosine": 0.9276820421218872,
+        "arcface_conditioning_cosine": 0.8470717668533325,
+        "mae": 0.03803754320331648,
+        "psnr": 25.05701594657082,
+        "ssim": 0.570276389717458,
+        "lpips": 0.20521003007888794
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            128.3203582763672,
+            116.23567962646484,
+            368.9162902832031,
+            436.7896423339844
+          ],
+          "probability": 0.9999423027038574
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            135.1565399169922,
+            98.70101165771484,
+            372.24346923828125,
+            446.4615173339844
+          ],
+          "probability": 0.802096962928772
+        }
+      },
+      "output_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            125.28723907470703,
+            116.03458404541016,
+            365.955810546875,
+            437.8882751464844
+          ],
+          "probability": 0.9998559951782227
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            134.27536010742188,
+            98.42364501953125,
+            373.2310791015625,
+            447.29510498046875
+          ],
+          "probability": 0.7868169546127319
+        }
+      }
+    },
+    {
+      "identity": "6681",
+      "arm": "no_reference",
+      "condition": "clean",
+      "file": "6681_no_reference_clean.png",
+      "sha256": "9cfd60a2f403d6193098785771a7484b52d4e5e83174882159a3c5dcd3bcb0be",
+      "seconds": 2.2339999999967404,
+      "metrics": {
+        "niqe": 5.095926919783587,
+        "brisque": -4.81671142578125,
+        "facenet_cosine": 0.8760582208633423,
+        "arcface_conditioning_cosine": 0.8189773559570312,
+        "mae": 0.03852382984036714,
+        "psnr": 24.983666433656424,
+        "ssim": 0.5668026131652845,
+        "lpips": 0.22865676879882812
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            128.3203582763672,
+            116.23567962646484,
+            368.9162902832031,
+            436.7896423339844
+          ],
+          "probability": 0.9999423027038574
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            135.1565399169922,
+            98.70101165771484,
+            372.24346923828125,
+            446.4615173339844
+          ],
+          "probability": 0.802096962928772
+        }
+      },
+      "output_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            125.5367202758789,
+            119.54855346679688,
+            364.3318786621094,
+            436.3392639160156
+          ],
+          "probability": 0.9998695850372314
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            133.8561553955078,
+            100.19742584228516,
+            373.03607177734375,
+            446.874267578125
+          ],
+          "probability": 0.788802444934845
+        }
+      }
+    },
+    {
+      "identity": "7400",
+      "arm": "baseline",
+      "condition": "clean",
+      "file": "7400_baseline_clean.png",
+      "sha256": "a822ef91c9affa931fefac7830ff448b2e2ad171b707976cc2b5d7099999708e",
+      "seconds": 4.48399999999674,
+      "metrics": {
+        "niqe": 4.473482624388367,
+        "brisque": -13.18145751953125,
+        "facenet_cosine": 0.9028692841529846,
+        "arcface_conditioning_cosine": null,
+        "mae": 0.04495318543677237,
+        "psnr": 23.339818248902372,
+        "ssim": 0.6986980228039469,
+        "lpips": 0.34537819027900696
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            79.70964050292969,
+            82.01715087890625,
+            373.08123779296875,
+            481.56414794921875
+          ],
+          "probability": 0.9999589920043945
+        },
+        "arcface_conditioning": {
+          "face_count": 0,
+          "status": "no_face"
+        }
+      },
+      "output_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            73.66840362548828,
+            74.07028198242188,
+            376.32275390625,
+            485.7584228515625
+          ],
+          "probability": 0.999976634979248
+        },
+        "arcface_conditioning": {
+          "face_count": 0,
+          "status": "no_face"
+        }
+      }
+    },
+    {
+      "identity": "7400",
+      "arm": "baseline",
+      "condition": "corrupt",
+      "file": "7400_baseline_corrupt.png",
+      "sha256": "a566f91fc097c7a8c878aa335a9c3a5bc9a4c85047aba767bb677e883e489527",
+      "seconds": 4.48399999999674,
+      "metrics": {
+        "niqe": 4.391417472156559,
+        "brisque": -13.38751220703125,
+        "facenet_cosine": 0.9020085334777832,
+        "arcface_conditioning_cosine": null,
+        "mae": 0.044821261736302596,
+        "psnr": 23.352960978287328,
+        "ssim": 0.7001221650385324,
+        "lpips": 0.34303799271583557
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            79.70964050292969,
+            82.01715087890625,
+            373.08123779296875,
+            481.56414794921875
+          ],
+          "probability": 0.9999589920043945
+        },
+        "arcface_conditioning": {
+          "face_count": 0,
+          "status": "no_face"
+        }
+      },
+      "output_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            73.51875305175781,
+            78.16973876953125,
+            369.5263671875,
+            483.0103759765625
+          ],
+          "probability": 0.9999417066574097
+        },
+        "arcface_conditioning": {
+          "face_count": 0,
+          "status": "no_face"
+        }
+      }
+    },
+    {
+      "identity": "7400",
+      "arm": "reconstruction",
+      "condition": "clean",
+      "file": "7400_reconstruction_clean.png",
+      "sha256": "a55b00605a2f39a6da1b9952554092f258636b2ef9f8176a8f6ea277f85720d6",
+      "seconds": 5.26600000000326,
+      "metrics": {
+        "niqe": 4.484320209320305,
+        "brisque": -13.32696533203125,
+        "facenet_cosine": 0.9073666930198669,
+        "arcface_conditioning_cosine": null,
+        "mae": 0.04445692573497498,
+        "psnr": 23.39811935536192,
+        "ssim": 0.6981087163509879,
+        "lpips": 0.34341853857040405
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            79.70964050292969,
+            82.01715087890625,
+            373.08123779296875,
+            481.56414794921875
+          ],
+          "probability": 0.9999589920043945
+        },
+        "arcface_conditioning": {
+          "face_count": 0,
+          "status": "no_face"
+        }
+      },
+      "output_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            73.55733489990234,
+            75.65538024902344,
+            377.3169250488281,
+            487.0918884277344
+          ],
+          "probability": 0.9999698400497437
+        },
+        "arcface_conditioning": {
+          "face_count": 0,
+          "status": "no_face"
+        }
+      }
+    },
+    {
+      "identity": "7400",
+      "arm": "reconstruction",
+      "condition": "corrupt",
+      "file": "7400_reconstruction_corrupt.png",
+      "sha256": "31d3ce541cc566394489dfa1e5f850e84aa75a104760ab3dc8bd61fe4a816612",
+      "seconds": 5.23399999999674,
+      "metrics": {
+        "niqe": 4.553355565319397,
+        "brisque": -13.22393798828125,
+        "facenet_cosine": 0.8809304237365723,
+        "arcface_conditioning_cosine": null,
+        "mae": 0.0450655519572738,
+        "psnr": 23.318375941010196,
+        "ssim": 0.6989850235267848,
+        "lpips": 0.3442021608352661
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            79.70964050292969,
+            82.01715087890625,
+            373.08123779296875,
+            481.56414794921875
+          ],
+          "probability": 0.9999589920043945
+        },
+        "arcface_conditioning": {
+          "face_count": 0,
+          "status": "no_face"
+        }
+      },
+      "output_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            73.84651184082031,
+            74.28811645507812,
+            374.1158447265625,
+            484.05755615234375
+          ],
+          "probability": 0.999971866607666
+        },
+        "arcface_conditioning": {
+          "face_count": 0,
+          "status": "no_face"
+        }
+      }
+    },
+    {
+      "identity": "7400",
+      "arm": "intervention",
+      "condition": "clean",
+      "file": "7400_intervention_clean.png",
+      "sha256": "a17d134d476d72be095e2edbb5e5d565c56f617c793916cc028070b95aa57c93",
+      "seconds": 5.312999999994645,
+      "metrics": {
+        "niqe": 4.423215859036529,
+        "brisque": -13.58380126953125,
+        "facenet_cosine": 0.8977810144424438,
+        "arcface_conditioning_cosine": null,
+        "mae": 0.044645950217652164,
+        "psnr": 23.381601208632254,
+        "ssim": 0.6971662180869306,
+        "lpips": 0.3437647521495819
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            79.70964050292969,
+            82.01715087890625,
+            373.08123779296875,
+            481.56414794921875
+          ],
+          "probability": 0.9999589920043945
+        },
+        "arcface_conditioning": {
+          "face_count": 0,
+          "status": "no_face"
+        }
+      },
+      "output_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            74.21903991699219,
+            76.02428436279297,
+            375.81927490234375,
+            484.75372314453125
+          ],
+          "probability": 0.9999632835388184
+        },
+        "arcface_conditioning": {
+          "face_count": 0,
+          "status": "no_face"
+        }
+      }
+    },
+    {
+      "identity": "7400",
+      "arm": "intervention",
+      "condition": "corrupt",
+      "file": "7400_intervention_corrupt.png",
+      "sha256": "aad636e2eac72caafe4aa99d75dde5fc7aa16e7af9d707b6513aa30fcd241f8f",
+      "seconds": 5.234000000025844,
+      "metrics": {
+        "niqe": 4.525763050067985,
+        "brisque": -13.27618408203125,
+        "facenet_cosine": 0.8856185674667358,
+        "arcface_conditioning_cosine": null,
+        "mae": 0.04494897181691687,
+        "psnr": 23.336097304105387,
+        "ssim": 0.6983186120863273,
+        "lpips": 0.3439163863658905
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            79.70964050292969,
+            82.01715087890625,
+            373.08123779296875,
+            481.56414794921875
+          ],
+          "probability": 0.9999589920043945
+        },
+        "arcface_conditioning": {
+          "face_count": 0,
+          "status": "no_face"
+        }
+      },
+      "output_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            74.4466552734375,
+            74.41865539550781,
+            376.0618591308594,
+            485.99627685546875
+          ],
+          "probability": 0.9999659061431885
+        },
+        "arcface_conditioning": {
+          "face_count": 0,
+          "status": "no_face"
+        }
+      }
+    },
+    {
+      "identity": "7400",
+      "arm": "no_reference",
+      "condition": "clean",
+      "file": "7400_no_reference_clean.png",
+      "sha256": "7bd7ba290487cdb17cfccb43aeb9ca2c9e188e6890e6e8df6a77582aed1a5a1f",
+      "seconds": 2.2030000000086147,
+      "metrics": {
+        "niqe": 4.646268742752268,
+        "brisque": -10.40850830078125,
+        "facenet_cosine": null,
+        "arcface_conditioning_cosine": null,
+        "mae": 0.046245909048840884,
+        "psnr": 23.277973044991278,
+        "ssim": 0.6940302379588346,
+        "lpips": 0.3769776225090027
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            79.70964050292969,
+            82.01715087890625,
+            373.08123779296875,
+            481.56414794921875
+          ],
+          "probability": 0.9999589920043945
+        },
+        "arcface_conditioning": {
+          "face_count": 0,
+          "status": "no_face"
+        }
+      },
+      "output_detections": {
+        "facenet": {
+          "face_count": 2,
+          "status": "multiple_faces"
+        },
+        "arcface_conditioning": {
+          "face_count": 0,
+          "status": "no_face"
+        }
+      }
+    },
+    {
+      "identity": "10149",
+      "arm": "baseline",
+      "condition": "clean",
+      "file": "10149_baseline_clean.png",
+      "sha256": "4e90aa005add3e284327284938f758f6639c4d50e9d0aaa05c2858476460f9a4",
+      "seconds": 4.48399999999674,
+      "metrics": {
+        "niqe": 5.369535751524696,
+        "brisque": -12.97833251953125,
+        "facenet_cosine": 0.913082480430603,
+        "arcface_conditioning_cosine": null,
+        "mae": 0.04345010994306577,
+        "psnr": 23.92802672230014,
+        "ssim": 0.5760565950288353,
+        "lpips": 0.24392357468605042
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            128.84872436523438,
+            90.3637924194336,
+            410.9854736328125,
+            482.012939453125
+          ],
+          "probability": 0.9999604225158691
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            138.32186889648438,
+            93.8662338256836,
+            405.16595458984375,
+            472.0928649902344
+          ],
+          "probability": 0.5566191077232361
+        }
+      },
+      "output_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            138.30169677734375,
+            117.30448913574219,
+            410.5839538574219,
+            473.87890625
+          ],
+          "probability": 1.0
+        },
+        "arcface_conditioning": {
+          "face_count": 0,
+          "status": "no_face"
+        }
+      }
+    },
+    {
+      "identity": "10149",
+      "arm": "baseline",
+      "condition": "corrupt",
+      "file": "10149_baseline_corrupt.png",
+      "sha256": "5750b52d5e4d116499556c3f08dfa8956917a2c6f8c6c6b6014e21e72788368f",
+      "seconds": 4.485000000015134,
+      "metrics": {
+        "niqe": 5.279183250323481,
+        "brisque": -12.85186767578125,
+        "facenet_cosine": 0.9002737998962402,
+        "arcface_conditioning_cosine": null,
+        "mae": 0.04363523994395935,
+        "psnr": 23.934634970700085,
+        "ssim": 0.5724367056048639,
+        "lpips": 0.2457069754600525
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            128.84872436523438,
+            90.3637924194336,
+            410.9854736328125,
+            482.012939453125
+          ],
+          "probability": 0.9999604225158691
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            138.32186889648438,
+            93.8662338256836,
+            405.16595458984375,
+            472.0928649902344
+          ],
+          "probability": 0.5566191077232361
+        }
+      },
+      "output_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            136.4737548828125,
+            118.28410339355469,
+            413.17034912109375,
+            473.0160827636719
+          ],
+          "probability": 0.9999998807907104
+        },
+        "arcface_conditioning": {
+          "face_count": 0,
+          "status": "no_face"
+        }
+      }
+    },
+    {
+      "identity": "10149",
+      "arm": "reconstruction",
+      "condition": "clean",
+      "file": "10149_reconstruction_clean.png",
+      "sha256": "e0fa7d024577f239d42e2bf716bf9bc6e22fe4da79840d9bf01fec0d41d82db0",
+      "seconds": 5.235000000015134,
+      "metrics": {
+        "niqe": 5.1096488352247595,
+        "brisque": -13.43829345703125,
+        "facenet_cosine": 0.9179667234420776,
+        "arcface_conditioning_cosine": null,
+        "mae": 0.04327798980513429,
+        "psnr": 23.912114320906177,
+        "ssim": 0.5762595199433644,
+        "lpips": 0.2454168200492859
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            128.84872436523438,
+            90.3637924194336,
+            410.9854736328125,
+            482.012939453125
+          ],
+          "probability": 0.9999604225158691
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            138.32186889648438,
+            93.8662338256836,
+            405.16595458984375,
+            472.0928649902344
+          ],
+          "probability": 0.5566191077232361
+        }
+      },
+      "output_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            137.04400634765625,
+            120.16856384277344,
+            410.1424865722656,
+            473.9418029785156
+          ],
+          "probability": 0.9999998807907104
+        },
+        "arcface_conditioning": {
+          "face_count": 0,
+          "status": "no_face"
+        }
+      }
+    },
+    {
+      "identity": "10149",
+      "arm": "reconstruction",
+      "condition": "corrupt",
+      "file": "10149_reconstruction_corrupt.png",
+      "sha256": "4b9c573eb390cffc1b86c97704fa1dec2b1233041d25b7af508cbc76605254eb",
+      "seconds": 5.25,
+      "metrics": {
+        "niqe": 5.347169134025191,
+        "brisque": -12.29962158203125,
+        "facenet_cosine": 0.9060709476470947,
+        "arcface_conditioning_cosine": null,
+        "mae": 0.043621945848651957,
+        "psnr": 23.93262369360273,
+        "ssim": 0.5737771387313083,
+        "lpips": 0.24849450588226318
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            128.84872436523438,
+            90.3637924194336,
+            410.9854736328125,
+            482.012939453125
+          ],
+          "probability": 0.9999604225158691
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            138.32186889648438,
+            93.8662338256836,
+            405.16595458984375,
+            472.0928649902344
+          ],
+          "probability": 0.5566191077232361
+        }
+      },
+      "output_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            135.3184814453125,
+            120.7205810546875,
+            408.9213562011719,
+            474.3070068359375
+          ],
+          "probability": 0.9999996423721313
+        },
+        "arcface_conditioning": {
+          "face_count": 0,
+          "status": "no_face"
+        }
+      }
+    },
+    {
+      "identity": "10149",
+      "arm": "intervention",
+      "condition": "clean",
+      "file": "10149_intervention_clean.png",
+      "sha256": "3f0f90af2ac2b749b1c27a4bb2ca005ee89f380b340667517554783adc7fbe0d",
+      "seconds": 5.280999999988126,
+      "metrics": {
+        "niqe": 5.144040958974472,
+        "brisque": -12.54229736328125,
+        "facenet_cosine": 0.9116274118423462,
+        "arcface_conditioning_cosine": null,
+        "mae": 0.04320471271190768,
+        "psnr": 23.914961684444332,
+        "ssim": 0.5764048708791104,
+        "lpips": 0.24641594290733337
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            128.84872436523438,
+            90.3637924194336,
+            410.9854736328125,
+            482.012939453125
+          ],
+          "probability": 0.9999604225158691
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            138.32186889648438,
+            93.8662338256836,
+            405.16595458984375,
+            472.0928649902344
+          ],
+          "probability": 0.5566191077232361
+        }
+      },
+      "output_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            130.48077392578125,
+            109.7187728881836,
+            405.662353515625,
+            475.2837829589844
+          ],
+          "probability": 0.9999986886978149
+        },
+        "arcface_conditioning": {
+          "face_count": 0,
+          "status": "no_face"
+        }
+      }
+    },
+    {
+      "identity": "10149",
+      "arm": "intervention",
+      "condition": "corrupt",
+      "file": "10149_intervention_corrupt.png",
+      "sha256": "cd8a777b1e9d6b95bde191840200ecb887991829b884dfec5aa334a127b05137",
+      "seconds": 5.26600000000326,
+      "metrics": {
+        "niqe": 5.25081046857904,
+        "brisque": -12.47637939453125,
+        "facenet_cosine": 0.9012128114700317,
+        "arcface_conditioning_cosine": null,
+        "mae": 0.04369472428864124,
+        "psnr": 23.92545235213333,
+        "ssim": 0.5736988808992375,
+        "lpips": 0.24595783650875092
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            128.84872436523438,
+            90.3637924194336,
+            410.9854736328125,
+            482.012939453125
+          ],
+          "probability": 0.9999604225158691
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            138.32186889648438,
+            93.8662338256836,
+            405.16595458984375,
+            472.0928649902344
+          ],
+          "probability": 0.5566191077232361
+        }
+      },
+      "output_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            136.8070831298828,
+            119.7015380859375,
+            409.9363098144531,
+            472.0483703613281
+          ],
+          "probability": 0.9999997615814209
+        },
+        "arcface_conditioning": {
+          "face_count": 0,
+          "status": "no_face"
+        }
+      }
+    },
+    {
+      "identity": "10149",
+      "arm": "no_reference",
+      "condition": "clean",
+      "file": "10149_no_reference_clean.png",
+      "sha256": "18fbcafeeab2ca1253168dbd6d2b1110cb65301fd50d3ab088d3d80bee88b276",
+      "seconds": 2.187000000005355,
+      "metrics": {
+        "niqe": 5.612671204926773,
+        "brisque": -11.41827392578125,
+        "facenet_cosine": 0.8582413196563721,
+        "arcface_conditioning_cosine": null,
+        "mae": 0.04178857741013072,
+        "psnr": 24.316646979593543,
+        "ssim": 0.587052098933028,
+        "lpips": 0.25470903515815735
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            128.84872436523438,
+            90.3637924194336,
+            410.9854736328125,
+            482.012939453125
+          ],
+          "probability": 0.9999604225158691
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            138.32186889648438,
+            93.8662338256836,
+            405.16595458984375,
+            472.0928649902344
+          ],
+          "probability": 0.5566191077232361
+        }
+      },
+      "output_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            133.45361328125,
+            94.11272430419922,
+            404.9749755859375,
+            474.0367736816406
+          ],
+          "probability": 0.9996218681335449
+        },
+        "arcface_conditioning": {
+          "face_count": 0,
+          "status": "no_face"
+        }
+      }
+    }
+  ],
+  "summary": {
+    "baseline/clean": {
+      "facenet_cosine": {
+        "mean": 0.9115808457136154,
+        "n": 4
+      },
+      "arcface_conditioning_cosine": {
+        "mean": 0.8456917405128479,
+        "n": 2
+      },
+      "lpips": {
+        "mean": 0.2654397264122963,
+        "n": 4
+      },
+      "mae": {
+        "mean": 0.04126627554301343,
+        "n": 4
+      },
+      "psnr": {
+        "mean": 24.04671477494079,
+        "n": 4
+      },
+      "ssim": {
+        "mean": 0.6372275689974665,
+        "n": 4
+      },
+      "niqe": {
+        "mean": 4.962616506526497,
+        "n": 4
+      },
+      "brisque": {
+        "mean": -8.07684326171875,
+        "n": 4
+      }
+    },
+    "baseline/corrupt": {
+      "facenet_cosine": {
+        "mean": 0.9005981385707855,
+        "n": 4
+      },
+      "arcface_conditioning_cosine": {
+        "mean": 0.8334308862686157,
+        "n": 2
+      },
+      "lpips": {
+        "mean": 0.26502951607108116,
+        "n": 4
+      },
+      "mae": {
+        "mean": 0.04157149246315551,
+        "n": 4
+      },
+      "psnr": {
+        "mean": 24.00865642138105,
+        "n": 4
+      },
+      "ssim": {
+        "mean": 0.6355074906871018,
+        "n": 4
+      },
+      "niqe": {
+        "mean": 4.873402825927422,
+        "n": 4
+      },
+      "brisque": {
+        "mean": -7.90301513671875,
+        "n": 4
+      }
+    },
+    "reconstruction/clean": {
+      "facenet_cosine": {
+        "mean": 0.9155695885419846,
+        "n": 4
+      },
+      "arcface_conditioning_cosine": {
+        "mean": 0.8558855354785919,
+        "n": 2
+      },
+      "lpips": {
+        "mean": 0.264712680131197,
+        "n": 4
+      },
+      "mae": {
+        "mean": 0.041231417188457416,
+        "n": 4
+      },
+      "psnr": {
+        "mean": 24.037564125488736,
+        "n": 4
+      },
+      "ssim": {
+        "mean": 0.6370043138630126,
+        "n": 4
+      },
+      "niqe": {
+        "mean": 4.975050985086249,
+        "n": 4
+      },
+      "brisque": {
+        "mean": -7.99237060546875,
+        "n": 4
+      }
+    },
+    "reconstruction/corrupt": {
+      "facenet_cosine": {
+        "mean": 0.9036369721094767,
+        "n": 3
+      },
+      "arcface_conditioning_cosine": {
+        "mean": 0.8414199948310852,
+        "n": 2
+      },
+      "lpips": {
+        "mean": 0.26512672007083893,
+        "n": 4
+      },
+      "mae": {
+        "mean": 0.0415394789253185,
+        "n": 4
+      },
+      "psnr": {
+        "mean": 24.001909938854496,
+        "n": 4
+      },
+      "ssim": {
+        "mean": 0.6353725159124084,
+        "n": 4
+      },
+      "niqe": {
+        "mean": 4.95690093110236,
+        "n": 4
+      },
+      "brisque": {
+        "mean": -7.47662353515625,
+        "n": 4
+      }
+    },
+    "intervention/clean": {
+      "facenet_cosine": {
+        "mean": 0.9128330945968628,
+        "n": 4
+      },
+      "arcface_conditioning_cosine": {
+        "mean": 0.853975921869278,
+        "n": 2
+      },
+      "lpips": {
+        "mean": 0.2642363905906677,
+        "n": 4
+      },
+      "mae": {
+        "mean": 0.041133227379493466,
+        "n": 4
+      },
+      "psnr": {
+        "mean": 24.0522207891349,
+        "n": 4
+      },
+      "ssim": {
+        "mean": 0.6367125727566314,
+        "n": 4
+      },
+      "niqe": {
+        "mean": 4.930920532299831,
+        "n": 4
+      },
+      "brisque": {
+        "mean": -7.70904541015625,
+        "n": 4
+      }
+    },
+    "intervention/corrupt": {
+      "facenet_cosine": {
+        "mean": 0.8920785933732986,
+        "n": 4
+      },
+      "arcface_conditioning_cosine": {
+        "mean": 0.8405306041240692,
+        "n": 2
+      },
+      "lpips": {
+        "mean": 0.26431966945528984,
+        "n": 4
+      },
+      "mae": {
+        "mean": 0.04152459661945019,
+        "n": 4
+      },
+      "psnr": {
+        "mean": 24.00496587942455,
+        "n": 4
+      },
+      "ssim": {
+        "mean": 0.6353091505132576,
+        "n": 4
+      },
+      "niqe": {
+        "mean": 4.937876537269764,
+        "n": 4
+      },
+      "brisque": {
+        "mean": -7.64813232421875,
+        "n": 4
+      }
+    },
+    "no_reference/clean": {
+      "facenet_cosine": {
+        "mean": 0.8447516957918803,
+        "n": 3
+      },
+      "arcface_conditioning_cosine": {
+        "mean": 0.8329511284828186,
+        "n": 2
+      },
+      "lpips": {
+        "mean": 0.2858279123902321,
+        "n": 4
+      },
+      "mae": {
+        "mean": 0.04107382406596265,
+        "n": 4
+      },
+      "psnr": {
+        "mean": 24.133705784788013,
+        "n": 4
+      },
+      "ssim": {
+        "mean": 0.6395704126384358,
+        "n": 4
+      },
+      "niqe": {
+        "mean": 5.047307685040829,
+        "n": 4
+      },
+      "brisque": {
+        "mean": -8.14495849609375,
+        "n": 4
+      }
+    }
+  },
+  "final_test_used": false,
+  "statistical_significance_claimed": false
+}
