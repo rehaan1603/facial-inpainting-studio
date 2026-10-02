@@ -1,12 +1,28 @@
 # Facial Inpainting Project — Progress and Completion Report
 
-**Report date:** 1 October 2026
+**Report date:** 2 October 2026
 **Current platform:** Windows laptop, NVIDIA RTX 5070 Laptop GPU with 8 GB VRAM  
 **Current application:** http://127.0.0.1:8765/  
 **Repository:** https://github.com/rehaan1603/facial-inpainting-studio  
 **Status:** Working local research baseline; proposed multi-reference research method and final validation incomplete. Public hosting paused at the owner's request.
 
 ## Latest status update
+
+### 2 October: target-conditioned reference compatibility trained and tested
+
+Completed two **193-parameter adapter training runs, 128 GPU updates each**, on 16 existing-dataset identities. Generated and scored **96 outputs** across four observed development identities, three methods and eight reference conditions; eight archived baseline replays are byte-exact. Added official facial-component metrics and six passing mechanism/metric checks. Corrupted-reference LPIPS improves only **0.000128 (0.047%)**, PSNR by **0.0058 dB**; eye-region bbox LPIPS slightly worsens. Three FaceNet detections fail, leaving incomplete identity support and an **INCONCLUSIVE joint gate**; the perceptual improvement threshold is not met independently of that missing support. **Do not promote or expand this candidate.** Four inspected sheets show no consistent fidelity gain. This is full-image restoration, not erased-eye inpainting. Novelty and publication readiness remain unresolved. See [results, loss audit and limitations](research/TARGET_COMPATIBILITY_RESULTS_V1.md) and the [ten-paper literature/protocol matrix](research/MATCHED_COMPARISON_AND_LITERATURE_20261002.md). New Human Faces work remains set aside; final identities were not used in this experiment.
+
+### 2 October: synthetic multi-reference idea generated and tested
+
+Created **11 synthetic reference views from 12 requests** using only the four damaged development portraits; one view was blocked by the image tool and retained as a failure. Completed **12 matched SDXL/FaceID reconstructions** (reference influence off, first generated view, all generated views) and scored **24 rows** including saved baselines/input controls. All-view outputs improve eye-region LPIPS over ResShift in 4/4, but worsen hole MAE against the same SDXL reference-off control in **4/4**, with FaceNet improvements in only 2/4. Visual review still shows wrong gaze, closed eyes and exaggerated features. **Synthetic references are not promoted as the default; accurate eye recovery and novelty remain unproven.** The main website now accepts 1–4 reference photos; a real two-reference run reproduces the trial PNG exactly and 21 HTTP checks pass. Sets, prompts and comparison images are saved locally. See [full trial, controls and failures](research/SYNTHETIC_REFERENCE_TRIAL_20261002.md).
+
+### 1 October: single-image edge matching implemented and checked
+
+Added optional colour-boundary matching to LaMa/ResShift in the local studio, with raw reconstruction retained as **Before edge matching**. **18 paired model runs** across four new-dataset photographs and two existing development cases completed; every output preserves outside-mask pixels exactly and eight repeated raw PNGs match previous outputs byte-for-byte. ResShift masked MAE improves in **8/10** cases (mean 0.09946 to 0.07392); LaMa improves in 5/8 and keeps matching off by default. All sheets were reviewed; large-eye-region geometry/gaze errors and a glasses-like hallucination remain. This is a boundary-finishing improvement, not identity recovery, dataset-equivalent accuracy, retraining or novel research. **23 Python checks and three JavaScript polling checks pass.** The local browser shows finished and raw-result downloads. See [details, regressions and limitations](research/SINGLE_IMAGE_EDGE_MATCHING_20261001.md).
+
+### 1 October: additional Human Faces dataset intake and baseline tests
+
+Audited the newly supplied folder: **5,000 Real Images and 4,630 Generated Images**, all readable, with no exact file/RGB duplicates or exact matches against 51,944 existing saved fingerprints. Source/license, near-duplicate overlap and person identities remain unverified; this is not yet an independent validation dataset. Prepared **12 local damage cases from four photographs**, with separate inference/evaluation manifests. Completed **eight LaMa/ResShift generations on two photographs**; all preserve visible pixels exactly. Visual review found reasonable LaMa thin-scratch repair but failed large eye-region completion; ResShift produces mismatched eyes and seams. No training or synthetic-angle generation has started, and no existing dataset/checkpoint was changed. The [dataset plan, measured results and synthetic-reference protocol](research/HUMAN_FACES_DATASET_PLAN_V1.md) specify source verification, leakage controls and remaining experiments. Local practice files and comparison sheets are in `Downloads/Human dataset/Ready to test - Human Faces v1`.
 
 ### 1 October: real adapter training and comparison completed
 
@@ -244,7 +260,7 @@ The earlier results cannot be represented as experiments on a regional reference
 | InsightFace buffalo_l | Face detection and normalized reference embeddings | Reference conditioning, not independent identity evaluation |
 | Hard/Poisson composition | Known-pixel preservation and optional boundary harmonization | Explicit postprocessing; does not prove correct hidden features |
 
-No new reference-conditioned generative backbone, regional identity-fusion adapter or LoRA has been trained locally.
+The generative backbones remain pretrained and frozen. Actual local training now includes the 545-parameter reference-intervention pilot and the 193-parameter target-conditioned regional compatibility pilot. These development adapters are not promoted to the website and do not establish improved identity recovery. Separate Human Faces LoRA work is set aside and is not evidence for the existing-dataset study.
 
 ### 2.3 Completed experiments
 
@@ -297,7 +313,7 @@ The measurement baseline is substantially stronger, but the research is not yet 
 
 ## 4. Remaining work
 
-**Reconciled with completed work on 29 September 2026.** Completed implementation is distinguished from unresolved research claims below. The newest structural screen is in `research/STRUCTURE_TRANSPORT_REVIEW_V1.md`; preceding mechanism outcomes remain in `research/NOVELTY_ESTABLISHMENT_20260925.md`. Rejected hypotheses remain history, not unexecuted promises.
+**Reconciled with completed work on 2 October 2026.** Completed implementation is distinguished from unresolved research claims below. The target-conditioned regional pilot is in `research/TARGET_COMPATIBILITY_RESULTS_V1.md`; the earlier trained intervention is in `research/REFERENCE_INTERVENTION_PILOT_RESULTS_V1.md`. Rejected hypotheses remain history, not unexecuted promises. The additional Human Faces dataset work is set aside.
 
 | Area | Current evidence and remaining work | Status |
 |---|---|---|
@@ -306,7 +322,7 @@ The measurement baseline is substantially stronger, but the research is not yet 
 | Reference robustness | Compression failure diagnosed; studio ReF-LDM now validates one face per reference and frames rectangular uploads without distortion. Broader poor-quality, pose and expression handling still needs matched validation with failures retained | Basic client checks implemented; broader validation pending |
 | Local correspondence | Five-point similarity and eight regional features implemented; 22/24 initial cases detected; 3D pose/expression/occlusion unresolved | Prototype complete |
 | Local fusion | Six-policy, two-seed 48-row comparison complete; no multi-metric advantage established | Negative/mixed result |
-| Learned adapter | Train only after deterministic local fusion shows convincing benefit; do not train full SDXL | Conditional gate not met |
+| Learned adapter | Old 545-parameter intervention and new 193-parameter target-conditioned pilot trained on the GPU; regional scores and equal-capacity control recorded. Balanced timestep/corruption sampling, image-space losses, complete ablations and independent confirmation remain | Trained development candidates; no promotion or novelty claim |
 | Confidence UI | Prior generation/download checks passed. Current update fixes stale state, upload races, evidence suggestions/transparency, and missing-area strength selection; new HTTP/GPU checks pass. Current main/evidence browser flows are verified with real generated images, matching references, downloads and state invalidation | Implemented and browser verified |
 | Runtime reliability | Original native/OpenCV failures retained; fixed-thread studio retry passed. Two wrapper failures from an unnecessary OpenCV import were fixed and both recovery runs passed. Continue recurrence checks; no universal root-cause claim | Mitigations and recoveries verified |
 | Visual assessment | Prior reviewed studies retained; all four new studio audit sheets reviewed, with coloured holes, retained erasures and facial errors documented. Blinded human evaluation remains | Internal review complete for these runs; human study pending |
@@ -353,9 +369,9 @@ Compare random single-reference, all-reference and global-quality baselines agai
 **Deliverable:** implemented selection rules and controlled comparison.  
 **Acceptance criterion:** the proposed scoring mechanism has measurable support, or its failure is documented before adding complexity.
 
-### Phase 4 — develop the smallest justified fusion method (deterministic prototype completed; training gate not met)
+### Phase 4 — develop the smallest justified fusion method (small adapters trained; useful contribution unresolved)
 
-Regional reference features and deterministic latent fusion are implemented and evaluated. Their negative/mixed results do not yet justify a compact learned adapter. If future evidence supports the direction, train a compact fusion adapter. Compare equal weighting, global attention and mask-aware fusion at matched capacity and training budgets. Profile actual laptop memory and speed before committing to a large training schedule. Preserve the working pretrained baseline and all frozen earlier results.
+Regional reference features, deterministic fusion and two compact learned-adapter investigations are implemented. The old intervention did not satisfy its joint quality gate. The new pilot compares target-conditioned regional compatibility with a matched-capacity feature ablation and the frozen baseline under eight reference conditions. Its results are development evidence only. Complete the missing loss investigations and regional/global ablations before any independent expansion, and require a passing predeclared gate. Preserve the working pretrained baseline and all frozen earlier results.
 
 **Deliverable:** trained candidate module, checkpoints, loss histories and mechanism ablations.  
 **Acceptance criterion:** reproducible improvement on declared measures, acceptable failure behavior and a defensible distinction from closest prior work. Implementation alone is not evidence of novelty.
