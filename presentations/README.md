@@ -1,4 +1,4 @@
-Latest numeric presentation: [5 October 2026 results](Facial_Inpainting_Results_2026-10-05.pptx). Includes v4 balanced/capped training, v5 timestep loss, official-input encoding diagnostic, hardware limits and linked paper context. No dataset photos are embedded.
+Latest numeric presentation: [5 October 2026 results](Facial_Inpainting_Results_2026-10-05.pptx). 20 slides covering the problem statement, editable architecture, training algorithm, corruption protocol, labelled historical seven-corruption results, v4/v5 results, metric definitions, official-input encoding diagnostic, hardware limits and linked papers. No dataset photos are embedded.
 
 # Research results presentation
 
