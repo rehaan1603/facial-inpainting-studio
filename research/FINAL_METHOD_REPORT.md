@@ -1,3 +1,5 @@
+> 5 October continuation: expanded encoding and oracle reference rejection are complete. Both show identity/perceptual trade-offs, so production stays unchanged. See [encoding results](REFLDM_ENCODING_SCREEN_V2_RESULTS.md) and [rejection results](REFERENCE_REJECTION_PROBE_V1_RESULTS.md). Spatially restricted rejection is the next feasibility investigation.
+
 > 5 October follow-up: an official-input single-case encoding comparison completed. Author RGB encoding improves the available metrics on that case but uses more memory. See [encoding check](REFLDM_ENCODING_CHECK_V1.md). Production is unchanged.
 
 > 4 October follow-up: timestep-scaled identity supervision completed. Mixed gains remain and the joint gate fails. See [v5 measured results](IDENTITY_TIMESTEP_V5_TIMESTEP_SCALED.md).

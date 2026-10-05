@@ -1,0 +1,16 @@
+{
+  "refldm_encoding_v2": {
+    "score_sha256": "44727343e9000e5b2663e36be8eb52da4facba5869ce986c6c19947681c076b7",
+    "verified_image_rows": 35,
+    "matched_summary_arithmetic": true
+  },
+  "reference_rejection_v1": {
+    "score_sha256": "dc71f5adb08d4b5f184b5f5ccdab512495d21e3a03eb9956329c0c558b30cd10",
+    "verified_image_rows": 48,
+    "matched_summary_arithmetic": true
+  },
+  "rejection_replays_identical": 8,
+  "unit_tests_passed": 3,
+  "visual_review_sheets": 9,
+  "scope": "Two development diagnostics; no training, production promotion or reserved-final evaluation"
+}
