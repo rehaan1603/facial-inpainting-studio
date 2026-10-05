@@ -1,4 +1,12 @@
+> 5 October follow-up: an official-input single-case encoding comparison completed. Author RGB encoding improves the available metrics on that case but uses more memory. See [encoding check](REFLDM_ENCODING_CHECK_V1.md). Production is unchanged.
+
+> 4 October follow-up: timestep-scaled identity supervision completed. Mixed gains remain and the joint gate fails. See [v5 measured results](IDENTITY_TIMESTEP_V5_TIMESTEP_SCALED.md).
+
+> 3 October follow-up: balanced supervision and capped-gradient experiments are complete. The capped arm improves identity under misleading references but trades off perceptual/eye quality and clean-reference identity. Neither arm passes the joint gate. See [v4 results](IDENTITY_BALANCE_RESULTS_V4.md).
+
 # Facial Inpainting Studio: method investigation report
+
+**3 October follow-up:** the fixed face-crop experiment is now complete in [identity crop v3](IDENTITY_CROP_RESULTS_V3.md). This report preserves the v2 objective ablation below. The crop change did not meet the combined quality requirement; gradient balance and supervision coverage are the next controlled objective investigation.
 
 Updated 2 October 2026. Current research checkpoint, not a finalized successful method. Existing dataset only. All prior evidence and the local application remain preserved.
 

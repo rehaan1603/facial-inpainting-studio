@@ -1,0 +1,144 @@
+{
+  "scope": "One already-observed identity, one official target, seed17; only reference encoding changes. Local metrics, not published benchmark reproduction.",
+  "config": {
+    "identity": "6681",
+    "target": "11491.png",
+    "source": "official benchmark archive",
+    "scope": "Observed-identity smoke only, not paper benchmark reproduction",
+    "steps": 100,
+    "seed": 17,
+    "precision": "float32",
+    "reference_selection": "First five in official CSV order; not asserted equal to author benchmark selection",
+    "references": [
+      {
+        "path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\4481.jpg",
+        "sha256": "2b9b6b0f19ac7e7416f5a8a00d1260bfd368677433166c2063b57fabc71f9555"
+      },
+      {
+        "path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\4536.jpg",
+        "sha256": "abea2ac7500c03d59debfe62fa2cae8b953550e593fb041f876682b21bd5dd36"
+      },
+      {
+        "path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\12468.jpg",
+        "sha256": "2b2557ae1c0255e289c651c9e5d26704063f4bba91252e8a426a569802a8392d"
+      },
+      {
+        "path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\7004.jpg",
+        "sha256": "8807a9ca9b200fd786a49f784971236292fb850fb0d308ec88ffe20e68d4a8c1"
+      },
+      {
+        "path": "C:\\Users\\rehaa\\Downloads\\archive\\CelebAMask-HQ\\CelebA-HQ-img\\20388.jpg",
+        "sha256": "94a1dca764860a5187a1fc028c4cb3d30fffdf8773fef313e017ec8091cfb0e4"
+      }
+    ],
+    "lq_sha256": "1cc2b4faa73f32fe71731f7582fd0ddaf86a7b59e8b5105a60de3248fc6ab709",
+    "hq_sha256": "0a936c67328f1f9781d46569c983eff2a55a3af03b26bd692f2678abec0fb304",
+    "script_sha256": "61ea52f63d939962646e762b527f5dfdc15da10dbf52f3189ede89e59a0c558b",
+    "guidance": 1.5,
+    "encoding": "Author RGB width concatenation then get_learned_conditioning",
+    "output_conversion": "Author torchvision to_pil_image"
+  },
+  "results": {
+    "author_rgb_encoding": {
+      "metrics": {
+        "psnr": 22.941815138263348,
+        "ssim": 0.5509498087908002,
+        "lpips": 0.24069854617118835,
+        "facenet_cosine": 0.8964070677757263,
+        "arcface_conditioning_cosine": null
+      },
+      "receipt": {
+        "status": "complete",
+        "seconds": 16.875,
+        "peak_mib": 7261.00048828125,
+        "result_sha256": "9ea874a2131092094620aa4a396f1b6e186f2814fc7dce93feef734190e100af",
+        "config_sha256": "db9885db6b766e5cae4b2ba9dd113103b19b5e64b037596bee771ff7104006ef"
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            139.98239135742188,
+            93.87693786621094,
+            407.27691650390625,
+            463.62445068359375
+          ],
+          "probability": 0.9993820190429688
+        },
+        "arcface_conditioning": {
+          "face_count": 0,
+          "status": "no_face"
+        }
+      },
+      "output_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            141.8626251220703,
+            92.5946273803711,
+            402.8707580566406,
+            457.21533203125
+          ],
+          "probability": 0.9984949827194214
+        },
+        "arcface_conditioning": {
+          "face_count": 0,
+          "status": "no_face"
+        }
+      }
+    },
+    "separate_encoding": {
+      "metrics": {
+        "psnr": 22.879940723244733,
+        "ssim": 0.5503734348449627,
+        "lpips": 0.24114258587360382,
+        "facenet_cosine": 0.8714964389801025,
+        "arcface_conditioning_cosine": null
+      },
+      "receipt": {
+        "status": "complete",
+        "seconds": 13.468999999997322,
+        "peak_mib": 2439.544921875,
+        "result_sha256": "3b4eb1a9908c8e7b29cd95b92e5170b937e7c173b04c15635c0df002e82b07da",
+        "config_sha256": "a9618125e1210f7bd2b5c89e5cf26b6d24d4ed091b98f52b5d7a8c19fc8401b3"
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            139.98239135742188,
+            93.87693786621094,
+            407.27691650390625,
+            463.62445068359375
+          ],
+          "probability": 0.9993820190429688
+        },
+        "arcface_conditioning": {
+          "face_count": 0,
+          "status": "no_face"
+        }
+      },
+      "output_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            145.6513671875,
+            93.7264404296875,
+            409.1607666015625,
+            458.46405029296875
+          ],
+          "probability": 0.9992824196815491
+        },
+        "arcface_conditioning": {
+          "face_count": 0,
+          "status": "no_face"
+        }
+      }
+    }
+  },
+  "script_sha256": "e1f8d03f9a696dc481caa0030dfd550d4fd02af77799a8671a050ac0c12a3b25"
+}

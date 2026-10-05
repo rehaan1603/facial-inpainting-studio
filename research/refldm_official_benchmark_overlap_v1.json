@@ -1,0 +1,15 @@
+{
+  "scope": "Metadata-only audit against current pilot train/development/exclusion identities; not a complete historical exposure audit",
+  "cases": 2533,
+  "target_identities": 1723,
+  "flag_counts": {
+    "official_reference_identity_disagreement": 111,
+    "pilot_exclusion_overlap": 468,
+    "pilot_training_overlap": 13,
+    "pilot_development_overlap": 5
+  },
+  "without_flags": 1968,
+  "source_sha256": "67fc3dda349cb6a92a6fb35e9949178cad42e4703c60efdf8a72c38f0c6af2a7",
+  "excluded_identity_count": 1206,
+  "images_decoded": 0
+}

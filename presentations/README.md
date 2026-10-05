@@ -1,3 +1,5 @@
+Latest numeric presentation: [5 October 2026 results](Facial_Inpainting_Results_2026-10-05.pptx). Includes v4 balanced/capped training, v5 timestep loss, official-input encoding diagnostic, hardware limits and linked paper context. No dataset photos are embedded.
+
 # Research results presentation
 
 [Download the results and comparison slides](Facial_Inpainting_Results_2026-10-02.pptx).

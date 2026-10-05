@@ -1,0 +1,44 @@
+{
+  "verified_controls": 72,
+  "fresh_images": 24,
+  "metric_rows": 96,
+  "all_images_hash_verified": true,
+  "files": {
+    "scores.json": "05f334aef6a78b2674e49cc2df9e0793c9082f9ee75f1ab36a3a885ad21b1593",
+    "config.json": "46aace262f05242cf0156868b7f7872814aae2a4376334887666e7dcb69748a5",
+    "training.json": "2cad12aacaef622f1a51f695d4f4daaac2476722e20cc8b001886ffae7055e1d",
+    "adapter.pt": "5b6ae23cdd3ba60d42b7530867cd020ae3a97001bb5253c0467fa4e0dfa413ee",
+    "versus_fixed.json": "8c047741b750574ec337bc43e7a1c05c4002c0c8819ee85db7e7e498dfe7ea30"
+  },
+  "gate": {
+    "promote": false,
+    "violations": [
+      "clean/17/lpips",
+      "clean/17/facenet_cosine",
+      "clean/29/lpips",
+      "clean/29/eye_bbox_lpips",
+      "clean/43/psnr",
+      "clean/43/lpips",
+      "clean/43/facenet_cosine",
+      "clean/43/eye_bbox_lpips",
+      "wrong_patch/17/lpips",
+      "wrong_patch/29/ssim",
+      "wrong_patch/29/lpips",
+      "wrong_patch/29/facenet_cosine",
+      "wrong_patch/29/eye_bbox_lpips",
+      "wrong_patch/43/psnr",
+      "wrong_patch/43/lpips",
+      "wrong_patch/43/facenet_cosine"
+    ],
+    "incomplete_support": [
+      "clean/17/arcface_conditioning_cosine",
+      "clean/29/arcface_conditioning_cosine",
+      "clean/43/arcface_conditioning_cosine",
+      "wrong_patch/17/facenet_cosine",
+      "wrong_patch/17/arcface_conditioning_cosine",
+      "wrong_patch/29/arcface_conditioning_cosine",
+      "wrong_patch/43/arcface_conditioning_cosine"
+    ],
+    "lpips_improves_both_conditions": false
+  }
+}

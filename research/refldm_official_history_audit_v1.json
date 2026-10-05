@@ -1,0 +1,12 @@
+{
+  "scope": "Conservative JSON metadata-reference audit, not proof of image exposure. Includes candidate/exclusion lists. Does not scan arbitrary code, logs, CSVs or external histories.",
+  "json_files_scanned": 10323,
+  "parse_errors": [],
+  "identity_labels_referenced": 6218,
+  "benchmark_rows": 2533,
+  "rows_with_history_reference": 2533,
+  "rows_without_history_reference": 0,
+  "completed_record_identity_labels": 32,
+  "rows_with_completed_record_identity": 32,
+  "images_decoded": 0
+}

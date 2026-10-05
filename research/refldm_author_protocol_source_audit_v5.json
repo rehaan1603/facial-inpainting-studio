@@ -1,0 +1,10 @@
+{
+  "author_revision": "af6690c19fdc6421802fd7996510bcfef259bfd1",
+  "date": "2026-10-04",
+  "files": {
+    "inference.py": "8b38cf21fa1064b7024a7ccddbb7596cd01d75343d4c0200bbdf9cd962111716",
+    "configs/refldm.yaml": "7eba7c411690aa79249939e7a98b54eb10b98d218a14a2323e30b538a03ad62b",
+    "ldm/models/diffusion/ddpm.py": "7bf925b8ed5ee76c3174dd569c56aceebe040119afc2edde011a2e92579145d6",
+    "ldm/modules/losses/identity_loss.py": "b85066714eecb3fcb8db7a20c214b4ff7eca37a9ddb70a9e48e3f86ddc5af4fd"
+  }
+}

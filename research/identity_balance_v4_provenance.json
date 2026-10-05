@@ -1,0 +1,122 @@
+{
+  "balanced_fixed": {
+    "verified_controls": 72,
+    "new_images": 24,
+    "supervised_identity_counts": {
+      "4410": 4,
+      "476": 4,
+      "6792": 4,
+      "4164": 4,
+      "38": 4,
+      "8173": 4,
+      "4625": 4,
+      "2250": 4,
+      "3930": 4,
+      "8660": 4,
+      "8570": 4,
+      "1281": 4,
+      "8748": 4,
+      "674": 4,
+      "7506": 4,
+      "2083": 4
+    },
+    "gradient_ratio_min": 0.051985370922343385,
+    "gradient_ratio_max": 55.213281373119344,
+    "files": {
+      "config.json": "cc797926454f43db516484f0ddf964a8d3752ea23e93216636d80ccead6dee8e",
+      "training.json": "8f56a5d0ca944abdd1f692c69a1943c9d94a3f627d467fde55be23149f7ac8f8",
+      "adapter.pt": "d447485f3e57ec6433cdb1e1f1d90cbdaccf151a5e623d2e3364827e2221bdab",
+      "trace.json": "5eead8bc3c87e06363b65c6973b2d61b7075f8dc7c8c11a925c24df79b0c38ca",
+      "scores.json": "6637faa2813a00270d8e6e7fd04501b233b0cf10ee663e8345a59abf3f74f5de"
+    },
+    "gate": {
+      "promote": false,
+      "violations": [
+        "clean/17/psnr",
+        "clean/17/ssim",
+        "clean/17/lpips",
+        "clean/17/facenet_cosine",
+        "clean/29/psnr",
+        "clean/29/eye_bbox_lpips",
+        "clean/43/facenet_cosine",
+        "wrong_patch/17/ssim",
+        "wrong_patch/17/lpips",
+        "wrong_patch/17/facenet_cosine",
+        "wrong_patch/17/eye_bbox_lpips",
+        "wrong_patch/29/facenet_cosine",
+        "wrong_patch/29/eye_bbox_lpips",
+        "wrong_patch/43/lpips",
+        "wrong_patch/43/facenet_cosine",
+        "wrong_patch/43/eye_bbox_lpips"
+      ],
+      "incomplete_support": [
+        "clean/17/arcface_conditioning_cosine",
+        "clean/29/arcface_conditioning_cosine",
+        "clean/43/arcface_conditioning_cosine",
+        "wrong_patch/17/arcface_conditioning_cosine",
+        "wrong_patch/29/arcface_conditioning_cosine",
+        "wrong_patch/43/arcface_conditioning_cosine"
+      ],
+      "lpips_improves_both_conditions": false
+    }
+  },
+  "balanced_capped": {
+    "verified_controls": 72,
+    "new_images": 24,
+    "supervised_identity_counts": {
+      "4410": 4,
+      "476": 4,
+      "6792": 4,
+      "4164": 4,
+      "38": 4,
+      "8173": 4,
+      "4625": 4,
+      "2250": 4,
+      "3930": 4,
+      "8660": 4,
+      "8570": 4,
+      "1281": 4,
+      "8748": 4,
+      "674": 4,
+      "7506": 4,
+      "2083": 4
+    },
+    "gradient_ratio_min": 0.08173998091167248,
+    "gradient_ratio_max": 1.0000001716353233,
+    "files": {
+      "config.json": "23a44324e306873b7b70e5ffa758ec0b1c6975c6bcc8251a620ced4858e2d935",
+      "training.json": "8a57a34d5dd6fc66094f1336f25a2a9c1c52efecda7434c3515032102436b10c",
+      "adapter.pt": "33ce5879f5b37a181653fe29f17bb6b27551b3b96dc87851ed871861722aad47",
+      "trace.json": "fe09c4112c07841e26d50b111ab38600b0d402544fc5c086e285f189e7e3139b",
+      "scores.json": "0f83fc512255660195093c781307950fcf0d3e8e18a07b6582f9cab9b48c59a1"
+    },
+    "gate": {
+      "promote": false,
+      "violations": [
+        "clean/17/ssim",
+        "clean/17/facenet_cosine",
+        "clean/17/eye_bbox_lpips",
+        "clean/29/psnr",
+        "clean/29/ssim",
+        "clean/29/eye_bbox_lpips",
+        "clean/43/facenet_cosine",
+        "wrong_patch/17/lpips",
+        "wrong_patch/17/facenet_cosine",
+        "wrong_patch/17/eye_bbox_lpips",
+        "wrong_patch/29/ssim",
+        "wrong_patch/29/eye_bbox_lpips",
+        "wrong_patch/43/psnr",
+        "wrong_patch/43/ssim"
+      ],
+      "incomplete_support": [
+        "clean/17/arcface_conditioning_cosine",
+        "clean/29/arcface_conditioning_cosine",
+        "clean/43/arcface_conditioning_cosine",
+        "wrong_patch/17/arcface_conditioning_cosine",
+        "wrong_patch/29/arcface_conditioning_cosine",
+        "wrong_patch/43/arcface_conditioning_cosine"
+      ],
+      "lpips_improves_both_conditions": false
+    }
+  }
+}

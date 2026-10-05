@@ -1,6 +1,6 @@
 # Facial Inpainting Project — Progress and Completion Report
 
-**Report date:** 3 October 2026
+**Report date:** 5 October 2026
 **Current platform:** Windows laptop, NVIDIA RTX 5070 Laptop GPU with 8 GB VRAM  
 **Current application:** http://127.0.0.1:8765/  
 **Repository:** https://github.com/rehaan1603/facial-inpainting-studio  
@@ -8,9 +8,35 @@
 
 ## Latest status update
 
+### 5 October: official-input encoding diagnostic and GitHub release
+
+Completed two matched float32 runs on one already-observed development identity using an official degraded input, five references and 100 DDIM steps. Author-style joint RGB reference encoding gives FaceNet **0.89641 vs 0.87150** for separate encoding, LPIPS **0.24070 vs 0.24114**, PSNR **22.94182 vs 22.87994**, and SSIM **0.55095 vs 0.55037**. Peak tensor memory is **7.09 vs 2.38 GiB**. This single case motivates broader encoding checks, not a deployment or paper-performance claim. ArcFace target detection is unavailable. See [diagnostic](research/REFLDM_ENCODING_CHECK_V1.md) and [measurements](research/refldm_encoding_smoke_v1.json).
+
+The official benchmark archive is verified. The JSON history scan distinguishes metadata references from explicit completed records and does not certify the entire benchmark as fresh. The latest [public presentation](presentations/Facial_Inpainting_Results_2026-10-05.pptx) includes v4, v5 and the encoding check. Dataset photos and checkpoints remain local.
+
+### 4 October: timestep-loss comparison completed
+
+Completed 64 GPU updates, 24 new reconstructions and all 96 metric rows. All 72 control hashes and metrics match their originals. The only change against v4 fixed-weight training is the author's sqrt_alphas_cumprod[t] multiplier, while FaceNet and the small adapter remain local choices.
+
+Clean-reference FaceNet improves to **0.91623 vs 0.91497** baseline, but LPIPS worsens to **0.27743 vs 0.27725** and eye LPIPS to **0.13018 vs 0.12901**. With misleading references, eye LPIPS improves to **0.12647 vs 0.12800**, while FaceNet declines to **0.90414 vs 0.90545** and LPIPS worsens to **0.27823 vs 0.27769**. Neither condition satisfies all requirements. Production remains unchanged. See [v5 results and fixed-weight comparison](research/IDENTITY_TIMESTEP_V5_TIMESTEP_SCALED.md) and [verification receipt](research/identity_timestep_v5_verification.json).
+
+Official CelebA-Test-Ref benchmark download and CRC validation are complete. Initial metadata checks found training overlap in 13 rows, development overlap in 5, and identity-label disagreements in 111. Counts may overlap. A broader history audit and preprocessing alignment remain before inference. No benchmark image pixels have been decoded. [Source audit and protocol differences](research/AUTHOR_PROTOCOL_AND_TIMESTEP_PREFLIGHT_V5.md) distinguish published settings from the released demo. No official benchmark reproduction is claimed.
+
+### 3 October: balanced identity and gradient-cap experiment completed
+
+Completed **two 64-update GPU runs**, with four identity-supervised updates for every one of the 16 training identities. Generated and scored **48 new reconstructions** across four development identities, three inference seeds and two reference conditions. All 72 reused controls match their original image hashes and metrics in both evaluations. No generation or scoring failures occurred. The cap reduced the maximum weighted identity/reconstruction gradient ratio from **55.21 to 1.00**.
+
+The capped candidate improves misleading-reference FaceNet **0.90700 vs 0.90545** and ArcFace **0.83808 vs 0.83625** (8/12 valid pairs), but worsens LPIPS **0.27800 vs 0.27769** and eye LPIPS **0.12841 vs 0.12800**. With clean references, LPIPS improves **0.27707 vs 0.27725**, while FaceNet falls **0.91184 vs 0.91497**. Neither candidate passes the combined requirements; production remains unchanged. See [complete v4 comparison](research/IDENTITY_BALANCE_RESULTS_V4.md), [verification receipt](research/identity_balance_v4_provenance.json) and [per-image values](research/identity_balance_v4_metrics.csv).
+
+**Next investigation:** evaluate how the current relative reference weights behave when every reference is unreliable, and design an explicit reference-rejection control before another training experiment. More GPU training alone has not resolved the identity/perceptual trade-off. Broader corruption tests, training-seed replication and reserved final evaluation remain pending; do not spend final-test data on candidate selection.
+
+### 3 October: fixed face-crop supervision tested
+
+Completed the next controlled experiment using MTCNN face crops for identity supervision, with the previous architecture, 64-update schedule and loss weight unchanged. All 16 training crops are valid; crop embedding agreement with evaluation is at least **0.99996**. Generated **24 fresh images** across four development identities, three seeds and two reference conditions, and reused **72 hash-verified controls** whose rescored metrics match exactly. The cropped candidate still loses to baseline: misleading-reference FaceNet **0.90384 vs 0.90545**, LPIPS **0.27830 vs 0.27769**, and eye crop LPIPS **0.12855 vs 0.12800**. It is not deployed. Two crop tests pass. Gradient checks expose a **0.26–56.5x** weighted identity/diffusion gradient ratio and opposing directions in 4/16 checks; periodic identity supervision covers only 12/16 training identities. **Next:** balance identity-supervision coverage and test bounded gradient contributions before any architecture or dataset expansion. See [v3 results](research/IDENTITY_CROP_RESULTS_V3.md), [measurements](research/identity_crop_v3_results.json), [CSV](research/identity_crop_v3_metrics.csv) and [provenance](research/identity_crop_v3_provenance.json). Production, reserved final identities and Human Faces work are unchanged.
+
 ### Current results, accuracy interpretation and presentation
 
-The latest completed investigation is **identity compatibility v2**: two 64-update GPU training runs, 96/96 reconstructed outputs and 96/96 metric rows, four development identities, three inference seeds and two reference conditions. The 16 adapter-training identities are separate from these four evaluation identities. Upstream pretrained-model exposure is unknown. The deployed local baseline remains unchanged while fidelity improvement is work in progress.
+The published **identity compatibility v2** investigation includes two 64-update GPU training runs, 96/96 reconstructed outputs and 96/96 metric rows, four development identities, three inference seeds and two reference conditions. Its table and presentation below remain a versioned snapshot; the new v3 crop ablation is recorded above. The 16 adapter-training identities are separate from these four evaluation identities. Upstream pretrained-model exposure is unknown. The deployed local baseline remains unchanged while fidelity improvement is work in progress.
 
 | Method / reference condition | PSNR | SSIM | LPIPS | FaceNet cosine | Eye crop LPIPS |
 |---|---:|---:|---:|---:|---:|
@@ -25,7 +51,7 @@ These are matched three-seed means, with 12 outputs per method/condition, for wh
 
 **Presentations and release:** the full illustrated local review now has **35 slides**, including results, accuracy interpretation and future scope. The [11-slide GitHub results presentation](presentations/Facial_Inpainting_Results_2026-10-02.pptx) includes paper links and numerical comparisons without restricted dataset photos. Code, reports, CSV/JSON scores, loss traces and execution provenance were pushed in commit `fcb8426`. This project-report update follows that release; unrelated local UI and Human Faces changes are not included in that research commit.
 
-**Next controlled experiment:** align the identity-training face crop with the evaluation crop procedure, inspect loss gradients across several training examples, and rerun the same matched controls before increasing training or dataset size. Independent reliability gating and broader regional/consistency objectives follow as separate ablations. Keep reserved final identities out of tuning.
+**Next controlled experiment:** the face-crop change has now been tested. Balance identity-supervision coverage and bound gradient contributions, using matched controls before increasing training or dataset size. Independent reliability gating and broader regional/consistency objectives follow as separate ablations. Keep reserved final identities out of tuning.
 
 Sources: [method report](research/FINAL_METHOD_REPORT.md), [all results](research/identity_compatibility_v2_results.json), [CSV](research/identity_compatibility_v2_metrics.csv), [execution provenance](research/identity_compatibility_v2_provenance.json), [audit](research/IDENTITY_COMPATIBILITY_AUDIT_V2.md). The dated entries below preserve earlier experiment history.
 
@@ -352,7 +378,7 @@ The measurement baseline is substantially stronger, but the research is not yet 
 | Reference robustness | Compression failure diagnosed; studio ReF-LDM now validates one face per reference and frames rectangular uploads without distortion. Broader poor-quality, pose and expression handling still needs matched validation with failures retained | Basic client checks implemented; broader validation pending |
 | Local correspondence | Five-point similarity and eight regional features implemented; 22/24 initial cases detected; 3D pose/expression/occlusion unresolved | Prototype complete |
 | Local fusion | Six-policy, two-seed 48-row comparison complete; no multi-metric advantage established | Negative/mixed result |
-| Learned adapter | GPU training now includes the 545-parameter intervention, 193-parameter regional pilot and two balanced 64-update objective-ablation arms. Decoded frozen FaceNet loss and gradient-calibrated weighting are implemented. Crop alignment, final-output objective fidelity, consistency/regularization and complete ablations remain | Small training experiments complete; quality improvement in progress |
+| Learned adapter | GPU training now includes the 545-parameter intervention, 193-parameter regional pilot and two balanced 64-update objective-ablation arms. Decoded frozen FaceNet loss and gradient-calibrated weighting are implemented. Fixed crop alignment has been tested in v3. Gradient balance, supervision coverage, final-output objective fidelity, consistency/regularization and complete ablations remain | Small training experiments complete; quality improvement in progress |
 | Confidence UI | Prior generation/download checks passed. Current update fixes stale state, upload races, evidence suggestions/transparency, and missing-area strength selection; new HTTP/GPU checks pass. Current main/evidence browser flows are verified with real generated images, matching references, downloads and state invalidation | Implemented and browser verified |
 | Runtime reliability | Original native/OpenCV failures retained; fixed-thread studio retry passed. Two wrapper failures from an unnecessary OpenCV import were fixed and both recovery runs passed. Continue recurrence checks; no universal root-cause claim | Mitigations and recoveries verified |
 | Visual assessment | Prior reviewed studies retained; all four new studio audit sheets reviewed, with coloured holes, retained erasures and facial errors documented. Blinded human evaluation remains | Internal review complete for these runs; human study pending |
@@ -401,7 +427,7 @@ Compare random single-reference, all-reference and global-quality baselines agai
 
 ### Phase 4 — develop the smallest justified fusion method (small adapters trained; useful contribution unresolved)
 
-Regional reference features, deterministic fusion and compact learned-adapter investigations are implemented. The regional v1 pilot covers eight reference conditions. Identity compatibility v2 adds a frozen decoded FaceNet objective and compares four methods across three inference seeds and two reference conditions. It improves average eye crop LPIPS but still loses overall perceptual/identity fidelity. Next align training/evaluation face crops, inspect gradient balance and compare objectives before adding a separate reliability-gating architecture. Complete regional/global and consistency ablations before independent expansion. Preserve the working pretrained baseline and all earlier results.
+Regional reference features, deterministic fusion and compact learned-adapter investigations are implemented. The regional v1 pilot covers eight reference conditions. Identity compatibility v2 adds a frozen decoded FaceNet objective and compares four methods across three inference seeds and two reference conditions. It improves average eye crop LPIPS but still loses overall perceptual/identity fidelity. The v3 crop comparison is complete. Next balance identity supervision across all training identities and bound gradient contributions before adding a separate reliability-gating architecture. Complete regional/global and consistency ablations before independent expansion. Preserve the working pretrained baseline and all earlier results.
 
 **Deliverable:** trained candidate module, checkpoints, loss histories and mechanism ablations.  
 **Acceptance criterion:** reproducible improvement on declared measures, acceptable failure behavior and a defensible distinction from closest prior work. Implementation alone is not evidence of novelty.
