@@ -33,7 +33,7 @@ class WebBoundaryTests(unittest.TestCase):
         self.assertEqual(self.request(headers={'Host':'evil.example'})[0],403)
     def test_token_required(self):self.assertEqual(self.request(headers={'X-Local-Token':'wrong'})[0],403)
     def test_reference_count_and_mask_mode(self):
-        data=self.valid();data['backbone']='reference';data['references']=[png(),png()]
+        data=self.valid();data['backbone']='reference';data['references']=[]
         self.assertEqual(self.request(payload=data)[0],400)
         data['references']=[png()]*5;self.assertEqual(self.request(payload=data)[0],400)
         data['references']=[png()]*3;data['mode']='learned';self.assertEqual(self.request(payload=data)[0],400)
@@ -41,7 +41,26 @@ class WebBoundaryTests(unittest.TestCase):
         with patch.object(studio,'run_job'):
             self.assertEqual(self.request(payload=data)[0],202)
         studio.ACTIVE=False
+    def test_reference_accepts_one_or_two_without_selection(self):
+        for count in [1,2]:
+            data=self.valid();data.update(backbone='reference',references=[png()]*count)
+            studio.ACTIVE=False;called=threading.Event()
+            with patch.object(studio,'run_job',side_effect=lambda *a:called.set()) as worker:
+                self.assertEqual(self.request(payload=data)[0],202)
+                self.assertTrue(called.wait(5))
+                self.assertEqual(worker.call_args.args[3],'reference')
+                self.assertEqual(len(worker.call_args.args[5]),count)
     def test_non_object_json_is_client_error(self):self.assertEqual(self.request(payload=[])[0],400)
+    def test_gentler_details_requires_tested_missing_area_path(self):
+        data=self.valid();data.update(backbone='reference',references=[png()]*4,detail='detailed',neutralize=True,gentler_details=True)
+        for change in [{'detail':'standard'},{'detail':'compare'},{'neutralize':False},{'backbone':'reference_select'},{'gentler_details':'yes'}]:
+            self.assertEqual(self.request(payload=dict(data,**change))[0],400)
+        called=threading.Event()
+        with patch.object(studio,'run_job',side_effect=lambda *a,**kw:called.set()) as worker:
+            self.assertEqual(self.request(payload=data)[0],202)
+            self.assertTrue(called.wait(5))
+            self.assertTrue(worker.call_args.kwargs['gentler'])
+            self.assertTrue(worker.call_args.kwargs['neutralize'])
     def test_partial_restoration_requires_evidence_and_rejects_missing(self):
         data=self.valid();data.update(backbone='refldm',references=[png()]*3)
         self.assertEqual(self.request(payload=data)[0],400)
@@ -112,6 +131,15 @@ class WebBoundaryTests(unittest.TestCase):
         for model in ['lama','resshift']:
             data=self.valid();data.update(backbone=model,detail='compare')
             self.assertEqual(self.request(payload=data)[0],400)
+    def test_single_image_blending_defaults_and_explicit_override(self):
+        for model, supplied, expected in [('lama',None,'hard'),('resshift',None,'poisson'),('resshift','hard','hard'),('lama','poisson','poisson')]:
+            data=self.valid();data['backbone']=model;studio.ACTIVE=False
+            if supplied is not None:data['blend']=supplied
+            called=threading.Event()
+            with patch.object(studio,'run_job',side_effect=lambda *a:called.set()) as worker:
+                self.assertEqual(self.request(payload=data)[0],202)
+                self.assertTrue(called.wait(5))
+                self.assertEqual(worker.call_args.args[6],expected)
     def test_comparison_keeps_partial_failures_and_same_inputs(self):
         import tempfile
         from pathlib import Path

@@ -1,4 +1,8 @@
-> 5 October continuation: expanded encoding and oracle reference rejection are complete. Both show identity/perceptual trade-offs, so production stays unchanged. See [encoding results](REFLDM_ENCODING_SCREEN_V2_RESULTS.md) and [rejection results](REFERENCE_REJECTION_PROBE_V1_RESULTS.md). Spatially restricted rejection is the next feasibility investigation.
+> 10 October continuation: the erased-region audit and masked SDXL studies are now in the [current research index](README.md). Guidance replication improves three-person mean quality/identity, with a FaceNet regression for person10149; appearance and registered texture studies retain trade-offs/failures. The optional app control and [release evidence](releases/2026-10-10/README.md) are published alongside the original restoration history below. These tasks have separate protocols.
+
+> 6 October continuation: spatial reference-token rejection completed with 48 new outputs, eight exact neutral replays and 72 scored rows. Corrupted-reference mean FaceNet improves on matched support, but LPIPS and eye-region LPIPS worsen; clean-reference identity also declines. Hard rejection is not deployed. See [spatial results](SPATIAL_REFERENCE_REJECTION_RESULTS_V1.md). Query-local or softer attenuation requires a separate fixed feasibility test before learned localization.
+
+> 5 October continuation: expanded encoding and oracle whole-reference rejection completed. Both show identity/perceptual trade-offs. See [encoding results](REFLDM_ENCODING_SCREEN_V2_RESULTS.md) and [rejection results](REFERENCE_REJECTION_PROBE_V1_RESULTS.md).
 
 > 5 October follow-up: an official-input single-case encoding comparison completed. Author RGB encoding improves the available metrics on that case but uses more memory. See [encoding check](REFLDM_ENCODING_CHECK_V1.md). Production is unchanged.
 

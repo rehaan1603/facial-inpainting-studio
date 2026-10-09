@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-10",
+  "tests": {
+    "webapp": {
+      "tests": 22,
+      "passed": true,
+      "log_sha256": "8c35a9acadf8d92483cda31cc60daa52dc82052e122af31f87f649ea56f2308c"
+    },
+    "finishing": {
+      "tests": 5,
+      "passed": true,
+      "log_sha256": "0e226f5c2a23992d92e13f938ee165662485fa1991cea327137673a535e1942a"
+    },
+    "spatial_mechanism": {
+      "tests": 4,
+      "passed": true,
+      "log_sha256": "6912b374a6df1e6222ddf3b8e5abe5606d91d25d30669fb709afae9d6de5b7a4"
+    },
+    "spatial_statistics": {
+      "tests": 2,
+      "passed": true,
+      "log_sha256": "e505e26f7d646f58d6088975a613752577b1b372613064ed1939235e8cbc998d"
+    }
+  },
+  "total_targeted_tests": 33,
+  "python_files_parsed": 356,
+  "completed_image_hashes_verified": 81,
+  "frozen_reference_generator_sha256": "6fa4fe9c7742c8a1ec69d1586cc98a07573b1b85e5bebf0ad4c899b75a782daf",
+  "website_replays": 4,
+  "guidance_verification_sha256": "31514eadb92cc57d9a94a44a01fb76954199f6156b17d9a75f47c95f5cdc1e92",
+  "appearance_verification_sha256": "47e2941bed737face378a8d26ffb9c884d03edd27f8521c38eec66b2e31a2328",
+  "texture_verification_sha256": "f752a2e6472a53331a26a03a815337df5bbfb7d70e8ce154acc272987cbddebf",
+  "publication_scope": "Code, documentation and metric/hash metadata; restricted photos, personal uploads, arrays, environments and downloaded weights remain local.",
+  "limits": "Targeted release verification, not a fresh inference/evaluation of every historical model or independent proof of facial reconstruction correctness."
+}

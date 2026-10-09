@@ -1,0 +1,47 @@
+{
+  "status": "numeric_and_provenance_checks_pass",
+  "rows": 72,
+  "new_outputs": 48,
+  "baseline_controls_verified": 24,
+  "exact_neutral_replays": 8,
+  "mechanism_tests": 4,
+  "paired_statistics_tests": 2,
+  "active_attention_calls_per_output": 800,
+  "scope": "No visual judgment implied by this receipt. Review the eight sheets separately.",
+  "scores_sha256": "1f478c79e05cd34bb596678c3f61e04f00ca158ed5cf221e00d8da2dec27afb3",
+  "config_sha256": "5ef809df0018c445ee24981a5e206a947de0619b066fdf45122dd7bf28a693a9",
+  "sheets": [
+    {
+      "path": "outputs\\spatial_reference_rejection_v1\\comparison_263_clean.png",
+      "sha256": "292350ad35b828063afda2474be0932ef54ea96427faf84d311c54b10becd8c9"
+    },
+    {
+      "path": "outputs\\spatial_reference_rejection_v1\\comparison_263_wrong_patch.png",
+      "sha256": "7e164cada6091a492972fa9d089d9055098ec0adfb905166e16ab9fc1185f4ae"
+    },
+    {
+      "path": "outputs\\spatial_reference_rejection_v1\\comparison_6681_clean.png",
+      "sha256": "576595fae94274c7c935725d21328bce7e1090b97097b30a5e5aab6244e4cd89"
+    },
+    {
+      "path": "outputs\\spatial_reference_rejection_v1\\comparison_6681_wrong_patch.png",
+      "sha256": "5bd20dfebef8699b22944bb003ea9c8553deb7b979795150418bb97564aff956"
+    },
+    {
+      "path": "outputs\\spatial_reference_rejection_v1\\comparison_7400_clean.png",
+      "sha256": "aef62af28c125e69c495247490997184fbf87a486bbcad146415a88cdb3ab36e"
+    },
+    {
+      "path": "outputs\\spatial_reference_rejection_v1\\comparison_7400_wrong_patch.png",
+      "sha256": "e8b08369bc9e0721b320cb7dd2cce9683bb6968f0e9c603310b8b87074013142"
+    },
+    {
+      "path": "outputs\\spatial_reference_rejection_v1\\comparison_10149_clean.png",
+      "sha256": "14812653c6af3aec2cae9cec879831c3a77b7dbc97491c156647fc9b75eb1b27"
+    },
+    {
+      "path": "outputs\\spatial_reference_rejection_v1\\comparison_10149_wrong_patch.png",
+      "sha256": "d4d3e0e21a8e6c841df067030123372e248ec47ffe32dcd798f6202b9f7e72ad"
+    }
+  ]
+}

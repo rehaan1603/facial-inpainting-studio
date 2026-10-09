@@ -1,0 +1,975 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Facial Inpainting Studio — Review Notes</title><style>
+:root{color-scheme:light}*{box-sizing:border-box}body{margin:0;background:#f3f5f7;color:#183344;font:17px/1.65 system-ui,Segoe UI,sans-serif}main{max-width:1050px;margin:32px auto;padding:42px 54px;background:white;border-radius:8px}h1{font-size:36px;line-height:1.2;margin-top:0}h2{font-size:27px;margin-top:54px;padding-top:14px;border-top:2px solid #dce8ea;line-height:1.3;scroll-margin-top:20px}h3{font-size:21px;margin-top:30px;color:#14656c}a{color:#006873;overflow-wrap:anywhere}p{margin:16px 0}blockquote{border-left:4px solid #007f87;background:#edf6f6;padding:2px 22px;margin:24px 0}table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.5;margin:24px 0}th,td{border:1px solid #ccd9df;padding:10px 12px;text-align:left;vertical-align:top}th{background:#173348;color:white}tr:nth-child(even){background:#f3f7f8}pre{overflow-x:auto;padding:18px;background:#f0f4f6;font-size:14px;line-height:1.55}code{font-family:Consolas,monospace;font-size:.91em}li{padding:3px 0}.remote{display:block;font-size:12px;color:#5b6972}nav{margin:24px 0;padding:16px 24px;background:#eff5f6}nav a{display:block;font-size:15px;padding:3px 0}.toolbar{max-width:1050px;margin:24px auto 0;padding:0 8px;font-size:14px}.toolbar button{padding:9px 16px;cursor:pointer;border:1px solid #007f87;background:white;color:#006873;border-radius:4px}.hint{font-size:14px;color:#526573}strong{font-weight:650}@media(max-width:700px){main{margin:0;padding:26px 18px}h1{font-size:29px}table{font-size:13px;display:block;overflow-x:auto}th,td{padding:7px}nav{padding:12px}}@media print{body{background:white;font-size:11pt;line-height:1.45}main{padding:0;margin:0;max-width:none}.toolbar,nav{display:none}h1{font-size:24pt}h2{font-size:18pt;break-after:avoid}h3{font-size:14pt;break-after:avoid}table{font-size:9pt}tr,blockquote{break-inside:avoid}a{color:#164c66;text-decoration:none}pre{white-space:pre-wrap;font-size:8pt}.remote{font-size:8pt}@page{size:A4;margin:17mm}}
+</style></head><body><div class="toolbar"><button onclick="window.print()">Print / Save as PDF</button> <span>Local study notes · 6 October review</span></div><main><p class="hint">Local code links open files on this laptop. GitHub copies are available beside key code links. Line numbers are retained in the Markdown companion.</p><nav aria-label="Contents"><strong>Jump to a section</strong><a href="#section-1-your-opening-explanation">1. Your opening explanation</a><a href="#section-2-what-problem-are-we-solving">2. What problem are we solving?</a><a href="#section-3-what-we-built-and-what-we-actually-trained">3. What we built, and what we actually trained</a><a href="#section-4-datasets-and-separation-of-experiments">4. Datasets and separation of experiments</a><a href="#section-5-current-main-architecture-explained-simply">5. Current main architecture, explained simply</a><a href="#section-6-training-what-the-optimizer-learns">6. Training: what the optimizer learns</a><a href="#section-7-exactly-how-many-times-did-we-train">7. Exactly how many times did we train?</a><a href="#section-8-evaluation-how-we-checked-outputs-fairly">8. Evaluation: how we checked outputs fairly</a><a href="#section-9-results-to-understand-and-explain">9. Results to understand and explain</a><a href="#section-10-what-is-working-and-what-remains-in-progress">10. What is working, and what remains in progress?</a><a href="#section-11-laptop-hardware-and-runtime">11. Laptop hardware and runtime</a><a href="#section-12-clickable-code-map-and-demonstration-order">12. Clickable code map and demonstration order</a><a href="#section-13-papers-to-cite-and-why">13. Papers to cite and why</a><a href="#section-14-demo-plan-for-tomorrow">14. Demo plan for tomorrow</a><a href="#section-15-likely-faculty-questions-and-answers">15. Likely faculty questions and answers</a><a href="#section-16-last-minute-revision-sheet">16. Last-minute revision sheet</a><a href="#section-evidence-used-for-these-notes">Evidence used for these notes</a></nav><h1 id="section-facial-inpainting-studio-review-preparation-notes">Facial Inpainting Studio — Review Preparation Notes</h1><p><strong>For your review on 6 October 2026. Verified against local code, training receipts and saved results on 5 October 2026.</strong></p>
+<p>Read sections 1–7 first to understand the project. Read sections 8–10 for results. Use section 12 to demonstrate the code, and section 15 to practise faculty questions. The final section is a quick revision sheet.</p>
+<p>These notes describe the existing CelebA/CelebAMask-HQ research. The separate Human Faces dataset work is outside the main results discussed here. The latest illustrated presentation has 32 slides.</p>
+<h2 id="section-1-your-opening-explanation">1. Your opening explanation</h2><blockquote>
+<p>“Our project is a local facial reconstruction application and research pipeline. It supports missing-region inpainting and restoration of blurred or noisy faces. We first integrated pretrained reconstruction models and trained small mask-refinement controls. Our current research uses a frozen ReF-LDM backbone with multiple photographs of the same person. We train a lightweight target-reference compatibility adapter to change how the model uses references, especially when a reference contains misleading facial information. We evaluate reconstruction, identity similarity and eye-region quality together. The application and experiments run locally on an RTX 5070 Laptop GPU. Some candidates improve individual measurements, while achieving consistent improvement across all quality criteria is still work in progress.”</p>
+</blockquote>
+<p><strong>The main code to show:</strong> <a href="file:///C:/Users/rehaa/OneDrive/Documents/ChatGPT/Facial%20inpainting%20Project/scripts/target_region_compatibility_v1.py" title="Open local file at line 37 in your editor">scripts/target_region_compatibility_v1.py</a> <a class="remote" href="https://github.com/rehaan1603/facial-inpainting-studio/blob/codex/local-studio-checkpoint/scripts/target_region_compatibility_v1.py#L37">GitHub copy · L37</a>. This implements the current research mechanism. It is different from the website launcher and from the pretrained generator itself.</p>
+<p><strong>The base paper for the current research:</strong> <a href="https://arxiv.org/html/2412.05043v1">ReF-LDM</a>. LaMa and ResShift are other implemented reconstruction backends and controls, not the backbone of the current 193-parameter adapter experiment.</p>
+<h2 id="section-2-what-problem-are-we-solving">2. What problem are we solving?</h2><p>There are two related tasks. Be precise about which one each experiment tests.</p>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Input</th>
+<th>Expected output</th>
+<th>Main difficulty</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Missing-region inpainting</td>
+<td>A face photograph and a mask marking missing/damaged pixels</td>
+<td>Plausible content inside the mask, with visible content preserved</td>
+<td>Missing eyes or other features may have many plausible appearances</td>
+</tr>
+<tr>
+<td>Blur/noise restoration</td>
+<td>A degraded photograph that still contains facial evidence, optionally with references</td>
+<td>A clearer facial image consistent with the person</td>
+<td>Detail has been lost, and a sharp-looking output may still have incorrect identity or gaze</td>
+</tr>
+</tbody></table>
+<p>The website supports both. <strong>The latest matched ReF-LDM adapter tables measure whole-image blur/noise restoration, not erased-eye inpainting.</strong> Do not describe those scores as proof that every website mode reconstructs missing eyes accurately.</p>
+<p>Three objectives guide the work:</p>
+<ol>
+<li>Improve perceptual quality and local facial detail.</li>
+<li>Preserve identity and trustworthy observed pixels where applicable.</li>
+<li>Reduce the effect of corrupted or misleading reference photographs.</li>
+</ol>
+<p>The output is a predicted reconstruction. Even with reference photographs, the exact expression, gaze or hidden details of a missing region cannot always be recovered.</p>
+<h2 id="section-3-what-we-built-and-what-we-actually-trained">3. What we built, and what we actually trained</h2><table>
+<thead>
+<tr>
+<th>Component</th>
+<th>What it does</th>
+<th>Locally trained?</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Browser application</td>
+<td>Upload, mask/evidence controls, select method, run GPU inference, compare/download</td>
+<td>No</td>
+<td>Implemented locally</td>
+</tr>
+<tr>
+<td>LaMa / Big-LaMa</td>
+<td>Single-image masked reconstruction</td>
+<td>No backbone retraining</td>
+<td>Implemented pretrained control</td>
+</tr>
+<tr>
+<td>ResShift</td>
+<td>Diffusion-based reconstruction through the local adapter</td>
+<td>No backbone retraining in this existing-dataset study</td>
+<td>Implemented pretrained control</td>
+</tr>
+<tr>
+<td>SDXL inpainting + FaceID Portrait</td>
+<td>Missing-region generation conditioned on reference photographs</td>
+<td>Pretrained components</td>
+<td>Implemented reference mode</td>
+</tr>
+<tr>
+<td>ReF-LDM</td>
+<td>Restoration conditioned on a degraded target and reference photographs</td>
+<td>Backbone frozen</td>
+<td>Current main research backbone</td>
+</tr>
+<tr>
+<td>MaskRefiner</td>
+<td>Predicts which pixels should be considered damaged</td>
+<td>Yes, 119,057 parameters</td>
+<td>Earlier generic/weighted control study</td>
+</tr>
+<tr>
+<td>Reference-bias pilot</td>
+<td>Modifies reference attention using reference features</td>
+<td>Yes, 545 parameters</td>
+<td>Earlier pilot and follow-up</td>
+</tr>
+<tr>
+<td>Regional compatibility adapter</td>
+<td>Uses degraded-target and reference evidence to bias reference attention</td>
+<td>Yes, 193 parameters</td>
+<td>Current v1–v5 research family</td>
+</tr>
+<tr>
+<td>FaceNet / ArcFace</td>
+<td>Produce recognition embeddings for similarity evaluation</td>
+<td>Recognition networks not trained locally</td>
+<td>FaceNet also supplies a frozen training loss in some adapter runs</td>
+</tr>
+<tr>
+<td>Evidence maps / blending</td>
+<td>Express how much observed evidence to retain</td>
+<td>User-provided/control logic</td>
+<td>A control mechanism, not a calibrated probability of correctness</td>
+</tr>
+</tbody></table>
+<p><strong>Important naming correction:</strong> ResShift is not ResNet. FaceNet&#39;s implementation uses an InceptionResnetV1 recognition network; it evaluates identity features and is not the image generator. Our small mask refiner is a U-Net-like convolutional model, not a face-generating ResNet.</p>
+<p>The pretrained backbones supply most of the generative knowledge. Our locally trained modules are much smaller. We did not train a foundation-scale facial generator from scratch on the laptop.</p>
+<h3 id="section-earlier-method-investigations-you-may-be-asked-about">Earlier method investigations you may be asked about</h3><table>
+<thead>
+<tr>
+<th>Investigation</th>
+<th>What was tested</th>
+<th>How to describe its outcome</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Mask-aware reference selection</td>
+<td>Choose a reference using the damaged target and supplied mask</td>
+<td>168 logical evaluation rows; no training in that cycle. It did not consistently outperform all-reference conditioning. <a href="file:///C:/Users/rehaa/OneDrive/Documents/ChatGPT/Facial%20inpainting%20Project/research/GENERALIZATION_RESULTS.md" title="Open local file">research/GENERALIZATION_RESULTS.md</a></td>
+</tr>
+<tr>
+<td>Regional routing</td>
+<td>Use different reference information for different regions</td>
+<td>144 logical rows, including 120 new generations; no training. It did not improve mean target identity over the original all-reference control. <a href="file:///C:/Users/rehaa/OneDrive/Documents/ChatGPT/Facial%20inpainting%20Project/research/REGIONAL_ROUTING_RESULTS_V2.md" title="Open local file">research/REGIONAL_ROUTING_RESULTS_V2.md</a></td>
+</tr>
+<tr>
+<td>Aligned local-feature fusion</td>
+<td>Inject aligned reference VAE features into masked-image conditioning</td>
+<td>A 48-row development diagnostic with no trainable parameters. It remains separate from the later ReF-LDM adapter. <a href="file:///C:/Users/rehaa/OneDrive/Documents/ChatGPT/Facial%20inpainting%20Project/research/LOCAL_LATENT_RESULTS_V1.md" title="Open local file">research/LOCAL_LATENT_RESULTS_V1.md</a></td>
+</tr>
+<tr>
+<td>Scaffold/context conditioning</td>
+<td>Change how prior reconstruction/context enters missing-region generation</td>
+<td>A separate controlled inference study; exact visible-pixel preservation did not establish correct hidden features. <a href="file:///C:/Users/rehaa/OneDrive/Documents/ChatGPT/Facial%20inpainting%20Project/research/SCAFFOLD_CONDITIONING_RESULTS_V1.md" title="Open local file">research/SCAFFOLD_CONDITIONING_RESULTS_V1.md</a></td>
+</tr>
+<tr>
+<td>Structure-only transport</td>
+<td>Transfer reference geometry into existing reconstructions without transferring texture</td>
+<td>All 24 structural-transform attempts failed in that recorded screen. The 40 completed rows were controls, not successful new transforms. <a href="file:///C:/Users/rehaa/OneDrive/Documents/ChatGPT/Facial%20inpainting%20Project/research/STRUCTURE_TRANSPORT_RESULTS_V1.md" title="Open local file">research/STRUCTURE_TRANSPORT_RESULTS_V1.md</a></td>
+</tr>
+<tr>
+<td>RefFaceInpainting author baseline</td>
+<td>Run an external published reference-guided model locally</td>
+<td>16 new predictions and 12 reused controls, 28 scored rows. An implemented comparison, not our proposed mechanism. <a href="file:///C:/Users/rehaa/OneDrive/Documents/ChatGPT/Facial%20inpainting%20Project/research/REFFACE_BASELINE_RESULTS_V1.md" title="Open local file">research/REFFACE_BASELINE_RESULTS_V1.md</a></td>
+</tr>
+</tbody></table>
+<p>These studies explain how the project moved from selection and inference controls toward training a compact attention adapter. They are different protocols; their row counts and metrics must not be pooled as one experiment. Failed attempts remain recorded.</p>
+<h2 id="section-4-datasets-and-separation-of-experiments">4. Datasets and separation of experiments</h2><h3 id="section-4-1-sources-and-their-roles">4.1 Sources and their roles</h3><table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Project use</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CelebA annotations and partitions</td>
+<td>Identity mapping and split information</td>
+</tr>
+<tr>
+<td>CelebAMask-HQ / HQ images and mapping</td>
+<td>Face images, association with CelebA identities, facial-component annotations</td>
+</tr>
+<tr>
+<td>LaPa</td>
+<td>An additional source used in the earlier object-composite evaluation; face framing used annotation-derived crops</td>
+</tr>
+<tr>
+<td>Official ReF-LDM evaluation inputs</td>
+<td>Recent limited reference-encoding diagnostic, not a complete author-benchmark reproduction</td>
+</tr>
+<tr>
+<td>Separate Human Faces folder</td>
+<td>Separate investigation; do not mix its examples or training claims into this review&#39;s main results</td>
+</tr>
+</tbody></table>
+<p>Dataset photographs and downloaded backbone weights remain local. GitHub contains code, reports and permitted experiment artifacts. The dataset restoration instructions use official sources rather than redistributing restricted photographs.</p>
+<h3 id="section-4-2-two-different-local-training-populations">4.2 Two different local training populations</h3><p><strong>Earlier mask-refiner study:</strong> the recorded training cache contains <strong>24,133 images from 5,007 identity labels</strong>, plus <strong>48 tuning images from 48 separate identity labels</strong>. These counts were checked from the local training-cache metadata. This is the mask-refiner dataset, not the training population for the current attention adapter.</p>
+<p><strong>Current attention-adapter study:</strong> <strong>20 selected identities</strong>, each with <strong>one target and four references</strong>. That gives 100 selected original images: 80 for the 16 adapter-training identities and 20 for the four adapter-development identities. Corrupted versions and generated outputs do not count as additional independent people.</p>
+<p>The four repeatedly evaluated development labels are <strong>263, 6681, 7400 and 10149</strong>. They are separate from the 16 identities used to fit these adapters. They came from the original dataset training partition and have now been repeatedly inspected. They are development data, not a fresh final test. Earlier project or upstream backbone exposure is not ruled out.</p>
+<p>The project uses manifests, identity labels, exact image hashes and perceptual-hash checks to reduce overlap. These controls do not prove that every near-duplicate or upstream pretraining overlap is absent.</p>
+<p><strong>Code:</strong> <a href="file:///C:/Users/rehaa/OneDrive/Documents/ChatGPT/Facial%20inpainting%20Project/scripts/prepare_reference_intervention_pilot.py" title="Open local file at line 11 in your editor">scripts/prepare_reference_intervention_pilot.py</a> <a class="remote" href="https://github.com/rehaan1603/facial-inpainting-studio/blob/codex/local-studio-checkpoint/scripts/prepare_reference_intervention_pilot.py#L11">GitHub copy · L11</a>. <strong>Recorded cases:</strong> <a href="file:///C:/Users/rehaa/OneDrive/Documents/ChatGPT/Facial%20inpainting%20Project/outputs/reference_intervention_pilot_v1/manifest.json" title="Open local file">outputs/reference_intervention_pilot_v1/manifest.json</a>.</p>
+<h2 id="section-5-current-main-architecture-explained-simply">5. Current main architecture, explained simply</h2><pre><code class="language-text">Degraded target photograph ──&gt; frozen VQ encoder ──&gt; target latent
+                                                           │
+Reference photographs ──────&gt; frozen VQ encoder             │
+              │                         │                  │
+              │                  reference K/V cache       │
+              │                         │                  ▼
+              └─&gt; target/reference descriptors ──&gt; small compatibility MLP
+                                                     │
+                                    regional reference attention biases
+                                                     │
+                         frozen ReF-LDM diffusion denoiser
+                                                     │
+                             50 DDIM sampling steps
+                                                     │
+                                  frozen VQ decoder
+                                                     │
+                                  reconstructed RGB face
+</code></pre>
+<p>The VQ encoder compresses a 512 × 512 RGB face into an <strong>8 × 64 × 64 latent representation</strong> in the matched research pipeline. The diffusion model operates on this compact representation. The decoder converts the final latent back to an image.</p>
+<p>Reference images contribute cached attention keys and values. Think of attention as deciding which information to consult when predicting the next representation. The adapter changes the preference for different references in different target regions. It does not directly copy pixels or independently synthesize a whole face.</p>
+<h3 id="section-5-1-the-five-regions">5.1 The five regions</h3><p>The implementation uses fixed rectangles for left eye, right eye, nose, mouth and whole-face/context information. These are approximate aligned-face regions. They are <strong>not learned segmentation</strong>, a 3D face model or geometric warping. Large pose changes can therefore misalign the regions.</p>
+<h3 id="section-5-2-the-ten-adapter-features">5.2 The ten adapter features</h3><p>For each region/reference pair, the feature vector contains:</p>
+<ol>
+<li>Regional degraded-target/reference cosine similarity.</li>
+<li>Whole-image/context cosine similarity.</li>
+<li>Agreement with the median reference descriptor.</li>
+<li>Normalized difference in descriptor magnitude.</li>
+<li>A five-landmark pose-proxy discrepancy.</li>
+<li>Reference sharpness proxy.</li>
+<li>Reference high-frequency/noise-edge proxy.</li>
+<li>Target/reference brightness difference.</li>
+<li>Minimum target/reference face-detection confidence.</li>
+<li>Observed-evidence coverage slot, currently fixed to <strong>1</strong> in this whole-image experiment.</li>
+</ol>
+<p>The current code uses cosine, magnitude and quality features. It does <strong>not</strong> implement every proposed concatenation, learned correspondence, segmentation or uncertainty idea. Consensus is fallible: several references can share the same incorrect information.</p>
+<h3 id="section-5-3-why-exactly-193-trainable-parameters">5.3 Why exactly 193 trainable parameters?</h3><p>The shared MLP is <code>Linear(10,16) → SiLU → Linear(16,1)</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th align="right">Weights</th>
+<th align="right">Biases</th>
+<th align="right">Parameters</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>10 inputs to 16 hidden units</td>
+<td align="right">160</td>
+<td align="right">16</td>
+<td align="right">176</td>
+</tr>
+<tr>
+<td>16 hidden units to 1 output</td>
+<td align="right">16</td>
+<td align="right">1</td>
+<td align="right">17</td>
+</tr>
+<tr>
+<td><strong>Total registered trainable parameters</strong></td>
+<td align="right"><strong>176</strong></td>
+<td align="right"><strong>17</strong></td>
+<td align="right"><strong>193</strong></td>
+</tr>
+</tbody></table>
+<p>The same adapter is used at <strong>16 attention layers</strong>. It is shared, so the count is <strong>193 total</strong>, not 193 × 16. This is the parameter count of the adapter only, not of the complete ReF-LDM system.</p>
+<h3 id="section-5-4-how-the-attention-bias-works">5.4 How the attention bias works</h3><p>For region <code>r</code> and reference <code>i</code>:</p>
+<pre><code class="language-text">score(r,i) = MLP(features(r,i))
+bias(r,i) = log_softmax_over_references(score(r,i)) + log(number_of_references)
+attention = softmax(QKᵀ / sqrt(d) + bias) V
+</code></pre>
+<p>The code clamps scores and uses a temperature. The final layer starts at zero. Equal zero scores make the normalized bias zero, preserving the baseline at neutral initialization. Reference biases affect the conditional branch; self-attention receives zero added bias and the null CFG branch is preserved.</p>
+<p><strong>Current limitation:</strong> relative normalization redistributes reference preference, but does not provide an independent knob to reject all unreliable references together. That motivates the next spatial rejection experiment.</p>
+<p><strong>Code walkthrough:</strong> <a href="file:///C:/Users/rehaa/OneDrive/Documents/ChatGPT/Facial%20inpainting%20Project/scripts/target_region_compatibility_v1.py" title="Open local file at line 21 in your editor">scripts/target_region_compatibility_v1.py</a> <a class="remote" href="https://github.com/rehaan1603/facial-inpainting-studio/blob/codex/local-studio-checkpoint/scripts/target_region_compatibility_v1.py#L21">GitHub copy · L21</a> → <a href="file:///C:/Users/rehaa/OneDrive/Documents/ChatGPT/Facial%20inpainting%20Project/scripts/target_region_compatibility_v1.py" title="Open local file at line 37 in your editor">scripts/target_region_compatibility_v1.py</a> <a class="remote" href="https://github.com/rehaan1603/facial-inpainting-studio/blob/codex/local-studio-checkpoint/scripts/target_region_compatibility_v1.py#L37">GitHub copy · L37</a> → <a href="file:///C:/Users/rehaa/OneDrive/Documents/ChatGPT/Facial%20inpainting%20Project/scripts/target_region_compatibility_v1.py" title="Open local file at line 64 in your editor">scripts/target_region_compatibility_v1.py</a> <a class="remote" href="https://github.com/rehaan1603/facial-inpainting-studio/blob/codex/local-studio-checkpoint/scripts/target_region_compatibility_v1.py#L64">GitHub copy · L64</a>. <strong>Frozen model loader and reference cache:</strong> <a href="file:///C:/Users/rehaa/OneDrive/Documents/ChatGPT/Facial%20inpainting%20Project/scripts/reference_intervention_core.py" title="Open local file at line 19 in your editor">scripts/reference_intervention_core.py</a> <a class="remote" href="https://github.com/rehaan1603/facial-inpainting-studio/blob/codex/local-studio-checkpoint/scripts/reference_intervention_core.py#L19">GitHub copy · L19</a> and <a href="file:///C:/Users/rehaa/OneDrive/Documents/ChatGPT/Facial%20inpainting%20Project/scripts/reference_intervention_core.py" title="Open local file at line 86 in your editor">scripts/reference_intervention_core.py</a> <a class="remote" href="https://github.com/rehaan1603/facial-inpainting-studio/blob/codex/local-studio-checkpoint/scripts/reference_intervention_core.py#L86">GitHub copy · L86</a>.</p>
+<h2 id="section-6-training-what-the-optimizer-learns">6. Training: what the optimizer learns</h2><h3 id="section-6-1-frozen-versus-trainable">6.1 Frozen versus trainable</h3><p>The optimizer receives only adapter parameters. The ReF-LDM backbone, VQ encoder/decoder and FaceNet recognition weights stay frozen. The training code checks that frozen networks have no parameter gradients.</p>
+<p>Frozen does not mean that gradients cannot pass through a network. For identity supervision, the decoded image passes through frozen FaceNet, and its loss gradient flows back to the adapter. The decoder/recognizer computations consume memory even though their weights are not updated.</p>
+<h3 id="section-6-2-diffusion-reconstruction-loss">6.2 Diffusion reconstruction loss</h3><pre><code class="language-text">Ldiff = 0.25 × full-latent noise-prediction MSE
+      + 0.75 × face-rectangle noise-prediction MSE
+</code></pre>
+<p>The model predicts the noise added to a clean training latent at a sampled diffusion timestep. The face rectangle gives more emphasis to the central facial area. It is a latent rectangle, not the evaluation parsing mask.</p>
+<h3 id="section-6-3-identity-loss">6.3 Identity loss</h3><pre><code class="language-text">Lid = 1 − cosine(FaceNet(predicted clean image), FaceNet(clean training target))
+Ltotal = Ldiff + λ × Lid
+</code></pre>
+<p>The predicted clean latent <code>x0</code> is estimated during a training step and decoded. This makes identity supervision possible without running the full 50-step sampler during every optimizer update. Its limitation is that one-step predicted <code>x0</code> is not identical to the final multi-step reconstruction.</p>
+<p>The calibrated base identity weight is <strong>0.5408350358795648</strong>. In v2 it was derived from the first supervised-step gradient-norm ratio, capped at 10. It was not selected by searching for the best development score.</p>
+<h3 id="section-6-4-changes-across-versions">6.4 Changes across versions</h3><ul>
+<li><strong>v1:</strong> target/reference compatibility, diffusion reconstruction loss only; includes a no-target-feature ablation.</li>
+<li><strong>v2:</strong> same 193-parameter architecture; matched diffusion-only versus diffusion-plus-FaceNet loss. Identity supervision occurs every fourth update.</li>
+<li><strong>v3:</strong> use fixed training-target MTCNN face bounds for both predicted and target crops, instead of resizing the whole aligned image. The every-fourth-step schedule remains.</li>
+<li><strong>v4 fixed:</strong> supervise identity at every update, giving four identity-supervised updates to each of the 16 identities.</li>
+<li><strong>v4 capped:</strong> same coverage, but cap the weighted identity-gradient norm relative to the reconstruction gradient. Effective weight is <code>min(base_weight, ||gdiff|| / max(||gid||, 1e-12))</code>.</li>
+<li><strong>v5:</strong> same coverage and crops as v4 fixed, but multiply the base identity weight by <code>sqrt_alphas_cumprod[t]</code>. This scales the loss by the retained signal at the diffusion timestep. It is a separate arm, not v4 capped plus another change.</li>
+</ul>
+<p><strong>LPIPS is an evaluation metric in these current runs, not a trained loss term.</strong> The code has not silently trained all proposed perceptual, consistency and regional losses. The older reference-bias pilot did include a separate consistency intervention.</p>
+<h2 id="section-7-exactly-how-many-times-did-we-train">7. Exactly how many times did we train?</h2><h3 id="section-7-1-current-193-parameter-adapter-family">7.1 Current 193-parameter adapter family</h3><table>
+<thead>
+<tr>
+<th>Version / arm</th>
+<th align="right">Independent training runs</th>
+<th align="right">Updates per run</th>
+<th align="right">Recorded loop time</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>v1 no-target</td>
+<td align="right">1</td>
+<td align="right">128</td>
+<td align="right">57.83 s</td>
+<td>Remove target-dependent inputs</td>
+</tr>
+<tr>
+<td>v1 full regional</td>
+<td align="right">1</td>
+<td align="right">128</td>
+<td align="right">50.61 s</td>
+<td>Target/reference compatibility</td>
+</tr>
+<tr>
+<td>v2 diffusion-only</td>
+<td align="right">1</td>
+<td align="right">64</td>
+<td align="right">23.61 s</td>
+<td>Equal-budget loss control</td>
+</tr>
+<tr>
+<td>v2 identity</td>
+<td align="right">1</td>
+<td align="right">64</td>
+<td align="right">71.42 s</td>
+<td>Add frozen FaceNet supervision</td>
+</tr>
+<tr>
+<td>v3 fixed face crop</td>
+<td align="right">1</td>
+<td align="right">64</td>
+<td align="right">93.56 s</td>
+<td>Align the identity training crop</td>
+</tr>
+<tr>
+<td>v4 balanced fixed</td>
+<td align="right">1</td>
+<td align="right">64</td>
+<td align="right">291.78 s</td>
+<td>Identity loss on every update</td>
+</tr>
+<tr>
+<td>v4 balanced capped</td>
+<td align="right">1</td>
+<td align="right">64</td>
+<td align="right">288.66 s</td>
+<td>Limit identity-gradient dominance</td>
+</tr>
+<tr>
+<td>v5 timestep-scaled</td>
+<td align="right">1</td>
+<td align="right">64</td>
+<td align="right">294.45 s</td>
+<td>Test timestep-dependent identity weighting</td>
+</tr>
+<tr>
+<td><strong>Total for this family</strong></td>
+<td align="right"><strong>8</strong></td>
+<td align="right"><strong>640 combined</strong></td>
+<td align="right"><strong>About 19.5 minutes combined</strong></td>
+<td><strong>Different arms, not 640 updates of one model</strong></td>
+</tr>
+</tbody></table>
+<p>These are small, controlled adapter experiments using prepared data/latents. Loop times exclude downloads, source audits, caching, model startup and evaluation. They are not total project duration.</p>
+<p>Common v2–v5 settings:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Recorded value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Optimizer</td>
+<td>AdamW</td>
+</tr>
+<tr>
+<td>Learning rate</td>
+<td>0.001</td>
+</tr>
+<tr>
+<td>Gradient clipping</td>
+<td>Global adapter norm 1.0</td>
+</tr>
+<tr>
+<td>Training seed</td>
+<td>20261002</td>
+</tr>
+<tr>
+<td>Target batch per update</td>
+<td>One target with four references</td>
+</tr>
+<tr>
+<td>Training identities</td>
+<td>16</td>
+</tr>
+<tr>
+<td>Schedule</td>
+<td>64 updates; four occurrences per identity</td>
+</tr>
+<tr>
+<td>Reference conditions</td>
+<td>Clean, blur, noise, wrong-person patch; 16 scheduled updates each</td>
+</tr>
+<tr>
+<td>Training diffusion timesteps</td>
+<td>100, 200, 300, 400, shuffled separately from the conditions</td>
+</tr>
+<tr>
+<td>Precision</td>
+<td>bfloat16 autocast for main model computations; not every operation is bfloat16</td>
+</tr>
+<tr>
+<td>Selection</td>
+<td>Fixed-budget experiments; no best evaluation-seed selection</td>
+</tr>
+</tbody></table>
+<p>v1 differs: 128 updates, eight reference conditions, training timesteps 100/300/500/700. Do not apply the v2 schedule to v1.</p>
+<p>In v2 identity and v3, 16 identity-supervised updates covered only <strong>12 of 16 identities</strong>, despite diffusion training covering all 16. v4/v5 fix that coverage imbalance with <strong>64 supervised updates</strong>, four per identity.</p>
+<p>Each new arm is a controlled fit from its recorded initialization; the version numbers do not mean one checkpoint was continually trained through every version.</p>
+<h3 id="section-7-2-earlier-training-kept-separate">7.2 Earlier training, kept separate</h3><p><strong>545-parameter pilot:</strong> two initial 64-update arms plus one 64-update scaled follow-up = <strong>3 runs and 192 updates</strong>. The initial pair compared reconstruction loss and an intervention consistency term. These are not the 193-parameter architecture.</p>
+<p><strong>119,057-parameter mask refiner:</strong> two loss variants × three seeds (17, 29, 43) = <strong>6 runs</strong>. Each first trained for <strong>1,500 updates</strong>, then was extended to <strong>6,000 total updates</strong>. That is 36,000 final-budget updates across six runs, not 45,000; the extension adds 4,500 to each existing run. Batch size was 16, resolution 128, learning rate 0.0003. Generic versus preservation-weighted loss uses negative-pixel costs 1 versus 4. Best retained checkpoints were at update 5,500 or 6,000, depending on the run.</p>
+<p>The mask refiner predicts a mask, not a reconstructed face. A lower mask loss is therefore not automatically a better eye reconstruction.</p>
+<h3 id="section-7-3-four-counts-you-must-not-confuse">7.3 Four counts you must not confuse</h3><table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning in this project</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Training update</td>
+<td>One optimizer step changing learned weights</td>
+</tr>
+<tr>
+<td>Epoch</td>
+<td>A full pass through a defined dataset; do not call 64 updates “64 epochs”</td>
+</tr>
+<tr>
+<td>DDIM inference step</td>
+<td>One denoising step during generation; no learning occurs</td>
+</tr>
+<tr>
+<td>Inference seed</td>
+<td>A controlled sampling-noise choice; three inference seeds are not three independently trained models</td>
+</tr>
+</tbody></table>
+<p>Receipts: <a href="file:///C:/Users/rehaa/OneDrive/Documents/ChatGPT/Facial%20inpainting%20Project/outputs/target_compatibility_v1/training/receipt.json" title="Open local file">outputs/target_compatibility_v1/training/receipt.json</a>, <a href="file:///C:/Users/rehaa/OneDrive/Documents/ChatGPT/Facial%20inpainting%20Project/outputs/identity_compatibility_v2/training.json" title="Open local file">outputs/identity_compatibility_v2/training.json</a>, <a href="file:///C:/Users/rehaa/OneDrive/Documents/ChatGPT/Facial%20inpainting%20Project/outputs/identity_crop_v3/training.json" title="Open local file">outputs/identity_crop_v3/training.json</a>, <a href="file:///C:/Users/rehaa/OneDrive/Documents/ChatGPT/Facial%20inpainting%20Project/outputs/identity_balance_v4/balanced_fixed/training.json" title="Open local file">outputs/identity_balance_v4/balanced_fixed/training.json</a>, <a href="file:///C:/Users/rehaa/OneDrive/Documents/ChatGPT/Facial%20inpainting%20Project/outputs/identity_balance_v4/balanced_capped/training.json" title="Open local file">outputs/identity_balance_v4/balanced_capped/training.json</a>, <a href="file:///C:/Users/rehaa/OneDrive/Documents/ChatGPT/Facial%20inpainting%20Project/outputs/identity_timestep_v5/timestep_scaled/training.json" title="Open local file">outputs/identity_timestep_v5/timestep_scaled/training.json</a>. Earlier refiner settings: <a href="file:///C:/Users/rehaa/OneDrive/Documents/ChatGPT/Facial%20inpainting%20Project/configs/learned_refiner.json" title="Open local file">configs/learned_refiner.json</a> <a class="remote" href="https://github.com/rehaan1603/facial-inpainting-studio/blob/codex/local-studio-checkpoint/configs/learned_refiner.json">GitHub copy</a> and <a href="file:///C:/Users/rehaa/OneDrive/Documents/ChatGPT/Facial%20inpainting%20Project/research/TRAINING_EXTENSION_RESULTS.md" title="Open local file">research/TRAINING_EXTENSION_RESULTS.md</a>.</p>
+<h2 id="section-8-evaluation-how-we-checked-outputs-fairly">8. Evaluation: how we checked outputs fairly</h2><h3 id="section-8-1-main-matched-adapter-protocol">8.1 Main matched adapter protocol</h3><p>Four development identities × three inference seeds (17, 29, 43) × two conditions = <strong>24 outputs per method</strong>, or <strong>12 per reference condition</strong>. Common generation settings: 512 RGB output, four separately encoded references, 50 DDIM steps, guidance 1.5, bfloat16, <code>uniform_trailing</code> sampling schedule and the same frozen backbone.</p>
+<p>The target is degraded by bicubic resizing <strong>512 → 64 → 512</strong>, followed by Gaussian RGB noise with standard deviation <strong>8 on the 0–255 scale</strong>. Clean-reference condition means the references are clean; the target is still degraded.</p>
+<p>In the misleading condition, the central <strong>256 × 256</strong> patch of reference 1 is replaced with another identity&#39;s content. The other three references stay unchanged. The learned adapter receives degraded-target/reference features, not the clean evaluation target or a label identifying which reference was corrupted.</p>
+<h3 id="section-8-2-output-counts-by-experiment">8.2 Output counts by experiment</h3><table>
+<thead>
+<tr>
+<th>Experiment</th>
+<th align="right">New generated outputs</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>v1 broad reference-corruption screen</td>
+<td align="right">96</td>
+<td>Four identities × three methods × eight conditions × one seed</td>
+</tr>
+<tr>
+<td>v2 matched objective screen</td>
+<td align="right">96</td>
+<td>Four identities × four methods × two conditions × three seeds</td>
+</tr>
+<tr>
+<td>v3 crop candidate</td>
+<td align="right">24</td>
+<td>Reuses 72 previously verified control outputs for a 96-row panel</td>
+</tr>
+<tr>
+<td>v4 fixed and capped candidates</td>
+<td align="right">48 total</td>
+<td>24 new per arm; the same 72 controls are reused for each panel</td>
+</tr>
+<tr>
+<td>v5 timestep candidate</td>
+<td align="right">24</td>
+<td>Reuses 72 controls</td>
+</tr>
+<tr>
+<td>Expanded encoding diagnostic</td>
+<td align="right">30</td>
+<td>Five targets × two encoding methods × three seeds; plus five input-control scores</td>
+</tr>
+<tr>
+<td>Whole-reference rejection diagnostic</td>
+<td align="right">24 interventions + 8 replays</td>
+<td>Uses 24 archived baseline controls, yielding 48 scored rows</td>
+</tr>
+</tbody></table>
+<p>Do not add reused controls as though they were new independent generations. Some replay calls reproduce existing cases to check reproducibility.</p>
+<h3 id="section-8-3-metrics-and-what-they-mean">8.3 Metrics and what they mean</h3><table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Measures</th>
+<th>Preferred direction</th>
+<th>What it cannot establish alone</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>PSNR, in dB</td>
+<td>Pixel mean-squared error relative to the clean target</td>
+<td>Higher</td>
+<td>Natural-looking detail or identity correctness</td>
+</tr>
+<tr>
+<td>SSIM</td>
+<td>Local structural similarity</td>
+<td>Higher</td>
+<td>Exact identity recovery</td>
+</tr>
+<tr>
+<td>LPIPS, AlexNet implementation</td>
+<td>Learned perceptual distance to the target</td>
+<td>Lower</td>
+<td>Identity preservation or true hidden content</td>
+</tr>
+<tr>
+<td>FaceNet cosine</td>
+<td>Similarity between recognition embeddings</td>
+<td>Higher</td>
+<td>Percentage of correct reconstructed pixels</td>
+</tr>
+<tr>
+<td>ArcFace cosine</td>
+<td>A second recognition-embedding comparison</td>
+<td>Higher</td>
+<td>A universal independent identity check across every pipeline</td>
+</tr>
+<tr>
+<td>Eye bounding-box LPIPS</td>
+<td>Perceptual error in the annotated eye crop plus context</td>
+<td>Lower</td>
+<td>Error exclusively inside eye pixels</td>
+</tr>
+<tr>
+<td>NIQE / BRISQUE</td>
+<td>No-reference image naturalness diagnostics</td>
+<td>Usually lower</td>
+<td>Correct identity, faithful gaze, or fidelity to a known target</td>
+</tr>
+<tr>
+<td>Visible-pixel change / error</td>
+<td>Whether trusted pixels were modified</td>
+<td>Lower; exact preservation where required</td>
+<td>Correctness of the newly generated region</td>
+</tr>
+</tbody></table>
+<p>PSNR uses normalized RGB error. LPIPS inputs are scaled to −1…1. SSIM uses RGB, an 11 × 11 Gaussian window, sigma 1.5 and population covariance. Regional SSIM only includes fully contained windows. Eye LPIPS uses a bounding crop with <strong>10-pixel context</strong>, not a strictly pixel-masked LPIPS calculation.</p>
+<p>FaceNet uses MTCNN face detection/cropping and a VGGFace2-pretrained InceptionResnetV1 encoder. ArcFace uses InsightFace <code>buffalo_l</code>. A missing/multiple-face detection is recorded as unavailable, not filled with zero.</p>
+<p>FaceNet contributes to the identity-supervised training objective, so its evaluation is not independent of that loss. ArcFace is separate from the ReF-LDM adapter training objective, but the SDXL FaceID path uses an ArcFace-family conditioning encoder. The independence claim must be specific to the experiment.</p>
+<p>Paired comparisons use the same identity, condition and seed. Statistical summaries use identity-level aggregation and 2,000 bootstrap resamples. Four identities provide limited evidence; 12 seeded outputs do not become 12 independent people.</p>
+<p><strong>Code:</strong> <a href="file:///C:/Users/rehaa/OneDrive/Documents/ChatGPT/Facial%20inpainting%20Project/scripts/extended_evaluation_metrics.py" title="Open local file at line 24 in your editor">scripts/extended_evaluation_metrics.py</a> <a class="remote" href="https://github.com/rehaan1603/facial-inpainting-studio/blob/codex/local-studio-checkpoint/scripts/extended_evaluation_metrics.py#L24">GitHub copy · L24</a>, <a href="file:///C:/Users/rehaa/OneDrive/Documents/ChatGPT/Facial%20inpainting%20Project/scripts/region_metrics_v1.py" title="Open local file at line 17 in your editor">scripts/region_metrics_v1.py</a> <a class="remote" href="https://github.com/rehaan1603/facial-inpainting-studio/blob/codex/local-studio-checkpoint/scripts/region_metrics_v1.py#L17">GitHub copy · L17</a>, <a href="file:///C:/Users/rehaa/OneDrive/Documents/ChatGPT/Facial%20inpainting%20Project/scripts/score_identity_compatibility_v2.py" title="Open local file at line 13 in your editor">scripts/score_identity_compatibility_v2.py</a> <a class="remote" href="https://github.com/rehaan1603/facial-inpainting-studio/blob/codex/local-studio-checkpoint/scripts/score_identity_compatibility_v2.py#L13">GitHub copy · L13</a>.</p>
+<h2 id="section-9-results-to-understand-and-explain">9. Results to understand and explain</h2><h3 id="section-9-1-the-matched-baseline-and-selected-recent-candidates">9.1 The matched baseline and selected recent candidates</h3><p><strong>Clean references, 12 outputs per row:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th align="right">PSNR ↑</th>
+<th align="right">SSIM ↑</th>
+<th align="right">LPIPS ↓</th>
+<th align="right">FaceNet ↑</th>
+<th align="right">Eye LPIPS ↓</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Local ReF-LDM</td>
+<td align="right">23.86081</td>
+<td align="right">0.63481</td>
+<td align="right">0.27725</td>
+<td align="right">0.91497</td>
+<td align="right">0.12901</td>
+</tr>
+<tr>
+<td>v4 capped</td>
+<td align="right">23.86587</td>
+<td align="right">0.63465</td>
+<td align="right">0.27707</td>
+<td align="right">0.91184</td>
+<td align="right">0.12843</td>
+</tr>
+<tr>
+<td>v5 timestep-scaled</td>
+<td align="right">23.85949</td>
+<td align="right">0.63501</td>
+<td align="right">0.27743</td>
+<td align="right">0.91623</td>
+<td align="right">0.13018</td>
+</tr>
+</tbody></table>
+<p>v4 capped slightly improves PSNR/LPIPS but loses identity similarity. v5 improves FaceNet and SSIM but loses LPIPS and eye quality. <strong>No row is best on every important criterion.</strong></p>
+<p><strong>Misleading references:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th align="right">PSNR ↑</th>
+<th align="right">SSIM ↑</th>
+<th align="right">LPIPS ↓</th>
+<th align="right">FaceNet ↑</th>
+<th align="right">Eye LPIPS ↓</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Local ReF-LDM, all 12</td>
+<td align="right">23.84680</td>
+<td align="right">0.63377</td>
+<td align="right">0.27769</td>
+<td align="right">0.90545</td>
+<td align="right">0.12800</td>
+</tr>
+<tr>
+<td>v4 capped, all 12</td>
+<td align="right">23.84916</td>
+<td align="right">0.63390</td>
+<td align="right">0.27800</td>
+<td align="right">0.90700</td>
+<td align="right">0.12841</td>
+</tr>
+<tr>
+<td>v5 timestep-scaled</td>
+<td align="right">23.84852</td>
+<td align="right">0.63387</td>
+<td align="right">0.27823</td>
+<td align="right">0.90414*</td>
+<td align="right">0.12647</td>
+</tr>
+</tbody></table>
+<p><strong>For v5 FaceNet, use the same 11 valid pairs: baseline 0.90932 versus candidate 0.90414.</strong> The other v5 metrics above use 12 outputs. Comparing its 11-output FaceNet mean directly with the full 12-output baseline would be misleading. The PPT now makes this correction.</p>
+<p>For the original matched panel, ArcFace generally has <strong>8/12 valid pairs</strong> per condition. Missing detections remain part of the report.</p>
+<h3 id="section-9-2-best-earlier-values-retained-in-the-ppt">9.2 Best earlier values retained in the PPT</h3><p>The earlier <strong>seed-17-only</strong>, four-identity clean-reference comparison was:</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th align="right">PSNR</th>
+<th align="right">SSIM</th>
+<th align="right">LPIPS</th>
+<th align="right">FaceNet</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Baseline</td>
+<td align="right">24.04671</td>
+<td align="right">0.63723</td>
+<td align="right">0.26544</td>
+<td align="right">0.91158</td>
+</tr>
+<tr>
+<td>Regional v1</td>
+<td align="right">24.05182</td>
+<td align="right">0.63730</td>
+<td align="right">0.26477</td>
+<td align="right">0.90670</td>
+</tr>
+</tbody></table>
+<p>These values belong to one seed. Do not replace the three-seed means with them or compare them against a different cohort as evidence of improvement.</p>
+<p>Across the matched three-seed clean-reference methods, the best recorded PSNR is <strong>23.86587</strong> and LPIPS <strong>0.27707</strong> from v4 capped; best SSIM <strong>0.63501</strong> and FaceNet <strong>0.91623</strong> come from v5. They are <strong>different fitted models</strong>, not one model combining all four values.</p>
+<h3 id="section-9-3-what-the-latest-diagnostics-taught-us">9.3 What the latest diagnostics taught us</h3><p><strong>Encoding:</strong> four multi-reference targets from one identity, across three seeds. Joint RGB encoding raises mean FaceNet from <strong>0.89963 to 0.90372</strong>, but LPIPS worsens from <strong>0.28170 to 0.28295</strong>. The full experiment also contains a second identity as a single-reference control. Therefore it is not a four-identity multi-reference validation.</p>
+<p><strong>Removing the known bad reference:</strong> across four identities and three seeds, FaceNet rises from <strong>0.90545 to 0.91153</strong>, but LPIPS worsens from <strong>0.27769 to 0.28373</strong>, worsening in <strong>11/12 cases</strong>. Removing an entire reference can discard useful information along with its corrupted region.</p>
+<p>This removal uses knowledge of which reference we deliberately corrupted. It is an <strong>oracle feasibility diagnostic</strong>, not a learned detector ready for arbitrary client photos. Zeroing every reference degraded identity further.</p>
+<p><strong>Research direction:</strong> preserve useful reference content while suppressing only incompatible regions. Test a known-region intervention first, with equal-area random-region and neutral controls, before training a selector.</p>
+<h3 id="section-9-4-what-does-70-similar-on-an-image-mean">9.4 What does “70% similar” on an image mean?</h3><p>In the PPT image examples, that label is <strong>SSIM × 100 rounded to a whole percentage against the original target</strong>. It is a displayed structural similarity score. It does not mean 70% probability of being the correct person, 70% reconstruction accuracy or 70% of pixels exactly recovered.</p>
+<p>We do not have a validated universal accuracy percentage for arbitrary unknown client photographs. Finishing 96/96 inference jobs is an execution success rate, not reconstruction accuracy.</p>
+<h2 id="section-10-what-is-working-and-what-remains-in-progress">10. What is working, and what remains in progress?</h2><p><strong>Established engineering work:</strong> local model inference and UI, controlled damage generation, trained compact modules, separate configs/checkpoints, reconstruction comparisons, reproducible metrics, hash-verified controls, explicit failure reporting and paper/protocol comparisons.</p>
+<p><strong>Measured research findings:</strong> identity supervision, crop alignment, gradient capping, timestep scaling and reference encoding each affect the quality trade-off. The gradient cap reduced the maximum weighted identity/reconstruction gradient ratio from <strong>55.21 to 1.00</strong>, but that optimization success did not make every reconstruction metric improve.</p>
+<p><strong>Still in progress:</strong> a candidate that improves perceptual fidelity while preserving identity and eye detail consistently, broader corruption coverage, more independent identities, independent training seeds, arbitrary client-image evaluation and final held-out validation.</p>
+<p>The proposed contribution is the investigation of compact target/reference compatibility and reliability under misleading references. Prior work already contains reference attention, identity losses and region selection. Publication preparation requires a specific defensible mechanism and fair evidence for its benefit. We should present the current improvements and trade-offs honestly rather than claim a universal advantage.</p>
+<h2 id="section-11-laptop-hardware-and-runtime">11. Laptop hardware and runtime</h2><p>The development laptop uses an <strong>RTX 5070 Laptop GPU with about 8 GB dedicated VRAM</strong>, and about <strong>32 GB system RAM</strong>. Main code is Python/PyTorch with CUDA; the browser UI communicates with a local Python service. Separate environments isolate model dependencies.</p>
+<p>Small diffusion-only adapter training used about 3.6–3.8 GiB of allocated tensors. Decoded identity-loss runs recorded about <strong>8,489–8,491 MiB</strong>, roughly 8.29 GiB. They completed, but that does not prove comfortable dedicated-VRAM headroom or separately quantify shared-memory use.</p>
+<p>The encoding diagnostic recorded approximately <strong>7.09 GiB</strong> for joint RGB encoding versus <strong>2.39 GiB</strong> for separate encoding. Its measured generation times excluded model startup.</p>
+<p>A larger GPU can enable larger batches, more experiments or larger models. It does not automatically resolve wrong gaze, objective imbalance, reference mismatch or limited validation. There is no measured evidence that system RAM directly caused the metric limits. Avoid saying “our score is low only because of the GPU.”</p>
+<p><strong>Hugging Face&#39;s role:</strong> model distribution and libraries such as Diffusers support the SDXL path. Using these tools is not the proposed research contribution. The reference inference code sets offline flags after local setup; core local inference does not require uploading the user&#39;s face to a cloud API.</p>
+<h2 id="section-12-clickable-code-map-and-demonstration-order">12. Clickable code map and demonstration order</h2><p>Open the files in this order. You do not need to read the entire repository during the review.</p>
+<table>
+<thead>
+<tr>
+<th>Priority</th>
+<th>File / link</th>
+<th>What to show</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>1 — Main proposed mechanism</strong></td>
+<td><a href="file:///C:/Users/rehaa/OneDrive/Documents/ChatGPT/Facial%20inpainting%20Project/scripts/target_region_compatibility_v1.py" title="Open local file at line 37 in your editor">scripts/target_region_compatibility_v1.py</a> <a class="remote" href="https://github.com/rehaan1603/facial-inpainting-studio/blob/codex/local-studio-checkpoint/scripts/target_region_compatibility_v1.py#L37">GitHub copy · L37</a></td>
+<td>Ten features, 10→16→1 MLP, regional priors and attention installation</td>
+</tr>
+<tr>
+<td><strong>2 — Latest training</strong></td>
+<td><a href="file:///C:/Users/rehaa/OneDrive/Documents/ChatGPT/Facial%20inpainting%20Project/scripts/train_identity_timestep_v5.py" title="Open local file at line 17 in your editor">scripts/train_identity_timestep_v5.py</a> <a class="remote" href="https://github.com/rehaan1603/facial-inpainting-studio/blob/codex/local-studio-checkpoint/scripts/train_identity_timestep_v5.py#L17">GitHub copy · L17</a></td>
+<td>Frozen backbone/FaceNet, losses, timestep weight, optimizer and checkpoint</td>
+</tr>
+<tr>
+<td><strong>3 — Baseline integration</strong></td>
+<td><a href="file:///C:/Users/rehaa/OneDrive/Documents/ChatGPT/Facial%20inpainting%20Project/scripts/reference_intervention_core.py" title="Open local file at line 19 in your editor">scripts/reference_intervention_core.py</a> <a class="remote" href="https://github.com/rehaan1603/facial-inpainting-studio/blob/codex/local-studio-checkpoint/scripts/reference_intervention_core.py#L19">GitHub copy · L19</a></td>
+<td>Verified author checkpoint loading, EMA weights and frozen model</td>
+</tr>
+<tr>
+<td><strong>4 — Matched generation</strong></td>
+<td><a href="file:///C:/Users/rehaa/OneDrive/Documents/ChatGPT/Facial%20inpainting%20Project/scripts/evaluate_identity_compatibility_v2.py" title="Open local file at line 11 in your editor">scripts/evaluate_identity_compatibility_v2.py</a> <a class="remote" href="https://github.com/rehaan1603/facial-inpainting-studio/blob/codex/local-studio-checkpoint/scripts/evaluate_identity_compatibility_v2.py#L11">GitHub copy · L11</a></td>
+<td>Identical seeds, references, conditions, backbone and sampling settings</td>
+</tr>
+<tr>
+<td><strong>5 — Scoring and statistics</strong></td>
+<td><a href="file:///C:/Users/rehaa/OneDrive/Documents/ChatGPT/Facial%20inpainting%20Project/scripts/score_identity_compatibility_v2.py" title="Open local file at line 13 in your editor">scripts/score_identity_compatibility_v2.py</a> <a class="remote" href="https://github.com/rehaan1603/facial-inpainting-studio/blob/codex/local-studio-checkpoint/scripts/score_identity_compatibility_v2.py#L13">GitHub copy · L13</a></td>
+<td>Valid pairs, metrics, summaries and progression checks</td>
+</tr>
+<tr>
+<td>Supporting metric definitions</td>
+<td><a href="file:///C:/Users/rehaa/OneDrive/Documents/ChatGPT/Facial%20inpainting%20Project/scripts/extended_evaluation_metrics.py" title="Open local file at line 24 in your editor">scripts/extended_evaluation_metrics.py</a> <a class="remote" href="https://github.com/rehaan1603/facial-inpainting-studio/blob/codex/local-studio-checkpoint/scripts/extended_evaluation_metrics.py#L24">GitHub copy · L24</a> / <a href="file:///C:/Users/rehaa/OneDrive/Documents/ChatGPT/Facial%20inpainting%20Project/scripts/region_metrics_v1.py" title="Open local file at line 17 in your editor">scripts/region_metrics_v1.py</a> <a class="remote" href="https://github.com/rehaan1603/facial-inpainting-studio/blob/codex/local-studio-checkpoint/scripts/region_metrics_v1.py#L17">GitHub copy · L17</a></td>
+<td>Face detection, LPIPS/SSIM/PSNR and eye-crop calculations</td>
+</tr>
+<tr>
+<td>Earlier loss-control comparison</td>
+<td><a href="file:///C:/Users/rehaa/OneDrive/Documents/ChatGPT/Facial%20inpainting%20Project/scripts/train_identity_balance_v4.py" title="Open local file at line 17 in your editor">scripts/train_identity_balance_v4.py</a> <a class="remote" href="https://github.com/rehaan1603/facial-inpainting-studio/blob/codex/local-studio-checkpoint/scripts/train_identity_balance_v4.py#L17">GitHub copy · L17</a></td>
+<td>Fixed versus gradient-capped identity supervision</td>
+</tr>
+<tr>
+<td>Data selection and damage</td>
+<td><a href="file:///C:/Users/rehaa/OneDrive/Documents/ChatGPT/Facial%20inpainting%20Project/scripts/prepare_reference_intervention_pilot.py" title="Open local file at line 11 in your editor">scripts/prepare_reference_intervention_pilot.py</a> <a class="remote" href="https://github.com/rehaan1603/facial-inpainting-studio/blob/codex/local-studio-checkpoint/scripts/prepare_reference_intervention_pilot.py#L11">GitHub copy · L11</a> / <a href="file:///C:/Users/rehaa/OneDrive/Documents/ChatGPT/Facial%20inpainting%20Project/scripts/cache_reference_intervention_pilot.py" title="Open local file at line 10 in your editor">scripts/cache_reference_intervention_pilot.py</a> <a class="remote" href="https://github.com/rehaan1603/facial-inpainting-studio/blob/codex/local-studio-checkpoint/scripts/cache_reference_intervention_pilot.py#L10">GitHub copy · L10</a></td>
+<td>Identity separation, source hashes, target degradation and wrong-reference patch</td>
+</tr>
+<tr>
+<td>Previous mask-refinement model</td>
+<td><a href="file:///C:/Users/rehaa/OneDrive/Documents/ChatGPT/Facial%20inpainting%20Project/scripts/refiner.py" title="Open local file at line 12 in your editor">scripts/refiner.py</a> <a class="remote" href="https://github.com/rehaan1603/facial-inpainting-studio/blob/codex/local-studio-checkpoint/scripts/refiner.py#L12">GitHub copy · L12</a> / <a href="file:///C:/Users/rehaa/OneDrive/Documents/ChatGPT/Facial%20inpainting%20Project/scripts/train_refiner.py" title="Open local file at line 38 in your editor">scripts/train_refiner.py</a> <a class="remote" href="https://github.com/rehaan1603/facial-inpainting-studio/blob/codex/local-studio-checkpoint/scripts/train_refiner.py#L38">GitHub copy · L38</a></td>
+<td>U-Net-like mask predictor and generic/weighted loss</td>
+</tr>
+<tr>
+<td>LaMa / ResShift dispatch</td>
+<td><a href="file:///C:/Users/rehaa/OneDrive/Documents/ChatGPT/Facial%20inpainting%20Project/scripts/inpaint.py" title="Open local file at line 27 in your editor">scripts/inpaint.py</a> <a class="remote" href="https://github.com/rehaan1603/facial-inpainting-studio/blob/codex/local-studio-checkpoint/scripts/inpaint.py#L27">GitHub copy · L27</a></td>
+<td>GPU reconstruction and visible-pixel composition</td>
+</tr>
+<tr>
+<td>SDXL reference inpainting</td>
+<td><a href="file:///C:/Users/rehaa/OneDrive/Documents/ChatGPT/Facial%20inpainting%20Project/scripts/reference_inpaint.py" title="Open local file at line 25 in your editor">scripts/reference_inpaint.py</a> <a class="remote" href="https://github.com/rehaan1603/facial-inpainting-studio/blob/codex/local-studio-checkpoint/scripts/reference_inpaint.py#L25">GitHub copy · L25</a></td>
+<td>FaceID conditioning and missing-region generation</td>
+</tr>
+<tr>
+<td>Website ReF-LDM restoration</td>
+<td><a href="file:///C:/Users/rehaa/OneDrive/Documents/ChatGPT/Facial%20inpainting%20Project/scripts/studio_refldm_restore.py" title="Open local file at line 21 in your editor">scripts/studio_refldm_restore.py</a> <a class="remote" href="https://github.com/rehaan1603/facial-inpainting-studio/blob/codex/local-studio-checkpoint/scripts/studio_refldm_restore.py#L21">GitHub copy · L21</a> / <a href="file:///C:/Users/rehaa/OneDrive/Documents/ChatGPT/Facial%20inpainting%20Project/scripts/refldm_restore.py" title="Open local file at line 11 in your editor">scripts/refldm_restore.py</a> <a class="remote" href="https://github.com/rehaan1603/facial-inpainting-studio/blob/codex/local-studio-checkpoint/scripts/refldm_restore.py#L11">GitHub copy · L11</a></td>
+<td>Reference preparation and partial-damage restoration</td>
+</tr>
+<tr>
+<td>Website entry point</td>
+<td><a href="file:///C:/Users/rehaa/OneDrive/Documents/ChatGPT/Facial%20inpainting%20Project/webapp/server.py" title="Open local file at line 109 in your editor">webapp/server.py</a> <a class="remote" href="https://github.com/rehaan1603/facial-inpainting-studio/blob/codex/local-studio-checkpoint/webapp/server.py#L109">GitHub copy · L109</a> / <a href="file:///C:/Users/rehaa/OneDrive/Documents/ChatGPT/Facial%20inpainting%20Project/scripts/launch_studio.py" title="Open local file">scripts/launch_studio.py</a> <a class="remote" href="https://github.com/rehaan1603/facial-inpainting-studio/blob/codex/local-studio-checkpoint/scripts/launch_studio.py">GitHub copy</a></td>
+<td>Input validation, background job dispatch and local startup</td>
+</tr>
+<tr>
+<td>Latest diagnostic</td>
+<td><a href="file:///C:/Users/rehaa/OneDrive/Documents/ChatGPT/Facial%20inpainting%20Project/scripts/evaluate_reference_rejection_v1.py" title="Open local file at line 15 in your editor">scripts/evaluate_reference_rejection_v1.py</a> <a class="remote" href="https://github.com/rehaan1603/facial-inpainting-studio/blob/codex/local-studio-checkpoint/scripts/evaluate_reference_rejection_v1.py#L15">GitHub copy · L15</a></td>
+<td>Known-reference removal and zero-reference controls</td>
+</tr>
+</tbody></table>
+<p><strong>Main-method walkthrough in about three minutes:</strong></p>
+<ol>
+<li>In <code>features()</code>, show that descriptors use the degraded target and supplied references. The clean target is absent at inference.</li>
+<li>In <code>Compatibility</code>, explain the 193-parameter MLP and normalized log-priors.</li>
+<li>In <code>install()</code>, show where the bias enters attention logits and how the null/self branch is preserved.</li>
+<li>In the training script, show <code>params = list(adapter.parameters())</code> and the frozen backbone checks.</li>
+<li>Show <code>training.json</code> for completed steps and checkpoint hash, then <code>scores.json</code> for real measured outputs.</li>
+</ol>
+<p><strong>Important website/research distinction:</strong> the website&#39;s ReF-LDM runner currently uses the author-style joint RGB conditioning path. The matched adapter studies use separately encoded cached latents. The research candidate is not automatically deployed in the website. Do not call a website screenshot a v5 adapter result unless its run record actually says so.</p>
+<p>The local notes link directly to source files. In the printable HTML companion, “GitHub copy” links are also included for tracked code; local edits may differ from the remote version.</p>
+<h2 id="section-13-papers-to-cite-and-why">13. Papers to cite and why</h2><table>
+<thead>
+<tr>
+<th>Paper / project</th>
+<th>How we use it</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://arxiv.org/html/2412.05043v1">ReF-LDM</a></td>
+<td>Main pretrained restoration backbone and reference-attention foundation</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/html/2109.07161v1">LaMa</a></td>
+<td>Implemented single-image inpainting control</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/html/2403.07319v1">Extended ResShift</a></td>
+<td>Relevant diffusion restoration/inpainting implementation family</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/html/2303.07014v1">RefFaceInpainting</a></td>
+<td>Local reference baseline experiments and related work</td>
+</tr>
+<tr>
+<td><a href="https://openaccess.thecvf.com/content/WACV2025/papers/Chong_Copy_or_Not_Reference-Based_Face_Image_Restoration_with_Fine_Details_WACV_2025_paper.pdf">ReFine</a></td>
+<td>Related work on reference-guided detail restoration, not locally reproduced</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/html/2507.10470v1">RefSTAR</a></td>
+<td>Related work on reference selection/transfer, not locally reproduced</td>
+</tr>
+</tbody></table>
+<p>The broader comparison also includes GFRNet, 3DFaceFill, DMDNet and ReSem-Face. See <a href="file:///C:/Users/rehaa/OneDrive/Documents/ChatGPT/Facial%20inpainting%20Project/research/PAPER_VS_PROJECT_COMPARISON_20261002.md" title="Open local file">research/PAPER_VS_PROJECT_COMPARISON_20261002.md</a> for selected values, links and exact protocols.</p>
+<p><strong>Why published scores may be higher:</strong> datasets, degradation severity, masks, resolutions, crops, training scale, references and metric implementations differ. Published numbers and local development numbers are context unless those conditions match. Our strongest causal comparison is the same local ReF-LDM protocol with and without the adapter. A numerically higher score on a different task does not establish a better method.</p>
+<p>IEEE Xplore is a digital library. A submission must target a specific conference or journal with an appropriate scope and evaluation standard.</p>
+<h2 id="section-14-demo-plan-for-tomorrow">14. Demo plan for tomorrow</h2><ol>
+<li>Have the 32-slide PPT and these notes available locally before the review.</li>
+<li>Start the existing application using <code>Start Studio.cmd</code>, or the command below.</li>
+<li>Explain the task before selecting the method: a missing region needs inpainting; blur/noise restoration still requires observed evidence.</li>
+<li>Use a prepared case with known ground truth first. Show the degraded input, the method, the references if applicable and the reconstructed output.</li>
+<li>Show a saved matched research comparison for the adapter. Explain its recorded seed, method and metrics.</li>
+<li>Demonstrate the main code and receipt rather than starting a training experiment during the review.</li>
+<li>If a live run fails, show the saved run and error honestly. Keep a saved comparison ready in case the GPU or model startup takes longer than expected.</li>
+</ol>
+<pre><code class="language-powershell">Set-Location &#39;C:\Users\rehaa\OneDrive\Documents\ChatGPT\Facial inpainting Project&#39;
+.\.venv\Scripts\python.exe .\scripts\launch_studio.py --no-browser
+</code></pre>
+<p>Then open <a href="http://127.0.0.1:8765/">the local application</a>. Its <a href="http://127.0.0.1:8765/confidence.html">evidence-map page</a> expresses user-provided preservation confidence; it is not a calibrated prediction-confidence map. Check the laptop/server before the review; this document is not a guarantee of live uptime.</p>
+<h2 id="section-15-likely-faculty-questions-and-answers">15. Likely faculty questions and answers</h2><h3 id="section-a-problem-and-approach">A. Problem and approach</h3><p><strong>1. What is the main aim?</strong>
+Improve facial reconstruction quality while preserving identity, especially when supplied reference photos contain misleading information. We evaluate perceptual, structural and local facial quality together.</p>
+<p><strong>2. What is the main method you developed?</strong>
+A small target-reference compatibility adapter attached to frozen ReF-LDM attention. It computes regional reference preferences using degraded-target and reference features. The main file is <code>target_region_compatibility_v1.py</code>.</p>
+<p><strong>3. Is the whole system your own neural network?</strong>
+No. It combines pretrained generative and recognition models with locally developed preprocessing, interface, evaluation and small trained modules. The current adapter has 193 trainable parameters; the backbone stays frozen.</p>
+<p><strong>4. How is restoration different from inpainting?</strong>
+Restoration improves degraded but present information. Inpainting fills a missing region. The website supports both, but the latest adapter experiment measures whole-image restoration.</p>
+<p><strong>5. Why use reference images?</strong>
+They provide additional information about a person&#39;s facial appearance. They can also introduce pose, lighting or identity errors, which is why compatibility and reliability matter.</p>
+<p><strong>6. Does more reference imagery always help?</strong>
+No. Duplicate, low-quality or misleading references can bias the output. Our whole-reference removal diagnostic shows that discarding a bad reference can improve identity while also losing useful detail.</p>
+<p><strong>7. What happens with an unknown person?</strong>
+Pretrained models can run inference on a new upload without per-person retraining. Reliable recovery for arbitrary people is not established by that fact; pose, damage severity and reference quality still matter. Broader external testing is future work.</p>
+<p><strong>8. Can it recreate exactly what was hidden?</strong>
+Not reliably in every case. Missing content can have multiple plausible solutions. Reference photos help constrain identity but do not necessarily reveal the exact target gaze or expression.</p>
+<p><strong>9. Why not make synthetic references?</strong>
+That was explored separately, but generated references can repeat or invent errors. They must be labelled synthetic and cannot count as independent real identity evidence. Current matched adapter experiments use real dataset references.</p>
+<h3 id="section-b-training-and-architecture">B. Training and architecture</h3><p><strong>10. How many parameters did you train?</strong>
+193 in the current adapter, shared across 16 attention layers. Earlier experiments used a 545-parameter attention adapter and a separate 119,057-parameter mask refiner.</p>
+<p><strong>11. How many training runs?</strong>
+Eight runs in the current 193-parameter v1–v5 family, totalling 640 optimizer updates across separate arms. Earlier: three 64-update pilot runs and six mask-refiner runs extended to 6,000 updates each. These are different studies.</p>
+<p><strong>12. Did you train on the GPU?</strong>
+Yes. The completed receipts record CUDA training, durations, allocated memory and checkpoint hashes. The full generator was not retrained.</p>
+<p><strong>13. How many epochs did you train?</strong>
+The current protocol specifies optimizer updates. v2–v5 use 64 updates with four scheduled appearances per identity, not 64 epochs. We report the recorded budget rather than invent an epoch count.</p>
+<p><strong>14. Why are there only 16 adapter-training identities?</strong>
+This is a controlled mechanism study designed to fit the local resource budget and expose failure modes before expansion. It is too small to establish broad generalization. The earlier mask-refiner study used a much larger training pool.</p>
+<p><strong>15. Why freeze the backbone?</strong>
+To retain its pretrained reconstruction ability, reduce trainable parameters and isolate the effect of the compatibility mechanism. It also lowers optimization costs, though gradient flow through frozen computations can remain expensive.</p>
+<p><strong>16. What do the 193 parameters calculate?</strong>
+A scalar compatibility score for each region/reference pair from ten features. The same MLP is reused, then scores become normalized attention biases.</p>
+<p><strong>17. How does the model preserve identity?</strong>
+Through reference conditioning and, in some training arms, a frozen FaceNet cosine loss. That loss encourages identity similarity but does not guarantee it; final images must still be evaluated.</p>
+<p><strong>18. Why did adding identity loss not solve everything?</strong>
+The identity gradient can dominate or conflict with reconstruction, the training crop can differ from evaluation, and a one-step prediction differs from the final sampled output. Our crop, gradient-cap and timestep studies investigate those issues separately.</p>
+<p><strong>19. Are you training on LPIPS?</strong>
+Not in the current v1–v5 objective. LPIPS is a perceptual evaluation metric. The current trained objectives are noise-prediction reconstruction and, for selected arms, identity cosine loss.</p>
+<p><strong>20. Why fixed face rectangles?</strong>
+They keep the initial mechanism compact and auditable. Their limitation is imperfect alignment for large pose changes. Learned alignment or segmentation would require a separate controlled experiment.</p>
+<p><strong>21. What is an ablation?</strong>
+A controlled comparison that removes or changes one component to test its effect. Examples are no-target features, diffusion-only versus identity loss, fixed versus capped identity weighting, and timestep scaling versus fixed weighting.</p>
+<p><strong>22. Why not just train for longer?</strong>
+More updates can overfit or strengthen a poor trade-off. The earlier refiner extension tested a longer budget explicitly. For the current adapter we first need a mechanism that passes the quality checks before scaling training.</p>
+<h3 id="section-c-results-and-scientific-validity">C. Results and scientific validity</h3><p><strong>23. What is your accuracy?</strong>
+There is no single validated classification-style accuracy for this reconstruction task. We report PSNR, SSIM, LPIPS, identity similarity and local-region quality with their protocols. PPT percentages are rounded SSIM-based similarity, not correctness probabilities.</p>
+<p><strong>24. Why use many metrics?</strong>
+An image can be pixel-close but blurry, or visually sharp but the wrong face. Different metrics reveal different failure modes. We also inspect outputs visually.</p>
+<p><strong>25. Why FaceNet and ArcFace?</strong>
+They offer complementary recognition-embedding comparisons. FaceNet supplies training supervision in identity-loss arms; ArcFace is separate from that loss. Detector coverage and conditioning overlap are disclosed.</p>
+<p><strong>26. What are NIQE and BRISQUE?</strong>
+No-reference image-quality diagnostics. They assess naturalness without requiring a clean target, but they cannot certify correct identity or missing facial content. They are implemented and used as complementary diagnostics.</p>
+<p><strong>27. Which is the best method?</strong>
+No trained candidate improves all required metrics consistently. The matched pretrained ReF-LDM baseline remains the reference point. We report the best individual measurements by method, rather than combine different models into one fictitious best row.</p>
+<p><strong>28. What is your strongest positive finding?</strong>
+We have a reproducible local evaluation pipeline and measurable insights into the trade-off. For example, v5 improves clean-reference FaceNet from 0.91497 to 0.91623, while the gradient cap bounds loss dominance. Both still require perceptual/local-quality improvements.</p>
+<p><strong>29. Why did the FaceNet baseline value change in one PPT row?</strong>
+v5 had one unavailable face detection. Its comparison must use the same 11 valid cases: baseline 0.90932 versus v5 0.90414. The full 12-case baseline is 0.90545, but it is not the correct pair for that comparison.</p>
+<p><strong>30. Are the results statistically significant?</strong>
+We do not make that claim for the current small repeated development cohort. The statistics include paired identity-level summaries and bootstrap intervals, but four identities limit the strength of inference.</p>
+<p><strong>31. Why three seeds?</strong>
+To check sensitivity to generation noise. These are inference seeds. Independent training seeds are a separate robustness requirement still to expand for the current adapter family.</p>
+<p><strong>32. How did you prevent leakage?</strong>
+Separate adapter-training and development identities, recorded manifests, image hashes and near-duplicate screens, with reserved final data excluded from current tuning. Upstream pretraining exposure remains unknown, and previously inspected development cases are not claimed as fresh final tests.</p>
+<p><strong>33. Is the clean target used while generating a test output?</strong>
+No. It supplies training supervision or post-generation evaluation. At inference the adapter uses the degraded target and supplied references. The oracle diagnostic deliberately has extra corruption-location knowledge and is labelled separately.</p>
+<p><strong>34. Did you beat the base paper?</strong>
+We have not reproduced its full matched benchmark. We compare against a matched local ReF-LDM baseline. Published and local scores should not be ranked without matching data, degradation and implementation.</p>
+<p><strong>35. What is the proposed research contribution?</strong>
+Compact regional compatibility and reference reliability under corrupted evidence, with identity/perceptual safeguards. Establishing a consistent advantage and distinguishing it from related mechanisms are current research work and future validation priorities.</p>
+<h3 id="section-d-application-and-next-steps">D. Application and next steps</h3><p><strong>36. Why do eyes sometimes look wrong?</strong>
+They are sensitive to alignment, missing evidence and reference pose. A generative prior may produce plausible eyes with incorrect gaze or shape. Sharpening and edge blending cannot restore evidence that is absent.</p>
+<p><strong>37. Why not increase RAM/GPU to solve it?</strong>
+More memory enables larger experiments but does not fix a mismatched objective or misleading reference. Hardware limits experiment scale; they do not by themselves explain the measured quality trade-off.</p>
+<p><strong>38. What does the evidence map mean?</strong>
+It tells the application how much trust/preservation to assign to observed pixels. It is user-provided guidance, not a learned calibrated confidence that a generated eye is correct.</p>
+<p><strong>39. Is the latest adapter running behind every website button?</strong>
+No. The website has multiple pretrained reconstruction paths; research adapters remain separate until their validation passes. A saved research image must be identified by its actual run record.</p>
+<p><strong>40. What is your next experiment?</strong>
+Suppress only the known corrupted reference region while keeping valid information, compare against random-region and neutral controls, then investigate a learned input-based gate if that feasibility test supports it. After that, expand identities, training seeds, damage types and final validation.</p>
+<p><strong>41. What parts are your implementation work?</strong>
+The local integration/UI, data/provenance checks, mask-refiner controls, compatibility adapter, training modifications, controlled interventions and evaluation/reporting. Pretrained backbones and recognition encoders are attributed to their authors.</p>
+<p><strong>42. Can I reproduce the results?</strong>
+The recorded configs, seeds, source/weight hashes, saved checkpoints, generated-output hashes and scoring code support local reproduction. Required photographs, pretrained weights and environments must be restored separately. Some archived outputs have been reproduced byte-for-byte.</p>
+<h2 id="section-16-last-minute-revision-sheet">16. Last-minute revision sheet</h2><table>
+<thead>
+<tr>
+<th>Remember</th>
+<th>Answer</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Main base model</td>
+<td>Frozen ReF-LDM</td>
+</tr>
+<tr>
+<td>Main proposed code</td>
+<td><code>scripts/target_region_compatibility_v1.py</code></td>
+</tr>
+<tr>
+<td>Main adapter</td>
+<td>10→16→1 MLP, 193 parameters, shared across 16 attention layers</td>
+</tr>
+<tr>
+<td>Regions</td>
+<td>Left eye, right eye, nose, mouth, context</td>
+</tr>
+<tr>
+<td>Adapter dataset</td>
+<td>16 training identities + 4 observed development identities</td>
+</tr>
+<tr>
+<td>References</td>
+<td>Four per identity in the matched study</td>
+</tr>
+<tr>
+<td>v2–v5 optimizer/budget</td>
+<td>AdamW, learning rate 0.001, 64 updates per arm</td>
+</tr>
+<tr>
+<td>Training seed</td>
+<td>20261002</td>
+</tr>
+<tr>
+<td>Inference seeds</td>
+<td>17, 29, 43</td>
+</tr>
+<tr>
+<td>Inference</td>
+<td>512 pixels, 50 DDIM steps, guidance 1.5</td>
+</tr>
+<tr>
+<td>Current-family training count</td>
+<td>8 runs, 640 combined updates across distinct arms</td>
+</tr>
+<tr>
+<td>Latest loss</td>
+<td>Diffusion MSE + timestep-scaled cropped FaceNet loss</td>
+</tr>
+<tr>
+<td>Baseline clean FaceNet / LPIPS</td>
+<td>0.91497 / 0.27725</td>
+</tr>
+<tr>
+<td>v5 clean FaceNet / LPIPS</td>
+<td>0.91623 / 0.27743</td>
+</tr>
+<tr>
+<td>v5 misleading FaceNet</td>
+<td>0.90414 versus paired baseline 0.90932; 11 pairs</td>
+</tr>
+<tr>
+<td>What is frozen?</td>
+<td>Backbone, VQ encoder/decoder and recognition weights</td>
+</tr>
+<tr>
+<td>What remains?</td>
+<td>Consistent joint quality gains, regional rejection, broader independent validation</td>
+</tr>
+</tbody></table>
+<p><strong>A safe closing statement:</strong></p>
+<blockquote>
+<p>“We have completed a working local application and a controlled series of training and evaluation experiments. The results show that identity and perceptual quality must be assessed together. Our next work focuses on rejecting only misleading reference regions, followed by broader validation. The code, checkpoints and measured results make each step traceable.”</p>
+</blockquote>
+<h2 id="section-evidence-used-for-these-notes">Evidence used for these notes</h2><p><a href="file:///C:/Users/rehaa/OneDrive/Documents/ChatGPT/Facial%20inpainting%20Project/research/FINAL_METHOD_REPORT.md" title="Open local file">research/FINAL_METHOD_REPORT.md</a> · <a href="file:///C:/Users/rehaa/OneDrive/Documents/ChatGPT/Facial%20inpainting%20Project/research/IDENTITY_BALANCE_RESULTS_V4.md" title="Open local file">research/IDENTITY_BALANCE_RESULTS_V4.md</a> · <a href="file:///C:/Users/rehaa/OneDrive/Documents/ChatGPT/Facial%20inpainting%20Project/research/IDENTITY_TIMESTEP_V5_TIMESTEP_SCALED.md" title="Open local file">research/IDENTITY_TIMESTEP_V5_TIMESTEP_SCALED.md</a> · <a href="file:///C:/Users/rehaa/OneDrive/Documents/ChatGPT/Facial%20inpainting%20Project/research/REFLDM_ENCODING_SCREEN_V2_RESULTS.md" title="Open local file">research/REFLDM_ENCODING_SCREEN_V2_RESULTS.md</a> · <a href="file:///C:/Users/rehaa/OneDrive/Documents/ChatGPT/Facial%20inpainting%20Project/research/REFERENCE_REJECTION_PROBE_V1_RESULTS.md" title="Open local file">research/REFERENCE_REJECTION_PROBE_V1_RESULTS.md</a> · <a href="file:///C:/Users/rehaa/OneDrive/Documents/ChatGPT/Facial%20inpainting%20Project/research/FINAL_RESULTS.md" title="Open local file">research/FINAL_RESULTS.md</a> · <a href="file:///C:/Users/rehaa/OneDrive/Documents/ChatGPT/Facial%20inpainting%20Project/research/PAPER_VS_PROJECT_COMPARISON_20261002.md" title="Open local file">research/PAPER_VS_PROJECT_COMPARISON_20261002.md</a></p>
+<p>Use dated receipts and result files for exact experiment counts. Older paragraphs in the cumulative project report describe earlier milestones and should not be combined into a single current model or lifetime experiment count.</p>
+</main></body></html>

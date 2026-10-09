@@ -1,0 +1,29 @@
+{
+  "experiments": {
+    "focused_eye_appearance_v1": {
+      "outputs": 3,
+      "facenet_valid": 3,
+      "arcface_valid": 3,
+      "visible_changed_pixels": 0,
+      "neutral_replay_byte_exact": true,
+      "summary_sha256": "69ffa87ae3426db892d814a3924214fa43e2fed8596d74c18cfa05f05aa66798",
+      "config_sha256": "bc51932be3c6a4a113fc6f3e034a4b1d5db1efc498ecbc644fcf9dc7f0af509c",
+      "peak_allocated_bytes": 7376414208,
+      "passed": true
+    },
+    "focused_eye_factorial_v1": {
+      "outputs": 3,
+      "facenet_valid": 3,
+      "arcface_valid": 3,
+      "visible_changed_pixels": 0,
+      "neutral_replay_byte_exact": true,
+      "summary_sha256": "752b7cc8ec3081a08aa16279b0aea2dbc84bdc7ee492fad16c4dbcefb515326f",
+      "config_sha256": "838bf1f9d7eb350fc1223eb6e482f0ddf9051b33435a1a5f4a83a5495840094c",
+      "peak_allocated_bytes": 7376414208,
+      "passed": true
+    }
+  },
+  "verification_source_sha256": "48b48b804b7a39e0e1766614d104125abe7a4e637e0e3905c753ba9e4e28db53",
+  "training": false,
+  "checkpoints_changed": false
+}

@@ -1,0 +1,54 @@
+{
+  "date": "2026-10-10",
+  "rows": [
+    {
+      "identity": "263",
+      "gentler_details": false,
+      "job_id": "6509b4c556494f32b6cd6f55f7fd1242",
+      "status": "complete",
+      "seconds": 94.78100000000268,
+      "sha256": "e62df99fbed56d4f69a74d6d6e6eaf80436c5bc79a6bc5ecb076cb3174062c93",
+      "visible_exact": true,
+      "finished_exact": true,
+      "raw_exact": true,
+      "metadata_sha256": "eadc6c4f361bfd25ed2aa2e0be01e9b068cbe234549027d2d5dc7dccc0612cfd"
+    },
+    {
+      "identity": "263",
+      "gentler_details": true,
+      "job_id": "da4b12fe68d44baca2bb45eaf00fbd7a",
+      "status": "complete",
+      "seconds": 76.70300000000861,
+      "sha256": "d94ff7a1ca8ad016de09edf6353b59a21a9dcdcfeea8baaf67758c18f02698c3",
+      "visible_exact": true,
+      "finished_exact": true,
+      "raw_exact": true,
+      "metadata_sha256": "5ef03b2c4fc5ea2682c7582f448a9fb0b7fd53904a2ab57de65cdf6d75a8aa2a"
+    },
+    {
+      "identity": "6681",
+      "gentler_details": true,
+      "job_id": "ee9d60c366264c3abd6cef8139c88478",
+      "status": "complete",
+      "seconds": 72.53099999998813,
+      "sha256": "9db5649fad01950ef8ad358bc74f51f36c99550a80eb7123ccf0f2adb5b7bdab",
+      "visible_exact": true,
+      "finished_exact": true,
+      "raw_exact": true,
+      "metadata_sha256": "5a6df8e23c0dedc7adbc3f75fd9596a62aaf878ce9873740397d0064f52b961e"
+    },
+    {
+      "identity": "10149",
+      "gentler_details": true,
+      "job_id": "acce6991319e439ca5e60b2ce97c8722",
+      "status": "complete",
+      "seconds": 74.5460000000021,
+      "sha256": "e4edb0ad6c5f3467d3e1e331f141bc63393a52e5da2bc53d336d7ded9238ce51",
+      "visible_exact": true,
+      "finished_exact": true,
+      "raw_exact": true,
+      "metadata_sha256": "915015401d7f061ca8731c7c86a3aa17198b2105d14eb10d3831a9bea55fea60"
+    }
+  ],
+  "photographs_included": false
+}

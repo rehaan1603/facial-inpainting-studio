@@ -1,0 +1,21 @@
+{
+  "rows": 18,
+  "new_generations": 12,
+  "reused_images": 6,
+  "matched_pairs": 9,
+  "identities": 3,
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "facenet_valid": 18,
+  "arcface_valid": 18,
+  "visible_changed_pixels": 0,
+  "maximum_reused_metric_difference": 0.0,
+  "summary_sha256": "15f9f0b241e3b30d3a597cd0382a6d4ed6946ae754c933b8e29a616f2fa67e16",
+  "config_sha256": "c7e889996df324bb2922bdc859d5a59d0f36e3ca05cdf20629f01a79bce17fa3",
+  "verification_source_sha256": "5326337dd701a3f59775296f021591b58d7b9bd7bb23c76a696834794eded7fd",
+  "passed": true,
+  "checkpoints_changed": false
+}

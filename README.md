@@ -1,100 +1,87 @@
-# Facial inpainting under inaccurate masks
+# Facial Inpainting Studio
 
-Read the [project progress and completion report](PROJECT_REPORT.md) for completed work, measured findings, remaining research and the planned execution sequence.
+Local facial reconstruction and evaluation on a Windows laptop with an RTX 5070 Laptop GPU. Upload a damaged photograph, mark the affected region, supply optional matching reference photographs, reconstruct, compare and download the result.
 
-**Expanded evaluation:** [144-output metrics and ablations](research/EXTENDED_ABLATION_RESULTS_V1.md) now include FaceNet, conditioning-encoder ArcFace, NIQE, BRISQUE, SSIM, PSNR and LPIPS. One/two/four-reference comparisons, detector failures, paired confidence intervals and Holm-corrected tests are recorded. These are development results; they do not establish a novel method or publication readiness.
+**Updated 10 October 2026.** Start with the [project report](PROJECT_REPORT.md), [research index](research/README.md) and [local testing instructions](LOCAL_TESTING.md). Public hosting is paused. Dataset photographs and downloaded model weights stay on the configured laptop.
 
-**Hosting status (14 September 2026):** Public sharing is paused. Run **Start Studio.cmd** and open [the local studio](http://127.0.0.1:8765/) on the host laptop. No sign-in is required locally. Deployment work is retained for later; the old temporary internet link is inactive.
+## Navigate the project
 
-For official dataset downloads and exact local restoration of the website/reference samples, see [Dataset downloads and samples](research/DATASET_DOWNLOADS_AND_SAMPLES.md). The photos remain local; the repository records their selections, roles and hashes.
-
-A local research implementation with LaMa and ResShift inference, two matched trainable mask-refinement controls, data audits, controlled corruption benchmarks and a frozen object-composite test. It investigates reconstruction error versus changes to genuinely visible pixels. The weighted loss is a standard control, not a demonstrated novel method.
-
-Read `research/FINAL_RESULTS.md` for generated measurements, `research/MANUSCRIPT.md` for the technical paper draft, and `research/PROJECT_STATUS.md` for completed engineering and remaining publication requirements. Earlier experiment commands and historical status are preserved in `research/REPRODUCE_EARLIER_STAGES.md`.
-
-## Run local inpainting
-
-The browser application is implemented. Double-click `Start Studio.cmd`, then open http://127.0.0.1:8765. Upload a face, paint or upload a mask, select LaMa, ResShift or Use 3–4 reference photos, reconstruct, compare and download the result. See `webapp/README.md` for controls, local storage and limitations. The website connects to the real local GPU engine. The launcher starts the server independently, so closing the launcher does not stop the app.
-
-Use PowerShell in this project folder. The project's `.venv` contains CUDA PyTorch; the global Python installation is unsuitable. Inputs must have matching dimensions. White mask pixels mean replace; black means retain. Inference resizes both inputs to 256 × 256 and writes a PNG, the effective mask and JSON metadata. Crop and align faces before inference for comparable results.
-
-```powershell
-.venv/Scripts/python.exe scripts/inpaint.py --image "your_image.png" --mask "your_mask.png" --output "outputs/result.png" --backbone lama
-```
-
-Use `--backbone resshift` for the four-step face diffusion model. Both run locally; there are no image uploads. Without a refiner, pixels outside the supplied mask are preserved at the resized input resolution. Generated hidden content is a plausible reconstruction, not recovered evidence of the true face.
-
-The trained controls are optional. For the predeclared seed-17 weighted control:
-
-```powershell
-.venv/Scripts/python.exe scripts/inpaint.py --image "your_image.png" --mask "your_mask.png" --output "outputs/refined.png" --backbone lama --refiner outputs/learned_refiner/preservation_weighted_17/best.pt --threshold 0.35
-```
-
-For seed-17 generic refinement use `outputs/learned_refiner/generic_17/best.pt` and threshold `0.5`. Other seeds have their own recorded thresholds in `outputs/refiner_evaluation/*_selection.json`. Refinement can miss occlusion or replace valid content. The weighted control is not an established quality upgrade: development measurements show less visible change accompanied by worse reconstruction.
-
-A verified local example uses `outputs/benchmark_v2/cases/10371_brush/observed.png` and its `under.png` mask; output is in `outputs/demo/lama.png`.
-
-## Reference-photo completion
-
-Select **Use 3–4 reference photos** in the website. Add three or four distinct photographs of the same person, with one visible face per photograph. Mark the entire damaged target region and reconstruct. Uploading a new input clears previous references, so photos of another person cannot be reused accidentally. **Processing detail** offers standard (512 processing) and detailed (1024 processing, more GPU memory) modes. The optional **Match colour at edges** control reduces colour seams. The result is a 512 × 512 PNG; pixels outside the effective mask remain unchanged. **Load research sample** supplies a matching target, mask and four references when this mode is selected.
-
-The reference mode uses existing SDXL inpainting, IP-Adapter FaceID Portrait and InsightFace weights in a separate local environment. See `research/REFERENCE_IMPLEMENTATION.md` and `research/reference-environment-v2-lock.txt`. This is a functional baseline, with broader quality evaluation still pending. The twelve-person diagnostic is recorded separately from the engineering example; see the current status and `research/QUALITY_FIX_STATUS.md`.
-
-To install or repair the reference software after setting up the base CUDA environment and `configs/local.json`:
-
-```powershell
-.venv/Scripts/python.exe scripts/prepare_reference_runtime_v2.py
-```
-
-This uses the separate `reference_env_v2` cache directory and preserves the original experiment environments. Model weights still need to be restored from their pinned provenance sources. Restart the studio after an environment or server change.
-
-## Environment and reproduction
-
-To resume/reproduce the expanded evaluation on the prepared laptop (existing datasets, reference runtime and FaceNet cache required):
-
-```powershell
-.venv/Scripts/python.exe -X utf8 scripts/run_evaluation_suite.py
-```
-
-This uses an isolated evaluation environment and resumes signed records. It generates missing reference-count outputs on the GPU, then evaluates all conditions. The [frozen protocol](research/EXTENDED_EVALUATION_PROTOCOL_V1.md) specifies the metrics and limitations. If the FaceNet cache is missing, first run `scripts/prepare_identity_evaluator.py` with the project Python. The reference-count figure is available as [PNG](research/figures/reference_count_ablation_v1.png) and [PDF](research/figures/reference_count_ablation_v1.pdf).
-
-Tested on Windows, Python 3.12, PyTorch 2.11.0 + CUDA 12.8, torchvision 0.26.0, RTX 5070 Laptop GPU (8 GB). Paths and the external cache are set in `configs/local.json`; use `configs/local.example.json` on another machine. Datasets stay in the original download locations. Do not include them in a code release.
-
-```powershell
-python -m venv .venv
-.venv/Scripts/python.exe -m pip install -r requirements-lock.txt --extra-index-url https://download.pytorch.org/whl/cu128
-.venv/Scripts/python.exe -m unittest discover -s scripts -p "test_*.py" -v
-```
-
-The historical reproduction guide covers downloading verified backbones, source audits and v2/v3 benchmark construction. After those stages, `scripts/run_remaining.ps1` prepares the training cache, resumes completed training/evaluations, prepares object assets, runs the frozen test and rebuilds the final tables. Invoke it from PowerShell with `& ./scripts/run_remaining.ps1`.
-
-Signed runs refuse changed inputs. To study a changed configuration, create a new versioned output directory and protocol; do not delete signatures and silently reuse old rows. Repeated inference on the recorded test does not create a fresh test set. Selection used validation only, but these test results become observed evidence once evaluated.
-
-## Artifact map
-
-| Artifact | Purpose |
+| Location | Contents |
 |---|---|
-| `data/manifests/*_reviewed_v2.csv` | Current source paths, hashes, splits and quarantine outcome |
-| `research/near_duplicate_review_v2.json` | All 496 candidate-pair review decisions |
-| `configs/learned_refiner.json` | Matched training architecture, data, seeds and budget |
-| `outputs/learned_refiner/*/best.pt` | Six fitted mask-refinement checkpoints |
-| `outputs/refiner_evaluation/metrics.csv` | 13,824 learned-control development rows |
-| `outputs/object_test/protocol.json` | Frozen sources, assets, checkpoints and thresholds |
-| `outputs/object_test/metrics.csv` | Object-composite test with unchanged-input controls |
-| `research/final_results.json` | Final tables, uncertainty and raw hashes |
-| `research/DATA_AND_LICENSES.md` | Sources, exclusions, restrictions and attribution limits |
+| [Project report](PROJECT_REPORT.md) | Current progress, results, limitations and remaining work |
+| [Application](webapp/README.md) | Local HTTP service and browser controls |
+| [Scripts](scripts/README.md) | Inference, experiments, scoring and verification |
+| [Preservation components](src/preservation) | Mask, evidence, correspondence and preservation code |
+| [Research](research/README.md) | Protocols, dated results, metrics, papers and provenance |
+| [10 October evidence](research/releases/2026-10-10/README.md) | Photo-free per-output metrics and verification snapshot |
+| [Presentations](presentations/README.md) | Public decks and local illustrated deck locations |
+| [Review notes](review/README.md) | Faculty preparation notes and code navigation |
+| [Configuration](configs) | Settings and local-path example |
+| [Tests](tests) | Geometry, mask, preservation, routing and runtime checks |
+| [Repository scope](REPOSITORY_SCOPE.md) | Included artifacts and restoration requirements |
 
-Neither the full generative backbones nor an identity-recognition model was trained locally. Pretraining membership is unresolved. The object test uses synthetic composites of photographed objects; LaPa uses annotation-derived face crops. Publication claims require the missing scientific comparisons and author review in the project status. IEEE Xplore itself is not a submission venue.
+## Run on the configured laptop
 
-## GitHub checkpoint
+Double-click **Start Studio.cmd**. It opens **http://127.0.0.1:8765/** and reuses a running server. Running servers keep their loaded backend until restarted.
 
-This repository contains code, reports, detailed experiment tables and settings, data-integrity manifests, and the project-trained mask-refiner checkpoints (including training-resume states). `research/REPOSITORY_ARTIFACT_INVENTORY.json` records the earlier artifact snapshot; subsequent evaluation records carry their own source/model/output hashes. Photographs, downloaded model weights, environments and `configs/local.json` remain local. See `REPOSITORY_SCOPE.md` for restoration requirements and current limits.
-# Experimental mask-aware reference selection (19 September 2026)
+The updated testing build is currently at **http://127.0.0.1:8766/**. The older 8765 process remains running. After a laptop restart, Start Studio starts the current code on 8765. Avoid concurrent jobs across both addresses: they use the same GPU.
 
-The local studio now also offers **Choose from 1–4 photos · experimental**. Upload the damaged face, mark its damaged region and add matching reference photographs. The selector chooses one usable reference before the existing pretrained generator runs. **Run diagnostics** downloads the selection scores, warnings and provenance. The original LaMa, ResShift and 3–4-reference modes remain available.
+To start a foreground server from PowerShell in this repository:
 
-This is a research experiment, not a proven improvement or trained regional-fusion model. Read [the implementation plan](research/GENERALIZATION_AND_RESTORATION_UPGRADE_PLAN.md), [selection definition](research/MASK_AWARE_REFERENCE_SELECTION.md), [identity protocol](research/UNSEEN_IDENTITY_EVALUATION.md), [completed 168-row comparison](research/GENERALIZATION_RESULTS.md) and [project report](PROJECT_REPORT.md). The selector did not outperform all-reference conditioning on mean target identity similarity, and no primary comparison was statistically significant. Dataset photos and model weights remain local.
+```powershell
+.venv/Scripts/python.exe webapp/server.py --port 8766
+```
 
-### Regional-routing development comparison (20 September)
+Keep the laptop awake. A fresh clone requires the [local configuration](configs/local.example.json), CUDA environment, permitted data and model cache described in [repository scope](REPOSITORY_SCOPE.md). The static frontend alone cannot generate images.
 
-The six-policy comparison is complete: 144 scored rows, including 120 new GPU generations. Regional routing did not outperform the original all-reference baseline (target FaceNet 0.8137 versus 0.8180; all adjusted primary p-values 1.0). Facial distortions remain, so the website keeps its existing modes. Read [the full results](research/REGIONAL_ROUTING_RESULTS_V2.md), [visual failure review](research/REGIONAL_ROUTING_VISUAL_REVIEW_V2.md), and [reproduction instructions](research/REGIONAL_ROUTING_REPRODUCTION.md). No reserved-final identities were used and no new model was trained.
+## Implemented methods
+
+| Method | Inputs and purpose | Current limitation |
+|---|---|---|
+| LaMa | Image + mask; small texture repairs | Large missing facial features can be distorted/blurry |
+| ResShift | Image + mask; single-image facial inpainting | Identity, gaze and expression can differ |
+| SDXL + FaceID Portrait | Image + mask + 1–4 matching photos | Hidden eye/brow details remain uncertain |
+| Experimental reference selection | Same inputs; fixed heuristic selects one photo | Broad quality improvement remains unresolved |
+| Experimental ReF-LDM | Blur/noise evidence map + 3–4 references | Whole-image restoration; erased-region diagnostic retains major failures |
+
+Reference processing offers 256/512/1024 comparisons; exports are 512 × 512. White mask pixels request replacement. Visible pixels outside the effective mask are preserved. Read [local testing](LOCAL_TESTING.md) for the separate grayscale evidence-map convention.
+
+Generative backbones and recognition encoders are pretrained. Earlier experiments trained small mask-refinement and compatibility modules. The [paper/implementation map](research/PAPERS_AND_IMPLEMENTATION_MAP.md) documents their roles.
+
+## Latest focused eye study
+
+Fixed persons **263, 6681 and 10149**, four real clean references each, seeds **17/29/43**, DDIM30, FaceID0.8, strength1, 1024 processing, 512 output and Poisson finishing. Only classifier-free guidance changes from 5 to 3. Eighteen outputs cover nine pairs; six seed17 images reuse hash-verified earlier outputs.
+
+| Nine-pair mean | CFG5 control | CFG3 comparison |
+|---|---:|---:|
+| Hole PSNR ↑ | 17.01785 | 17.82148 |
+| Hole SSIM ↑ | 0.41415 | 0.43310 |
+| Hole contextual LPIPS ↓ | 0.20144 | 0.19185 |
+| Eye contextual LPIPS ↓ | 0.15958 | 0.14498 |
+| FaceNet cosine ↑ | 0.76920 | 0.79887 |
+| ArcFace cosine ↑ | 0.76072 | 0.78508 |
+
+SSIM improves in 8/9 pairs; person10149 loses **0.01362 mean FaceNet cosine**. Iris colour, gaze and eyebrow fidelity remain imperfect. These are three observed development people; similarity scores are not reconstruction-correctness percentages. See [all paired results](research/FOCUSED_EYE_GUIDANCE_REPLICATION_RESULTS_V2.md).
+
+The app exposes unchecked **Gentler eye details** only in 1024 reference mode with **Ignore opaque cover colour** enabled. Four live reconstructions match saved raw/final research outputs byte-for-byte. See [app verification](research/GENTLER_REFERENCE_WEBSITE_V1.md). Added appearance conditioning and registered texture transfer retain mixed/negative results in their reports.
+
+Local test sets are under `Downloads/All Face Datasets/Ready to test sets/Reference reconstruction - 3 people - 2026-10-09/`. Each includes inputs, masks, references, comparison-only originals and labelled outputs. Use the [official dataset/sample restoration guide](research/DATASET_DOWNLOADS_AND_SAMPLES.md).
+
+## Evaluation and reproduction
+
+Compare only identical input, mask, reference, seed, processing, finishing and metric protocols. The [research index](research/README.md) distinguishes masked SDXL inpainting from whole-image ReF-LDM restoration and published-paper tables.
+
+PSNR, SSIM, LPIPS, FaceNet and ArcFace are recorded; earlier suites add NIQE/BRISQUE and other diagnostics. Detector failures remain explicit. ArcFace also provides conditioning. Hole SSIM uses valid masked windows; contextual LPIPS uses fixed crop context. See [metric code](scripts/extended_evaluation_metrics.py), [masked scorer](scripts/score_masked_sdxl_v1.py) and [evaluation protocol](research/EXTENDED_EVALUATION_PROTOCOL_V1.md).
+
+```powershell
+.venv/Scripts/python.exe -m unittest discover -s scripts -p test_webapp.py
+.venv/Scripts/python.exe -m unittest discover -s scripts -p test_studio_finishing.py
+```
+
+The [script index](scripts/README.md) identifies each separate runtime and reproduction stage. Signed experiments refuse changed inputs. Changed studies require new versioned protocols/output directories. Preserve baseline checkpoints and unsuccessful outcomes.
+
+## Remaining research
+
+Reliable local eye/brow correspondence and reference compatibility remain the next quality work, followed by fixed corrupted-reference and unseen-person validation. Reserved final evaluation, matched external comparisons, human evaluation and manuscript/venue review remain in [remaining work](PROJECT_REPORT.md#4-remaining-work).
+
+See [data/model terms](research/DATA_AND_LICENSES.md), [earlier reproduction](research/REPRODUCE_EARLIER_STAGES.md) and the [previous README snapshot](https://github.com/rehaan1603/facial-inpainting-studio/blob/a6f3b68/README.md). Restricted photos, personal uploads, generated faces, downloaded weights and environments stay local. Existing project-trained artifacts already in history are retained.

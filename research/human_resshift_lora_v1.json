@@ -1,0 +1,5097 @@
+{
+  "scope": "Small local development pilot; unknown person overlap and source rights; not independent publication evidence",
+  "selected_step": 256,
+  "summary": {
+    "new_holdout": {
+      "hole_mae": {
+        "common_n": 32,
+        "photograph_n": 16,
+        "baseline_mean": 0.06791684338499342,
+        "adapted_mean": 0.06136478193016419,
+        "mean_delta": -0.006552061454829229,
+        "improved": 22,
+        "photo_bootstrap_95_interval": [
+          -0.009055538263138777,
+          -0.004014820542354762
+        ]
+      },
+      "hole_psnr": {
+        "common_n": 32,
+        "photograph_n": 16,
+        "baseline_mean": 21.315552496114506,
+        "adapted_mean": 21.967682138872732,
+        "mean_delta": 0.6521296427582275,
+        "improved": 22,
+        "photo_bootstrap_95_interval": [
+          0.3850247490393898,
+          0.9049943173536639
+        ]
+      },
+      "lpips": {
+        "common_n": 32,
+        "photograph_n": 16,
+        "baseline_mean": 0.012596329648658866,
+        "adapted_mean": 0.016127105702253175,
+        "mean_delta": 0.003530776053594309,
+        "improved": 8,
+        "photo_bootstrap_95_interval": [
+          0.0016047525974045129,
+          0.005677113321280558
+        ]
+      },
+      "hole_bbox_lpips": {
+        "common_n": 32,
+        "photograph_n": 16,
+        "baseline_mean": 0.08846375148641528,
+        "adapted_mean": 0.11898001681402093,
+        "mean_delta": 0.03051626532760565,
+        "improved": 7,
+        "photo_bootstrap_95_interval": [
+          0.013496809178741387,
+          0.046619595767879204
+        ]
+      },
+      "facenet_cosine": {
+        "common_n": 31,
+        "photograph_n": 16,
+        "baseline_mean": 0.7406096679549063,
+        "adapted_mean": 0.7558502987507851,
+        "mean_delta": 0.015240630795878748,
+        "improved": 15,
+        "photo_bootstrap_95_interval": [
+          -0.015586439752951264,
+          0.04674854381009933
+        ]
+      },
+      "arcface_conditioning_cosine": {
+        "common_n": 32,
+        "photograph_n": 16,
+        "baseline_mean": 0.7156043630093336,
+        "adapted_mean": 0.7910119667649269,
+        "mean_delta": 0.0754076037555933,
+        "improved": 22,
+        "photo_bootstrap_95_interval": [
+          0.05325074060820043,
+          0.09572617327794432
+        ]
+      },
+      "niqe": {
+        "common_n": 32,
+        "photograph_n": 16,
+        "baseline_mean": 5.620215433021485,
+        "adapted_mean": 5.885072955383028,
+        "mean_delta": 0.2648575223615426,
+        "improved": 8,
+        "photo_bootstrap_95_interval": [
+          0.16014256623452258,
+          0.3944348927949102
+        ]
+      },
+      "brisque": {
+        "common_n": 32,
+        "photograph_n": 16,
+        "baseline_mean": 31.502334594726562,
+        "adapted_mean": 31.617233276367188,
+        "mean_delta": 0.114898681640625,
+        "improved": 16,
+        "photo_bootstrap_95_interval": [
+          -0.12191925048828124,
+          0.38282623291015594
+        ]
+      }
+    },
+    "previous_diagnostic": {
+      "hole_mae": {
+        "common_n": 4,
+        "photograph_n": 4,
+        "baseline_mean": 0.18598506069094303,
+        "adapted_mean": 0.16019272666331488,
+        "mean_delta": -0.025792334027628153,
+        "improved": 2,
+        "photo_bootstrap_95_interval": [
+          -0.08867541318521713,
+          0.017692387496309074
+        ]
+      },
+      "hole_psnr": {
+        "common_n": 4,
+        "photograph_n": 4,
+        "baseline_mean": 13.188051491391933,
+        "adapted_mean": 13.65267370550962,
+        "mean_delta": 0.464622214117687,
+        "improved": 2,
+        "photo_bootstrap_95_interval": [
+          -0.9303380795785214,
+          1.8595825078138954
+        ]
+      },
+      "lpips": {
+        "common_n": 4,
+        "photograph_n": 4,
+        "baseline_mean": 0.07154060713946819,
+        "adapted_mean": 0.06916961073875427,
+        "mean_delta": -0.0023709964007139206,
+        "improved": 2,
+        "photo_bootstrap_95_interval": [
+          -0.010468650609254837,
+          0.0064396727830171585
+        ]
+      },
+      "hole_bbox_lpips": {
+        "common_n": 4,
+        "photograph_n": 4,
+        "baseline_mean": 0.1982341967523098,
+        "adapted_mean": 0.2910296209156513,
+        "mean_delta": 0.09279542416334152,
+        "improved": 1,
+        "photo_bootstrap_95_interval": [
+          0.012915581464767456,
+          0.1726752668619156
+        ]
+      },
+      "facenet_cosine": {
+        "common_n": 4,
+        "photograph_n": 4,
+        "baseline_mean": 0.4163418114185333,
+        "adapted_mean": 0.3472018032334745,
+        "mean_delta": -0.06914000818505883,
+        "improved": 1,
+        "photo_bootstrap_95_interval": [
+          -0.22737420815974474,
+          0.09373413771390915
+        ]
+      },
+      "arcface_conditioning_cosine": {
+        "common_n": 4,
+        "photograph_n": 4,
+        "baseline_mean": 0.4498523324728012,
+        "adapted_mean": 0.6461731344461441,
+        "mean_delta": 0.1963208019733429,
+        "improved": 4,
+        "photo_bootstrap_95_interval": [
+          0.06636811792850494,
+          0.3120402544736862
+        ]
+      },
+      "niqe": {
+        "common_n": 4,
+        "photograph_n": 4,
+        "baseline_mean": 5.960347415769528,
+        "adapted_mean": 6.662898582787641,
+        "mean_delta": 0.7025511670181133,
+        "improved": 1,
+        "photo_bootstrap_95_interval": [
+          0.16764772219208046,
+          1.2208341689986129
+        ]
+      },
+      "brisque": {
+        "common_n": 4,
+        "photograph_n": 4,
+        "baseline_mean": 32.30548095703125,
+        "adapted_mean": 31.93963623046875,
+        "mean_delta": -0.3658447265625,
+        "improved": 3,
+        "photo_bootstrap_95_interval": [
+          -0.9140625,
+          0.1549072265625
+        ]
+      }
+    }
+  },
+  "rows": [
+    {
+      "case_id": "holdout_01_eyes",
+      "group": "new_holdout",
+      "arm": "baseline",
+      "sha256": "3f5f5d7b17bdd0092161e59ece4f6e7f887e2e795dba8b58b2c1a51f70370000",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 6.6672129842836805,
+        "brisque": 38.74285888671875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              72.48926544189453,
+              66.50884246826172,
+              188.20767211914062,
+              224.0727081298828
+            ],
+            "probability": 0.9999001026153564
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              79.4729995727539,
+              65.91841888427734,
+              185.29928588867188,
+              225.9736785888672
+            ],
+            "probability": 0.836655855178833
+          }
+        },
+        "facenet_cosine": 0.5421964526176453,
+        "arcface_conditioning_cosine": 0.4262385666370392,
+        "hole_mae": 0.08442361940363084,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9634394145570561,
+        "psnr_rgb": 29.114416647917754,
+        "hole_psnr": 17.512516353594357,
+        "lpips": 0.019229771569371223,
+        "hole_bbox_lpips": 0.14210498332977295
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            78.12582397460938,
+            69.67850494384766,
+            182.7598876953125,
+            219.1033477783203
+          ],
+          "probability": 0.9999053478240967
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            78.77530670166016,
+            66.82386016845703,
+            185.32115173339844,
+            226.0252685546875
+          ],
+          "probability": 0.8416048884391785
+        }
+      }
+    },
+    {
+      "case_id": "holdout_01_eyes",
+      "group": "new_holdout",
+      "arm": "adapted",
+      "sha256": "028b9245925f7ce6019e8b20fe64bfa0b87ac919a55e91faaab101e8730d37be",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 7.229145735940749,
+        "brisque": 38.03045654296875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              77.00973510742188,
+              71.48418426513672,
+              182.2932891845703,
+              222.064453125
+            ],
+            "probability": 0.999954342842102
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              80.0752944946289,
+              68.1744384765625,
+              184.9091033935547,
+              226.00228881835938
+            ],
+            "probability": 0.8197076916694641
+          }
+        },
+        "facenet_cosine": 0.7070119380950928,
+        "arcface_conditioning_cosine": 0.7016563415527344,
+        "hole_mae": 0.06368770514972685,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9702536329470764,
+        "psnr_rgb": 31.795200643602833,
+        "hole_psnr": 20.193300349279436,
+        "lpips": 0.03776581585407257,
+        "hole_bbox_lpips": 0.23363997042179108
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            78.12582397460938,
+            69.67850494384766,
+            182.7598876953125,
+            219.1033477783203
+          ],
+          "probability": 0.9999053478240967
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            78.77530670166016,
+            66.82386016845703,
+            185.32115173339844,
+            226.0252685546875
+          ],
+          "probability": 0.8416048884391785
+        }
+      }
+    },
+    {
+      "case_id": "holdout_01_strokes",
+      "group": "new_holdout",
+      "arm": "baseline",
+      "sha256": "4480ee7d701a5dad8f1c69739ccd95669e9162f998441e000daa7830fa201736",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 6.656348280764424,
+        "brisque": 38.28924560546875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              80.09228515625,
+              70.7218017578125,
+              183.76011657714844,
+              217.59616088867188
+            ],
+            "probability": 0.9999427795410156
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              79.3701400756836,
+              66.78323364257812,
+              185.76119995117188,
+              226.6407470703125
+            ],
+            "probability": 0.8282259702682495
+          }
+        },
+        "facenet_cosine": 0.9090877771377563,
+        "arcface_conditioning_cosine": 0.8286973237991333,
+        "hole_mae": 0.04768275031241291,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.986254096107083,
+        "psnr_rgb": 35.94791236576276,
+        "hole_psnr": 22.41905708139577,
+        "lpips": 0.0076872361823916435,
+        "hole_bbox_lpips": 0.04597232863306999
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            78.12582397460938,
+            69.67850494384766,
+            182.7598876953125,
+            219.1033477783203
+          ],
+          "probability": 0.9999053478240967
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            78.77530670166016,
+            66.82386016845703,
+            185.32115173339844,
+            226.0252685546875
+          ],
+          "probability": 0.8416048884391785
+        }
+      }
+    },
+    {
+      "case_id": "holdout_01_strokes",
+      "group": "new_holdout",
+      "arm": "adapted",
+      "sha256": "22061415c2746c0c1ce30f5eed9b27873e2cb7e720b66162d0bf2e7302f024c4",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 6.654443254400786,
+        "brisque": 38.03485107421875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              79.02803802490234,
+              70.25689697265625,
+              181.81668090820312,
+              217.27056884765625
+            ],
+            "probability": 0.9998877048492432
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              79.79424285888672,
+              66.90037536621094,
+              185.5483856201172,
+              226.7699432373047
+            ],
+            "probability": 0.8238653540611267
+          }
+        },
+        "facenet_cosine": 0.8990583419799805,
+        "arcface_conditioning_cosine": 0.8178555369377136,
+        "hole_mae": 0.05279957925398495,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9846959142119128,
+        "psnr_rgb": 35.28289347005159,
+        "hole_psnr": 21.754038185684603,
+        "lpips": 0.009863944724202156,
+        "hole_bbox_lpips": 0.061472222208976746
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            78.12582397460938,
+            69.67850494384766,
+            182.7598876953125,
+            219.1033477783203
+          ],
+          "probability": 0.9999053478240967
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            78.77530670166016,
+            66.82386016845703,
+            185.32115173339844,
+            226.0252685546875
+          ],
+          "probability": 0.8416048884391785
+        }
+      }
+    },
+    {
+      "case_id": "holdout_02_eyes",
+      "group": "new_holdout",
+      "arm": "baseline",
+      "sha256": "c59013bf7aaa1155b23ef81414ab582b6a147ecf4d14fb496247d6e4788f6f1a",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 7.5013688381313255,
+        "brisque": 42.02362060546875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              66.21870422363281,
+              70.88706970214844,
+              164.1790771484375,
+              222.15399169921875
+            ],
+            "probability": 0.9995667338371277
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              71.9764633178711,
+              67.63165283203125,
+              162.6527862548828,
+              217.1415252685547
+            ],
+            "probability": 0.8039847016334534
+          }
+        },
+        "facenet_cosine": 0.6077957153320312,
+        "arcface_conditioning_cosine": 0.39345812797546387,
+        "hole_mae": 0.07254477548595195,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.95592909825917,
+        "psnr_rgb": 28.91034149804917,
+        "hole_psnr": 18.183774407849683,
+        "lpips": 0.02691575698554516,
+        "hole_bbox_lpips": 0.13127383589744568
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            68.42276763916016,
+            76.7267837524414,
+            159.6932373046875,
+            220.31704711914062
+          ],
+          "probability": 0.9995785355567932
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            72.87699890136719,
+            69.39210510253906,
+            160.99098205566406,
+            217.58651733398438
+          ],
+          "probability": 0.8120338916778564
+        }
+      }
+    },
+    {
+      "case_id": "holdout_02_eyes",
+      "group": "new_holdout",
+      "arm": "adapted",
+      "sha256": "a6a7fc7909cc49b92bdd2fa743a0e46dbcc4625a4f7fb7618e956063be883a5c",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 8.418343194160892,
+        "brisque": 43.89324951171875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              74.6292724609375,
+              82.01090240478516,
+              160.56826782226562,
+              218.41664123535156
+            ],
+            "probability": 0.9998295307159424
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              73.82572937011719,
+              72.5924301147461,
+              161.78990173339844,
+              217.2450714111328
+            ],
+            "probability": 0.8080991506576538
+          }
+        },
+        "facenet_cosine": 0.4618448317050934,
+        "arcface_conditioning_cosine": 0.42234617471694946,
+        "hole_mae": 0.06238788444670797,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.961875565241075,
+        "psnr_rgb": 30.570381620992148,
+        "hole_psnr": 19.843814530792663,
+        "lpips": 0.031021742150187492,
+        "hole_bbox_lpips": 0.20567333698272705
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            68.42276763916016,
+            76.7267837524414,
+            159.6932373046875,
+            220.31704711914062
+          ],
+          "probability": 0.9995785355567932
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            72.87699890136719,
+            69.39210510253906,
+            160.99098205566406,
+            217.58651733398438
+          ],
+          "probability": 0.8120338916778564
+        }
+      }
+    },
+    {
+      "case_id": "holdout_02_strokes",
+      "group": "new_holdout",
+      "arm": "baseline",
+      "sha256": "d2582416ee4441b8e91c0a043e4fe0b9392cb23cc5d00249763b7d9a6584c344",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 6.709127124799052,
+        "brisque": 41.29071044921875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              69.81678771972656,
+              84.82756805419922,
+              158.17941284179688,
+              221.26219177246094
+            ],
+            "probability": 0.9998829364776611
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              72.68659973144531,
+              69.29314422607422,
+              160.86514282226562,
+              217.563232421875
+            ],
+            "probability": 0.813107967376709
+          }
+        },
+        "facenet_cosine": 0.9554886817932129,
+        "arcface_conditioning_cosine": 0.9960730075836182,
+        "hole_mae": 0.015995815267801288,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9975656218970194,
+        "psnr_rgb": 48.16030451726831,
+        "hole_psnr": 30.830531409333986,
+        "lpips": 0.0011809400748461485,
+        "hole_bbox_lpips": 0.0026454534381628036
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            68.42276763916016,
+            76.7267837524414,
+            159.6932373046875,
+            220.31704711914062
+          ],
+          "probability": 0.9995785355567932
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            72.87699890136719,
+            69.39210510253906,
+            160.99098205566406,
+            217.58651733398438
+          ],
+          "probability": 0.8120338916778564
+        }
+      }
+    },
+    {
+      "case_id": "holdout_02_strokes",
+      "group": "new_holdout",
+      "arm": "adapted",
+      "sha256": "243e116c4b044070670c97af822820626adf6c61834e3efcb9ceeb4d487982b8",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 6.724306565834319,
+        "brisque": 41.29656982421875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              69.84200286865234,
+              84.86942291259766,
+              158.16848754882812,
+              221.26385498046875
+            ],
+            "probability": 0.9998819828033447
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              72.676513671875,
+              69.39347076416016,
+              160.83799743652344,
+              217.556640625
+            ],
+            "probability": 0.8126347064971924
+          }
+        },
+        "facenet_cosine": 0.9558107852935791,
+        "arcface_conditioning_cosine": 0.9944301843643188,
+        "hole_mae": 0.015967773247913025,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9975994066271566,
+        "psnr_rgb": 48.17938373627431,
+        "hole_psnr": 30.849610628339995,
+        "lpips": 0.0011001823004335165,
+        "hole_bbox_lpips": 0.0028859772719442844
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            68.42276763916016,
+            76.7267837524414,
+            159.6932373046875,
+            220.31704711914062
+          ],
+          "probability": 0.9995785355567932
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            72.87699890136719,
+            69.39210510253906,
+            160.99098205566406,
+            217.58651733398438
+          ],
+          "probability": 0.8120338916778564
+        }
+      }
+    },
+    {
+      "case_id": "holdout_03_eyes",
+      "group": "new_holdout",
+      "arm": "baseline",
+      "sha256": "726084353a1e48aa994b5a48b63fe707c57577815db6fa50f923c5f4612b1fb1",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 6.862876844064854,
+        "brisque": 33.73797607421875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              57.48933029174805,
+              62.731956481933594,
+              163.10296630859375,
+              214.99850463867188
+            ],
+            "probability": 0.9989525079727173
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              56.053428649902344,
+              54.16792678833008,
+              157.9068603515625,
+              218.7150421142578
+            ],
+            "probability": 0.7116191387176514
+          }
+        },
+        "facenet_cosine": 0.7104321718215942,
+        "arcface_conditioning_cosine": 0.7254442572593689,
+        "hole_mae": 0.07900829931190462,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9784968813722751,
+        "psnr_rgb": 32.06209653233878,
+        "hole_psnr": 18.255740885946196,
+        "lpips": 0.01415185909718275,
+        "hole_bbox_lpips": 0.08573012799024582
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            58.345306396484375,
+            68.4271011352539,
+            160.0082550048828,
+            215.3847198486328
+          ],
+          "probability": 0.9999845027923584
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            55.94660568237305,
+            54.75925827026367,
+            156.77484130859375,
+            218.3466339111328
+          ],
+          "probability": 0.730945348739624
+        }
+      }
+    },
+    {
+      "case_id": "holdout_03_eyes",
+      "group": "new_holdout",
+      "arm": "adapted",
+      "sha256": "4439003ccbcbba58ab7c15cd654ec0ba658e6b29ece86ed068c9396bf66c5618",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 7.069837237143065,
+        "brisque": 33.30633544921875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              60.21450424194336,
+              69.47590637207031,
+              160.08587646484375,
+              213.41641235351562
+            ],
+            "probability": 0.9999233484268188
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              56.54304122924805,
+              56.98090362548828,
+              157.19203186035156,
+              218.11056518554688
+            ],
+            "probability": 0.7338610887527466
+          }
+        },
+        "facenet_cosine": 0.5597885847091675,
+        "arcface_conditioning_cosine": 0.7947546243667603,
+        "hole_mae": 0.054887585532746815,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9845661370331328,
+        "psnr_rgb": 35.08257883281951,
+        "hole_psnr": 21.27622318642693,
+        "lpips": 0.011207334697246552,
+        "hole_bbox_lpips": 0.1002432107925415
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            58.345306396484375,
+            68.4271011352539,
+            160.0082550048828,
+            215.3847198486328
+          ],
+          "probability": 0.9999845027923584
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            55.94660568237305,
+            54.75925827026367,
+            156.77484130859375,
+            218.3466339111328
+          ],
+          "probability": 0.730945348739624
+        }
+      }
+    },
+    {
+      "case_id": "holdout_03_strokes",
+      "group": "new_holdout",
+      "arm": "baseline",
+      "sha256": "0569a7c7bdc59d050b9500152e75b76e6b700b68cded71f6ed876c8fae2ce306",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 6.6795188571166655,
+        "brisque": 33.63250732421875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              57.82501220703125,
+              68.40194702148438,
+              158.51365661621094,
+              214.4567108154297
+            ],
+            "probability": 0.9999760389328003
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              56.00849533081055,
+              54.58745574951172,
+              156.61976623535156,
+              218.4852294921875
+            ],
+            "probability": 0.7297665476799011
+          }
+        },
+        "facenet_cosine": 0.9728918075561523,
+        "arcface_conditioning_cosine": 0.9714093804359436,
+        "hole_mae": 0.029746019213054344,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.996698682471771,
+        "psnr_rgb": 43.80915247286844,
+        "hole_psnr": 27.376215850754196,
+        "lpips": 0.002599559724330902,
+        "hole_bbox_lpips": 0.007865207269787788
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            58.345306396484375,
+            68.4271011352539,
+            160.0082550048828,
+            215.3847198486328
+          ],
+          "probability": 0.9999845027923584
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            55.94660568237305,
+            54.75925827026367,
+            156.77484130859375,
+            218.3466339111328
+          ],
+          "probability": 0.730945348739624
+        }
+      }
+    },
+    {
+      "case_id": "holdout_03_strokes",
+      "group": "new_holdout",
+      "arm": "adapted",
+      "sha256": "fb2778bb6dda38fa75f6a98b8cf34ae4eb0481d096431b085c6c3ccf857be78d",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 6.727141713787987,
+        "brisque": 33.55584716796875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              57.150482177734375,
+              67.38257598876953,
+              159.08969116210938,
+              215.0208282470703
+            ],
+            "probability": 0.9999771118164062
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              56.15259552001953,
+              54.47642135620117,
+              156.9783172607422,
+              218.37344360351562
+            ],
+            "probability": 0.7273827791213989
+          }
+        },
+        "facenet_cosine": 0.9751521348953247,
+        "arcface_conditioning_cosine": 0.9691513180732727,
+        "hole_mae": 0.031136553055226567,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9966386520898739,
+        "psnr_rgb": 43.22260407857161,
+        "hole_psnr": 26.789667456457348,
+        "lpips": 0.003814942669123411,
+        "hole_bbox_lpips": 0.008988356217741966
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            58.345306396484375,
+            68.4271011352539,
+            160.0082550048828,
+            215.3847198486328
+          ],
+          "probability": 0.9999845027923584
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            55.94660568237305,
+            54.75925827026367,
+            156.77484130859375,
+            218.3466339111328
+          ],
+          "probability": 0.730945348739624
+        }
+      }
+    },
+    {
+      "case_id": "holdout_04_eyes",
+      "group": "new_holdout",
+      "arm": "baseline",
+      "sha256": "ada92fbe08d8047de7fe141e766962f8ab05ea1c44ff5ed895972175bb203a41",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 4.265790690246428,
+        "brisque": 36.82000732421875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              61.11077880859375,
+              78.61750793457031,
+              171.50001525878906,
+              215.303466796875
+            ],
+            "probability": 0.9972825050354004
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              59.873992919921875,
+              66.88311004638672,
+              180.3521728515625,
+              213.20895385742188
+            ],
+            "probability": 0.7047867774963379
+          }
+        },
+        "facenet_cosine": 0.46759796142578125,
+        "arcface_conditioning_cosine": 0.4264838695526123,
+        "hole_mae": 0.07783380018674137,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9733883908962514,
+        "psnr_rgb": 32.9764788203031,
+        "hole_psnr": 19.647552483755053,
+        "lpips": 0.0204637348651886,
+        "hole_bbox_lpips": 0.21809084713459015
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            63.97621154785156,
+            81.35832977294922,
+            172.4205780029297,
+            214.4921112060547
+          ],
+          "probability": 0.9994643330574036
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            61.235267639160156,
+            74.55802917480469,
+            178.98397827148438,
+            213.3249053955078
+          ],
+          "probability": 0.755345344543457
+        }
+      }
+    },
+    {
+      "case_id": "holdout_04_eyes",
+      "group": "new_holdout",
+      "arm": "adapted",
+      "sha256": "dcd6afd0b475cc253b78a0a03e57770e08d0e6ab8ea276addfe194e4846d334a",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 4.631871889458763,
+        "brisque": 35.94451904296875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              61.99091720581055,
+              85.96170043945312,
+              170.979248046875,
+              212.7073974609375
+            ],
+            "probability": 0.9992321729660034
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              61.5537109375,
+              76.33537292480469,
+              177.98426818847656,
+              212.8643035888672
+            ],
+            "probability": 0.7319178581237793
+          }
+        },
+        "facenet_cosine": 0.741567850112915,
+        "arcface_conditioning_cosine": 0.677101731300354,
+        "hole_mae": 0.06821812249804136,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9790121762006151,
+        "psnr_rgb": 33.48826789466857,
+        "hole_psnr": 20.159341558120516,
+        "lpips": 0.014854537323117256,
+        "hole_bbox_lpips": 0.13651502132415771
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            63.97621154785156,
+            81.35832977294922,
+            172.4205780029297,
+            214.4921112060547
+          ],
+          "probability": 0.9994643330574036
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            61.235267639160156,
+            74.55802917480469,
+            178.98397827148438,
+            213.3249053955078
+          ],
+          "probability": 0.755345344543457
+        }
+      }
+    },
+    {
+      "case_id": "holdout_04_strokes",
+      "group": "new_holdout",
+      "arm": "baseline",
+      "sha256": "277aab408845fccae716909fcc12760d9d00592157464ce2321ff88b39d3e03c",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 4.702686090388457,
+        "brisque": 36.86199951171875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              62.63859939575195,
+              82.82520294189453,
+              172.2981414794922,
+              213.82505798339844
+            ],
+            "probability": 0.999815046787262
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              61.52013397216797,
+              76.62919616699219,
+              178.0358428955078,
+              213.3965301513672
+            ],
+            "probability": 0.7554640769958496
+          }
+        },
+        "facenet_cosine": 0.9892063140869141,
+        "arcface_conditioning_cosine": 0.9226707220077515,
+        "hole_mae": 0.04601373968063172,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9923528150645763,
+        "psnr_rgb": 39.25151220398376,
+        "hole_psnr": 23.03463047496601,
+        "lpips": 0.00411942508071661,
+        "hole_bbox_lpips": 0.02569381147623062
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            63.97621154785156,
+            81.35832977294922,
+            172.4205780029297,
+            214.4921112060547
+          ],
+          "probability": 0.9994643330574036
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            61.235267639160156,
+            74.55802917480469,
+            178.98397827148438,
+            213.3249053955078
+          ],
+          "probability": 0.755345344543457
+        }
+      }
+    },
+    {
+      "case_id": "holdout_04_strokes",
+      "group": "new_holdout",
+      "arm": "adapted",
+      "sha256": "376bfd48c5d5c06efe178f90dcece3d1aed3eca3b3898f692dd01702aac87aa6",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 4.606619925308182,
+        "brisque": 36.77801513671875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              64.25921630859375,
+              81.4542236328125,
+              172.8186798095703,
+              214.84405517578125
+            ],
+            "probability": 0.9993411898612976
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              61.39752197265625,
+              75.84075927734375,
+              178.0369415283203,
+              213.420166015625
+            ],
+            "probability": 0.7563555240631104
+          }
+        },
+        "facenet_cosine": 0.9934384226799011,
+        "arcface_conditioning_cosine": 0.9376320838928223,
+        "hole_mae": 0.040221537742385155,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9933173432692052,
+        "psnr_rgb": 40.32073163442693,
+        "hole_psnr": 24.103849905409177,
+        "lpips": 0.004111031070351601,
+        "hole_bbox_lpips": 0.025542965158820152
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            63.97621154785156,
+            81.35832977294922,
+            172.4205780029297,
+            214.4921112060547
+          ],
+          "probability": 0.9994643330574036
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            61.235267639160156,
+            74.55802917480469,
+            178.98397827148438,
+            213.3249053955078
+          ],
+          "probability": 0.755345344543457
+        }
+      }
+    },
+    {
+      "case_id": "holdout_05_eyes",
+      "group": "new_holdout",
+      "arm": "baseline",
+      "sha256": "38f2f3c75b3743424399c0c163398142b13cc77410c4f4047094baa20a379bdc",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 5.033822844676349,
+        "brisque": 18.07781982421875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              74.25199890136719,
+              67.48711395263672,
+              178.01377868652344,
+              207.68331909179688
+            ],
+            "probability": 0.9924606680870056
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              76.63832092285156,
+              65.38895416259766,
+              175.64588928222656,
+              215.5829620361328
+            ],
+            "probability": 0.8447874784469604
+          }
+        },
+        "facenet_cosine": 0.41613146662712097,
+        "arcface_conditioning_cosine": 0.31315451860427856,
+        "hole_mae": 0.10276402288056005,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9484486476050528,
+        "psnr_rgb": 27.05141415976509,
+        "hole_psnr": 16.299706942523795,
+        "lpips": 0.03229858726263046,
+        "hole_bbox_lpips": 0.200132355093956
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            83.36864471435547,
+            78.23933410644531,
+            173.00155639648438,
+            212.32232666015625
+          ],
+          "probability": 0.9970901012420654
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            78.8232421875,
+            66.25968933105469,
+            174.42831420898438,
+            215.5767364501953
+          ],
+          "probability": 0.8735226988792419
+        }
+      }
+    },
+    {
+      "case_id": "holdout_05_eyes",
+      "group": "new_holdout",
+      "arm": "adapted",
+      "sha256": "e3a4cc1dcbb1fb9d19815d06b6dc2e2155c1d1b19adae2c9d8ab49f52321b3d9",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 5.809943651862304,
+        "brisque": 17.99920654296875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              74.36848449707031,
+              74.6949234008789,
+              170.2125701904297,
+              209.68783569335938
+            ],
+            "probability": 0.9813832640647888
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              78.86597442626953,
+              68.77202606201172,
+              175.80538940429688,
+              215.1605682373047
+            ],
+            "probability": 0.8603010773658752
+          }
+        },
+        "facenet_cosine": 0.447343647480011,
+        "arcface_conditioning_cosine": 0.4055878520011902,
+        "hole_mae": 0.09169085631349781,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9498297706189476,
+        "psnr_rgb": 28.44400814014427,
+        "hole_psnr": 17.692300922902973,
+        "lpips": 0.039927251636981964,
+        "hole_bbox_lpips": 0.2882067561149597
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            83.36864471435547,
+            78.23933410644531,
+            173.00155639648438,
+            212.32232666015625
+          ],
+          "probability": 0.9970901012420654
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            78.8232421875,
+            66.25968933105469,
+            174.42831420898438,
+            215.5767364501953
+          ],
+          "probability": 0.8735226988792419
+        }
+      }
+    },
+    {
+      "case_id": "holdout_05_strokes",
+      "group": "new_holdout",
+      "arm": "baseline",
+      "sha256": "f78b9821718c2a0e1917f94ca09c948c11cdaaeefc9f217b859079a01c34ab04",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 4.536193238142776,
+        "brisque": 15.86981201171875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              84.98141479492188,
+              81.04364776611328,
+              172.51016235351562,
+              211.87405395507812
+            ],
+            "probability": 0.9977331161499023
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              77.76533508300781,
+              66.61072540283203,
+              174.37176513671875,
+              215.69534301757812
+            ],
+            "probability": 0.8675639629364014
+          }
+        },
+        "facenet_cosine": 0.9401764869689941,
+        "arcface_conditioning_cosine": 0.9086730480194092,
+        "hole_mae": 0.056526517738106845,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9803774651558307,
+        "psnr_rgb": 33.479274357806204,
+        "hole_psnr": 20.107348216330916,
+        "lpips": 0.011121590621769428,
+        "hole_bbox_lpips": 0.014722783118486404
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            83.36864471435547,
+            78.23933410644531,
+            173.00155639648438,
+            212.32232666015625
+          ],
+          "probability": 0.9970901012420654
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            78.8232421875,
+            66.25968933105469,
+            174.42831420898438,
+            215.5767364501953
+          ],
+          "probability": 0.8735226988792419
+        }
+      }
+    },
+    {
+      "case_id": "holdout_05_strokes",
+      "group": "new_holdout",
+      "arm": "adapted",
+      "sha256": "2ac27680d125a93acca15be4d0c3df14a7cf4b58a17351425ec5496992dcc5e6",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 4.588428928340686,
+        "brisque": 15.95233154296875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              84.38496398925781,
+              78.75251770019531,
+              171.89614868164062,
+              211.7074432373047
+            ],
+            "probability": 0.9984436631202698
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              77.31831359863281,
+              66.57876586914062,
+              174.36473083496094,
+              215.6717071533203
+            ],
+            "probability": 0.8668598532676697
+          }
+        },
+        "facenet_cosine": 0.9492965936660767,
+        "arcface_conditioning_cosine": 0.9252756834030151,
+        "hole_mae": 0.05443588159420761,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9811692111173472,
+        "psnr_rgb": 33.80430855782635,
+        "hole_psnr": 20.43238241635106,
+        "lpips": 0.011227082461118698,
+        "hole_bbox_lpips": 0.01595611684024334
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            83.36864471435547,
+            78.23933410644531,
+            173.00155639648438,
+            212.32232666015625
+          ],
+          "probability": 0.9970901012420654
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            78.8232421875,
+            66.25968933105469,
+            174.42831420898438,
+            215.5767364501953
+          ],
+          "probability": 0.8735226988792419
+        }
+      }
+    },
+    {
+      "case_id": "holdout_06_eyes",
+      "group": "new_holdout",
+      "arm": "baseline",
+      "sha256": "c2c8f7a442d56ac36534dcf2437f8422f45c6e31daa8929ddd33e55a200c3fb3",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 4.947771331814112,
+        "brisque": 30.32049560546875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              71.37275695800781,
+              81.16974639892578,
+              167.18301391601562,
+              211.6362762451172
+            ],
+            "probability": 0.9999786615371704
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              69.3129653930664,
+              81.47711944580078,
+              169.38455200195312,
+              210.52841186523438
+            ],
+            "probability": 0.8030956983566284
+          }
+        },
+        "facenet_cosine": 0.5675229430198669,
+        "arcface_conditioning_cosine": 0.5601606965065002,
+        "hole_mae": 0.1403935185185185,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9553206626178069,
+        "psnr_rgb": 26.230485687146455,
+        "hole_psnr": 14.120891615284151,
+        "lpips": 0.02376469597220421,
+        "hole_bbox_lpips": 0.2398303896188736
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            72.78895568847656,
+            87.94249725341797,
+            164.40036010742188,
+            207.79457092285156
+          ],
+          "probability": 0.9999796152114868
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            68.95903015136719,
+            80.88631439208984,
+            169.30984497070312,
+            210.52938842773438
+          ],
+          "probability": 0.8176397085189819
+        }
+      }
+    },
+    {
+      "case_id": "holdout_06_eyes",
+      "group": "new_holdout",
+      "arm": "adapted",
+      "sha256": "f4403fd06cd2cba5c176c1099a98a239ee778a8d7483b95086725e95904c7491",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 5.025917502533967,
+        "brisque": 30.52801513671875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              72.75365447998047,
+              82.63422393798828,
+              164.0928955078125,
+              210.8566131591797
+            ],
+            "probability": 0.9999699592590332
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              69.60530853271484,
+              82.88850402832031,
+              168.8969268798828,
+              210.38638305664062
+            ],
+            "probability": 0.795231819152832
+          }
+        },
+        "facenet_cosine": 0.6555930376052856,
+        "arcface_conditioning_cosine": 0.7378071546554565,
+        "hole_mae": 0.11209798734308539,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9617936801633107,
+        "psnr_rgb": 28.164610075291275,
+        "hole_psnr": 16.05501600342897,
+        "lpips": 0.018502701073884964,
+        "hole_bbox_lpips": 0.22700463235378265
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            72.78895568847656,
+            87.94249725341797,
+            164.40036010742188,
+            207.79457092285156
+          ],
+          "probability": 0.9999796152114868
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            68.95903015136719,
+            80.88631439208984,
+            169.30984497070312,
+            210.52938842773438
+          ],
+          "probability": 0.8176397085189819
+        }
+      }
+    },
+    {
+      "case_id": "holdout_06_strokes",
+      "group": "new_holdout",
+      "arm": "baseline",
+      "sha256": "ddff96dea57450a56da151fafb434a3b1ff92829bdab9b6e5a2a2665e32d72fb",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 4.711949306809835,
+        "brisque": 29.70477294921875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              70.84546661376953,
+              86.5700912475586,
+              170.130615234375,
+              211.77915954589844
+            ],
+            "probability": 0.9999840259552002
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              68.96253967285156,
+              81.55216979980469,
+              169.42807006835938,
+              210.65341186523438
+            ],
+            "probability": 0.815348744392395
+          }
+        },
+        "facenet_cosine": 0.9287624359130859,
+        "arcface_conditioning_cosine": 0.9594234228134155,
+        "hole_mae": 0.028237770029091957,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9873712913339406,
+        "psnr_rgb": 40.745146382563576,
+        "hole_psnr": 27.130319249421188,
+        "lpips": 0.002605339977890253,
+        "hole_bbox_lpips": 0.025614434853196144
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            72.78895568847656,
+            87.94249725341797,
+            164.40036010742188,
+            207.79457092285156
+          ],
+          "probability": 0.9999796152114868
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            68.95903015136719,
+            80.88631439208984,
+            169.30984497070312,
+            210.52938842773438
+          ],
+          "probability": 0.8176397085189819
+        }
+      }
+    },
+    {
+      "case_id": "holdout_06_strokes",
+      "group": "new_holdout",
+      "arm": "adapted",
+      "sha256": "8222e6d5dcc3607600415db96caa312308a8cad5dd8afaf836def9cf65e64998",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 4.561248684318864,
+        "brisque": 29.78729248046875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              73.84156799316406,
+              86.08434295654297,
+              166.5439910888672,
+              209.04176330566406
+            ],
+            "probability": 0.9999837875366211
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              68.87643432617188,
+              80.92121124267578,
+              169.49929809570312,
+              210.66049194335938
+            ],
+            "probability": 0.8167662024497986
+          }
+        },
+        "facenet_cosine": 0.9602916240692139,
+        "arcface_conditioning_cosine": 0.9585041999816895,
+        "hole_mae": 0.029198331969289528,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9875763827328511,
+        "psnr_rgb": 40.53094545829552,
+        "hole_psnr": 26.916118325153136,
+        "lpips": 0.002885478315874934,
+        "hole_bbox_lpips": 0.02836628071963787
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            72.78895568847656,
+            87.94249725341797,
+            164.40036010742188,
+            207.79457092285156
+          ],
+          "probability": 0.9999796152114868
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            68.95903015136719,
+            80.88631439208984,
+            169.30984497070312,
+            210.52938842773438
+          ],
+          "probability": 0.8176397085189819
+        }
+      }
+    },
+    {
+      "case_id": "holdout_07_eyes",
+      "group": "new_holdout",
+      "arm": "baseline",
+      "sha256": "2a21b727846c7a8abe9bf433afa731678d2100d0e12af0b60239951535438e32",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 6.080286988657968,
+        "brisque": 19.65887451171875,
+        "detections": {
+          "facenet": {
+            "face_count": 2,
+            "status": "multiple_faces"
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              92.47608184814453,
+              75.65111541748047,
+              197.10556030273438,
+              210.26187133789062
+            ],
+            "probability": 0.8349183797836304
+          }
+        },
+        "facenet_cosine": null,
+        "arcface_conditioning_cosine": 0.6976968050003052,
+        "hole_mae": 0.14070649712030028,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9643004666548144,
+        "psnr_rgb": 25.889595335096782,
+        "hole_psnr": 12.819509549885277,
+        "lpips": 0.016599513590335846,
+        "hole_bbox_lpips": 0.09786209464073181
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            92.7388916015625,
+            77.82469940185547,
+            193.12152099609375,
+            210.91885375976562
+          ],
+          "probability": 0.9999865293502808
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            92.4013900756836,
+            74.58982849121094,
+            196.8173370361328,
+            210.31668090820312
+          ],
+          "probability": 0.8401022553443909
+        }
+      }
+    },
+    {
+      "case_id": "holdout_07_eyes",
+      "group": "new_holdout",
+      "arm": "adapted",
+      "sha256": "00f12bdbe2bb6f209b22b678d0bf75bd53c74fde6bf001ac6eb9f7d2ebce3dc1",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 6.191261853495879,
+        "brisque": 20.12908935546875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              91.53368377685547,
+              78.62077331542969,
+              196.00057983398438,
+              211.7585906982422
+            ],
+            "probability": 0.9998672008514404
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              92.5914077758789,
+              76.35173797607422,
+              197.1250457763672,
+              210.26168823242188
+            ],
+            "probability": 0.8263087272644043
+          }
+        },
+        "facenet_cosine": 0.5373468995094299,
+        "arcface_conditioning_cosine": 0.7264196872711182,
+        "hole_mae": 0.10937237106063548,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9700762173176262,
+        "psnr_rgb": 28.091692774470882,
+        "hole_psnr": 15.021606989259375,
+        "lpips": 0.017316119745373726,
+        "hole_bbox_lpips": 0.12720683217048645
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            92.7388916015625,
+            77.82469940185547,
+            193.12152099609375,
+            210.91885375976562
+          ],
+          "probability": 0.9999865293502808
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            92.4013900756836,
+            74.58982849121094,
+            196.8173370361328,
+            210.31668090820312
+          ],
+          "probability": 0.8401022553443909
+        }
+      }
+    },
+    {
+      "case_id": "holdout_07_strokes",
+      "group": "new_holdout",
+      "arm": "baseline",
+      "sha256": "a78b5780b7c7240de2dc7f141a02fd4493651aa97a342468da5edd102476b489",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 5.517499479714811,
+        "brisque": 19.81072998046875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              92.92784118652344,
+              76.5822982788086,
+              193.5757293701172,
+              211.4604034423828
+            ],
+            "probability": 0.999962329864502
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              92.14818572998047,
+              74.87679290771484,
+              196.85324096679688,
+              210.3162078857422
+            ],
+            "probability": 0.8394843339920044
+          }
+        },
+        "facenet_cosine": 0.990180492401123,
+        "arcface_conditioning_cosine": 0.9711316227912903,
+        "hole_mae": 0.04606319211622472,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9931243279403951,
+        "psnr_rgb": 40.64604005669095,
+        "hole_psnr": 23.118326344368132,
+        "lpips": 0.0028087615501135588,
+        "hole_bbox_lpips": 0.009211601689457893
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            92.7388916015625,
+            77.82469940185547,
+            193.12152099609375,
+            210.91885375976562
+          ],
+          "probability": 0.9999865293502808
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            92.4013900756836,
+            74.58982849121094,
+            196.8173370361328,
+            210.31668090820312
+          ],
+          "probability": 0.8401022553443909
+        }
+      }
+    },
+    {
+      "case_id": "holdout_07_strokes",
+      "group": "new_holdout",
+      "arm": "adapted",
+      "sha256": "0113406c87de521bf36bdd5a1835c28b0b839371632bba4abcd732eaa9a8ae6c",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 5.414341211398731,
+        "brisque": 19.66619873046875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              92.8567886352539,
+              76.2545394897461,
+              193.6668701171875,
+              211.3603057861328
+            ],
+            "probability": 0.9999629259109497
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              92.02124786376953,
+              74.5942153930664,
+              196.7595672607422,
+              210.2966766357422
+            ],
+            "probability": 0.8411910533905029
+          }
+        },
+        "facenet_cosine": 0.9821951985359192,
+        "arcface_conditioning_cosine": 0.9630980491638184,
+        "hole_mae": 0.04615349882036868,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9931494248903988,
+        "psnr_rgb": 40.98903052987583,
+        "hole_psnr": 23.461316817553012,
+        "lpips": 0.0025785639882087708,
+        "hole_bbox_lpips": 0.008116932585835457
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            92.7388916015625,
+            77.82469940185547,
+            193.12152099609375,
+            210.91885375976562
+          ],
+          "probability": 0.9999865293502808
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            92.4013900756836,
+            74.58982849121094,
+            196.8173370361328,
+            210.31668090820312
+          ],
+          "probability": 0.8401022553443909
+        }
+      }
+    },
+    {
+      "case_id": "holdout_08_eyes",
+      "group": "new_holdout",
+      "arm": "baseline",
+      "sha256": "48242ceeceb8dc7cc8449a5469a897e3ab320ca263fae366bfb611615dcfd866",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 6.610690222003338,
+        "brisque": 24.63934326171875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              60.03047561645508,
+              70.29170227050781,
+              172.11312866210938,
+              211.02133178710938
+            ],
+            "probability": 0.9999980926513672
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              61.968772888183594,
+              69.74689483642578,
+              171.08694458007812,
+              213.7501983642578
+            ],
+            "probability": 0.845375657081604
+          }
+        },
+        "facenet_cosine": 0.2344735562801361,
+        "arcface_conditioning_cosine": 0.3126690089702606,
+        "hole_mae": 0.09426619132501486,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9702174417256534,
+        "psnr_rgb": 29.340344873201836,
+        "hole_psnr": 16.852865192445538,
+        "lpips": 0.01238455530256033,
+        "hole_bbox_lpips": 0.13724280893802643
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            63.95249938964844,
+            74.11882019042969,
+            171.69985961914062,
+            213.94610595703125
+          ],
+          "probability": 0.9999796152114868
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            62.18962478637695,
+            70.90313720703125,
+            170.91961669921875,
+            213.64871215820312
+          ],
+          "probability": 0.8498103618621826
+        }
+      }
+    },
+    {
+      "case_id": "holdout_08_eyes",
+      "group": "new_holdout",
+      "arm": "adapted",
+      "sha256": "9403e5ac0435e13e7d0359c7053b32dc95dbd94ab044e1305cc1b5cbacc61b6f",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 7.693701041247789,
+        "brisque": 24.98162841796875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              60.49711227416992,
+              74.13603973388672,
+              166.49676513671875,
+              214.0635986328125
+            ],
+            "probability": 0.9999957084655762
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              62.240318298339844,
+              70.51343536376953,
+              170.55697631835938,
+              213.42123413085938
+            ],
+            "probability": 0.8531455993652344
+          }
+        },
+        "facenet_cosine": 0.30318719148635864,
+        "arcface_conditioning_cosine": 0.5037680864334106,
+        "hole_mae": 0.07411545426251308,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9731114041231587,
+        "psnr_rgb": 31.686037953904773,
+        "hole_psnr": 19.19855827314847,
+        "lpips": 0.02423204481601715,
+        "hole_bbox_lpips": 0.24089492857456207
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            63.95249938964844,
+            74.11882019042969,
+            171.69985961914062,
+            213.94610595703125
+          ],
+          "probability": 0.9999796152114868
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            62.18962478637695,
+            70.90313720703125,
+            170.91961669921875,
+            213.64871215820312
+          ],
+          "probability": 0.8498103618621826
+        }
+      }
+    },
+    {
+      "case_id": "holdout_08_strokes",
+      "group": "new_holdout",
+      "arm": "baseline",
+      "sha256": "dde276ac17d999161f3a99e63eac440eee60d63d84599a78880e2e4d7a8b6802",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 6.578999239433825,
+        "brisque": 25.47137451171875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              62.733577728271484,
+              72.93040466308594,
+              170.26187133789062,
+              213.95782470703125
+            ],
+            "probability": 0.9999886751174927
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              62.19477462768555,
+              70.01094818115234,
+              170.9995574951172,
+              213.5837860107422
+            ],
+            "probability": 0.8528488874435425
+          }
+        },
+        "facenet_cosine": 0.9629070162773132,
+        "arcface_conditioning_cosine": 0.9242068529129028,
+        "hole_mae": 0.02577940513147072,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9939018532124222,
+        "psnr_rgb": 43.595681755118854,
+        "hole_psnr": 28.88853938002674,
+        "lpips": 0.001958824461326003,
+        "hole_bbox_lpips": 0.011859241873025894
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            63.95249938964844,
+            74.11882019042969,
+            171.69985961914062,
+            213.94610595703125
+          ],
+          "probability": 0.9999796152114868
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            62.18962478637695,
+            70.90313720703125,
+            170.91961669921875,
+            213.64871215820312
+          ],
+          "probability": 0.8498103618621826
+        }
+      }
+    },
+    {
+      "case_id": "holdout_08_strokes",
+      "group": "new_holdout",
+      "arm": "adapted",
+      "sha256": "39e25ff224659dd41b3fce35259866dfb6ed954c83a56bebdfca0af0e75f00f0",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 6.560544666534944,
+        "brisque": 25.86541748046875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              62.30868148803711,
+              72.73725128173828,
+              171.16876220703125,
+              214.37118530273438
+            ],
+            "probability": 0.9999531507492065
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              62.103370666503906,
+              70.53913879394531,
+              171.0005340576172,
+              213.5979766845703
+            ],
+            "probability": 0.8508148193359375
+          }
+        },
+        "facenet_cosine": 0.9584921002388,
+        "arcface_conditioning_cosine": 0.9122593402862549,
+        "hole_mae": 0.025613132036756966,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9939626512903855,
+        "psnr_rgb": 43.793989910233925,
+        "hole_psnr": 29.086847535141818,
+        "lpips": 0.0022436282597482204,
+        "hole_bbox_lpips": 0.013103146106004715
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            63.95249938964844,
+            74.11882019042969,
+            171.69985961914062,
+            213.94610595703125
+          ],
+          "probability": 0.9999796152114868
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            62.18962478637695,
+            70.90313720703125,
+            170.91961669921875,
+            213.64871215820312
+          ],
+          "probability": 0.8498103618621826
+        }
+      }
+    },
+    {
+      "case_id": "holdout_09_eyes",
+      "group": "new_holdout",
+      "arm": "baseline",
+      "sha256": "ce1fcb732b610ccb305b69162e0b519230acbca2de11e930a940bc4f6803b6fe",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 4.0350720608918715,
+        "brisque": 25.09930419921875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              78.63641357421875,
+              73.23419952392578,
+              179.1160888671875,
+              215.3742218017578
+            ],
+            "probability": 0.996362030506134
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              87.68185424804688,
+              82.44844818115234,
+              177.0604705810547,
+              216.6012725830078
+            ],
+            "probability": 0.7867757081985474
+          }
+        },
+        "facenet_cosine": 0.619878888130188,
+        "arcface_conditioning_cosine": 0.43418067693710327,
+        "hole_mae": 0.11662271146275274,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9455950642385802,
+        "psnr_rgb": 26.396669724261542,
+        "hole_psnr": 15.333044069142716,
+        "lpips": 0.028014976531267166,
+        "hole_bbox_lpips": 0.19451329112052917
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            88.45056915283203,
+            85.064208984375,
+            175.8236846923828,
+            198.30030822753906
+          ],
+          "probability": 0.9998679161071777
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            90.1882095336914,
+            85.51815795898438,
+            175.72296142578125,
+            216.0720672607422
+          ],
+          "probability": 0.8426707983016968
+        }
+      }
+    },
+    {
+      "case_id": "holdout_09_eyes",
+      "group": "new_holdout",
+      "arm": "adapted",
+      "sha256": "8765b26b46938b7ff4a6bfa51a864e572308f75a8b031aad96802858f39bd204",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 4.25067499634912,
+        "brisque": 27.39617919921875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              77.9791030883789,
+              83.33887481689453,
+              176.39306640625,
+              213.3857879638672
+            ],
+            "probability": 0.9971736669540405
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              89.43719482421875,
+              86.93489074707031,
+              175.72695922851562,
+              216.01956176757812
+            ],
+            "probability": 0.8164584636688232
+          }
+        },
+        "facenet_cosine": 0.4980356693267822,
+        "arcface_conditioning_cosine": 0.582480788230896,
+        "hole_mae": 0.10782377148390221,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9504273977450146,
+        "psnr_rgb": 27.738133070847034,
+        "hole_psnr": 16.674507415728208,
+        "lpips": 0.03823764994740486,
+        "hole_bbox_lpips": 0.23744747042655945
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            88.45056915283203,
+            85.064208984375,
+            175.8236846923828,
+            198.30030822753906
+          ],
+          "probability": 0.9998679161071777
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            90.1882095336914,
+            85.51815795898438,
+            175.72296142578125,
+            216.0720672607422
+          ],
+          "probability": 0.8426707983016968
+        }
+      }
+    },
+    {
+      "case_id": "holdout_09_strokes",
+      "group": "new_holdout",
+      "arm": "baseline",
+      "sha256": "0fb46c74d27e4e70220dbc7b5a211b829916c9d65d215873ef85bfd727bfae34",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 3.817123411763954,
+        "brisque": 25.56268310546875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              85.83404541015625,
+              82.9968032836914,
+              176.69671630859375,
+              209.6024169921875
+            ],
+            "probability": 0.9998617172241211
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              90.30937194824219,
+              85.8836898803711,
+              175.59854125976562,
+              216.1540069580078
+            ],
+            "probability": 0.8443670272827148
+          }
+        },
+        "facenet_cosine": 0.8036512136459351,
+        "arcface_conditioning_cosine": 0.9124114513397217,
+        "hole_mae": 0.038533031105193356,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9947298249195042,
+        "psnr_rgb": 42.02263564823576,
+        "hole_psnr": 24.781533338289982,
+        "lpips": 0.0021110675297677517,
+        "hole_bbox_lpips": 0.0057456945069134235
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            88.45056915283203,
+            85.064208984375,
+            175.8236846923828,
+            198.30030822753906
+          ],
+          "probability": 0.9998679161071777
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            90.1882095336914,
+            85.51815795898438,
+            175.72296142578125,
+            216.0720672607422
+          ],
+          "probability": 0.8426707983016968
+        }
+      }
+    },
+    {
+      "case_id": "holdout_09_strokes",
+      "group": "new_holdout",
+      "arm": "adapted",
+      "sha256": "223dcb9e63991d53738f495ef8a87a6c66790427de6e74a55a2aab8fc5fdc886",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 3.784589747056934,
+        "brisque": 26.13739013671875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              85.90125274658203,
+              82.59952545166016,
+              177.75051879882812,
+              210.25027465820312
+            ],
+            "probability": 0.9997462630271912
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              90.28019714355469,
+              85.96845245361328,
+              175.5375213623047,
+              216.1497802734375
+            ],
+            "probability": 0.8470121622085571
+          }
+        },
+        "facenet_cosine": 0.8225818872451782,
+        "arcface_conditioning_cosine": 0.9326120615005493,
+        "hole_mae": 0.03784297874363974,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9949051611258722,
+        "psnr_rgb": 41.94423875802187,
+        "hole_psnr": 24.703136448076087,
+        "lpips": 0.0022471253760159016,
+        "hole_bbox_lpips": 0.006445399951189756
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            88.45056915283203,
+            85.064208984375,
+            175.8236846923828,
+            198.30030822753906
+          ],
+          "probability": 0.9998679161071777
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            90.1882095336914,
+            85.51815795898438,
+            175.72296142578125,
+            216.0720672607422
+          ],
+          "probability": 0.8426707983016968
+        }
+      }
+    },
+    {
+      "case_id": "holdout_10_eyes",
+      "group": "new_holdout",
+      "arm": "baseline",
+      "sha256": "1957104ff136f0b2987aa9154624719b1015729311a26586aba97e8fd5b80181",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 5.649679895886737,
+        "brisque": 30.67987060546875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              97.08572387695312,
+              89.50506591796875,
+              191.32025146484375,
+              209.99620056152344
+            ],
+            "probability": 0.9996352195739746
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              99.86801147460938,
+              81.36052703857422,
+              200.47476196289062,
+              216.7490997314453
+            ],
+            "probability": 0.7270870804786682
+          }
+        },
+        "facenet_cosine": 0.4541514217853546,
+        "arcface_conditioning_cosine": 0.7745007276535034,
+        "hole_mae": 0.12617371446570597,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9644980788601645,
+        "psnr_rgb": 26.729473530897238,
+        "hole_psnr": 13.776055061700612,
+        "lpips": 0.02795499563217163,
+        "hole_bbox_lpips": 0.17366056144237518
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            93.72758483886719,
+            89.52787780761719,
+            189.80813598632812,
+            211.263916015625
+          ],
+          "probability": 0.9992440938949585
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            99.12044525146484,
+            84.44210052490234,
+            199.23760986328125,
+            216.6461944580078
+          ],
+          "probability": 0.7326170206069946
+        }
+      }
+    },
+    {
+      "case_id": "holdout_10_eyes",
+      "group": "new_holdout",
+      "arm": "adapted",
+      "sha256": "70e06a4b162c05abdb05b0327af9702c493f622af578786e6bea5c6ec371a643",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 6.038249277175953,
+        "brisque": 29.84100341796875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              96.18897247314453,
+              93.23991394042969,
+              191.36868286132812,
+              213.52838134765625
+            ],
+            "probability": 0.9990555644035339
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              100.1855697631836,
+              80.88291931152344,
+              200.69723510742188,
+              216.9755859375
+            ],
+            "probability": 0.7273083925247192
+          }
+        },
+        "facenet_cosine": 0.5858262777328491,
+        "arcface_conditioning_cosine": 0.7844328880310059,
+        "hole_mae": 0.11869084179856683,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9658383863869869,
+        "psnr_rgb": 27.067100285226942,
+        "hole_psnr": 14.11368181603031,
+        "lpips": 0.03111564926803112,
+        "hole_bbox_lpips": 0.18213605880737305
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            93.72758483886719,
+            89.52787780761719,
+            189.80813598632812,
+            211.263916015625
+          ],
+          "probability": 0.9992440938949585
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            99.12044525146484,
+            84.44210052490234,
+            199.23760986328125,
+            216.6461944580078
+          ],
+          "probability": 0.7326170206069946
+        }
+      }
+    },
+    {
+      "case_id": "holdout_10_strokes",
+      "group": "new_holdout",
+      "arm": "baseline",
+      "sha256": "422b572d7b6d2805f912c6528088dc426d4ef9fd4a9a675b40db6f7d09da3bf5",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 4.246078764274285,
+        "brisque": 29.74188232421875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              98.05442810058594,
+              91.043701171875,
+              187.58258056640625,
+              207.177001953125
+            ],
+            "probability": 0.9992741942405701
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              98.6457748413086,
+              83.69652557373047,
+              199.4334259033203,
+              216.63388061523438
+            ],
+            "probability": 0.7292160391807556
+          }
+        },
+        "facenet_cosine": 0.9509928822517395,
+        "arcface_conditioning_cosine": 0.9696291089057922,
+        "hole_mae": 0.07820561396861482,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9859783968080714,
+        "psnr_rgb": 34.103097783078276,
+        "hole_psnr": 18.1289018013299,
+        "lpips": 0.004878401756286621,
+        "hole_bbox_lpips": 0.02974347025156021
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            93.72758483886719,
+            89.52787780761719,
+            189.80813598632812,
+            211.263916015625
+          ],
+          "probability": 0.9992440938949585
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            99.12044525146484,
+            84.44210052490234,
+            199.23760986328125,
+            216.6461944580078
+          ],
+          "probability": 0.7326170206069946
+        }
+      }
+    },
+    {
+      "case_id": "holdout_10_strokes",
+      "group": "new_holdout",
+      "arm": "adapted",
+      "sha256": "df1543a5807ec9cdbc0816ee8a87369ea39b1240f3377e08561ca92a13379465",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 4.427976945524396,
+        "brisque": 29.61297607421875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              99.82962036132812,
+              92.34722900390625,
+              188.07395935058594,
+              206.2917938232422
+            ],
+            "probability": 0.9990538954734802
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              98.56157684326172,
+              83.97408294677734,
+              199.37490844726562,
+              216.6365966796875
+            ],
+            "probability": 0.7269925475120544
+          }
+        },
+        "facenet_cosine": 0.9467041492462158,
+        "arcface_conditioning_cosine": 0.9729601740837097,
+        "hole_mae": 0.06948707019039499,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9875662425190587,
+        "psnr_rgb": 35.26058173638252,
+        "hole_psnr": 19.286385754634143,
+        "lpips": 0.004551600199192762,
+        "hole_bbox_lpips": 0.022203980013728142
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            93.72758483886719,
+            89.52787780761719,
+            189.80813598632812,
+            211.263916015625
+          ],
+          "probability": 0.9992440938949585
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            99.12044525146484,
+            84.44210052490234,
+            199.23760986328125,
+            216.6461944580078
+          ],
+          "probability": 0.7326170206069946
+        }
+      }
+    },
+    {
+      "case_id": "holdout_11_eyes",
+      "group": "new_holdout",
+      "arm": "baseline",
+      "sha256": "3fe865cfdd2836db1d59afc36ecf788ae8230f76086f0da70caf87807230268a",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 5.443195991262067,
+        "brisque": 32.92987060546875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              85.33917236328125,
+              86.65296173095703,
+              186.72645568847656,
+              210.3458251953125
+            ],
+            "probability": 0.999919056892395
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              87.72002410888672,
+              74.44334411621094,
+              192.9598388671875,
+              215.6306610107422
+            ],
+            "probability": 0.7680574655532837
+          }
+        },
+        "facenet_cosine": 0.6788077354431152,
+        "arcface_conditioning_cosine": 0.5320099592208862,
+        "hole_mae": 0.09186855182844486,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.965787170015168,
+        "psnr_rgb": 29.42209959838047,
+        "hole_psnr": 17.13665377850704,
+        "lpips": 0.015017464756965637,
+        "hole_bbox_lpips": 0.15582965314388275
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            87.88834381103516,
+            89.64651489257812,
+            186.09837341308594,
+            210.31398010253906
+          ],
+          "probability": 0.999972939491272
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            90.05610656738281,
+            83.62004089355469,
+            192.03135681152344,
+            215.9524688720703
+          ],
+          "probability": 0.8133290410041809
+        }
+      }
+    },
+    {
+      "case_id": "holdout_11_eyes",
+      "group": "new_holdout",
+      "arm": "adapted",
+      "sha256": "6e8ba853f85f36b592c7d31a9abb71e882ce26f7c43bdf49de48910a13024fe0",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 5.426857445796249,
+        "brisque": 33.22772216796875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              88.11903381347656,
+              98.3035659790039,
+              182.06211853027344,
+              206.79632568359375
+            ],
+            "probability": 0.9999749660491943
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              89.68025970458984,
+              86.69325256347656,
+              191.29275512695312,
+              215.26718139648438
+            ],
+            "probability": 0.8046082258224487
+          }
+        },
+        "facenet_cosine": 0.7084323167800903,
+        "arcface_conditioning_cosine": 0.6711064577102661,
+        "hole_mae": 0.10094629449575973,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9651661759110258,
+        "psnr_rgb": 29.15416558054214,
+        "hole_psnr": 16.86871976066871,
+        "lpips": 0.02378648705780506,
+        "hole_bbox_lpips": 0.33553066849708557
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            87.88834381103516,
+            89.64651489257812,
+            186.09837341308594,
+            210.31398010253906
+          ],
+          "probability": 0.999972939491272
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            90.05610656738281,
+            83.62004089355469,
+            192.03135681152344,
+            215.9524688720703
+          ],
+          "probability": 0.8133290410041809
+        }
+      }
+    },
+    {
+      "case_id": "holdout_11_strokes",
+      "group": "new_holdout",
+      "arm": "baseline",
+      "sha256": "acbbd3a7acb36bde1534e9fadb7f0909b148585534da6e687f22071db76549b8",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 5.130101077045078,
+        "brisque": 33.17108154296875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              88.91646575927734,
+              91.94755554199219,
+              185.4940185546875,
+              209.73419189453125
+            ],
+            "probability": 0.9999351501464844
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              90.08028411865234,
+              83.58148193359375,
+              192.2874755859375,
+              215.9733123779297
+            ],
+            "probability": 0.8138515949249268
+          }
+        },
+        "facenet_cosine": 0.9896574020385742,
+        "arcface_conditioning_cosine": 0.9944322109222412,
+        "hole_mae": 0.02127246732026144,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9981810148007351,
+        "psnr_rgb": 48.382393125642274,
+        "hole_psnr": 29.071206019720407,
+        "lpips": 0.0006593324360437691,
+        "hole_bbox_lpips": 0.0037821028381586075
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            87.88834381103516,
+            89.64651489257812,
+            186.09837341308594,
+            210.31398010253906
+          ],
+          "probability": 0.999972939491272
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            90.05610656738281,
+            83.62004089355469,
+            192.03135681152344,
+            215.9524688720703
+          ],
+          "probability": 0.8133290410041809
+        }
+      }
+    },
+    {
+      "case_id": "holdout_11_strokes",
+      "group": "new_holdout",
+      "arm": "adapted",
+      "sha256": "1868b121f8b2f440d85a0c91a4c87968c0b095e959cbf199727f870ec06dc89b",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 5.201426181372116,
+        "brisque": 32.99432373046875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              88.67164611816406,
+              91.59605407714844,
+              185.53497314453125,
+              209.51663208007812
+            ],
+            "probability": 0.9999384880065918
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              90.03932189941406,
+              83.7215805053711,
+              192.2777862548828,
+              215.93063354492188
+            ],
+            "probability": 0.815724790096283
+          }
+        },
+        "facenet_cosine": 0.9810800552368164,
+        "arcface_conditioning_cosine": 0.9861986041069031,
+        "hole_mae": 0.023776211873638344,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9980185257154909,
+        "psnr_rgb": 47.99042193374405,
+        "hole_psnr": 28.679234827822185,
+        "lpips": 0.0009622685611248016,
+        "hole_bbox_lpips": 0.00838727317750454
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            87.88834381103516,
+            89.64651489257812,
+            186.09837341308594,
+            210.31398010253906
+          ],
+          "probability": 0.999972939491272
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            90.05610656738281,
+            83.62004089355469,
+            192.03135681152344,
+            215.9524688720703
+          ],
+          "probability": 0.8133290410041809
+        }
+      }
+    },
+    {
+      "case_id": "holdout_12_eyes",
+      "group": "new_holdout",
+      "arm": "baseline",
+      "sha256": "0211ad6d62d119a08a6b1a45c7e421848aaffe28879bc1bdd1a464927a687d6c",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 5.729790899050255,
+        "brisque": 30.35467529296875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              82.05760192871094,
+              69.34333038330078,
+              185.85484313964844,
+              210.8245086669922
+            ],
+            "probability": 0.9995002746582031
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              87.1395263671875,
+              72.62242889404297,
+              188.5992431640625,
+              218.40927124023438
+            ],
+            "probability": 0.8217257261276245
+          }
+        },
+        "facenet_cosine": 0.5192009210586548,
+        "arcface_conditioning_cosine": 0.40971288084983826,
+        "hole_mae": 0.06540022410841327,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9674031477865844,
+        "psnr_rgb": 32.280106455582654,
+        "hole_psnr": 20.11195493722983,
+        "lpips": 0.0220174640417099,
+        "hole_bbox_lpips": 0.14494234323501587
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            87.60009002685547,
+            73.24040985107422,
+            185.39248657226562,
+            208.85568237304688
+          ],
+          "probability": 0.9998824596405029
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            87.71267700195312,
+            75.68584442138672,
+            188.38449096679688,
+            218.5849151611328
+          ],
+          "probability": 0.8190034031867981
+        }
+      }
+    },
+    {
+      "case_id": "holdout_12_eyes",
+      "group": "new_holdout",
+      "arm": "adapted",
+      "sha256": "e05a5d9181d1f2858a67f749239468f5f5dd2ab733e6c443e076892e05816e13",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 7.327071388788743,
+        "brisque": 31.44500732421875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              86.53556060791016,
+              78.83319091796875,
+              183.99461364746094,
+              208.00238037109375
+            ],
+            "probability": 0.9988107681274414
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              88.04840850830078,
+              75.8201675415039,
+              187.0966033935547,
+              218.2865447998047
+            ],
+            "probability": 0.8143513798713684
+          }
+        },
+        "facenet_cosine": 0.49563467502593994,
+        "arcface_conditioning_cosine": 0.5786021947860718,
+        "hole_mae": 0.06615305750253847,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9686278799615256,
+        "psnr_rgb": 32.08919954408889,
+        "hole_psnr": 19.92104802573607,
+        "lpips": 0.0444764606654644,
+        "hole_bbox_lpips": 0.30549806356430054
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            87.60009002685547,
+            73.24040985107422,
+            185.39248657226562,
+            208.85568237304688
+          ],
+          "probability": 0.9998824596405029
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            87.71267700195312,
+            75.68584442138672,
+            188.38449096679688,
+            218.5849151611328
+          ],
+          "probability": 0.8190034031867981
+        }
+      }
+    },
+    {
+      "case_id": "holdout_12_strokes",
+      "group": "new_holdout",
+      "arm": "baseline",
+      "sha256": "4cc755d8f56c26f31a698550fa4e3fe00498ba064008fbba0d9601e641c12945",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 6.3989476859185235,
+        "brisque": 31.18377685546875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              87.44293975830078,
+              74.60421752929688,
+              184.83087158203125,
+              208.74188232421875
+            ],
+            "probability": 0.9998944997787476
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              87.72651672363281,
+              74.79685974121094,
+              188.49868774414062,
+              218.7125701904297
+            ],
+            "probability": 0.8253564238548279
+          }
+        },
+        "facenet_cosine": 0.9706841707229614,
+        "arcface_conditioning_cosine": 0.978477418422699,
+        "hole_mae": 0.027823860078656507,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9938337446106719,
+        "psnr_rgb": 43.260301790980115,
+        "hole_psnr": 27.785959581319354,
+        "lpips": 0.0028550811111927032,
+        "hole_bbox_lpips": 0.007944945245981216
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            87.60009002685547,
+            73.24040985107422,
+            185.39248657226562,
+            208.85568237304688
+          ],
+          "probability": 0.9998824596405029
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            87.71267700195312,
+            75.68584442138672,
+            188.38449096679688,
+            218.5849151611328
+          ],
+          "probability": 0.8190034031867981
+        }
+      }
+    },
+    {
+      "case_id": "holdout_12_strokes",
+      "group": "new_holdout",
+      "arm": "adapted",
+      "sha256": "4cf19a3e9d65872115afa439043d695e71000e47b75cd495af300a953ee543b2",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 6.514962703907938,
+        "brisque": 31.23309326171875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              87.49899291992188,
+              74.33052825927734,
+              184.74710083007812,
+              208.664306640625
+            ],
+            "probability": 0.9998950958251953
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              87.79298400878906,
+              75.05960083007812,
+              188.30804443359375,
+              218.7417449951172
+            ],
+            "probability": 0.8243659734725952
+          }
+        },
+        "facenet_cosine": 0.958552360534668,
+        "arcface_conditioning_cosine": 0.9695727825164795,
+        "hole_mae": 0.02708232198512702,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9941550170550572,
+        "psnr_rgb": 43.337982608821264,
+        "hole_psnr": 27.86364039916051,
+        "lpips": 0.0028641135431826115,
+        "hole_bbox_lpips": 0.007593923714011908
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            87.60009002685547,
+            73.24040985107422,
+            185.39248657226562,
+            208.85568237304688
+          ],
+          "probability": 0.9998824596405029
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            87.71267700195312,
+            75.68584442138672,
+            188.38449096679688,
+            218.5849151611328
+          ],
+          "probability": 0.8190034031867981
+        }
+      }
+    },
+    {
+      "case_id": "holdout_13_eyes",
+      "group": "new_holdout",
+      "arm": "baseline",
+      "sha256": "a01c47ba41023533c2822280af04faacb87a5607f9d28349c48e1e56ab0ef877",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 5.59429109858531,
+        "brisque": 30.22967529296875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              78.64366912841797,
+              69.19098663330078,
+              181.16506958007812,
+              215.6123046875
+            ],
+            "probability": 0.9995063543319702
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              73.3579330444336,
+              62.123626708984375,
+              187.13754272460938,
+              220.35708618164062
+            ],
+            "probability": 0.8333983421325684
+          }
+        },
+        "facenet_cosine": 0.5176423192024231,
+        "arcface_conditioning_cosine": 0.37639591097831726,
+        "hole_mae": 0.12147279136373648,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.965590500269586,
+        "psnr_rgb": 27.328978731287474,
+        "hole_psnr": 14.678679404779235,
+        "lpips": 0.014916777610778809,
+        "hole_bbox_lpips": 0.14139780402183533
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            76.10676574707031,
+            69.27023315429688,
+            183.62661743164062,
+            218.71829223632812
+          ],
+          "probability": 0.9999321699142456
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            74.64790344238281,
+            62.20085906982422,
+            186.82583618164062,
+            220.74465942382812
+          ],
+          "probability": 0.867651104927063
+        }
+      }
+    },
+    {
+      "case_id": "holdout_13_eyes",
+      "group": "new_holdout",
+      "arm": "adapted",
+      "sha256": "603b3c6d18620d4b656801ec847140b541208352161df631237f019c05cf4153",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 6.251839737234609,
+        "brisque": 29.62664794921875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              75.30191802978516,
+              73.81822204589844,
+              180.89599609375,
+              217.6314697265625
+            ],
+            "probability": 0.9991023540496826
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              72.95611572265625,
+              62.253639221191406,
+              186.95407104492188,
+              220.431640625
+            ],
+            "probability": 0.8408882021903992
+          }
+        },
+        "facenet_cosine": 0.48557519912719727,
+        "arcface_conditioning_cosine": 0.6502124667167664,
+        "hole_mae": 0.10325585664977602,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9714088231525935,
+        "psnr_rgb": 28.497531247329633,
+        "hole_psnr": 15.847231920821391,
+        "lpips": 0.019854877144098282,
+        "hole_bbox_lpips": 0.2032695710659027
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            76.10676574707031,
+            69.27023315429688,
+            183.62661743164062,
+            218.71829223632812
+          ],
+          "probability": 0.9999321699142456
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            74.64790344238281,
+            62.20085906982422,
+            186.82583618164062,
+            220.74465942382812
+          ],
+          "probability": 0.867651104927063
+        }
+      }
+    },
+    {
+      "case_id": "holdout_13_strokes",
+      "group": "new_holdout",
+      "arm": "baseline",
+      "sha256": "7e6d7d590d83f6140d4259a37565984f9c4a309bd516a97a583eb81d2e227648",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 5.355928074766722,
+        "brisque": 29.70477294921875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              77.52094268798828,
+              70.03773498535156,
+              183.87057495117188,
+              218.4844512939453
+            ],
+            "probability": 0.9998297691345215
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              74.61509704589844,
+              62.1487922668457,
+              186.79217529296875,
+              220.8565673828125
+            ],
+            "probability": 0.8657426834106445
+          }
+        },
+        "facenet_cosine": 0.9847608804702759,
+        "arcface_conditioning_cosine": 0.9723613858222961,
+        "hole_mae": 0.022937451319042297,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9982005752801162,
+        "psnr_rgb": 48.30199061840795,
+        "hole_psnr": 29.982464445608883,
+        "lpips": 0.0004628253518603742,
+        "hole_bbox_lpips": 0.0017109425971284509
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            76.10676574707031,
+            69.27023315429688,
+            183.62661743164062,
+            218.71829223632812
+          ],
+          "probability": 0.9999321699142456
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            74.64790344238281,
+            62.20085906982422,
+            186.82583618164062,
+            220.74465942382812
+          ],
+          "probability": 0.867651104927063
+        }
+      }
+    },
+    {
+      "case_id": "holdout_13_strokes",
+      "group": "new_holdout",
+      "arm": "adapted",
+      "sha256": "4cfd207e0f694da5f6cb0cc609f2a2376b91be35922e0863b74a597b79ff8f2f",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 5.425071749816866,
+        "brisque": 29.77264404296875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              79.49723052978516,
+              70.32899475097656,
+              185.08050537109375,
+              218.54530334472656
+            ],
+            "probability": 0.9997808337211609
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              74.59095001220703,
+              62.16389846801758,
+              186.8015594482422,
+              220.81777954101562
+            ],
+            "probability": 0.8667391538619995
+          }
+        },
+        "facenet_cosine": 0.9317374229431152,
+        "arcface_conditioning_cosine": 0.9511561393737793,
+        "hole_mae": 0.024721460259406004,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9980196799270914,
+        "psnr_rgb": 47.67353354693399,
+        "hole_psnr": 29.35400737413493,
+        "lpips": 0.0005126366741023958,
+        "hole_bbox_lpips": 0.0018546546343713999
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            76.10676574707031,
+            69.27023315429688,
+            183.62661743164062,
+            218.71829223632812
+          ],
+          "probability": 0.9999321699142456
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            74.64790344238281,
+            62.20085906982422,
+            186.82583618164062,
+            220.74465942382812
+          ],
+          "probability": 0.867651104927063
+        }
+      }
+    },
+    {
+      "case_id": "holdout_14_eyes",
+      "group": "new_holdout",
+      "arm": "baseline",
+      "sha256": "2cdb064a8f32c5e376a9a0c798539ccfc41c84b827c4300df73f0793597e0e19",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 4.57613979925842,
+        "brisque": 27.21551513671875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              70.13482666015625,
+              59.5337028503418,
+              186.81663513183594,
+              215.05502319335938
+            ],
+            "probability": 0.9995729327201843
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              81.60009765625,
+              69.79307556152344,
+              187.7574005126953,
+              216.7471160888672
+            ],
+            "probability": 0.7786553502082825
+          }
+        },
+        "facenet_cosine": 0.49550992250442505,
+        "arcface_conditioning_cosine": 0.433665007352829,
+        "hole_mae": 0.08016683866529067,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9461028185570411,
+        "psnr_rgb": 29.611941017872585,
+        "hole_psnr": 18.706258034586075,
+        "lpips": 0.03805037587881088,
+        "hole_bbox_lpips": 0.21072745323181152
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            79.55552673339844,
+            78.853271484375,
+            182.23170471191406,
+            212.2430877685547
+          ],
+          "probability": 0.9990860223770142
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            83.0775375366211,
+            70.52458953857422,
+            186.5694580078125,
+            217.3462371826172
+          ],
+          "probability": 0.7537391185760498
+        }
+      }
+    },
+    {
+      "case_id": "holdout_14_eyes",
+      "group": "new_holdout",
+      "arm": "adapted",
+      "sha256": "38f912aa80f31345afa558e03346a4e7475adf2ba8936d624ba8d16ccec98126",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 4.557725453437055,
+        "brisque": 27.04412841796875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              73.72970581054688,
+              64.65709686279297,
+              183.35028076171875,
+              210.12107849121094
+            ],
+            "probability": 0.9953994154930115
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              81.33524322509766,
+              70.925537109375,
+              187.66744995117188,
+              217.4912872314453
+            ],
+            "probability": 0.7378619313240051
+          }
+        },
+        "facenet_cosine": 0.7303019762039185,
+        "arcface_conditioning_cosine": 0.579954981803894,
+        "hole_mae": 0.07040542532802593,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9533492210535407,
+        "psnr_rgb": 30.856607033441254,
+        "hole_psnr": 19.950924050154747,
+        "lpips": 0.04566836729645729,
+        "hole_bbox_lpips": 0.2244253158569336
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            79.55552673339844,
+            78.853271484375,
+            182.23170471191406,
+            212.2430877685547
+          ],
+          "probability": 0.9990860223770142
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            83.0775375366211,
+            70.52458953857422,
+            186.5694580078125,
+            217.3462371826172
+          ],
+          "probability": 0.7537391185760498
+        }
+      }
+    },
+    {
+      "case_id": "holdout_14_strokes",
+      "group": "new_holdout",
+      "arm": "baseline",
+      "sha256": "88b3bd9c45522bbc4321955fbc90bcecdcb972ef384599a476d0cc38fd6599df",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 4.709931989319168,
+        "brisque": 26.79315185546875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              73.7363052368164,
+              70.23741912841797,
+              184.19744873046875,
+              211.85150146484375
+            ],
+            "probability": 0.9974411725997925
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              82.5263671875,
+              70.15200805664062,
+              186.63436889648438,
+              217.2694854736328
+            ],
+            "probability": 0.7506372928619385
+          }
+        },
+        "facenet_cosine": 0.9016748070716858,
+        "arcface_conditioning_cosine": 0.9009671211242676,
+        "hole_mae": 0.02463870396643506,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9890252355789236,
+        "psnr_rgb": 43.45839296919209,
+        "hole_psnr": 29.599181358182676,
+        "lpips": 0.005251581314951181,
+        "hole_bbox_lpips": 0.018419299274683
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            79.55552673339844,
+            78.853271484375,
+            182.23170471191406,
+            212.2430877685547
+          ],
+          "probability": 0.9990860223770142
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            83.0775375366211,
+            70.52458953857422,
+            186.5694580078125,
+            217.3462371826172
+          ],
+          "probability": 0.7537391185760498
+        }
+      }
+    },
+    {
+      "case_id": "holdout_14_strokes",
+      "group": "new_holdout",
+      "arm": "adapted",
+      "sha256": "66cc214f9c5225d399bf48712ddeba50918914b34919ae77249df4eb7aee5e56",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 4.803876967857859,
+        "brisque": 26.40447998046875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              77.92813873291016,
+              78.25789642333984,
+              183.40122985839844,
+              212.6717987060547
+            ],
+            "probability": 0.9997066855430603
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              83.77430725097656,
+              71.03878021240234,
+              186.94947814941406,
+              216.590087890625
+            ],
+            "probability": 0.7515674829483032
+          }
+        },
+        "facenet_cosine": 0.9309724569320679,
+        "arcface_conditioning_cosine": 0.913695216178894,
+        "hole_mae": 0.022934749657438733,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9901879086485431,
+        "psnr_rgb": 44.09460924311843,
+        "hole_psnr": 30.235397632109013,
+        "lpips": 0.005543764214962721,
+        "hole_bbox_lpips": 0.016951147466897964
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            79.55552673339844,
+            78.853271484375,
+            182.23170471191406,
+            212.2430877685547
+          ],
+          "probability": 0.9990860223770142
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            83.0775375366211,
+            70.52458953857422,
+            186.5694580078125,
+            217.3462371826172
+          ],
+          "probability": 0.7537391185760498
+        }
+      }
+    },
+    {
+      "case_id": "holdout_15_eyes",
+      "group": "new_holdout",
+      "arm": "baseline",
+      "sha256": "1c83eef060b9e2472c1496d2a0be3efcf972efe2b068d2b1581cfcadbfde2b72",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 6.080235931205085,
+        "brisque": 42.04315185546875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              67.77996063232422,
+              72.74116516113281,
+              168.8985595703125,
+              206.84951782226562
+            ],
+            "probability": 0.9992800354957581
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              70.35337829589844,
+              75.76406860351562,
+              169.27304077148438,
+              214.47607421875
+            ],
+            "probability": 0.7727367877960205
+          }
+        },
+        "facenet_cosine": 0.46817290782928467,
+        "arcface_conditioning_cosine": 0.3325969874858856,
+        "hole_mae": 0.13091577371689417,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9592046213914855,
+        "psnr_rgb": 25.027703735187572,
+        "hole_psnr": 13.307290323628964,
+        "lpips": 0.024445809423923492,
+        "hole_bbox_lpips": 0.22055482864379883
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            70.68940734863281,
+            81.49921417236328,
+            168.01873779296875,
+            210.64280700683594
+          ],
+          "probability": 0.9999721050262451
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            73.45152282714844,
+            79.99056243896484,
+            167.42529296875,
+            213.89468383789062
+          ],
+          "probability": 0.7539297342300415
+        }
+      }
+    },
+    {
+      "case_id": "holdout_15_eyes",
+      "group": "new_holdout",
+      "arm": "adapted",
+      "sha256": "311d1944bb2348885e845bdffcaecc6cb6bb7def0fc419ab0ba0ad46c15a065e",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 6.650416153856629,
+        "brisque": 42.74871826171875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              71.69384765625,
+              87.43050384521484,
+              162.60714721679688,
+              208.98239135742188
+            ],
+            "probability": 0.9998025298118591
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              73.8134536743164,
+              80.32586669921875,
+              168.00784301757812,
+              214.1591339111328
+            ],
+            "probability": 0.7617528438568115
+          }
+        },
+        "facenet_cosine": 0.45587867498397827,
+        "arcface_conditioning_cosine": 0.618131697177887,
+        "hole_mae": 0.12084626443169859,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9648395394116985,
+        "psnr_rgb": 25.639155681557313,
+        "hole_psnr": 13.918742269998702,
+        "lpips": 0.04289283603429794,
+        "hole_bbox_lpips": 0.33214423060417175
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            70.68940734863281,
+            81.49921417236328,
+            168.01873779296875,
+            210.64280700683594
+          ],
+          "probability": 0.9999721050262451
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            73.45152282714844,
+            79.99056243896484,
+            167.42529296875,
+            213.89468383789062
+          ],
+          "probability": 0.7539297342300415
+        }
+      }
+    },
+    {
+      "case_id": "holdout_15_strokes",
+      "group": "new_holdout",
+      "arm": "baseline",
+      "sha256": "c77b1630b7d795529697c400319029502fe995267842695ecd29b34fa3c16cc4",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 6.118223063812074,
+        "brisque": 41.25262451171875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              70.81453704833984,
+              80.70330810546875,
+              168.410400390625,
+              209.93450927734375
+            ],
+            "probability": 0.9999773502349854
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              73.35435485839844,
+              80.17234802246094,
+              166.92172241210938,
+              213.9697723388672
+            ],
+            "probability": 0.7552112340927124
+          }
+        },
+        "facenet_cosine": 0.9945557117462158,
+        "arcface_conditioning_cosine": 0.9730644226074219,
+        "hole_mae": 0.05251488055754553,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9936853180951551,
+        "psnr_rgb": 38.94632778368003,
+        "hole_psnr": 22.478272818031108,
+        "lpips": 0.002784946234896779,
+        "hole_bbox_lpips": 0.01869528368115425
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            70.68940734863281,
+            81.49921417236328,
+            168.01873779296875,
+            210.64280700683594
+          ],
+          "probability": 0.9999721050262451
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            73.45152282714844,
+            79.99056243896484,
+            167.42529296875,
+            213.89468383789062
+          ],
+          "probability": 0.7539297342300415
+        }
+      }
+    },
+    {
+      "case_id": "holdout_15_strokes",
+      "group": "new_holdout",
+      "arm": "adapted",
+      "sha256": "d332c15cbcc3785eecce5afd85e1ef1a75f2120b1506ea0773ab350c8c4c389c",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 6.199581930483101,
+        "brisque": 41.21258544921875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              69.34678649902344,
+              79.81765747070312,
+              168.1066436767578,
+              210.32615661621094
+            ],
+            "probability": 0.9999871253967285
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              73.384033203125,
+              80.22053527832031,
+              167.09506225585938,
+              213.90853881835938
+            ],
+            "probability": 0.753520131111145
+          }
+        },
+        "facenet_cosine": 0.9927257895469666,
+        "arcface_conditioning_cosine": 0.9727057218551636,
+        "hole_mae": 0.04811925672388938,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.993773368368985,
+        "psnr_rgb": 39.723804177589194,
+        "hole_psnr": 23.255749211940273,
+        "lpips": 0.003154543461278081,
+        "hole_bbox_lpips": 0.02797636017203331
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            70.68940734863281,
+            81.49921417236328,
+            168.01873779296875,
+            210.64280700683594
+          ],
+          "probability": 0.9999721050262451
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            73.45152282714844,
+            79.99056243896484,
+            167.42529296875,
+            213.89468383789062
+          ],
+          "probability": 0.7539297342300415
+        }
+      }
+    },
+    {
+      "case_id": "holdout_16_eyes",
+      "group": "new_holdout",
+      "arm": "baseline",
+      "sha256": "1b4c706e440a442b3baf912a59df9127b958e807df9f5842fbf65cf3aafe051b",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 6.403985706265847,
+        "brisque": 43.54412841796875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              74.13616943359375,
+              73.64051055908203,
+              178.7794647216797,
+              210.0435333251953
+            ],
+            "probability": 0.9999629259109497
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              76.98826599121094,
+              74.92647552490234,
+              177.72708129882812,
+              209.63864135742188
+            ],
+            "probability": 0.8440505266189575
+          }
+        },
+        "facenet_cosine": 0.4414106011390686,
+        "arcface_conditioning_cosine": 0.5804743766784668,
+        "hole_mae": 0.06742696197227513,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9808108320297563,
+        "psnr_rgb": 32.879537979269784,
+        "hole_psnr": 19.52342790990447,
+        "lpips": 0.012828938663005829,
+        "hole_bbox_lpips": 0.09738610684871674
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            74.06061553955078,
+            72.49696350097656,
+            176.072021484375,
+            211.00965881347656
+          ],
+          "probability": 0.9999830722808838
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            77.39640045166016,
+            74.16065979003906,
+            177.6318817138672,
+            210.18106079101562
+          ],
+          "probability": 0.8576084971427917
+        }
+      }
+    },
+    {
+      "case_id": "holdout_16_eyes",
+      "group": "new_holdout",
+      "arm": "adapted",
+      "sha256": "457a6ce855cf37431e426bd8ff38037f3d6df3f7cb561ea1e2f895f2f90fc1a7",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 6.911368302216735,
+        "brisque": 43.74822998046875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              75.5265121459961,
+              76.49652862548828,
+              177.2323760986328,
+              209.1635284423828
+            ],
+            "probability": 0.9994756579399109
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              77.04539489746094,
+              76.45819091796875,
+              177.27688598632812,
+              209.96517944335938
+            ],
+            "probability": 0.8506507277488708
+          }
+        },
+        "facenet_cosine": 0.3909658193588257,
+        "arcface_conditioning_cosine": 0.7129526138305664,
+        "hole_mae": 0.07011348271408144,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9834629271607461,
+        "psnr_rgb": 31.988503375301622,
+        "hole_psnr": 18.63239330593631,
+        "lpips": 0.01671454682946205,
+        "hole_bbox_lpips": 0.16058534383773804
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            74.06061553955078,
+            72.49696350097656,
+            176.072021484375,
+            211.00965881347656
+          ],
+          "probability": 0.9999830722808838
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            77.39640045166016,
+            74.16065979003906,
+            177.6318817138672,
+            210.18106079101562
+          ],
+          "probability": 0.8576084971427917
+        }
+      }
+    },
+    {
+      "case_id": "holdout_16_strokes",
+      "group": "new_holdout",
+      "arm": "baseline",
+      "sha256": "6393d7c7b6f78de0f9a6227a1b01d315e1dd8d0842768482ad464d542d83e01d",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 6.496026046334239,
+        "brisque": 43.61639404296875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              76.24649810791016,
+              76.00047302246094,
+              178.51708984375,
+              210.0965118408203
+            ],
+            "probability": 0.999980092048645
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              77.3515396118164,
+              74.25852966308594,
+              177.60354614257812,
+              210.1499481201172
+            ],
+            "probability": 0.8565716743469238
+          }
+        },
+        "facenet_cosine": 0.9732966423034668,
+        "arcface_conditioning_cosine": 0.9868687391281128,
+        "hole_mae": 0.019379478699110164,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9980145125597909,
+        "psnr_rgb": 50.073289938298245,
+        "hole_psnr": 31.099271555821993,
+        "lpips": 0.0009423581650480628,
+        "hole_bbox_lpips": 0.009933962486684322
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            74.06061553955078,
+            72.49696350097656,
+            176.072021484375,
+            211.00965881347656
+          ],
+          "probability": 0.9999830722808838
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            77.39640045166016,
+            74.16065979003906,
+            177.6318817138672,
+            210.18106079101562
+          ],
+          "probability": 0.8576084971427917
+        }
+      }
+    },
+    {
+      "case_id": "holdout_16_strokes",
+      "group": "new_holdout",
+      "arm": "adapted",
+      "sha256": "630c5b92d7eab03244be7e0aebad3836948adeb06d0f45239964781646207ff2",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 6.64354853561469,
+        "brisque": 43.55731201171875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              77.59660339355469,
+              76.11566162109375,
+              179.04173278808594,
+              209.61456298828125
+            ],
+            "probability": 0.9999814033508301
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              77.40696716308594,
+              74.45299530029297,
+              177.5765838623047,
+              210.15951538085938
+            ],
+            "probability": 0.8563408851623535
+          }
+        },
+        "facenet_cosine": 0.9662822484970093,
+        "arcface_conditioning_cosine": 0.9879601001739502,
+        "hole_mae": 0.019489723600283483,
+        "visible_mae": 0.0,
+        "ssim_rgb": 0.9979870816055739,
+        "psnr_rgb": 49.80105353000268,
+        "hole_psnr": 30.82703514752643,
+        "lpips": 0.0008320551132783294,
+        "hole_bbox_lpips": 0.011094390414655209
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            74.06061553955078,
+            72.49696350097656,
+            176.072021484375,
+            211.00965881347656
+          ],
+          "probability": 0.9999830722808838
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            77.39640045166016,
+            74.16065979003906,
+            177.6318817138672,
+            210.18106079101562
+          ],
+          "probability": 0.8576084971427917
+        }
+      }
+    },
+    {
+      "case_id": "photo_01_central_missing",
+      "group": "previous_diagnostic",
+      "arm": "baseline",
+      "sha256": "f916ad373dfb8a2e6404a1ad69ec4a5fae6fbd1ad00cd56b8a22aebc2f4a179e",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 6.091263634713956,
+        "brisque": 31.10028076171875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              65.96561431884766,
+              69.86542510986328,
+              164.1490478515625,
+              203.3896026611328
+            ],
+            "probability": 0.9982118606567383
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              63.905845642089844,
+              69.8281478881836,
+              167.34774780273438,
+              214.55917358398438
+            ],
+            "probability": 0.8018295764923096
+          }
+        },
+        "facenet_cosine": 0.3626192808151245,
+        "arcface_conditioning_cosine": 0.31688666343688965,
+        "hole_mae": 0.1366155123017868,
+        "visible_mae": 0.0007744716675426864,
+        "ssim_rgb": 0.9436578885823392,
+        "psnr_rgb": 26.026214663192956,
+        "hole_psnr": 14.355721010057987,
+        "lpips": 0.050743669271469116,
+        "hole_bbox_lpips": 0.20607495307922363
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            64.72075653076172,
+            67.42989349365234,
+            172.429443359375,
+            221.11781311035156
+          ],
+          "probability": 0.9996774196624756
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            66.07623291015625,
+            68.9881591796875,
+            164.24476623535156,
+            215.0271453857422
+          ],
+          "probability": 0.8383973836898804
+        }
+      }
+    },
+    {
+      "case_id": "photo_01_central_missing",
+      "group": "previous_diagnostic",
+      "arm": "adapted",
+      "sha256": "09a97e76e9f6bf81d25c129f4289d0af4252f5164fcd379aa4feae050c831960",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 7.492776832741624,
+        "brisque": 29.97674560546875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              72.8537826538086,
+              90.16938018798828,
+              165.9685516357422,
+              212.6996307373047
+            ],
+            "probability": 0.9885934591293335
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              66.09849548339844,
+              73.86997985839844,
+              168.9514617919922,
+              213.57492065429688
+            ],
+            "probability": 0.7965929508209229
+          }
+        },
+        "facenet_cosine": 0.5558362603187561,
+        "arcface_conditioning_cosine": 0.6754222512245178,
+        "hole_mae": 0.16252180644337508,
+        "visible_mae": 0.0007744716675426864,
+        "ssim_rgb": 0.9491606935413982,
+        "psnr_rgb": 24.878727089927935,
+        "hole_psnr": 13.119031272948137,
+        "lpips": 0.061958931386470795,
+        "hole_bbox_lpips": 0.4040146470069885
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            64.72075653076172,
+            67.42989349365234,
+            172.429443359375,
+            221.11781311035156
+          ],
+          "probability": 0.9996774196624756
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            66.07623291015625,
+            68.9881591796875,
+            164.24476623535156,
+            215.0271453857422
+          ],
+          "probability": 0.8383973836898804
+        }
+      }
+    },
+    {
+      "case_id": "photo_02_central_missing",
+      "group": "previous_diagnostic",
+      "arm": "baseline",
+      "sha256": "330feb7a24c0ae01d984114a4e8eb1fa80af2a018e87e5d95bae076f3703f928",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 4.941783261932653,
+        "brisque": 27.48504638671875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              83.66244506835938,
+              59.57111358642578,
+              191.90805053710938,
+              205.87161254882812
+            ],
+            "probability": 0.9944714307785034
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              85.41368865966797,
+              58.32649612426758,
+              197.33596801757812,
+              210.1759796142578
+            ],
+            "probability": 0.7535930871963501
+          }
+        },
+        "facenet_cosine": 0.2755480408668518,
+        "arcface_conditioning_cosine": 0.3962565064430237,
+        "hole_mae": 0.14968134262251911,
+        "visible_mae": 0.0009217195773021208,
+        "ssim_rgb": 0.9376786812954062,
+        "psnr_rgb": 25.845298622513774,
+        "hole_psnr": 14.213166471912276,
+        "lpips": 0.08440162241458893,
+        "hole_bbox_lpips": 0.15689830482006073
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            90.6695785522461,
+            80.7852783203125,
+            193.0463409423828,
+            208.56015014648438
+          ],
+          "probability": 0.9999275207519531
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            86.39022064208984,
+            58.02915573120117,
+            195.82492065429688,
+            209.8940887451172
+          ],
+          "probability": 0.8061943054199219
+        }
+      }
+    },
+    {
+      "case_id": "photo_02_central_missing",
+      "group": "previous_diagnostic",
+      "arm": "adapted",
+      "sha256": "94d304daf5f4101a65bfa1433de563ae046b1fdd8c08f96ad1881e1374c2bad9",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 4.818595178198908,
+        "brisque": 27.19940185546875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              75.91062927246094,
+              49.494293212890625,
+              189.8055877685547,
+              198.82058715820312
+            ],
+            "probability": 0.9805077910423279
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              82.13756561279297,
+              60.76001739501953,
+              197.09146118164062,
+              208.96353149414062
+            ],
+            "probability": 0.7496761679649353
+          }
+        },
+        "facenet_cosine": 0.025514012202620506,
+        "arcface_conditioning_cosine": 0.568810760974884,
+        "hole_mae": 0.13252060938335447,
+        "visible_mae": 0.0009217195773021208,
+        "ssim_rgb": 0.9458104332143469,
+        "psnr_rgb": 26.901638401020502,
+        "hole_psnr": 15.389589929853615,
+        "lpips": 0.07651452720165253,
+        "hole_bbox_lpips": 0.210495725274086
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            90.6695785522461,
+            80.7852783203125,
+            193.0463409423828,
+            208.56015014648438
+          ],
+          "probability": 0.9999275207519531
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            86.39022064208984,
+            58.02915573120117,
+            195.82492065429688,
+            209.8940887451172
+          ],
+          "probability": 0.8061943054199219
+        }
+      }
+    },
+    {
+      "case_id": "photo_03_central_missing",
+      "group": "previous_diagnostic",
+      "arm": "baseline",
+      "sha256": "ae1a93a77e66b5d543c26f9ad30eef01f50f275c1e3c872543428e9409111c01",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 5.099809450085159,
+        "brisque": 33.12176513671875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              97.0999526977539,
+              70.53205871582031,
+              203.48533630371094,
+              220.55934143066406
+            ],
+            "probability": 0.9999752044677734
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              100.47586822509766,
+              62.01616287231445,
+              204.15960693359375,
+              219.66104125976562
+            ],
+            "probability": 0.7890094518661499
+          }
+        },
+        "facenet_cosine": 0.4820072054862976,
+        "arcface_conditioning_cosine": 0.5077304840087891,
+        "hole_mae": 0.11253034547152192,
+        "visible_mae": 0.0008650628537521462,
+        "ssim_rgb": 0.9465995807129034,
+        "psnr_rgb": 27.549439928220863,
+        "hole_psnr": 16.135939076970068,
+        "lpips": 0.06980186700820923,
+        "hole_bbox_lpips": 0.1509147584438324
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            98.4122314453125,
+            66.45293426513672,
+            206.34286499023438,
+            218.66798400878906
+          ],
+          "probability": 0.9999998807907104
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            102.13560485839844,
+            64.74689483642578,
+            202.99485778808594,
+            219.1993408203125
+          ],
+          "probability": 0.8238337635993958
+        }
+      }
+    },
+    {
+      "case_id": "photo_03_central_missing",
+      "group": "previous_diagnostic",
+      "arm": "adapted",
+      "sha256": "b6f4a4ebf3bf9a44383027306b1dcf67c1e04b52f0a8f551174c474fe7eece37",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 6.139964590054716,
+        "brisque": 32.73065185546875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              98.185791015625,
+              83.62508392333984,
+              197.1311798095703,
+              216.0286102294922
+            ],
+            "probability": 0.9979884624481201
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              101.08018493652344,
+              64.77534484863281,
+              202.04733276367188,
+              217.9307098388672
+            ],
+            "probability": 0.7877404689788818
+          }
+        },
+        "facenet_cosine": 0.27729281783103943,
+        "arcface_conditioning_cosine": 0.7562842965126038,
+        "hole_mae": 0.1220088263225518,
+        "visible_mae": 0.0008650628537521462,
+        "ssim_rgb": 0.9523133167570901,
+        "psnr_rgb": 27.004510003615486,
+        "hole_psnr": 15.511952654922876,
+        "lpips": 0.07003992050886154,
+        "hole_bbox_lpips": 0.2983255982398987
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            98.4122314453125,
+            66.45293426513672,
+            206.34286499023438,
+            218.66798400878906
+          ],
+          "probability": 0.9999998807907104
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            102.13560485839844,
+            64.74689483642578,
+            202.99485778808594,
+            219.1993408203125
+          ],
+          "probability": 0.8238337635993958
+        }
+      }
+    },
+    {
+      "case_id": "photo_04_central_missing",
+      "group": "previous_diagnostic",
+      "arm": "baseline",
+      "sha256": "08e25e3f9dcacaacc168dcfaed45ddd596d11e9323ce76bf431825b486db3d0c",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 7.708533316346342,
+        "brisque": 37.51483154296875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              78.36686706542969,
+              77.48725891113281,
+              179.473388671875,
+              206.32591247558594
+            ],
+            "probability": 0.9999865293502808
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              82.79255676269531,
+              80.43905639648438,
+              175.76553344726562,
+              209.2871551513672
+            ],
+            "probability": 0.8579232096672058
+          }
+        },
+        "facenet_cosine": 0.5451927185058594,
+        "arcface_conditioning_cosine": 0.5785356760025024,
+        "hole_mae": 0.3451130423679443,
+        "visible_mae": 0.0009244215689997728,
+        "ssim_rgb": 0.9345013206122105,
+        "psnr_rgb": 19.9828395768478,
+        "hole_psnr": 8.0473794066274,
+        "lpips": 0.0812152698636055,
+        "hole_bbox_lpips": 0.27904877066612244
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            82.60297393798828,
+            80.25390625,
+            175.09800720214844,
+            208.5442657470703
+          ],
+          "probability": 0.9990515112876892
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            84.60125732421875,
+            78.84599304199219,
+            175.74624633789062,
+            208.9169158935547
+          ],
+          "probability": 0.8639435768127441
+        }
+      }
+    },
+    {
+      "case_id": "photo_04_central_missing",
+      "group": "previous_diagnostic",
+      "arm": "adapted",
+      "sha256": "3bbe753acf5c279be631fca92d5f92753bbdc581a225f6d20befe10adcff9e9c",
+      "outside_exact": true,
+      "metrics": {
+        "niqe": 8.200257730155315,
+        "brisque": 37.85174560546875,
+        "detections": {
+          "facenet": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              76.43624114990234,
+              91.3093490600586,
+              175.694580078125,
+              204.22100830078125
+            ],
+            "probability": 0.9482760429382324
+          },
+          "arcface_conditioning": {
+            "face_count": 1,
+            "status": "ok",
+            "box": [
+              85.5643539428711,
+              82.36084747314453,
+              174.52212524414062,
+              208.75637817382812
+            ],
+            "probability": 0.8317869901657104
+          }
+        },
+        "facenet_cosine": 0.5301641225814819,
+        "arcface_conditioning_cosine": 0.5841752290725708,
+        "hole_mae": 0.2237196645039782,
+        "visible_mae": 0.0009244215689997728,
+        "ssim_rgb": 0.9466258071879038,
+        "psnr_rgb": 22.442420404939057,
+        "hole_psnr": 10.59012096431385,
+        "lpips": 0.06816506385803223,
+        "hole_bbox_lpips": 0.2512825131416321
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            82.60297393798828,
+            80.25390625,
+            175.09800720214844,
+            208.5442657470703
+          ],
+          "probability": 0.9990515112876892
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            84.60125732421875,
+            78.84599304199219,
+            175.74624633789062,
+            208.9169158935547
+          ],
+          "probability": 0.8639435768127441
+        }
+      }
+    }
+  ],
+  "decision": "Not automatically promoted. Read paired results and inspect failures; low-resolution targets do not validate high-resolution facial detail.",
+  "protocol_sha256": "f9ff4cf8b2c9d78f246d8b7e10fb6f9f0e7025ff03cc2d8f7c1e61d5a9f7dfb6",
+  "training_sha256": "081e601eea5dcb06c0f50f06f7ed58df2360567637485e2d3daff3afe2a300be",
+  "script_sha256": "b704dfba0e9af4ef65e66afa856d29b7ee23bb7f85f67a1fba1e3dd5a15c5ae9"
+}

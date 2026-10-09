@@ -1,4 +1,6 @@
-Latest numeric presentation: [5 October 2026 results](Facial_Inpainting_Results_2026-10-05.pptx). 20 slides covering the problem statement, editable architecture, training algorithm, corruption protocol, labelled historical seven-corruption results, v4/v5 results, metric definitions, official-input encoding diagnostic, hardware limits and linked papers. No dataset photos are embedded.
+Latest public photo-free presentation: [5 October 2026 results](Facial_Inpainting_Results_2026-10-05.pptx). This dated 20-slide snapshot covers architecture, training, corruption, v4/v5, metrics, official-input encoding and papers. Dataset photos are excluded.
+
+**10 October update:** newer masked-inpainting and repeated eye-guidance results are available in the [research index](../research/README.md), [release tables](../research/releases/2026-10-10/README.md) and [project report](../PROJECT_REPORT.md). The public deck retains its original protocol/date. The separate **Facial Inpainting - Small Batch Test - 2026-10-09.pptx** has 20 slides with three-person images, architecture, methods and values and remains in the original laptop's Downloads. Later CFG3/appearance/texture studies have not been added to that illustrated deck. Restricted dataset-image redistribution was not authorized.
 
 # Research results presentation
 

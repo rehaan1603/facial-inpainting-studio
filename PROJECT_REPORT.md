@@ -1,12 +1,81 @@
 # Facial Inpainting Project — Progress and Completion Report
 
-**Report date:** 5 October 2026
+**Report date:** 10 October 2026
 **Current platform:** Windows laptop, NVIDIA RTX 5070 Laptop GPU with 8 GB VRAM  
-**Current application:** http://127.0.0.1:8765/  
+**Current application:** http://127.0.0.1:8766/ (updated testing build); original http://127.0.0.1:8765/ remains running
 **Repository:** https://github.com/rehaan1603/facial-inpainting-studio  
 **Status:** Working local research baseline; proposed multi-reference research method and final validation incomplete. Public hosting paused at the owner's request.
 
 ## Latest status update
+
+### 10 October: organized repository release and verification
+
+The current GitHub release on `codex/local-studio-checkpoint` includes the completed masked-task audit, three-person reference studies, repeated guidance comparison, unsuccessful appearance/texture experiments, optional app control and the earlier spatial-rejection diagnostic. New [research](research/README.md), [script](scripts/README.md) and [review](review/README.md) indexes provide direct navigation. [Release evidence](research/releases/2026-10-10/README.md) contains photo-free per-output metrics, failures/nulls, hashes and four live website replay receipts.
+
+Release checks pass **33 targeted tests**, parse **356 Python files**, and verify **81 completed image records** across nine experiment folders (including reused outputs). Guidance and appearance provenance checks pass; the frozen research generator hash is unchanged. These are release checks rather than new quality measurements. Optional single-image edge matching now retains the raw reconstruction with an explicit warning if its worker fails, times out or returns no receipt; five finishing tests include the actual worker and failure paths.
+
+The updated local testing build remains at **http://127.0.0.1:8766/**. Start Studio continues to start/reuse **8765**; after a laptop restart it loads current code there. Restricted photographs, personal uploads, reference arrays, downloaded weights and environments remain local. Existing checkpoints and experimental output files are retained. Public PPTs keep their original dates; the illustrated three-person deck remains local. This release publishes the current implementation and evidence while the remaining quality/validation work below continues.
+
+### 9–10 October: eye SSIM replication and appearance-conditioning investigation
+
+Completed two isolated seed-17 tests on the same three people: lower classifier-free guidance (5 → 3) and DDIM → Euler at guidance 5. Lower guidance improves all six matched mean measures; Euler reduces mean identity and is not selected. The neutral guidance replay matches both original raw and finished images byte-for-byte. Original inputs, reference order, masks, checkpoints, evaluator and website defaults are preserved.
+
+Then repeated the guidance-only comparison across the fixed seeds **17, 29 and 43**: **18/18 outputs and scores**, including 12 new GPU reconstructions and six hash-verified reused images. All 18 have valid FaceNet and ArcFace measurements, no visible-pixel changes, and reused metrics reproduce with zero difference. These are nine paired outputs from **three development people**, not nine independent identities or unknown-client accuracy.
+
+| Matched eye-hole metric | CFG 5 control | CFG 3 candidate |
+|---|---:|---:|
+| Hole PSNR ↑ | 17.01785 | 17.82148 |
+| Hole SSIM ↑ | 0.41415 | 0.43310 |
+| Hole contextual LPIPS ↓ | 0.20144 | 0.19185 |
+| Anatomical-eye contextual LPIPS ↓ | 0.15958 | 0.14498 |
+| FaceNet cosine ↑ | 0.76920 | 0.79887 |
+| ArcFace cosine ↑ | 0.76072 | 0.78508 |
+
+SSIM improves in **8/9** pairs and PSNR in **9/9**. All six three-seed means improve for persons 263 and 6681. Person **10149** still loses **0.01362 mean FaceNet cosine**; iris colour, gaze and eyebrow discrepancies remain visible. Therefore no universal website default has been changed. SSIM and identity cosine are not correctness percentages. Supplementary anatomical-eye SSIM uses small annotated regions with limited valid windows and must not be confused with the larger eye-hole SSIM above.
+
+Local three-person folders now include **Experimental - Eye fidelity** and **Experimental - CFG 3 repeated seeds**, with every output and comparison labelled. See [three-seed results](research/FOCUSED_EYE_GUIDANCE_REPLICATION_RESULTS_V2.md), [verification](research/focused_eye_guidance_replication_v2_verification.json) and [sampler comparison](research/FOCUSED_EYE_FIDELITY_RESULTS_V1.md).
+
+**Appearance investigation completed:** added a fixed 0.2 pretrained visual-reference branch alongside the unchanged 0.8 FaceID branch, using the same four real photos. At CFG 5, three-person seed-17 hole SSIM decreases **0.42835 → 0.42350** despite improved mean LPIPS and identity. Completing the fixed four-arm comparison at CFG 3 improves mean LPIPS further, but loses SSIM and ArcFace relative to CFG 3 alone. Neither appearance arm is deployed. Both zero-appearance raw/final replays match their controls byte-for-byte; all six candidates have valid identity measures and exact visible pixels. The initial CPU encoder dtype failure is retained with its log and runner snapshot. [Appearance results](research/FOCUSED_EYE_APPEARANCE_RESULTS_V1.md) · [four-arm results](research/FOCUSED_EYE_FACTORIAL_RESULTS_V1.md) · [verification](research/focused_eye_appearance_verification_v1.json).
+
+**Spatial texture prototype rejected:** visible-anchor registration and fixed eye/brow texture transfer complete for all three people, but cause local misalignment, double-detail or eyelid-expression errors. Against the CFG 3 scaffold, hole SSIM decreases **0.45454 → 0.40762**, and all six mean measures worsen. Zero-transfer bitmap equivalence, exact regeneration and visible-pixel preservation pass; these checks establish implementation correctness, not improved quality. Labelled rejected outputs remain in the local sets and [full results](research/FOCUSED_EYE_TEXTURE_RESULTS_V1.md). Global recognition/appearance cues and visible-anchor fits do not establish spatial correspondence in hidden eyes.
+
+**Optional local app comparison verified:** the updated build at **http://127.0.0.1:8766/** exposes an unchecked **Gentler eye details** option only for 1024 reference inference with opaque-cover removal. It changes CFG 5 to 3; other methods and defaults are preserved. Four real HTTP/GPU reconstructions pass raw/final byte-exact replay and exact visible-pixel checks; 22 boundary tests pass. Browser checks confirm default-off and reset/hide behavior outside the supported mode. The three actual website outputs and instructions are in **Website - Gentler details** inside each existing test set. [App verification and instructions](research/GENTLER_REFERENCE_WEBSITE_V1.md). Automatic approval review rejected stopping/restarting 8765 with "blocked by policy"; that original server remains running.
+
+**Remaining quality work:** establish trustworthy local pose/expression correspondence and reference reliability before transferring eye/brow detail; keep a safe fallback. Iris colour, gaze and eyebrow fidelity are still unresolved, and person10149's guidance-only identity regression remains. Further corrupted-reference checks, unseen-person validation and reserved final evaluation follow a promising fixed development result. No new training was performed in the focused continuation, no checkpoints were replaced, and no percentage accuracy or matched paper superiority is inferred from these three-person tests. The 10 October repository release includes this evidence; the local illustrated PPT retains its 9 October snapshot.
+
+### 9 October: focused reference reconstruction on three people
+
+Created three local ready-to-test folders for identities263,6681,10149, each containing four real reference photos, an erased-eye test, an erased-mouth test, masks, an evaluation-only original and labelled comparisons. Source images and checkpoints remain unchanged.
+
+Completed the fixed SDXL512 diagnostic: **36 outputs from48 attempts**, with12 reference-detection failures retained for identity7400. The1024 comparison completed6 of8 attempts with the same reference failure. On the three jointly usable identities at seed17, the tested **1024 + boundary blending** settings improve average hole PSNR/SSIM/LPIPS and identity over512 hard composition. Eye FaceNet rises **0.70956→0.76428**, and eye-hole crop LPIPS falls **0.45963→0.19378**. Mouth FaceNet rises **0.87103→0.91241**. These are development similarities, not accuracy percentages; gaze and expression remain imperfect.
+
+All **three actual website eye reconstructions** completed and were byte-exact matches to the offline candidate, with visible pixels preserved. The local server is running at http://127.0.0.1:8765/. Existing global defaults have not been changed. A separate scale0.4 probe improved average metrics but reduced FaceNet for person10149 by0.06276; it remains an experimental alternative rather than a promoted setting. Read-only integration checks found no reference-shape or conditioning-order bug.
+
+[Focused results and test instructions](research/FOCUSED_REFERENCE_RESULTS_V1.md) · [Fixed strength probe](research/FOCUSED_REFERENCE_STRENGTH_PREFLIGHT_V1.md). Test packs are in `Downloads/All Face Datasets/Ready to test sets/Reference reconstruction - 3 people - 2026-10-09/`.
+
+### 8 October: actual erased-region capability diagnostic completed
+
+Completed **96 matched ReF-LDM reconstructions**, **8 native ResShift controls** and **one byte-exact restoration replay**. The test uses four existing development identities, erased eye/mouth regions, three seeds and clean/corrupted references. All 104 composites preserve visible pixels exactly; eight inputs pass hidden-pixel invariance. Existing checkpoints and production behavior are unchanged.
+
+The restoration baseline and unchanged v5 adapter largely retain blank regions in the inspected comparisons. Clean erased-eye hole LPIPS is **0.703150 → 0.703034**, while FaceNet is **0.519036 → 0.523102**; these small changes do not establish functioning reconstruction. With corrupted eye references, both measures worsen. Native mask-conditioned ResShift generates facial features but retains identity/gaze/expression errors. Its different resolution and reference-free setup make it a functional control, not a matched paper benchmark.
+
+**Next:** evaluate the existing mask-conditioned reference-guided SDXL path on the frozen cases before selecting an isolated training intervention. The proposed ReF-LDM masked-loss pilot remains conditional and has not started because its functional prerequisite failed. Whole-image restoration scores must not be presented as missing-region reconstruction results.
+
+[Full masked-task results](research/MASKED_TASK_RESULTS_V1.md) · [Protocol](research/MASKED_TASK_PREFLIGHT_V1.md) · [Audit and experiment plan](research/MASKED_INPAINTING_AUDIT_AND_PLAN_20261008.md).
+
+### 6 October: spatial reference-rejection diagnostic completed
+
+Completed **48 new GPU reconstructions**, **eight byte-exact neutral replays**, and **72 scored rows**, including 24 hash-verified reused baseline controls. Four mechanism tests and two paired-statistics tests pass. Inspected all eight comparison sheets. No training or production changes occurred.
+
+The fixed intervention rejects the central quarter of the first reference's attention tokens, using the known corrupted-patch location. An equal-area seeded corner mask provides a spatial control; both are tested on four observed development identities, three inference seeds and clean/corrupted references.
+
+- With corrupted references, paired FaceNet rises **0.90932 → 0.91303** over 11 valid pairs, but only **4/11 individual pairs improve**. LPIPS worsens **0.27769 → 0.27860**, and eye LPIPS worsens **0.12800 → 0.13333**. PSNR/SSIM increase slightly. ArcFace has 8/12 valid pairs.
+- With clean references, FaceNet falls **0.91497 → 0.91022** and LPIPS worsens **0.27725 → 0.27855**. Oracle-region rejection also has worse corrupted-reference eye LPIPS than the random-corner control (**0.13333 vs 0.12623**).
+- Two intervention FaceNet detections are unavailable and remain explicit. Comparison means use matched available pairs. The known region is an oracle input, not an automatic unknown-image detector; encoder receptive fields can spread corruption beyond the masked token window.
+
+**Decision:** hard regional exclusion does not meet the combined quality requirements and is not deployed. Before training a localization gate, investigate query-local or softer attenuation with a fixed control protocol and account for useful eye information lost by rejection. Broader validation remains contingent on a promising development result. See [results and interpretation](research/SPATIAL_REFERENCE_REJECTION_RESULTS_V1.md), [fixed protocol](research/SPATIAL_REFERENCE_REJECTION_PREFLIGHT_V1.md) and [verification](research/spatial_reference_rejection_v1_verification.json).
+
+The latest local illustrated PPT has **32 slides** with checked values and historical results kept under their original protocols. Complete review notes and 42 faculty questions are available in `review/REVIEW_NOTES_2026-10-06.md`. These research changes are local and have not been pushed in this continuation.
 
 ### 5 October: expanded encoding and reference-rejection diagnostics completed
 
@@ -362,7 +431,7 @@ These timings describe individual checks, not a population latency benchmark. Fu
 
 ### 2.5 Repository and hosting
 
-Code, local refiner checkpoints, experiment records, provenance and reproduction instructions are in the repository. The latest research release is `fcb8426` on `codex/local-studio-checkpoint`, including the identity-objective ablation, numerical results, execution provenance and photo-free presentation. This report update follows that release. Restricted photographs and pretrained weights remain local; unrelated pending UI/Human Faces changes are outside the research release.
+Code, existing project-trained artifacts, experiment records, provenance and reproduction instructions are in the repository. The 10 October release on `codex/local-studio-checkpoint` includes the current application updates, masked SDXL studies, eye-fidelity experiments and explicit release verification. Earlier research releases remain in Git history. Restricted photographs, reference features and downloaded weights remain local. The separate Human Faces pilot code/results are retained and labelled outside the main CelebA findings.
 
 Temporary public sharing was implemented and an HTTPS GPU test completed. The in-app browser then exposed sign-in compatibility problems. Public sharing is now stopped, its homepage link removed, and further hosting work deferred. The local app requires no sign-in. The paused hosting investigation is not a blocker for local research.
 
@@ -382,7 +451,7 @@ The measurement baseline is substantially stronger, but the research is not yet 
 
 ## 4. Remaining work
 
-**Reconciled on 5 October 2026 with completed v3 crop, v4 gradient-balance, v5 timestep, expanded encoding and oracle reference-rejection diagnostics.** The dated reports preserve all results. Research improvement is work in progress. The additional Human Faces dataset work remains set aside.
+**Reconciled on 10 October 2026 with the completed masked-task diagnostic, focused three-person reference comparisons, guidance replication, appearance/texture results and application integration.** Earlier v2–v5 restoration and rejection studies remain under their original protocols. Research improvement is work in progress. The additional Human Faces dataset work remains separate.
 
 | Area | Current evidence and remaining work | Status |
 |---|---|---|
@@ -391,14 +460,14 @@ The measurement baseline is substantially stronger, but the research is not yet 
 | Reference robustness | Compression failure diagnosed; studio ReF-LDM now validates one face per reference and frames rectangular uploads without distortion. Broader poor-quality, pose and expression handling still needs matched validation with failures retained | Basic client checks implemented; broader validation pending |
 | Local correspondence | Five-point similarity and eight regional features implemented; 22/24 initial cases detected; 3D pose/expression/occlusion unresolved | Prototype complete |
 | Local fusion | Six-policy, two-seed 48-row comparison complete; no multi-metric advantage established | Negative/mixed result |
-| Learned adapter | The intervention/regional and v2–v5 GPU experiments are complete, including cropped FaceNet supervision, balanced identity coverage, gradient capping and timestep scaling. None meets the combined quality requirement. Oracle whole-reference removal also trades identity gains for perceptual loss. Spatial reference rejection feasibility, learned localization, final-output objective fidelity and complete ablations remain | Small training experiments complete; quality improvement in progress |
+| Learned adapter | The intervention/regional and v2–v5 restoration studies are complete with trade-offs. The erased-region audit found a functional gap, so current quality work uses mask-conditioned SDXL. Guidance replication improves means but loses FaceNet for one person. Appearance/texture pilots remain unsuccessful; local correspondence/reliability is the next investigation | Earlier adapters and new inference diagnostics complete; consistent quality improvement remains |
 | Confidence UI | Prior generation/download checks passed. Current update fixes stale state, upload races, evidence suggestions/transparency, and missing-area strength selection; new HTTP/GPU checks pass. Current main/evidence browser flows are verified with real generated images, matching references, downloads and state invalidation | Implemented and browser verified |
 | Runtime reliability | Original native/OpenCV failures retained; fixed-thread studio retry passed. Two wrapper failures from an unnecessary OpenCV import were fixed and both recovery runs passed. Continue recurrence checks; no universal root-cause claim | Mitigations and recoveries verified |
 | Visual assessment | Prior reviewed studies retained; all four new studio audit sheets reviewed, with coloured holes, retained erasures and facial errors documented. Blinded human evaluation remains | Internal review complete for these runs; human study pending |
 | Candidate selection | Matched 1/2/4 candidate pools, random/identity/quality/combined selection and separate evaluator | Deferred until stable restoration |
 | External comparisons | ReF-LDM completed 24/24 generations and 48/48 native/composed evaluations; new RefFaceInpainting completed 16/16 predictions and 28/28 comparison rows, but fails these missing-feature fidelity controls. Additional relevant comparisons and broader validation remain; paused OSOR results remain delimited | Two external author baselines executed; broad superiority unsupported |
 | Reference encoding | Thirty official-input generations and 35 scored rows complete; one multi-reference identity plus a second single-reference control. Joint encoding trades identity gains for worse perceptual/eye quality, so production is unchanged. Broader author-protocol alignment remains | Diagnostic complete; no default change |
-| Whole-reference rejection | Twenty-four interventions, eight exact replays and 48 scored/control rows complete. Even oracle removal worsens LPIPS in 11/12 corrupted-reference pairs. Next test spatially restricted rejection with matched controls | Diagnostic complete; spatial mechanism pending |
+| Reference rejection | Whole-reference diagnostic: 24 interventions and eight exact replays. Spatial diagnostic: 48 interventions, eight exact replays, 72 scored/control rows and eight inspected sheets. Hard spatial rejection worsens LPIPS and eye quality despite higher mean corrupted-reference FaceNet. No learned gate or website change | Both diagnostics complete; improved attenuation mechanism pending |
 | Reference-risk mechanism | Implemented 16 leave-one-reference-out generations and 12/12 scored controls. Disagreement does not beat edit magnitude on identity or masked error; AUC 0.417–0.533. Revise the mechanism before calibration/training or novelty claims | Diagnostic complete; incremental benefit unsupported |
 | Reference-proxy mechanism | Implemented a reference-only fitted spatial blend; 20 proxy generations and 20 scored images complete. Slight MAE gain versus fixed blending comes with worse identity/gallery/LPIPS. Three new tests pass. Address structural fidelity or develop a justified alternative before further expansion | Diagnostic complete; progression gate not met |
 | Context-support mechanism | New input-only mask-support calibration completed 104 generations, 80 scores, two seeds and eight visual sheets. It loses to fixed-mask and equal-budget controls; small visible probes do not reliably predict missing-feature fidelity. No expansion or website promotion is justified | Implemented and tested; progression gate not met |
@@ -411,8 +480,8 @@ The measurement baseline is substantially stronger, but the research is not yet 
 | Statistical power and data availability | More identity units and independent severity/mask/reference factors needed. Remaining local validation has at most 11 groups with eight photos; official FFHQ-Ref validation only four such predicted groups. Metadata checked without opening new/final pixels. Larger studies need a verified additional cohort or a separately frozen different reference/gallery design | Required before method freeze |
 | Optional metrics | A limited 106-landmark diagnostic is recorded in the structure study. Broader landmark evaluation, FID at adequate sample size and ROC/TAR with adequate verification trials remain | Limited landmark diagnostic complete; broader scope pending |
 | Final evaluation | Require method/parameters/evaluator freeze, independent confirmation, ablations and baseline comparison first. No reserved model generation/evaluation; historical automated duplicate/hash preparation did decode files, disclosed in the history audit | 0/8 model evaluations; no new reserved access |
-| Manuscript and presentation | Latest local illustrated review has 27 slides with restored cover, images and rounded SSIM similarity labels. The current photo-free GitHub presentation has 20 slides. New 5 October diagnostics are recorded in the research reports. Venue selection, manuscript, broader validation and final presentation refresh remain | Presentations updated; manuscript and validation in progress |
-| GitHub release | Published through `1adc24e` before this continuation. This research update adds encoding/rejection scripts, measurements and reports. Restricted photos, feature arrays and weights remain local; unrelated local UI/Human Faces work is excluded | Latest research release pushed; this report follows it |
+| Manuscript and presentation | Public photo-free deck retains the 5 October snapshot; the illustrated 32-slide review remains local. A separate local 20-slide small-batch deck dated 9 October includes architecture, methods and three-person outputs. Later guidance/appearance/texture results are in dated reports and the release tables. Venue choice, manuscript and broader validation remain | Dated presentations retained; manuscript and final validation in progress |
+| GitHub release | The 10 October release contains current app fixes, spatial and masked research, all focused pilot outcomes, review notes, navigation indexes and photo-free metric/hash evidence. Existing private/restricted image and model assets remain local | Organized current code/documentation/evidence release; scientific work remains open |
 | Public hosting | Continue loopback-only use on the laptop | Paused by user |
 
 No single overall project-completion percentage is assigned because successful research findings are not predictable implementation tasks. The explicit measured percentages above separate finished experiments from unsolved quality and publication requirements.

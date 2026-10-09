@@ -1,0 +1,232 @@
+{
+  "date": "2026-10-09",
+  "identities": [
+    "263",
+    "6681",
+    "10149"
+  ],
+  "training": false,
+  "scope": "Three repeated-development identities, one inference seed, clean references; not unknown-client accuracy",
+  "selected_tables": [
+    {
+      "method": "512 hard",
+      "location": "eyes",
+      "n": 3,
+      "hole_psnr": 11.615221283257542,
+      "hole_ssim": 0.408938473912621,
+      "hole_lpips": 0.4596344828605652,
+      "facenet_cosine": 0.7095567186673483,
+      "arcface_conditioning_cosine": 0.7381282647450765
+    },
+    {
+      "method": "512 hard",
+      "location": "mouth",
+      "n": 3,
+      "hole_psnr": 12.831614758111977,
+      "hole_ssim": 0.5364330546069196,
+      "hole_lpips": 0.5567233165105184,
+      "facenet_cosine": 0.8710331122080485,
+      "arcface_conditioning_cosine": 0.8494633436203003
+    },
+    {
+      "method": "1024 hard",
+      "location": "eyes",
+      "n": 3,
+      "hole_psnr": 12.03795458557455,
+      "hole_ssim": 0.39775952310827767,
+      "hole_lpips": 0.37368785341580707,
+      "facenet_cosine": 0.7390259305636088,
+      "arcface_conditioning_cosine": 0.7879568934440613
+    },
+    {
+      "method": "1024 hard",
+      "location": "mouth",
+      "n": 3,
+      "hole_psnr": 13.349168573610177,
+      "hole_ssim": 0.5128041977565023,
+      "hole_lpips": 0.45058056712150574,
+      "facenet_cosine": 0.9008997480074564,
+      "arcface_conditioning_cosine": 0.8856384952863058
+    },
+    {
+      "method": "1024 blended",
+      "location": "eyes",
+      "n": 3,
+      "hole_psnr": 17.019170969804776,
+      "hole_ssim": 0.42835315318459233,
+      "hole_lpips": 0.19378197689851126,
+      "facenet_cosine": 0.7642800609270731,
+      "arcface_conditioning_cosine": 0.7873756090799967
+    },
+    {
+      "method": "1024 blended",
+      "location": "mouth",
+      "n": 3,
+      "hole_psnr": 20.662421784604696,
+      "hole_ssim": 0.5493271227286973,
+      "hole_lpips": 0.23838311433792114,
+      "facenet_cosine": 0.9124143520991007,
+      "arcface_conditioning_cosine": 0.895708163579305
+    }
+  ],
+  "summary_sha256": {
+    "512 hard": "15b28c530f55baac70654f83c31b911e76e9291d6441ae3487deb10360902c0d",
+    "1024 hard": "7e291e4558a512a47507614fee78ee0dbda5e1306e1a7a55048135a8406b3106",
+    "1024 blended": "a335933ea3a0d583e4bffb7a811a1beb0255df41995a284b9756a21bc844bd1d"
+  },
+  "baseline_attempts": 48,
+  "baseline_completions": 36,
+  "baseline_reference_failures": 12,
+  "resolution_attempts": 8,
+  "resolution_completions": 6,
+  "resolution_reference_failures": 2,
+  "limitations": [
+    "Reference-detection failure identity7400 is retained in broader results",
+    "ArcFace conditions FaceID",
+    "Identity cosine is not accuracy percentage",
+    "Gaze and expression may be wrong"
+  ],
+  "website_checks": [
+    {
+      "identity": "263",
+      "job_id": "6195af8fcced4de5889276ef9555ba31",
+      "status": "complete",
+      "seconds": 90.68699999999808,
+      "output": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\outputs\\focused_reference_website_v1\\263_eyes.png",
+      "sha256": "e62df99fbed56d4f69a74d6d6e6eaf80436c5bc79a6bc5ecb076cb3174062c93",
+      "visible_pixels_exact": true,
+      "experiment_replay_exact": true,
+      "result_url": "/runs/6195af8fcced4de5889276ef9555ba31/result.png"
+    },
+    {
+      "identity": "6681",
+      "job_id": "06753dda13264441a785f1748ed64084",
+      "status": "complete",
+      "seconds": 114.65600000000268,
+      "output": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\outputs\\focused_reference_website_v1\\6681_eyes.png",
+      "sha256": "e246ca2084d1a783ee79f59d3ddbccd388f5374ddb40256a7b45318d0ccdfc3e",
+      "visible_pixels_exact": true,
+      "experiment_replay_exact": true,
+      "result_url": "/runs/06753dda13264441a785f1748ed64084/result.png"
+    },
+    {
+      "identity": "10149",
+      "job_id": "3f0896a057a34fc7b1e4ff5be731811c",
+      "status": "complete",
+      "seconds": 110.71900000000096,
+      "output": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\outputs\\focused_reference_website_v1\\10149_eyes.png",
+      "sha256": "cd069b94367c5e5fe0cbb14afe39c39ba849f32dd8a495f4b3f90e584ce82395",
+      "visible_pixels_exact": true,
+      "experiment_replay_exact": true,
+      "result_url": "/runs/3f0896a057a34fc7b1e4ff5be731811c/result.png"
+    }
+  ],
+  "lower_strength_probe": {
+    "selected": false,
+    "reason": "Identity regression for one person; no per-person outcome selection",
+    "pairs": [
+      {
+        "identity": "263",
+        "control": {
+          "psnr": 28.046252613808992,
+          "ssim": 0.9660709617404785,
+          "lpips": 0.019516708329319954,
+          "hole_psnr": 16.413578445325435,
+          "hole_ssim": 0.49426393472099733,
+          "hole_lpips": 0.1683887094259262,
+          "eye_lpips": 0.2069522589445114,
+          "visible_changed": 0,
+          "facenet_cosine": 0.7281097769737244,
+          "arcface_conditioning_cosine": 0.802762508392334
+        },
+        "candidate": {
+          "psnr": 28.51876545251929,
+          "ssim": 0.9672227586550687,
+          "lpips": 0.016030127182602882,
+          "hole_psnr": 16.886091284035732,
+          "hole_ssim": 0.5095639235024755,
+          "hole_lpips": 0.14130955934524536,
+          "eye_lpips": 0.16582688689231873,
+          "visible_changed": 0,
+          "facenet_cosine": 0.7797401547431946,
+          "arcface_conditioning_cosine": 0.8005384206771851
+        },
+        "deltas": {
+          "hole_psnr": 0.4725128387102977,
+          "hole_ssim": 0.015299988781478147,
+          "hole_lpips": -0.027079150080680847,
+          "facenet_cosine": 0.051630377769470215,
+          "arcface_conditioning_cosine": -0.0022240877151489258
+        }
+      },
+      {
+        "identity": "6681",
+        "control": {
+          "psnr": 30.693605667569063,
+          "ssim": 0.9661769503754936,
+          "lpips": 0.015601756051182747,
+          "hole_psnr": 18.91070276324044,
+          "hole_ssim": 0.493392655894572,
+          "hole_lpips": 0.1478424072265625,
+          "eye_lpips": 0.1227782592177391,
+          "visible_changed": 0,
+          "facenet_cosine": 0.7662721872329712,
+          "arcface_conditioning_cosine": 0.786205530166626
+        },
+        "candidate": {
+          "psnr": 32.26849052490973,
+          "ssim": 0.9682344176546768,
+          "lpips": 0.013857189565896988,
+          "hole_psnr": 20.485587620581107,
+          "hole_ssim": 0.5254400857094907,
+          "hole_lpips": 0.12871912121772766,
+          "eye_lpips": 0.0990285575389862,
+          "visible_changed": 0,
+          "facenet_cosine": 0.8455770015716553,
+          "arcface_conditioning_cosine": 0.8338212966918945
+        },
+        "deltas": {
+          "hole_psnr": 1.5748848573406669,
+          "hole_ssim": 0.03204742981491876,
+          "hole_lpips": -0.01912328600883484,
+          "facenet_cosine": 0.07930481433868408,
+          "arcface_conditioning_cosine": 0.047615766525268555
+        }
+      },
+      {
+        "identity": "10149",
+        "control": {
+          "psnr": 26.797704016427907,
+          "ssim": 0.9461171920373369,
+          "lpips": 0.03771750628948212,
+          "hole_psnr": 15.733231700848451,
+          "hole_ssim": 0.2974028689382077,
+          "hole_lpips": 0.26511481404304504,
+          "eye_lpips": 0.183848574757576,
+          "visible_changed": 0,
+          "facenet_cosine": 0.7984582185745239,
+          "arcface_conditioning_cosine": 0.7731587886810303
+        },
+        "candidate": {
+          "psnr": 27.4517579057809,
+          "ssim": 0.9477507173009845,
+          "lpips": 0.03523380309343338,
+          "hole_psnr": 16.387285590201444,
+          "hole_ssim": 0.31624452480050236,
+          "hole_lpips": 0.2501320242881775,
+          "eye_lpips": 0.15588794648647308,
+          "visible_changed": 0,
+          "facenet_cosine": 0.7356975078582764,
+          "arcface_conditioning_cosine": 0.7630162239074707
+        },
+        "deltas": {
+          "hole_psnr": 0.6540538893529924,
+          "hole_ssim": 0.018841655862294637,
+          "hole_lpips": -0.014982789754867554,
+          "facenet_cosine": -0.06276071071624756,
+          "arcface_conditioning_cosine": -0.01014256477355957
+        }
+      }
+    ]
+  }
+}

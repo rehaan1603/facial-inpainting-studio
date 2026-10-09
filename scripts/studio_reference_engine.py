@@ -26,7 +26,7 @@ def sha(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 def load_rgb(path):
     with Image.open(path) as im:return ImageOps.exif_transpose(im).convert('RGB').copy()
 
-def reconstruct(image,mask,references,output,seed=17,steps=30,scale=.8,memory='model',progress_path=None,blend='poisson',strength=1.0,runtime=None,model_resolution=512):
+def reconstruct(image,mask,references,output,seed=17,steps=30,scale=.8,memory='model',progress_path=None,blend='poisson',strength=1.0,runtime=None,model_resolution=512,guidance=5.0):
     def progress(message,**extra):
         print(message,flush=True)
         if progress_path:
@@ -35,6 +35,7 @@ def reconstruct(image,mask,references,output,seed=17,steps=30,scale=.8,memory='m
     if not 1<=len(references)<=4:raise ValueError('Supply between one and four reference images.')
     if not 10<=steps<=50 or not 0<=scale<=1.5:raise ValueError('Unsupported sampling settings.')
     if not .5<=strength<=1:raise ValueError('Strength must be between 0.5 and 1.0.')
+    if guidance not in [3.0,5.0]:raise ValueError('Choose a tested studio guidance setting.')
     if blend not in ['poisson','hard']:raise ValueError('Choose supported edge blending.')
     if model_resolution not in [256,512,1024]:raise ValueError('Model resolution must be 256, 512 or 1024.')
     source=load_rgb(image)
@@ -92,7 +93,7 @@ def reconstruct(image,mask,references,output,seed=17,steps=30,scale=.8,memory='m
     generator=torch.Generator(device='cpu').manual_seed(seed);start=time.perf_counter();torch.cuda.reset_peak_memory_stats()
     model_source=source.resize((model_resolution,model_resolution),Image.Resampling.LANCZOS)
     model_mask=resize_binary_mask(mask_image,(model_resolution,model_resolution))
-    generated=pipeline(prompt='A realistic portrait photograph of a person, natural facial features, consistent lighting, detailed skin.',negative_prompt='painting, drawing, distorted face, deformed eyes, blurry, extra facial features, low quality',image=model_source,mask_image=model_mask,ip_adapter_image_embeds=[conditioning],height=model_resolution,width=model_resolution,num_inference_steps=steps,strength=strength,guidance_scale=5.0,generator=generator,callback_on_step_end=callback,output_type='np').images[0]
+    generated=pipeline(prompt='A realistic portrait photograph of a person, natural facial features, consistent lighting, detailed skin.',negative_prompt='painting, drawing, distorted face, deformed eyes, blurry, extra facial features, low quality',image=model_source,mask_image=model_mask,ip_adapter_image_embeds=[conditioning],height=model_resolution,width=model_resolution,num_inference_steps=steps,strength=strength,guidance_scale=guidance,generator=generator,callback_on_step_end=callback,output_type='np').images[0]
     if generated.shape!=(model_resolution,model_resolution,3) or not np.isfinite(generated).all():raise RuntimeError('The model returned invalid pixels.')
     generated=(generated.clip(0,1)*255).round().astype('uint8')
     generated=np.asarray(Image.fromarray(generated).resize((512,512),Image.Resampling.LANCZOS));observed=np.asarray(source)
@@ -103,7 +104,7 @@ def reconstruct(image,mask,references,output,seed=17,steps=30,scale=.8,memory='m
     Image.fromarray(generated).save(output.with_name(output.stem+'_raw.png'));Image.fromarray(hard).save(output.with_name(output.stem+'_hard.png'))
     mask_image.save(output.with_name(output.stem+'_effective_mask.png'));source.save(output.with_name(output.stem+'_input.png'))
     metadata={'backbone':'sdxl_faceid_portrait','resolution':[512,512],'seed':seed,'steps':steps,'adapter_scale':scale,'references':reference_info,'reference_count':len(references),'reference_tokens_per_image':int(projection.num_tokens),'memory_mode':memory,'inference_seconds_including_offload':time.perf_counter()-start,'peak_allocated_bytes':torch.cuda.max_memory_allocated(),'adapter_sha256':sha(CACHE/'reference_models/ip-adapter-faceid-portrait_sdxl.bin'),'outside_effective_mask':'Exact preservation at processed input resolution','scope':'Existing reference-guided baseline, not a novel method or verified recovery of the true hidden face.'}
-    metadata.update(strength=strength,sampling_steps=sampling_steps,blending=blend_info,input_sha256=sha(image),mask_sha256=sha(mask),raw_output_sha256=sha(output.with_name(output.stem+'_raw.png')),result_sha256=sha(output))
+    metadata.update(guidance_scale=guidance,strength=strength,sampling_steps=sampling_steps,blending=blend_info,input_sha256=sha(image),mask_sha256=sha(mask),raw_output_sha256=sha(output.with_name(output.stem+'_raw.png')),result_sha256=sha(output))
     metadata.update(model_resolution=[model_resolution,model_resolution],model_mask_resampling='overlap_max_downsample_nearest_upsample',vae_tiling=model_resolution==1024,environment={name:version(name) for name in ['torch','diffusers','transformers','tokenizers','regex','onnx','ml_dtypes','insightface']})
     output.with_suffix('.json').write_text(json.dumps(metadata,indent=2));progress('Reference-guided result ready',complete=True)
     return metadata

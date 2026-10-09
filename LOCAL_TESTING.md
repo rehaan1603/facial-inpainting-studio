@@ -8,9 +8,13 @@ Start from PowerShell in this project folder:
 
 The launcher opens http://127.0.0.1:8765/ and leaves the local server running. The laptop must remain awake. No public hosting is enabled.
 
+**10 October 2026:** the updated testing build is already running at http://127.0.0.1:8766/. Start Studio reuses the older running 8765 process. After restarting the laptop it starts current code on 8765. For a separate foreground process use `.venv/Scripts/python.exe webapp/server.py --port 8766`. Keep one reconstruction job active at a time across both addresses.
+
 ## Missing facial areas
 
-On the main page, upload the damaged photo, paint the area to replace, and select reference-guided reconstruction with 3–4 clear photos of the same person. Start at 512 processing. Compare the result with the input before downloading. Large missing regions can produce incorrect identity or expression.
+On the main page, upload the damaged photo, paint the area to replace, and select reference-guided reconstruction with 1–4 clear photos of the same person. Start at 512 processing. Compare the result with the input before downloading. Large missing regions can produce incorrect identity or expression.
+
+For the fixed three-person eye test, use each set's **Eyes test/Damaged input.png**, **Eyes test/Mask - white means reconstruct.png**, and **Reference photos/Reference 01.png** through **Reference 04.png** in that order. Select 1024 processing, **Ignore opaque cover colour**, **Use mask exactly**, and **Match colour at edges**. Compare the unchecked **Gentler eye details** control against it checked. The optional control appears only in this supported mode. Actual website outputs and instructions are in each set's **Website - Gentler details** folder under Downloads. Never use the comparison-only original as a reference. [Quality results and limits](research/FOCUSED_EYE_GUIDANCE_REPLICATION_RESULTS_V2.md).
 
 If the reference model says a marked area is too thin, use **Expand mask by 8 px**, paint a wider region, or use LaMa for a tiny scratch. Inspect the resulting effective mask. This check prevents disconnected marks from disappearing inside the reference model; it does not guarantee every fine boundary can be recovered. ResShift now retains thin damage when reducing its input mask to 256 pixels.
 

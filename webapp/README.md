@@ -19,7 +19,19 @@ Validation: eleven HTTP boundary tests in `scripts/test_webapp.py`; five real HT
 Reference validation: `research/reference_webapp_check.json` records a four-photo upload, GPU reconstruction, both download events and exact outside-mask pixel preservation. Nine boundary-blending tests pass in the separate reference environment. WebMCP reconstruction acknowledges immediately; read its state tool for progress and completion. The twelve-identity development diagnostic is complete; it does not establish consistent reference benefit or correct identity recovery. See `research/REFERENCE_DIAGNOSTIC_RESULTS.md`.
 
 Runtime repair: use the parent project Python to run `scripts/prepare_reference_runtime_v2.py`. The app explicitly uses `reference_env_v2`; it does not fall back to the legacy blocked environment. The repaired package pins, installation receipt and lock are tracked. See `research/QUALITY_FIX_STATUS.md` for measured repair outcomes.
+# Single-image edge matching (1 October 2026)
+
+The main page offers **Match colour at edges** for LaMa and ResShift as well as reference inference. It is initially off for LaMa and on for ResShift. Turn it off to keep raw model colours. **Before edge matching** retains the raw single-image output for comparison. The operation changes only the selected region and uses the existing `reference_env_v2` for its isolated OpenCV worker; missing setup is reported as a visible raw-result fallback. It reduces some seams but cannot correct invented facial features. Paired development results, including regressions, are in `research/SINGLE_IMAGE_EDGE_MATCHING_20261001.md`.
+
 # Experimental selection mode
+
+## Optional gentler eye details (10 October 2026)
+
+The updated local testing build currently runs on http://127.0.0.1:8766/; the original 8765 process remains running. In **Use 1–4 reference photos**, select **1024 px**, enable **Ignore opaque cover colour**, and optionally check **Gentler eye details**. It is off by default and changes only CFG 5 to 3. Compare with it off, using the same input, mask, reference order and edge matching. Other sizes, selection, evidence and restoration do not support this option. Older running servers hide the control until they load the updated backend.
+
+Four actual API/GPU jobs match their saved raw and finished research outputs exactly, and 22 boundary checks pass. Across three development people and three seeds, mean hole SSIM improves 0.41415 to 0.43310; person10149 loses mean FaceNet similarity. Iris colour, gaze and eyebrow shape remain imperfect. No appearance/texture prototype or checkpoint update is deployed. See `research/GENTLER_REFERENCE_WEBSITE_V1.md` and the linked complete experiment results. Avoid concurrent inference across the two local servers; they share the same GPU.
+
+As of 2 October, the main **Use 1–4 reference photos** mode accepts one through four images and conditions on every supplied image. It does not select the best photo. The same underlying model already supported these counts; the interface restriction was relaxed and verified with an exact two-reference reconstruction replay. The separate evidence editor retains its existing three-photo selection requirement. Synthetic reference examples are explicitly experimental and have not established accurate eye recovery; see `research/SYNTHETIC_REFERENCE_TRIAL_20261002.md`.
 
 **Choose from 1–4 photos · experimental** accepts one through four runtime reference images and selects one with an untrained mask-aware heuristic. It uses the painted/expanded mask; learned mask refinement is unavailable in reference modes. Original **Use 3–4 reference photos** retains its existing behavior.
 

@@ -27,10 +27,13 @@ def main():
     p.add_argument('--keep-observation', action='store_true')
     p.add_argument('--strength', type=float, default=1)
     p.add_argument('--select', action='store_true')
+    p.add_argument('--gentler-details', action='store_true')
     a = p.parse_args()
     try:
         from reference_inpaint import reconstruct, load_rgb, sha
-        if a.model_resolution==256:
+        if a.gentler_details and (a.model_resolution!=1024 or a.keep_observation or a.select):
+            raise ValueError('Gentler details requires 1024 processing, opaque-cover removal and all supplied references.')
+        if a.model_resolution==256 or a.gentler_details:
             from studio_reference_engine import reconstruct
         observed = np.asarray(load_rgb(a.image).resize((512,512), Image.Resampling.LANCZOS))
         mask = np.asarray(Image.open(a.mask).convert('L').resize((512,512), Image.Resampling.NEAREST)) >= 128
@@ -48,8 +51,9 @@ def main():
             raise ValueError('Use a new output path.')
         a.output.parent.mkdir(parents=True, exist_ok=True)
         Image.fromarray(observed if a.keep_observation else neutralize(observed, mask)).save(conditioning)
+        options={'guidance':3.0} if a.gentler_details else {}
         metadata = reconstruct(conditioning, a.mask, refs, a.output,
-            strength=a.strength if a.keep_observation else 1, blend='hard', model_resolution=a.model_resolution, progress_path=a.progress)
+            strength=a.strength if a.keep_observation else 1, blend='hard', model_resolution=a.model_resolution, progress_path=a.progress,**options)
         generated = np.asarray(Image.open(a.output.with_name(a.output.stem+'_raw.png')).convert('RGB'))
         result, blending = harmonize_reference(generated, observed, mask, a.blend)
         hard, _ = harmonize_reference(generated, observed, mask, 'hard')
@@ -60,6 +64,7 @@ def main():
             result_sha256=sha(a.output), blending=blending,
             studio_preprocessing='Original observation retained; original visible pixels preserved.' if a.keep_observation else 'Masked RGB replaced by neutral 127; full denoising; original visible pixels preserved.',
             quality_scope='Functional correction; no guarantee of identity, expression or gaze recovery.')
+        metadata.update(gentler_details=a.gentler_details,guidance_scale=3.0 if a.gentler_details else 5.0)
         if selection is not None: metadata['reference_selection'] = selection
         a.output.with_suffix('.json').write_text(json.dumps(metadata, indent=2), encoding='utf-8')
     except Exception as error:

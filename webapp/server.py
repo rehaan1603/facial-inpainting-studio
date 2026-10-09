@@ -18,7 +18,7 @@ def decode_image(value,mask=False,opaque=False):
         if opaque and im.convert('RGBA').getchannel('A').getextrema()!=(255,255):raise ValueError('Confidence maps must be opaque grayscale PNGs. Transparent pixels do not specify how much evidence to keep.')
         return im.convert('L' if mask else 'RGB').copy()
 
-def run_reference_job(job_id,source,mask,mode,references,blend,detail='standard',selection=False,confidence=None,strength=.99,restoration=False,neutralize=False):
+def run_reference_job(job_id,source,mask,mode,references,blend,detail='standard',selection=False,confidence=None,strength=.99,restoration=False,neutralize=False,gentler=False):
     job=JOBS[job_id];folder=RUNS/job_id;folder.mkdir(parents=True,exist_ok=False)
     import numpy as np
     from pilot import morph
@@ -42,6 +42,7 @@ def run_reference_job(job_id,source,mask,mode,references,blend,detail='standard'
     if neutralize and confidence is None and not restoration:
         command[1]=str(ROOT/'scripts/studio_reference_inpaint.py')
         if selection:command.append('--select')
+    if gentler:command.append('--gentler-details')
     if detail=='compact':
         command[1]=str(ROOT/'scripts/studio_reference_inpaint.py')
         command[command.index('--model-resolution')+1]='256'
@@ -106,12 +107,12 @@ def run_size_comparison(job_id,source,mask,backbone,mode,references,blend,neutra
     job.update(status='complete',message=f"Size comparison ready — main result: {first['processing_size']} px",primary_processing_size=first['processing_size'],comparisons=items,result=first['result'],input=first['input'],mask=first['mask'],metadata=f'/runs/{job_id}/metadata.json',resolution=512,seconds=sum(r['seconds'] for r in successes),warnings=list(dict.fromkeys(warning for r in successes for warning in r.get('warnings',[])))+[f"{r['processing_size']} px failed: {r['message']}" for r in items if r['status']=='error'])
 
 
-def run_job(job_id,source,mask,backbone,mode,references=None,blend='poisson',detail='standard',confidence=None,strength=.99,neutralize=False):
+def run_job(job_id,source,mask,backbone,mode,references=None,blend='poisson',detail='standard',confidence=None,strength=.99,neutralize=False,gentler=False):
     global ACTIVE
     job=JOBS[job_id];folder=RUNS/job_id
     try:
         if detail=='compare':return run_size_comparison(job_id,source,mask,backbone,mode,references,blend,neutralize)
-        if backbone in ['reference','reference_select','refldm']:return run_reference_job(job_id,source,mask,mode,references,blend,detail,selection=backbone=='reference_select',confidence=confidence,strength=strength,restoration=backbone=='refldm',neutralize=neutralize)
+        if backbone in ['reference','reference_select','refldm']:return run_reference_job(job_id,source,mask,mode,references,blend,detail,selection=backbone=='reference_select',confidence=confidence,strength=strength,restoration=backbone=='refldm',neutralize=neutralize,gentler=gentler)
         import numpy as np
         import torch
         from inpaint import Inpainter,RefinerPredictor
@@ -136,11 +137,15 @@ def run_job(job_id,source,mask,backbone,mode,references=None,blend='poisson',det
         display_source.save(folder/'input.png');Image.fromarray(display_supplied.astype('uint8')*255).save(folder/'mask.png');display_mask.save(folder/'effective_mask.png')
         model=Inpainter(backbone);job['message']='Reconstructing the masked area…';start=time.perf_counter();pred=model(observed,effective,17);torch.cuda.synchronize();elapsed=time.perf_counter()-start
         if not np.isfinite(pred).all():raise RuntimeError('The model returned invalid pixels. Please try another image or model.')
-        compose_prediction(display_source,display_mask,pred).save(folder/'result.png')
+        compose_prediction(display_source,display_mask,pred).save(folder/'result_raw.png')
+        from webapp.finishing import match_edges
+        job['message']='Matching repair edges…' if blend=='poisson' else 'Saving reconstruction…'
+        blending,warnings=match_edges(folder,blend)
         metadata={'backbone':backbone,'mask_mode':mode,'resolution':[resolution,resolution],'seed':17,'inference_seconds':elapsed,'input_sha256':hashlib.sha256((folder/'input.png').read_bytes()).hexdigest(),'refiner_sha256':hashlib.sha256(refiner_path.read_bytes()).hexdigest() if refiner_path else None,'scope':'Local research inference. Generated hidden facial content is a prediction, not verified recovery.'}
         metadata.update(mask_policy='Preserve all requested pixels; learned refinement may add pixels.' if mode=='learned' else 'Use requested mask treatment.',resolution=[512,512],model_resolution=[resolution,resolution],upload_geometry=geometry,outside_effective_mask='Exact preservation at 512-pixel processed input resolution',result_sha256=hashlib.sha256((folder/'result.png').read_bytes()).hexdigest())
+        metadata.update(blending=blending,raw_result_sha256=hashlib.sha256((folder/'result_raw.png').read_bytes()).hexdigest(),warnings=warnings)
         (folder/'metadata.json').write_text(json.dumps(metadata,indent=2));del model;torch.cuda.empty_cache()
-        job.update(status='complete',message='Restoration ready',result=f'/runs/{job_id}/result.png',input=f'/runs/{job_id}/input.png',mask=f'/runs/{job_id}/effective_mask.png',metadata=f'/runs/{job_id}/metadata.json',seconds=round(elapsed,2),resolution=512)
+        job.update(status='complete',message='Restoration ready',result=f'/runs/{job_id}/result.png',raw_result=f'/runs/{job_id}/result_raw.png',input=f'/runs/{job_id}/input.png',mask=f'/runs/{job_id}/effective_mask.png',metadata=f'/runs/{job_id}/metadata.json',seconds=round(elapsed,2),resolution=512,warnings=warnings)
     except Exception as exc:
         traceback.print_exc();message=str(exc) if isinstance(exc,ValueError) else 'Inpainting could not finish. The local server log has details; try again with LaMa.'
         job.update(status='error',message=message)
@@ -156,7 +161,7 @@ class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
         if not self.trusted_host():return self.send(403,{'error':'Local access only.'})
         path=urlparse(self.path).path
-        if path=='/api/session':return self.send(200,{'token':TOKEN,'busy':ACTIVE})
+        if path=='/api/session':return self.send(200,{'token':TOKEN,'busy':ACTIVE,'gentler_details_available':True})
         if path=='/api/demo':
             if parse_qs(urlparse(self.path).query).get('reference')==['1']:
                 folder=ROOT/'outputs/reference_examples/identity_916'
@@ -198,13 +203,13 @@ class Handler(BaseHTTPRequestHandler):
             source=decode_image(data.get('image'));mask=decode_image(data.get('mask'),True)
             if source.size!=mask.size:raise ValueError('Image and mask dimensions must match.')
             if mask.getextrema()[1]<128:raise ValueError('Paint or upload a mask first.')
-            references=[];blend=data.get('blend','poisson');detail=data.get('detail','standard')
+            references=[];blend=data.get('blend','hard' if backbone=='lama' else 'poisson');detail=data.get('detail','standard')
             if blend not in ['poisson','hard']:raise ValueError('Choose supported edge blending.')
             if detail not in ['compact','standard','detailed','compare']:raise ValueError('Choose a supported processing size.')
             if detail in ['compact','compare'] and backbone not in ['reference','reference_select']:raise ValueError('Size comparison requires a reference model. Other models have fixed native sizes.')
             if backbone in ['reference','reference_select','refldm']:
                 values=data.get('references')
-                minimum=1 if backbone=='reference_select' else 3
+                minimum=3 if backbone=='refldm' else 1
                 if not isinstance(values,list) or not minimum<=len(values)<=4:raise ValueError(f'Upload {minimum} to 4 reference photos of the same person.')
                 if mode=='learned':raise ValueError('Use the painted or expanded mask with reference photos.')
                 references=[decode_image(value) for value in values]
@@ -225,6 +230,9 @@ class Handler(BaseHTTPRequestHandler):
             neutralize=data.get('neutralize',False)
             if not isinstance(neutralize,bool):raise ValueError('Obstruction colour option must be true or false.')
             if neutralize and (backbone not in ['reference','reference_select'] or confidence is not None):raise ValueError('Obstruction colour removal is only for reference missing-area reconstruction without an evidence map.')
+            gentler=data.get('gentler_details',False)
+            if not isinstance(gentler,bool):raise ValueError('Gentler details must be true or false.')
+            if gentler and (backbone!='reference' or detail!='detailed' or confidence is not None or not neutralize):raise ValueError('Gentler details requires 1024 reference reconstruction and Ignore opaque cover colour, without an evidence map.')
         except (ValueError,TypeError,UnidentifiedImageError,Image.DecompressionBombError,binascii.Error,OSError) as exc:return self.send(400,{'error':str(exc)})
         with LOCK:
             if ACTIVE:return self.send(409,{'error':'Another inpainting run is using the GPU. Try again when it finishes.'})
@@ -232,6 +240,7 @@ class Handler(BaseHTTPRequestHandler):
         job_id=uuid.uuid4().hex;JOBS[job_id]={'id':job_id,'status':'queued','message':'Preparing your image…'}
         options={'confidence':confidence,'strength':strength} if confidence is not None else {}
         if neutralize:options['neutralize']=True
+        if gentler:options['gentler']=True
         threading.Thread(target=run_job,args=(job_id,source,mask,backbone,mode,references,blend,detail),kwargs=options,daemon=True).start();self.send(202,{'id':job_id})
 
 def main():

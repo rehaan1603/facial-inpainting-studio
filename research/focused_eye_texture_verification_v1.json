@@ -1,0 +1,70 @@
+{
+  "selected": false,
+  "means": {
+    "hole_psnr": {
+      "control": 17.894556478295268,
+      "candidate": 16.04574180970843,
+      "delta": -1.8488146685868365,
+      "n": 3
+    },
+    "hole_ssim": {
+      "control": 0.45454045408918337,
+      "candidate": 0.40762291447965643,
+      "delta": -0.04691753960952694,
+      "n": 3
+    },
+    "hole_lpips": {
+      "control": 0.1784539520740509,
+      "candidate": 0.23047353823979697,
+      "delta": 0.05201958616574606,
+      "n": 3
+    },
+    "eye_lpips": {
+      "control": 0.15235059460004172,
+      "candidate": 0.2158444027105967,
+      "delta": 0.063493808110555,
+      "n": 3
+    },
+    "facenet_cosine": {
+      "control": 0.7844861348470052,
+      "candidate": 0.7614508668581644,
+      "delta": -0.023035267988840813,
+      "n": 3
+    },
+    "arcface_conditioning_cosine": {
+      "control": 0.8161560297012329,
+      "candidate": 0.7219993273417155,
+      "delta": -0.09415670235951745,
+      "n": 3
+    }
+  },
+  "checks": [
+    {
+      "identity": "263",
+      "zero_exact": true,
+      "regeneration_exact": true,
+      "visible_exact": true,
+      "sha256": "a0b475d48e27944b2f4b429f5c6a143ea27a9691603b63815cb8ab283c191043"
+    },
+    {
+      "identity": "6681",
+      "zero_exact": true,
+      "regeneration_exact": true,
+      "visible_exact": true,
+      "sha256": "5867f7effdb44fb758293de34237c38ce42c0701fbc66db9972b1a1e2632b418"
+    },
+    {
+      "identity": "10149",
+      "zero_exact": true,
+      "regeneration_exact": true,
+      "visible_exact": true,
+      "sha256": "4f1d9c9cdf006bb51350e67b54e0661c36313ad67308940211586d1938038427"
+    }
+  ],
+  "visual_review": {
+    "263": "Registered detail produces misaligned/double eyebrow structure and mismatched gaze.",
+    "6681": "Transferred eye detail is clipped or displaced; local eye geometry does not match the target.",
+    "10149": "Transferred eyelid expression and eye/brow positioning remain inconsistent with the original."
+  },
+  "summary_sha256": "b1b0085417693ad540db431479901118cca681c5f031834ae5a0aa780099a4ec"
+}
