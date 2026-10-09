@@ -6,7 +6,7 @@ Run from the repository root using the prepared laptop environments and permitte
 
 | File | Role |
 |---|---|
-| [launch_studio.py](launch_studio.py) | Start Studio; starts or reuses localhost8765 |
+| [launch_studio.py](launch_studio.py) | Start Studio; reuses matching loaded code or starts current code on a free local port |
 | [server](../webapp/server.py) | HTTP validation, job dispatch and local outputs |
 | [inpaint.py](inpaint.py) | LaMa / ResShift single-image inpainting |
 | [reference_inpaint.py](reference_inpaint.py) | Frozen research SDXL + FaceID generator |
@@ -14,6 +14,7 @@ Run from the repository root using the prepared laptop environments and permitte
 | [studio_reference_engine.py](studio_reference_engine.py) | Compact processing and optional CFG3 engine |
 | [studio_match_edges.py](studio_match_edges.py) | Isolated optional colour matching |
 | [finishing](../webapp/finishing.py) | Raw-result fallback for optional worker failure |
+| [studio version](../webapp/version.py) | Code fingerprint recorded at server startup for freshness checks |
 | [prepare_reference_runtime_v2.py](prepare_reference_runtime_v2.py) | Reference runtime setup |
 
 The HTTP server uses project `.venv`; reference generation/colour matching uses `cache/reference_env_v2/Scripts/python.exe`. ReF-LDM uses a separate recorded runtime. Paths come from `configs/local.json`.

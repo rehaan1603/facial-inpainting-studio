@@ -4,7 +4,12 @@
     "webapp": {
       "tests": 22,
       "passed": true,
-      "log_sha256": "8c35a9acadf8d92483cda31cc60daa52dc82052e122af31f87f649ea56f2308c"
+      "log_sha256": "1b67e36b1ecdbfa79fb0b3be68445702ad995c95153ad266ed3c29ac49b6ae54"
+    },
+    "launcher": {
+      "tests": 8,
+      "passed": true,
+      "log_sha256": "586a550a90fe7da21ee07017fdd731ec849064526b00ecd7b9c750635e36fb48"
     },
     "finishing": {
       "tests": 5,
@@ -22,8 +27,8 @@
       "log_sha256": "e505e26f7d646f58d6088975a613752577b1b372613064ed1939235e8cbc998d"
     }
   },
-  "total_targeted_tests": 33,
-  "python_files_parsed": 356,
+  "total_targeted_tests": 41,
+  "python_files_parsed": 358,
   "completed_image_hashes_verified": 81,
   "frozen_reference_generator_sha256": "6fa4fe9c7742c8a1ec69d1586cc98a07573b1b85e5bebf0ad4c899b75a782daf",
   "website_replays": 4,

@@ -2,19 +2,23 @@
 
 **Report date:** 10 October 2026
 **Current platform:** Windows laptop, NVIDIA RTX 5070 Laptop GPU with 8 GB VRAM  
-**Current application:** http://127.0.0.1:8766/ (updated testing build); original http://127.0.0.1:8765/ remains running
+**Current application:** http://127.0.0.1:8765/ (current code; Start Studio verifies loaded version)
 **Repository:** https://github.com/rehaan1603/facial-inpainting-studio  
 **Status:** Working local research baseline; proposed multi-reference research method and final validation incomplete. Public hosting paused at the owner's request.
 
 ## Latest status update
 
+### 10 October: Start Studio freshness fix
+
+The launcher previously reused any server on port 8765 with a valid session, so an older backend could be opened after files had been updated. The server now records a startup fingerprint of studio source; Start Studio reuses only a matching process, otherwise starting current code on an available loopback port. It preserves existing jobs and can reuse a current server on fallback ports. Eight launcher tests and all 22 HTTP boundary tests pass. A fresh server is running at **http://127.0.0.1:8765/**; live checks confirm its revision matches disk, the gentler control is served, and a second launch reuses the same process. [Verification](research/releases/2026-10-10/launcher_verification.json). This launch fix changes no model settings or experimental scores.
+
 ### 10 October: organized repository release and verification
 
 The current GitHub release on `codex/local-studio-checkpoint` includes the completed masked-task audit, three-person reference studies, repeated guidance comparison, unsuccessful appearance/texture experiments, optional app control and the earlier spatial-rejection diagnostic. New [research](research/README.md), [script](scripts/README.md) and [review](review/README.md) indexes provide direct navigation. [Release evidence](research/releases/2026-10-10/README.md) contains photo-free per-output metrics, failures/nulls, hashes and four live website replay receipts.
 
-Release checks pass **33 targeted tests**, parse **356 Python files**, and verify **81 completed image records** across nine experiment folders (including reused outputs). Guidance and appearance provenance checks pass; the frozen research generator hash is unchanged. These are release checks rather than new quality measurements. Optional single-image edge matching now retains the raw reconstruction with an explicit warning if its worker fails, times out or returns no receipt; five finishing tests include the actual worker and failure paths.
+Release checks pass **41 targeted tests**, parse **358 Python files**, and verify **81 completed image records** across nine experiment folders (including reused outputs). Guidance and appearance provenance checks pass; the frozen research generator hash is unchanged. These are release checks rather than new quality measurements. Optional single-image edge matching now retains the raw reconstruction with an explicit warning if its worker fails, times out or returns no receipt; five finishing tests include the actual worker and failure paths.
 
-The updated local testing build remains at **http://127.0.0.1:8766/**. Start Studio continues to start/reuse **8765**; after a laptop restart it loads current code there. Restricted photographs, personal uploads, reference arrays, downloaded weights and environments remain local. Existing checkpoints and experimental output files are retained. Public PPTs keep their original dates; the illustrated three-person deck remains local. This release publishes the current implementation and evidence while the remaining quality/validation work below continues.
+The launcher fix above supersedes the earlier separate port 8766 testing address. Restricted photographs, personal uploads, reference arrays, downloaded weights and environments remain local. Existing checkpoints and experimental outputs are retained. Public PPTs keep their dates; the illustrated three-person deck remains local. This release publishes current implementation/evidence while quality and validation work continues.
 
 ### 9–10 October: eye SSIM replication and appearance-conditioning investigation
 

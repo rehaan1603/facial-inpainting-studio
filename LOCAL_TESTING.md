@@ -6,9 +6,9 @@ Start from PowerShell in this project folder:
 .\.venv\Scripts\python.exe scripts/launch_studio.py
 ```
 
-The launcher opens http://127.0.0.1:8765/ and leaves the local server running. The laptop must remain awake. No public hosting is enabled.
+The launcher opens the current local server and leaves it running. The laptop must remain awake. No public hosting is enabled.
 
-**10 October 2026:** the updated testing build is already running at http://127.0.0.1:8766/. Start Studio reuses the older running 8765 process. After restarting the laptop it starts current code on 8765. For a separate foreground process use `.venv/Scripts/python.exe webapp/server.py --port 8766`. Keep one reconstruction job active at a time across both addresses.
+**10 October 2026:** current code is running at http://127.0.0.1:8765/. Start Studio checks the loaded code fingerprint before reusing a process. If an older server occupies a port it starts current code on a free loopback port and opens that address. For a manual foreground process use `.venv/Scripts/python.exe webapp/server.py --port 8766` on an available port. Keep one GPU reconstruction active at a time.
 
 ## Missing facial areas
 

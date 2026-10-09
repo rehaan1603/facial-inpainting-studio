@@ -6,6 +6,8 @@ from urllib.parse import urlparse,parse_qs
 from PIL import Image,ImageOps,UnidentifiedImageError
 ROOT=Path(__file__).resolve().parents[1];STATIC=Path(__file__).parent/'dist';RUNS=ROOT/'outputs/webapp_runs'
 sys.path.insert(0,str(ROOT));sys.path.insert(0,str(ROOT/'scripts'))
+from webapp.version import code_revision
+STUDIO_REVISION=code_revision()
 Image.MAX_IMAGE_PIXELS=16_000_000
 JOBS={};LOCK=threading.Lock();TOKEN=os.environ.get('INPAINTING_LOCAL_TOKEN') or secrets.token_urlsafe(32);ACTIVE=False
 
@@ -161,7 +163,7 @@ class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
         if not self.trusted_host():return self.send(403,{'error':'Local access only.'})
         path=urlparse(self.path).path
-        if path=='/api/session':return self.send(200,{'token':TOKEN,'busy':ACTIVE,'gentler_details_available':True})
+        if path=='/api/session':return self.send(200,{'token':TOKEN,'busy':ACTIVE,'gentler_details_available':True,'studio_revision':STUDIO_REVISION})
         if path=='/api/demo':
             if parse_qs(urlparse(self.path).query).get('reference')==['1']:
                 folder=ROOT/'outputs/reference_examples/identity_916'

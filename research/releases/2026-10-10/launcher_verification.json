@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-10",
+  "url": "http://127.0.0.1:8765/",
+  "loaded_code_matches_disk": true,
+  "gentler_details_available": true,
+  "second_launch_reused_same_server": true,
+  "control_served": true,
+  "studio_revision": "bc807b9aafe4b297415216e6d26593c053769fb2a96d5038eca00a5fb0c87229",
+  "inference_repeated": false
+}

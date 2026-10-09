@@ -2,7 +2,7 @@
 
 Local browser interface connected to the existing GPU inference implementation. The application is served by `server.py`; `dist` contains its authored static frontend. It requires the parent project's CUDA Python environment, model cache and `configs/local.json`. The static files alone cannot perform inpainting or be deployed as a functioning GPU application.
 
-Double-click `Start Studio.cmd` in the project root, or run `& ./webapp/start.ps1` from PowerShell. Open http://127.0.0.1:8765. The launcher starts a detached local server that remains running when its window closes. If the app is already running, use that page instead of starting a second copy. For a foreground server that stops with Ctrl+C, run `.venv/Scripts/python.exe webapp/server.py` directly. To use another port, run `.venv/Scripts/python.exe webapp/server.py --port 8766`.
+Double-click `Start Studio.cmd` or run `& ./webapp/start.ps1`. The launcher opens a server whose startup code fingerprint matches disk; if an older process occupies a port, it starts current code on a free loopback port. It checks ports8765–8796 and leaves existing processes/jobs intact. The current server is at http://127.0.0.1:8765/. It keeps running when the launcher closes. A foreground server can be started with `.venv/Scripts/python.exe webapp/server.py --port 8766` on an available port.
 
 1. Upload a PNG, JPEG or WebP face image, or load the available research sample.
 2. Select the square crop or whole-image fit. Framing resets the mask; the displayed frame is the exact input used for inference.
@@ -27,7 +27,7 @@ The main page offers **Match colour at edges** for LaMa and ResShift as well as 
 
 ## Optional gentler eye details (10 October 2026)
 
-The updated local testing build currently runs on http://127.0.0.1:8766/; the original 8765 process remains running. In **Use 1–4 reference photos**, select **1024 px**, enable **Ignore opaque cover colour**, and optionally check **Gentler eye details**. It is off by default and changes only CFG 5 to 3. Compare with it off, using the same input, mask, reference order and edge matching. Other sizes, selection, evidence and restoration do not support this option. Older running servers hide the control until they load the updated backend.
+The updated server currently runs on http://127.0.0.1:8765/. In **Use 1–4 reference photos**, select **1024 px**, enable **Ignore opaque cover colour**, and optionally check **Gentler eye details**. It is off by default and changes only CFG 5 to 3. Compare with it off, using the same input, mask, reference order and edge matching. Other sizes, selection, evidence and restoration do not support this option. Start Studio now bypasses processes running older code.
 
 Four actual API/GPU jobs match their saved raw and finished research outputs exactly, and 22 boundary checks pass. Across three development people and three seeds, mean hole SSIM improves 0.41415 to 0.43310; person10149 loses mean FaceNet similarity. Iris colour, gaze and eyebrow shape remain imperfect. No appearance/texture prototype or checkpoint update is deployed. See `research/GENTLER_REFERENCE_WEBSITE_V1.md` and the linked complete experiment results. Avoid concurrent inference across the two local servers; they share the same GPU.
 

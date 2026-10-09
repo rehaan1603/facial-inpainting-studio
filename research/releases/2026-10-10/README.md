@@ -7,6 +7,7 @@ This snapshot contains code-linked metrics and hashes for the completed local st
 | [metrics.json](metrics.json) | Every attempt/status and per-output metric from nine masked SDXL experiment folders |
 | [website_replays.json](website_replays.json) | Four actual HTTP/GPU reconstruction receipts with raw/final equivalence |
 | [verification.json](verification.json) | Test counts, Python syntax, frozen generator hash and evidence checks |
+| [launcher_verification.json](launcher_verification.json) | Current-code startup, available app control and exact server reuse |
 
 The exact local source-summary hashes are stored alongside each experiment. Reused images remain marked; detector nulls and failed attempts remain present. In the guidance replication, `control` and `candidate` are CFG5/CFG3 labels while both reference conditions are clean. Different experiment folders retain different protocols; do not average across them as one benchmark.
 

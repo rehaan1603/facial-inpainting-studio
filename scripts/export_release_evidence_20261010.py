@@ -14,7 +14,8 @@ ROW_KEYS=['identity','location','condition','reference_condition','seed','guidan
           'peak_allocated_bytes','reused','mechanism_status','metrics',
           'target_detections','output_detections']
 TEST_LOGS={
-    'webapp':'github_release_web_tests_20261010.log',
+    'webapp':'studio_launcher_web_tests_20261010.log',
+    'launcher':'studio_launcher_tests_20261010.log',
     'finishing':'github_release_finishing_tests_20261010.log',
     'spatial_mechanism':'github_release_spatial_tests_20261010.log',
     'spatial_statistics':'github_release_spatial_statistics_tests_20261010.log'}

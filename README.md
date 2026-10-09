@@ -22,9 +22,9 @@ Local facial reconstruction and evaluation on a Windows laptop with an RTX 5070 
 
 ## Run on the configured laptop
 
-Double-click **Start Studio.cmd**. It opens **http://127.0.0.1:8765/** and reuses a running server. Running servers keep their loaded backend until restarted.
+Double-click **Start Studio.cmd**. It opens a server running the current code. The launcher compares the server's startup code fingerprint with the files on disk before reusing it.
 
-The updated testing build is currently at **http://127.0.0.1:8766/**. The older 8765 process remains running. After a laptop restart, Start Studio starts the current code on 8765. Avoid concurrent jobs across both addresses: they use the same GPU.
+The updated server is currently at **http://127.0.0.1:8765/**. If a stale process occupies a port, the launcher starts current code on an available loopback port and opens that address automatically. Existing jobs are left running. Avoid concurrent inference across addresses that share the GPU.
 
 To start a foreground server from PowerShell in this repository:
 
