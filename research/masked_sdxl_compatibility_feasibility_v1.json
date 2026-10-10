@@ -1,0 +1,180 @@
+{
+  "scope": "Synthetic gradient/resource evidence only; no real dataset quality claim",
+  "attempts": [
+    {
+      "status": "failed",
+      "scope": "Synthetic single epsilon-loss backward feasibility; no dataset training or quality evidence",
+      "resolution": 1024,
+      "latent_size": 128,
+      "seed": 20261010,
+      "protocol_sha256": "5d40e1c30fddc9b739870f6c70bf32ebc68acb8b76aed1be03242e33fe073c28",
+      "script_sha256": "aab88b6eefd892d38134efb44c0ea9f6aa8c3c15d189638030d999971053e0d8",
+      "trainable_parameters": 385,
+      "actual_trainable_parameters": 385,
+      "loaded_frozen_parameters": 3366130756,
+      "attention_processors": 70,
+      "neutral_max_absolute_error": 0.0,
+      "elapsed_seconds": 88.26499999999942,
+      "peak_allocated_bytes": 7752139776,
+      "peak_reserved_bytes": 8346664960,
+      "error": "RuntimeError: LSE is not correctly aligned (strideH)",
+      "out_of_memory": false,
+      "feature_order": [
+        "query_key_cosine",
+        "normalized_rms_difference",
+        "normalized_channel_mean_difference",
+        "normalized_channel_std_difference",
+        "log1p_query_norm",
+        "log1p_key_norm",
+        "log1p_norm_difference",
+        "key_consensus_cosine",
+        "timestep_fraction",
+        "visible_target_fraction"
+      ],
+      "precision": "fp16 frozen weights, bfloat16 autocast, float32 scorer",
+      "bias_bound": 0.5,
+      "query_chunk": 64,
+      "references": 4,
+      "receipt_path": "outputs/masked_sdxl_compatibility_probe_v1/1024.json",
+      "receipt_sha256": "3fe7f905cc5ea263f38e423afbe8f3338c3c78658b5f705f021c4ed5da4eb21b",
+      "assets": [
+        {
+          "filename": "config.json",
+          "sha256": "aaedf41fbcb29d2d8725241413b8525bd97005dea3f86d8056199469032537e9",
+          "revision": "115134f363124c53c7d878647567d04daf26e41e"
+        },
+        {
+          "filename": "diffusion_pytorch_model.fp16.safetensors",
+          "sha256": "6470840731e98cc16713ddf3ac7ee458c9fdbcb881a98c6727cd4a938f227d3f",
+          "revision": "115134f363124c53c7d878647567d04daf26e41e"
+        },
+        {
+          "filename": "ip-adapter-faceid-portrait_sdxl.bin",
+          "sha256": "5631ce7824cdafd2db37c5e85b985730a95ff59c5b4fc80c2b79b0bee5711512",
+          "revision": null
+        },
+        {
+          "filename": "ip-adapter-plus-face_sdxl_vit-h.safetensors",
+          "sha256": "677ad8860204f7d0bfba12d29e6c31ded9beefdf3e4bbd102518357d31a292c1",
+          "revision": "018e402774aeeddd60609b4ecdb7e298259dc729"
+        }
+      ]
+    },
+    {
+      "status": "interrupted",
+      "scope": "Synthetic single epsilon-loss backward feasibility; no dataset training or quality evidence",
+      "resolution": 1024,
+      "latent_size": 128,
+      "seed": 20261010,
+      "protocol_sha256": "c9a97cf8a1b3f1e1781f3a272775a284babfc3b3c3d20ff87649320870c1627f",
+      "script_sha256": "aab88b6eefd892d38134efb44c0ea9f6aa8c3c15d189638030d999971053e0d8",
+      "trainable_parameters": 385,
+      "error": "Did not complete; GPU utilization 0 percent and observed CPU time unchanged. Root stopped the verified isolated worker. Exact stuck stage unknown because v1 has no intermediate stage receipt.",
+      "backend_policy": [
+        "FLASH_ATTENTION",
+        "MATH"
+      ],
+      "wrapper_sha256": "c307bb721d5057563384bbf70202290221e18a8b87255b3a5b709c93e3b7f81c",
+      "feature_order": [
+        "query_key_cosine",
+        "normalized_rms_difference",
+        "normalized_channel_mean_difference",
+        "normalized_channel_std_difference",
+        "log1p_query_norm",
+        "log1p_key_norm",
+        "log1p_norm_difference",
+        "key_consensus_cosine",
+        "timestep_fraction",
+        "visible_target_fraction"
+      ],
+      "precision": "fp16 frozen weights, bfloat16 autocast, float32 scorer",
+      "bias_bound": 0.5,
+      "query_chunk": 64,
+      "references": 4,
+      "receipt_path": "outputs/masked_sdxl_compatibility_probe_v2/1024.json",
+      "receipt_sha256": "9543e94618b1acaf12f6de8134af9729cc88b5420a562dc7f8ef9dafb875b3d7",
+      "assets": []
+    },
+    {
+      "status": "passed",
+      "scope": "Synthetic single epsilon-loss backward feasibility; no dataset training or quality evidence",
+      "resolution": 512,
+      "latent_size": 64,
+      "seed": 20261010,
+      "protocol_sha256": "aa613733d8a79bc52813dc6921ba056d44b16a1d0d2f8da47553ad3717f58c41",
+      "script_sha256": "aab88b6eefd892d38134efb44c0ea9f6aa8c3c15d189638030d999971053e0d8",
+      "trainable_parameters": 385,
+      "actual_trainable_parameters": 385,
+      "loaded_frozen_parameters": 3366130756,
+      "attention_processors": 70,
+      "neutral_max_absolute_error": 0.0,
+      "loss": 2.1419291496276855,
+      "gradient_norm": 0.00014083388668950647,
+      "parameter_update": true,
+      "frozen_weights_have_gradients": false,
+      "elapsed_seconds": 26.82800000000134,
+      "backward_step_seconds": 5.5,
+      "peak_allocated_bytes": 7289674752,
+      "peak_reserved_bytes": 7562330112,
+      "backend_policy": [
+        "FLASH_ATTENTION",
+        "MATH"
+      ],
+      "backend_flags_restored": true,
+      "wrapper_sha256": "c307bb721d5057563384bbf70202290221e18a8b87255b3a5b709c93e3b7f81c",
+      "wrapped_script_sha256": "aab88b6eefd892d38134efb44c0ea9f6aa8c3c15d189638030d999971053e0d8",
+      "feature_order": [
+        "query_key_cosine",
+        "normalized_rms_difference",
+        "normalized_channel_mean_difference",
+        "normalized_channel_std_difference",
+        "log1p_query_norm",
+        "log1p_key_norm",
+        "log1p_norm_difference",
+        "key_consensus_cosine",
+        "timestep_fraction",
+        "visible_target_fraction"
+      ],
+      "precision": "fp16 frozen weights, bfloat16 autocast, float32 scorer",
+      "bias_bound": 0.5,
+      "query_chunk": 64,
+      "references": 4,
+      "receipt_path": "outputs/masked_sdxl_compatibility_probe_v3/512.json",
+      "receipt_sha256": "c094b4e70c471d86f0adf70719c749c87ecb5454d2b22da8336e8c75a5708aa0",
+      "assets": [
+        {
+          "filename": "config.json",
+          "sha256": "aaedf41fbcb29d2d8725241413b8525bd97005dea3f86d8056199469032537e9",
+          "revision": "115134f363124c53c7d878647567d04daf26e41e"
+        },
+        {
+          "filename": "diffusion_pytorch_model.fp16.safetensors",
+          "sha256": "6470840731e98cc16713ddf3ac7ee458c9fdbcb881a98c6727cd4a938f227d3f",
+          "revision": "115134f363124c53c7d878647567d04daf26e41e"
+        },
+        {
+          "filename": "ip-adapter-faceid-portrait_sdxl.bin",
+          "sha256": "5631ce7824cdafd2db37c5e85b985730a95ff59c5b4fc80c2b79b0bee5711512",
+          "revision": null
+        },
+        {
+          "filename": "ip-adapter-plus-face_sdxl_vit-h.safetensors",
+          "sha256": "677ad8860204f7d0bfba12d29e6c31ded9beefdf3e4bbd102518357d31a292c1",
+          "revision": "018e402774aeeddd60609b4ecdb7e298259dc729"
+        }
+      ]
+    }
+  ],
+  "bounded_512_supervisor": {
+    "status": "finished",
+    "timeout_seconds": 300,
+    "returncode": 0,
+    "timeout": false,
+    "wall_seconds": 36.81300000000192,
+    "supervisor_sha256": "6c201f3910edb3359e222cd30fbd12fc406d20421db5e3c5077821e031a527cc",
+    "worker_sha256": "c307bb721d5057563384bbf70202290221e18a8b87255b3a5b709c93e3b7f81c",
+    "core_sha256": "aab88b6eefd892d38134efb44c0ea9f6aa8c3c15d189638030d999971053e0d8",
+    "protocol_sha256": "aa613733d8a79bc52813dc6921ba056d44b16a1d0d2f8da47553ad3717f58c41"
+  },
+  "supervisor_receipt_sha256": "df3cd173a37216e1ea705c99fa3f76d6d84e6e7d4fb454216aa5d000e009eab5"
+}

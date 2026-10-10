@@ -4,6 +4,8 @@ Local facial reconstruction and evaluation on a Windows laptop with an RTX 5070 
 
 **Updated 10 October 2026.** Start with the [project report](PROJECT_REPORT.md), [research index](research/README.md) and [local testing instructions](LOCAL_TESTING.md). Public hosting is paused. Dataset photographs and downloaded model weights stay on the configured laptop.
 
+The latest masked SDXL pilot completed 64 GPU updates on eight eligible training people with 385 trainable parameters. It improves all six means over neutral local appearance, but SSIM 0.445016 remains below current CFG3's 0.454540 and person 263 fails identity guards. It stays offline; [complete results](research/MASKED_SDXL_COMPATIBILITY_PILOT_RESULTS_V2.md) preserve both gains and regressions.
+
 ## Navigate the project
 
 | Location | Contents |
@@ -50,7 +52,7 @@ Generative backbones and recognition encoders are pretrained. Earlier experiment
 
 ## Latest focused eye study
 
-Fixed persons **263, 6681 and 10149**, four real clean references each, seeds **17/29/43**, DDIM30, FaceID0.8, strength1, 1024 processing, 512 output and Poisson finishing. Only classifier-free guidance changes from 5 to 3. Eighteen outputs cover nine pairs; six seed17 images reuse hash-verified earlier outputs.
+Fixed persons **263, 6681 and 10149**, four real clean references each, seeds **17/29/43**, DDIM30, FaceID0.8, strength1, 1024 processing, 512 output and Poisson finishing. Only classifier-free guidance changes from 5 to 3. Eighteen outputs cover nine pairs; six seed 17 images reuse hash-verified earlier outputs.
 
 | Nine-pair mean | CFG5 control | CFG3 comparison |
 |---|---:|---:|
@@ -61,7 +63,7 @@ Fixed persons **263, 6681 and 10149**, four real clean references each, seeds **
 | FaceNet cosine ↑ | 0.76920 | 0.79887 |
 | ArcFace cosine ↑ | 0.76072 | 0.78508 |
 
-SSIM improves in 8/9 pairs; person10149 loses **0.01362 mean FaceNet cosine**. Iris colour, gaze and eyebrow fidelity remain imperfect. These are three observed development people; similarity scores are not reconstruction-correctness percentages. See [all paired results](research/FOCUSED_EYE_GUIDANCE_REPLICATION_RESULTS_V2.md).
+SSIM improves in 8/9 pairs; person 10149 loses **0.01362 mean FaceNet cosine**. Iris colour, gaze and eyebrow fidelity remain imperfect. These are three observed development people; similarity scores are not reconstruction-correctness percentages. See [all paired results](research/FOCUSED_EYE_GUIDANCE_REPLICATION_RESULTS_V2.md).
 
 The app exposes unchecked **Gentler eye details** only in 1024 reference mode with **Ignore opaque cover colour** enabled. Four live reconstructions match saved raw/final research outputs byte-for-byte. See [app verification](research/GENTLER_REFERENCE_WEBSITE_V1.md). Added appearance conditioning and registered texture transfer retain mixed/negative results in their reports.
 
