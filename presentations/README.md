@@ -1,6 +1,19 @@
+## Main local presentation files — 11 October 2026
+
+Use the two concise decks in `Downloads/Facial Inpainting - Latest Presentations` for presenting:
+
+| Deck | Slides | Contents |
+|---|---:|---|
+| Overall Results — Concise Review |11|Project objective, implemented methods, current architecture, training, two latest value tables, an actual output example, findings, local testing and source links|
+| Small Batch — Concise Review |10|Architecture, training, two latest value tables, one output slide for each of the three people, findings and source links|
+
+Repeated historical result slides and per-person value tables are removed from these presentation versions. The whole-image and missing-region tables show CFG3, the matched epsilon continuation and the latest RGB continuation. Complete five-arm results and the negative checks remain in the notes and source evidence. These are the same three development eye cases at seed17, not a whole-dataset or unknown-client accuracy measurement. Previous full decks below remain unchanged as historical records.
+
+[Exact concise filenames and hashes](local_concise_review_20261011.json). Illustrated decks remain local because dataset-photo redistribution was not authorized.
+
 Latest public photo-free presentation: [5 October 2026 results](Facial_Inpainting_Results_2026-10-05.pptx). This dated 20-slide snapshot covers architecture, training, corruption, v4/v5, metrics, official-input encoding and papers. Dataset photos are excluded.
 
-## Latest local illustrated decks — 11 October 2026
+## Full local history decks — 11 October 2026
 
 The earlier overall and small-batch decks have been updated in fresh copies. The original cover, architecture, methods, photographs, historical tables and ten paper hyperlinks are preserved. Latest files in the original laptop's Downloads:
 

@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-11",
+  "purpose": "Concise presentation versions. Prior full decks remain unchanged.",
+  "folder": "C:\\Users\\rehaa\\Downloads\\Facial Inpainting - Latest Presentations",
+  "files": [
+    {
+      "deck": "overall",
+      "path": "C:\\Users\\rehaa\\Downloads\\Facial Inpainting - Latest Presentations\\Facial Inpainting Studio - Overall Results - Concise Review - 2026-10-11.pptx",
+      "sha256": "ee734e9cddf48b842a20716f7bb0fd6fc3196b75665eaa2ab386c754bd671330",
+      "slides": 11
+    },
+    {
+      "deck": "small",
+      "path": "C:\\Users\\rehaa\\Downloads\\Facial Inpainting - Latest Presentations\\Facial Inpainting - Small Batch - Concise Review - 2026-10-11.pptx",
+      "sha256": "3106706f42a0770d1e870950e85b4079cfa9e5d78210c567df920c5c6ad3ff3f",
+      "slides": 10
+    }
+  ],
+  "main_result_tables": 2,
+  "main_arms": [
+    "control3",
+    "epsilon",
+    "rgb"
+  ],
+  "comparison_scope": "Three fixed development eye cases, clean references, seed 17. Not full-dataset accuracy.",
+  "summary_sha256": "dfaaf57ccf08ba53896aa5042a64c91726765915be89caee72f73036ccae189a",
+  "all_five_arm_results_retained_in_notes": true,
+  "dataset_photos_remain_local": true
+}
