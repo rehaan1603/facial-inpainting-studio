@@ -1,0 +1,2102 @@
+{
+  "date": "2026-10-10",
+  "rows": [
+    {
+      "identity": "263",
+      "location": "eyes",
+      "condition": "control5",
+      "seed": 17,
+      "status": "complete",
+      "sha256": "e62df99fbed56d4f69a74d6d6e6eaf80436c5bc79a6bc5ecb076cb3174062c93",
+      "raw_sha256": "472e3b92fdb372517fb84b2c1e0ea8c2ebab440a1ab4310a3eab6aa3c207a0d2",
+      "reused": true,
+      "metrics": {
+        "psnr": 28.046252613808992,
+        "ssim": 0.9660709617404785,
+        "lpips": 0.019516708329319954,
+        "hole_psnr": 16.413578445325435,
+        "hole_ssim": 0.49426393472099733,
+        "hole_lpips": 0.1683887094259262,
+        "eye_lpips": 0.2069522589445114,
+        "visible_changed": 0,
+        "facenet_cosine": 0.7281097769737244,
+        "arcface_conditioning_cosine": 0.802762508392334
+      },
+      "regions": {
+        "whole": {
+          "pixels": 262144,
+          "mae": 0.006742843927121629,
+          "psnr": 28.046252613808992,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 252004,
+          "ssim": 0.9660709617404785,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.019516708329319954,
+          "bbox_xyxy": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "masked": {
+          "pixels": 18000,
+          "mae": 0.09819978213507626,
+          "psnr": 16.413578445325435,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 14950,
+          "ssim": 0.49426393472099733,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.1683887094259262,
+          "bbox_xyxy": [
+            126,
+            177,
+            386,
+            272
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "visible": {
+          "pixels": 244144,
+          "mae": 0.0,
+          "psnr": null,
+          "psnr_status": "perfect_infinite",
+          "ssim_valid_centres": 230754,
+          "ssim": 1.0,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.019516708329319954,
+          "bbox_xyxy": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked",
+          "changed_pixels_vs_input": 0,
+          "vs_input": {
+            "pixels": 244144,
+            "mae": 0.0,
+            "psnr": null,
+            "psnr_status": "perfect_infinite"
+          }
+        },
+        "left_eye": {
+          "pixels": 662,
+          "mae": 0.2076200067136623,
+          "psnr": 11.572111794270834,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 96,
+          "ssim": 0.13045911730612958,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.19524264335632324,
+          "bbox_xyxy": [
+            273,
+            224,
+            352,
+            260
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "right_eye": {
+          "pixels": 687,
+          "mae": 0.21103214696844286,
+          "psnr": 11.098959416734091,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 123,
+          "ssim": 0.23610197059227428,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.18974007666110992,
+          "bbox_xyxy": [
+            148,
+            225,
+            225,
+            264
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "nose": {
+          "pixels": 1125,
+          "mae": 0.05028554829339143,
+          "psnr": 22.422673464840578,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 523,
+          "ssim": 0.7714368713042116,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.16162219643592834,
+          "bbox_xyxy": [
+            213,
+            224,
+            276,
+            272
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "mouth": {
+          "pixels": 0,
+          "mae": null,
+          "psnr": null,
+          "psnr_status": "empty_region",
+          "ssim_valid_centres": 0,
+          "ssim": null,
+          "ssim_status": "no_fully_contained_11x11_window",
+          "bbox_lpips": null,
+          "bbox_lpips_status": "empty_region"
+        },
+        "eyes": {
+          "pixels": 1349,
+          "mae": 0.20935769415253128,
+          "psnr": 11.324717452362032,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 219,
+          "ssim": 0.18979277463122454,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.2069522589445114,
+          "bbox_xyxy": [
+            148,
+            224,
+            352,
+            264
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "other": {
+          "pixels": 15526,
+          "mae": 0.09201348107622971,
+          "psnr": 17.06483966569177,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 10505,
+          "ssim": 0.5486404454272678,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.1683887094259262,
+          "bbox_xyxy": [
+            126,
+            177,
+            386,
+            272
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        }
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            131.28285217285156,
+            92.28170776367188,
+            404.0132751464844,
+            452.57421875
+          ],
+          "probability": 0.9999887943267822
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            132.88772583007812,
+            112.3121109008789,
+            403.886474609375,
+            451.95703125
+          ],
+          "probability": 0.6385312080383301
+        }
+      },
+      "output_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            128.48345947265625,
+            98.58065795898438,
+            404.0101623535156,
+            454.61236572265625
+          ],
+          "probability": 0.9999512434005737
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            132.56399536132812,
+            114.9345474243164,
+            403.7772521972656,
+            452.28985595703125
+          ],
+          "probability": 0.6644970178604126
+        }
+      }
+    },
+    {
+      "identity": "263",
+      "location": "eyes",
+      "condition": "control3",
+      "seed": 17,
+      "status": "complete",
+      "sha256": "d94ff7a1ca8ad016de09edf6353b59a21a9dcdcfeea8baaf67758c18f02698c3",
+      "raw_sha256": "d1b99b06ae7bd74355e8de0c76af2c59b5ff01b1f7618f96fc761fce0b4ba52f",
+      "reused": true,
+      "metrics": {
+        "psnr": 29.062505376316956,
+        "ssim": 0.968875349809233,
+        "lpips": 0.016391614452004433,
+        "hole_psnr": 17.429831207833402,
+        "hole_ssim": 0.5381170964853625,
+        "hole_lpips": 0.14406660199165344,
+        "eye_lpips": 0.17543599009513855,
+        "visible_changed": 0,
+        "facenet_cosine": 0.7508267164230347,
+        "arcface_conditioning_cosine": 0.8218575119972229
+      },
+      "regions": {
+        "whole": {
+          "pixels": 262144,
+          "mae": 0.00593153510997498,
+          "psnr": 29.062505376316956,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 252004,
+          "ssim": 0.968875349809233,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.016391614452004433,
+          "bbox_xyxy": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "masked": {
+          "pixels": 18000,
+          "mae": 0.08638424110384896,
+          "psnr": 17.429831207833402,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 14950,
+          "ssim": 0.5381170964853625,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.14406660199165344,
+          "bbox_xyxy": [
+            126,
+            177,
+            386,
+            272
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "visible": {
+          "pixels": 244144,
+          "mae": 0.0,
+          "psnr": null,
+          "psnr_status": "perfect_infinite",
+          "ssim_valid_centres": 230754,
+          "ssim": 1.0,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.016391614452004433,
+          "bbox_xyxy": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked",
+          "changed_pixels_vs_input": 0,
+          "vs_input": {
+            "pixels": 244144,
+            "mae": 0.0,
+            "psnr": null,
+            "psnr_status": "perfect_infinite"
+          }
+        },
+        "left_eye": {
+          "pixels": 662,
+          "mae": 0.1987915407854985,
+          "psnr": 12.101495926384146,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 96,
+          "ssim": 0.14585256173893424,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.16427648067474365,
+          "bbox_xyxy": [
+            273,
+            224,
+            352,
+            260
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "right_eye": {
+          "pixels": 687,
+          "mae": 0.2110188277154627,
+          "psnr": 11.229769216311363,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 123,
+          "ssim": 0.25815584237477474,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.1534300446510315,
+          "bbox_xyxy": [
+            148,
+            225,
+            225,
+            264
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "nose": {
+          "pixels": 1125,
+          "mae": 0.04310239651416122,
+          "psnr": 24.01848363730094,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 523,
+          "ssim": 0.8135759708453927,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.12154234945774078,
+          "bbox_xyxy": [
+            213,
+            224,
+            276,
+            272
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "mouth": {
+          "pixels": 0,
+          "mae": null,
+          "psnr": null,
+          "psnr_status": "empty_region",
+          "ssim_valid_centres": 0,
+          "ssim": null,
+          "ssim_status": "no_fully_contained_11x11_window",
+          "bbox_lpips": null,
+          "bbox_lpips_status": "empty_region"
+        },
+        "eyes": {
+          "pixels": 1349,
+          "mae": 0.20501848379579163,
+          "psnr": 11.635754231847354,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 219,
+          "ssim": 0.20892700702755695,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.17543599009513855,
+          "bbox_xyxy": [
+            148,
+            224,
+            352,
+            264
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "other": {
+          "pixels": 15526,
+          "mae": 0.07921268898301731,
+          "psnr": 18.325888799896155,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 10505,
+          "ssim": 0.5964714422580912,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.14406660199165344,
+          "bbox_xyxy": [
+            126,
+            177,
+            386,
+            272
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        }
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            131.28285217285156,
+            92.28170776367188,
+            404.0132751464844,
+            452.57421875
+          ],
+          "probability": 0.9999887943267822
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            132.88772583007812,
+            112.3121109008789,
+            403.886474609375,
+            451.95703125
+          ],
+          "probability": 0.6385312080383301
+        }
+      },
+      "output_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            131.2294921875,
+            92.43913269042969,
+            400.5443420410156,
+            449.9744873046875
+          ],
+          "probability": 0.9998090863227844
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            132.78953552246094,
+            114.02253723144531,
+            403.66424560546875,
+            452.201416015625
+          ],
+          "probability": 0.6619263887405396
+        }
+      }
+    },
+    {
+      "identity": "6681",
+      "location": "eyes",
+      "condition": "control5",
+      "seed": 17,
+      "status": "complete",
+      "sha256": "e246ca2084d1a783ee79f59d3ddbccd388f5374ddb40256a7b45318d0ccdfc3e",
+      "raw_sha256": "52b37990ee22ac75fa777a248edd160cbbe09f5fbbb53a6770539fbe3340c6d6",
+      "reused": true,
+      "metrics": {
+        "psnr": 30.693605667569063,
+        "ssim": 0.9661769503754936,
+        "lpips": 0.015601756051182747,
+        "hole_psnr": 18.91070276324044,
+        "hole_ssim": 0.493392655894572,
+        "hole_lpips": 0.1478424072265625,
+        "eye_lpips": 0.1227782592177391,
+        "visible_changed": 0,
+        "facenet_cosine": 0.7662721872329712,
+        "arcface_conditioning_cosine": 0.786205530166626
+      },
+      "regions": {
+        "whole": {
+          "pixels": 262144,
+          "mae": 0.005404643139808007,
+          "psnr": 30.693605667569063,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 252004,
+          "ssim": 0.9661769503754936,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.015601756051182747,
+          "bbox_xyxy": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "masked": {
+          "pixels": 17388,
+          "mae": 0.08148118077075167,
+          "psnr": 18.91070276324044,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 14278,
+          "ssim": 0.493392655894572,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.1478424072265625,
+          "bbox_xyxy": [
+            122,
+            186,
+            394,
+            275
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "visible": {
+          "pixels": 244756,
+          "mae": 0.0,
+          "psnr": null,
+          "psnr_status": "perfect_infinite",
+          "ssim_valid_centres": 231306,
+          "ssim": 1.0,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.015601756051182747,
+          "bbox_xyxy": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked",
+          "changed_pixels_vs_input": 0,
+          "vs_input": {
+            "pixels": 244756,
+            "mae": 0.0,
+            "psnr": null,
+            "psnr_status": "perfect_infinite"
+          }
+        },
+        "left_eye": {
+          "pixels": 347,
+          "mae": 0.16700005650675256,
+          "psnr": 13.21751908904808,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 4,
+          "ssim": 0.027047683790278273,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.10736451297998428,
+          "bbox_xyxy": [
+            287,
+            231,
+            348,
+            264
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "right_eye": {
+          "pixels": 512,
+          "mae": 0.14954299428104575,
+          "psnr": 14.018471337581193,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 62,
+          "ssim": 0.21403661193470264,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.14229603111743927,
+          "bbox_xyxy": [
+            160,
+            230,
+            226,
+            267
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "nose": {
+          "pixels": 872,
+          "mae": 0.03488187323859207,
+          "psnr": 26.96909196009869,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 346,
+          "ssim": 0.6934396328695633,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.1478865146636963,
+          "bbox_xyxy": [
+            228,
+            226,
+            285,
+            275
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "mouth": {
+          "pixels": 0,
+          "mae": null,
+          "psnr": null,
+          "psnr_status": "empty_region",
+          "ssim_valid_centres": 0,
+          "ssim": null,
+          "ssim_status": "no_fully_contained_11x11_window",
+          "bbox_lpips": null,
+          "bbox_lpips_status": "empty_region"
+        },
+        "eyes": {
+          "pixels": 859,
+          "mae": 0.15659491580877596,
+          "psnr": 13.676949960039966,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 66,
+          "ssim": 0.20270394962291932,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.1227782592177391,
+          "bbox_xyxy": [
+            160,
+            230,
+            348,
+            267
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "other": {
+          "pixels": 15657,
+          "mae": 0.07995546689008362,
+          "psnr": 19.27867933228445,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 10938,
+          "ssim": 0.5146704407309907,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.1478424072265625,
+          "bbox_xyxy": [
+            122,
+            186,
+            394,
+            275
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        }
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            128.3203582763672,
+            116.23567962646484,
+            368.9162902832031,
+            436.7896423339844
+          ],
+          "probability": 0.9999423027038574
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            135.1565399169922,
+            98.70101165771484,
+            372.24346923828125,
+            446.4615173339844
+          ],
+          "probability": 0.802096962928772
+        }
+      },
+      "output_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            127.62330627441406,
+            112.17631530761719,
+            369.68634033203125,
+            438.6063232421875
+          ],
+          "probability": 0.9994462132453918
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            135.79725646972656,
+            103.93912506103516,
+            372.6287536621094,
+            445.46484375
+          ],
+          "probability": 0.8208353519439697
+        }
+      }
+    },
+    {
+      "identity": "6681",
+      "location": "eyes",
+      "condition": "control3",
+      "seed": 17,
+      "status": "complete",
+      "sha256": "9db5649fad01950ef8ad358bc74f51f36c99550a80eb7123ccf0f2adb5b7bdab",
+      "raw_sha256": "73c21655de4975a994998a29cefc83306072e4765ce029b7ea1c46fc4eb9faf5",
+      "reused": true,
+      "metrics": {
+        "psnr": 31.642592126011927,
+        "ssim": 0.9675311478932489,
+        "lpips": 0.015800410881638527,
+        "hole_psnr": 19.859689221683304,
+        "hole_ssim": 0.5126660933943462,
+        "hole_lpips": 0.1369595229625702,
+        "eye_lpips": 0.11816850304603577,
+        "visible_changed": 0,
+        "facenet_cosine": 0.8400038480758667,
+        "arcface_conditioning_cosine": 0.8408806324005127
+      },
+      "regions": {
+        "whole": {
+          "pixels": 262144,
+          "mae": 0.004789549385020936,
+          "psnr": 31.642592126011927,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 252004,
+          "ssim": 0.9675311478932489,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.015800410881638527,
+          "bbox_xyxy": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "masked": {
+          "pixels": 17388,
+          "mae": 0.07220793846255626,
+          "psnr": 19.859689221683304,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 14278,
+          "ssim": 0.5126660933943462,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.1369595229625702,
+          "bbox_xyxy": [
+            122,
+            186,
+            394,
+            275
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "visible": {
+          "pixels": 244756,
+          "mae": 0.0,
+          "psnr": null,
+          "psnr_status": "perfect_infinite",
+          "ssim_valid_centres": 231306,
+          "ssim": 1.0,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.015800410881638527,
+          "bbox_xyxy": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked",
+          "changed_pixels_vs_input": 0,
+          "vs_input": {
+            "pixels": 244756,
+            "mae": 0.0,
+            "psnr": null,
+            "psnr_status": "perfect_infinite"
+          }
+        },
+        "left_eye": {
+          "pixels": 347,
+          "mae": 0.181326401838353,
+          "psnr": 12.792233593471597,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 4,
+          "ssim": 0.055811328847342336,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.13051794469356537,
+          "bbox_xyxy": [
+            287,
+            231,
+            348,
+            264
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "right_eye": {
+          "pixels": 512,
+          "mae": 0.15338031045751632,
+          "psnr": 14.347839756257873,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 62,
+          "ssim": 0.263822468239151,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.12845811247825623,
+          "bbox_xyxy": [
+            160,
+            230,
+            226,
+            267
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "nose": {
+          "pixels": 872,
+          "mae": 0.0278452359537087,
+          "psnr": 28.67014007325324,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 346,
+          "ssim": 0.7169510093690673,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.14039814472198486,
+          "bbox_xyxy": [
+            228,
+            226,
+            285,
+            275
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "mouth": {
+          "pixels": 0,
+          "mae": null,
+          "psnr": null,
+          "psnr_status": "empty_region",
+          "ssim_valid_centres": 0,
+          "ssim": null,
+          "ssim_status": "no_fully_contained_11x11_window",
+          "bbox_lpips": null,
+          "bbox_lpips_status": "empty_region"
+        },
+        "eyes": {
+          "pixels": 859,
+          "mae": 0.16466936017713257,
+          "psnr": 13.651155934456705,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 66,
+          "ssim": 0.2512157325184353,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.11816850304603577,
+          "bbox_xyxy": [
+            160,
+            230,
+            348,
+            267
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "other": {
+          "pixels": 15657,
+          "mae": 0.0696059020146348,
+          "psnr": 20.44420822630046,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 10938,
+          "ssim": 0.5241518120773234,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.1369595229625702,
+          "bbox_xyxy": [
+            122,
+            186,
+            394,
+            275
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        }
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            128.3203582763672,
+            116.23567962646484,
+            368.9162902832031,
+            436.7896423339844
+          ],
+          "probability": 0.9999423027038574
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            135.1565399169922,
+            98.70101165771484,
+            372.24346923828125,
+            446.4615173339844
+          ],
+          "probability": 0.802096962928772
+        }
+      },
+      "output_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            124.02899169921875,
+            112.27529907226562,
+            367.0096130371094,
+            443.1887512207031
+          ],
+          "probability": 0.9996308088302612
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            135.10208129882812,
+            103.22096252441406,
+            372.57171630859375,
+            445.8417053222656
+          ],
+          "probability": 0.81441330909729
+        }
+      }
+    },
+    {
+      "identity": "10149",
+      "location": "eyes",
+      "condition": "control5",
+      "seed": 17,
+      "status": "complete",
+      "sha256": "cd069b94367c5e5fe0cbb14afe39c39ba849f32dd8a495f4b3f90e584ce82395",
+      "raw_sha256": "b56c878918fe26bc878594750f90efc1e5219917c08b3043a02453cf252eb42e",
+      "reused": true,
+      "metrics": {
+        "psnr": 26.797704016427907,
+        "ssim": 0.9461171920373369,
+        "lpips": 0.03771750628948212,
+        "hole_psnr": 15.733231700848451,
+        "hole_ssim": 0.2974028689382077,
+        "hole_lpips": 0.26511481404304504,
+        "eye_lpips": 0.183848574757576,
+        "visible_changed": 0,
+        "facenet_cosine": 0.7984582185745239,
+        "arcface_conditioning_cosine": 0.7731587886810303
+      },
+      "regions": {
+        "whole": {
+          "pixels": 262144,
+          "mae": 0.008924591463375714,
+          "psnr": 26.797704016427907,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 252004,
+          "ssim": 0.9461171920373369,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.03771750628948212,
+          "bbox_xyxy": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "masked": {
+          "pixels": 20516,
+          "mae": 0.11403431977847354,
+          "psnr": 15.733231700848451,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 17466,
+          "ssim": 0.2974028689382077,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.26511481404304504,
+          "bbox_xyxy": [
+            139,
+            163,
+            382,
+            275
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "visible": {
+          "pixels": 241628,
+          "mae": 0.0,
+          "psnr": null,
+          "psnr_status": "perfect_infinite",
+          "ssim_valid_centres": 228238,
+          "ssim": 1.0,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.03771750628948212,
+          "bbox_xyxy": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked",
+          "changed_pixels_vs_input": 0,
+          "vs_input": {
+            "pixels": 241628,
+            "mae": 0.0,
+            "psnr": null,
+            "psnr_status": "perfect_infinite"
+          }
+        },
+        "left_eye": {
+          "pixels": 925,
+          "mae": 0.1966959901077548,
+          "psnr": 12.420876251170812,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 276,
+          "ssim": 0.05101536496764714,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.17513248324394226,
+          "bbox_xyxy": [
+            280,
+            223,
+            357,
+            267
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "right_eye": {
+          "pixels": 747,
+          "mae": 0.20013299384903452,
+          "psnr": 11.987415107792554,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 196,
+          "ssim": 0.005522967195579545,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.24432091414928436,
+          "bbox_xyxy": [
+            163,
+            222,
+            230,
+            265
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "nose": {
+          "pixels": 920,
+          "mae": 0.03329923273657289,
+          "psnr": 27.702338805394536,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 389,
+          "ssim": 0.7332967109839827,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.06277984380722046,
+          "bbox_xyxy": [
+            233,
+            221,
+            284,
+            275
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "mouth": {
+          "pixels": 0,
+          "mae": null,
+          "psnr": null,
+          "psnr_status": "empty_region",
+          "ssim_valid_centres": 0,
+          "ssim": null,
+          "ssim_status": "no_fully_contained_11x11_window",
+          "bbox_lpips": null,
+          "bbox_lpips_status": "empty_region"
+        },
+        "eyes": {
+          "pixels": 1672,
+          "mae": 0.19823154142039592,
+          "psnr": 12.221855318191711,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 472,
+          "ssim": 0.032124454028398725,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.183848574757576,
+          "bbox_xyxy": [
+            163,
+            222,
+            357,
+            267
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "other": {
+          "pixels": 17924,
+          "mae": 0.11032412816350225,
+          "psnr": 16.039226032134767,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 12876,
+          "ssim": 0.31871584536350767,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.26511481404304504,
+          "bbox_xyxy": [
+            139,
+            163,
+            382,
+            275
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        }
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            128.84872436523438,
+            90.3637924194336,
+            410.9854736328125,
+            482.012939453125
+          ],
+          "probability": 0.9999604225158691
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            138.32186889648438,
+            93.8662338256836,
+            405.16595458984375,
+            472.0928649902344
+          ],
+          "probability": 0.5566191077232361
+        }
+      },
+      "output_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            139.96156311035156,
+            123.71414184570312,
+            411.7641906738281,
+            476.5532531738281
+          ],
+          "probability": 0.9999998807907104
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            137.04446411132812,
+            91.49723815917969,
+            405.0794372558594,
+            473.3974609375
+          ],
+          "probability": 0.6036868691444397
+        }
+      }
+    },
+    {
+      "identity": "10149",
+      "location": "eyes",
+      "condition": "control3",
+      "seed": 17,
+      "status": "complete",
+      "sha256": "e4edb0ad6c5f3467d3e1e331f141bc63393a52e5da2bc53d336d7ded9238ce51",
+      "raw_sha256": "2ef079418376e5d92503554014f6ae6f63580cae5a7276db9fcc7666734fca9e",
+      "reused": true,
+      "metrics": {
+        "psnr": 27.45862132094856,
+        "ssim": 0.9474511126789711,
+        "lpips": 0.035643018782138824,
+        "hole_psnr": 16.3941490053691,
+        "hole_ssim": 0.31283817238784123,
+        "hole_lpips": 0.2543357312679291,
+        "eye_lpips": 0.1634472906589508,
+        "visible_changed": 0,
+        "facenet_cosine": 0.7626278400421143,
+        "arcface_conditioning_cosine": 0.7857299447059631
+      },
+      "regions": {
+        "whole": {
+          "pixels": 262144,
+          "mae": 0.008194742639080372,
+          "psnr": 27.45862132094856,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 252004,
+          "ssim": 0.9474511126789711,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.035643018782138824,
+          "bbox_xyxy": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "masked": {
+          "pixels": 20516,
+          "mae": 0.10470864761060074,
+          "psnr": 16.3941490053691,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 17466,
+          "ssim": 0.31283817238784123,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.2543357312679291,
+          "bbox_xyxy": [
+            139,
+            163,
+            382,
+            275
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "visible": {
+          "pixels": 241628,
+          "mae": 0.0,
+          "psnr": null,
+          "psnr_status": "perfect_infinite",
+          "ssim_valid_centres": 228238,
+          "ssim": 1.0,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.035643018782138824,
+          "bbox_xyxy": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked",
+          "changed_pixels_vs_input": 0,
+          "vs_input": {
+            "pixels": 241628,
+            "mae": 0.0,
+            "psnr": null,
+            "psnr_status": "perfect_infinite"
+          }
+        },
+        "left_eye": {
+          "pixels": 925,
+          "mae": 0.17202190425719838,
+          "psnr": 13.435304261677318,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 276,
+          "ssim": 0.10395882788207202,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.2052854746580124,
+          "bbox_xyxy": [
+            280,
+            223,
+            357,
+            267
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "right_eye": {
+          "pixels": 747,
+          "mae": 0.1768538205108014,
+          "psnr": 12.974568683877418,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 196,
+          "ssim": 0.05125384730780193,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.16066929697990417,
+          "bbox_xyxy": [
+            163,
+            222,
+            230,
+            265
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "nose": {
+          "pixels": 920,
+          "mae": 0.025730321113952827,
+          "psnr": 29.839094842967086,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 389,
+          "ssim": 0.7361125156747976,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.061688415706157684,
+          "bbox_xyxy": [
+            233,
+            221,
+            284,
+            275
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "mouth": {
+          "pixels": 0,
+          "mae": null,
+          "psnr": null,
+          "psnr_status": "empty_region",
+          "ssim_valid_centres": 0,
+          "ssim": null,
+          "ssim_status": "no_fully_contained_11x11_window",
+          "bbox_lpips": null,
+          "bbox_lpips_status": "empty_region"
+        },
+        "eyes": {
+          "pixels": 1672,
+          "mae": 0.17418066110016575,
+          "psnr": 13.223400707158879,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 472,
+          "ssim": 0.08207286137241748,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.1634472906589508,
+          "bbox_xyxy": [
+            163,
+            222,
+            357,
+            267
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "other": {
+          "pixels": 17924,
+          "mae": 0.10228189319319188,
+          "psnr": 16.622852635375406,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 12876,
+          "ssim": 0.33350829955161504,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.2543357312679291,
+          "bbox_xyxy": [
+            139,
+            163,
+            382,
+            275
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        }
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            128.84872436523438,
+            90.3637924194336,
+            410.9854736328125,
+            482.012939453125
+          ],
+          "probability": 0.9999604225158691
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            138.32186889648438,
+            93.8662338256836,
+            405.16595458984375,
+            472.0928649902344
+          ],
+          "probability": 0.5566191077232361
+        }
+      },
+      "output_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            139.29721069335938,
+            118.97412109375,
+            408.900146484375,
+            474.2482604980469
+          ],
+          "probability": 0.9999998807907104
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            137.3379669189453,
+            91.23179626464844,
+            405.03887939453125,
+            472.73260498046875
+          ],
+          "probability": 0.5911136865615845
+        }
+      }
+    },
+    {
+      "identity": "263",
+      "location": "eyes",
+      "condition": "steps50",
+      "seed": 17,
+      "status": "complete",
+      "sha256": "e6eaa7caa61c28a2bb2c9e4ccc485834f5afec673acf3b996c7bde946e381d52",
+      "raw_sha256": "5acaddbe07973372c07c36cbc37af68ce9ef8dcb1214e8d9c8d3df2fdda710d2",
+      "reused": false,
+      "seconds": 45.81299999999828,
+      "peak_allocated_bytes": 6534921728,
+      "metrics": {
+        "psnr": 28.88242146502465,
+        "ssim": 0.9682460204758209,
+        "lpips": 0.017349163070321083,
+        "hole_psnr": 17.24974729654109,
+        "hole_ssim": 0.5283195717323995,
+        "hole_lpips": 0.1521010845899582,
+        "eye_lpips": 0.1865997463464737,
+        "visible_changed": 0,
+        "facenet_cosine": 0.7371474504470825,
+        "arcface_conditioning_cosine": 0.8186450004577637
+      },
+      "regions": {
+        "whole": {
+          "pixels": 262144,
+          "mae": 0.006064635632084866,
+          "psnr": 28.88242146502465,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 252004,
+          "ssim": 0.9682460204758209,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.017349163070321083,
+          "bbox_xyxy": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "masked": {
+          "pixels": 18000,
+          "mae": 0.08832265795206971,
+          "psnr": 17.24974729654109,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 14950,
+          "ssim": 0.5283195717323995,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.1521010845899582,
+          "bbox_xyxy": [
+            126,
+            177,
+            386,
+            272
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "visible": {
+          "pixels": 244144,
+          "mae": 0.0,
+          "psnr": null,
+          "psnr_status": "perfect_infinite",
+          "ssim_valid_centres": 230754,
+          "ssim": 1.0,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.017349163070321083,
+          "bbox_xyxy": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked",
+          "changed_pixels_vs_input": 0,
+          "vs_input": {
+            "pixels": 244144,
+            "mae": 0.0,
+            "psnr": null,
+            "psnr_status": "perfect_infinite"
+          }
+        },
+        "left_eye": {
+          "pixels": 662,
+          "mae": 0.19717236340659122,
+          "psnr": 12.07781934805643,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 96,
+          "ssim": 0.12047086426904159,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.15970849990844727,
+          "bbox_xyxy": [
+            273,
+            224,
+            352,
+            260
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "right_eye": {
+          "pixels": 687,
+          "mae": 0.20858711267136645,
+          "psnr": 11.232930985090952,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 123,
+          "ssim": 0.2323699287583985,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.1622345745563507,
+          "bbox_xyxy": [
+            148,
+            225,
+            225,
+            264
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "nose": {
+          "pixels": 1125,
+          "mae": 0.04405403050108932,
+          "psnr": 23.73456246490978,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 523,
+          "ssim": 0.8113230517727299,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.13265010714530945,
+          "bbox_xyxy": [
+            213,
+            224,
+            276,
+            272
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "mouth": {
+          "pixels": 0,
+          "mae": null,
+          "psnr": null,
+          "psnr_status": "empty_region",
+          "ssim_valid_centres": 0,
+          "ssim": null,
+          "ssim_status": "no_fully_contained_11x11_window",
+          "bbox_lpips": null,
+          "bbox_lpips_status": "empty_region"
+        },
+        "eyes": {
+          "pixels": 1349,
+          "mae": 0.20298550851029812,
+          "psnr": 11.627064385799027,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 219,
+          "ssim": 0.18331828405073516,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.1865997463464737,
+          "bbox_xyxy": [
+            148,
+            224,
+            352,
+            264
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "other": {
+          "pixels": 15526,
+          "mae": 0.08156766764415414,
+          "psnr": 18.080212895891442,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 10505,
+          "ssim": 0.5850696822409915,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.1521010845899582,
+          "bbox_xyxy": [
+            126,
+            177,
+            386,
+            272
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        }
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            131.28285217285156,
+            92.28170776367188,
+            404.0132751464844,
+            452.57421875
+          ],
+          "probability": 0.9999887943267822
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            132.88772583007812,
+            112.3121109008789,
+            403.886474609375,
+            451.95703125
+          ],
+          "probability": 0.6385312080383301
+        }
+      },
+      "output_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            131.69383239746094,
+            93.32903289794922,
+            399.8364562988281,
+            449.6488342285156
+          ],
+          "probability": 0.999771773815155
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            132.731201171875,
+            114.52376556396484,
+            403.9114990234375,
+            452.35931396484375
+          ],
+          "probability": 0.6685854196548462
+        }
+      }
+    },
+    {
+      "identity": "6681",
+      "location": "eyes",
+      "condition": "steps50",
+      "seed": 17,
+      "status": "complete",
+      "sha256": "8a891eafebc75663b6d3ceefc413147878b5362ccb651a7c0c9b6cbbb4bf9727",
+      "raw_sha256": "b64b337b699a55aee02ee27caba92b4941d880151c7f857ed342e78fab226a16",
+      "reused": false,
+      "seconds": 44.39099999999962,
+      "peak_allocated_bytes": 6534921728,
+      "metrics": {
+        "psnr": 31.411339119335988,
+        "ssim": 0.9670177938652122,
+        "lpips": 0.01601211540400982,
+        "hole_psnr": 19.62843621500737,
+        "hole_ssim": 0.5064881662444124,
+        "hole_lpips": 0.1440688967704773,
+        "eye_lpips": 0.13296249508857727,
+        "visible_changed": 0,
+        "facenet_cosine": 0.8406025171279907,
+        "arcface_conditioning_cosine": 0.8309891223907471
+      },
+      "regions": {
+        "whole": {
+          "pixels": 262144,
+          "mae": 0.004915534125434028,
+          "psnr": 31.411339119335988,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 252004,
+          "ssim": 0.9670177938652122,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.01601211540400982,
+          "bbox_xyxy": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "masked": {
+          "pixels": 17388,
+          "mae": 0.07410730260971807,
+          "psnr": 19.62843621500737,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 14278,
+          "ssim": 0.5064881662444124,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.1440688967704773,
+          "bbox_xyxy": [
+            122,
+            186,
+            394,
+            275
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "visible": {
+          "pixels": 244756,
+          "mae": 0.0,
+          "psnr": null,
+          "psnr_status": "perfect_infinite",
+          "ssim_valid_centres": 231306,
+          "ssim": 1.0,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.01601211540400982,
+          "bbox_xyxy": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked",
+          "changed_pixels_vs_input": 0,
+          "vs_input": {
+            "pixels": 244756,
+            "mae": 0.0,
+            "psnr": null,
+            "psnr_status": "perfect_infinite"
+          }
+        },
+        "left_eye": {
+          "pixels": 347,
+          "mae": 0.17919798082537527,
+          "psnr": 12.900473245266564,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 4,
+          "ssim": 0.040546915909474776,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.1450570821762085,
+          "bbox_xyxy": [
+            287,
+            231,
+            348,
+            264
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "right_eye": {
+          "pixels": 512,
+          "mae": 0.1625,
+          "psnr": 13.84888388834056,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 62,
+          "ssim": 0.2573114601087377,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.1462555080652237,
+          "bbox_xyxy": [
+            160,
+            230,
+            226,
+            267
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "nose": {
+          "pixels": 872,
+          "mae": 0.02828146549139533,
+          "psnr": 28.593066347474586,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 346,
+          "ssim": 0.7102753067715757,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.144529789686203,
+          "bbox_xyxy": [
+            228,
+            226,
+            285,
+            275
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "mouth": {
+          "pixels": 0,
+          "mae": null,
+          "psnr": null,
+          "psnr_status": "empty_region",
+          "ssim_valid_centres": 0,
+          "ssim": null,
+          "ssim_status": "no_fully_contained_11x11_window",
+          "bbox_lpips": null,
+          "bbox_lpips_status": "empty_region"
+        },
+        "eyes": {
+          "pixels": 859,
+          "mae": 0.16924528445448803,
+          "psnr": 13.44052862680301,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 66,
+          "ssim": 0.24417421500575207,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.13296249508857727,
+          "bbox_xyxy": [
+            160,
+            230,
+            348,
+            267
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "other": {
+          "pixels": 15657,
+          "mae": 0.07143990806175358,
+          "psnr": 20.206296351148147,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 10938,
+          "ssim": 0.5195758386622327,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.1440688967704773,
+          "bbox_xyxy": [
+            122,
+            186,
+            394,
+            275
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        }
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            128.3203582763672,
+            116.23567962646484,
+            368.9162902832031,
+            436.7896423339844
+          ],
+          "probability": 0.9999423027038574
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            135.1565399169922,
+            98.70101165771484,
+            372.24346923828125,
+            446.4615173339844
+          ],
+          "probability": 0.802096962928772
+        }
+      },
+      "output_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            124.1156997680664,
+            112.74279022216797,
+            368.93096923828125,
+            446.1452941894531
+          ],
+          "probability": 0.99955815076828
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            135.38833618164062,
+            103.6168441772461,
+            372.8372802734375,
+            445.6880798339844
+          ],
+          "probability": 0.8140044808387756
+        }
+      }
+    },
+    {
+      "identity": "10149",
+      "location": "eyes",
+      "condition": "steps50",
+      "seed": 17,
+      "status": "complete",
+      "sha256": "da070a1cc17beb8ee4b2f8d9b141420ecb9b6e1b4a0643ec9c61d3c275575ab2",
+      "raw_sha256": "e1e8ff28e3c4b7817999e973b224f4e6e53f862e3f423bad0353ec048b47c52c",
+      "reused": false,
+      "seconds": 45.14100000000326,
+      "peak_allocated_bytes": 6534921728,
+      "metrics": {
+        "psnr": 27.416267098831625,
+        "ssim": 0.9472495600500419,
+        "lpips": 0.03516431897878647,
+        "hole_psnr": 16.35179478325217,
+        "hole_ssim": 0.31067875569113557,
+        "hole_lpips": 0.2578945755958557,
+        "eye_lpips": 0.16852977871894836,
+        "visible_changed": 0,
+        "facenet_cosine": 0.7768607139587402,
+        "arcface_conditioning_cosine": 0.7877908945083618
+      },
+      "regions": {
+        "whole": {
+          "pixels": 262144,
+          "mae": 0.008254311754812603,
+          "psnr": 27.416267098831625,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 252004,
+          "ssim": 0.9472495600500419,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.03516431897878647,
+          "bbox_xyxy": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "masked": {
+          "pixels": 20516,
+          "mae": 0.10546979433874024,
+          "psnr": 16.35179478325217,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 17466,
+          "ssim": 0.31067875569113557,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.2578945755958557,
+          "bbox_xyxy": [
+            139,
+            163,
+            382,
+            275
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "visible": {
+          "pixels": 241628,
+          "mae": 0.0,
+          "psnr": null,
+          "psnr_status": "perfect_infinite",
+          "ssim_valid_centres": 228238,
+          "ssim": 1.0,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.03516431897878647,
+          "bbox_xyxy": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked",
+          "changed_pixels_vs_input": 0,
+          "vs_input": {
+            "pixels": 241628,
+            "mae": 0.0,
+            "psnr": null,
+            "psnr_status": "perfect_infinite"
+          }
+        },
+        "left_eye": {
+          "pixels": 925,
+          "mae": 0.17397067655891185,
+          "psnr": 13.374338786601045,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 276,
+          "ssim": 0.09962952571470719,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.19308897852897644,
+          "bbox_xyxy": [
+            280,
+            223,
+            357,
+            267
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "right_eye": {
+          "pixels": 747,
+          "mae": 0.17547488428660174,
+          "psnr": 13.022398541016207,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 196,
+          "ssim": 0.0586633738448062,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.17356278002262115,
+          "bbox_xyxy": [
+            163,
+            222,
+            230,
+            265
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "nose": {
+          "pixels": 920,
+          "mae": 0.026379653310599604,
+          "psnr": 29.636475934087176,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 389,
+          "ssim": 0.7386068764657612,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.058470163494348526,
+          "bbox_xyxy": [
+            233,
+            221,
+            284,
+            275
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "mouth": {
+          "pixels": 0,
+          "mae": null,
+          "psnr": null,
+          "psnr_status": "empty_region",
+          "ssim_valid_centres": 0,
+          "ssim": null,
+          "ssim_status": "no_fully_contained_11x11_window",
+          "bbox_lpips": null,
+          "bbox_lpips_status": "empty_region"
+        },
+        "eyes": {
+          "pixels": 1672,
+          "mae": 0.1746427119492135,
+          "psnr": 13.213568498656226,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 472,
+          "ssim": 0.08261815756534151,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.16852977871894836,
+          "bbox_xyxy": [
+            163,
+            222,
+            357,
+            267
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        },
+        "other": {
+          "pixels": 17924,
+          "mae": 0.1030766796043717,
+          "psnr": 16.57429094940206,
+          "psnr_status": "finite",
+          "ssim_valid_centres": 12876,
+          "ssim": 0.3311959170806502,
+          "ssim_status": "valid_windows",
+          "bbox_lpips": 0.2578945755958557,
+          "bbox_xyxy": [
+            139,
+            163,
+            382,
+            275
+          ],
+          "bbox_lpips_status": "crop_with_context_not_pixel_masked"
+        }
+      },
+      "target_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            128.84872436523438,
+            90.3637924194336,
+            410.9854736328125,
+            482.012939453125
+          ],
+          "probability": 0.9999604225158691
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            138.32186889648438,
+            93.8662338256836,
+            405.16595458984375,
+            472.0928649902344
+          ],
+          "probability": 0.5566191077232361
+        }
+      },
+      "output_detections": {
+        "facenet": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            141.14173889160156,
+            117.41827392578125,
+            411.45062255859375,
+            474.57757568359375
+          ],
+          "probability": 1.0
+        },
+        "arcface_conditioning": {
+          "face_count": 1,
+          "status": "ok",
+          "box": [
+            137.7081756591797,
+            91.35786437988281,
+            405.0809020996094,
+            472.68603515625
+          ],
+          "probability": 0.5893309116363525
+        }
+      }
+    }
+  ],
+  "verification": {
+    "records": 9,
+    "new_candidates": 3,
+    "reused_controls": 6,
+    "replay_gpu_calls": 1,
+    "replays_exact": true,
+    "replay_files_reopened": true,
+    "visible_changed_pixels": 0,
+    "facenet_valid": 9,
+    "arcface_valid": 9,
+    "maximum_reused_metric_difference": 0.0,
+    "peak_allocated_bytes": 6534921728,
+    "candidate_seconds": [
+      45.81299999999828,
+      44.39099999999962,
+      45.14100000000326
+    ],
+    "summary_sha256": "bd21411c05e553826392e1e82664ef8b76c9f76fc73c0fb5dc0f4bd034fc3945",
+    "config_sha256": "d6cb3d1cc23d0401323adbb04312d3d0956cf2439b7058119f88650c8d7f9978"
+  },
+  "config_sha256": "d6cb3d1cc23d0401323adbb04312d3d0956cf2439b7058119f88650c8d7f9978",
+  "protocol_sha256": "bf11dcc195756e3cb13ecd087cf2842162bca88c5ea4d92658f2aac7e9fc31a6",
+  "runner_sha256": "51f40a65e3d73de0821e790876b47b5804ff594f436305ade65f3cd865f7ad62",
+  "generator_sha256": "6fa4fe9c7742c8a1ec69d1586cc98a07573b1b85e5bebf0ad4c899b75a782daf",
+  "evaluation_sha256": "3828ee7f0fcc53a4638ac48faff7eb7044f4afb3453331074531d572a15e447b",
+  "replay_checks": {
+    ".png": {
+      "pixel_exact": true,
+      "new_sha256": "d94ff7a1ca8ad016de09edf6353b59a21a9dcdcfeea8baaf67758c18f02698c3",
+      "control_sha256": "d94ff7a1ca8ad016de09edf6353b59a21a9dcdcfeea8baaf67758c18f02698c3"
+    },
+    "_raw.png": {
+      "pixel_exact": true,
+      "new_sha256": "d1b99b06ae7bd74355e8de0c76af2c59b5ff01b1f7618f96fc761fce0b4ba52f",
+      "control_sha256": "d1b99b06ae7bd74355e8de0c76af2c59b5ff01b1f7618f96fc761fce0b4ba52f"
+    }
+  },
+  "parameters": {
+    "guidance": 3.0,
+    "steps": 50,
+    "scale": 0.8,
+    "appearance_scale": 0.0,
+    "freeu": null,
+    "resolution": 1024,
+    "export_resolution": 512,
+    "training": false
+  },
+  "visual_review": {
+    "inspected_all_three_seed17_sheets": true,
+    "visual_gate_pass": false,
+    "notes": {
+      "263": "More denoising retains frontal gaze and unnatural iris contrast; eyebrow size/shape differs and SSIM falls.",
+      "6681": "No clear correction of iris/gaze or brow shape; hole SSIM, PSNR and contextual LPIPS worsen.",
+      "10149": "FaceNet improves versus CFG3 but iris/gaze/expression remain wrong; SSIM and perceptual metrics worsen."
+    },
+    "decision": "Rejected step-budget recipe; no replication or website change."
+  }
+}

@@ -8,6 +8,26 @@
 
 ## Latest status update
 
+### 10 October: SSIM-focused GPU round completed
+
+Completed **13 GPU calls**: nine new candidates and four neutral control replays across three isolated experiments on persons 263, 6681 and 10149 at seed 17. The GPU reached 99% utilization near its rated 115 W limit; query-local appearance reached **7.394 GB peak allocated tensor memory**. No training, new weights, dataset changes or production-setting changes occurred.
+
+| Same three people / seed 17 / erased eyes | Hole SSIM ↑ | Hole PSNR ↑ | Hole crop LPIPS ↓ | FaceNet ↑ | ArcFace ↑ |
+|---|---:|---:|---:|---:|---:|
+| Original CFG5 / DDIM30 | 0.428353 | 17.019171 | 0.193782 | 0.764280 | 0.787376 |
+| Current CFG3 / DDIM30 | **0.454540** | 17.894556 | 0.178454 | 0.784486 | 0.816156 |
+| Fixed Diffusers FreeU at CFG3 | 0.399476 | 16.219278 | 0.202284 | 0.743002 | 0.770318 |
+| Hole-local reference appearance 0.2 at CFG3 | 0.444884 | 17.904116 | 0.176645 | 0.782640 | 0.805353 |
+| CFG3 / DDIM50 | 0.448495 | 17.743326 | 0.184688 | 0.784870 | 0.812475 |
+
+None passes the predefined combined gate against current CFG3, so no candidate is deployed or expanded to more seeds. Local appearance improves all six metrics versus CFG3 for person 6681 and slightly improves person 10149's SSIM, but person 263 regresses enough to lower the batch SSIM/identity. More steps improve mean FaceNet slightly while worsening SSIM, PSNR and both local LPIPS measures. All nine candidate comparisons were inspected; eye colour, gaze and brow fidelity remain unresolved. The **0.454540 seed-17** mean above must not be mixed with the preserved **0.433098 three-seed** CFG3 mean.
+
+Four raw/finished control replays are byte-exact. The three studies retain **30 scored records** comprising nine new candidates and 21 reused control records; these are not 30 independent images or people. Every record preserves visible pixels exactly and has FaceNet/ArcFace measurements. Five real-attention tests pass in the reference runtime; source/input/reference pins and 22 pretrained SDXL asset files/aliases verify against original download hashes. [Verification](research/focused_eye_ssim_studies_v1_verification.json) and complete photo-free per-output exports retain all values.
+
+Reports: [FreeU audit/results](research/FOCUSED_EYE_FREEU_RESULTS_V1.md), [query-local appearance](research/FOCUSED_EYE_LOCAL_APPEARANCE_RESULTS_V1.md), [50-step check](research/FOCUSED_EYE_STEPS_RESULTS_V1.md). Each existing local person folder now includes **Experimental - FreeU decoder**, **Experimental - Local appearance** and **Experimental - 50 steps**, with control/candidate PNGs and comparison sheets. These are labelled offline experiments; Start Studio retains its working methods and default-off gentler option. Current local service: **http://127.0.0.1:8765/**.
+
+**Next:** stop inference-setting tuning on these repeatedly examined targets. Audit a trainable local target/reference compatibility or correspondence intervention for the mask-conditioned SDXL path, including exact parameter count and a gradient/memory feasibility probe before a pilot. Keep references/targets separated, current controls unchanged and final identities reserved. Training must use actual erased-region inputs and declare masked reconstruction/perceptual/identity objectives separately; the earlier whole-image ReF-LDM adapter losses cannot be treated as masked SDXL training. More GPU use alone has not resolved the missing local information. The manuscript and validation remain work in progress.
+
 ### 10 October: Start Studio freshness fix
 
 The launcher previously reused any server on port 8765 with a valid session, so an older backend could be opened after files had been updated. The server now records a startup fingerprint of studio source; Start Studio reuses only a matching process, otherwise starting current code on an available loopback port. It preserves existing jobs and can reuse a current server on fallback ports. Eight launcher tests and all 22 HTTP boundary tests pass. A fresh server is running at **http://127.0.0.1:8765/**; live checks confirm its revision matches disk, the gentler control is served, and a second launch reuses the same process. [Verification](research/releases/2026-10-10/launcher_verification.json). This launch fix changes no model settings or experimental scores.
@@ -455,7 +475,7 @@ The measurement baseline is substantially stronger, but the research is not yet 
 
 ## 4. Remaining work
 
-**Reconciled on 10 October 2026 with the completed masked-task diagnostic, focused three-person reference comparisons, guidance replication, appearance/texture results and application integration.** Earlier v2–v5 restoration and rejection studies remain under their original protocols. Research improvement is work in progress. The additional Human Faces dataset work remains separate.
+**Reconciled on 10 October 2026 with the completed masked-task diagnostic, focused three-person reference comparisons, guidance replication, appearance/texture results, FreeU/local-appearance/50-step screens and application integration.** Earlier v2–v5 restoration and rejection studies remain under their original protocols. Research improvement is work in progress. The additional Human Faces dataset work remains separate.
 
 | Area | Current evidence and remaining work | Status |
 |---|---|---|
@@ -464,7 +484,7 @@ The measurement baseline is substantially stronger, but the research is not yet 
 | Reference robustness | Compression failure diagnosed; studio ReF-LDM now validates one face per reference and frames rectangular uploads without distortion. Broader poor-quality, pose and expression handling still needs matched validation with failures retained | Basic client checks implemented; broader validation pending |
 | Local correspondence | Five-point similarity and eight regional features implemented; 22/24 initial cases detected; 3D pose/expression/occlusion unresolved | Prototype complete |
 | Local fusion | Six-policy, two-seed 48-row comparison complete; no multi-metric advantage established | Negative/mixed result |
-| Learned adapter | The intervention/regional and v2–v5 restoration studies are complete with trade-offs. The erased-region audit found a functional gap, so current quality work uses mask-conditioned SDXL. Guidance replication improves means but loses FaceNet for one person. Appearance/texture pilots remain unsuccessful; local correspondence/reliability is the next investigation | Earlier adapters and new inference diagnostics complete; consistent quality improvement remains |
+| Learned adapter | Earlier v2–v5 restoration studies retain trade-offs. Mask-conditioned SDXL generates the missing regions; guidance replication improves means but loses identity for one person. Appearance/texture, FreeU, query-local appearance and 50-step checks do not consistently improve current CFG3. Next audit trainable local target/reference compatibility and correspondence, then gradient/memory feasibility before masked-task training | Inference screens complete; learned masked SDXL intervention and consistent improvement remain |
 | Confidence UI | Prior generation/download checks passed. Current update fixes stale state, upload races, evidence suggestions/transparency, and missing-area strength selection; new HTTP/GPU checks pass. Current main/evidence browser flows are verified with real generated images, matching references, downloads and state invalidation | Implemented and browser verified |
 | Runtime reliability | Original native/OpenCV failures retained; fixed-thread studio retry passed. Two wrapper failures from an unnecessary OpenCV import were fixed and both recovery runs passed. Continue recurrence checks; no universal root-cause claim | Mitigations and recoveries verified |
 | Visual assessment | Prior reviewed studies retained; all four new studio audit sheets reviewed, with coloured holes, retained erasures and facial errors documented. Blinded human evaluation remains | Internal review complete for these runs; human study pending |
@@ -515,7 +535,7 @@ Compare random single-reference, all-reference and global-quality baselines agai
 
 ### Phase 4 — develop the smallest justified fusion method (small adapters trained; useful contribution unresolved)
 
-Regional reference features, deterministic fusion and compact learned-adapter investigations are implemented. The regional v1 pilot covers eight reference conditions. Identity compatibility v2 adds a frozen decoded FaceNet objective and compares four methods across three inference seeds and two reference conditions. It improves average eye crop LPIPS but still loses overall perceptual/identity fidelity. The v3 crop, v4 balanced/gradient-cap and v5 timestep comparisons are complete. The expanded encoding diagnostic and oracle whole-reference removal do not meet the joint requirement. Next test spatially restricted rejection feasibility with neutral and random-region controls before learning a localization gate. Complete regional/global and consistency ablations before independent expansion. Preserve the working pretrained baseline and all earlier results.
+Regional reference features, deterministic fusion and compact learned-adapter investigations are implemented. The regional v1 pilot and v2–v5 identity objectives concern whole-image ReF-LDM restoration and retain quality trade-offs. Whole-reference and hard spatial rejection diagnostics are complete and failed the combined requirements. Actual erased-region tests now use mask-conditioned SDXL. Guidance, global appearance, registered texture, FreeU, query-local appearance and denoising-budget checks are recorded under their own protocols. The next step is a separately audited trainable local target/reference compatibility or correspondence mechanism for masked SDXL, with exact parameter count and a gradient/memory feasibility probe before a pilot. Declare each training loss/ablation separately, preserve all controls and complete regional/global and consistency comparisons before independent expansion. Preserve the working pretrained baseline and all earlier results.
 
 **Deliverable:** trained candidate module, checkpoints, loss histories and mechanism ablations.  
 **Acceptance criterion:** reproducible improvement on declared measures, acceptable failure behavior and a defensible distinction from closest prior work. Implementation alone is not evidence of novelty.

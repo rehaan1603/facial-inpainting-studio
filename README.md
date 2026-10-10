@@ -65,6 +65,8 @@ SSIM improves in 8/9 pairs; person10149 loses **0.01362 mean FaceNet cosine**. I
 
 The app exposes unchecked **Gentler eye details** only in 1024 reference mode with **Ignore opaque cover colour** enabled. Four live reconstructions match saved raw/final research outputs byte-for-byte. See [app verification](research/GENTLER_REFERENCE_WEBSITE_V1.md). Added appearance conditioning and registered texture transfer retain mixed/negative results in their reports.
 
+The **10 October SSIM round** adds three isolated screens at seed 17: FreeU, hole-local appearance attention and 50 denoising steps. Thirteen GPU calls include four exact control replays. None passes the combined quality/identity gate; current CFG3 settings remain available. Hole SSIM is **0.454540** for the seed-17 CFG3 control, versus **0.399476**, **0.444884** and **0.448495** respectively. These seed-17 values are separate from the nine-pair means above. See the [reports and complete numeric records](research/README.md#current-masked-facial-region-inpainting) and [verification](research/focused_eye_ssim_studies_v1_verification.json).
+
 Local test sets are under `Downloads/All Face Datasets/Ready to test sets/Reference reconstruction - 3 people - 2026-10-09/`. Each includes inputs, masks, references, comparison-only originals and labelled outputs. Use the [official dataset/sample restoration guide](research/DATASET_DOWNLOADS_AND_SAMPLES.md).
 
 ## Evaluation and reproduction

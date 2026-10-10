@@ -17,10 +17,15 @@ This track tests missing eye/mouth regions. Its generator and supports differ fr
 | Extra visual-reference branch | [protocol](FOCUSED_EYE_APPEARANCE_PREFLIGHT_V1.md) | [results](FOCUSED_EYE_APPEARANCE_RESULTS_V1.md), [verification](focused_eye_appearance_verification_v1.json); mean SSIM decreases |
 | Guidance/appearance interaction | [protocol](FOCUSED_EYE_FACTORIAL_PREFLIGHT_V1.md) | [four arms](FOCUSED_EYE_FACTORIAL_RESULTS_V1.md); SSIM/ArcFace regress versus CFG3 |
 | Registered eye/brow texture | [protocol](FOCUSED_EYE_TEXTURE_PREFLIGHT_V1.md) | [rejected results](FOCUSED_EYE_TEXTURE_RESULTS_V1.md), [verification](focused_eye_texture_verification_v1.json); all six means worsen |
+| Fixed FreeU decoder | [audit/protocol](FOCUSED_EYE_FREEU_AUDIT_AND_PREFLIGHT_V1.md) | [results](FOCUSED_EYE_FREEU_RESULTS_V1.md), [metrics](focused_eye_freeu_v1_metrics.json); SSIM/identity decrease |
+| Hole-local appearance attention | [protocol](FOCUSED_EYE_LOCAL_APPEARANCE_PREFLIGHT_V1.md) | [results](FOCUSED_EYE_LOCAL_APPEARANCE_RESULTS_V1.md), [metrics](focused_eye_local_appearance_v1_metrics.json); two SSIM gains, combined gate fails |
+| More denoising 30→50 | [protocol](FOCUSED_EYE_STEPS_PREFLIGHT_V1.md) | [results](FOCUSED_EYE_STEPS_RESULTS_V1.md), [metrics](focused_eye_steps_v1_metrics.json); SSIM/perceptual regression |
 | Anatomical diagnostics | Supplementary annotation supports | [eye/brow diagnostic](EYE_BROW_FIDELITY_DIAGNOSTIC_V1.md); sparse valid windows |
 | App integration | Optional CFG3, default off | [four actual replays](GENTLER_REFERENCE_WEBSITE_V1.md) |
 
 Three-person repeated guidance has mean hole SSIM **0.414146 → 0.433098**; person10149 loses **0.013618 mean FaceNet cosine**. Iris/gaze/brow reconstruction remains imperfect. Positive averages and per-person failures both remain visible. These are development comparisons, not arbitrary unknown-client accuracy or a matched paper benchmark.
+
+The 10 October round completes 13 GPU calls with four exact replays; none of the three new recipes beats the current CFG3 combined gate. [Verification and pinned model assets](focused_eye_ssim_studies_v1_verification.json). Its seed-17 CFG3 mean SSIM 0.454540 is separate from the three-seed 0.433098 result above. Inference-setting tuning is closed for this round; trainable local correspondence/compatibility and masked-task feasibility are next.
 
 ## Earlier ReF-LDM restoration and adapters
 

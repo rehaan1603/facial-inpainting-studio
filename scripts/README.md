@@ -39,6 +39,10 @@ The HTTP server uses project `.venv`; reference generation/colour matching uses 
 | Appearance | [pinned download](download_eye_appearance_models_v1.py), [runner](run_focused_eye_appearance_v1.py) | [scorer](score_focused_eye_appearance_v1.py), [report](report_focused_eye_appearance_v1.py) |
 | Guidance/appearance | [runner](run_focused_eye_factorial_v1.py) | [scorer](score_focused_eye_factorial_v1.py), [report](report_focused_eye_factorial_v1.py), [verifier](verify_focused_eye_appearance_v1.py) |
 | Rejected texture | [runner](run_focused_eye_texture_v1.py) | [scorer](score_focused_eye_texture_v1.py), [report/verifier](report_focused_eye_texture_v1.py) |
+| FreeU decoder | [runner](run_focused_eye_freeu_v1.py) | [scorer](score_focused_eye_freeu_v1.py), [report](report_focused_eye_freeu_v1.py) |
+| Query-local appearance | [runner](run_focused_eye_local_appearance_v1.py), [attention helper](local_appearance_processor_v1.py) | [scorer](score_focused_eye_local_appearance_v1.py), [report](report_focused_eye_local_appearance_v1.py), [attention tests](test_local_appearance_processor_v1.py) |
+| Denoising 30→50 | [runner](run_focused_eye_steps_v1.py) | [scorer](score_focused_eye_steps_v1.py), [report](report_focused_eye_steps_v1.py) |
+| SSIM round provenance | [verifier/export](verify_focused_eye_ssim_studies_v1.py) | Photo-free numeric records, original model pins, exact controls and visible-pixel checks |
 | Eye/brow metrics | [diagnostic](diagnose_eye_brow_fidelity_v1.py) | Offline target annotations; never generator input |
 | Live app replays | [GPU/API test](test_gentler_reference_website_v1.py) | [report](report_gentler_reference_website_v1.py) |
 
