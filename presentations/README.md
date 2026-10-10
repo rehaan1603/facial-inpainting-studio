@@ -1,6 +1,19 @@
 Latest public photo-free presentation: [5 October 2026 results](Facial_Inpainting_Results_2026-10-05.pptx). This dated 20-slide snapshot covers architecture, training, corruption, v4/v5, metrics, official-input encoding and papers. Dataset photos are excluded.
 
-**10 October update:** newer masked-inpainting and repeated eye-guidance results are available in the [research index](../research/README.md), [release tables](../research/releases/2026-10-10/README.md) and [project report](../PROJECT_REPORT.md). The public deck retains its original protocol/date. The separate **Facial Inpainting - Small Batch Test - 2026-10-09.pptx** has 20 slides with three-person images, architecture, methods and values and remains in the original laptop's Downloads. Later CFG3/appearance/texture studies have not been added to that illustrated deck. Restricted dataset-image redistribution was not authorized.
+## Latest local illustrated decks — 11 October 2026
+
+The earlier overall and small-batch decks have been updated in fresh copies. The original cover, architecture, methods, photographs, historical tables and ten paper hyperlinks are preserved. Latest files in the original laptop's Downloads:
+
+| Deck | Local filename | Slides |
+|---|---|---:|
+| Overall project | `Facial Inpainting Studio - Overall Results - Decoded Continuations - 2026-10-11.pptx` |42|
+| Small batch | `Facial Inpainting - Small Batch - Decoded Continuations - 2026-10-11.pptx` |37|
+
+Both include completed 64-update training and the two matched 16-update continuations, whole-image PSNR/SSIM/LPIPS, separate hole/eye scores, FaceNet/ArcFace and the actual scored outputs. All five methods stay together. RGB whole LPIPS improves slightly, but hole SSIM/FaceNet regress versus equally trained epsilon; numerical and visual gates fail and are retained. High whole-image SSIM includes unchanged visible pixels and is not an accuracy percentage. These are three development eye cases at seed17, separate from the earlier four-person whole-image ReF-LDM blur/noise studies; they are not pooled or described as full-dataset accuracy.
+
+[Exact local filenames, SHA256, metric means and decisions](local_illustrated_update_20261011.json) · [paired decoded-loss results](../research/MASKED_SDXL_DECODED_CONTINUATION_RESULTS_V1.md) · [current project report](../PROJECT_REPORT.md).
+
+The new illustrated files remain local because dataset-photo redistribution was not authorized. A clone includes this photo-free metadata and complete numeric/source evidence. Original 32-slide/20-slide source decks and the intermediate 38-slide/27-slide whole-image copies remain intact. The public decks below retain their dated historical scope.
 
 # Research results presentation
 

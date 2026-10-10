@@ -2,9 +2,9 @@
 
 Local facial reconstruction and evaluation on a Windows laptop with an RTX 5070 Laptop GPU. Upload a damaged photograph, mark the affected region, supply optional matching reference photographs, reconstruct, compare and download the result.
 
-**Updated 10 October 2026.** Start with the [project report](PROJECT_REPORT.md), [research index](research/README.md) and [local testing instructions](LOCAL_TESTING.md). Public hosting is paused. Dataset photographs and downloaded model weights stay on the configured laptop.
+**Updated 11 October 2026.** Start with the [project report](PROJECT_REPORT.md), [research index](research/README.md) and [local testing instructions](LOCAL_TESTING.md). Public hosting is paused. Dataset photographs and downloaded model weights stay on the configured laptop.
 
-The latest masked SDXL pilot completed 64 GPU updates on eight eligible training people with 385 trainable parameters. It improves all six means over neutral local appearance, but SSIM 0.445016 remains below current CFG3's 0.454540 and person 263 fails identity guards. It stays offline; [complete results](research/MASKED_SDXL_COMPATIBILITY_PILOT_RESULTS_V2.md) preserve both gains and regressions.
+The latest isolated study completes two matched 16-update GPU continuations of the preserved 64-update masked SDXL scorer. Adding decoded missing-region RGB loss slightly improves eye-crop LPIPS but lowers hole SSIM and FaceNet versus equally trained epsilon. All 15 records, failed gates and raw/finished review are retained; no new weights are deployed. [Complete results](research/MASKED_SDXL_DECODED_CONTINUATION_RESULTS_V1.md) and [verified photo-free evidence](research/masked_sdxl_decoded_continuation_v1_evidence.json) distinguish whole-image values from missing-eye fidelity. The updated illustrated overall and small-batch decks remain local; see [presentation locations](presentations/README.md).
 
 ## Navigate the project
 

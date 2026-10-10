@@ -1,0 +1,170 @@
+{
+  "status": "passed",
+  "scope": "One training-photo gradient/resource probe only; no quality evaluation",
+  "started_at_utc": "2026-10-10T13:36:42.056614+00:00",
+  "identity": "6792",
+  "target_hq_id": "28120",
+  "trainable_parameters": 385,
+  "resolution": 512,
+  "timestep": 300,
+  "noise_seed": 20261011,
+  "rgb_weight": 0.1,
+  "decoded_rgb_policy": "affine /2 + .5, unclamped",
+  "objective": "0.25 full epsilon MSE + 0.75 hole epsilon MSE + 0.1 normalized masked RGB L1",
+  "versions": {
+    "torch": "2.11.0+cu128",
+    "diffusers": "0.40.0",
+    "transformers": "5.17.0",
+    "safetensors": "0.8.0"
+  },
+  "backend_flags_before": {
+    "flash": true,
+    "mem_efficient": true,
+    "math": true,
+    "cudnn": true
+  },
+  "stages": {
+    "load_models": 4.860000000000582,
+    "unet_forward": 1.4060000000026776,
+    "epsilon_backward": 2.375,
+    "cpu_vae_decode": 7.639999999999418,
+    "rgb_backward": 17.25,
+    "disposable_update": 0.11000000000058208
+  },
+  "checkpoints_created": 0,
+  "quality_scores_created": 0,
+  "old_checkpoint_changed": false,
+  "current_stage": "complete",
+  "elapsed_seconds": 33.64100000000326,
+  "process_memory": {
+    "peak_working_set_bytes": 7437676544,
+    "working_set_bytes": 4186464256,
+    "peak_pagefile_bytes": 17212342272
+  },
+  "frozen_vae_parameters": 83653863,
+  "modified_processors": 70,
+  "alpha_bar": 0.5905007719993591,
+  "oracle_x0_inverse_residual": {
+    "max_absolute": 0.003003716468811035,
+    "rms": 0.0004289121716283262,
+    "reason": "Inherited scheduler.add_noise fp16 coefficient/arithmetic rounding; not exact inverse"
+  },
+  "backend_flags_inside": {
+    "flash": true,
+    "mem_efficient": false,
+    "math": true,
+    "cudnn": false
+  },
+  "epsilon_gradient_norm": 7.034015288809314e-05,
+  "decoded_rgb_range": {
+    "minimum": -0.01965862512588501,
+    "maximum": 0.9940462112426758,
+    "outside_unit_interval_fraction": 8.138021075865254e-05
+  },
+  "mask": {
+    "pixels": 16048,
+    "binary_sha256": "6a1ec111bb3079152858f12b0f9a862e14d3f46d71b19ecb290985d7677ed09a",
+    "bbox_xyxy_exclusive": [
+      150,
+      195,
+      386,
+      263
+    ]
+  },
+  "losses": {
+    "full_epsilon_mse": 0.02138146385550499,
+    "hole_epsilon_mse": 0.24364855885505676,
+    "epsilon_objective": 0.1880817860364914,
+    "masked_rgb_l1": 0.05341110751032829,
+    "combined": 0.19342289678752422
+  },
+  "rgb_gradient_norm": 9.081121970666572e-05,
+  "weighted_rgb_gradient_norm": 9.081121970666573e-06,
+  "rgb_to_epsilon_gradient_norm_ratio": 1.2910296036908078,
+  "gradient_cosine": 0.9988124867494224,
+  "combined_gradient_norm": 7.941172225400805e-05,
+  "parameter_update": true,
+  "frozen_unet_gradients": false,
+  "frozen_vae_gradients": false,
+  "backend_flags_after": {
+    "flash": true,
+    "mem_efficient": true,
+    "math": true,
+    "cudnn": true
+  },
+  "backend_flags_restored": true,
+  "gpu": "NVIDIA GeForce RTX 5070 Laptop GPU",
+  "peak_allocated_bytes": 7337905664,
+  "peak_reserved_bytes": 7767851008,
+  "finished_at_utc": "2026-10-10T13:37:15.737644+00:00",
+  "input_checkpoint_sha256": "0f6ad433ce03a998c4fe4375e309fe79a85bc0d945448774fb603edbeace84ba",
+  "receipt_sha256": "6fea47272317db6106393873abe8663cc00d76ebc05762d730d037034551e5a8",
+  "source_pins": [
+    {
+      "file": "scripts/probe_masked_sdxl_decoded_loss_v1.py",
+      "sha256": "793b3129da7245ece5d66be1388a087d5763ea00fbb9d5671b0fe73c22257a82"
+    },
+    {
+      "file": "research/MASKED_SDXL_DECODED_LOSS_PREFLIGHT_V1.md",
+      "sha256": "96acc65e553c3a157475c2fe80347696eea2877172aaded258ea55df51cf6c8e"
+    },
+    {
+      "file": "scripts/run_masked_sdxl_decoded_loss_bounded_v1.py",
+      "sha256": "2e6879d35d1ddfdd22c716e9069d050dad373d1cfeb199ab1dc99d87fdc81a1b"
+    },
+    {
+      "file": "scripts/train_masked_sdxl_compatibility_pilot_v2.py",
+      "sha256": "11b386f381773653afd360be3ee6461d23c34fdb134c4ef2d7ea07ab19af8b55"
+    },
+    {
+      "file": "scripts/sdxl_token_compatibility_probe_v1.py",
+      "sha256": "aab88b6eefd892d38134efb44c0ea9f6aa8c3c15d189638030d999971053e0d8"
+    },
+    {
+      "file": "scripts/local_appearance_processor_v1.py",
+      "sha256": "e1b15e3f801f48c103f9fdd5450f5d71cebb10b7af02581c72633f3b58128d01"
+    },
+    {
+      "file": "autoencoder_kl.py",
+      "sha256": "091d72ea9ae2f45f465e70f05142e04850d1153052dca520291ceb707bda8c98"
+    },
+    {
+      "file": "unet_2d_condition.py",
+      "sha256": "0976bd0b650b2d6889f78fd3c8776ba365bd1f193dec18f72bdafdbadf91fe50"
+    },
+    {
+      "file": "scheduling_ddpm.py",
+      "sha256": "3822205d8e95938da6af85dfb9e0455c15bc37983d2d5842ee586c29bc75b74a"
+    },
+    {
+      "file": "attention_processor.py",
+      "sha256": "7158a23bff0ce5bb1c03d66e2441dfd8d169b3598b2d494d32c6f88a3301ea01"
+    },
+    {
+      "file": "vae.py",
+      "sha256": "8e6abad3bd7b7806dd9c6c451b2438641ef728d7884e6bfed37b867f719b98fc"
+    },
+    {
+      "file": "accelerate_utils.py",
+      "sha256": "4eaf078f72f381703f54b6e819c0878e07340f546701929b7004c4a16748649b"
+    },
+    {
+      "file": "modeling_utils.py",
+      "sha256": "7f0420803e8372da4b8d8608a72ca77252590d99cf8d0a080ca7873fbaf3f507"
+    },
+    {
+      "file": ".venv/Lib/site-packages/torch/utils/checkpoint.py",
+      "sha256": "98949eca97131fcb72b419ab93c76e208559a09daf0614eebd307357a86a0cce"
+    }
+  ],
+  "supervision": {
+    "status": "finished",
+    "timeout_seconds": 300,
+    "worker_sha256": "793b3129da7245ece5d66be1388a087d5763ea00fbb9d5671b0fe73c22257a82",
+    "protocol_sha256": "96acc65e553c3a157475c2fe80347696eea2877172aaded258ea55df51cf6c8e",
+    "supervisor_sha256": "2e6879d35d1ddfdd22c716e9069d050dad373d1cfeb199ab1dc99d87fdc81a1b",
+    "returncode": 0,
+    "timeout": false,
+    "wall_seconds": 51.60899999999674
+  }
+}

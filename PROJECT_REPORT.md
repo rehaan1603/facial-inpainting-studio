@@ -1,12 +1,36 @@
 # Facial Inpainting Project — Progress and Completion Report
 
-**Report date:** 10 October 2026
+**Report date:** 11 October 2026
 **Current platform:** Windows laptop, NVIDIA RTX 5070 Laptop GPU with 8 GB VRAM  
 **Current application:** http://127.0.0.1:8765/ (current code; Start Studio verifies loaded version)
 **Repository:** https://github.com/rehaan1603/facial-inpainting-studio  
 **Status:** Working local research baseline; proposed multi-reference research method and final validation incomplete. Public hosting paused at the owner's request.
 
 ## Latest status update
+
+### 10–11 October: decoded pixel-loss comparison and whole-image PPT updates completed
+
+The direct decoded missing-region gradient/resource audit passed. Two fresh **16-update GPU continuations** then completed from the same preserved 64-update checkpoint, with identical reset optimizers, eight training people, timesteps/noises and **385 trainable parameters**. Only the added **0.1 decoded-hole RGB L1 loss** differs. Initial checkpoint bytes and first-forward epsilon losses match exactly. Frozen-weight guards, evaluation exclusions and source/config/trace pins pass.
+
+Seven generation calls complete: one exact initial-state replay and six new reconstructions. Nine scored controls are reused, giving **15/15 complete records**, valid FaceNet/ArcFace, matched supports and unchanged final visible pixels. Both arms' raw/finished outputs were inspected for all three people. The RGB candidate **fails the combined numerical and visual gates**; it stays offline.
+
+| Same three people / seed 17 | Whole PSNR ↑ | Whole SSIM ↑ | Whole LPIPS ↓ | Hole SSIM ↑ | FaceNet ↑ | ArcFace ↑ |
+|---|---:|---:|---:|---:|---:|---:|
+| Current CFG3 | 29.387906 | **0.961286** | 0.022612 | **0.454540** | **0.784486** | **0.816156** |
+| Neutral local appearance | 29.397466 | 0.960728 | 0.022462 | 0.444884 | 0.782640 | 0.805353 |
+| Prior 64-update scorer | **29.401143** | 0.960739 | 0.022468 | 0.445016 | 0.784304 | 0.805454 |
+| Epsilon-only +16 updates | 29.399513 | 0.960732 | 0.022481 | 0.444992 | 0.782793 | 0.804817 |
+| Decoded RGB +16 updates | 29.399369 | 0.960727 | **0.022452** | 0.444860 | 0.781355 | 0.805360 |
+
+Against equally trained epsilon, RGB worsens hole PSNR by **0.000144**, hole SSIM by **0.000132**, hole LPIPS by **0.000025** and FaceNet by **0.001437**. Eye-crop LPIPS improves **0.152312 → 0.151757** and ArcFace improves **0.000543**. Whole LPIPS improves while missing-region measures regress. High whole SSIM includes preserved visible pixels and is **not an accuracy percentage**. Wrong gaze, cyan/pale iris colours and inaccurate eye/brow geometry remain. All 17 failed numerical checks and the negative visual decision are retained.
+
+Epsilon worker: **81.625 seconds**, peak allocated GPU **7,290,791,936 bytes**. RGB worker: **322.094 seconds**, peak allocated GPU **7,290,989,056 bytes**, with differentiable CPU fp32 VAE decoding. Both finish within fixed 900-second limits. The roughly 3.95× cost explains compute expense, not the cause of fidelity errors. Short training, 512 training/1024 evaluation and statistical-token representation are additional limitations; RAM/VRAM alone is not an established explanation.
+
+The overall and small-batch illustrated PPTs now show whole-image and separate region tables, actual scored outputs, architecture/methods and preserved historical values/paper links. Original decks remain intact. Photos stay local; code and full numeric evidence can be uploaded. Each existing person folder now includes **Experimental - Decoded RGB 16 updates** with five arms' raw/final images, comparisons and all values. Current website: **http://127.0.0.1:8765/**; its loaded source fingerprint matches disk.
+
+[All results and failed gates](research/MASKED_SDXL_DECODED_CONTINUATION_RESULTS_V1.md) · [photo-free evidence](research/masked_sdxl_decoded_continuation_v1_evidence.json) · [fixed paired protocol](research/MASKED_SDXL_DECODED_CONTINUATION_PREFLIGHT_V1.md) · [gradient/resource audit](research/MASKED_SDXL_DECODED_LOSS_PROBE_RESULTS_V1.md) · [PPT locations](presentations/README.md).
+
+**Next:** stop this exact RGB recipe and audit spatial attention/reference correspondence on training-only cases before selecting one capacity/representation change. Preserve masks, controls, evaluation and identity guards. Corrupted references, unfamiliar people, multiple seeds and reserved final validation remain after a promising controlled candidate. Research validation is work in progress.
 
 ### 10 October: masked SDXL GPU training and matched reconstruction completed
 
@@ -24,7 +48,7 @@ The worker ran 420.828 seconds (438.125 supervisor wall), at 512 training resolu
 
 [Full results and every-person failures](research/MASKED_SDXL_COMPATIBILITY_PILOT_RESULTS_V2.md), [photo-free numeric/manifest evidence](research/masked_sdxl_compatibility_pilot_v2_evidence.json), [architecture/resource checks](research/MASKED_SDXL_COMPATIBILITY_FEASIBILITY_RESULTS_V1.md), [training-reference eligibility revision](research/MASKED_SDXL_REFERENCE_ELIGIBILITY_RECOVERY_V2.md).
 
-**Next isolated change:** audit a differentiable decoded masked-region reconstruction objective and its gradient/memory path before any new training. Current epsilon MSE does not directly supervise decoded eye colour/gaze/brow geometry; token compatibility cannot establish anatomical correspondence or abstain from an entirely misleading fixed-strength appearance branch. These are hypotheses to test, not evidence that another loss or more GPU power will resolve the errors. Keep385 parameters / data/optimizer/evaluation fixed for that first objective experiment, retain FaceNet/ArcFace and per-person guards, and add no simultaneous capacity/gating/perceptual changes. Independent-person, corruption and multiple-seed validation remain necessary after a candidate passes.
+**Follow-up completed:** the decoded gradient audit and matched 16-update comparison are reported above; the added objective fails the combined gate. Current epsilon MSE does not directly supervise decoded eye colour/gaze/brow geometry; token compatibility cannot establish anatomical correspondence or abstain from an entirely misleading fixed-strength appearance branch. These are hypotheses to test, not evidence that another loss or more GPU power will resolve the errors. The completed objective comparison kept 385 parameters, data, optimizer and evaluation fixed; retain FaceNet/ArcFace and per-person guards, and add no simultaneous capacity/gating/perceptual changes. Independent-person, corruption and multiple-seed validation remain necessary after a candidate passes.
 
 ### 10 October: SSIM-focused GPU round completed
 
@@ -44,7 +68,7 @@ Four raw/finished control replays are byte-exact. The three studies retain **30 
 
 Reports: [FreeU audit/results](research/FOCUSED_EYE_FREEU_RESULTS_V1.md), [query-local appearance](research/FOCUSED_EYE_LOCAL_APPEARANCE_RESULTS_V1.md), [50-step check](research/FOCUSED_EYE_STEPS_RESULTS_V1.md). Each existing local person folder now includes **Experimental - FreeU decoder**, **Experimental - Local appearance** and **Experimental - 50 steps**, with control/candidate PNGs and comparison sheets. These are labelled offline experiments; Start Studio retains its working methods and default-off gentler option. Current local service: **http://127.0.0.1:8765/**.
 
-**Follow-up:** the separately audited 64-update masked SDXL pilot is complete, as reported above. It produces small neutral-control gains but fails the current CFG3 combined gate. Decoded masked-region supervision is the next isolated objective to audit; the manuscript and independent validation remain work in progress.
+**Follow-up:** the separately audited 64-update masked SDXL pilot is complete, as reported above. It produces small neutral-control gains but fails the current CFG3 combined gate. The decoded supervision audit and matched comparison are complete as reported above; spatial correspondence and independent validation remain work in progress.
 
 ### 10 October: Start Studio freshness fix
 
@@ -435,10 +459,11 @@ The earlier mask-refinement results are separate from the later regional-adapter
 | ReF-LDM | Frozen local restoration backbone with cached reference attention | Matched baseline for the recent adapter experiments |
 | RefFaceInpainting | Local author-model comparison, 16 predictions and 28 comparison rows | External missing-region baseline; no production promotion |
 | Regional compatibility and identity supervision | 193-parameter regional module; v1 128-update arms and v2 matched 64-update arms with frozen decoded FaceNet supervision | Actual GPU training; average eye improvements with remaining overall identity/perceptual trade-offs |
+| Masked SDXL token compatibility | 385 shared parameters across 70 attention processors; 64 initial updates plus two matched 16-update continuations on eight retained training people | Initial small gains over neutral local; decoded RGB trades eye/whole LPIPS for lower hole SSIM/FaceNet; all candidates retained offline |
 | InsightFace buffalo_l | Face detection and normalized reference embeddings | Reference conditioning, not independent identity evaluation |
 | Hard/Poisson composition | Known-pixel preservation and optional boundary harmonization | Explicit postprocessing; does not prove correct hidden features |
 
-The generative backbones remain pretrained and frozen. Actual local training now includes the 545-parameter reference-intervention pilot and the 193-parameter target-conditioned regional compatibility pilot. These development adapters are not promoted to the website and do not establish improved identity recovery. Separate Human Faces LoRA work is set aside and is not evidence for the existing-dataset study.
+The generative backbones remain pretrained and frozen. Actual local training includes the 545-parameter reference-intervention pilot, the 193-parameter target-conditioned regional compatibility pilot and the 385-parameter masked SDXL compatibility pilot. These development adapters are not promoted to the website and do not establish improved identity recovery. The decoded-hole RGB gradient probe completed one disposable in-memory update without producing a checkpoint or reconstruction score. Two subsequent matched 16-update continuations produced separate checkpoints and 15 scored comparison records; the RGB candidate fails the combined gate. Separate Human Faces LoRA work is set aside and is not evidence for the existing-dataset study.
 
 ### 2.3 Completed experiments
 
@@ -502,7 +527,7 @@ The measurement baseline is substantially stronger, but the research is not yet 
 | Reference robustness | Compression failure diagnosed; studio ReF-LDM now validates one face per reference and frames rectangular uploads without distortion. Broader poor-quality, pose and expression handling still needs matched validation with failures retained | Basic client checks implemented; broader validation pending |
 | Local correspondence | Five-point similarity and eight regional features implemented; 22/24 initial cases detected; 3D pose/expression/occlusion unresolved | Prototype complete |
 | Local fusion | Six-policy, two-seed 48-row comparison complete; no multi-metric advantage established | Negative/mixed result |
-| Learned adapter | Earlier v2–v5 restoration studies remain preserved. Masked SDXL now has a 385-parameter 64-update pilot with eight eligible training people and two exact neutral replays. All six means improve slightly versus neutral local, but current CFG3 SSIM/identity and visual gates fail. Audit decoded masked-region supervision before a separate objective trial; capacity/gating changes remain later alternatives | Real masked training implemented; consistent improvement over current control remains |
+| Learned adapter | Earlier v2–v5 restoration studies remain preserved. Masked SDXL has a preserved 64-update pilot and two matched 16-update continuations. The decoded gradient/resource audit passes, but RGB lowers hole SSIM/FaceNet versus equal epsilon despite eye/whole LPIPS gains. All 15 comparison records and negative visual decisions remain. Audit spatial representation and correspondence before selecting one further intervention | Real masked training implemented; consistent improvement over current control remains |
 | Confidence UI | Prior generation/download checks passed. Current update fixes stale state, upload races, evidence suggestions/transparency, and missing-area strength selection; new HTTP/GPU checks pass. Current main/evidence browser flows are verified with real generated images, matching references, downloads and state invalidation | Implemented and browser verified |
 | Runtime reliability | Original native/OpenCV failures retained; fixed-thread studio retry passed. Two wrapper failures from an unnecessary OpenCV import were fixed and both recovery runs passed. Continue recurrence checks; no universal root-cause claim | Mitigations and recoveries verified |
 | Visual assessment | Prior reviewed studies retained; all four new studio audit sheets reviewed, with coloured holes, retained erasures and facial errors documented. Blinded human evaluation remains | Internal review complete for these runs; human study pending |
@@ -553,7 +578,7 @@ Compare random single-reference, all-reference and global-quality baselines agai
 
 ### Phase 4 — develop the smallest justified fusion method (small adapters trained; useful contribution unresolved)
 
-Regional reference features, deterministic fusion and compact learned-adapter investigations are implemented. The regional v1 pilot and v2–v5 identity objectives concern whole-image ReF-LDM restoration and retain quality trade-offs. Whole-reference and hard spatial rejection diagnostics are complete and failed the combined requirements. Actual erased-region tests now use mask-conditioned SDXL. Guidance, global appearance, registered texture, FreeU, query-local appearance and denoising-budget checks are recorded under their own protocols. The shared 385-parameter masked SDXL compatibility module now completed 64 GPU updates on eight eligible existing training people, followed by three matched candidate outputs and two exact initial replays. It improves the six neutral local means slightly, while failing the stronger current CFG3 SSIM/identity and visual gates. The next isolated objective is decoded masked-region reconstruction, after a separate gradient/resource audit. Declare each training loss/ablation separately, preserve all controls and complete regional/global and consistency comparisons before independent expansion. Preserve the working pretrained baseline and all earlier results.
+Regional reference features, deterministic fusion and compact learned-adapter investigations are implemented. The regional v1 pilot and v2–v5 identity objectives concern whole-image ReF-LDM restoration and retain quality trade-offs. Whole-reference and hard spatial rejection diagnostics are complete and failed the combined requirements. Actual erased-region tests now use mask-conditioned SDXL. Guidance, global appearance, registered texture, FreeU, query-local appearance and denoising-budget checks are recorded under their own protocols. The shared 385-parameter masked SDXL compatibility module now completed 64 GPU updates on eight eligible existing training people, followed by three matched candidate outputs and two exact initial replays. It improves the six neutral local means slightly, while failing the stronger current CFG3 SSIM/identity and visual gates. The decoded gradient/resource audit and two matched 16-update continuations are complete; added RGB loss still fails the combined gate. Next audit spatial representation/reference correspondence before choosing one further change. Declare each training loss/ablation separately, preserve all controls and complete regional/global and consistency comparisons before independent expansion. Preserve the working pretrained baseline and all earlier results.
 
 **Deliverable:** trained candidate module, checkpoints, loss histories and mechanism ablations.  
 **Acceptance criterion:** reproducible improvement on declared measures, acceptable failure behavior and a defensible distinction from closest prior work. Implementation alone is not evidence of novelty.

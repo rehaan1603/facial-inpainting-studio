@@ -1,6 +1,6 @@
 # Research navigation
 
-Updated 10 October 2026. Read the [current project report](../PROJECT_REPORT.md) first. Dated protocols preserve all experiment outcomes. [Release evidence](releases/2026-10-10/README.md) supplies photo-free per-output metrics.
+Updated 11 October 2026. Read the [current project report](../PROJECT_REPORT.md) first. Dated protocols preserve all experiment outcomes. [Release evidence](releases/2026-10-10/README.md) supplies photo-free per-output metrics.
 
 ## Current masked facial-region inpainting
 
@@ -23,12 +23,14 @@ This track tests missing eye/mouth regions. Its generator and supports differ fr
 | Direct SDXL training feasibility | [architecture and losses](MASKED_SDXL_COMPATIBILITY_FEASIBILITY_PREFLIGHT_V1.md), [backend recovery](MASKED_SDXL_COMPATIBILITY_FEASIBILITY_PREFLIGHT_V2.md), [bounded 512](MASKED_SDXL_COMPATIBILITY_FEASIBILITY_PREFLIGHT_V3.md) | [all three retained attempts](MASKED_SDXL_COMPATIBILITY_FEASIBILITY_RESULTS_V1.md), [numeric evidence](masked_sdxl_compatibility_feasibility_v1.json) |
 | Training-reference eligibility recovery | [fixed revision](MASKED_SDXL_REFERENCE_ELIGIBILITY_RECOVERY_V2.md), [v2 cache](MASKED_SDXL_COMPATIBILITY_DATA_PREFLIGHT_V2.md) | Original v1 cache failed; eight original people retain unchanged targets with four eligible references each; tests unchanged |
 | 385-parameter masked SDXL training | [fixed 64-update pilot](MASKED_SDXL_COMPATIBILITY_PILOT_PREFLIGHT_V2.md), [enabled-zero replay](MASKED_SDXL_ZERO_STATE_REPLAY_PREFLIGHT_V1.md) | [complete results](MASKED_SDXL_COMPATIBILITY_PILOT_RESULTS_V2.md), [photo-free evidence](masked_sdxl_compatibility_pilot_v2_evidence.json); six mean gains over neutral local, fails current CFG3/visual gates |
+| Decoded pixel-loss gradient audit | [frozen probe](MASKED_SDXL_DECODED_LOSS_PREFLIGHT_V1.md) | [passed gradient/resource check](MASKED_SDXL_DECODED_LOSS_PROBE_RESULTS_V1.md); no quality claim |
+| Matched decoded-loss continuation | [fixed two-arm protocol](MASKED_SDXL_DECODED_CONTINUATION_PREFLIGHT_V1.md) | [all 15 results](MASKED_SDXL_DECODED_CONTINUATION_RESULTS_V1.md), [numeric evidence](masked_sdxl_decoded_continuation_v1_evidence.json); RGB improves eye LPIPS, worsens SSIM/FaceNet versus equal epsilon; stays offline |
 | Anatomical diagnostics | Supplementary annotation supports | [eye/brow diagnostic](EYE_BROW_FIDELITY_DIAGNOSTIC_V1.md); sparse valid windows |
 | App integration | Optional CFG3, default off | [four actual replays](GENTLER_REFERENCE_WEBSITE_V1.md) |
 
 Three-person repeated guidance has mean hole SSIM **0.414146 → 0.433098**; person 10149 loses **0.013618 mean FaceNet cosine**. Iris/gaze/brow reconstruction remains imperfect. Positive averages and per-person failures both remain visible. These are development comparisons, not arbitrary unknown-client accuracy or a matched paper benchmark.
 
-The 10 October inference round completes 13 GPU calls with four exact replays; none of the three recipes beats the current CFG3 combined gate. [Verification and pinned model assets](focused_eye_ssim_studies_v1_verification.json). Its seed-17 CFG3 mean SSIM 0.454540 is separate from the three-seed 0.433098 result above. The subsequent masked training pilot completes 64 GPU updates and five inference calls (two exact neutral replays plus three trained outputs). SSIM is 0.445016 versus 0.444884 neutral local and 0.454540 current CFG3; person 263 fails the identity guard. The trained candidate remains offline. A decoded masked-region objective needs a separately audited gradient/resource check before further training.
+The 10 October inference round completes 13 GPU calls with four exact replays; none of the three recipes beats the current CFG3 combined gate. [Verification and pinned model assets](focused_eye_ssim_studies_v1_verification.json). Its seed-17 CFG3 mean SSIM 0.454540 is separate from the three-seed 0.433098 result above. The subsequent masked training pilot completes 64 GPU updates and five inference calls (two exact neutral replays plus three trained outputs). SSIM is 0.445016 versus 0.444884 neutral local and 0.454540 current CFG3; person 263 fails the identity guard. The trained candidate remains offline. The decoded gradient/resource audit and two matched 16-update continuations now complete. RGB hole SSIM is 0.444860 versus fresh epsilon 0.444992; FaceNet falls 0.782793 → 0.781355. Whole LPIPS improves while hole LPIPS worsens. Numerical and visual gates fail; all 15 outcomes remain in the new results above.
 
 ## Earlier ReF-LDM restoration and adapters
 
