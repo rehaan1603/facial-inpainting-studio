@@ -8,6 +8,12 @@
 
 ## Latest status update
 
+### 11 October: detector-independent sparse-feature diagnostic completed
+
+A separately preregistered CPU-only SIFT registration test used the same eight training people and 32 real reference pairs. Four unit tests passed, but only **1/32 reference pairs** and **0/8 target cases** passed the fixed geometric gates; 28 pairs had insufficient mutual matches. No thresholds were tuned after execution. This method will not be used for training. The next candidate is dense frozen-feature correspondence with held-out visible-region validation. No new reconstruction scores or GPU training resulted; the application and baseline remain unchanged.
+
+[Protocol](research/VISIBLE_FEATURE_GEOMETRY_PREFLIGHT_V2.md) · [Results and next step](research/VISIBLE_FEATURE_GEOMETRY_RESULTS_V2.md).
+
 ### 11 October: spatial correspondence audit and prerequisite test
 
 The SDXL reference path was audited before changes. Its 64 FaceID tokens have no explicit anatomical coordinates. An isolated spatial-reference attention prototype now has **20 trainable head gates**, with the existing UNet/FaceID weights frozen. **18 CPU tests pass**, including zero-effect equality, finite gate gradients and hidden-pixel invariance. The application and current baseline remain unchanged.

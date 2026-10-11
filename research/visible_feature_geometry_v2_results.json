@@ -1,0 +1,363 @@
+{
+  "status": "complete",
+  "device": "CPU",
+  "training": false,
+  "source_hashes": {
+    "research/VISIBLE_FEATURE_GEOMETRY_PREFLIGHT_V2.md": "dbb3091033bbcd9f5fc16bb478fa7b61383bf78125fe5a5bd34d810d2791a078",
+    "scripts/visible_feature_geometry_v2.py": "7245894247b1292c4117dd9aba453eb03e2ab471529233902a6d547c12ecbffd",
+    "scripts/audit_visible_feature_geometry_v2.py": "4ff9acaa2f1b5f2f77383ed7b4b9686b1205e5482b6b3039b93d585e5ffee45f",
+    "scripts/spatial_reference_geometry_v1.py": "51cb0f2d783806f73e6c70be8c438d42422fa6bf70731992f2bffd45a8426f3e",
+    "scripts/audit_spatial_reference_geometry_v1.py": "ceafc00fcb52472910465384ef59dcc3b461b13fae8846dc1094bda37c0d8b76"
+  },
+  "cache_sha256": "bf902cf0c984ce002f7b22052f8d33f9f0214c33a8c95784adde104346a564ef",
+  "rows": [
+    {
+      "identity": "6792",
+      "references": [
+        {
+          "index": 0,
+          "eligible": false,
+          "target_features": 722,
+          "reference_features": 1219,
+          "mutual_matches": 0,
+          "reason": "Fewer than 12 mutual matches"
+        },
+        {
+          "index": 1,
+          "eligible": false,
+          "target_features": 722,
+          "reference_features": 1260,
+          "mutual_matches": 1,
+          "reason": "Fewer than 12 mutual matches"
+        },
+        {
+          "index": 2,
+          "eligible": false,
+          "target_features": 722,
+          "reference_features": 1286,
+          "mutual_matches": 3,
+          "reason": "Fewer than 12 mutual matches"
+        },
+        {
+          "index": 3,
+          "eligible": false,
+          "target_features": 722,
+          "reference_features": 1165,
+          "mutual_matches": 2,
+          "reason": "Fewer than 12 mutual matches"
+        }
+      ],
+      "accepted_references": 0,
+      "usable": false
+    },
+    {
+      "identity": "2250",
+      "references": [
+        {
+          "index": 0,
+          "eligible": false,
+          "target_features": 993,
+          "reference_features": 869,
+          "mutual_matches": 1,
+          "reason": "Fewer than 12 mutual matches"
+        },
+        {
+          "index": 1,
+          "eligible": false,
+          "target_features": 993,
+          "reference_features": 940,
+          "mutual_matches": 1,
+          "reason": "Fewer than 12 mutual matches"
+        },
+        {
+          "index": 2,
+          "eligible": false,
+          "target_features": 993,
+          "reference_features": 975,
+          "mutual_matches": 14,
+          "reason": "Fixed held-out/coverage/fit gate failed",
+          "held_out_rms_pixels": 9.484250111713997,
+          "fit_inliers": 8,
+          "fit_inlier_fraction": 0.8888888888888888,
+          "fit_span_xy": [
+            115.42965698242188,
+            15.386322021484375
+          ],
+          "scale": 1.004421779121293
+        },
+        {
+          "index": 3,
+          "eligible": false,
+          "target_features": 993,
+          "reference_features": 917,
+          "mutual_matches": 6,
+          "reason": "Fewer than 12 mutual matches"
+        }
+      ],
+      "accepted_references": 0,
+      "usable": false
+    },
+    {
+      "identity": "2083",
+      "references": [
+        {
+          "index": 0,
+          "eligible": false,
+          "target_features": 982,
+          "reference_features": 591,
+          "mutual_matches": 16,
+          "reason": "Fixed held-out/coverage/fit gate failed",
+          "held_out_rms_pixels": 57.33706348099455,
+          "fit_inliers": 4,
+          "fit_inlier_fraction": 0.4,
+          "fit_span_xy": [
+            92.91355895996094,
+            47.424072265625
+          ],
+          "scale": 1.076149990543853
+        },
+        {
+          "index": 1,
+          "eligible": false,
+          "target_features": 982,
+          "reference_features": 1153,
+          "mutual_matches": 4,
+          "reason": "Fewer than 12 mutual matches"
+        },
+        {
+          "index": 2,
+          "eligible": false,
+          "target_features": 982,
+          "reference_features": 1031,
+          "mutual_matches": 13,
+          "reason": "Fixed held-out/coverage/fit gate failed",
+          "held_out_rms_pixels": 115.86760795220573,
+          "fit_inliers": 4,
+          "fit_inlier_fraction": 0.5,
+          "fit_span_xy": [
+            46.610382080078125,
+            25.82452392578125
+          ],
+          "scale": 0.9272006796153134
+        },
+        {
+          "index": 3,
+          "eligible": false,
+          "target_features": 982,
+          "reference_features": 588,
+          "mutual_matches": 8,
+          "reason": "Fewer than 12 mutual matches"
+        }
+      ],
+      "accepted_references": 0,
+      "usable": false
+    },
+    {
+      "identity": "4164",
+      "references": [
+        {
+          "index": 0,
+          "eligible": false,
+          "target_features": 919,
+          "reference_features": 462,
+          "mutual_matches": 3,
+          "reason": "Fewer than 12 mutual matches"
+        },
+        {
+          "index": 1,
+          "eligible": false,
+          "target_features": 919,
+          "reference_features": 1250,
+          "mutual_matches": 4,
+          "reason": "Fewer than 12 mutual matches"
+        },
+        {
+          "index": 2,
+          "eligible": false,
+          "target_features": 919,
+          "reference_features": 1147,
+          "mutual_matches": 2,
+          "reason": "Fewer than 12 mutual matches"
+        },
+        {
+          "index": 3,
+          "eligible": false,
+          "target_features": 919,
+          "reference_features": 1112,
+          "mutual_matches": 2,
+          "reason": "Fewer than 12 mutual matches"
+        }
+      ],
+      "accepted_references": 0,
+      "usable": false
+    },
+    {
+      "identity": "674",
+      "references": [
+        {
+          "index": 0,
+          "eligible": false,
+          "target_features": 432,
+          "reference_features": 353,
+          "mutual_matches": 1,
+          "reason": "Fewer than 12 mutual matches"
+        },
+        {
+          "index": 1,
+          "eligible": false,
+          "target_features": 432,
+          "reference_features": 533,
+          "mutual_matches": 1,
+          "reason": "Fewer than 12 mutual matches"
+        },
+        {
+          "index": 2,
+          "eligible": false,
+          "target_features": 432,
+          "reference_features": 735,
+          "mutual_matches": 0,
+          "reason": "Fewer than 12 mutual matches"
+        },
+        {
+          "index": 3,
+          "eligible": false,
+          "target_features": 432,
+          "reference_features": 554,
+          "mutual_matches": 5,
+          "reason": "Fewer than 12 mutual matches"
+        }
+      ],
+      "accepted_references": 0,
+      "usable": false
+    },
+    {
+      "identity": "476",
+      "references": [
+        {
+          "index": 0,
+          "eligible": false,
+          "target_features": 519,
+          "reference_features": 485,
+          "mutual_matches": 3,
+          "reason": "Fewer than 12 mutual matches"
+        },
+        {
+          "index": 1,
+          "eligible": false,
+          "target_features": 519,
+          "reference_features": 501,
+          "mutual_matches": 4,
+          "reason": "Fewer than 12 mutual matches"
+        },
+        {
+          "index": 2,
+          "eligible": false,
+          "target_features": 519,
+          "reference_features": 981,
+          "mutual_matches": 3,
+          "reason": "Fewer than 12 mutual matches"
+        },
+        {
+          "index": 3,
+          "eligible": false,
+          "target_features": 519,
+          "reference_features": 633,
+          "mutual_matches": 2,
+          "reason": "Fewer than 12 mutual matches"
+        }
+      ],
+      "accepted_references": 0,
+      "usable": false
+    },
+    {
+      "identity": "1281",
+      "references": [
+        {
+          "index": 0,
+          "eligible": true,
+          "target_features": 777,
+          "reference_features": 1011,
+          "mutual_matches": 111,
+          "reason": null,
+          "held_out_rms_pixels": 7.477713508467517,
+          "fit_inliers": 53,
+          "fit_inlier_fraction": 0.7162162162162162,
+          "fit_span_xy": [
+            202.933837890625,
+            346.8480415344238
+          ],
+          "scale": 1.0004580959971787
+        },
+        {
+          "index": 1,
+          "eligible": false,
+          "target_features": 777,
+          "reference_features": 1061,
+          "mutual_matches": 3,
+          "reason": "Fewer than 12 mutual matches"
+        },
+        {
+          "index": 2,
+          "eligible": false,
+          "target_features": 777,
+          "reference_features": 1090,
+          "mutual_matches": 2,
+          "reason": "Fewer than 12 mutual matches"
+        },
+        {
+          "index": 3,
+          "eligible": false,
+          "target_features": 777,
+          "reference_features": 1177,
+          "mutual_matches": 2,
+          "reason": "Fewer than 12 mutual matches"
+        }
+      ],
+      "accepted_references": 1,
+      "usable": false
+    },
+    {
+      "identity": "8748",
+      "references": [
+        {
+          "index": 0,
+          "eligible": false,
+          "target_features": 806,
+          "reference_features": 1255,
+          "mutual_matches": 0,
+          "reason": "Fewer than 12 mutual matches"
+        },
+        {
+          "index": 1,
+          "eligible": false,
+          "target_features": 806,
+          "reference_features": 1219,
+          "mutual_matches": 5,
+          "reason": "Fewer than 12 mutual matches"
+        },
+        {
+          "index": 2,
+          "eligible": false,
+          "target_features": 806,
+          "reference_features": 1026,
+          "mutual_matches": 4,
+          "reason": "Fewer than 12 mutual matches"
+        },
+        {
+          "index": 3,
+          "eligible": false,
+          "target_features": 806,
+          "reference_features": 657,
+          "mutual_matches": 1,
+          "reason": "Fewer than 12 mutual matches"
+        }
+      ],
+      "accepted_references": 0,
+      "usable": false
+    }
+  ],
+  "usable_cases": 0,
+  "gate_passed": false,
+  "local_receipt_sha256": "9e4813f4b0572c1609d88e9ca27aaf243e99dd6f8d3da15e30eceabd5568c72d",
+  "unit_tests_passed": 4
+}
