@@ -1,0 +1,1185 @@
+{
+  "status": "complete",
+  "training": false,
+  "assets": {
+    "repository": "facebook/dinov2-small",
+    "revision": "ed25f3a31f01632728cabb09d1542f84ab7b0056",
+    "files": [
+      {
+        "file": "config.json",
+        "sha256": "1809f83e3bdb1609a501a610ad4a742f4fd8ae44d72ca4aa0df52d1f2ac8628d",
+        "size": 547
+      },
+      {
+        "file": "preprocessor_config.json",
+        "sha256": "14e780d86fa1861f8751f868d7f45425b5feb55c38ca26f152ca5097ab30f828",
+        "size": 436
+      },
+      {
+        "file": "model.safetensors",
+        "sha256": "ae1e99fcefd534ed978cdeb8326f08030c96e28b7a81ffcbc98a857c84d14be1",
+        "size": 88249960
+      }
+    ]
+  },
+  "source_hashes": {
+    "research/DENSE_DINO_GEOMETRY_PREFLIGHT_V4.md": "e4443f9b154f8eb54c855c2d9b45d97d6bb00d13fff3b4b707e6a17ef7218bdf",
+    "scripts/audit_dino_geometry_v4.py": "25f9b28021a7c296425fa8dde7785b8a8e175a56288eb79f98dae384354c4cc5",
+    "scripts/dino_geometry_v4.py": "d7316fab1336ef1dcffb9673804a75dd81c96c7d8fa92b4f109c137cc78c81b8",
+    "scripts/dense_feature_geometry_v3.py": "ed880e0c0c049f2e488067cd22d475b0e8a4ab9435422c306b31250abe32fd8b",
+    "scripts/spatial_reference_geometry_v1.py": "51cb0f2d783806f73e6c70be8c438d42422fa6bf70731992f2bffd45a8426f3e",
+    "scripts/audit_spatial_reference_geometry_v1.py": "ceafc00fcb52472910465384ef59dcc3b461b13fae8846dc1094bda37c0d8b76"
+  },
+  "cache_sha256": "bf902cf0c984ce002f7b22052f8d33f9f0214c33a8c95784adde104346a564ef",
+  "versions": {
+    "torch": "2.11.0+cu128",
+    "transformers": "5.17.0",
+    "numpy": "2.5.2",
+    "Pillow": "12.3.0",
+    "opencv-python": "5.0.0.93"
+  },
+  "rows": [
+    {
+      "identity": "6792",
+      "references": [
+        {
+          "index": 0,
+          "eligible": false,
+          "mutual_matches": 2,
+          "reason": "Fewer than 12 mutual matches"
+        },
+        {
+          "index": 1,
+          "eligible": false,
+          "mutual_matches": 7,
+          "reason": "Fewer than 12 mutual matches"
+        },
+        {
+          "index": 2,
+          "eligible": false,
+          "mutual_matches": 6,
+          "reason": "Fewer than 12 mutual matches"
+        },
+        {
+          "index": 3,
+          "eligible": false,
+          "mutual_matches": 4,
+          "reason": "Fewer than 12 mutual matches"
+        }
+      ],
+      "accepted_references": 0
+    },
+    {
+      "identity": "2250",
+      "references": [
+        {
+          "index": 0,
+          "eligible": false,
+          "mutual_matches": 17,
+          "reason": "Fixed held-out/coverage/fit gate failed",
+          "held_out_rms_pixels": 58.90888837060701,
+          "fit_inliers": 3,
+          "fit_inlier_fraction": 0.2727272727272727,
+          "fit_span_xy": [
+            345.94594594594594,
+            318.27027027027026
+          ],
+          "scale": 0.9981225420497847
+        },
+        {
+          "index": 1,
+          "eligible": false,
+          "mutual_matches": 23,
+          "reason": "Fixed held-out/coverage/fit gate failed",
+          "held_out_rms_pixels": 20.928159258666973,
+          "fit_inliers": 3,
+          "fit_inlier_fraction": 0.2,
+          "fit_span_xy": [
+            152.21621621621622,
+            55.351351351351354
+          ],
+          "scale": 0.9652278461695499
+        },
+        {
+          "index": 2,
+          "eligible": false,
+          "mutual_matches": 36,
+          "reason": "Fixed held-out/coverage/fit gate failed",
+          "held_out_rms_pixels": 15.471173033512061,
+          "fit_inliers": 18,
+          "fit_inlier_fraction": 0.75,
+          "fit_span_xy": [
+            207.56756756756755,
+            290.5945945945946
+          ],
+          "scale": 1.0
+        },
+        {
+          "index": 3,
+          "eligible": false,
+          "mutual_matches": 33,
+          "reason": "Fixed held-out/coverage/fit gate failed",
+          "held_out_rms_pixels": 12.516795277606622,
+          "fit_inliers": 10,
+          "fit_inlier_fraction": 0.45454545454545453,
+          "fit_span_xy": [
+            179.89189189189187,
+            318.2702702702703
+          ],
+          "scale": 1.0
+        }
+      ],
+      "accepted_references": 0
+    },
+    {
+      "identity": "2083",
+      "references": [
+        {
+          "index": 0,
+          "eligible": false,
+          "mutual_matches": 35,
+          "reason": "Fixed held-out/coverage/fit gate failed",
+          "held_out_rms_pixels": 30.422269597458257,
+          "fit_inliers": 8,
+          "fit_inlier_fraction": 0.34782608695652173,
+          "fit_span_xy": [
+            193.7297297297297,
+            304.4324324324324
+          ],
+          "scale": 1.0
+        },
+        {
+          "index": 1,
+          "eligible": false,
+          "mutual_matches": 13,
+          "reason": "Fixed held-out/coverage/fit gate failed",
+          "held_out_rms_pixels": 214.9988917381113,
+          "fit_inliers": 3,
+          "fit_inlier_fraction": 0.375,
+          "fit_span_xy": [
+            27.675675675675677,
+            166.05405405405406
+          ],
+          "scale": 1.095102656000676
+        },
+        {
+          "index": 2,
+          "eligible": false,
+          "mutual_matches": 30,
+          "reason": "Fixed held-out/coverage/fit gate failed",
+          "held_out_rms_pixels": 14.513246763868041,
+          "fit_inliers": 9,
+          "fit_inlier_fraction": 0.45,
+          "fit_span_xy": [
+            276.7567567567568,
+            290.5945945945946
+          ],
+          "scale": 1.0
+        },
+        {
+          "index": 3,
+          "eligible": false,
+          "mutual_matches": 16,
+          "reason": "Fixed held-out/coverage/fit gate failed",
+          "held_out_rms_pixels": 28.8598183796657,
+          "fit_inliers": 3,
+          "fit_inlier_fraction": 0.3,
+          "fit_span_xy": [
+            110.70270270270268,
+            387.4594594594594
+          ],
+          "scale": 1.0354181616668932
+        }
+      ],
+      "accepted_references": 0
+    },
+    {
+      "identity": "4164",
+      "references": [
+        {
+          "index": 0,
+          "eligible": false,
+          "mutual_matches": 5,
+          "reason": "Fewer than 12 mutual matches"
+        },
+        {
+          "index": 1,
+          "eligible": false,
+          "mutual_matches": 13,
+          "reason": "Fixed held-out/coverage/fit gate failed",
+          "held_out_rms_pixels": 51.180742985611026,
+          "fit_inliers": 3,
+          "fit_inlier_fraction": 0.375,
+          "fit_span_xy": [
+            221.4054054054054,
+            13.837837837837839
+          ],
+          "scale": 0.8881631049734702
+        },
+        {
+          "index": 2,
+          "eligible": false,
+          "mutual_matches": 5,
+          "reason": "Fewer than 12 mutual matches"
+        },
+        {
+          "index": 3,
+          "eligible": false,
+          "mutual_matches": 13,
+          "reason": "Fixed held-out/coverage/fit gate failed",
+          "held_out_rms_pixels": 281.4481674228675,
+          "fit_inliers": 2,
+          "fit_inlier_fraction": 0.25,
+          "fit_span_xy": [
+            13.837837837837867,
+            332.1081081081081
+          ],
+          "scale": 1.1323525729416986
+        }
+      ],
+      "accepted_references": 0
+    },
+    {
+      "identity": "674",
+      "references": [
+        {
+          "index": 0,
+          "eligible": false,
+          "mutual_matches": 10,
+          "reason": "Fewer than 12 mutual matches"
+        },
+        {
+          "index": 1,
+          "eligible": false,
+          "mutual_matches": 14,
+          "reason": "Fixed held-out/coverage/fit gate failed",
+          "held_out_rms_pixels": 143.41855014271627,
+          "fit_inliers": 3,
+          "fit_inlier_fraction": 0.3333333333333333,
+          "fit_span_xy": [
+            83.02702702702703,
+            373.6216216216216
+          ],
+          "scale": 1.0054834105237047
+        },
+        {
+          "index": 2,
+          "eligible": false,
+          "mutual_matches": 8,
+          "reason": "Fewer than 12 mutual matches"
+        },
+        {
+          "index": 3,
+          "eligible": false,
+          "mutual_matches": 10,
+          "reason": "Fewer than 12 mutual matches"
+        }
+      ],
+      "accepted_references": 0
+    },
+    {
+      "identity": "476",
+      "references": [
+        {
+          "index": 0,
+          "eligible": false,
+          "mutual_matches": 6,
+          "reason": "Fewer than 12 mutual matches"
+        },
+        {
+          "index": 1,
+          "eligible": false,
+          "mutual_matches": 8,
+          "reason": "Fewer than 12 mutual matches"
+        },
+        {
+          "index": 2,
+          "eligible": false,
+          "mutual_matches": 5,
+          "reason": "Fewer than 12 mutual matches"
+        },
+        {
+          "index": 3,
+          "eligible": false,
+          "mutual_matches": 12,
+          "reason": "Fixed held-out/coverage/fit gate failed",
+          "held_out_rms_pixels": 33.62560643916025,
+          "fit_inliers": 5,
+          "fit_inlier_fraction": 0.625,
+          "fit_span_xy": [
+            221.40540540540542,
+            262.9189189189189
+          ],
+          "scale": 0.9439234383757902
+        }
+      ],
+      "accepted_references": 0
+    },
+    {
+      "identity": "1281",
+      "references": [
+        {
+          "index": 0,
+          "eligible": false,
+          "mutual_matches": 48,
+          "reason": "Fixed held-out/coverage/fit gate failed",
+          "held_out_rms_pixels": 16.947820923040375,
+          "fit_inliers": 16,
+          "fit_inlier_fraction": 0.5,
+          "fit_span_xy": [
+            359.78378378378375,
+            345.94594594594594
+          ],
+          "scale": 1.0
+        },
+        {
+          "index": 1,
+          "eligible": false,
+          "mutual_matches": 23,
+          "reason": "Fixed held-out/coverage/fit gate failed",
+          "held_out_rms_pixels": 23.967838202034184,
+          "fit_inliers": 5,
+          "fit_inlier_fraction": 0.3333333333333333,
+          "fit_span_xy": [
+            235.24324324324326,
+            193.7297297297297
+          ],
+          "scale": 1.0
+        },
+        {
+          "index": 2,
+          "eligible": false,
+          "mutual_matches": 12,
+          "reason": "Fixed held-out/coverage/fit gate failed",
+          "held_out_rms_pixels": 192.96653513202432,
+          "fit_inliers": 2,
+          "fit_inlier_fraction": 0.25,
+          "fit_span_xy": [
+            0.0,
+            55.351351351351354
+          ],
+          "scale": 0.40613844527721804
+        },
+        {
+          "index": 3,
+          "eligible": false,
+          "mutual_matches": 13,
+          "reason": "Fixed held-out/coverage/fit gate failed",
+          "held_out_rms_pixels": 39.13931472193804,
+          "fit_inliers": 2,
+          "fit_inlier_fraction": 0.25,
+          "fit_span_xy": [
+            13.83783783783781,
+            332.10810810810807
+          ],
+          "scale": 1.0
+        }
+      ],
+      "accepted_references": 0
+    },
+    {
+      "identity": "8748",
+      "references": [
+        {
+          "index": 0,
+          "eligible": false,
+          "mutual_matches": 14,
+          "reason": "Fixed held-out/coverage/fit gate failed",
+          "held_out_rms_pixels": 22.41229366601216,
+          "fit_inliers": 2,
+          "fit_inlier_fraction": 0.2222222222222222,
+          "fit_span_xy": [
+            96.86486486486484,
+            318.2702702702703
+          ],
+          "scale": 0.904818726105869
+        },
+        {
+          "index": 1,
+          "eligible": false,
+          "mutual_matches": 12,
+          "reason": "Fixed held-out/coverage/fit gate failed",
+          "held_out_rms_pixels": 47.153482399526446,
+          "fit_inliers": 2,
+          "fit_inlier_fraction": 0.25,
+          "fit_span_xy": [
+            27.675675675675677,
+            152.21621621621625
+          ],
+          "scale": 1.0163945515292019
+        },
+        {
+          "index": 2,
+          "eligible": false,
+          "mutual_matches": 9,
+          "reason": "Fewer than 12 mutual matches"
+        },
+        {
+          "index": 3,
+          "eligible": false,
+          "mutual_matches": 6,
+          "reason": "Fewer than 12 mutual matches"
+        }
+      ],
+      "accepted_references": 0
+    }
+  ],
+  "wrong_person_rows": [
+    {
+      "identity": "6792",
+      "reference_identity": "2250",
+      "references": [
+        {
+          "index": 0,
+          "eligible": false,
+          "mutual_matches": 6,
+          "reason": "Fewer than 12 mutual matches"
+        },
+        {
+          "index": 1,
+          "eligible": false,
+          "mutual_matches": 5,
+          "reason": "Fewer than 12 mutual matches"
+        },
+        {
+          "index": 2,
+          "eligible": false,
+          "mutual_matches": 5,
+          "reason": "Fewer than 12 mutual matches"
+        },
+        {
+          "index": 3,
+          "eligible": false,
+          "mutual_matches": 6,
+          "reason": "Fewer than 12 mutual matches"
+        }
+      ]
+    },
+    {
+      "identity": "2250",
+      "reference_identity": "2083",
+      "references": [
+        {
+          "index": 0,
+          "eligible": false,
+          "mutual_matches": 14,
+          "reason": "Fixed held-out/coverage/fit gate failed",
+          "held_out_rms_pixels": 23.15513154515929,
+          "fit_inliers": 3,
+          "fit_inlier_fraction": 0.3333333333333333,
+          "fit_span_xy": [
+            179.89189189189187,
+            318.27027027027026
+          ],
+          "scale": 1.0
+        },
+        {
+          "index": 1,
+          "eligible": false,
+          "mutual_matches": 15,
+          "reason": "Fixed held-out/coverage/fit gate failed",
+          "held_out_rms_pixels": 181.587023731676,
+          "fit_inliers": 3,
+          "fit_inlier_fraction": 0.3,
+          "fit_span_xy": [
+            152.2162162162162,
+            83.02702702702703
+          ],
+          "scale": 1.0
+        },
+        {
+          "index": 2,
+          "eligible": false,
+          "mutual_matches": 9,
+          "reason": "Fewer than 12 mutual matches"
+        },
+        {
+          "index": 3,
+          "eligible": false,
+          "mutual_matches": 10,
+          "reason": "Fewer than 12 mutual matches"
+        }
+      ]
+    },
+    {
+      "identity": "2083",
+      "reference_identity": "4164",
+      "references": [
+        {
+          "index": 0,
+          "eligible": false,
+          "mutual_matches": 13,
+          "reason": "Fixed held-out/coverage/fit gate failed",
+          "held_out_rms_pixels": 53.866406230243236,
+          "fit_inliers": 4,
+          "fit_inlier_fraction": 0.5,
+          "fit_span_xy": [
+            138.37837837837836,
+            27.675675675675663
+          ],
+          "scale": 1.0092088011021279
+        },
+        {
+          "index": 1,
+          "eligible": false,
+          "mutual_matches": 14,
+          "reason": "Fixed held-out/coverage/fit gate failed",
+          "held_out_rms_pixels": 48.45882405927929,
+          "fit_inliers": 2,
+          "fit_inlier_fraction": 0.2222222222222222,
+          "fit_span_xy": [
+            166.05405405405406,
+            373.6216216216216
+          ],
+          "scale": 0.9714853670869275
+        },
+        {
+          "index": 2,
+          "eligible": false,
+          "mutual_matches": 24,
+          "reason": "Fixed held-out/coverage/fit gate failed",
+          "held_out_rms_pixels": 54.34891167683697,
+          "fit_inliers": 3,
+          "fit_inlier_fraction": 0.1875,
+          "fit_span_xy": [
+            27.675675675675677,
+            193.72972972972974
+          ],
+          "scale": 0.9868830003388095
+        },
+        {
+          "index": 3,
+          "eligible": false,
+          "mutual_matches": 12,
+          "reason": "Fixed held-out/coverage/fit gate failed",
+          "held_out_rms_pixels": 176.98385173916992,
+          "fit_inliers": 2,
+          "fit_inlier_fraction": 0.25,
+          "fit_span_xy": [
+            0.0,
+            221.40540540540536
+          ],
+          "scale": 0.6285393658677748
+        }
+      ]
+    },
+    {
+      "identity": "4164",
+      "reference_identity": "674",
+      "references": [
+        {
+          "index": 0,
+          "eligible": false,
+          "mutual_matches": 8,
+          "reason": "Fewer than 12 mutual matches"
+        },
+        {
+          "index": 1,
+          "eligible": false,
+          "mutual_matches": 7,
+          "reason": "Fewer than 12 mutual matches"
+        },
+        {
+          "index": 2,
+          "eligible": false,
+          "mutual_matches": 5,
+          "reason": "Fewer than 12 mutual matches"
+        },
+        {
+          "index": 3,
+          "eligible": false,
+          "mutual_matches": 15,
+          "reason": "Fixed held-out/coverage/fit gate failed",
+          "held_out_rms_pixels": 52.789009180935174,
+          "fit_inliers": 2,
+          "fit_inlier_fraction": 0.2,
+          "fit_span_xy": [
+            69.1891891891892,
+            207.56756756756755
+          ],
+          "scale": 1.21267804809585
+        }
+      ]
+    },
+    {
+      "identity": "674",
+      "reference_identity": "476",
+      "references": [
+        {
+          "index": 0,
+          "eligible": false,
+          "mutual_matches": 11,
+          "reason": "Fewer than 12 mutual matches"
+        },
+        {
+          "index": 1,
+          "eligible": false,
+          "mutual_matches": 7,
+          "reason": "Fewer than 12 mutual matches"
+        },
+        {
+          "index": 2,
+          "eligible": false,
+          "mutual_matches": 7,
+          "reason": "Fewer than 12 mutual matches"
+        },
+        {
+          "index": 3,
+          "eligible": false,
+          "mutual_matches": 16,
+          "reason": "Fixed held-out/coverage/fit gate failed",
+          "held_out_rms_pixels": 216.21311323217722,
+          "fit_inliers": 3,
+          "fit_inlier_fraction": 0.3,
+          "fit_span_xy": [
+            235.24324324324323,
+            276.7567567567567
+          ],
+          "scale": 1.060083994458748
+        }
+      ]
+    },
+    {
+      "identity": "476",
+      "reference_identity": "1281",
+      "references": [
+        {
+          "index": 0,
+          "eligible": false,
+          "mutual_matches": 5,
+          "reason": "Fewer than 12 mutual matches"
+        },
+        {
+          "index": 1,
+          "eligible": false,
+          "mutual_matches": 7,
+          "reason": "Fewer than 12 mutual matches"
+        },
+        {
+          "index": 2,
+          "eligible": false,
+          "mutual_matches": 4,
+          "reason": "Fewer than 12 mutual matches"
+        },
+        {
+          "index": 3,
+          "eligible": false,
+          "mutual_matches": 10,
+          "reason": "Fewer than 12 mutual matches"
+        }
+      ]
+    },
+    {
+      "identity": "1281",
+      "reference_identity": "8748",
+      "references": [
+        {
+          "index": 0,
+          "eligible": false,
+          "mutual_matches": 9,
+          "reason": "Fewer than 12 mutual matches"
+        },
+        {
+          "index": 1,
+          "eligible": false,
+          "mutual_matches": 16,
+          "reason": "Fixed held-out/coverage/fit gate failed",
+          "held_out_rms_pixels": 120.16230976166581,
+          "fit_inliers": 3,
+          "fit_inlier_fraction": 0.3,
+          "fit_span_xy": [
+            13.837837837837824,
+            332.10810810810807
+          ],
+          "scale": 0.9999788560243951
+        },
+        {
+          "index": 2,
+          "eligible": false,
+          "mutual_matches": 13,
+          "reason": "Fixed held-out/coverage/fit gate failed",
+          "held_out_rms_pixels": 49.42056397776741,
+          "fit_inliers": 3,
+          "fit_inlier_fraction": 0.375,
+          "fit_span_xy": [
+            207.56756756756758,
+            152.21621621621625
+          ],
+          "scale": 0.8761537593077136
+        },
+        {
+          "index": 3,
+          "eligible": false,
+          "mutual_matches": 14,
+          "reason": "Fixed held-out/coverage/fit gate failed",
+          "held_out_rms_pixels": 54.498044005891,
+          "fit_inliers": 3,
+          "fit_inlier_fraction": 0.3333333333333333,
+          "fit_span_xy": [
+            318.27027027027026,
+            138.3783783783784
+          ],
+          "scale": 0.9133420048964577
+        }
+      ]
+    },
+    {
+      "identity": "8748",
+      "reference_identity": "6792",
+      "references": [
+        {
+          "index": 0,
+          "eligible": false,
+          "mutual_matches": 9,
+          "reason": "Fewer than 12 mutual matches"
+        },
+        {
+          "index": 1,
+          "eligible": false,
+          "mutual_matches": 6,
+          "reason": "Fewer than 12 mutual matches"
+        },
+        {
+          "index": 2,
+          "eligible": false,
+          "mutual_matches": 12,
+          "reason": "Fixed held-out/coverage/fit gate failed",
+          "held_out_rms_pixels": 59.04854596161005,
+          "fit_inliers": 2,
+          "fit_inlier_fraction": 0.25,
+          "fit_span_xy": [
+            41.513513513513544,
+            345.94594594594594
+          ],
+          "scale": 0.9655842702709037
+        },
+        {
+          "index": 3,
+          "eligible": false,
+          "mutual_matches": 12,
+          "reason": "Fixed held-out/coverage/fit gate failed",
+          "held_out_rms_pixels": 64.14105865392494,
+          "fit_inliers": 2,
+          "fit_inlier_fraction": 0.25,
+          "fit_span_xy": [
+            13.83783783783781,
+            318.2702702702703
+          ],
+          "scale": 0.9143096870140065
+        }
+      ]
+    }
+  ],
+  "controls": [
+    {
+      "identity": "6792",
+      "shift": 0,
+      "eligible": true,
+      "mutual_matches": 448,
+      "reason": null,
+      "held_out_rms_pixels": 0.0,
+      "fit_inliers": 298,
+      "fit_inlier_fraction": 1.0,
+      "fit_span_xy": [
+        415.1351351351351,
+        415.1351351351351
+      ],
+      "scale": 1.0,
+      "known_transform_rms_pixels": 0.0
+    },
+    {
+      "identity": "6792",
+      "shift": 8,
+      "eligible": false,
+      "mutual_matches": 48,
+      "reason": "Fixed held-out/coverage/fit gate failed",
+      "held_out_rms_pixels": 14.263716758893525,
+      "fit_inliers": 14,
+      "fit_inlier_fraction": 0.4375,
+      "fit_span_xy": [
+        387.4594594594594,
+        373.6216216216216
+      ],
+      "scale": 1.0,
+      "known_transform_rms_pixels": 8.0
+    },
+    {
+      "identity": "6792",
+      "shift": 32,
+      "eligible": true,
+      "mutual_matches": 53,
+      "reason": null,
+      "held_out_rms_pixels": 10.314114928148362,
+      "fit_inliers": 24,
+      "fit_inlier_fraction": 0.6857142857142857,
+      "fit_span_xy": [
+        373.6216216216216,
+        415.1351351351351
+      ],
+      "scale": 1.0000000022330047,
+      "known_transform_rms_pixels": 4.324324406121466
+    },
+    {
+      "identity": "2250",
+      "shift": 0,
+      "eligible": true,
+      "mutual_matches": 512,
+      "reason": null,
+      "held_out_rms_pixels": 0.0,
+      "fit_inliers": 341,
+      "fit_inlier_fraction": 1.0,
+      "fit_span_xy": [
+        415.1351351351351,
+        415.1351351351351
+      ],
+      "scale": 1.0,
+      "known_transform_rms_pixels": 0.0
+    },
+    {
+      "identity": "2250",
+      "shift": 8,
+      "eligible": false,
+      "mutual_matches": 56,
+      "reason": "Fixed held-out/coverage/fit gate failed",
+      "held_out_rms_pixels": 17.67552260992983,
+      "fit_inliers": 13,
+      "fit_inlier_fraction": 0.35135135135135137,
+      "fit_span_xy": [
+        318.27027027027026,
+        401.2972972972973
+      ],
+      "scale": 1.000000005454221,
+      "known_transform_rms_pixels": 5.837834106638832
+    },
+    {
+      "identity": "2250",
+      "shift": 32,
+      "eligible": true,
+      "mutual_matches": 82,
+      "reason": null,
+      "held_out_rms_pixels": 10.782356793988736,
+      "fit_inliers": 39,
+      "fit_inlier_fraction": 0.7222222222222222,
+      "fit_span_xy": [
+        345.94594594594594,
+        415.1351351351351
+      ],
+      "scale": 1.0000000026629008,
+      "known_transform_rms_pixels": 4.3243249802888855
+    },
+    {
+      "identity": "2083",
+      "shift": 0,
+      "eligible": true,
+      "mutual_matches": 577,
+      "reason": null,
+      "held_out_rms_pixels": 0.0,
+      "fit_inliers": 384,
+      "fit_inlier_fraction": 1.0,
+      "fit_span_xy": [
+        415.1351351351351,
+        415.1351351351351
+      ],
+      "scale": 1.0,
+      "known_transform_rms_pixels": 0.0
+    },
+    {
+      "identity": "2083",
+      "shift": 8,
+      "eligible": false,
+      "mutual_matches": 79,
+      "reason": "Fixed held-out/coverage/fit gate failed",
+      "held_out_rms_pixels": 17.864570788846503,
+      "fit_inliers": 21,
+      "fit_inlier_fraction": 0.40384615384615385,
+      "fit_span_xy": [
+        345.94594594594594,
+        387.4594594594594
+      ],
+      "scale": 0.9999999909139725,
+      "known_transform_rms_pixels": 5.837834426585713
+    },
+    {
+      "identity": "2083",
+      "shift": 32,
+      "eligible": true,
+      "mutual_matches": 99,
+      "reason": null,
+      "held_out_rms_pixels": 8.344530003805298,
+      "fit_inliers": 53,
+      "fit_inlier_fraction": 0.803030303030303,
+      "fit_span_xy": [
+        373.6216216216216,
+        415.1351351351351
+      ],
+      "scale": 0.999999996656393,
+      "known_transform_rms_pixels": 4.324323106320928
+    },
+    {
+      "identity": "4164",
+      "shift": 0,
+      "eligible": true,
+      "mutual_matches": 509,
+      "reason": null,
+      "held_out_rms_pixels": 0.0,
+      "fit_inliers": 339,
+      "fit_inlier_fraction": 1.0,
+      "fit_span_xy": [
+        415.1351351351351,
+        415.1351351351351
+      ],
+      "scale": 1.0,
+      "known_transform_rms_pixels": 0.0
+    },
+    {
+      "identity": "4164",
+      "shift": 8,
+      "eligible": false,
+      "mutual_matches": 61,
+      "reason": "Fixed held-out/coverage/fit gate failed",
+      "held_out_rms_pixels": 20.030183491964426,
+      "fit_inliers": 15,
+      "fit_inlier_fraction": 0.375,
+      "fit_span_xy": [
+        415.1351351351351,
+        387.4594594594595
+      ],
+      "scale": 1.0,
+      "known_transform_rms_pixels": 8.0
+    },
+    {
+      "identity": "4164",
+      "shift": 32,
+      "eligible": false,
+      "mutual_matches": 88,
+      "reason": "Fixed held-out/coverage/fit gate failed",
+      "held_out_rms_pixels": 14.731503299051854,
+      "fit_inliers": 49,
+      "fit_inlier_fraction": 0.8448275862068966,
+      "fit_span_xy": [
+        359.78378378378375,
+        401.2972972972973
+      ],
+      "scale": 0.9999999891273049,
+      "known_transform_rms_pixels": 4.32432293861312
+    },
+    {
+      "identity": "674",
+      "shift": 0,
+      "eligible": true,
+      "mutual_matches": 539,
+      "reason": null,
+      "held_out_rms_pixels": 0.0,
+      "fit_inliers": 359,
+      "fit_inlier_fraction": 1.0,
+      "fit_span_xy": [
+        415.1351351351351,
+        415.1351351351351
+      ],
+      "scale": 1.0,
+      "known_transform_rms_pixels": 0.0
+    },
+    {
+      "identity": "674",
+      "shift": 8,
+      "eligible": false,
+      "mutual_matches": 66,
+      "reason": "Fixed held-out/coverage/fit gate failed",
+      "held_out_rms_pixels": 18.424223051585354,
+      "fit_inliers": 18,
+      "fit_inlier_fraction": 0.4090909090909091,
+      "fit_span_xy": [
+        373.6216216216216,
+        359.78378378378375
+      ],
+      "scale": 0.9999999960299029,
+      "known_transform_rms_pixels": 5.837836268253368
+    },
+    {
+      "identity": "674",
+      "shift": 32,
+      "eligible": true,
+      "mutual_matches": 79,
+      "reason": null,
+      "held_out_rms_pixels": 9.60191888543643,
+      "fit_inliers": 38,
+      "fit_inlier_fraction": 0.7307692307692307,
+      "fit_span_xy": [
+        359.78378378378375,
+        415.1351351351351
+      ],
+      "scale": 0.9999999984605801,
+      "known_transform_rms_pixels": 4.324324099349606
+    },
+    {
+      "identity": "476",
+      "shift": 0,
+      "eligible": true,
+      "mutual_matches": 489,
+      "reason": null,
+      "held_out_rms_pixels": 0.0,
+      "fit_inliers": 326,
+      "fit_inlier_fraction": 1.0,
+      "fit_span_xy": [
+        415.1351351351351,
+        415.1351351351351
+      ],
+      "scale": 1.0,
+      "known_transform_rms_pixels": 0.0
+    },
+    {
+      "identity": "476",
+      "shift": 8,
+      "eligible": false,
+      "mutual_matches": 74,
+      "reason": "Fixed held-out/coverage/fit gate failed",
+      "held_out_rms_pixels": 19.764387378519768,
+      "fit_inliers": 19,
+      "fit_inlier_fraction": 0.3877551020408163,
+      "fit_span_xy": [
+        262.91891891891896,
+        401.2972972972973
+      ],
+      "scale": 1.0000000045242603,
+      "known_transform_rms_pixels": 5.837843386549179
+    },
+    {
+      "identity": "476",
+      "shift": 32,
+      "eligible": true,
+      "mutual_matches": 85,
+      "reason": null,
+      "held_out_rms_pixels": 11.491699342237528,
+      "fit_inliers": 39,
+      "fit_inlier_fraction": 0.6964285714285714,
+      "fit_span_xy": [
+        332.1081081081081,
+        415.1351351351351
+      ],
+      "scale": 0.9999999822591682,
+      "known_transform_rms_pixels": 4.324319722140599
+    },
+    {
+      "identity": "1281",
+      "shift": 0,
+      "eligible": true,
+      "mutual_matches": 511,
+      "reason": null,
+      "held_out_rms_pixels": 0.0,
+      "fit_inliers": 340,
+      "fit_inlier_fraction": 1.0,
+      "fit_span_xy": [
+        415.1351351351351,
+        415.1351351351351
+      ],
+      "scale": 1.0,
+      "known_transform_rms_pixels": 0.0
+    },
+    {
+      "identity": "1281",
+      "shift": 8,
+      "eligible": false,
+      "mutual_matches": 65,
+      "reason": "Fixed held-out/coverage/fit gate failed",
+      "held_out_rms_pixels": 25.206835428216515,
+      "fit_inliers": 18,
+      "fit_inlier_fraction": 0.4186046511627907,
+      "fit_span_xy": [
+        332.10810810810807,
+        332.1081081081081
+      ],
+      "scale": 0.9999999931741755,
+      "known_transform_rms_pixels": 5.83783907864636
+    },
+    {
+      "identity": "1281",
+      "shift": 32,
+      "eligible": true,
+      "mutual_matches": 71,
+      "reason": null,
+      "held_out_rms_pixels": 2.8246369526287674,
+      "fit_inliers": 34,
+      "fit_inlier_fraction": 0.723404255319149,
+      "fit_span_xy": [
+        373.6216216216216,
+        401.2972972972973
+      ],
+      "scale": 0.9999999950769497,
+      "known_transform_rms_pixels": 4.32432278067393
+    },
+    {
+      "identity": "8748",
+      "shift": 0,
+      "eligible": true,
+      "mutual_matches": 497,
+      "reason": null,
+      "held_out_rms_pixels": 0.0,
+      "fit_inliers": 331,
+      "fit_inlier_fraction": 1.0,
+      "fit_span_xy": [
+        415.1351351351351,
+        415.1351351351351
+      ],
+      "scale": 1.0,
+      "known_transform_rms_pixels": 0.0
+    },
+    {
+      "identity": "8748",
+      "shift": 8,
+      "eligible": false,
+      "mutual_matches": 64,
+      "reason": "Fixed held-out/coverage/fit gate failed",
+      "held_out_rms_pixels": 15.887511518421471,
+      "fit_inliers": 13,
+      "fit_inlier_fraction": 0.30952380952380953,
+      "fit_span_xy": [
+        193.72972972972974,
+        401.2972972972973
+      ],
+      "scale": 0.9999999960666273,
+      "known_transform_rms_pixels": 5.837836607268474
+    },
+    {
+      "identity": "8748",
+      "shift": 32,
+      "eligible": true,
+      "mutual_matches": 69,
+      "reason": null,
+      "held_out_rms_pixels": 11.175061909062991,
+      "fit_inliers": 29,
+      "fit_inlier_fraction": 0.6304347826086957,
+      "fit_span_xy": [
+        387.4594594594594,
+        359.78378378378375
+      ],
+      "scale": 0.9999999923400136,
+      "known_transform_rms_pixels": 4.3243232409781225
+    }
+  ],
+  "frozen_parameters": 22056576,
+  "trainable_parameters": 0,
+  "preprocessing": {
+    "resize": 518,
+    "resample": "PIL bicubic",
+    "center_crop": false,
+    "mean": [
+      0.48500001430511475,
+      0.4560000002384186,
+      0.4059999883174896
+    ],
+    "std": [
+      0.2290000021457672,
+      0.2240000069141388,
+      0.22499999403953552
+    ]
+  },
+  "peak_allocated_bytes": 71557120,
+  "peak_reserved_bytes": 79691776,
+  "first_target_probe": "passed",
+  "hidden_pixel_invariance": "exact",
+  "usable_cases": 0,
+  "wrong_pair_acceptance": 0.0,
+  "gate_passed": false,
+  "elapsed_seconds": 16.01500000001397,
+  "raw_receipt_sha256": "d32343216057bceac000f3a9678589c7e1a40f1513fddc78bbc15b8e61399d04"
+}

@@ -1,12 +1,22 @@
 # Facial Inpainting Project — Progress and Completion Report
 
-**Report date:** 11 October 2026
+**Report date:** 12 October 2026
 **Current platform:** Windows laptop, NVIDIA RTX 5070 Laptop GPU with 8 GB VRAM  
 **Current application:** http://127.0.0.1:8765/ (current code; Start Studio verifies loaded version)
 **Repository:** https://github.com/rehaan1603/facial-inpainting-studio  
 **Status:** Working local research baseline; proposed multi-reference research method and final validation incomplete. Public hosting paused at the owner's request.
 
 ## Latest status update
+
+### 11–12 October: dense correspondence and GPU controls completed
+
+Frozen CLIP and DINOv2-small feature extraction completed on the same eight training people, with original masks, four real references, wrong-person controls and hidden-pixel invariance. No development reconstruction scores were used. DINO at1036 improved the known8px-shift gate from **0/8 to8/8**, with1.08px fitted-transform error, but reduced32px-control acceptance from7/8 at518 to3/8. **All three dense feature settings still have0/32 eligible real reference pairs and0/8 usable targets.** These controlled localization improvements are not reconstruction-quality gains.
+
+Peak feature-extraction GPU allocation was1.30GB for CLIP,71.6MB for DINO518 and121MB for DINO1036. The encoder is not exhausting the laptop GPU; increasing compute alone has not resolved correspondence ambiguity. These costs are not SDXL training memory. Thirteen new unit tests passed (5 CLIP,4 DINO518,4 DINO1036), plus real known-warp and invariance controls. The original v3a settings-serialization assertion failure is retained alongside the corrected retry.
+
+The fixed sequence is complete and fails its real-reference gate. No adapter training, new checkpoint, baseline replacement or new SSIM/LPIPS/identity claim follows. Next direction: separately specified pose-dependent anatomical correspondence/confidence, with training-only supervision if justified, rather than additional resolution sweeps. Current app, old model checkpoints and evaluation remain preserved.
+
+[Complete controlled comparison and decision](research/DENSE_DINO_RESOLUTION_RESULTS_V5.md) · [DINO518 results](research/DENSE_DINO_GEOMETRY_RESULTS_V4.md) · [Known-warp diagnosis](research/DENSE_EQUIVARIANCE_RESULTS_V3A.md) · [CLIP results](research/DENSE_FEATURE_GEOMETRY_RESULTS_V3.md).
 
 ### 11 October: detector-independent sparse-feature diagnostic completed
 
