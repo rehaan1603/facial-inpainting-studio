@@ -8,6 +8,16 @@
 
 ## Latest status update
 
+### 11 October: spatial correspondence audit and prerequisite test
+
+The SDXL reference path was audited before changes. Its 64 FaceID tokens have no explicit anatomical coordinates. An isolated spatial-reference attention prototype now has **20 trainable head gates**, with the existing UNet/FaceID weights frozen. **18 CPU tests pass**, including zero-effect equality, finite gate gradients and hidden-pixel invariance. The application and current baseline remain unchanged.
+
+The fixed geometry prerequisite passed for **only 2/8 training people**: four erased targets were not detected and two lacked reliable reference alignment. All failures are preserved. Per the preflight, **no GPU feature extraction, gradient/VRAM probe, training or new reconstruction evaluation was started**. Candidate quality/VRAM are unmeasured. Next is a separately specified detector-independent visible-feature correspondence test, before any training.
+
+[Audit and ranked mechanisms](research/SPATIAL_CORRESPONDENCE_AUDIT_20261011.md) · [Preflight](research/SPATIAL_REFERENCE_CORRESPONDENCE_PREFLIGHT_V1.md) · [Results and failure diagnosis](research/SPATIAL_REFERENCE_CORRESPONDENCE_RESULTS_V1.md).
+
+The main local PPT is corrected to preserve the original ReF-LDM architecture, methods and reconstruction slides, with two essential current result tables (18 slides total). The separate small-batch deck remains 10 slides. See [presentation index](presentations/README.md).
+
 ### 10–11 October: decoded pixel-loss comparison and whole-image PPT updates completed
 
 The direct decoded missing-region gradient/resource audit passed. Two fresh **16-update GPU continuations** then completed from the same preserved 64-update checkpoint, with identical reset optimizers, eight training people, timesteps/noises and **385 trainable parameters**. Only the added **0.1 decoded-hole RGB L1 loss** differs. Initial checkpoint bytes and first-forward epsilon losses match exactly. Frozen-weight guards, evaluation exclusions and source/config/trace pins pass.

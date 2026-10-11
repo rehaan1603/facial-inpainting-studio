@@ -1,0 +1,179 @@
+{
+  "date": "2026-10-11",
+  "status": "geometry_gate_failed_no_gpu_training",
+  "geometry_receipt_sha256": "ffb64909dc956073798aaa489471b8d638366235546440fd4e8208841164fe2e",
+  "protocol_sha256": "319ca550f562e241cf9fd3e3671a0c6c6a127d6af4ffffd527e05b57c883b72f",
+  "manifest_sha256": "b90a1ccddad5cd7c6efafe39209567765e918aabbf0a68022955e3baea2a875f",
+  "rows": [
+    {
+      "identity": "6792",
+      "status": "fallback",
+      "reason": "Damaged-target detection: Geometry requires exactly one detected face; got 0",
+      "references": []
+    },
+    {
+      "identity": "2250",
+      "status": "usable",
+      "reason": null,
+      "references": [
+        {
+          "index": 0,
+          "eligible": false,
+          "held_out_normalized_rms": 0.040959084370177826,
+          "full_normalized_rms": 0.04298982371839744,
+          "reason": "Visible-anchor error exceeds fixed 0.04 face-width bound"
+        },
+        {
+          "index": 1,
+          "eligible": true,
+          "held_out_normalized_rms": 0.020568432682298035,
+          "full_normalized_rms": 0.020808265047747607
+        },
+        {
+          "index": 2,
+          "eligible": true,
+          "held_out_normalized_rms": 0.015019900789407702,
+          "full_normalized_rms": 0.015052748112281857
+        },
+        {
+          "index": 3,
+          "eligible": true,
+          "held_out_normalized_rms": 0.030962703849968874,
+          "full_normalized_rms": 0.030635642672686123
+        }
+      ]
+    },
+    {
+      "identity": "2083",
+      "status": "fallback",
+      "reason": "Damaged-target detection: Geometry requires exactly one detected face; got 0",
+      "references": []
+    },
+    {
+      "identity": "4164",
+      "status": "fallback",
+      "reason": "Fewer than two reliable spatial references",
+      "references": [
+        {
+          "index": 0,
+          "eligible": false,
+          "held_out_normalized_rms": 0.09102771136706315,
+          "full_normalized_rms": 0.08716174703025158,
+          "reason": "Visible-anchor error exceeds fixed 0.04 face-width bound"
+        },
+        {
+          "index": 1,
+          "eligible": false,
+          "held_out_normalized_rms": 0.08433135597259549,
+          "full_normalized_rms": 0.08106189465763361,
+          "reason": "Visible-anchor error exceeds fixed 0.04 face-width bound"
+        },
+        {
+          "index": 2,
+          "eligible": false,
+          "held_out_normalized_rms": 0.07985520514814777,
+          "full_normalized_rms": 0.0755854212136935,
+          "reason": "Visible-anchor error exceeds fixed 0.04 face-width bound"
+        },
+        {
+          "index": 3,
+          "eligible": false,
+          "held_out_normalized_rms": 0.12638412487573406,
+          "full_normalized_rms": 0.1199067089746655,
+          "reason": "Visible-anchor error exceeds fixed 0.04 face-width bound"
+        }
+      ]
+    },
+    {
+      "identity": "674",
+      "status": "fallback",
+      "reason": "Damaged-target detection: Geometry requires exactly one detected face; got 0",
+      "references": []
+    },
+    {
+      "identity": "476",
+      "status": "fallback",
+      "reason": "Damaged-target detection: Geometry requires exactly one detected face; got 0",
+      "references": []
+    },
+    {
+      "identity": "1281",
+      "status": "usable",
+      "reason": null,
+      "references": [
+        {
+          "index": 0,
+          "eligible": true,
+          "held_out_normalized_rms": 0.02083374021058527,
+          "full_normalized_rms": 0.020892241225251226
+        },
+        {
+          "index": 1,
+          "eligible": true,
+          "held_out_normalized_rms": 0.019290274006082256,
+          "full_normalized_rms": 0.019573668969369826
+        },
+        {
+          "index": 2,
+          "eligible": true,
+          "held_out_normalized_rms": 0.01355532430047851,
+          "full_normalized_rms": 0.013576768652021199
+        },
+        {
+          "index": 3,
+          "eligible": false,
+          "held_out_normalized_rms": 0.05255235234506619,
+          "full_normalized_rms": 0.05368188916371172,
+          "reason": "Visible-anchor error exceeds fixed 0.04 face-width bound"
+        }
+      ]
+    },
+    {
+      "identity": "8748",
+      "status": "fallback",
+      "reason": "Fewer than two reliable spatial references",
+      "references": [
+        {
+          "index": 0,
+          "eligible": false,
+          "held_out_normalized_rms": 0.06440205831387104,
+          "full_normalized_rms": 0.06146614038513126,
+          "reason": "Visible-anchor error exceeds fixed 0.04 face-width bound"
+        },
+        {
+          "index": 1,
+          "eligible": false,
+          "held_out_normalized_rms": 0.0835952570015485,
+          "full_normalized_rms": 0.07863669877468728,
+          "reason": "Visible-anchor error exceeds fixed 0.04 face-width bound"
+        },
+        {
+          "index": 2,
+          "eligible": false,
+          "held_out_normalized_rms": 0.12256370780976479,
+          "full_normalized_rms": 0.11587238907245659,
+          "reason": "Visible-anchor error exceeds fixed 0.04 face-width bound"
+        },
+        {
+          "index": 3,
+          "eligible": false,
+          "held_out_normalized_rms": 0.04465988203609509,
+          "full_normalized_rms": 0.04283819898333457,
+          "reason": "Visible-anchor error exceeds fixed 0.04 face-width bound"
+        }
+      ]
+    }
+  ],
+  "usable": 2,
+  "total": 8,
+  "trainable_parameters": 20,
+  "cpu_tests": {
+    "passed": 18,
+    "attention": 8,
+    "geometry": 6,
+    "existing_rejection": 4,
+    "command": "python -m unittest discover -s scripts -p 'test_spatial_reference_*_v1.py'"
+  },
+  "gpu_peak_bytes": null,
+  "candidate_reconstruction_metrics": null
+}

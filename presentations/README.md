@@ -1,19 +1,19 @@
 ## Main local presentation files — 11 October 2026
 
-Use the two concise decks in `Downloads/Facial Inpainting - Latest Presentations` for presenting:
+Use these two files in `Downloads/Facial Inpainting - Latest Presentations`:
 
 | Deck | Slides | Contents |
 |---|---:|---|
-| Overall Results — Concise Review |11|Project objective, implemented methods, current architecture, training, two latest value tables, an actual output example, findings, local testing and source links|
-| Small Batch — Concise Review |10|Architecture, training, two latest value tables, one output slide for each of the three people, findings and source links|
+|Main Presentation — Updated Results|18|Original ReF-LDM cover, problem, architecture, training, protocol, corruption study, metrics, two essential current result tables, reference photos, four original reconstruction examples, future work and ten paper links|
+|Small Batch — Concise Review|10|Separate three-person SDXL study: architecture, training, whole-image and hole tables, three output examples, findings and sources|
 
-Repeated historical result slides and per-person value tables are removed from these presentation versions. The whole-image and missing-region tables show CFG3, the matched epsilon continuation and the latest RGB continuation. Complete five-arm results and the negative checks remain in the notes and source evidence. These are the same three development eye cases at seed17, not a whole-dataset or unknown-client accuracy measurement. Previous full decks below remain unchanged as historical records.
+The main deck now preserves the original main presentation rather than repeating the small-batch SDXL study. Repeated and superseded numeric slides were removed. Current main result tables are the clean-reference and misleading-reference ReF-LDM comparisons. Original reconstruction examples retain their original method labels and values; they are not relabelled as newer experiments. Neither deck establishes full-dataset or unknown-client accuracy.
 
-[Exact concise filenames and hashes](local_concise_review_20261011.json). Illustrated decks remain local because dataset-photo redistribution was not authorized.
+[Corrected main filename and hash](local_main_preserved_20261011.json). The small-batch file and hash in [earlier delivery metadata](local_concise_review_20261011.json) remain valid; its 11-slide overall entry is superseded. That older overall file was preserved in `Downloads/Facial Inpainting - Previous Presentations`.
 
-Latest public photo-free presentation: [5 October 2026 results](Facial_Inpainting_Results_2026-10-05.pptx). This dated 20-slide snapshot covers architecture, training, corruption, v4/v5, metrics, official-input encoding and papers. Dataset photos are excluded.
+Illustrated decks remain local because dataset-photo redistribution was not authorized. Latest public photo-free presentation: [5 October results](Facial_Inpainting_Results_2026-10-05.pptx).
 
-## Full local history decks — 11 October 2026
+## Full local history decks â€” 11 October 2026
 
 The earlier overall and small-batch decks have been updated in fresh copies. The original cover, architecture, methods, photographs, historical tables and ten paper hyperlinks are preserved. Latest files in the original laptop's Downloads:
 
@@ -24,7 +24,7 @@ The earlier overall and small-batch decks have been updated in fresh copies. The
 
 Both include completed 64-update training and the two matched 16-update continuations, whole-image PSNR/SSIM/LPIPS, separate hole/eye scores, FaceNet/ArcFace and the actual scored outputs. All five methods stay together. RGB whole LPIPS improves slightly, but hole SSIM/FaceNet regress versus equally trained epsilon; numerical and visual gates fail and are retained. High whole-image SSIM includes unchanged visible pixels and is not an accuracy percentage. These are three development eye cases at seed17, separate from the earlier four-person whole-image ReF-LDM blur/noise studies; they are not pooled or described as full-dataset accuracy.
 
-[Exact local filenames, SHA256, metric means and decisions](local_illustrated_update_20261011.json) · [paired decoded-loss results](../research/MASKED_SDXL_DECODED_CONTINUATION_RESULTS_V1.md) · [current project report](../PROJECT_REPORT.md).
+[Exact local filenames, SHA256, metric means and decisions](local_illustrated_update_20261011.json) Â· [paired decoded-loss results](../research/MASKED_SDXL_DECODED_CONTINUATION_RESULTS_V1.md) Â· [current project report](../PROJECT_REPORT.md).
 
 The new illustrated files remain local because dataset-photo redistribution was not authorized. A clone includes this photo-free metadata and complete numeric/source evidence. Original 32-slide/20-slide source decks and the intermediate 38-slide/27-slide whole-image copies remain intact. The public decks below retain their dated historical scope.
 
