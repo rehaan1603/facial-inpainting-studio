@@ -1,0 +1,5 @@
+# Full-model gradient repeatability diagnostic
+
+14 October 2026. V1 and cancellation-repair v2 both fail the same fixed neutral-scorer gradient gate, with max absolute difference 1.811786205507815e-7. Both give exact forward predictions. No training or inference replay follows these failures.
+
+Before attributing this to attention algebra, run one training-only diagnostic (person6792, t300, noise20261011). Reuse the same model/cache, precision, backend context and original v1 module. Compute a second native forward and scorer gradient before adding the adapter. Then measure enabled-zero gradients in two requests: scorer-only and all trainables. Compare both to the first native gradient and to each other using the original atol1e-7/rtol1e-4. Retain actual vectors, maximum differences and pass/fail flags. No optimization, decoded loss, quality scoring, checkpoint or evaluation original. Bound600 seconds and7.8e9 allocated bytes. Preserve all previous records and sources. Completion of this diagnostic is not permission to relax the training prerequisite.

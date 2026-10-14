@@ -1,0 +1,37 @@
+# One-layer masked spatial Q/V capacity experiment v1
+
+12 October 2026. Saved before implementation or execution of this experiment. Follows the completed capacity audit and failed SSIM32 comparison. Existing application, data, checkpoints, generator and metric definitions remain unchanged.
+
+## Hypothesis and sole intervention
+
+The 385-parameter appearance scorer reweights a fixed reference basis; the SSIM gradient reaches it but did not improve generated hole SSIM or identity. Test one additional spatial synthesis path: rank-4 Q and V residuals at `unet.up_blocks.1.attentions.2.transformer_blocks.1.attn1`. Both native maps are 640x640. Each new map has A[4,640], B[640,4]; 10,240 added parameters, 10,625 total including the unchanged trainable scorer. This does not establish anatomical reference alignment.
+
+A uses PyTorch Linear's default Kaiming-uniform initialization under isolated CPU seed 20261012; B is zero, no bias, scaling 1. Retain the native delegate result, then add adapted-minus-baseline attention only at queries selected by nearest resizing of the original hole. The two residual calculations use identical masked-query shapes and frozen keys/output projection; output bias must not be duplicated. The new path remains enabled even at zero B, retaining input gradients. No changes to reference selection, masks, corruption, denoising, loss weights, training schedule, output finishing or evaluator. Reject unsupported attention settings rather than silently changing them.
+
+## Control and starting state
+
+The causal control is the completed **SSIM32** arm in `outputs/masked_sdxl_ssim_continuation_v1/ssim/training`, final checkpoint SHA256 `9d4aee8cb4a537e81a78a01c2ed20d0fb8971402687c83b3c47fde518a89cbe3`. Reuse its frozen configuration, trace, final checkpoint and three evaluation outputs after verifying hashes. This saves repeating an identical 24-minute control. Its failures remain; it was not selected for favorable scores.
+
+The new candidate does **not** start from that final control. It starts from the same original 64-update scorer SHA256 `0f6ad433ce03a998c4fe4375e309fe79a85bc0d945448774fb603edbeace84ba`, with new A/zero B. Verify original scorer checkpoint bytes and identical first-forward epsilon and SSIM losses against the recorded control at t100, noise20261011 before the first optimization step. Require synthetic upstream gradient neutrality and training-only full-model neutral prediction/epsilon-scorer gradient agreement before accepting reuse. Finite differences and roundoff tolerances for gradient comparison must be reported; output neutrality requires exact tensor/image equality. Failure blocks training; do not loosen tolerances after seeing failures.
+
+## Same training and evaluation protocol
+
+Exactly the existing eight training identities in order: 6792,2250,2083,4164,674,476,1281,8748. Same cached targets/masks and four existing real references. Exclude 263,6681,10149,7400 and every existing exclusion; preserve manifest SHA256 `b90a1ccddad5cd7c6efafe39209567765e918aabbf0a68022955e3baea2a875f`. No synthetic references, new dataset or evaluation-original features. Initialize adapter RNG independently of data/noise/scorer RNG.
+
+Train 32 updates, batch1, 512 resolution, ordered eight identities repeated four times: updates1-16 t100,17-32 t300; noise seed20261010+update number. Reset AdamW lr1e-4, betas(.9,.999), eps1e-8, weight decay.01, gradient clipping1 over all trainable parameters. Objective unchanged: .25 full epsilon MSE + .75 normalized hole epsilon MSE + .1 masked SSIM loss. Same frozen fp16 UNet, bf16 forward autocast, fp32 trainable weights/loss, differentiable frozen CPU fp32 VAE. Existing loss/evaluator stay byte-identical. The only extra optimizer parameters are Q/V A/B. No best-checkpoint selection, extra epochs or rank/layer sweep.
+
+Evaluate people263,6681,10149 at seed17, DDIM30, CFG3, FaceID.8, appearance.2, strength1, model offload, 1024 inference/512 export, Poisson finish. Hash-verified controls are current CFG3, neutral local appearance, original64 scorer, epsilon32 and SSIM32; add all three candidate outputs. Keep raw/final files and failures. Generation reads only supplied damaged inputs, masks and references; held-out originals/annotations enter the independent scorer/report only.
+
+## Required stages and fixed bounds
+
+1. Synthetic CPU tests: 10,240/10,625 parameter counts; isolated RNG; enabled-zero forward equality and original upstream gradient agreement (atol1e-6,rtol1e-5 float32); finite nonzero B gradients; after a disposable step finite nonzero A gradients; exact visible output at wrapper; serialization equivalence; reject invalid settings. These tests do not establish GPU equivalence.
+2. One training-only GPU probe, case6792, t300/noise20261011, original checkpoint. Compare original and enabled-zero full-model prediction exactly; compare epsilon gradients for the original scorer (atol1e-7,rtol1e-4), retaining/reporting exact maximum differences. Measure epsilon and structural gradients for all trainable parameters; A zero gradients at zero B are expected, B gradients must be finite/nonzero. Perform a disposable in-memory update, verify no frozen UNet/VAE gradients, finite changed B, backend flag restoration and all old checkpoint hashes. Bound600 wall seconds and7.8 billion allocated GPU bytes. No checkpoint or quality score from this probe.
+3. If probe passes, enabled-zero 1024 inference replay for original64 person263/seed17. Require byte/pixel-identical raw and finished outputs to the preserved prior64 images. No evaluation original is opened. This is a determinism check, not candidate selection. A mismatch blocks training.
+4. Only after stages1-3 pass, train once in a fresh folder, at most1800 wall seconds and7.8 billion allocated bytes. Retain logs, checkpoint/config/source hashes, loss traces and any failure. Preserve the exact initial scorer and initial adapter state. If interrupted or timed out, stop and document it; no silent checkpoint resume or changed recipe.
+5. If training completes, evaluate all three final candidate reconstructions with the unchanged evaluator and review raw/final eyes, gaze, iris colour, brows and boundaries. Reuse fifteen prior controls, total18 scored records; no failed person is removed.
+
+## Decision and continuation
+
+Primary comparison is candidate versus the **same-loss SSIM32 control**, plus the current CFG3 application research control. Mean hole SSIM must strictly rise; hole PSNR must not decrease; hole/eye LPIPS must not increase; mean FaceNet and ArcFace must not decrease. All3 pairs must be valid; each person's FaceNet/ArcFace change must be at least -.005; exact final visible pixels and visually non-worsening artifacts are required. Also report the same full gates against local appearance, prior64 and epsilon32; promotion requires all five comparisons. Whole-image metrics and anatomical-eye PSNR/SSIM are supplementary, never substitutes for hole scores. No accuracy percentages. A pass only motivates later multi-seed/corrupted-reference/held-out validation; a failure stops this exact recipe. Keep all outcomes. No automatic application replacement.
+
+New code, results and checkpoints have separate filenames/directories. Pin the protocol and module/probe before the GPU probe; freeze training, evaluation, scoring and reporting code before optimization. Original pinned files must remain unchanged. Execution-only recovery, if necessary, must use separate receipts and cannot silently change this scientific protocol.
