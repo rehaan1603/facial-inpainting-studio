@@ -1,5 +1,7 @@
 # Spatial Q/V prerequisite results
 
+> **19 October correction:** Different floating-point loss operation order confounded the earlier attribution below. V6 matches operation order and obtains exact epsilon and structural scorer gradients. Original failures remain preserved. See [current results](SPATIAL_QV_LOSS_ORDER_RESULTS_20261019.md).
+
 14 October 2026. Training prerequisites only. No new reconstruction-quality claim, checkpoint, training run or application change.
 
 ## What was implemented

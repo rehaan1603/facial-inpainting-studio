@@ -1,0 +1,5 @@
+# Identical loss operation order prerequisite V6 — 19 October 2026
+
+Audit found control/native epsilon loss computes (.75 * masked_sum) / denominator, while candidate computes .75 * (masked_sum / denominator). Algebraic equality does not ensure identical finite-precision derivatives. Earlier conclusions attributing the mismatch to adapter activation are provisional and confounded by this difference.
+
+Only change V4 probe control/native loss parentheses to match candidate and actual training loss: .25 * full_mean + .75 * (masked_sum / (4 * mask_sum)). Preserve datasets, weights, all parameter flags, seed, dtype, structural loss, metrics, atol1e-7/rtol1e-4, resource bounds and original V4 evidence. Full prerequisite still requires matched epsilon and SSIM gradients, nonzero Q/V B gradients, frozen native weights, <=7.8GB CUDA, <=600 seconds, source pins and a disposable update only. No checkpoint, quality claim or training authorization without subsequent 1024 inference replay and a frozen training plan.

@@ -1,6 +1,6 @@
 # Facial Inpainting Project — Progress and Completion Report
 
-**Report date:** 14 October 2026
+**Report date:** 19 October 2026
 **Current platform:** Windows laptop, NVIDIA RTX 5070 Laptop GPU with 8 GB VRAM  
 **Current application:** http://127.0.0.1:8765/ (current code; Start Studio verifies loaded version)
 **Repository:** https://github.com/rehaan1603/facial-inpainting-studio  
@@ -8,7 +8,17 @@
 
 ## Latest status update
 
-### 14 October: spatial adapter prerequisites and gradient diagnosis
+### 19 October: gradient-check bug fixed; spatial prerequisite and image replay pass
+
+Different floating-point operation order in control and candidate regional losses caused the prior mismatch. V6 makes both match actual training: **epsilon and masked-SSIM scorer gradients now match exactly**, without relaxing tolerances. New spatial Q/V weights pass a disposable update within **7.34 GB peak CUDA allocation**. No trained checkpoint was saved.
+
+The **1024-pixel enabled-zero replay passed**: raw and finished outputs for person 263 / seed 17 are byte- and pixel-exact against the retained original64 output. The website and measured reconstruction quality remain unchanged. This fixes a prerequisite testing bug; it is not a new SSIM or identity improvement.
+
+**Remaining:** implement, review and freeze the fresh matched two-arm 32-update experiment; train both arms; generate six development outputs and score them alongside 15 historical records. Require missing-region improvement and identity safeguards before promotion, followed by new identities/seeds and corrupted-reference validation.
+
+[Current results](research/SPATIAL_QV_LOSS_ORDER_RESULTS_20261019.md) · [Next experiment](research/SPATIAL_QV_MATCHED_TRAINING_PLAN_V6.md) · [Evidence](research/spatial_qv_loss_order_evidence_v6.json).
+
+### 14 October: historical prerequisite failures (cause corrected on 19 October)
 
 Implemented the isolated 10,240-parameter spatial Q/V addition (10,625 total with the existing scorer). Nine CPU module tests passed. A derivative-cancellation revision passed eleven checks, including GPU half/bfloat16 and finite-difference tests. Both full-model probes give exactly unchanged zero-initialized predictions, but fail the original scorer-gradient tolerance: maximum difference **1.811786205507815e-7**, against fixed atol1e-7/rtol1e-4. Both stop before structural backward or an optimizer update; peak GPU allocation is **7,338,135,040 bytes**. No OOM or timeout occurred.
 

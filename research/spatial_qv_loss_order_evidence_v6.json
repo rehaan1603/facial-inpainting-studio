@@ -1,0 +1,952 @@
+{
+  "scope": "Prerequisite engineering checks only; no new quality scores or trained checkpoint",
+  "records": [
+    {
+      "name": "spatial_qv_matched_path_probe_v3",
+      "receipt_sha256": "4dfa3f79b3fb0976307aac5cf801244034d6072947ac29b387cd3ccd2d3f765e",
+      "receipt": {
+        "status": "failed",
+        "scope": "One training-photo gradient/resource probe only; no quality evaluation",
+        "started_at_utc": "2026-10-14T17:57:44.582147+00:00",
+        "identity": "6792",
+        "target_hq_id": "28120",
+        "trainable_parameters": 10625,
+        "added_parameters": 10240,
+        "resolution": 512,
+        "timestep": 300,
+        "noise_seed": 20261011,
+        "ssim_weight": 0.1,
+        "decoded_rgb_policy": "affine /2 + .5, unclamped",
+        "objective": "0.25 full epsilon MSE + 0.75 hole epsilon MSE + 0.1 fully-contained masked structural loss",
+        "starting_checkpoint": {
+          "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\outputs\\masked_sdxl_compatibility_pilot_v2\\training\\adapter_last.pt",
+          "sha256": "0f6ad433ce03a998c4fe4375e309fe79a85bc0d945448774fb603edbeace84ba"
+        },
+        "cache_receipt": {
+          "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\outputs\\masked_sdxl_compatibility_pilot_v2\\cache\\receipt.json",
+          "sha256": "bf902cf0c984ce002f7b22052f8d33f9f0214c33a8c95784adde104346a564ef"
+        },
+        "prior_training_receipt": {
+          "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\outputs\\masked_sdxl_compatibility_pilot_v2\\training\\receipt.json",
+          "sha256": "67de971ff505aa2123a1b8086b3a87512559bc45d60ed7c5daea2f5c13cf0b9b"
+        },
+        "source_pins": [
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\scripts\\probe_spatial_qv_matched_path_v3.py",
+            "sha256": "69e2def22ac785a4bec083cc315d00bb5ac67261751948d7b1b5120636e3af80"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\research\\SPATIAL_QV_MATCHED_PATH_PREFLIGHT_V3.md",
+            "sha256": "e505563521b94433e7cf3375796f1e7f64c99204daababc74a0cd4acf0b8be3c"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\research\\MASKED_SPATIAL_QV_PREFLIGHT_V1.md",
+            "sha256": "d23bc806b9913ef4af9999cf6f28412963fb345250fead899d698d526ab236ea"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\scripts\\stable_attention_difference_v2.py",
+            "sha256": "8e52bf9a90da50ed5b48697ae5435b9c39918ccf6a005211d69eef4341664c23"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\scripts\\masked_ssim_training_loss_v1.py",
+            "sha256": "47099be3c7f25f98249a28968920940a82e0376830cafa3002c603299c02ab40"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\scripts\\run_spatial_qv_matched_path_bounded_v3.py",
+            "sha256": "e219807041b388e2da2d747ca68661eed39b076efbd378790e5d06c8c2dbcbb1"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\scripts\\masked_spatial_qv_v2.py",
+            "sha256": "c801b0d5220054570c6979f9fa459f69be9493542de7ae9a948c26da4adf8025"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\scripts\\spatial_qv_common_v2.py",
+            "sha256": "2d11d7549614d9b5ef678c3f28dc978c4ce667c1d67e0cbcf29b9e886be05cf6"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\scripts\\train_masked_sdxl_compatibility_pilot_v2.py",
+            "sha256": "11b386f381773653afd360be3ee6461d23c34fdb134c4ef2d7ea07ab19af8b55"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\scripts\\sdxl_token_compatibility_probe_v1.py",
+            "sha256": "aab88b6eefd892d38134efb44c0ea9f6aa8c3c15d189638030d999971053e0d8"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\scripts\\local_appearance_processor_v1.py",
+            "sha256": "e1b15e3f801f48c103f9fdd5450f5d71cebb10b7af02581c72633f3b58128d01"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\.cache\\facial-inpainting\\reference_env_v2\\Lib\\site-packages\\diffusers\\models\\autoencoders\\autoencoder_kl.py",
+            "sha256": "091d72ea9ae2f45f465e70f05142e04850d1153052dca520291ceb707bda8c98"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\.cache\\facial-inpainting\\reference_env_v2\\Lib\\site-packages\\diffusers\\models\\unets\\unet_2d_condition.py",
+            "sha256": "0976bd0b650b2d6889f78fd3c8776ba365bd1f193dec18f72bdafdbadf91fe50"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\.cache\\facial-inpainting\\reference_env_v2\\Lib\\site-packages\\diffusers\\schedulers\\scheduling_ddpm.py",
+            "sha256": "3822205d8e95938da6af85dfb9e0455c15bc37983d2d5842ee586c29bc75b74a"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\.cache\\facial-inpainting\\reference_env_v2\\Lib\\site-packages\\diffusers\\models\\attention_processor.py",
+            "sha256": "7158a23bff0ce5bb1c03d66e2441dfd8d169b3598b2d494d32c6f88a3301ea01"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\.cache\\facial-inpainting\\reference_env_v2\\Lib\\site-packages\\diffusers\\models\\autoencoders\\vae.py",
+            "sha256": "8e6abad3bd7b7806dd9c6c451b2438641ef728d7884e6bfed37b867f719b98fc"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\.cache\\facial-inpainting\\reference_env_v2\\Lib\\site-packages\\diffusers\\utils\\accelerate_utils.py",
+            "sha256": "4eaf078f72f381703f54b6e819c0878e07340f546701929b7004c4a16748649b"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\.cache\\facial-inpainting\\reference_env_v2\\Lib\\site-packages\\diffusers\\models\\modeling_utils.py",
+            "sha256": "7f0420803e8372da4b8d8608a72ca77252590d99cf8d0a080ca7873fbaf3f507"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\.venv\\Lib\\site-packages\\torch\\utils\\checkpoint.py",
+            "sha256": "98949eca97131fcb72b419ab93c76e208559a09daf0614eebd307357a86a0cce"
+          }
+        ],
+        "cpu_tests": {
+          "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\outputs\\masked_spatial_qv_tests_v2.json",
+          "sha256": "e8f8732b4062ebb744802935b6cb56f8bdf8215eda01f195aed275f9dfb28dfc"
+        },
+        "same_loss_control_receipt": {
+          "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\outputs\\masked_sdxl_ssim_continuation_v1\\ssim\\training\\receipt.json",
+          "sha256": "3ca1d389c0f1777e880aeaf126f09be021981527700ba015a0aac451380d5d0c"
+        },
+        "versions": {
+          "torch": "2.11.0+cu128",
+          "diffusers": "0.40.0",
+          "transformers": "5.17.0",
+          "safetensors": "0.8.0"
+        },
+        "backend_flags_before": {
+          "flash": true,
+          "mem_efficient": true,
+          "math": true,
+          "cudnn": true
+        },
+        "stages": {
+          "load_models": 7.23399999999674,
+          "original_forward": 8.03100000001723,
+          "frozen_zero_control_forward": 56.03099999995902,
+          "enabled_zero_forward": 1.7350000000442378,
+          "epsilon_backward": 4.7189999999827705
+        },
+        "checkpoints_created": 0,
+        "quality_scores_created": 0,
+        "old_checkpoint_changed": false,
+        "current_stage": "failed",
+        "elapsed_seconds": 77.75,
+        "process_memory": {
+          "peak_working_set_bytes": 7438299136,
+          "working_set_bytes": 6448275456,
+          "peak_pagefile_bytes": 17392222208
+        },
+        "frozen_vae_parameters": 83653863,
+        "modified_processors": 70,
+        "alpha_bar": 0.5905007719993591,
+        "oracle_x0_inverse_residual": {
+          "max_absolute": 0.003003716468811035,
+          "rms": 0.0004289121716283262,
+          "reason": "Inherited scheduler.add_noise fp16 coefficient/arithmetic rounding; not exact inverse"
+        },
+        "backend_flags_inside": {
+          "flash": true,
+          "mem_efficient": false,
+          "math": true,
+          "cudnn": false
+        },
+        "neutral_epsilon_objective": 0.1880817860364914,
+        "control_epsilon_objective": 0.1880817860364914,
+        "historical_gradient_comparison": {
+          "maximum_absolute_difference": 0.0,
+          "passed": true
+        },
+        "control_ssim_loss": 0.37326717376708984,
+        "control_adapter_unchanged": true,
+        "enabled_zero_prediction_exact": true,
+        "enabled_zero_prediction_max_difference": 0.0,
+        "epsilon_gradient_norm": 0.0007170399185270071,
+        "neutral_scorer_gradient": {
+          "atol": 1e-07,
+          "rtol": 0.0001,
+          "maximum_absolute_difference": 1.811786205507815e-07,
+          "exact": false,
+          "passed": false
+        },
+        "error": "ValueError: Matched-path scorer gradient differs beyond fixed tolerance",
+        "out_of_memory": false,
+        "backend_flags_after": {
+          "flash": true,
+          "mem_efficient": true,
+          "math": true,
+          "cudnn": true
+        },
+        "finished_at_utc": "2026-10-14T17:59:02.335382+00:00",
+        "backend_flags_restored": true,
+        "peak_allocated_bytes": 7338178048,
+        "peak_reserved_bytes": 7696547840
+      }
+    },
+    {
+      "name": "spatial_qv_optimizer_control_probe_v4",
+      "receipt_sha256": "498f0eb2c17b8aca59519b865d7fbaffa19e6664bc3b7a70ae0271486ffe4083",
+      "receipt": {
+        "status": "failed",
+        "scope": "One training-photo gradient/resource probe only; no quality evaluation",
+        "started_at_utc": "2026-10-14T18:00:31.219090+00:00",
+        "identity": "6792",
+        "target_hq_id": "28120",
+        "trainable_parameters": 10625,
+        "added_parameters": 10240,
+        "resolution": 512,
+        "timestep": 300,
+        "noise_seed": 20261011,
+        "ssim_weight": 0.1,
+        "decoded_rgb_policy": "affine /2 + .5, unclamped",
+        "objective": "0.25 full epsilon MSE + 0.75 hole epsilon MSE + 0.1 fully-contained masked structural loss",
+        "starting_checkpoint": {
+          "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\outputs\\masked_sdxl_compatibility_pilot_v2\\training\\adapter_last.pt",
+          "sha256": "0f6ad433ce03a998c4fe4375e309fe79a85bc0d945448774fb603edbeace84ba"
+        },
+        "cache_receipt": {
+          "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\outputs\\masked_sdxl_compatibility_pilot_v2\\cache\\receipt.json",
+          "sha256": "bf902cf0c984ce002f7b22052f8d33f9f0214c33a8c95784adde104346a564ef"
+        },
+        "prior_training_receipt": {
+          "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\outputs\\masked_sdxl_compatibility_pilot_v2\\training\\receipt.json",
+          "sha256": "67de971ff505aa2123a1b8086b3a87512559bc45d60ed7c5daea2f5c13cf0b9b"
+        },
+        "source_pins": [
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\scripts\\probe_spatial_qv_optimizer_control_v4.py",
+            "sha256": "620ea497b1cbd6fcb029d957a0540c54402016c3f2e9bf86665f99fca2179d69"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\research\\SPATIAL_QV_OPTIMIZER_CONTROL_PREFLIGHT_V4.md",
+            "sha256": "5895f413a0e4b5fbdb846549b5ff61bb39aeaccf0bb47e39cf8eb3d81a32ee71"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\research\\MASKED_SPATIAL_QV_PREFLIGHT_V1.md",
+            "sha256": "d23bc806b9913ef4af9999cf6f28412963fb345250fead899d698d526ab236ea"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\scripts\\stable_attention_difference_v2.py",
+            "sha256": "8e52bf9a90da50ed5b48697ae5435b9c39918ccf6a005211d69eef4341664c23"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\scripts\\masked_ssim_training_loss_v1.py",
+            "sha256": "47099be3c7f25f98249a28968920940a82e0376830cafa3002c603299c02ab40"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\scripts\\run_spatial_qv_optimizer_control_bounded_v4.py",
+            "sha256": "b375d95847439e2de09c381bfde84985913de025304185c5ec3f6c764d8c06d9"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\scripts\\masked_spatial_qv_v2.py",
+            "sha256": "c801b0d5220054570c6979f9fa459f69be9493542de7ae9a948c26da4adf8025"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\scripts\\spatial_qv_common_v2.py",
+            "sha256": "2d11d7549614d9b5ef678c3f28dc978c4ce667c1d67e0cbcf29b9e886be05cf6"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\scripts\\train_masked_sdxl_compatibility_pilot_v2.py",
+            "sha256": "11b386f381773653afd360be3ee6461d23c34fdb134c4ef2d7ea07ab19af8b55"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\scripts\\sdxl_token_compatibility_probe_v1.py",
+            "sha256": "aab88b6eefd892d38134efb44c0ea9f6aa8c3c15d189638030d999971053e0d8"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\scripts\\local_appearance_processor_v1.py",
+            "sha256": "e1b15e3f801f48c103f9fdd5450f5d71cebb10b7af02581c72633f3b58128d01"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\.cache\\facial-inpainting\\reference_env_v2\\Lib\\site-packages\\diffusers\\models\\autoencoders\\autoencoder_kl.py",
+            "sha256": "091d72ea9ae2f45f465e70f05142e04850d1153052dca520291ceb707bda8c98"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\.cache\\facial-inpainting\\reference_env_v2\\Lib\\site-packages\\diffusers\\models\\unets\\unet_2d_condition.py",
+            "sha256": "0976bd0b650b2d6889f78fd3c8776ba365bd1f193dec18f72bdafdbadf91fe50"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\.cache\\facial-inpainting\\reference_env_v2\\Lib\\site-packages\\diffusers\\schedulers\\scheduling_ddpm.py",
+            "sha256": "3822205d8e95938da6af85dfb9e0455c15bc37983d2d5842ee586c29bc75b74a"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\.cache\\facial-inpainting\\reference_env_v2\\Lib\\site-packages\\diffusers\\models\\attention_processor.py",
+            "sha256": "7158a23bff0ce5bb1c03d66e2441dfd8d169b3598b2d494d32c6f88a3301ea01"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\.cache\\facial-inpainting\\reference_env_v2\\Lib\\site-packages\\diffusers\\models\\autoencoders\\vae.py",
+            "sha256": "8e6abad3bd7b7806dd9c6c451b2438641ef728d7884e6bfed37b867f719b98fc"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\.cache\\facial-inpainting\\reference_env_v2\\Lib\\site-packages\\diffusers\\utils\\accelerate_utils.py",
+            "sha256": "4eaf078f72f381703f54b6e819c0878e07340f546701929b7004c4a16748649b"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\.cache\\facial-inpainting\\reference_env_v2\\Lib\\site-packages\\diffusers\\models\\modeling_utils.py",
+            "sha256": "7f0420803e8372da4b8d8608a72ca77252590d99cf8d0a080ca7873fbaf3f507"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\.venv\\Lib\\site-packages\\torch\\utils\\checkpoint.py",
+            "sha256": "98949eca97131fcb72b419ab93c76e208559a09daf0614eebd307357a86a0cce"
+          }
+        ],
+        "cpu_tests": {
+          "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\outputs\\masked_spatial_qv_tests_v2.json",
+          "sha256": "e8f8732b4062ebb744802935b6cb56f8bdf8215eda01f195aed275f9dfb28dfc"
+        },
+        "same_loss_control_receipt": {
+          "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\outputs\\masked_sdxl_ssim_continuation_v1\\ssim\\training\\receipt.json",
+          "sha256": "3ca1d389c0f1777e880aeaf126f09be021981527700ba015a0aac451380d5d0c"
+        },
+        "versions": {
+          "torch": "2.11.0+cu128",
+          "diffusers": "0.40.0",
+          "transformers": "5.17.0",
+          "safetensors": "0.8.0"
+        },
+        "backend_flags_before": {
+          "flash": true,
+          "mem_efficient": true,
+          "math": true,
+          "cudnn": true
+        },
+        "stages": {
+          "load_models": 5.062999999965541,
+          "original_forward": 4.39000000001397,
+          "optimizer_frozen_control_forward": 47.51600000000326,
+          "enabled_zero_forward": 1.7189999999827705,
+          "epsilon_backward": 4.375
+        },
+        "checkpoints_created": 0,
+        "quality_scores_created": 0,
+        "old_checkpoint_changed": false,
+        "current_stage": "failed",
+        "elapsed_seconds": 63.07799999997951,
+        "process_memory": {
+          "peak_working_set_bytes": 7436648448,
+          "working_set_bytes": 6417051648,
+          "peak_pagefile_bytes": 17350864896
+        },
+        "frozen_vae_parameters": 83653863,
+        "modified_processors": 70,
+        "alpha_bar": 0.5905007719993591,
+        "oracle_x0_inverse_residual": {
+          "max_absolute": 0.003003716468811035,
+          "rms": 0.0004289121716283262,
+          "reason": "Inherited scheduler.add_noise fp16 coefficient/arithmetic rounding; not exact inverse"
+        },
+        "backend_flags_inside": {
+          "flash": true,
+          "mem_efficient": false,
+          "math": true,
+          "cudnn": false
+        },
+        "neutral_epsilon_objective": 0.1880817860364914,
+        "control_epsilon_objective": 0.1880817860364914,
+        "historical_gradient_comparison": {
+          "maximum_absolute_difference": 0.0,
+          "passed": true
+        },
+        "control_ssim_loss": 0.37326717376708984,
+        "control_adapter_unchanged": true,
+        "control_autograd_parameters": 10625,
+        "control_optimizer_parameters": 385,
+        "enabled_zero_prediction_exact": true,
+        "enabled_zero_prediction_max_difference": 0.0,
+        "epsilon_gradient_norm": 0.0007170399185270071,
+        "neutral_scorer_gradient": {
+          "atol": 1e-07,
+          "rtol": 0.0001,
+          "maximum_absolute_difference": 1.811786205507815e-07,
+          "exact": false,
+          "passed": false
+        },
+        "error": "ValueError: Matched-path scorer gradient differs beyond fixed tolerance",
+        "out_of_memory": false,
+        "backend_flags_after": {
+          "flash": true,
+          "mem_efficient": true,
+          "math": true,
+          "cudnn": true
+        },
+        "finished_at_utc": "2026-10-14T18:01:34.300593+00:00",
+        "backend_flags_restored": true,
+        "peak_allocated_bytes": 7338198528,
+        "peak_reserved_bytes": 7696547840
+      }
+    },
+    {
+      "name": "spatial_qv_repeat_isolation_probe_v5",
+      "receipt_sha256": "1d2652d134471a53f4e18b705e5ce2aaa9d60b606edd73ab1210caea57b016e3",
+      "receipt": {
+        "status": "failed",
+        "scope": "One training-photo gradient/resource probe only; no quality evaluation",
+        "started_at_utc": "2026-10-18T18:59:05.992936+00:00",
+        "identity": "6792",
+        "target_hq_id": "28120",
+        "trainable_parameters": 10625,
+        "added_parameters": 10240,
+        "resolution": 512,
+        "timestep": 300,
+        "noise_seed": 20261011,
+        "ssim_weight": 0.1,
+        "decoded_rgb_policy": "affine /2 + .5, unclamped",
+        "objective": "0.25 full epsilon MSE + 0.75 hole epsilon MSE + 0.1 fully-contained masked structural loss",
+        "starting_checkpoint": {
+          "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\outputs\\masked_sdxl_compatibility_pilot_v2\\training\\adapter_last.pt",
+          "sha256": "0f6ad433ce03a998c4fe4375e309fe79a85bc0d945448774fb603edbeace84ba"
+        },
+        "cache_receipt": {
+          "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\outputs\\masked_sdxl_compatibility_pilot_v2\\cache\\receipt.json",
+          "sha256": "bf902cf0c984ce002f7b22052f8d33f9f0214c33a8c95784adde104346a564ef"
+        },
+        "prior_training_receipt": {
+          "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\outputs\\masked_sdxl_compatibility_pilot_v2\\training\\receipt.json",
+          "sha256": "67de971ff505aa2123a1b8086b3a87512559bc45d60ed7c5daea2f5c13cf0b9b"
+        },
+        "source_pins": [
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\scripts\\probe_spatial_qv_repeat_isolation_v5.py",
+            "sha256": "3d19aff0d4eb19b78bddb6315de5f2578fc452e813849534a6eab44090d9c93f"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\research\\SPATIAL_QV_REPEAT_ISOLATION_V5.md",
+            "sha256": "717c447c450f2ecd6c2221e92cf6645e3b303ded780740010fc34867e72bb982"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\research\\MASKED_SPATIAL_QV_PREFLIGHT_V1.md",
+            "sha256": "d23bc806b9913ef4af9999cf6f28412963fb345250fead899d698d526ab236ea"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\scripts\\stable_attention_difference_v2.py",
+            "sha256": "8e52bf9a90da50ed5b48697ae5435b9c39918ccf6a005211d69eef4341664c23"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\scripts\\masked_ssim_training_loss_v1.py",
+            "sha256": "47099be3c7f25f98249a28968920940a82e0376830cafa3002c603299c02ab40"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\scripts\\run_spatial_qv_repeat_isolation_bounded_v5.py",
+            "sha256": "a701ad941162640be6f5b776902cd81c635ec9f907a36752a9b56520cff95c4e"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\scripts\\masked_spatial_qv_v2.py",
+            "sha256": "c801b0d5220054570c6979f9fa459f69be9493542de7ae9a948c26da4adf8025"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\scripts\\spatial_qv_common_v2.py",
+            "sha256": "2d11d7549614d9b5ef678c3f28dc978c4ce667c1d67e0cbcf29b9e886be05cf6"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\scripts\\train_masked_sdxl_compatibility_pilot_v2.py",
+            "sha256": "11b386f381773653afd360be3ee6461d23c34fdb134c4ef2d7ea07ab19af8b55"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\scripts\\sdxl_token_compatibility_probe_v1.py",
+            "sha256": "aab88b6eefd892d38134efb44c0ea9f6aa8c3c15d189638030d999971053e0d8"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\scripts\\local_appearance_processor_v1.py",
+            "sha256": "e1b15e3f801f48c103f9fdd5450f5d71cebb10b7af02581c72633f3b58128d01"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\.cache\\facial-inpainting\\reference_env_v2\\Lib\\site-packages\\diffusers\\models\\autoencoders\\autoencoder_kl.py",
+            "sha256": "091d72ea9ae2f45f465e70f05142e04850d1153052dca520291ceb707bda8c98"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\.cache\\facial-inpainting\\reference_env_v2\\Lib\\site-packages\\diffusers\\models\\unets\\unet_2d_condition.py",
+            "sha256": "0976bd0b650b2d6889f78fd3c8776ba365bd1f193dec18f72bdafdbadf91fe50"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\.cache\\facial-inpainting\\reference_env_v2\\Lib\\site-packages\\diffusers\\schedulers\\scheduling_ddpm.py",
+            "sha256": "3822205d8e95938da6af85dfb9e0455c15bc37983d2d5842ee586c29bc75b74a"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\.cache\\facial-inpainting\\reference_env_v2\\Lib\\site-packages\\diffusers\\models\\attention_processor.py",
+            "sha256": "7158a23bff0ce5bb1c03d66e2441dfd8d169b3598b2d494d32c6f88a3301ea01"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\.cache\\facial-inpainting\\reference_env_v2\\Lib\\site-packages\\diffusers\\models\\autoencoders\\vae.py",
+            "sha256": "8e6abad3bd7b7806dd9c6c451b2438641ef728d7884e6bfed37b867f719b98fc"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\.cache\\facial-inpainting\\reference_env_v2\\Lib\\site-packages\\diffusers\\utils\\accelerate_utils.py",
+            "sha256": "4eaf078f72f381703f54b6e819c0878e07340f546701929b7004c4a16748649b"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\.cache\\facial-inpainting\\reference_env_v2\\Lib\\site-packages\\diffusers\\models\\modeling_utils.py",
+            "sha256": "7f0420803e8372da4b8d8608a72ca77252590d99cf8d0a080ca7873fbaf3f507"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\.venv\\Lib\\site-packages\\torch\\utils\\checkpoint.py",
+            "sha256": "98949eca97131fcb72b419ab93c76e208559a09daf0614eebd307357a86a0cce"
+          }
+        ],
+        "cpu_tests": {
+          "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\outputs\\masked_spatial_qv_tests_v2.json",
+          "sha256": "e8f8732b4062ebb744802935b6cb56f8bdf8215eda01f195aed275f9dfb28dfc"
+        },
+        "same_loss_control_receipt": {
+          "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\outputs\\masked_sdxl_ssim_continuation_v1\\ssim\\training\\receipt.json",
+          "sha256": "3ca1d389c0f1777e880aeaf126f09be021981527700ba015a0aac451380d5d0c"
+        },
+        "versions": {
+          "torch": "2.11.0+cu128",
+          "diffusers": "0.40.0",
+          "transformers": "5.17.0",
+          "safetensors": "0.8.0"
+        },
+        "backend_flags_before": {
+          "flash": true,
+          "mem_efficient": true,
+          "math": true,
+          "cudnn": true
+        },
+        "stages": {
+          "load_models": 7.39100000000326,
+          "original_forward": 4.1560000000172295,
+          "optimizer_frozen_control_forward": 3.0310000000172295,
+          "enabled_zero_forward": 0.8599999999860302,
+          "epsilon_backward": 2.0619999999762513
+        },
+        "checkpoints_created": 0,
+        "quality_scores_created": 0,
+        "old_checkpoint_changed": false,
+        "current_stage": "failed",
+        "elapsed_seconds": 17.54699999996228,
+        "process_memory": {
+          "peak_working_set_bytes": 7442149376,
+          "working_set_bytes": 2716520448,
+          "peak_pagefile_bytes": 16592515072
+        },
+        "frozen_vae_parameters": 83653863,
+        "modified_processors": 70,
+        "alpha_bar": 0.5905007719993591,
+        "oracle_x0_inverse_residual": {
+          "max_absolute": 0.003003716468811035,
+          "rms": 0.0004289121716283262,
+          "reason": "Inherited scheduler.add_noise fp16 coefficient/arithmetic rounding; not exact inverse"
+        },
+        "backend_flags_inside": {
+          "flash": true,
+          "mem_efficient": false,
+          "math": true,
+          "cudnn": false
+        },
+        "neutral_epsilon_objective": 0.1880817860364914,
+        "control_epsilon_objective": 0.1880817860364914,
+        "historical_gradient_comparison": {
+          "maximum_absolute_difference": 0.0,
+          "passed": true
+        },
+        "control_adapter_unchanged": true,
+        "control_autograd_parameters": 10625,
+        "control_optimizer_parameters": 385,
+        "enabled_zero_prediction_exact": true,
+        "enabled_zero_prediction_max_difference": 0.0,
+        "epsilon_gradient_norm": 0.0007170399185270071,
+        "neutral_scorer_gradient": {
+          "atol": 1e-07,
+          "rtol": 0.0001,
+          "maximum_absolute_difference": 1.811786205507815e-07,
+          "exact": false,
+          "passed": false
+        },
+        "error": "ValueError: Matched-path scorer gradient differs beyond fixed tolerance",
+        "out_of_memory": false,
+        "backend_flags_after": {
+          "flash": true,
+          "mem_efficient": true,
+          "math": true,
+          "cudnn": true
+        },
+        "finished_at_utc": "2026-10-18T18:59:23.555231+00:00",
+        "backend_flags_restored": true,
+        "peak_allocated_bytes": 7338198528,
+        "peak_reserved_bytes": 7696547840
+      }
+    },
+    {
+      "name": "spatial_qv_loss_order_probe_v6",
+      "receipt_sha256": "43e9ce2ebe72f883a43a6feef95fafbabbbc4c4f62a7cbf0cd90c18383481c6a",
+      "receipt": {
+        "status": "passed",
+        "scope": "One training-photo gradient/resource probe only; no quality evaluation",
+        "started_at_utc": "2026-10-18T18:59:47.521839+00:00",
+        "identity": "6792",
+        "target_hq_id": "28120",
+        "trainable_parameters": 10625,
+        "added_parameters": 10240,
+        "resolution": 512,
+        "timestep": 300,
+        "noise_seed": 20261011,
+        "ssim_weight": 0.1,
+        "decoded_rgb_policy": "affine /2 + .5, unclamped",
+        "objective": "0.25 full epsilon MSE + 0.75 hole epsilon MSE + 0.1 fully-contained masked structural loss",
+        "starting_checkpoint": {
+          "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\outputs\\masked_sdxl_compatibility_pilot_v2\\training\\adapter_last.pt",
+          "sha256": "0f6ad433ce03a998c4fe4375e309fe79a85bc0d945448774fb603edbeace84ba"
+        },
+        "cache_receipt": {
+          "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\outputs\\masked_sdxl_compatibility_pilot_v2\\cache\\receipt.json",
+          "sha256": "bf902cf0c984ce002f7b22052f8d33f9f0214c33a8c95784adde104346a564ef"
+        },
+        "prior_training_receipt": {
+          "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\outputs\\masked_sdxl_compatibility_pilot_v2\\training\\receipt.json",
+          "sha256": "67de971ff505aa2123a1b8086b3a87512559bc45d60ed7c5daea2f5c13cf0b9b"
+        },
+        "source_pins": [
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\scripts\\probe_spatial_qv_loss_order_v6.py",
+            "sha256": "3f0b87a3e457231a708a6357e60172b6960211c4d559c381c2a61ecc65234836"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\research\\SPATIAL_QV_LOSS_ORDER_PREFLIGHT_V6.md",
+            "sha256": "cff7a84d996e6e4f0b25a8c1bfb706c8f6a07c34b182732aa9abcf23284acbb1"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\research\\MASKED_SPATIAL_QV_PREFLIGHT_V1.md",
+            "sha256": "d23bc806b9913ef4af9999cf6f28412963fb345250fead899d698d526ab236ea"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\scripts\\stable_attention_difference_v2.py",
+            "sha256": "8e52bf9a90da50ed5b48697ae5435b9c39918ccf6a005211d69eef4341664c23"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\scripts\\masked_ssim_training_loss_v1.py",
+            "sha256": "47099be3c7f25f98249a28968920940a82e0376830cafa3002c603299c02ab40"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\scripts\\run_spatial_qv_loss_order_bounded_v6.py",
+            "sha256": "fef975cb35f6dc1153c662dea5d0029d2a988dc6651afc6de1a63d9e00c0a80f"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\scripts\\masked_spatial_qv_v2.py",
+            "sha256": "c801b0d5220054570c6979f9fa459f69be9493542de7ae9a948c26da4adf8025"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\scripts\\spatial_qv_common_v2.py",
+            "sha256": "2d11d7549614d9b5ef678c3f28dc978c4ce667c1d67e0cbcf29b9e886be05cf6"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\scripts\\train_masked_sdxl_compatibility_pilot_v2.py",
+            "sha256": "11b386f381773653afd360be3ee6461d23c34fdb134c4ef2d7ea07ab19af8b55"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\scripts\\sdxl_token_compatibility_probe_v1.py",
+            "sha256": "aab88b6eefd892d38134efb44c0ea9f6aa8c3c15d189638030d999971053e0d8"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\scripts\\local_appearance_processor_v1.py",
+            "sha256": "e1b15e3f801f48c103f9fdd5450f5d71cebb10b7af02581c72633f3b58128d01"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\.cache\\facial-inpainting\\reference_env_v2\\Lib\\site-packages\\diffusers\\models\\autoencoders\\autoencoder_kl.py",
+            "sha256": "091d72ea9ae2f45f465e70f05142e04850d1153052dca520291ceb707bda8c98"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\.cache\\facial-inpainting\\reference_env_v2\\Lib\\site-packages\\diffusers\\models\\unets\\unet_2d_condition.py",
+            "sha256": "0976bd0b650b2d6889f78fd3c8776ba365bd1f193dec18f72bdafdbadf91fe50"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\.cache\\facial-inpainting\\reference_env_v2\\Lib\\site-packages\\diffusers\\schedulers\\scheduling_ddpm.py",
+            "sha256": "3822205d8e95938da6af85dfb9e0455c15bc37983d2d5842ee586c29bc75b74a"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\.cache\\facial-inpainting\\reference_env_v2\\Lib\\site-packages\\diffusers\\models\\attention_processor.py",
+            "sha256": "7158a23bff0ce5bb1c03d66e2441dfd8d169b3598b2d494d32c6f88a3301ea01"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\.cache\\facial-inpainting\\reference_env_v2\\Lib\\site-packages\\diffusers\\models\\autoencoders\\vae.py",
+            "sha256": "8e6abad3bd7b7806dd9c6c451b2438641ef728d7884e6bfed37b867f719b98fc"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\.cache\\facial-inpainting\\reference_env_v2\\Lib\\site-packages\\diffusers\\utils\\accelerate_utils.py",
+            "sha256": "4eaf078f72f381703f54b6e819c0878e07340f546701929b7004c4a16748649b"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\.cache\\facial-inpainting\\reference_env_v2\\Lib\\site-packages\\diffusers\\models\\modeling_utils.py",
+            "sha256": "7f0420803e8372da4b8d8608a72ca77252590d99cf8d0a080ca7873fbaf3f507"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\.venv\\Lib\\site-packages\\torch\\utils\\checkpoint.py",
+            "sha256": "98949eca97131fcb72b419ab93c76e208559a09daf0614eebd307357a86a0cce"
+          }
+        ],
+        "cpu_tests": {
+          "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\outputs\\masked_spatial_qv_tests_v2.json",
+          "sha256": "e8f8732b4062ebb744802935b6cb56f8bdf8215eda01f195aed275f9dfb28dfc"
+        },
+        "same_loss_control_receipt": {
+          "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\outputs\\masked_sdxl_ssim_continuation_v1\\ssim\\training\\receipt.json",
+          "sha256": "3ca1d389c0f1777e880aeaf126f09be021981527700ba015a0aac451380d5d0c"
+        },
+        "versions": {
+          "torch": "2.11.0+cu128",
+          "diffusers": "0.40.0",
+          "transformers": "5.17.0",
+          "safetensors": "0.8.0"
+        },
+        "backend_flags_before": {
+          "flash": true,
+          "mem_efficient": true,
+          "math": true,
+          "cudnn": true
+        },
+        "stages": {
+          "load_models": 4.046999999962281,
+          "original_forward": 3.4060000000172295,
+          "optimizer_frozen_control_forward": 23.60899999999674,
+          "enabled_zero_forward": 0.8439999999827705,
+          "epsilon_backward": 1.9530000000377186,
+          "cpu_vae_decode": 6.35999999998603,
+          "ssim_backward": 14.96799999999348,
+          "disposable_update": 0.125
+        },
+        "checkpoints_created": 0,
+        "quality_scores_created": 0,
+        "old_checkpoint_changed": false,
+        "current_stage": "complete",
+        "elapsed_seconds": 55.31199999997625,
+        "process_memory": {
+          "peak_working_set_bytes": 7760568320,
+          "working_set_bytes": 7760568320,
+          "peak_pagefile_bytes": 18714791936
+        },
+        "frozen_vae_parameters": 83653863,
+        "modified_processors": 70,
+        "alpha_bar": 0.5905007719993591,
+        "oracle_x0_inverse_residual": {
+          "max_absolute": 0.003003716468811035,
+          "rms": 0.0004289121716283262,
+          "reason": "Inherited scheduler.add_noise fp16 coefficient/arithmetic rounding; not exact inverse"
+        },
+        "backend_flags_inside": {
+          "flash": true,
+          "mem_efficient": false,
+          "math": true,
+          "cudnn": false
+        },
+        "neutral_epsilon_objective": 0.1880817860364914,
+        "control_epsilon_objective": 0.1880817860364914,
+        "historical_gradient_comparison": {
+          "maximum_absolute_difference": 0.0,
+          "passed": true
+        },
+        "control_ssim_loss": 0.37326717376708984,
+        "control_adapter_unchanged": true,
+        "control_autograd_parameters": 10625,
+        "control_optimizer_parameters": 385,
+        "enabled_zero_prediction_exact": true,
+        "enabled_zero_prediction_max_difference": 0.0,
+        "epsilon_gradient_norm": 0.0007170399185270071,
+        "neutral_scorer_gradient": {
+          "atol": 1e-07,
+          "rtol": 0.0001,
+          "maximum_absolute_difference": 0.0,
+          "exact": true,
+          "passed": true
+        },
+        "decoded_rgb_range": {
+          "minimum": -0.01965862512588501,
+          "maximum": 0.9940462112426758,
+          "outside_unit_interval_fraction": 8.138021075865254e-05
+        },
+        "mask": {
+          "pixels": 16048,
+          "binary_sha256": "6a1ec111bb3079152858f12b0f9a862e14d3f46d71b19ecb290985d7677ed09a",
+          "bbox_xyxy_exclusive": [
+            150,
+            195,
+            386,
+            263
+          ]
+        },
+        "losses": {
+          "full_epsilon_mse": 0.02138146385550499,
+          "hole_epsilon_mse": 0.24364855885505676,
+          "epsilon_objective": 0.1880817860364914,
+          "masked_ssim_loss": 0.37326717376708984,
+          "combined": 0.22540850341320037
+        },
+        "matched_ssim_gradient": {
+          "atol": 1e-07,
+          "rtol": 0.0001,
+          "maximum_absolute_difference": 0.0,
+          "exact": true,
+          "passed": true
+        },
+        "ssim_gradient_norm": 0.0021237318869680166,
+        "weighted_ssim_gradient_norm": 0.00021237318869680167,
+        "ssim_to_epsilon_gradient_norm_ratio": 2.9618042623494842,
+        "gradient_cosine": 0.38100844058782557,
+        "parameter_gradient_norms": {
+          "net.0.weight": {
+            "epsilon": 8.409965062128322e-07,
+            "ssim": 8.666190296935383e-06
+          },
+          "net.0.bias": {
+            "epsilon": 6.031362431713205e-08,
+            "ssim": 7.261276095960056e-07
+          },
+          "net.2.weight": {
+            "epsilon": 7.033508154563606e-05,
+            "ssim": 0.0007267797482199967
+          },
+          "net.2.bias": {
+            "epsilon": 4.6349711624316114e-08,
+            "ssim": 3.68907251413475e-08
+          },
+          "spatial.q_a": {
+            "epsilon": 0.0,
+            "ssim": 0.0
+          },
+          "spatial.q_b": {
+            "epsilon": 0.00026719478773884475,
+            "ssim": 0.0006979171303100884
+          },
+          "spatial.v_a": {
+            "epsilon": 0.0,
+            "ssim": 0.0
+          },
+          "spatial.v_b": {
+            "epsilon": 0.000661668658722192,
+            "ssim": 0.0018694557948037982
+          }
+        },
+        "combined_gradient_norm": 0.0008217594586312771,
+        "parameter_update": true,
+        "spatial_b_updated": true,
+        "frozen_unet_gradients": false,
+        "frozen_vae_gradients": false,
+        "backend_flags_after": {
+          "flash": true,
+          "mem_efficient": true,
+          "math": true,
+          "cudnn": true
+        },
+        "backend_flags_restored": true,
+        "gpu": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "peak_allocated_bytes": 7338198528,
+        "peak_reserved_bytes": 7696547840,
+        "finished_at_utc": "2026-10-18T19:00:42.846124+00:00"
+      }
+    },
+    {
+      "name": "spatial_qv_loss_order_replay_v6",
+      "receipt_sha256": "d2cc1bbf78fe6c9a4dcf91b1938459c7e44e29482881ed4cd8d5ec0469e3fd39",
+      "receipt": {
+        "status": "passed",
+        "identity": "263",
+        "seed": 17,
+        "evaluation_original_read": false,
+        "quality_scores_created": 0,
+        "checkpoints_created": 0,
+        "probe_receipt": {
+          "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\outputs\\spatial_qv_loss_order_probe_v6\\receipt.json",
+          "sha256": "43e9ce2ebe72f883a43a6feef95fafbabbbc4c4f62a7cbf0cd90c18383481c6a"
+        },
+        "source_pins": [
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\scripts\\replay_spatial_qv_loss_order_v6.py",
+            "sha256": "006da5f18bdec2f894b72b41195d833cf97e7d5740d4f161ad9085d43f92d2b8"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\research\\SPATIAL_QV_LOSS_ORDER_PREFLIGHT_V6.md",
+            "sha256": "cff7a84d996e6e4f0b25a8c1bfb706c8f6a07c34b182732aa9abcf23284acbb1"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\scripts\\stable_attention_difference_v2.py",
+            "sha256": "8e52bf9a90da50ed5b48697ae5435b9c39918ccf6a005211d69eef4341664c23"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\research\\MASKED_SPATIAL_QV_PREFLIGHT_V1.md",
+            "sha256": "d23bc806b9913ef4af9999cf6f28412963fb345250fead899d698d526ab236ea"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\scripts\\masked_spatial_qv_v2.py",
+            "sha256": "c801b0d5220054570c6979f9fa459f69be9493542de7ae9a948c26da4adf8025"
+          },
+          {
+            "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\scripts\\spatial_qv_common_v2.py",
+            "sha256": "2d11d7549614d9b5ef678c3f28dc978c4ce667c1d67e0cbcf29b9e886be05cf6"
+          }
+        ],
+        "starting_checkpoint": {
+          "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\outputs\\masked_sdxl_compatibility_pilot_v2\\training\\adapter_last.pt",
+          "sha256": "0f6ad433ce03a998c4fe4375e309fe79a85bc0d945448774fb603edbeace84ba"
+        },
+        "inference_resolution": 1024,
+        "export_resolution": 512,
+        "checks": {
+          ".png": {
+            "pixel_exact": true,
+            "byte_exact": true,
+            "output": {
+              "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\outputs\\spatial_qv_loss_order_replay_v6\\263_enabled_zero.png",
+              "sha256": "0f491df9b0b05820111a371f705e81eaef725df8bac93276992220c698c35e2d"
+            },
+            "reference": {
+              "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\outputs\\masked_sdxl_compatibility_pilot_eval_v2\\263_eyes_trained_17.png",
+              "sha256": "0f491df9b0b05820111a371f705e81eaef725df8bac93276992220c698c35e2d"
+            }
+          },
+          "_raw.png": {
+            "pixel_exact": true,
+            "byte_exact": true,
+            "output": {
+              "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\outputs\\spatial_qv_loss_order_replay_v6\\263_enabled_zero_raw.png",
+              "sha256": "67f85b895f2be3f3f84725613166bbea597ac4122061d3e24cab31d09f996de0"
+            },
+            "reference": {
+              "path": "C:\\Users\\rehaa\\OneDrive\\Documents\\ChatGPT\\Facial inpainting Project\\outputs\\masked_sdxl_compatibility_pilot_eval_v2\\263_eyes_trained_17_raw.png",
+              "sha256": "67f85b895f2be3f3f84725613166bbea597ac4122061d3e24cab31d09f996de0"
+            }
+          }
+        },
+        "timesteps": [
+          958.0,
+          925.0,
+          892.0,
+          859.0,
+          826.0,
+          793.0,
+          760.0,
+          727.0,
+          694.0,
+          661.0,
+          628.0,
+          595.0,
+          562.0,
+          529.0,
+          496.0,
+          463.0,
+          430.0,
+          397.0,
+          364.0,
+          331.0,
+          298.0,
+          265.0,
+          232.0,
+          199.0,
+          166.0,
+          133.0,
+          100.0,
+          67.0,
+          34.0,
+          1.0
+        ],
+        "passed": true,
+        "seconds": 73.04700000002049
+      }
+    }
+  ]
+}
