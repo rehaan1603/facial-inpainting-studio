@@ -8,6 +8,12 @@
 
 ## Latest status update
 
+### 19 October: matched spatial-capacity training launched
+
+A fresh paired 32-update experiment is running on the laptop GPU. Both arms use the same original64 checkpoint, eight training identities, masks, four references, noise/timestep schedule and masked-SSIM objective. Both compute gradients for 10,625 parameters. The control updates only the 385-parameter reference scorer and keeps all 10,240 spatial parameters fixed; the candidate will update all 10,625. The first-step predictions, losses and scorer gradients must match exactly across arms.
+
+The development target is **mean missing-region SSIM 0.50**, compared with current CFG3's approximately 0.45454. This is a target, not a measured result or an accuracy percentage. Existing identity/perceptual safeguards remain required. Training receipts are under `outputs/spatial_capacity_v6`; no new quality scores or website promotion yet. Final status will be recorded after generation and evaluation.
+
 ### 19 October: gradient-check bug fixed; spatial prerequisite and image replay pass
 
 Different floating-point operation order in control and candidate regional losses caused the prior mismatch. V6 makes both match actual training: **epsilon and masked-SSIM scorer gradients now match exactly**, without relaxing tolerances. New spatial Q/V weights pass a disposable update within **7.34 GB peak CUDA allocation**. No trained checkpoint was saved.

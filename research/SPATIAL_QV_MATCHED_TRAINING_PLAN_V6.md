@@ -1,6 +1,6 @@
 # Spatial capacity matched experiment plan — 19 October 2026
 
-Status: planned; training has not started. Requires successful V6 full GPU prerequisite and exact 1024 raw/final replay, followed by implementation review and source freezing before either optimizer runs.
+Status: V6 GPU prerequisite and exact 1024 raw/final replay passed. Training/evaluation implementation reviewed on 19 October 2026; source pins are frozen in each arm configuration before optimizer updates. Training has not started at the time this protocol is frozen.
 
 ## One change and hypothesis
 The 385-parameter shared reference scorer may lack spatial capacity to correct eye structure. Add the tested 10,240-parameter rank-4 Q/V residual at `up_blocks.1.attentions.2.transformer_blocks.1.attn1`. Its outputs affect original-mask queries only; downstream spatial changes still require visible-pixel compositing. Hypothesis: learning spatial Q/V corrections improves missing-region SSIM without losing identity. This is a hypothesis, not a result.
@@ -21,3 +21,9 @@ Same three development people263/6681/10149, seed17, masks/references, DDIM30, C
 Primary comparison: capacity vs fresh optimizer-frozen control. Require strictly improved mean hole SSIM; hole PSNR not lower; hole/eye LPIPS not worse; mean FaceNet and ArcFace not lower; per-person identity decline no worse than .005; complete paired coverage and visual non-worsening. Retain comparisons to every historical arm; do not promote a candidate that fails current baseline quality/identity safeguards. Full-image SSIM is secondary because most pixels are copied. No test-set selection, accuracy percentage or generalization claim from three repeatedly inspected development people.
 
 After this gate only: freeze candidate, evaluate new identities/multiple seeds and corrupted/misleading references without retuning on those outcomes. Publication readiness remains future validation work. Website defaults change only after measured benefit and regression checks.
+
+## Implementation freeze
+
+Workers: `train_spatial_capacity_v6.py`, `run_spatial_capacity_v6_bounded.py`, `run_spatial_capacity_v6_eval.py`, `score_spatial_capacity_v6_eval.py`, `report_spatial_capacity_v6_eval.py`. Guards include exact first-update prediction/combined-loss/scorer-gradient comparison across the two processes, original checkpoint bytes, identical spatial initialization, optimizer parameter membership/count, and fixed control spatial weights after every update. CPU gate checks verify that a 0.50 hole-SSIM example with unchanged identity passes, while a per-person identity regression fails all six comparisons. Python syntax and immutable-input preflight checked before launch.
+
+User target: attempt to reach mean missing-region SSIM0.50 on the fixed three development cases. This is a target, not an accuracy percentage or a guaranteed result; original non-worsening and identity requirements still apply. No extra epochs or parameter sweep selected from evaluation outcomes within this experiment.
