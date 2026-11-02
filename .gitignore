@@ -15,3 +15,7 @@ facial_inpainting_local_delivery*.zip
 *.safetensors
 *.onnx
 .local-share/
+
+# Local illustrated exports and rendering intermediates
+output/
+tmp/

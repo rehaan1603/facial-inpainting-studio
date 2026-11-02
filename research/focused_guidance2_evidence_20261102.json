@@ -1,0 +1,188 @@
+{
+  "paired": {
+    "means": {
+      "psnr": {
+        "control": 29.387906274425813,
+        "candidate": 29.61948334552875,
+        "delta": 0.23157707110293657,
+        "pass_gate": true,
+        "n": 3
+      },
+      "ssim": {
+        "control": 0.9612858701271509,
+        "candidate": 0.9613067417099702,
+        "delta": 2.0871582819270706e-05,
+        "pass_gate": true,
+        "n": 3
+      },
+      "lpips": {
+        "control": 0.02261168137192726,
+        "candidate": 0.022334540883700054,
+        "delta": -0.0002771404882272073,
+        "pass_gate": true,
+        "n": 3
+      },
+      "hole_psnr": {
+        "control": 17.894556478295268,
+        "candidate": 18.126133549398205,
+        "delta": 0.23157707110293657,
+        "pass_gate": true,
+        "n": 3
+      },
+      "hole_ssim": {
+        "control": 0.45454045408918337,
+        "candidate": 0.4541038300954899,
+        "delta": -0.0004366239936934857,
+        "pass_gate": false,
+        "n": 3
+      },
+      "hole_lpips": {
+        "control": 0.1784539520740509,
+        "candidate": 0.17953855792681375,
+        "delta": 0.0010846058527628488,
+        "pass_gate": false,
+        "n": 3
+      },
+      "eye_lpips": {
+        "control": 0.15235059460004172,
+        "candidate": 0.144884226222833,
+        "delta": -0.00746636837720871,
+        "pass_gate": true,
+        "n": 3
+      },
+      "facenet_cosine": {
+        "control": 0.7844861348470052,
+        "candidate": 0.8054660161336263,
+        "delta": 0.020979881286621094,
+        "pass_gate": true,
+        "n": 3
+      },
+      "arcface_conditioning_cosine": {
+        "control": 0.8161560297012329,
+        "candidate": 0.8078383604685465,
+        "delta": -0.008317669232686398,
+        "pass_gate": false,
+        "n": 3
+      }
+    },
+    "pairs": [
+      {
+        "identity": "263",
+        "control": {
+          "psnr": 29.062505376316956,
+          "ssim": 0.968875349809233,
+          "lpips": 0.016391614452004433,
+          "hole_psnr": 17.429831207833402,
+          "hole_ssim": 0.5381170964853625,
+          "hole_lpips": 0.14406660199165344,
+          "eye_lpips": 0.17543599009513855,
+          "visible_changed": 0,
+          "facenet_cosine": 0.7508267164230347,
+          "arcface_conditioning_cosine": 0.8218575119972229
+        },
+        "candidate": {
+          "psnr": 29.164696457822437,
+          "ssim": 0.9683245942113614,
+          "lpips": 0.016521761193871498,
+          "hole_psnr": 17.532022289338883,
+          "hole_ssim": 0.5276352877229639,
+          "hole_lpips": 0.1443331390619278,
+          "eye_lpips": 0.18159820139408112,
+          "visible_changed": 0,
+          "facenet_cosine": 0.802068829536438,
+          "arcface_conditioning_cosine": 0.8168604373931885
+        }
+      },
+      {
+        "identity": "6681",
+        "control": {
+          "psnr": 31.642592126011927,
+          "ssim": 0.9675311478932489,
+          "lpips": 0.015800410881638527,
+          "hole_psnr": 19.859689221683304,
+          "hole_ssim": 0.5126660933943462,
+          "hole_lpips": 0.1369595229625702,
+          "eye_lpips": 0.11816850304603577,
+          "visible_changed": 0,
+          "facenet_cosine": 0.8400038480758667,
+          "arcface_conditioning_cosine": 0.8408806324005127
+        },
+        "candidate": {
+          "psnr": 32.17552096636854,
+          "ssim": 0.9676270859199477,
+          "lpips": 0.014669446274638176,
+          "hole_psnr": 20.392618062039922,
+          "hole_ssim": 0.5155145977720421,
+          "hole_lpips": 0.13777492940425873,
+          "eye_lpips": 0.10225050896406174,
+          "visible_changed": 0,
+          "facenet_cosine": 0.8661016225814819,
+          "arcface_conditioning_cosine": 0.8557651042938232
+        }
+      },
+      {
+        "identity": "10149",
+        "control": {
+          "psnr": 27.45862132094856,
+          "ssim": 0.9474511126789711,
+          "lpips": 0.035643018782138824,
+          "hole_psnr": 16.3941490053691,
+          "hole_ssim": 0.31283817238784123,
+          "hole_lpips": 0.2543357312679291,
+          "eye_lpips": 0.1634472906589508,
+          "visible_changed": 0,
+          "facenet_cosine": 0.7626278400421143,
+          "arcface_conditioning_cosine": 0.7857299447059631
+        },
+        "candidate": {
+          "psnr": 27.518232612395266,
+          "ssim": 0.9479685449986014,
+          "lpips": 0.035812415182590485,
+          "hole_psnr": 16.453760296815812,
+          "hole_ssim": 0.3191616047914637,
+          "hole_lpips": 0.25650760531425476,
+          "eye_lpips": 0.15080396831035614,
+          "visible_changed": 0,
+          "facenet_cosine": 0.748227596282959,
+          "arcface_conditioning_cosine": 0.7508895397186279
+        }
+      }
+    ],
+    "failed_gates": [
+      "10149/facenet_cosine/identity_guard",
+      "10149/arcface_conditioning_cosine/identity_guard",
+      "hole_ssim/mean",
+      "hole_lpips/mean",
+      "arcface_conditioning_cosine/mean"
+    ],
+    "numerical_pass": false,
+    "visual_review": "reviewed",
+    "promoted": false
+  },
+  "visual_review": {
+    "date": "2026-11-02",
+    "status": "reviewed",
+    "promoted": false,
+    "files": [
+      "comparisons\\10149_finished.png",
+      "comparisons\\10149_raw.png",
+      "comparisons\\263_finished.png",
+      "comparisons\\263_raw.png",
+      "comparisons\\6681_finished.png",
+      "comparisons\\6681_raw.png"
+    ],
+    "observations": {
+      "263": "CFG2 softens some eye detail but gaze and brow shape still differ from ground truth.",
+      "6681": "CFG2 reduces vivid cyan appearance somewhat; iris shape and gaze remain inaccurate.",
+      "10149": "Eye opening and gaze still differ, with reduced FaceNet and ArcFace versus CFG3."
+    },
+    "decision": "Stop recipe: five failed numerical gates; do not replicate or promote."
+  },
+  "source_hashes": {
+    "outputs\\focused_eye_guidance2_20261102\\config.json": "6db171855793dc45bbb9d21c88488fbdfa232904d32df5347d6def8bf6f21c64",
+    "outputs\\focused_eye_guidance2_20261102\\summary.json": "85d5fb3eafe4c743b7b5b634ea5e8e74330cb39893871daf9a015be0f9f6dba9",
+    "outputs\\focused_eye_guidance2_20261102\\replay.json": "ab6567933d06f8ba82f831ab46da0a0951d8d32e70be45800516f8227500e7a6",
+    "scripts\\run_focused_eye_guidance2_20261102.py": "2fd9ccfaaa9b4a3b685a172c7e6d66dacfb3f9e999892e6bd67469095ffefe3a",
+    "scripts\\score_masked_sdxl_v1.py": "3828ee7f0fcc53a4638ac48faff7eb7044f4afb3453331074531d572a15e447b"
+  }
+}

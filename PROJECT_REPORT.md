@@ -1,12 +1,22 @@
 # Facial Inpainting Project — Progress and Completion Report
 
-**Report date:** 19 October 2026
+**Report date:** 2 November 2026
 **Current platform:** Windows laptop, NVIDIA RTX 5070 Laptop GPU with 8 GB VRAM  
 **Current application:** http://127.0.0.1:8765/ (current code; Start Studio verifies loaded version)
 **Repository:** https://github.com/rehaan1603/facial-inpainting-studio  
 **Status:** Working local research baseline; proposed multi-reference research method and final validation incomplete. Public hosting paused at the owner's request.
 
 ## Latest status update
+
+### 2 November: spatial and guidance experiments completed; working baseline retained
+
+Both matched32-update GPU runs completed. All21 evaluation records and all face detections are valid; visible pixels remain exact. Learned spatial capacity reaches missing-region SSIM **0.444869**, below current CFG3 **0.454540**; FaceNet **0.782839** versus **0.784486**, ArcFace **0.805402** versus **0.816156**. It improves slightly over its equally trained fixed-spatial control, but fails13 combined numerical gates and is **not promoted**. All six raw/finished visual sheets were reviewed; incorrect iris appearance, gaze and brow geometry persist.
+
+The frozen CFG3-to2 GPU screen is complete: three new outputs, exact baseline replay and all valid metrics/detections. FaceNet improves **0.784486 to0.805466**, eyeLPIPS **0.152351 to0.144884** and wholePSNR **29.387906 to29.619483**. However, holeSSIM decreases **0.454540 to0.454104**, holeLPIPS worsens **0.178454 to0.179539**, ArcFace decreases **0.816156 to0.807838**, and person10149 fails both identity guards. All six raw/finished visual sheets reviewed. **Five failed gates: recipe stopped, no replication or app promotion.**
+
+The local studio is verified at http://127.0.0.1:8765/; eight launcher and three runtime-guard tests pass. A new local ready-to-test pack contains all three people, masks, four real references, both settings, comparisons and full metrics at `Downloads/All Face Datasets/Ready to test sets/CFG2 versus CFG3 - 2026-11-02`. Original checkpoints, datasets, generator and scorer are preserved. [All new values and visual findings](research/FOCUSED_GUIDANCE2_RESULTS_20261102.md).
+
+[Completed spatial study](research/SPATIAL_CAPACITY_V6_RESULTS_20261102.md) · [New frozen experiment](research/FOCUSED_GUIDANCE2_PREFLIGHT_20261102.md).
 
 ### 19 October: matched spatial-capacity training launched
 
@@ -604,7 +614,7 @@ The measurement baseline is substantially stronger, but the research is not yet 
 | Reference robustness | Compression failure diagnosed; studio ReF-LDM now validates one face per reference and frames rectangular uploads without distortion. Broader poor-quality, pose and expression handling still needs matched validation with failures retained | Basic client checks implemented; broader validation pending |
 | Local correspondence | Earlier five-point/regional prototypes retained. Training-only landmark, SIFT, CLIP and DINO controls completed; even DINO1036 yields 0/32 eligible real pairs. More resolution did not establish usable hidden-region alignment | Controlled diagnostics complete; anatomical correspondence unresolved |
 | Local fusion | Six-policy, two-seed 48-row comparison complete; no multi-metric advantage established | Negative/mixed result |
-| Learned adapter | Earlier restoration studies and the 64-update masked pilot remain. Both matched RGB16 and SSIM32 comparisons completed; SSIM32 lowers hole SSIM/FaceNet versus equal epsilon despite small eye/LPIPS gains, with 20 failed numerical checks. The 10,240-parameter spatial Q/V prototype and cancellation repair pass synthetic tests but fail full-model gradient neutrality. A native-repeat diagnostic is exact. Old-control reuse stops; a fresh matched-path control and new prerequisites are required | Real masked training/evaluation complete for these recipes; stronger candidate still needed |
+| Learned adapter | RGB16, SSIM32 and fresh matched spatial32 studies completed. Spatial candidate has holeSSIM0.444869 versus CFG3 0.454540; fails13 gates. CFG2 inference screen improves FaceNet and eyeLPIPS but fails5 combined gates. Visual reviews complete; neither promoted. | Completed experiments; identity/structure improvement still required |
 | Confidence UI | Prior generation/download checks passed. Current update fixes stale state, upload races, evidence suggestions/transparency, and missing-area strength selection; new HTTP/GPU checks pass. Current main/evidence browser flows are verified with real generated images, matching references, downloads and state invalidation | Implemented and browser verified |
 | Runtime reliability | Original native/OpenCV failures retained; fixed-thread studio retry passed. Two wrapper failures from an unnecessary OpenCV import were fixed and both recovery runs passed. Continue recurrence checks; no universal root-cause claim | Mitigations and recoveries verified |
 | Visual assessment | Prior reviewed studies retained; all four new studio audit sheets reviewed, with coloured holes, retained erasures and facial errors documented. Blinded human evaluation remains | Internal review complete for these runs; human study pending |
